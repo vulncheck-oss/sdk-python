@@ -1,0 +1,5 @@
+additionalProperties:
+  projectName: "vulncheck-sdk"
+  packageName: "vulncheck_sdk"
+  packageUrl: "https://github.com/vulncheck-oss/sdk-python/tree/main"
+  packageVersion: "0.0.1"

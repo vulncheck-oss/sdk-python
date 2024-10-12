@@ -1,0 +1,42 @@
+name: Generate SDK
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate-client:
+    runs-on: ubuntu-latest
+    name: Generate Python SDK
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: "1.8.3"
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install node dependencies
+        run: npm i
+
+      - name: Generate new sdk
+        run: make generate
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: update-sdk
+          delete-branch: true
+          labels: bot
+          title: "Update Python SDK"
+          commit-message: "ci: Update python-sdk"
+          body: "New [API](https://api.vulncheck.com/v3/openapi) changes have been detected."
