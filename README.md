@@ -14,12 +14,13 @@ pip install git+https://github.com/vulncheck-oss/sdk-python.git
 
 # From PyPi
 pip install vulncheck-sdk
+
 ```
 
-## Quickstart
+> [!IMPORTANT]
+> Windows users may need to enable [Long Path Support](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry#enable-long-paths-in-windows-10-version-1607-and-later)
 
-> [!NOTE]
-> Find more detail in the full [OpenAPI docs](./vulncheck_sdk_README.md)
+## Quickstart
 
 ### Connecting to the API
 
@@ -39,6 +40,9 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     # For querying an individual index
     indices_client = vulncheck_sdk.IndicesApi(api_client)
 ```
+
+> [!NOTE]
+> Find more detail in the full [OpenAPI docs](./vulncheck_sdk_README.md)
 
 ### PURL
 
@@ -151,7 +155,6 @@ Query VulnCheck-NVD2 for `CVE-2019-19781`
 
 ```python
 import vulncheck_sdk
-from vulncheck_sdk.models.params_idx_req_params import ParamsIdxReqParams
 
 DEFAULT_HOST = "https://api.vulncheck.com"
 DEFAULT_API = DEFAULT_HOST + "/v3"
@@ -176,7 +179,6 @@ With a limit of 10 findings, get the first 5 pages of results from `ipintel-3d`
 ```python
 import vulncheck_sdk
 from vulncheck_sdk.models.paginate_pagination import PaginatePagination
-from vulncheck_sdk.models.params_idx_req_params import ParamsIdxReqParams
 
 DEFAULT_HOST = "https://api.vulncheck.com"
 DEFAULT_API = DEFAULT_HOST + "/v3"
