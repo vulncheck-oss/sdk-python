@@ -1,20 +1,23 @@
 <p align="center">
-    <img src="/logo-sdk.png" align="center" alt="VulnCheck Logo" width="150" />
+    <img src="https://raw.githubusercontent.com/vulncheck-oss/sdk-python/refs/heads/main/logo-sdk.png" align="center" alt="VulnCheck Logo" width="150" />
 </p>
 
-# The VulnCheck SDK
+# The VulnCheck SDK For Python
 
 Bring the VulnCheck API to your Python applications.
+
+[![pypi](https://badge.fury.io/py/vulncheck-sdk.svg)](https://badge.fury.io/py/vulncheck-sdk)
+[![python](https://img.shields.io/badge/Python-3.7%20|%203.8%20%20|%203.9%20|%203.10%20|%203.11-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
+[![jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626.svg?style=flat&logo=Jupyter)](https://jupyter.org/)
 
 ## Installation
 
 ```sh
-# Directly from github
-pip install git+https://github.com/vulncheck-oss/sdk-python.git
-
 # From PyPi
 pip install vulncheck-sdk
 
+# Directly from github
+pip install git+https://github.com/vulncheck-oss/sdk-python.git
 ```
 
 > [!IMPORTANT]
@@ -178,7 +181,6 @@ Paginate over results for a query to VulnCheck-KEV using `cursor`
 
 ```python
 import vulncheck_sdk
-from vulncheck_sdk.models.paginate_pagination import PaginatePagination
 
 DEFAULT_HOST = "https://api.vulncheck.com"
 DEFAULT_API = DEFAULT_HOST + "/v3"
@@ -201,6 +203,18 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
         )
         print(api_response.data)
 ```
+
+## Contributing
+
+Please see [CONTRIBUTING](./.github/CONTRIBUTING.md) for details.
+
+## Security Vulnerabilities
+
+If you discover any security related issues, please use issue tracker.
+
+## Sponsorship
+
+Development of this project is sponsored by [VulnCheck](https://vulncheck.com/) learn more about us!
 
 ## License
 
