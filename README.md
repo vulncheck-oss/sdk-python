@@ -174,7 +174,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 ### Pagination
 
-With a limit of 10 findings, get the first 5 pages of results from `ipintel-3d`
+Paginate over results for a query to VulnCheck-KEV using `cursor`
 
 ```python
 import vulncheck_sdk
@@ -189,22 +189,17 @@ configuration.api_key["Bearer"] = TOKEN
 
 with vulncheck_sdk.ApiClient(configuration) as api_client:
     indices_client = vulncheck_sdk.IndicesApi(api_client)
-    query_params = vulncheck_sdk.ParamsIdxReqParams()
+    api_response = indices_client.index_vulncheck_kev_get(
+        vulncheck_sdk.ParamsIdxReqParams(), start_cursor="true"
+    )
 
-    limit = 10
-    page = 1
+    print(api_response.data)
 
-    while page <= 5:
-        api_response = indices_client.index_ipintel3d_get(
-            query_params, limit=limit, page=page
+    while api_response.meta.next_cursor is not None:
+        api_response = indices_client.index_vulncheck_kev_get(
+            vulncheck_sdk.ParamsIdxReqParams(), cursor=api_response.meta.next_cursor
         )
-        print(f"Page {page}:")
         print(api_response.data)
-
-        meta: PaginatePagination = api_response.meta
-        if meta.page >= meta.total_pages:
-            break
-        page += 1
 ```
 
 ## License
