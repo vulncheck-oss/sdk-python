@@ -6,46 +6,101 @@
 
 Bring the VulnCheck API to your Python applications.
 
-[![pypi](https://badge.fury.io/py/vulncheck-sdk.svg)](https://badge.fury.io/py/vulncheck-sdk)
-[![python](https://img.shields.io/badge/Python-3.7%20|%203.8%20%20|%203.9%20|%203.10%20|%203.11-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
-[![jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626.svg?style=flat&logo=Jupyter)](https://jupyter.org/)
+[![PyPI - Version](https://badge.fury.io/py/vulncheck-sdk.svg)](https://badge.fury.io/py/vulncheck-sdk)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/vulncheck-sdk.svg?logo=python&label=Python&logoColor=gold)](https://pypi.org/project/vulncheck-sdk/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626.svg?style=flat&logo=Jupyter)](https://jupyter.org/)
+
+<!--toc:start-->
+- [The VulnCheck SDK For Python](#the-vulncheck-sdk-for-python)
+  - [Installation](#installation)
+  - [Resources](#resources)
+  - [Quickstart](#quickstart)
+  - [Examples](#examples)
+    - [PURL](#purl)
+    - [CPE](#cpe)
+    - [Backup](#backup)
+    - [Indices](#indices)
+    - [Index](#index)
+    - [Pagination](#pagination)
+  - [Contributing](#contributing)
+  - [Security](#security)
+  - [Sponsorship](#sponsorship)
+  - [License](#license)
+<!--toc:end-->
 
 ## Installation
 
 ```sh
 # From PyPi
 pip install vulncheck-sdk
-
-# Directly from github
-pip install git+https://github.com/vulncheck-oss/sdk-python.git
 ```
 
 > [!IMPORTANT]
 > Windows users may need to enable [Long Path Support](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry#enable-long-paths-in-windows-10-version-1607-and-later)
 
-## Quickstart
+## Resources
 
-### Connecting to the API
+- [OpenAPI Documentation](./vulncheck_sdk_README.md)
+- [VulnCheck API Docs](https://docs.vulncheck.com/api)
+- [VulnCheck Python SDK Docs](https://docs.vulncheck.com/tools/python-sdk/introduction)
+
+## Quickstart
 
 ```python
 import vulncheck_sdk
 
+# First let's setup a few variables to help us
 DEFAULT_HOST = "https://api.vulncheck.com"
 DEFAULT_API = DEFAULT_HOST + "/v3"
-TOKEN = os.environ["VULNCHECK_API_TOKEN"]
+TOKEN = os.environ["VULNCHECK_API_TOKEN"] # Remember to store your token securely!
 
+# Now let's create a configuration object
 configuration = vulncheck_sdk.Configuration(host=DEFAULT_API)
 configuration.api_key["Bearer"] = TOKEN
 
+# Pass that config object to our API client and now...
 with vulncheck_sdk.ApiClient(configuration) as api_client:
-    # For purl, cpe, backup, tags, pdns, etc.
+    # We can use two classes to explore the VulnCheck API: EndpointsApi & IndicesApi
+
+    ### EndpointsApi has methods to query every endpoint except `/v3/index`
+    # See the full list of endpoints here: https://docs.vulncheck.com/api
     endpoints_client = vulncheck_sdk.EndpointsApi(api_client)
-    # For querying an individual index
+
+    # PURL
+    api_response = endpoints_client.purl_get("pkg:hex/coherence@0.1.2")
+    data: V3controllersPurlResponseData = api_response.data
+    print(data.cves)
+
+    # CPE
+    cpe = "cpe:/a:microsoft:internet_explorer:8.0.6001:beta"
+    api_response = endpoints_client.cpe_get(cpe)
+    for cve in api_response.data:
+        print(cve)
+
+    # Download a Backup
+    api_response = endpoints_client.backup_index_get("initial-access")
+    backup_url = requests.get(api_response.data[0].url)
+    file_path = f"{index}.zip"
+    with open(file_path, "wb") as file:
+      file.write(backup_url.content)
+
+    ### IndicesApi has methods for each index
     indices_client = vulncheck_sdk.IndicesApi(api_client)
+
+    # You can filter your query using parameters as well
+    query_params = vulncheck_sdk.ParamsIdxReqParams(cve="CVE-2019-19781")
+    api_response = indices_client.index_vulncheck_nvd2_get(query_params)
+
+    print(api_response.data)
+
+    # There are many more indices to explore!
+    api_response = indices_client.index_vulncheck_kev_get(vulncheck_sdk.ParamsIdxReqParams())
+    api_response = indices_client.index_exploits_get(vulncheck_sdk.ParamsIdxReqParams())
+    api_response = indices_client.index_ipintel3d_get(vulncheck_sdk.ParamsIdxReqParams())
+    api_response = indices_client. # An editor with a Language Server will show you all the available methods/indices!
 ```
 
-> [!NOTE]
-> Find more detail in the full [OpenAPI docs](./vulncheck_sdk_README.md)
+## Examples
 
 ### PURL
 
@@ -208,9 +263,9 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 Please see [CONTRIBUTING](./.github/CONTRIBUTING.md) for details.
 
-## Security Vulnerabilities
+## Security
 
-If you discover any security related issues, please use issue tracker.
+If you discover any security related issues, please create an [issue](https://github.com/vulncheck-oss/sdk-python/issues/new?template=1_BUG-FORM.yaml).
 
 ## Sponsorship
 
@@ -218,4 +273,4 @@ Development of this project is sponsored by [VulnCheck](https://vulncheck.com/) 
 
 ## License
 
-Apache License 2.0. Please see License File for more information.
+Apache License 2.0. Please see [License File](./LICENSE) for more information.
