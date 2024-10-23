@@ -12,17 +12,17 @@ build:
 
 .PHONY: test-integration
 test-integration:
-	pytest tests/
+	pytest $(CURDIR)/tests/
 
 .PHONY: test
 test:
-	pytest test/ tests/
+	pytest $(CURDIR)/test/ $(CURDIR)/tests/
 
 .PHONY: coverage
 coverage:
 	pytest --junitxml=coverage.xml \
 		--cov-report=term-missing:skip-covered \
 		--cov=vulncheck_sdk \
-		tests/ \
-		test/ \
+		$(CURDIR)/tests/ \
+		$(CURDIR)/test/ \
 		| tee .coverage.txt
