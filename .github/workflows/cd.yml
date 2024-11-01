@@ -14,6 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Generate Python SDK
     steps:
+      - uses: actions/create-github-app-token@v1
+        id: generate-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - uses: actions/checkout@v4
       - name: Install Poetry
         uses: abatilo/actions-poetry@v2
@@ -26,7 +32,7 @@ jobs:
           node-version: 22
 
       - name: Install node dependencies
-        run: npm i
+        run: npm ci
 
       - name: Generate new sdk
         run: make generate
@@ -34,6 +40,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ steps.generate-token.outputs.token }}
           branch: update-sdk
           delete-branch: true
           labels: bot
