@@ -247,7 +247,11 @@ configuration.api_key["Bearer"] = TOKEN
 with vulncheck_sdk.ApiClient(configuration) as api_client:
     indices_client = vulncheck_sdk.IndicesApi(api_client)
     api_response = indices_client.index_vulncheck_kev_get(
-        vulncheck_sdk.ParamsIdxReqParams(), start_cursor="true"
+        vulncheck_sdk.ParamsIdxReqParams(),
+        start_cursor="true",
+        # `limit` increases the size of each page, making it faster
+        # to download large datasets
+        limit = 300
     )
 
     print(api_response.data)
