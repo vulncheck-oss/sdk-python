@@ -27,13 +27,14 @@ class AdvisoryDell(BaseModel):
     """
     AdvisoryDell
     """ # noqa: E501
+    article_number: Optional[StrictStr] = Field(default=None, alias="articleNumber")
     combined_product_list: Optional[StrictStr] = Field(default=None, alias="combinedProductList")
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     severity: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["combinedProductList", "cve", "date_added", "severity", "title", "url"]
+    __properties: ClassVar[List[str]] = ["articleNumber", "combinedProductList", "cve", "date_added", "severity", "title", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +87,7 @@ class AdvisoryDell(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "articleNumber": obj.get("articleNumber"),
             "combinedProductList": obj.get("combinedProductList"),
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),

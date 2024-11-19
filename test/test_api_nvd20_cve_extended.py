@@ -136,6 +136,13 @@ class TestApiNVD20CVEExtended(unittest.TestCase):
                         epss_percentile = 1.337, 
                         epss_score = 1.337, 
                         last_modified = '', ), 
+                    ssvc = [
+                        vulncheck_sdk.models.api/ssvc.api.SSVC(
+                            automatable = '', 
+                            exploitation = '', 
+                            source = '', 
+                            technical_impact = '', )
+                        ], 
                     temporal_cvssv2 = vulncheck_sdk.models.api/nvd20_temporal_cvssv2.api.NVD20TemporalCVSSV2(
                         associated_base_metric_v2 = vulncheck_sdk.models.api/nvd20_temporal_associated_base_metric.api.NVD20TemporalAssociatedBaseMetric(
                             base_score = 1.337, 

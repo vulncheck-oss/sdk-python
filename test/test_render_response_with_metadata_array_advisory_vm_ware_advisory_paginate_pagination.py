@@ -83,7 +83,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryVMWareAdvisoryPaginatePaginatio
                         cve = [
                             ''
                             ], 
-                        date_added = '', )
+                        date_added = '', 
+                        id = '', )
                     ]
             )
         else:

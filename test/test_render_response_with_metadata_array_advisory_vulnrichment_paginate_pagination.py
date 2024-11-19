@@ -133,6 +133,10 @@ class TestRenderResponseWithMetadataArrayAdvisoryVulnrichmentPaginatePagination(
                                             lang = '', 
                                             value = '', )
                                         ], 
+                                    impacts = [
+                                        vulncheck_sdk.models.advisory/impact.advisory.Impact(
+                                            capec_id = '', )
+                                        ], 
                                     problem_types = [
                                         vulncheck_sdk.models.advisory/m_problem_types.advisory.MProblemTypes()
                                         ], 
@@ -143,6 +147,9 @@ class TestRenderResponseWithMetadataArrayAdvisoryVulnrichmentPaginatePagination(
                                                 ''
                                                 ], 
                                             url = '', )
+                                        ], 
+                                    tags = [
+                                        ''
                                         ], 
                                     timeline = [
                                         vulncheck_sdk.models.advisory/timeline.advisory.Timeline(

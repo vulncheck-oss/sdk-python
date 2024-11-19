@@ -46,7 +46,8 @@ class TestAdvisoryVMWareAdvisory(unittest.TestCase):
                 cve = [
                     ''
                     ],
-                date_added = ''
+                date_added = '',
+                id = ''
             )
         else:
             return AdvisoryVMWareAdvisory(

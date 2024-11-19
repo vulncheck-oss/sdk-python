@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_cve_reference import AdvisoryCVEReference
+from vulncheck_sdk.models.advisory_tool import AdvisoryTool
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,7 +34,8 @@ class AdvisoryBotnet(BaseModel):
     cve_references: Optional[List[AdvisoryCVEReference]] = None
     date_added: Optional[StrictStr] = None
     malpedia_url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["botnet_name", "cve", "cve_references", "date_added", "malpedia_url"]
+    tools: Optional[List[AdvisoryTool]] = None
+    __properties: ClassVar[List[str]] = ["botnet_name", "cve", "cve_references", "date_added", "malpedia_url", "tools"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,6 +83,13 @@ class AdvisoryBotnet(BaseModel):
                 if _item_cve_references:
                     _items.append(_item_cve_references.to_dict())
             _dict['cve_references'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in tools (list)
+        _items = []
+        if self.tools:
+            for _item_tools in self.tools:
+                if _item_tools:
+                    _items.append(_item_tools.to_dict())
+            _dict['tools'] = _items
         return _dict
 
     @classmethod
@@ -97,7 +106,8 @@ class AdvisoryBotnet(BaseModel):
             "cve": obj.get("cve"),
             "cve_references": [AdvisoryCVEReference.from_dict(_item) for _item in obj["cve_references"]] if obj.get("cve_references") is not None else None,
             "date_added": obj.get("date_added"),
-            "malpedia_url": obj.get("malpedia_url")
+            "malpedia_url": obj.get("malpedia_url"),
+            "tools": [AdvisoryTool.from_dict(_item) for _item in obj["tools"]] if obj.get("tools") is not None else None
         })
         return _obj
 

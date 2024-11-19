@@ -76,6 +76,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_aix_get(self) -> None:
+        """Test case for index_aix_get
+
+        Return vulnerability data stored in index \"aix\"
+        """
+        pass
+
     def test_index_aleph_research_get(self) -> None:
         """Test case for index_aleph_research_get
 
@@ -927,6 +934,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_eol_get
 
         Return vulnerability data stored in index \"eol\"
+        """
+        pass
+
+    def test_index_eol_microsoft_get(self) -> None:
+        """Test case for index_eol_microsoft_get
+
+        Return vulnerability data stored in index \"eol-microsoft\"
         """
         pass
 
@@ -2579,6 +2593,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_veritas_get
 
         Return vulnerability data stored in index \"veritas\"
+        """
+        pass
+
+    def test_index_virtuozzo_get(self) -> None:
+        """Test case for index_virtuozzo_get
+
+        Return vulnerability data stored in index \"virtuozzo\"
         """
         pass
 

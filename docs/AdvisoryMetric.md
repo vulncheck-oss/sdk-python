@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **cvss_v3_0** | [**AdvisoryMCvssV30**](AdvisoryMCvssV30.md) |  | [optional] 
 **cvss_v3_1** | [**AdvisoryMCvssV31**](AdvisoryMCvssV31.md) |  | [optional] 
 **cvss_v4_0** | [**AdvisoryMCvssV40**](AdvisoryMCvssV40.md) |  | [optional] 
+**format** | **str** |  | [optional] 
+**other** | [**AdvisoryMetricsOther**](AdvisoryMetricsOther.md) |  | [optional] 
 
 ## Example
 

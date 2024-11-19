@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **corrected_base_metric_v3** | [**ApiBaseMetricV3**](ApiBaseMetricV3.md) |  | [optional] 
 **epss** | [**ApiEPSS**](ApiEPSS.md) |  | [optional] 
 **metric_v40** | [**AdvisoryCVSSV40**](AdvisoryCVSSV40.md) |  | [optional] 
+**ssvc** | [**List[ApiSSVC]**](ApiSSVC.md) |  | [optional] 
 **temporal_metric_v2** | [**ApiTemporalMetricV2**](ApiTemporalMetricV2.md) |  | [optional] 
 **temporal_metric_v3** | [**ApiTemporalMetricV3**](ApiTemporalMetricV3.md) |  | [optional] 
 **temporal_v3_corrected** | [**ApiTemporalMetricV3**](ApiTemporalMetricV3.md) |  | [optional] 

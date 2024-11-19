@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.advisory_adp_container import AdvisoryADPContainer
 from vulncheck_sdk.models.advisory_m_cna import AdvisoryMCna
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +29,9 @@ class AdvisoryMContainers(BaseModel):
     """
     AdvisoryMContainers
     """ # noqa: E501
+    adp: Optional[List[AdvisoryADPContainer]] = None
     cna: Optional[AdvisoryMCna] = None
-    __properties: ClassVar[List[str]] = ["cna"]
+    __properties: ClassVar[List[str]] = ["adp", "cna"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,6 +72,13 @@ class AdvisoryMContainers(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in adp (list)
+        _items = []
+        if self.adp:
+            for _item_adp in self.adp:
+                if _item_adp:
+                    _items.append(_item_adp.to_dict())
+            _dict['adp'] = _items
         # override the default output from pydantic by calling `to_dict()` of cna
         if self.cna:
             _dict['cna'] = self.cna.to_dict()
@@ -85,6 +94,7 @@ class AdvisoryMContainers(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "adp": [AdvisoryADPContainer.from_dict(_item) for _item in obj["adp"]] if obj.get("adp") is not None else None,
             "cna": AdvisoryMCna.from_dict(obj["cna"]) if obj.get("cna") is not None else None
         })
         return _obj

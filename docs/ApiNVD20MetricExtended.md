@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **cvss_metric_v31** | [**List[ApiNVD20CvssMetricV3]**](ApiNVD20CvssMetricV3.md) |  | [optional] 
 **cvss_metric_v40** | [**List[ApiNVD20CvssMetricV40]**](ApiNVD20CvssMetricV40.md) |  | [optional] 
 **epss** | [**ApiEPSS**](ApiEPSS.md) |  | [optional] 
+**ssvc** | [**List[ApiSSVC]**](ApiSSVC.md) |  | [optional] 
 **temporal_cvssv2** | [**ApiNVD20TemporalCVSSV2**](ApiNVD20TemporalCVSSV2.md) |  | [optional] 
 **temporal_cvssv2_secondary** | [**List[ApiNVD20TemporalCVSSV2]**](ApiNVD20TemporalCVSSV2.md) |  | [optional] 
 **temporal_cvssv30** | [**ApiNVD20TemporalCVSSV3**](ApiNVD20TemporalCVSSV3.md) |  | [optional] 

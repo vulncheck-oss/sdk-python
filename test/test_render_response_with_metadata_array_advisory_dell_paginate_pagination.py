@@ -73,6 +73,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryDellPaginatePagination(unittest
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/dell.advisory.Dell(
+                        article_number = '', 
                         combined_product_list = '', 
                         cve = [
                             ''

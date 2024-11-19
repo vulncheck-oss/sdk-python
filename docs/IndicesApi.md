@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**index_acronis_get**](IndicesApi.md#index_acronis_get) | **GET** /index/acronis | Return vulnerability data stored in index \&quot;acronis\&quot;
 [**index_adobe_get**](IndicesApi.md#index_adobe_get) | **GET** /index/adobe | Return vulnerability data stored in index \&quot;adobe\&quot;
 [**index_advisories_get**](IndicesApi.md#index_advisories_get) | **GET** /index/advisories | Return vulnerability data stored in index \&quot;advisories\&quot;
+[**index_aix_get**](IndicesApi.md#index_aix_get) | **GET** /index/aix | Return vulnerability data stored in index \&quot;aix\&quot;
 [**index_aleph_research_get**](IndicesApi.md#index_aleph_research_get) | **GET** /index/aleph-research | Return vulnerability data stored in index \&quot;aleph-research\&quot;
 [**index_alma_get**](IndicesApi.md#index_alma_get) | **GET** /index/alma | Return vulnerability data stored in index \&quot;alma\&quot;
 [**index_alpine_get**](IndicesApi.md#index_alpine_get) | **GET** /index/alpine | Return vulnerability data stored in index \&quot;alpine\&quot;
@@ -133,6 +134,7 @@ Method | HTTP request | Description
 [**index_emerging_threats_snort_get**](IndicesApi.md#index_emerging_threats_snort_get) | **GET** /index/emerging-threats-snort | Return vulnerability data stored in index \&quot;emerging-threats-snort\&quot;
 [**index_emerson_get**](IndicesApi.md#index_emerson_get) | **GET** /index/emerson | Return vulnerability data stored in index \&quot;emerson\&quot;
 [**index_eol_get**](IndicesApi.md#index_eol_get) | **GET** /index/eol | Return vulnerability data stored in index \&quot;eol\&quot;
+[**index_eol_microsoft_get**](IndicesApi.md#index_eol_microsoft_get) | **GET** /index/eol-microsoft | Return vulnerability data stored in index \&quot;eol-microsoft\&quot;
 [**index_epss_get**](IndicesApi.md#index_epss_get) | **GET** /index/epss | Return vulnerability data stored in index \&quot;epss\&quot;
 [**index_exodus_intel_get**](IndicesApi.md#index_exodus_intel_get) | **GET** /index/exodus-intel | Return vulnerability data stored in index \&quot;exodus-intel\&quot;
 [**index_exploit_chains_get**](IndicesApi.md#index_exploit_chains_get) | **GET** /index/exploit-chains | Return vulnerability data stored in index \&quot;exploit-chains\&quot;
@@ -369,6 +371,7 @@ Method | HTTP request | Description
 [**index_vde_get**](IndicesApi.md#index_vde_get) | **GET** /index/vde | Return vulnerability data stored in index \&quot;vde\&quot;
 [**index_veeam_get**](IndicesApi.md#index_veeam_get) | **GET** /index/veeam | Return vulnerability data stored in index \&quot;veeam\&quot;
 [**index_veritas_get**](IndicesApi.md#index_veritas_get) | **GET** /index/veritas | Return vulnerability data stored in index \&quot;veritas\&quot;
+[**index_virtuozzo_get**](IndicesApi.md#index_virtuozzo_get) | **GET** /index/virtuozzo | Return vulnerability data stored in index \&quot;virtuozzo\&quot;
 [**index_vmware_get**](IndicesApi.md#index_vmware_get) | **GET** /index/vmware | Return vulnerability data stored in index \&quot;vmware\&quot;
 [**index_voidsec_get**](IndicesApi.md#index_voidsec_get) | **GET** /index/voidsec | Return vulnerability data stored in index \&quot;voidsec\&quot;
 [**index_vulncheck_config_get**](IndicesApi.md#index_vulncheck_config_get) | **GET** /index/vulncheck-config | Return vulnerability data stored in index \&quot;vulncheck-config\&quot;
@@ -1014,6 +1017,96 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RenderResponseWithMetadataArrayAdvisoryAdvisoryRecordPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryAdvisoryRecordPaginatePagination.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **index_aix_get**
+> RenderResponseWithMetadataArrayAdvisoryAIXPaginatePagination index_aix_get(body, limit=limit, page=page, cursor=cursor, start_cursor=start_cursor)
+
+Return vulnerability data stored in index \"aix\"
+
+### Overview This endpoint allows you to retrieve a paginated list of all documents from the aix index. \\ By default, a maximum of 100 documents are shown per page.  **Index Description:** AIX Security Advisories  ### Paging Over Large Data (cursor) In order to allow users to iterate over large index datasets, this endpoint provides a server-side \"cursor\" mechanism. To use the cursor, first call `GET /index/aix?start_cursor`, the response will have a `next_cursor` id that clients will need to pass as a query parameter to the next request like `GET /index/aix?cursor=<next_cursor_id>` 
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.params_idx_req_params import ParamsIdxReqParams
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_aix_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAIXPaginatePagination
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.IndicesApi(api_client)
+    body = vulncheck_sdk.ParamsIdxReqParams() # ParamsIdxReqParams | parameters to constrain the vulnerability search
+    limit = 56 # int | set the page number of the response (optional)
+    page = 56 # int | limit the number of findings in the response (optional)
+    cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
+    start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
+
+    try:
+        # Return vulnerability data stored in index \"aix\"
+        api_response = api_instance.index_aix_get(body, limit=limit, page=page, cursor=cursor, start_cursor=start_cursor)
+        print("The response of IndicesApi->index_aix_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IndicesApi->index_aix_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ParamsIdxReqParams**](ParamsIdxReqParams.md)| parameters to constrain the vulnerability search | 
+ **limit** | **int**| set the page number of the response | [optional] 
+ **page** | **int**| limit the number of findings in the response | [optional] 
+ **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
+ **start_cursor** | **str**| request server-side paging | [optional] 
+
+### Return type
+
+[**RenderResponseWithMetadataArrayAdvisoryAIXPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryAIXPaginatePagination.md)
 
 ### Authorization
 
@@ -11994,6 +12087,96 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RenderResponseWithMetadataArrayAdvisoryEOLReleaseDataPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryEOLReleaseDataPaginatePagination.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **index_eol_microsoft_get**
+> RenderResponseWithMetadataArrayAdvisoryEOLMicrosoftPaginatePagination index_eol_microsoft_get(body, limit=limit, page=page, cursor=cursor, start_cursor=start_cursor)
+
+Return vulnerability data stored in index \"eol-microsoft\"
+
+### Overview This endpoint allows you to retrieve a paginated list of all documents from the eol-microsoft index. \\ By default, a maximum of 100 documents are shown per page.  **Index Description:** Microsoft EOL  ### Paging Over Large Data (cursor) In order to allow users to iterate over large index datasets, this endpoint provides a server-side \"cursor\" mechanism. To use the cursor, first call `GET /index/eol-microsoft?start_cursor`, the response will have a `next_cursor` id that clients will need to pass as a query parameter to the next request like `GET /index/eol-microsoft?cursor=<next_cursor_id>` 
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.params_idx_req_params import ParamsIdxReqParams
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_eol_microsoft_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryEOLMicrosoftPaginatePagination
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.IndicesApi(api_client)
+    body = vulncheck_sdk.ParamsIdxReqParams() # ParamsIdxReqParams | parameters to constrain the vulnerability search
+    limit = 56 # int | set the page number of the response (optional)
+    page = 56 # int | limit the number of findings in the response (optional)
+    cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
+    start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
+
+    try:
+        # Return vulnerability data stored in index \"eol-microsoft\"
+        api_response = api_instance.index_eol_microsoft_get(body, limit=limit, page=page, cursor=cursor, start_cursor=start_cursor)
+        print("The response of IndicesApi->index_eol_microsoft_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IndicesApi->index_eol_microsoft_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ParamsIdxReqParams**](ParamsIdxReqParams.md)| parameters to constrain the vulnerability search | 
+ **limit** | **int**| set the page number of the response | [optional] 
+ **page** | **int**| limit the number of findings in the response | [optional] 
+ **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
+ **start_cursor** | **str**| request server-side paging | [optional] 
+
+### Return type
+
+[**RenderResponseWithMetadataArrayAdvisoryEOLMicrosoftPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryEOLMicrosoftPaginatePagination.md)
 
 ### Authorization
 
@@ -33234,6 +33417,96 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RenderResponseWithMetadataArrayAdvisoryVeritasPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryVeritasPaginatePagination.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **index_virtuozzo_get**
+> RenderResponseWithMetadataArrayAdvisoryVirtuozzoPaginatePagination index_virtuozzo_get(body, limit=limit, page=page, cursor=cursor, start_cursor=start_cursor)
+
+Return vulnerability data stored in index \"virtuozzo\"
+
+### Overview This endpoint allows you to retrieve a paginated list of all documents from the virtuozzo index. \\ By default, a maximum of 100 documents are shown per page.  **Index Description:** Virtuozzo Security Advisories  ### Paging Over Large Data (cursor) In order to allow users to iterate over large index datasets, this endpoint provides a server-side \"cursor\" mechanism. To use the cursor, first call `GET /index/virtuozzo?start_cursor`, the response will have a `next_cursor` id that clients will need to pass as a query parameter to the next request like `GET /index/virtuozzo?cursor=<next_cursor_id>` 
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.params_idx_req_params import ParamsIdxReqParams
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_virtuozzo_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryVirtuozzoPaginatePagination
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.IndicesApi(api_client)
+    body = vulncheck_sdk.ParamsIdxReqParams() # ParamsIdxReqParams | parameters to constrain the vulnerability search
+    limit = 56 # int | set the page number of the response (optional)
+    page = 56 # int | limit the number of findings in the response (optional)
+    cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
+    start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
+
+    try:
+        # Return vulnerability data stored in index \"virtuozzo\"
+        api_response = api_instance.index_virtuozzo_get(body, limit=limit, page=page, cursor=cursor, start_cursor=start_cursor)
+        print("The response of IndicesApi->index_virtuozzo_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IndicesApi->index_virtuozzo_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ParamsIdxReqParams**](ParamsIdxReqParams.md)| parameters to constrain the vulnerability search | 
+ **limit** | **int**| set the page number of the response | [optional] 
+ **page** | **int**| limit the number of findings in the response | [optional] 
+ **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
+ **start_cursor** | **str**| request server-side paging | [optional] 
+
+### Return type
+
+[**RenderResponseWithMetadataArrayAdvisoryVirtuozzoPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryVirtuozzoPaginatePagination.md)
 
 ### Authorization
 

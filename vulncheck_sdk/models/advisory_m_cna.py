@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_credit import AdvisoryCredit
+from vulncheck_sdk.models.advisory_impact import AdvisoryImpact
 from vulncheck_sdk.models.advisory_m_affected import AdvisoryMAffected
 from vulncheck_sdk.models.advisory_m_descriptions import AdvisoryMDescriptions
 from vulncheck_sdk.models.advisory_m_problem_types import AdvisoryMProblemTypes
@@ -38,13 +39,15 @@ class AdvisoryMCna(BaseModel):
     affected: Optional[List[AdvisoryMAffected]] = None
     credits: Optional[List[AdvisoryCredit]] = None
     descriptions: Optional[List[AdvisoryMDescriptions]] = None
+    impacts: Optional[List[AdvisoryImpact]] = None
     metrics: Optional[List[AdvisoryMetric]] = None
     problem_types: Optional[List[AdvisoryMProblemTypes]] = Field(default=None, alias="problemTypes")
     provider_metadata: Optional[AdvisoryMProviderMetadata] = Field(default=None, alias="providerMetadata")
     references: Optional[List[AdvisoryMReference]] = None
+    tags: Optional[List[StrictStr]] = None
     timeline: Optional[List[AdvisoryTimeline]] = None
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected", "credits", "descriptions", "metrics", "problemTypes", "providerMetadata", "references", "timeline", "title"]
+    __properties: ClassVar[List[str]] = ["affected", "credits", "descriptions", "impacts", "metrics", "problemTypes", "providerMetadata", "references", "tags", "timeline", "title"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,6 +109,13 @@ class AdvisoryMCna(BaseModel):
                 if _item_descriptions:
                     _items.append(_item_descriptions.to_dict())
             _dict['descriptions'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in impacts (list)
+        _items = []
+        if self.impacts:
+            for _item_impacts in self.impacts:
+                if _item_impacts:
+                    _items.append(_item_impacts.to_dict())
+            _dict['impacts'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in metrics (list)
         _items = []
         if self.metrics:
@@ -152,10 +162,12 @@ class AdvisoryMCna(BaseModel):
             "affected": [AdvisoryMAffected.from_dict(_item) for _item in obj["affected"]] if obj.get("affected") is not None else None,
             "credits": [AdvisoryCredit.from_dict(_item) for _item in obj["credits"]] if obj.get("credits") is not None else None,
             "descriptions": [AdvisoryMDescriptions.from_dict(_item) for _item in obj["descriptions"]] if obj.get("descriptions") is not None else None,
+            "impacts": [AdvisoryImpact.from_dict(_item) for _item in obj["impacts"]] if obj.get("impacts") is not None else None,
             "metrics": [AdvisoryMetric.from_dict(_item) for _item in obj["metrics"]] if obj.get("metrics") is not None else None,
             "problemTypes": [AdvisoryMProblemTypes.from_dict(_item) for _item in obj["problemTypes"]] if obj.get("problemTypes") is not None else None,
             "providerMetadata": AdvisoryMProviderMetadata.from_dict(obj["providerMetadata"]) if obj.get("providerMetadata") is not None else None,
             "references": [AdvisoryMReference.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
+            "tags": obj.get("tags"),
             "timeline": [AdvisoryTimeline.from_dict(_item) for _item in obj["timeline"]] if obj.get("timeline") is not None else None,
             "title": obj.get("title")
         })

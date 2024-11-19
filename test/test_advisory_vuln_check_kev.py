@@ -41,6 +41,9 @@ class TestAdvisoryVulnCheckKEV(unittest.TestCase):
                 cve = [
                     ''
                     ],
+                cwes = [
+                    ''
+                    ],
                 date_added = '',
                 due_date = '',
                 known_ransomware_campaign_use = '',

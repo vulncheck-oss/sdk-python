@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **mitre_attack_group** | [**AdvisoryMITREAttackGroupNoID**](AdvisoryMITREAttackGroupNoID.md) |  | [optional] 
 **mitre_id** | **str** |  | [optional] 
 **threat_actor_name** | **str** |  | [optional] 
+**tools** | [**List[AdvisoryTool]**](AdvisoryTool.md) |  | [optional] 
 **vendor_names_for_threat_actors** | [**List[AdvisoryVendorNameForThreatActor]**](AdvisoryVendorNameForThreatActor.md) |  | [optional] 
 
 ## Example

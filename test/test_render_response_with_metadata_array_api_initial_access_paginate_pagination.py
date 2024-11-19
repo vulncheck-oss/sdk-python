@@ -88,6 +88,9 @@ class TestRenderResponseWithMetadataArrayApiInitialAccessPaginatePagination(unit
                                 clone_sshurl = '', 
                                 date_added = '', 
                                 exploit = True, 
+                                fofa_queries = [
+                                    ''
+                                    ], 
                                 greynoise_queries = [
                                     ''
                                     ], 
@@ -109,7 +112,10 @@ class TestRenderResponseWithMetadataArrayApiInitialAccessPaginatePagination(unit
                                 vendor = '', 
                                 version_scanner = True, 
                                 yara = True, 
-                                zeroday = True, )
+                                zeroday = True, 
+                                zoom_eye_queries = [
+                                    ''
+                                    ], )
                             ], 
                         cve = '', 
                         in_kev = True, 

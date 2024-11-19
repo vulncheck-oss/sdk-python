@@ -42,73 +42,90 @@ class TestAdvisoryVulnCheckCVEListV5(unittest.TestCase):
                 date_added = '',
                 mitre_ref = vulncheck_sdk.models.advisory/mitre_cve_list_v5_ref.advisory.MitreCVEListV5Ref(
                     containers = vulncheck_sdk.models.advisory/m_containers.advisory.MContainers(
+                        adp = [
+                            vulncheck_sdk.models.advisory/adp_container.advisory.ADPContainer(
+                                affected = [
+                                    vulncheck_sdk.models.advisory/m_affected.advisory.MAffected(
+                                        cpes = [
+                                            ''
+                                            ], 
+                                        platforms = [
+                                            ''
+                                            ], 
+                                        product = '', 
+                                        vendor = '', 
+                                        versions = [
+                                            vulncheck_sdk.models.advisory/m_version.advisory.MVersion(
+                                                less_than = '', 
+                                                less_than_or_equal = '', 
+                                                status = '', 
+                                                version = '', 
+                                                version_type = '', )
+                                            ], )
+                                    ], 
+                                date_public = '', 
+                                descriptions = [
+                                    vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
+                                        lang = '', 
+                                        value = '', )
+                                    ], 
+                                impacts = [
+                                    vulncheck_sdk.models.advisory/impact.advisory.Impact(
+                                        capec_id = '', )
+                                    ], 
+                                metrics = [
+                                    vulncheck_sdk.models.advisory/metric.advisory.Metric(
+                                        cvss_v2_0 = vulncheck_sdk.models.advisory/m_cvss_v20.advisory.MCvssV20(
+                                            base_score = 1.337, 
+                                            vector_string = '', 
+                                            version = '', ), 
+                                        cvss_v3_0 = vulncheck_sdk.models.advisory/m_cvss_v30.advisory.MCvssV30(
+                                            base_score = 1.337, 
+                                            base_severity = '', 
+                                            vector_string = '', 
+                                            version = '', ), 
+                                        cvss_v3_1 = vulncheck_sdk.models.advisory/m_cvss_v31.advisory.MCvssV31(
+                                            base_score = 1.337, 
+                                            base_severity = '', 
+                                            vector_string = '', 
+                                            version = '', ), 
+                                        cvss_v4_0 = vulncheck_sdk.models.advisory/m_cvss_v40.advisory.MCvssV40(
+                                            base_score = 1.337, 
+                                            vector_string = '', 
+                                            version = '', ), 
+                                        format = '', 
+                                        other = vulncheck_sdk.models.advisory/metrics_other.advisory.MetricsOther(
+                                            content = '', 
+                                            type = '', ), )
+                                    ], 
+                                problem_types = [
+                                    vulncheck_sdk.models.advisory/m_problem_types.advisory.MProblemTypes()
+                                    ], 
+                                provider_metadata = vulncheck_sdk.models.provider_metadata.providerMetadata(), 
+                                references = [
+                                    vulncheck_sdk.models.advisory/m_reference.advisory.MReference(
+                                        name = '', 
+                                        tags = [
+                                            ''
+                                            ], 
+                                        url = '', )
+                                    ], 
+                                tags = [
+                                    ''
+                                    ], 
+                                title = '', )
+                            ], 
                         cna = vulncheck_sdk.models.advisory/m_cna.advisory.MCna(
-                            affected = [
-                                vulncheck_sdk.models.advisory/m_affected.advisory.MAffected(
-                                    cpes = [
-                                        ''
-                                        ], 
-                                    platforms = [
-                                        ''
-                                        ], 
-                                    product = '', 
-                                    vendor = '', 
-                                    versions = [
-                                        vulncheck_sdk.models.advisory/m_version.advisory.MVersion(
-                                            less_than = '', 
-                                            less_than_or_equal = '', 
-                                            status = '', 
-                                            version = '', 
-                                            version_type = '', )
-                                        ], )
-                                ], 
                             credits = [
                                 vulncheck_sdk.models.advisory/credit.advisory.Credit(
                                     lang = '', 
                                     type = '', 
                                     value = '', )
                                 ], 
-                            descriptions = [
-                                vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
-                                    lang = '', 
-                                    value = '', )
-                                ], 
-                            metrics = [
-                                vulncheck_sdk.models.advisory/metric.advisory.Metric(
-                                    cvss_v2_0 = vulncheck_sdk.models.advisory/m_cvss_v20.advisory.MCvssV20(
-                                        base_score = 1.337, 
-                                        vector_string = '', 
-                                        version = '', ), 
-                                    cvss_v3_0 = vulncheck_sdk.models.advisory/m_cvss_v30.advisory.MCvssV30(
-                                        base_score = 1.337, 
-                                        base_severity = '', 
-                                        vector_string = '', 
-                                        version = '', ), 
-                                    cvss_v3_1 = vulncheck_sdk.models.advisory/m_cvss_v31.advisory.MCvssV31(
-                                        base_score = 1.337, 
-                                        base_severity = '', 
-                                        vector_string = '', 
-                                        version = '', ), 
-                                    cvss_v4_0 = vulncheck_sdk.models.advisory/m_cvss_v40.advisory.MCvssV40(
-                                        base_score = 1.337, 
-                                        vector_string = '', 
-                                        version = '', ), )
-                                ], 
-                            problem_types = [
-                                vulncheck_sdk.models.advisory/m_problem_types.advisory.MProblemTypes()
-                                ], 
                             provider_metadata = vulncheck_sdk.models.advisory/m_provider_metadata.advisory.MProviderMetadata(
                                 date_updated = '', 
                                 org_id = '', 
                                 short_name = '', ), 
-                            references = [
-                                vulncheck_sdk.models.advisory/m_reference.advisory.MReference(
-                                    name = '', 
-                                    tags = [
-                                        ''
-                                        ], 
-                                    url = '', )
-                                ], 
                             timeline = [
                                 vulncheck_sdk.models.advisory/timeline.advisory.Timeline(
                                     lang = '', 

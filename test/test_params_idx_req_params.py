@@ -45,6 +45,7 @@ class TestParamsIdxReqParams(unittest.TestCase):
                 cve = '',
                 hostname = '',
                 iava = '',
+                ilvn = '',
                 jvndb = '',
                 limit = '',
                 matches = '',

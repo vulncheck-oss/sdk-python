@@ -36,6 +36,7 @@ class TestAdvisoryDell(unittest.TestCase):
         model = AdvisoryDell()
         if include_optional:
             return AdvisoryDell(
+                article_number = '',
                 combined_product_list = '',
                 cve = [
                     ''

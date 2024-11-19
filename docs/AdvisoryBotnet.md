@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **cve_references** | [**List[AdvisoryCVEReference]**](AdvisoryCVEReference.md) |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **malpedia_url** | **str** |  | [optional] 
+**tools** | [**List[AdvisoryTool]**](AdvisoryTool.md) |  | [optional] 
 
 ## Example
 

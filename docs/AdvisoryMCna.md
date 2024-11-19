@@ -8,10 +8,12 @@ Name | Type | Description | Notes
 **affected** | [**List[AdvisoryMAffected]**](AdvisoryMAffected.md) |  | [optional] 
 **credits** | [**List[AdvisoryCredit]**](AdvisoryCredit.md) |  | [optional] 
 **descriptions** | [**List[AdvisoryMDescriptions]**](AdvisoryMDescriptions.md) |  | [optional] 
+**impacts** | [**List[AdvisoryImpact]**](AdvisoryImpact.md) |  | [optional] 
 **metrics** | [**List[AdvisoryMetric]**](AdvisoryMetric.md) |  | [optional] 
 **problem_types** | [**List[AdvisoryMProblemTypes]**](AdvisoryMProblemTypes.md) |  | [optional] 
 **provider_metadata** | [**AdvisoryMProviderMetadata**](AdvisoryMProviderMetadata.md) |  | [optional] 
 **references** | [**List[AdvisoryMReference]**](AdvisoryMReference.md) |  | [optional] 
+**tags** | **List[str]** |  | [optional] 
 **timeline** | [**List[AdvisoryTimeline]**](AdvisoryTimeline.md) |  | [optional] 
 **title** | **str** |  | [optional] 
 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,12 +27,16 @@ class AdvisoryHitachiEnergy(BaseModel):
     """
     AdvisoryHitachiEnergy
     """ # noqa: E501
+    advisory_id: Optional[StrictStr] = None
     csaf_url: Optional[StrictStr] = None
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
+    exploited: Optional[StrictBool] = None
+    products: Optional[List[StrictStr]] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["csaf_url", "cve", "date_added", "title", "url"]
+    __properties: ClassVar[List[str]] = ["advisory_id", "csaf_url", "cve", "date_added", "exploited", "products", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,10 +89,14 @@ class AdvisoryHitachiEnergy(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "advisory_id": obj.get("advisory_id"),
             "csaf_url": obj.get("csaf_url"),
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
+            "exploited": obj.get("exploited"),
+            "products": obj.get("products"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj
