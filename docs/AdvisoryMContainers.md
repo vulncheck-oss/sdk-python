@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**adp** | [**List[AdvisoryADPContainer]**](AdvisoryADPContainer.md) |  | [optional] 
 **cna** | [**AdvisoryMCna**](AdvisoryMCna.md) |  | [optional] 
 
 ## Example

@@ -95,6 +95,15 @@ class TestAdvisoryThreatActorWithExternalObjects(unittest.TestCase):
                         ], ),
                 mitre_id = '',
                 threat_actor_name = '',
+                tools = [
+                    vulncheck_sdk.models.advisory/tool.advisory.Tool(
+                        name = '', 
+                        references = [
+                            vulncheck_sdk.models.advisory/tool_ref.advisory.ToolRef(
+                                date_added = '', 
+                                url = '', )
+                            ], )
+                    ],
                 vendor_names_for_threat_actors = [
                     vulncheck_sdk.models.advisory/vendor_name_for_threat_actor.advisory.VendorNameForThreatActor(
                         threat_actor_name = '', 

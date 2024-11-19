@@ -66,6 +66,15 @@ class TestAdvisoryMCna(unittest.TestCase):
                         lang = '', 
                         value = '', )
                     ],
+                impacts = [
+                    vulncheck_sdk.models.advisory/impact.advisory.Impact(
+                        capec_id = '', 
+                        descriptions = [
+                            vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
+                                lang = '', 
+                                value = '', )
+                            ], )
+                    ],
                 metrics = [
                     vulncheck_sdk.models.advisory/metric.advisory.Metric(
                         cvss_v2_0 = vulncheck_sdk.models.advisory/m_cvss_v20.advisory.MCvssV20(
@@ -85,7 +94,11 @@ class TestAdvisoryMCna(unittest.TestCase):
                         cvss_v4_0 = vulncheck_sdk.models.advisory/m_cvss_v40.advisory.MCvssV40(
                             base_score = 1.337, 
                             vector_string = '', 
-                            version = '', ), )
+                            version = '', ), 
+                        format = '', 
+                        other = vulncheck_sdk.models.advisory/metrics_other.advisory.MetricsOther(
+                            content = '', 
+                            type = '', ), )
                     ],
                 problem_types = [
                     vulncheck_sdk.models.advisory/m_problem_types.advisory.MProblemTypes(
@@ -108,6 +121,9 @@ class TestAdvisoryMCna(unittest.TestCase):
                             ''
                             ], 
                         url = '', )
+                    ],
+                tags = [
+                    ''
                     ],
                 timeline = [
                     vulncheck_sdk.models.advisory/timeline.advisory.Timeline(

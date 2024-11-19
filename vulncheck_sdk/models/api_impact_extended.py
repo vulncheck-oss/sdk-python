@@ -25,6 +25,7 @@ from vulncheck_sdk.models.advisory_cvssv40_threat import AdvisoryCVSSV40Threat
 from vulncheck_sdk.models.api_base_metric_v2 import ApiBaseMetricV2
 from vulncheck_sdk.models.api_base_metric_v3 import ApiBaseMetricV3
 from vulncheck_sdk.models.api_epss import ApiEPSS
+from vulncheck_sdk.models.api_ssvc import ApiSSVC
 from vulncheck_sdk.models.api_temporal_metric_v2 import ApiTemporalMetricV2
 from vulncheck_sdk.models.api_temporal_metric_v3 import ApiTemporalMetricV3
 from typing import Optional, Set
@@ -39,11 +40,12 @@ class ApiImpactExtended(BaseModel):
     corrected_base_metric_v3: Optional[ApiBaseMetricV3] = Field(default=None, alias="correctedBaseMetricV3")
     epss: Optional[ApiEPSS] = None
     metric_v40: Optional[AdvisoryCVSSV40] = Field(default=None, alias="metricV40")
+    ssvc: Optional[List[ApiSSVC]] = None
     temporal_metric_v2: Optional[ApiTemporalMetricV2] = Field(default=None, alias="temporalMetricV2")
     temporal_metric_v3: Optional[ApiTemporalMetricV3] = Field(default=None, alias="temporalMetricV3")
     temporal_v3_corrected: Optional[ApiTemporalMetricV3] = Field(default=None, alias="temporalV3Corrected")
     threat_metric_v40: Optional[AdvisoryCVSSV40Threat] = Field(default=None, alias="threatMetricV40")
-    __properties: ClassVar[List[str]] = ["baseMetricV2", "baseMetricV3", "correctedBaseMetricV3", "epss", "metricV40", "temporalMetricV2", "temporalMetricV3", "temporalV3Corrected", "threatMetricV40"]
+    __properties: ClassVar[List[str]] = ["baseMetricV2", "baseMetricV3", "correctedBaseMetricV3", "epss", "metricV40", "ssvc", "temporalMetricV2", "temporalMetricV3", "temporalV3Corrected", "threatMetricV40"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,6 +101,13 @@ class ApiImpactExtended(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of metric_v40
         if self.metric_v40:
             _dict['metricV40'] = self.metric_v40.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in ssvc (list)
+        _items = []
+        if self.ssvc:
+            for _item_ssvc in self.ssvc:
+                if _item_ssvc:
+                    _items.append(_item_ssvc.to_dict())
+            _dict['ssvc'] = _items
         # override the default output from pydantic by calling `to_dict()` of temporal_metric_v2
         if self.temporal_metric_v2:
             _dict['temporalMetricV2'] = self.temporal_metric_v2.to_dict()
@@ -128,6 +137,7 @@ class ApiImpactExtended(BaseModel):
             "correctedBaseMetricV3": ApiBaseMetricV3.from_dict(obj["correctedBaseMetricV3"]) if obj.get("correctedBaseMetricV3") is not None else None,
             "epss": ApiEPSS.from_dict(obj["epss"]) if obj.get("epss") is not None else None,
             "metricV40": AdvisoryCVSSV40.from_dict(obj["metricV40"]) if obj.get("metricV40") is not None else None,
+            "ssvc": [ApiSSVC.from_dict(_item) for _item in obj["ssvc"]] if obj.get("ssvc") is not None else None,
             "temporalMetricV2": ApiTemporalMetricV2.from_dict(obj["temporalMetricV2"]) if obj.get("temporalMetricV2") is not None else None,
             "temporalMetricV3": ApiTemporalMetricV3.from_dict(obj["temporalMetricV3"]) if obj.get("temporalMetricV3") is not None else None,
             "temporalV3Corrected": ApiTemporalMetricV3.from_dict(obj["temporalV3Corrected"]) if obj.get("temporalV3Corrected") is not None else None,

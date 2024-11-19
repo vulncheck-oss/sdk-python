@@ -96,6 +96,10 @@ class TestAdvisoryVulnrichment(unittest.TestCase):
                                     lang = '', 
                                     value = '', )
                                 ], 
+                            impacts = [
+                                vulncheck_sdk.models.advisory/impact.advisory.Impact(
+                                    capec_id = '', )
+                                ], 
                             problem_types = [
                                 vulncheck_sdk.models.advisory/m_problem_types.advisory.MProblemTypes()
                                 ], 
@@ -106,6 +110,9 @@ class TestAdvisoryVulnrichment(unittest.TestCase):
                                         ''
                                         ], 
                                     url = '', )
+                                ], 
+                            tags = [
+                                ''
                                 ], 
                             timeline = [
                                 vulncheck_sdk.models.advisory/timeline.advisory.Timeline(

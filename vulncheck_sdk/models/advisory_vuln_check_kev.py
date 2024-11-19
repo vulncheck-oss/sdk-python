@@ -32,6 +32,7 @@ class AdvisoryVulnCheckKEV(BaseModel):
     timestamp: Optional[StrictStr] = Field(default=None, alias="_timestamp")
     cisa_date_added: Optional[StrictStr] = None
     cve: Optional[List[StrictStr]] = None
+    cwes: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     due_date: Optional[StrictStr] = Field(default=None, alias="dueDate")
     known_ransomware_campaign_use: Optional[StrictStr] = Field(default=None, alias="knownRansomwareCampaignUse")
@@ -42,7 +43,7 @@ class AdvisoryVulnCheckKEV(BaseModel):
     vulncheck_reported_exploitation: Optional[List[AdvisoryReportedExploit]] = None
     vulncheck_xdb: Optional[List[AdvisoryXDB]] = None
     vulnerability_name: Optional[StrictStr] = Field(default=None, alias="vulnerabilityName")
-    __properties: ClassVar[List[str]] = ["_timestamp", "cisa_date_added", "cve", "date_added", "dueDate", "knownRansomwareCampaignUse", "product", "required_action", "shortDescription", "vendorProject", "vulncheck_reported_exploitation", "vulncheck_xdb", "vulnerabilityName"]
+    __properties: ClassVar[List[str]] = ["_timestamp", "cisa_date_added", "cve", "cwes", "date_added", "dueDate", "knownRansomwareCampaignUse", "product", "required_action", "shortDescription", "vendorProject", "vulncheck_reported_exploitation", "vulncheck_xdb", "vulnerabilityName"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -112,6 +113,7 @@ class AdvisoryVulnCheckKEV(BaseModel):
             "_timestamp": obj.get("_timestamp"),
             "cisa_date_added": obj.get("cisa_date_added"),
             "cve": obj.get("cve"),
+            "cwes": obj.get("cwes"),
             "date_added": obj.get("date_added"),
             "dueDate": obj.get("dueDate"),
             "knownRansomwareCampaignUse": obj.get("knownRansomwareCampaignUse"),

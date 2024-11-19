@@ -27,6 +27,7 @@ from vulncheck_sdk.models.api_nvd20_cvss_metric_v40 import ApiNVD20CvssMetricV40
 from vulncheck_sdk.models.api_nvd20_temporal_cvssv2 import ApiNVD20TemporalCVSSV2
 from vulncheck_sdk.models.api_nvd20_temporal_cvssv3 import ApiNVD20TemporalCVSSV3
 from vulncheck_sdk.models.api_nvd20_threat_cvssv40 import ApiNVD20ThreatCVSSV40
+from vulncheck_sdk.models.api_ssvc import ApiSSVC
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,6 +40,7 @@ class ApiNVD20MetricExtended(BaseModel):
     cvss_metric_v31: Optional[List[ApiNVD20CvssMetricV3]] = Field(default=None, alias="cvssMetricV31")
     cvss_metric_v40: Optional[List[ApiNVD20CvssMetricV40]] = Field(default=None, alias="cvssMetricV40")
     epss: Optional[ApiEPSS] = None
+    ssvc: Optional[List[ApiSSVC]] = None
     temporal_cvssv2: Optional[ApiNVD20TemporalCVSSV2] = Field(default=None, alias="temporalCVSSV2")
     temporal_cvssv2_secondary: Optional[List[ApiNVD20TemporalCVSSV2]] = Field(default=None, alias="temporalCVSSV2Secondary")
     temporal_cvssv30: Optional[ApiNVD20TemporalCVSSV3] = Field(default=None, alias="temporalCVSSV30")
@@ -47,7 +49,7 @@ class ApiNVD20MetricExtended(BaseModel):
     temporal_cvssv31_secondary: Optional[List[ApiNVD20TemporalCVSSV3]] = Field(default=None, alias="temporalCVSSV31Secondary")
     threat_cvssv40: Optional[ApiNVD20ThreatCVSSV40] = Field(default=None, alias="threatCVSSV40")
     threat_cvssv40_secondary: Optional[List[ApiNVD20ThreatCVSSV40]] = Field(default=None, alias="threatCVSSV40Secondary")
-    __properties: ClassVar[List[str]] = ["cvssMetricV2", "cvssMetricV30", "cvssMetricV31", "cvssMetricV40", "epss", "temporalCVSSV2", "temporalCVSSV2Secondary", "temporalCVSSV30", "temporalCVSSV30Secondary", "temporalCVSSV31", "temporalCVSSV31Secondary", "threatCVSSV40", "threatCVSSV40Secondary"]
+    __properties: ClassVar[List[str]] = ["cvssMetricV2", "cvssMetricV30", "cvssMetricV31", "cvssMetricV40", "epss", "ssvc", "temporalCVSSV2", "temporalCVSSV2Secondary", "temporalCVSSV30", "temporalCVSSV30Secondary", "temporalCVSSV31", "temporalCVSSV31Secondary", "threatCVSSV40", "threatCVSSV40Secondary"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -119,6 +121,13 @@ class ApiNVD20MetricExtended(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of epss
         if self.epss:
             _dict['epss'] = self.epss.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in ssvc (list)
+        _items = []
+        if self.ssvc:
+            for _item_ssvc in self.ssvc:
+                if _item_ssvc:
+                    _items.append(_item_ssvc.to_dict())
+            _dict['ssvc'] = _items
         # override the default output from pydantic by calling `to_dict()` of temporal_cvssv2
         if self.temporal_cvssv2:
             _dict['temporalCVSSV2'] = self.temporal_cvssv2.to_dict()
@@ -176,6 +185,7 @@ class ApiNVD20MetricExtended(BaseModel):
             "cvssMetricV31": [ApiNVD20CvssMetricV3.from_dict(_item) for _item in obj["cvssMetricV31"]] if obj.get("cvssMetricV31") is not None else None,
             "cvssMetricV40": [ApiNVD20CvssMetricV40.from_dict(_item) for _item in obj["cvssMetricV40"]] if obj.get("cvssMetricV40") is not None else None,
             "epss": ApiEPSS.from_dict(obj["epss"]) if obj.get("epss") is not None else None,
+            "ssvc": [ApiSSVC.from_dict(_item) for _item in obj["ssvc"]] if obj.get("ssvc") is not None else None,
             "temporalCVSSV2": ApiNVD20TemporalCVSSV2.from_dict(obj["temporalCVSSV2"]) if obj.get("temporalCVSSV2") is not None else None,
             "temporalCVSSV2Secondary": [ApiNVD20TemporalCVSSV2.from_dict(_item) for _item in obj["temporalCVSSV2Secondary"]] if obj.get("temporalCVSSV2Secondary") is not None else None,
             "temporalCVSSV30": ApiNVD20TemporalCVSSV3.from_dict(obj["temporalCVSSV30"]) if obj.get("temporalCVSSV30") is not None else None,

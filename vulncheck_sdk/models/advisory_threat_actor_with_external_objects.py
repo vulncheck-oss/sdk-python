@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_cve_reference import AdvisoryCVEReference
 from vulncheck_sdk.models.advisory_misp_value_no_id import AdvisoryMISPValueNoID
 from vulncheck_sdk.models.advisory_mitre_attack_group_no_id import AdvisoryMITREAttackGroupNoID
+from vulncheck_sdk.models.advisory_tool import AdvisoryTool
 from vulncheck_sdk.models.advisory_vendor_name_for_threat_actor import AdvisoryVendorNameForThreatActor
 from typing import Optional, Set
 from typing_extensions import Self
@@ -39,8 +40,9 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
     mitre_attack_group: Optional[AdvisoryMITREAttackGroupNoID] = None
     mitre_id: Optional[StrictStr] = None
     threat_actor_name: Optional[StrictStr] = None
+    tools: Optional[List[AdvisoryTool]] = None
     vendor_names_for_threat_actors: Optional[List[AdvisoryVendorNameForThreatActor]] = None
-    __properties: ClassVar[List[str]] = ["cve_references", "date_added", "malpedia_url", "misp_id", "misp_threat_actor", "mitre_attack_group", "mitre_id", "threat_actor_name", "vendor_names_for_threat_actors"]
+    __properties: ClassVar[List[str]] = ["cve_references", "date_added", "malpedia_url", "misp_id", "misp_threat_actor", "mitre_attack_group", "mitre_id", "threat_actor_name", "tools", "vendor_names_for_threat_actors"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +96,13 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of mitre_attack_group
         if self.mitre_attack_group:
             _dict['mitre_attack_group'] = self.mitre_attack_group.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in tools (list)
+        _items = []
+        if self.tools:
+            for _item_tools in self.tools:
+                if _item_tools:
+                    _items.append(_item_tools.to_dict())
+            _dict['tools'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in vendor_names_for_threat_actors (list)
         _items = []
         if self.vendor_names_for_threat_actors:
@@ -121,6 +130,7 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
             "mitre_attack_group": AdvisoryMITREAttackGroupNoID.from_dict(obj["mitre_attack_group"]) if obj.get("mitre_attack_group") is not None else None,
             "mitre_id": obj.get("mitre_id"),
             "threat_actor_name": obj.get("threat_actor_name"),
+            "tools": [AdvisoryTool.from_dict(_item) for _item in obj["tools"]] if obj.get("tools") is not None else None,
             "vendor_names_for_threat_actors": [AdvisoryVendorNameForThreatActor.from_dict(_item) for _item in obj["vendor_names_for_threat_actors"]] if obj.get("vendor_names_for_threat_actors") is not None else None
         })
         return _obj

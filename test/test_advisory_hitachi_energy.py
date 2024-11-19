@@ -36,12 +36,18 @@ class TestAdvisoryHitachiEnergy(unittest.TestCase):
         model = AdvisoryHitachiEnergy()
         if include_optional:
             return AdvisoryHitachiEnergy(
+                advisory_id = '',
                 csaf_url = '',
                 cve = [
                     ''
                     ],
                 date_added = '',
+                exploited = True,
+                products = [
+                    ''
+                    ],
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

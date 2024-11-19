@@ -83,7 +83,16 @@ class TestRenderResponseWithMetadataArrayAdvisoryBotnetPaginatePagination(unitte
                                 url = '', )
                             ], 
                         date_added = '', 
-                        malpedia_url = '', )
+                        malpedia_url = '', 
+                        tools = [
+                            vulncheck_sdk.models.advisory/tool.advisory.Tool(
+                                name = '', 
+                                references = [
+                                    vulncheck_sdk.models.advisory/tool_ref.advisory.ToolRef(
+                                        date_added = '', 
+                                        url = '', )
+                                    ], )
+                            ], )
                     ]
             )
         else:

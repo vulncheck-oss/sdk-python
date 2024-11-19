@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **clone_sshurl** | **str** | CloneSSHURL is the git URL to clone the artifact with. | [optional] 
 **date_added** | **str** | DateAdded is when this artifact entry was first added to the InitialAccess data set. | [optional] 
 **exploit** | **bool** | Exploit indicates whether or not an exploit is available in this artifact. | [optional] 
+**fofa_queries** | **List[str]** | FOFAQueries are raw queries for examining potential Internet-exposed devices &amp; applications with FOFA. | [optional] 
 **greynoise_queries** | **List[str]** | GreynoiseQueries are queries for finding the vulnerability via honeypot data. | [optional] 
 **nmap_script** | **bool** | NmapScript indicates whether or not an nmap script for scanning environment exists in this artifact. | [optional] 
 **pcap** | **bool** | PCAP indicates whether of not a package capture of the exploit PoC exploiting a vulnerable system exists in this artifact. | [optional] 
@@ -26,6 +27,7 @@ Name | Type | Description | Notes
 **version_scanner** | **bool** | VersionScanner indicates whether or not the exploit PoC can determine if target system is vulnerable without sending exploit payload in this artifact. | [optional] 
 **yara** | **bool** | YARA indicates whether or not a YARA rule designed to detect the exploit on an endpoint exists in this artifact. | [optional] 
 **zeroday** | **bool** | Zeroday indicates whether or not it is a VulnCheck zeroday. | [optional] 
+**zoom_eye_queries** | **List[str]** | ZoomEyeQueries are raw queries for examining potential Internet-exposed devices &amp; applications with ZoomEye. | [optional] 
 
 ## Example
 

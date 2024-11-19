@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **timestamp** | **str** |  | [optional] 
 **cisa_date_added** | **str** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
+**cwes** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **due_date** | **str** |  | [optional] 
 **known_ransomware_campaign_use** | **str** |  | [optional] 

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **cve** | **str** | Specify one or more CVEs (comma delimited) to search with. | [optional] 
 **hostname** | **str** | IpIntel Only: Specify a string to search in the list of hostnames | [optional] 
 **iava** | **str** | Specify an IAVA to search with | [optional] 
+**ilvn** | **str** | Specify a ILVN ID to search with | [optional] 
 **jvndb** | **str** | Specify a JVNDB ID to search with | [optional] 
 **limit** | **str** | Limit the number of documents returned | [optional] 
 **matches** | **str** | IpIntel Only: Specify a string to search in the matches field | [optional] 

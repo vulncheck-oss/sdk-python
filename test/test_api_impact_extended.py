@@ -128,6 +128,13 @@ class TestApiImpactExtended(unittest.TestCase):
                     vulnerable_system_availability = '', 
                     vulnerable_system_confidentiality = '', 
                     vulnerable_system_integrity = '', ),
+                ssvc = [
+                    vulncheck_sdk.models.api/ssvc.api.SSVC(
+                        automatable = '', 
+                        exploitation = '', 
+                        source = '', 
+                        technical_impact = '', )
+                    ],
                 temporal_metric_v2 = vulncheck_sdk.models.api/temporal_metric_v2.api.TemporalMetricV2(
                     cvss_v2 = vulncheck_sdk.models.api/temporal_cvssv2.api.TemporalCVSSV2(
                         exploitability = '', 

@@ -190,6 +190,13 @@ class TestApiCveItemsExtended(unittest.TestCase):
                         vulnerable_system_availability = '', 
                         vulnerable_system_confidentiality = '', 
                         vulnerable_system_integrity = '', ), 
+                    ssvc = [
+                        vulncheck_sdk.models.api/ssvc.api.SSVC(
+                            automatable = '', 
+                            exploitation = '', 
+                            source = '', 
+                            technical_impact = '', )
+                        ], 
                     temporal_metric_v2 = vulncheck_sdk.models.api/temporal_metric_v2.api.TemporalMetricV2(), 
                     temporal_metric_v3 = vulncheck_sdk.models.api/temporal_metric_v3.api.TemporalMetricV3(), 
                     temporal_v3_corrected = vulncheck_sdk.models.api/temporal_metric_v3.api.TemporalMetricV3(), 

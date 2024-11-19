@@ -2,6 +2,8 @@ README.md
 docs/AdvisoryA10.md
 docs/AdvisoryABBAdvisory.md
 docs/AdvisoryADP.md
+docs/AdvisoryADPContainer.md
+docs/AdvisoryAIX.md
 docs/AdvisoryAMD.md
 docs/AdvisoryAMI.md
 docs/AdvisoryASRG.md
@@ -186,6 +188,7 @@ docs/AdvisoryDocumentTracking.md
 docs/AdvisoryDotCMS.md
 docs/AdvisoryDragosAdvisory.md
 docs/AdvisoryDraytek.md
+docs/AdvisoryEOLMicrosoft.md
 docs/AdvisoryEOLReleaseData.md
 docs/AdvisoryEatonAdvisory.md
 docs/AdvisoryEcoSystem.md
@@ -252,6 +255,7 @@ docs/AdvisoryITW.md
 docs/AdvisoryITWExploit.md
 docs/AdvisoryIVal.md
 docs/AdvisoryIdemia.md
+docs/AdvisoryImpact.md
 docs/AdvisoryIncibeAdvisory.md
 docs/AdvisoryIntel.md
 docs/AdvisoryIpIntelRecord.md
@@ -320,6 +324,7 @@ docs/AdvisoryMendix.md
 docs/AdvisoryMetaData.md
 docs/AdvisoryMetasploitExploit.md
 docs/AdvisoryMetric.md
+docs/AdvisoryMetricsOther.md
 docs/AdvisoryMicrosoftCVRF.md
 docs/AdvisoryMicrosoftKb.md
 docs/AdvisoryMikrotik.md
@@ -531,6 +536,8 @@ docs/AdvisoryThreatActorWithExternalObjects.md
 docs/AdvisoryThreatData.md
 docs/AdvisoryTibco.md
 docs/AdvisoryTimeline.md
+docs/AdvisoryTool.md
+docs/AdvisoryToolRef.md
 docs/AdvisoryTracking.md
 docs/AdvisoryTrackingID.md
 docs/AdvisoryTraneTechnology.md
@@ -555,6 +562,7 @@ docs/AdvisoryVapidLabsAdvisory.md
 docs/AdvisoryVeeam.md
 docs/AdvisoryVendorNameForThreatActor.md
 docs/AdvisoryVeritas.md
+docs/AdvisoryVirtuozzo.md
 docs/AdvisoryVoidSec.md
 docs/AdvisoryVulnCheck.md
 docs/AdvisoryVulnCheckCVEListV5.md
@@ -682,6 +690,7 @@ docs/ApiReferenceDataExtended.md
 docs/ApiReferences.md
 docs/ApiReferencesExtended.md
 docs/ApiRelatedAttackPattern.md
+docs/ApiSSVC.md
 docs/ApiTemporalCVSSV2.md
 docs/ApiTemporalCVSSV3.md
 docs/ApiTemporalMetricV2.md
@@ -704,6 +713,7 @@ docs/RenderResponseArrayParamsIndexBackupList.md
 docs/RenderResponseArrayParamsIndexList.md
 docs/RenderResponseWithMetadataArrayAdvisoryA10PaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryABBAdvisoryPaginatePagination.md
+docs/RenderResponseWithMetadataArrayAdvisoryAIXPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryAMDPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryAMIPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryASRGPaginatePagination.md
@@ -819,6 +829,7 @@ docs/RenderResponseWithMetadataArrayAdvisoryDjangoPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryDotCMSPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryDragosAdvisoryPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryDraytekPaginatePagination.md
+docs/RenderResponseWithMetadataArrayAdvisoryEOLMicrosoftPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryEOLReleaseDataPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryEatonAdvisoryPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryElasticPaginatePagination.md
@@ -1035,6 +1046,7 @@ docs/RenderResponseWithMetadataArrayAdvisoryVanDykePaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryVapidLabsAdvisoryPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryVeeamPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryVeritasPaginatePagination.md
+docs/RenderResponseWithMetadataArrayAdvisoryVirtuozzoPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryVoidSecPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryVulnCheckCVEListV5PaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryVulnCheckConfigPaginatePagination.md
@@ -1103,6 +1115,7 @@ test/test_advisory_adobe_advisory.py
 test/test_advisory_adobe_affected.py
 test/test_advisory_adobe_solution.py
 test/test_advisory_adp.py
+test/test_advisory_adp_container.py
 test/test_advisory_advisory.py
 test/test_advisory_advisory_details.py
 test/test_advisory_advisory_record.py
@@ -1114,6 +1127,7 @@ test/test_advisory_affected_file.py
 test/test_advisory_affected_product.py
 test/test_advisory_affected_rel.py
 test/test_advisory_affected_ubuntu_package.py
+test/test_advisory_aix.py
 test/test_advisory_aleph_research.py
 test/test_advisory_alma_date.py
 test/test_advisory_alma_linux_update.py
@@ -1286,6 +1300,7 @@ test/test_advisory_elastic.py
 test/test_advisory_elspec.py
 test/test_advisory_emerging_threats_snort.py
 test/test_advisory_emerson_advisory.py
+test/test_advisory_eol_microsoft.py
 test/test_advisory_eol_release_data.py
 test/test_advisory_event.py
 test/test_advisory_exodus_intel.py
@@ -1344,6 +1359,7 @@ test/test_advisory_i_val.py
 test/test_advisory_iava.py
 test/test_advisory_ibm.py
 test/test_advisory_idemia.py
+test/test_advisory_impact.py
 test/test_advisory_incibe_advisory.py
 test/test_advisory_intel.py
 test/test_advisory_ip_intel_record.py
@@ -1410,6 +1426,7 @@ test/test_advisory_mendix.py
 test/test_advisory_meta_data.py
 test/test_advisory_metasploit_exploit.py
 test/test_advisory_metric.py
+test/test_advisory_metrics_other.py
 test/test_advisory_microsoft_cvrf.py
 test/test_advisory_microsoft_kb.py
 test/test_advisory_mikrotik.py
@@ -1623,6 +1640,8 @@ test/test_advisory_threat_data.py
 test/test_advisory_ti.py
 test/test_advisory_tibco.py
 test/test_advisory_timeline.py
+test/test_advisory_tool.py
+test/test_advisory_tool_ref.py
 test/test_advisory_tp_link.py
 test/test_advisory_tracking.py
 test/test_advisory_tracking_id.py
@@ -1647,6 +1666,7 @@ test/test_advisory_vde_advisory.py
 test/test_advisory_veeam.py
 test/test_advisory_vendor_name_for_threat_actor.py
 test/test_advisory_veritas.py
+test/test_advisory_virtuozzo.py
 test/test_advisory_vm_ware_advisory.py
 test/test_advisory_void_sec.py
 test/test_advisory_vuln_check.py
@@ -1776,6 +1796,7 @@ test/test_api_reference_data_extended.py
 test/test_api_references.py
 test/test_api_references_extended.py
 test/test_api_related_attack_pattern.py
+test/test_api_ssvc.py
 test/test_api_temporal_cvssv2.py
 test/test_api_temporal_cvssv3.py
 test/test_api_temporal_metric_v2.py
@@ -1804,6 +1825,7 @@ test/test_render_response_with_metadata_array_advisory_acronis_paginate_paginati
 test/test_render_response_with_metadata_array_advisory_adobe_advisory_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_advisory_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_advisory_record_paginate_pagination.py
+test/test_render_response_with_metadata_array_advisory_aix_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_aleph_research_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_alma_linux_update_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_alpine_linux_sec_db_paginate_pagination.py
@@ -1918,6 +1940,7 @@ test/test_render_response_with_metadata_array_advisory_elastic_paginate_paginati
 test/test_render_response_with_metadata_array_advisory_elspec_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_emerging_threats_snort_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_emerson_advisory_paginate_pagination.py
+test/test_render_response_with_metadata_array_advisory_eol_microsoft_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_eol_release_data_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_exodus_intel_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_exploit_db_exploitv2_paginate_pagination.py
@@ -2127,6 +2150,7 @@ test/test_render_response_with_metadata_array_advisory_vccpe_dictionary_paginate
 test/test_render_response_with_metadata_array_advisory_vde_advisory_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_veeam_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_veritas_paginate_pagination.py
+test/test_render_response_with_metadata_array_advisory_virtuozzo_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_vm_ware_advisory_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_void_sec_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_vuln_check_config_paginate_pagination.py
@@ -2200,6 +2224,7 @@ vulncheck_sdk/models/advisory_adobe_advisory.py
 vulncheck_sdk/models/advisory_adobe_affected.py
 vulncheck_sdk/models/advisory_adobe_solution.py
 vulncheck_sdk/models/advisory_adp.py
+vulncheck_sdk/models/advisory_adp_container.py
 vulncheck_sdk/models/advisory_advisory.py
 vulncheck_sdk/models/advisory_advisory_details.py
 vulncheck_sdk/models/advisory_advisory_record.py
@@ -2211,6 +2236,7 @@ vulncheck_sdk/models/advisory_affected_file.py
 vulncheck_sdk/models/advisory_affected_product.py
 vulncheck_sdk/models/advisory_affected_rel.py
 vulncheck_sdk/models/advisory_affected_ubuntu_package.py
+vulncheck_sdk/models/advisory_aix.py
 vulncheck_sdk/models/advisory_aleph_research.py
 vulncheck_sdk/models/advisory_alma_date.py
 vulncheck_sdk/models/advisory_alma_linux_update.py
@@ -2383,6 +2409,7 @@ vulncheck_sdk/models/advisory_elastic.py
 vulncheck_sdk/models/advisory_elspec.py
 vulncheck_sdk/models/advisory_emerging_threats_snort.py
 vulncheck_sdk/models/advisory_emerson_advisory.py
+vulncheck_sdk/models/advisory_eol_microsoft.py
 vulncheck_sdk/models/advisory_eol_release_data.py
 vulncheck_sdk/models/advisory_event.py
 vulncheck_sdk/models/advisory_exodus_intel.py
@@ -2441,6 +2468,7 @@ vulncheck_sdk/models/advisory_i_val.py
 vulncheck_sdk/models/advisory_iava.py
 vulncheck_sdk/models/advisory_ibm.py
 vulncheck_sdk/models/advisory_idemia.py
+vulncheck_sdk/models/advisory_impact.py
 vulncheck_sdk/models/advisory_incibe_advisory.py
 vulncheck_sdk/models/advisory_intel.py
 vulncheck_sdk/models/advisory_ip_intel_record.py
@@ -2507,6 +2535,7 @@ vulncheck_sdk/models/advisory_mendix.py
 vulncheck_sdk/models/advisory_meta_data.py
 vulncheck_sdk/models/advisory_metasploit_exploit.py
 vulncheck_sdk/models/advisory_metric.py
+vulncheck_sdk/models/advisory_metrics_other.py
 vulncheck_sdk/models/advisory_microsoft_cvrf.py
 vulncheck_sdk/models/advisory_microsoft_kb.py
 vulncheck_sdk/models/advisory_mikrotik.py
@@ -2720,6 +2749,8 @@ vulncheck_sdk/models/advisory_threat_data.py
 vulncheck_sdk/models/advisory_ti.py
 vulncheck_sdk/models/advisory_tibco.py
 vulncheck_sdk/models/advisory_timeline.py
+vulncheck_sdk/models/advisory_tool.py
+vulncheck_sdk/models/advisory_tool_ref.py
 vulncheck_sdk/models/advisory_tp_link.py
 vulncheck_sdk/models/advisory_tracking.py
 vulncheck_sdk/models/advisory_tracking_id.py
@@ -2744,6 +2775,7 @@ vulncheck_sdk/models/advisory_vde_advisory.py
 vulncheck_sdk/models/advisory_veeam.py
 vulncheck_sdk/models/advisory_vendor_name_for_threat_actor.py
 vulncheck_sdk/models/advisory_veritas.py
+vulncheck_sdk/models/advisory_virtuozzo.py
 vulncheck_sdk/models/advisory_vm_ware_advisory.py
 vulncheck_sdk/models/advisory_void_sec.py
 vulncheck_sdk/models/advisory_vuln_check.py
@@ -2873,6 +2905,7 @@ vulncheck_sdk/models/api_reference_data_extended.py
 vulncheck_sdk/models/api_references.py
 vulncheck_sdk/models/api_references_extended.py
 vulncheck_sdk/models/api_related_attack_pattern.py
+vulncheck_sdk/models/api_ssvc.py
 vulncheck_sdk/models/api_temporal_cvssv2.py
 vulncheck_sdk/models/api_temporal_cvssv3.py
 vulncheck_sdk/models/api_temporal_metric_v2.py
@@ -2899,6 +2932,7 @@ vulncheck_sdk/models/render_response_with_metadata_array_advisory_acronis_pagina
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_adobe_advisory_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_advisory_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_advisory_record_paginate_pagination.py
+vulncheck_sdk/models/render_response_with_metadata_array_advisory_aix_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_aleph_research_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_alma_linux_update_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_alpine_linux_sec_db_paginate_pagination.py
@@ -3013,6 +3047,7 @@ vulncheck_sdk/models/render_response_with_metadata_array_advisory_elastic_pagina
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_elspec_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_emerging_threats_snort_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_emerson_advisory_paginate_pagination.py
+vulncheck_sdk/models/render_response_with_metadata_array_advisory_eol_microsoft_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_eol_release_data_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_exodus_intel_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_exploit_db_exploitv2_paginate_pagination.py
@@ -3222,6 +3257,7 @@ vulncheck_sdk/models/render_response_with_metadata_array_advisory_vccpe_dictiona
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_vde_advisory_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_veeam_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_veritas_paginate_pagination.py
+vulncheck_sdk/models/render_response_with_metadata_array_advisory_virtuozzo_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_vm_ware_advisory_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_void_sec_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_vuln_check_config_paginate_pagination.py

@@ -49,6 +49,9 @@ class TestApiInitialAccessArtifact(unittest.TestCase):
                 clone_sshurl = '',
                 date_added = '',
                 exploit = True,
+                fofa_queries = [
+                    ''
+                    ],
                 greynoise_queries = [
                     ''
                     ],
@@ -70,7 +73,10 @@ class TestApiInitialAccessArtifact(unittest.TestCase):
                 vendor = '',
                 version_scanner = True,
                 yara = True,
-                zeroday = True
+                zeroday = True,
+                zoom_eye_queries = [
+                    ''
+                    ]
             )
         else:
             return ApiInitialAccessArtifact(

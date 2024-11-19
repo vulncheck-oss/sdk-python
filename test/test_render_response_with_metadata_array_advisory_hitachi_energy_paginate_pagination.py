@@ -73,12 +73,18 @@ class TestRenderResponseWithMetadataArrayAdvisoryHitachiEnergyPaginatePagination
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/hitachi_energy.advisory.HitachiEnergy(
+                        advisory_id = '', 
                         csaf_url = '', 
                         cve = [
                             ''
                             ], 
                         date_added = '', 
+                        exploited = True, 
+                        products = [
+                            ''
+                            ], 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

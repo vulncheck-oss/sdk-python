@@ -36,6 +36,7 @@ class ParamsIdxReqParams(BaseModel):
     cve: Optional[StrictStr] = Field(default=None, description="Specify one or more CVEs (comma delimited) to search with.")
     hostname: Optional[StrictStr] = Field(default=None, description="IpIntel Only: Specify a string to search in the list of hostnames")
     iava: Optional[StrictStr] = Field(default=None, description="Specify an IAVA to search with")
+    ilvn: Optional[StrictStr] = Field(default=None, description="Specify a ILVN ID to search with")
     jvndb: Optional[StrictStr] = Field(default=None, description="Specify a JVNDB ID to search with")
     limit: Optional[StrictStr] = Field(default=None, description="Limit the number of documents returned")
     matches: Optional[StrictStr] = Field(default=None, description="IpIntel Only: Specify a string to search in the matches field")
@@ -52,7 +53,7 @@ class ParamsIdxReqParams(BaseModel):
     type_kind: Optional[StrictStr] = Field(default=None, description="IpIntel Only: Filter results by 'type.kind'", alias="typeKind")
     updated_end: Optional[StrictStr] = Field(default=None, description="Specify an ending last modified date to filter with", alias="updatedEnd")
     updated_start: Optional[StrictStr] = Field(default=None, description="Specify a starting last modified date to filter with", alias="updatedStart")
-    __properties: ClassVar[List[str]] = ["alias", "asn", "botnetName", "cidr", "country", "countryCode", "cve", "hostname", "iava", "jvndb", "limit", "matches", "mispId", "mitreId", "order", "published", "publishedEnd", "publishedStart", "ransomwareFamilyName", "sort", "threatActorName", "typeId", "typeKind", "updatedEnd", "updatedStart"]
+    __properties: ClassVar[List[str]] = ["alias", "asn", "botnetName", "cidr", "country", "countryCode", "cve", "hostname", "iava", "ilvn", "jvndb", "limit", "matches", "mispId", "mitreId", "order", "published", "publishedEnd", "publishedStart", "ransomwareFamilyName", "sort", "threatActorName", "typeId", "typeKind", "updatedEnd", "updatedStart"]
 
     @field_validator('order')
     def order_validate_enum(cls, value):
@@ -134,6 +135,7 @@ class ParamsIdxReqParams(BaseModel):
             "cve": obj.get("cve"),
             "hostname": obj.get("hostname"),
             "iava": obj.get("iava"),
+            "ilvn": obj.get("ilvn"),
             "jvndb": obj.get("jvndb"),
             "limit": obj.get("limit"),
             "matches": obj.get("matches"),

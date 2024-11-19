@@ -53,7 +53,11 @@ class TestAdvisoryMetric(unittest.TestCase):
                 cvss_v4_0 = vulncheck_sdk.models.advisory/m_cvss_v40.advisory.MCvssV40(
                     base_score = 1.337, 
                     vector_string = '', 
-                    version = '', )
+                    version = '', ),
+                format = '',
+                other = vulncheck_sdk.models.advisory/metrics_other.advisory.MetricsOther(
+                    content = '', 
+                    type = '', )
             )
         else:
             return AdvisoryMetric(

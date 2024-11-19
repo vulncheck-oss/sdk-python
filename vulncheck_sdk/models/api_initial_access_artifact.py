@@ -34,6 +34,7 @@ class ApiInitialAccessArtifact(BaseModel):
     clone_sshurl: Optional[StrictStr] = Field(default=None, description="CloneSSHURL is the git URL to clone the artifact with.", alias="cloneSSHURL")
     date_added: Optional[StrictStr] = Field(default=None, description="DateAdded is when this artifact entry was first added to the InitialAccess data set.", alias="dateAdded")
     exploit: Optional[StrictBool] = Field(default=None, description="Exploit indicates whether or not an exploit is available in this artifact.")
+    fofa_queries: Optional[List[StrictStr]] = Field(default=None, description="FOFAQueries are raw queries for examining potential Internet-exposed devices & applications with FOFA.", alias="fofaQueries")
     greynoise_queries: Optional[List[StrictStr]] = Field(default=None, description="GreynoiseQueries are queries for finding the vulnerability via honeypot data.", alias="greynoiseQueries")
     nmap_script: Optional[StrictBool] = Field(default=None, description="NmapScript indicates whether or not an nmap script for scanning environment exists in this artifact.", alias="nmapScript")
     pcap: Optional[StrictBool] = Field(default=None, description="PCAP indicates whether of not a package capture of the exploit PoC exploiting a vulnerable system exists in this artifact.")
@@ -48,7 +49,8 @@ class ApiInitialAccessArtifact(BaseModel):
     version_scanner: Optional[StrictBool] = Field(default=None, description="VersionScanner indicates whether or not the exploit PoC can determine if target system is vulnerable without sending exploit payload in this artifact.", alias="versionScanner")
     yara: Optional[StrictBool] = Field(default=None, description="YARA indicates whether or not a YARA rule designed to detect the exploit on an endpoint exists in this artifact.")
     zeroday: Optional[StrictBool] = Field(default=None, description="Zeroday indicates whether or not it is a VulnCheck zeroday.")
-    __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "censysQueries", "censysRawQueries", "cloneSSHURL", "dateAdded", "exploit", "greynoiseQueries", "nmapScript", "pcap", "product", "shodanQueries", "shodanRawQueries", "snortRule", "suricataRule", "targetDocker", "targetService", "vendor", "versionScanner", "yara", "zeroday"]
+    zoom_eye_queries: Optional[List[StrictStr]] = Field(default=None, description="ZoomEyeQueries are raw queries for examining potential Internet-exposed devices & applications with ZoomEye.", alias="zoomEyeQueries")
+    __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "censysQueries", "censysRawQueries", "cloneSSHURL", "dateAdded", "exploit", "fofaQueries", "greynoiseQueries", "nmapScript", "pcap", "product", "shodanQueries", "shodanRawQueries", "snortRule", "suricataRule", "targetDocker", "targetService", "vendor", "versionScanner", "yara", "zeroday", "zoomEyeQueries"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -108,6 +110,7 @@ class ApiInitialAccessArtifact(BaseModel):
             "cloneSSHURL": obj.get("cloneSSHURL"),
             "dateAdded": obj.get("dateAdded"),
             "exploit": obj.get("exploit"),
+            "fofaQueries": obj.get("fofaQueries"),
             "greynoiseQueries": obj.get("greynoiseQueries"),
             "nmapScript": obj.get("nmapScript"),
             "pcap": obj.get("pcap"),
@@ -121,7 +124,8 @@ class ApiInitialAccessArtifact(BaseModel):
             "vendor": obj.get("vendor"),
             "versionScanner": obj.get("versionScanner"),
             "yara": obj.get("yara"),
-            "zeroday": obj.get("zeroday")
+            "zeroday": obj.get("zeroday"),
+            "zoomEyeQueries": obj.get("zoomEyeQueries")
         })
         return _obj
 
