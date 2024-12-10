@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_cve_reference import AdvisoryCVEReference
 from vulncheck_sdk.models.advisory_misp_value_no_id import AdvisoryMISPValueNoID
 from vulncheck_sdk.models.advisory_mitre_attack_group_no_id import AdvisoryMITREAttackGroupNoID
+from vulncheck_sdk.models.advisory_mitre_group_cti import AdvisoryMitreGroupCTI
 from vulncheck_sdk.models.advisory_tool import AdvisoryTool
 from vulncheck_sdk.models.advisory_vendor_name_for_threat_actor import AdvisoryVendorNameForThreatActor
 from typing import Optional, Set
@@ -32,17 +33,19 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
     """
     AdvisoryThreatActorWithExternalObjects
     """ # noqa: E501
+    country: Optional[StrictStr] = None
     cve_references: Optional[List[AdvisoryCVEReference]] = None
     date_added: Optional[StrictStr] = None
     malpedia_url: Optional[StrictStr] = None
     misp_id: Optional[StrictStr] = None
     misp_threat_actor: Optional[AdvisoryMISPValueNoID] = None
     mitre_attack_group: Optional[AdvisoryMITREAttackGroupNoID] = None
+    mitre_group_cti: Optional[AdvisoryMitreGroupCTI] = None
     mitre_id: Optional[StrictStr] = None
     threat_actor_name: Optional[StrictStr] = None
     tools: Optional[List[AdvisoryTool]] = None
     vendor_names_for_threat_actors: Optional[List[AdvisoryVendorNameForThreatActor]] = None
-    __properties: ClassVar[List[str]] = ["cve_references", "date_added", "malpedia_url", "misp_id", "misp_threat_actor", "mitre_attack_group", "mitre_id", "threat_actor_name", "tools", "vendor_names_for_threat_actors"]
+    __properties: ClassVar[List[str]] = ["country", "cve_references", "date_added", "malpedia_url", "misp_id", "misp_threat_actor", "mitre_attack_group", "mitre_group_cti", "mitre_id", "threat_actor_name", "tools", "vendor_names_for_threat_actors"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,6 +99,9 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of mitre_attack_group
         if self.mitre_attack_group:
             _dict['mitre_attack_group'] = self.mitre_attack_group.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of mitre_group_cti
+        if self.mitre_group_cti:
+            _dict['mitre_group_cti'] = self.mitre_group_cti.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in tools (list)
         _items = []
         if self.tools:
@@ -122,12 +128,14 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "country": obj.get("country"),
             "cve_references": [AdvisoryCVEReference.from_dict(_item) for _item in obj["cve_references"]] if obj.get("cve_references") is not None else None,
             "date_added": obj.get("date_added"),
             "malpedia_url": obj.get("malpedia_url"),
             "misp_id": obj.get("misp_id"),
             "misp_threat_actor": AdvisoryMISPValueNoID.from_dict(obj["misp_threat_actor"]) if obj.get("misp_threat_actor") is not None else None,
             "mitre_attack_group": AdvisoryMITREAttackGroupNoID.from_dict(obj["mitre_attack_group"]) if obj.get("mitre_attack_group") is not None else None,
+            "mitre_group_cti": AdvisoryMitreGroupCTI.from_dict(obj["mitre_group_cti"]) if obj.get("mitre_group_cti") is not None else None,
             "mitre_id": obj.get("mitre_id"),
             "threat_actor_name": obj.get("threat_actor_name"),
             "tools": [AdvisoryTool.from_dict(_item) for _item in obj["tools"]] if obj.get("tools") is not None else None,

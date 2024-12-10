@@ -37,7 +37,7 @@ class PaginatePagination(BaseModel):
     matches: Optional[List[PaginateMatch]] = None
     max_pages: Optional[StrictInt] = None
     next_cursor: Optional[StrictStr] = Field(default=None, description="Cursor for the next page")
-    opensearch_query: Optional[Dict[str, Any]] = Field(default=None, description="NOTE: swaggertype tag is needed so that swaggo/swag run from `make openapi` does not die in a fire")
+    opensearch_query: Optional[Dict[str, Any]] = None
     order: Optional[StrictStr] = None
     page: Optional[StrictInt] = Field(default=None, description="The current Page number")
     pages: Optional[List[StrictStr]] = None

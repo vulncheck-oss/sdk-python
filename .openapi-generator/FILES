@@ -199,6 +199,7 @@ docs/AdvisoryEmersonAdvisory.md
 docs/AdvisoryEvent.md
 docs/AdvisoryExodusIntel.md
 docs/AdvisoryExploitDBExploitv2.md
+docs/AdvisoryExternalReferences.md
 docs/AdvisoryFSecure.md
 docs/AdvisoryFanuc.md
 docs/AdvisoryFastly.md
@@ -336,6 +337,7 @@ docs/AdvisoryMitel.md
 docs/AdvisoryMitreAttackTechnique.md
 docs/AdvisoryMitreCVEListV5.md
 docs/AdvisoryMitreCVEListV5Ref.md
+docs/AdvisoryMitreGroupCTI.md
 docs/AdvisoryMitsubishiElectricAdvisory.md
 docs/AdvisoryMongoDB.md
 docs/AdvisoryMoxaAdvisory.md
@@ -1305,6 +1307,7 @@ test/test_advisory_eol_release_data.py
 test/test_advisory_event.py
 test/test_advisory_exodus_intel.py
 test/test_advisory_exploit_db_exploitv2.py
+test/test_advisory_external_references.py
 test/test_advisory_f_secure.py
 test/test_advisory_fanuc.py
 test/test_advisory_fastly.py
@@ -1440,6 +1443,7 @@ test/test_advisory_mitre_attack_group_no_id.py
 test/test_advisory_mitre_attack_technique.py
 test/test_advisory_mitre_cve_list_v5.py
 test/test_advisory_mitre_cve_list_v5_ref.py
+test/test_advisory_mitre_group_cti.py
 test/test_advisory_mitsubishi_electric_advisory.py
 test/test_advisory_mongo_db.py
 test/test_advisory_moxa_advisory.py
@@ -2414,6 +2418,7 @@ vulncheck_sdk/models/advisory_eol_release_data.py
 vulncheck_sdk/models/advisory_event.py
 vulncheck_sdk/models/advisory_exodus_intel.py
 vulncheck_sdk/models/advisory_exploit_db_exploitv2.py
+vulncheck_sdk/models/advisory_external_references.py
 vulncheck_sdk/models/advisory_f_secure.py
 vulncheck_sdk/models/advisory_fanuc.py
 vulncheck_sdk/models/advisory_fastly.py
@@ -2549,6 +2554,7 @@ vulncheck_sdk/models/advisory_mitre_attack_group_no_id.py
 vulncheck_sdk/models/advisory_mitre_attack_technique.py
 vulncheck_sdk/models/advisory_mitre_cve_list_v5.py
 vulncheck_sdk/models/advisory_mitre_cve_list_v5_ref.py
+vulncheck_sdk/models/advisory_mitre_group_cti.py
 vulncheck_sdk/models/advisory_mitsubishi_electric_advisory.py
 vulncheck_sdk/models/advisory_mongo_db.py
 vulncheck_sdk/models/advisory_moxa_advisory.py

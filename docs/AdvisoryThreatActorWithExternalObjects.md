@@ -5,12 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**country** | **str** |  | [optional] 
 **cve_references** | [**List[AdvisoryCVEReference]**](AdvisoryCVEReference.md) |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **malpedia_url** | **str** |  | [optional] 
 **misp_id** | **str** |  | [optional] 
 **misp_threat_actor** | [**AdvisoryMISPValueNoID**](AdvisoryMISPValueNoID.md) |  | [optional] 
 **mitre_attack_group** | [**AdvisoryMITREAttackGroupNoID**](AdvisoryMITREAttackGroupNoID.md) |  | [optional] 
+**mitre_group_cti** | [**AdvisoryMitreGroupCTI**](AdvisoryMitreGroupCTI.md) |  | [optional] 
 **mitre_id** | **str** |  | [optional] 
 **threat_actor_name** | **str** |  | [optional] 
 **tools** | [**List[AdvisoryTool]**](AdvisoryTool.md) |  | [optional] 
