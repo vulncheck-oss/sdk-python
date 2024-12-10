@@ -73,6 +73,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryThreatActorWithExternalObjectsP
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/threat_actor_with_external_objects.advisory.ThreatActorWithExternalObjects(
+                        country = '', 
                         cve_references = [
                             vulncheck_sdk.models.advisory/cve_reference.advisory.CVEReference(
                                 cve = [
@@ -130,16 +131,21 @@ class TestRenderResponseWithMetadataArrayAdvisoryThreatActorWithExternalObjectsP
                                     technique_id = '', 
                                     technique_name = '', )
                                 ], ), 
+                        mitre_group_cti = vulncheck_sdk.models.advisory/mitre_group_cti.advisory.MitreGroupCTI(
+                            description = '', 
+                            id = '', 
+                            references = [
+                                vulncheck_sdk.models.advisory/external_references.advisory.ExternalReferences(
+                                    description = '', 
+                                    external_id = '', 
+                                    source_name = '', 
+                                    url = '', )
+                                ], ), 
                         mitre_id = '', 
                         threat_actor_name = '', 
                         tools = [
                             vulncheck_sdk.models.advisory/tool.advisory.Tool(
-                                name = '', 
-                                references = [
-                                    vulncheck_sdk.models.advisory/tool_ref.advisory.ToolRef(
-                                        date_added = '', 
-                                        url = '', )
-                                    ], )
+                                name = '', )
                             ], 
                         vendor_names_for_threat_actors = [
                             vulncheck_sdk.models.advisory/vendor_name_for_threat_actor.advisory.VendorNameForThreatActor(

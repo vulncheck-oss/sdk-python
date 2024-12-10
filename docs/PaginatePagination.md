@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **matches** | [**List[PaginateMatch]**](PaginateMatch.md) |  | [optional] 
 **max_pages** | **int** |  | [optional] 
 **next_cursor** | **str** | Cursor for the next page | [optional] 
-**opensearch_query** | **object** | NOTE: swaggertype tag is needed so that swaggo/swag run from &#x60;make openapi&#x60; does not die in a fire | [optional] 
+**opensearch_query** | **object** |  | [optional] 
 **order** | **str** |  | [optional] 
 **page** | **int** | The current Page number | [optional] 
 **pages** | **List[str]** |  | [optional] 

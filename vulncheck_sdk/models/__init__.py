@@ -215,6 +215,7 @@ from vulncheck_sdk.models.advisory_emerson_advisory import AdvisoryEmersonAdviso
 from vulncheck_sdk.models.advisory_event import AdvisoryEvent
 from vulncheck_sdk.models.advisory_exodus_intel import AdvisoryExodusIntel
 from vulncheck_sdk.models.advisory_exploit_db_exploitv2 import AdvisoryExploitDBExploitv2
+from vulncheck_sdk.models.advisory_external_references import AdvisoryExternalReferences
 from vulncheck_sdk.models.advisory_f_secure import AdvisoryFSecure
 from vulncheck_sdk.models.advisory_fanuc import AdvisoryFanuc
 from vulncheck_sdk.models.advisory_fastly import AdvisoryFastly
@@ -352,6 +353,7 @@ from vulncheck_sdk.models.advisory_mitel import AdvisoryMitel
 from vulncheck_sdk.models.advisory_mitre_attack_technique import AdvisoryMitreAttackTechnique
 from vulncheck_sdk.models.advisory_mitre_cve_list_v5 import AdvisoryMitreCVEListV5
 from vulncheck_sdk.models.advisory_mitre_cve_list_v5_ref import AdvisoryMitreCVEListV5Ref
+from vulncheck_sdk.models.advisory_mitre_group_cti import AdvisoryMitreGroupCTI
 from vulncheck_sdk.models.advisory_mitsubishi_electric_advisory import AdvisoryMitsubishiElectricAdvisory
 from vulncheck_sdk.models.advisory_mongo_db import AdvisoryMongoDB
 from vulncheck_sdk.models.advisory_moxa_advisory import AdvisoryMoxaAdvisory

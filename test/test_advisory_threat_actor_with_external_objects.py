@@ -36,6 +36,7 @@ class TestAdvisoryThreatActorWithExternalObjects(unittest.TestCase):
         model = AdvisoryThreatActorWithExternalObjects()
         if include_optional:
             return AdvisoryThreatActorWithExternalObjects(
+                country = '',
                 cve_references = [
                     vulncheck_sdk.models.advisory/cve_reference.advisory.CVEReference(
                         cve = [
@@ -92,6 +93,19 @@ class TestAdvisoryThreatActorWithExternalObjects(unittest.TestCase):
                                 ], 
                             technique_id = '', 
                             technique_name = '', )
+                        ], ),
+                mitre_group_cti = vulncheck_sdk.models.advisory/mitre_group_cti.advisory.MitreGroupCTI(
+                    aliases = [
+                        ''
+                        ], 
+                    description = '', 
+                    id = '', 
+                    references = [
+                        vulncheck_sdk.models.advisory/external_references.advisory.ExternalReferences(
+                            description = '', 
+                            external_id = '', 
+                            source_name = '', 
+                            url = '', )
                         ], ),
                 mitre_id = '',
                 threat_actor_name = '',
