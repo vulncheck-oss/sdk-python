@@ -46,8 +46,13 @@ class TestRenderResponseWithMetadataV3controllersBackupResponseDataV3controllers
                         filename = '', 
                         sha256 = '', 
                         url = '', 
+                        url_ap_southeast_2 = '', 
+                        url_eu_west_2 = '', 
                         url_expires = '', 
-                        url_ttl_minutes = 56, )
+                        url_mrap = '', 
+                        url_ttl_minutes = 56, 
+                        url_us_east_1 = '', 
+                        url_us_west_2 = '', )
                     ]
             )
         else:
