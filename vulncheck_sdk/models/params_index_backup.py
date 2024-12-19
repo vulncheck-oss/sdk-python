@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,9 +31,14 @@ class ParamsIndexBackup(BaseModel):
     filename: Optional[StrictStr] = None
     sha256: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
+    url_ap_southeast_2: Optional[StrictStr] = Field(default=None, alias="url_ap-southeast-2")
+    url_eu_west_2: Optional[StrictStr] = Field(default=None, alias="url_eu-west-2")
     url_expires: Optional[StrictStr] = None
+    url_mrap: Optional[StrictStr] = None
     url_ttl_minutes: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["date_added", "filename", "sha256", "url", "url_expires", "url_ttl_minutes"]
+    url_us_east_1: Optional[StrictStr] = Field(default=None, alias="url_us-east-1")
+    url_us_west_2: Optional[StrictStr] = Field(default=None, alias="url_us-west-2")
+    __properties: ClassVar[List[str]] = ["date_added", "filename", "sha256", "url", "url_ap-southeast-2", "url_eu-west-2", "url_expires", "url_mrap", "url_ttl_minutes", "url_us-east-1", "url_us-west-2"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,8 +95,13 @@ class ParamsIndexBackup(BaseModel):
             "filename": obj.get("filename"),
             "sha256": obj.get("sha256"),
             "url": obj.get("url"),
+            "url_ap-southeast-2": obj.get("url_ap-southeast-2"),
+            "url_eu-west-2": obj.get("url_eu-west-2"),
             "url_expires": obj.get("url_expires"),
-            "url_ttl_minutes": obj.get("url_ttl_minutes")
+            "url_mrap": obj.get("url_mrap"),
+            "url_ttl_minutes": obj.get("url_ttl_minutes"),
+            "url_us-east-1": obj.get("url_us-east-1"),
+            "url_us-west-2": obj.get("url_us-west-2")
         })
         return _obj
 
