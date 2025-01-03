@@ -87,17 +87,10 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     ### IndicesApi has methods for each index
     indices_client = vulncheck_sdk.IndicesApi(api_client)
 
-    # You can filter your query using parameters as well
-    query_params = vulncheck_sdk.ParamsIdxReqParams(cve="CVE-2019-19781")
-    api_response = indices_client.index_vulncheck_nvd2_get(query_params)
+    # Add query parameters to filter what you need
+    api_response = indices_client.index_vulncheck_nvd2_get(cve="CVE-2019-19781")
 
     print(api_response.data)
-
-    # There are many more indices to explore!
-    api_response = indices_client.index_vulncheck_kev_get(vulncheck_sdk.ParamsIdxReqParams())
-    api_response = indices_client.index_exploits_get(vulncheck_sdk.ParamsIdxReqParams())
-    api_response = indices_client.index_ipintel3d_get(vulncheck_sdk.ParamsIdxReqParams())
-    api_response = indices_client. # An editor with a Language Server will show you all the available methods/indices!
 ```
 
 ## Examples
@@ -224,8 +217,7 @@ configuration.api_key["Bearer"] = TOKEN
 with vulncheck_sdk.ApiClient(configuration) as api_client:
     indices_client = vulncheck_sdk.IndicesApi(api_client)
 
-    query_params = vulncheck_sdk.ParamsIdxReqParams(cve="CVE-2019-19781")
-    api_response = indices_client.index_vulncheck_nvd2_get(query_params)
+    api_response = indices_client.index_vulncheck_nvd2_get(cve="CVE-2019-19781")
 
     print(api_response.data)
 ```
@@ -247,7 +239,6 @@ configuration.api_key["Bearer"] = TOKEN
 with vulncheck_sdk.ApiClient(configuration) as api_client:
     indices_client = vulncheck_sdk.IndicesApi(api_client)
     api_response = indices_client.index_vulncheck_kev_get(
-        vulncheck_sdk.ParamsIdxReqParams(),
         start_cursor="true",
         # `limit` increases the size of each page, making it faster
         # to download large datasets
@@ -258,7 +249,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     while api_response.meta.next_cursor is not None:
         api_response = indices_client.index_vulncheck_kev_get(
-            vulncheck_sdk.ParamsIdxReqParams(), cursor=api_response.meta.next_cursor
+            cursor=api_response.meta.next_cursor
         )
         print(api_response.data)
 ```
