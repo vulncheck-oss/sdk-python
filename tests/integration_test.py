@@ -4,7 +4,6 @@ from vulncheck_sdk.api.endpoints_api import EndpointsApi
 from vulncheck_sdk.api.indices_api import IndicesApi
 from vulncheck_sdk.api_response import ApiResponse
 from vulncheck_sdk.exceptions import ApiException, UnauthorizedException
-from vulncheck_sdk.models.params_idx_req_params import ParamsIdxReqParams
 
 DEFAULT_HOST = "https://api.vulncheck.com"
 DEFAULT_API = DEFAULT_HOST + "/v3"
@@ -90,7 +89,6 @@ IndicesApi Tests
 
 def test_all_indicies():
     indices_instance = _get_indices_instance(API_TOKEN)
-    params = ParamsIdxReqParams()
     for name in dir(indices_instance):
         if (
             callable(getattr(indices_instance, name))
@@ -101,7 +99,7 @@ def test_all_indicies():
         ):
             method = getattr(indices_instance, name)
             print(name)
-            status = _get_http_status(method, params, 1, 1)
+            status = _get_http_status(method, 1, 1)
             assert status == 200
 
 
