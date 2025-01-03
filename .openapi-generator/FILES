@@ -705,7 +705,6 @@ docs/ModelsEntitlements.md
 docs/PaginateMatch.md
 docs/PaginatePagination.md
 docs/PaginateParam.md
-docs/ParamsIdxReqParams.md
 docs/ParamsIndexBackup.md
 docs/ParamsIndexBackupList.md
 docs/ParamsIndexList.md
@@ -1813,7 +1812,6 @@ test/test_models_entitlements.py
 test/test_paginate_match.py
 test/test_paginate_pagination.py
 test/test_paginate_param.py
-test/test_params_idx_req_params.py
 test/test_params_index_backup.py
 test/test_params_index_backup_list.py
 test/test_params_index_list.py
@@ -2922,7 +2920,6 @@ vulncheck_sdk/models/models_entitlements.py
 vulncheck_sdk/models/paginate_match.py
 vulncheck_sdk/models/paginate_pagination.py
 vulncheck_sdk/models/paginate_param.py
-vulncheck_sdk/models/params_idx_req_params.py
 vulncheck_sdk/models/params_index_backup.py
 vulncheck_sdk/models/params_index_backup_list.py
 vulncheck_sdk/models/params_index_list.py

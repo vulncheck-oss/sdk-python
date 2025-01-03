@@ -719,7 +719,6 @@ from vulncheck_sdk.models.models_entitlements import ModelsEntitlements
 from vulncheck_sdk.models.paginate_match import PaginateMatch
 from vulncheck_sdk.models.paginate_pagination import PaginatePagination
 from vulncheck_sdk.models.paginate_param import PaginateParam
-from vulncheck_sdk.models.params_idx_req_params import ParamsIdxReqParams
 from vulncheck_sdk.models.params_index_backup import ParamsIndexBackup
 from vulncheck_sdk.models.params_index_backup_list import ParamsIndexBackupList
 from vulncheck_sdk.models.params_index_list import ParamsIndexList

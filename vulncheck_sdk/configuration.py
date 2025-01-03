@@ -414,7 +414,7 @@ conf = vulncheck_sdk.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 3.0\n"\
-               "SDK Package Version: 0.0.6".\
+               "SDK Package Version: 0.0.7".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):
