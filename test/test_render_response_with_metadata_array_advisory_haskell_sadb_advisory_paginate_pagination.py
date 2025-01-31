@@ -75,10 +75,10 @@ class TestRenderResponseWithMetadataArrayAdvisoryHaskellSADBAdvisoryPaginatePagi
                     vulncheck_sdk.models.advisory/haskell_sadb_advisory.advisory.HaskellSADBAdvisory(
                         advisory_id = '', 
                         affected_packages = [
-                            vulncheck_sdk.models.advisory/haskell_sadb_affected.advisory.HaskellSADBAffected(
+                            vulncheck_sdk.models.advisory/haskell_affected.advisory.HaskellAffected(
                                 affected_constraint = '', 
                                 affected_versions = [
-                                    vulncheck_sdk.models.advisory/haskell_sadb_version.advisory.HaskellSADBVersion(
+                                    vulncheck_sdk.models.advisory/haskell_version.advisory.HaskellVersion(
                                         fixed = '', 
                                         introduced = '', )
                                     ], 
@@ -94,7 +94,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryHaskellSADBAdvisoryPaginatePagi
                         aliases = [
                             ''
                             ], 
-                        cves = [
+                        cve = [
                             ''
                             ], 
                         cwes = [

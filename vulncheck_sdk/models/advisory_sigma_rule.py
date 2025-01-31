@@ -30,11 +30,12 @@ class AdvisorySigmaRule(BaseModel):
     """ # noqa: E501
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
+    mitre_attack_techniques: Optional[List[StrictStr]] = None
     sigma_rule: Optional[AdvisorySigmaRuleRule] = None
     summary: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "sigma_rule", "summary", "title", "url"]
+    __properties: ClassVar[List[str]] = ["cve", "date_added", "mitre_attack_techniques", "sigma_rule", "summary", "title", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,6 +93,7 @@ class AdvisorySigmaRule(BaseModel):
         _obj = cls.model_validate({
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
+            "mitre_attack_techniques": obj.get("mitre_attack_techniques"),
             "sigma_rule": AdvisorySigmaRuleRule.from_dict(obj["sigma_rule"]) if obj.get("sigma_rule") is not None else None,
             "summary": obj.get("summary"),
             "title": obj.get("title"),

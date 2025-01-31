@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **advisory_id** | **str** |  | [optional] 
-**affected_packages** | [**List[AdvisoryHaskellSADBAffected]**](AdvisoryHaskellSADBAffected.md) |  | [optional] 
+**affected_packages** | [**List[AdvisoryHaskellAffected]**](AdvisoryHaskellAffected.md) |  | [optional] 
 **aliases** | **List[str]** |  | [optional] 
-**cves** | **List[str]** |  | [optional] 
+**cve** | **List[str]** |  | [optional] 
 **cwes** | **List[int]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **keywords** | **List[str]** |  | [optional] 

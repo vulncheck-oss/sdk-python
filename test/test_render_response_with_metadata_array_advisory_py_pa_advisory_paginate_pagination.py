@@ -75,15 +75,15 @@ class TestRenderResponseWithMetadataArrayAdvisoryPyPAAdvisoryPaginatePagination(
                     vulncheck_sdk.models.advisory/py_pa_advisory.advisory.PyPAAdvisory(
                         advisory_id = '', 
                         affected = [
-                            vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner.advisory_PyPAAdvisory_affected_inner(
-                                package = vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_package.advisory_PyPAAdvisory_affected_inner_package(
+                            vulncheck_sdk.models.advisory/py_pa_affected.advisory.PyPAAffected(
+                                package = vulncheck_sdk.models.advisory/py_pa_package.advisory.PyPAPackage(
                                     ecosystem = '', 
                                     name = '', 
                                     purl = '', ), 
                                 ranges = [
-                                    vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_ranges_inner.advisory_PyPAAdvisory_affected_inner_ranges_inner(
+                                    vulncheck_sdk.models.advisory/py_pa_range.advisory.PyPARange(
                                         events = [
-                                            vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_ranges_inner_events_inner.advisory_PyPAAdvisory_affected_inner_ranges_inner_events_inner(
+                                            vulncheck_sdk.models.advisory/py_pa_event.advisory.PyPAEvent(
                                                 fixed = '', 
                                                 introduced = '', )
                                             ], 
@@ -96,12 +96,15 @@ class TestRenderResponseWithMetadataArrayAdvisoryPyPAAdvisoryPaginatePagination(
                         aliases = [
                             ''
                             ], 
+                        cve = [
+                            ''
+                            ], 
                         date_added = '', 
                         details = '', 
                         modified = '', 
                         published = '', 
                         references = [
-                            vulncheck_sdk.models.advisory_py_pa_advisory_references_inner.advisory_PyPAAdvisory_references_inner(
+                            vulncheck_sdk.models.advisory/py_pa_reference.advisory.PyPAReference(
                                 refs_type = '', 
                                 url = '', )
                             ], 

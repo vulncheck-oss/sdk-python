@@ -38,10 +38,10 @@ class TestAdvisoryHaskellSADBAdvisory(unittest.TestCase):
             return AdvisoryHaskellSADBAdvisory(
                 advisory_id = '',
                 affected_packages = [
-                    vulncheck_sdk.models.advisory/haskell_sadb_affected.advisory.HaskellSADBAffected(
+                    vulncheck_sdk.models.advisory/haskell_affected.advisory.HaskellAffected(
                         affected_constraint = '', 
                         affected_versions = [
-                            vulncheck_sdk.models.advisory/haskell_sadb_version.advisory.HaskellSADBVersion(
+                            vulncheck_sdk.models.advisory/haskell_version.advisory.HaskellVersion(
                                 fixed = '', 
                                 introduced = '', )
                             ], 
@@ -57,7 +57,7 @@ class TestAdvisoryHaskellSADBAdvisory(unittest.TestCase):
                 aliases = [
                     ''
                     ],
-                cves = [
+                cve = [
                     ''
                     ],
                 cwes = [

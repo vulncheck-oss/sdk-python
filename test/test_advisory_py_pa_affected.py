@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner import AdvisoryPyPAAdvisoryAffectedInner
+from vulncheck_sdk.models.advisory_py_pa_affected import AdvisoryPyPAAffected
 
-class TestAdvisoryPyPAAdvisoryAffectedInner(unittest.TestCase):
-    """AdvisoryPyPAAdvisoryAffectedInner unit test stubs"""
+class TestAdvisoryPyPAAffected(unittest.TestCase):
+    """AdvisoryPyPAAffected unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,24 +26,24 @@ class TestAdvisoryPyPAAdvisoryAffectedInner(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdvisoryPyPAAdvisoryAffectedInner:
-        """Test AdvisoryPyPAAdvisoryAffectedInner
+    def make_instance(self, include_optional) -> AdvisoryPyPAAffected:
+        """Test AdvisoryPyPAAffected
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AdvisoryPyPAAdvisoryAffectedInner`
+        # uncomment below to create an instance of `AdvisoryPyPAAffected`
         """
-        model = AdvisoryPyPAAdvisoryAffectedInner()
+        model = AdvisoryPyPAAffected()
         if include_optional:
-            return AdvisoryPyPAAdvisoryAffectedInner(
-                package = vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_package.advisory_PyPAAdvisory_affected_inner_package(
+            return AdvisoryPyPAAffected(
+                package = vulncheck_sdk.models.advisory/py_pa_package.advisory.PyPAPackage(
                     ecosystem = '', 
                     name = '', 
                     purl = '', ),
                 ranges = [
-                    vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_ranges_inner.advisory_PyPAAdvisory_affected_inner_ranges_inner(
+                    vulncheck_sdk.models.advisory/py_pa_range.advisory.PyPARange(
                         events = [
-                            vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_ranges_inner_events_inner.advisory_PyPAAdvisory_affected_inner_ranges_inner_events_inner(
+                            vulncheck_sdk.models.advisory/py_pa_event.advisory.PyPAEvent(
                                 fixed = '', 
                                 introduced = '', )
                             ], 
@@ -54,12 +54,12 @@ class TestAdvisoryPyPAAdvisoryAffectedInner(unittest.TestCase):
                     ]
             )
         else:
-            return AdvisoryPyPAAdvisoryAffectedInner(
+            return AdvisoryPyPAAffected(
         )
         """
 
-    def testAdvisoryPyPAAdvisoryAffectedInner(self):
-        """Test AdvisoryPyPAAdvisoryAffectedInner"""
+    def testAdvisoryPyPAAffected(self):
+        """Test AdvisoryPyPAAffected"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

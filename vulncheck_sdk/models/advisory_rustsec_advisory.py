@@ -32,10 +32,11 @@ class AdvisoryRustsecAdvisory(BaseModel):
     """ # noqa: E501
     advisory: Optional[AdvisoryRustsecFrontMatterAdvisory] = None
     affected: Optional[AdvisoryRustsecAffected] = None
+    cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     versions: Optional[AdvisoryRustsecFrontMatterVersions] = None
-    __properties: ClassVar[List[str]] = ["advisory", "affected", "date_added", "description", "versions"]
+    __properties: ClassVar[List[str]] = ["advisory", "affected", "cve", "date_added", "description", "versions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,6 +100,7 @@ class AdvisoryRustsecAdvisory(BaseModel):
         _obj = cls.model_validate({
             "advisory": AdvisoryRustsecFrontMatterAdvisory.from_dict(obj["advisory"]) if obj.get("advisory") is not None else None,
             "affected": AdvisoryRustsecAffected.from_dict(obj["affected"]) if obj.get("affected") is not None else None,
+            "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "description": obj.get("description"),
             "versions": AdvisoryRustsecFrontMatterVersions.from_dict(obj["versions"]) if obj.get("versions") is not None else None

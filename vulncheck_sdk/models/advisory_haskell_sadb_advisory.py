@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.models.advisory_haskell_sadb_affected import AdvisoryHaskellSADBAffected
+from vulncheck_sdk.models.advisory_haskell_affected import AdvisoryHaskellAffected
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,15 +29,15 @@ class AdvisoryHaskellSADBAdvisory(BaseModel):
     AdvisoryHaskellSADBAdvisory
     """ # noqa: E501
     advisory_id: Optional[StrictStr] = None
-    affected_packages: Optional[List[AdvisoryHaskellSADBAffected]] = None
+    affected_packages: Optional[List[AdvisoryHaskellAffected]] = None
     aliases: Optional[List[StrictStr]] = None
-    cves: Optional[List[StrictStr]] = None
+    cve: Optional[List[StrictStr]] = None
     cwes: Optional[List[StrictInt]] = None
     date_added: Optional[StrictStr] = None
     keywords: Optional[List[StrictStr]] = None
     references: Optional[Dict[str, List[StrictStr]]] = None
     related_vulns: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["advisory_id", "affected_packages", "aliases", "cves", "cwes", "date_added", "keywords", "references", "related_vulns"]
+    __properties: ClassVar[List[str]] = ["advisory_id", "affected_packages", "aliases", "cve", "cwes", "date_added", "keywords", "references", "related_vulns"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,9 +98,9 @@ class AdvisoryHaskellSADBAdvisory(BaseModel):
 
         _obj = cls.model_validate({
             "advisory_id": obj.get("advisory_id"),
-            "affected_packages": [AdvisoryHaskellSADBAffected.from_dict(_item) for _item in obj["affected_packages"]] if obj.get("affected_packages") is not None else None,
+            "affected_packages": [AdvisoryHaskellAffected.from_dict(_item) for _item in obj["affected_packages"]] if obj.get("affected_packages") is not None else None,
             "aliases": obj.get("aliases"),
-            "cves": obj.get("cves"),
+            "cve": obj.get("cve"),
             "cwes": obj.get("cwes"),
             "date_added": obj.get("date_added"),
             "keywords": obj.get("keywords"),

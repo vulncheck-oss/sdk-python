@@ -94,6 +94,9 @@ class TestRenderResponseWithMetadataArrayApiInitialAccessPaginatePagination(unit
                                 greynoise_queries = [
                                     ''
                                     ], 
+                                mitre_attack_techniques = [
+                                    ''
+                                    ], 
                                 nmap_script = True, 
                                 pcap = True, 
                                 product = [
@@ -108,6 +111,7 @@ class TestRenderResponseWithMetadataArrayApiInitialAccessPaginatePagination(unit
                                 snort_rule = True, 
                                 suricata_rule = True, 
                                 target_docker = True, 
+                                target_encrypted_comms = '', 
                                 target_service = '', 
                                 vendor = '', 
                                 version_scanner = True, 

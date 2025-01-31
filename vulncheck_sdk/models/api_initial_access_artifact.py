@@ -36,6 +36,7 @@ class ApiInitialAccessArtifact(BaseModel):
     exploit: Optional[StrictBool] = Field(default=None, description="Exploit indicates whether or not an exploit is available in this artifact.")
     fofa_queries: Optional[List[StrictStr]] = Field(default=None, description="FOFAQueries are raw queries for examining potential Internet-exposed devices & applications with FOFA.", alias="fofaQueries")
     greynoise_queries: Optional[List[StrictStr]] = Field(default=None, description="GreynoiseQueries are queries for finding the vulnerability via honeypot data.", alias="greynoiseQueries")
+    mitre_attack_techniques: Optional[List[StrictStr]] = Field(default=None, description="MITRE ATT&CK techniques", alias="mitreAttackTechniques")
     nmap_script: Optional[StrictBool] = Field(default=None, description="NmapScript indicates whether or not an nmap script for scanning environment exists in this artifact.", alias="nmapScript")
     pcap: Optional[StrictBool] = Field(default=None, description="PCAP indicates whether of not a package capture of the exploit PoC exploiting a vulnerable system exists in this artifact.")
     product: Optional[List[StrictStr]] = Field(default=None, description="Product are the software that has the vulnerability.")
@@ -44,13 +45,14 @@ class ApiInitialAccessArtifact(BaseModel):
     snort_rule: Optional[StrictBool] = Field(default=None, description="SnortRule indicates whether or not a Snort rule designed to detect the exploitation of the vulnerability over the network exists in this artifact.", alias="snortRule")
     suricata_rule: Optional[StrictBool] = Field(default=None, description="SuricataRule indicates whether or not a Suricata rule designed to detect the exploitation of the vulnerability over the network exists in this artifact.", alias="suricataRule")
     target_docker: Optional[StrictBool] = Field(default=None, description="TargetDocker indicates whether or not there is an available docker image with the vulnerability.", alias="targetDocker")
+    target_encrypted_comms: Optional[StrictStr] = Field(default=None, description="Encrypted communications?", alias="targetEncryptedComms")
     target_service: Optional[StrictStr] = Field(default=None, description="TargetService indicates the service (HTTP, FTP, etc) that this exploit targets.", alias="targetService")
     vendor: Optional[StrictStr] = Field(default=None, description="Vendor of the vulnerable product")
     version_scanner: Optional[StrictBool] = Field(default=None, description="VersionScanner indicates whether or not the exploit PoC can determine if target system is vulnerable without sending exploit payload in this artifact.", alias="versionScanner")
     yara: Optional[StrictBool] = Field(default=None, description="YARA indicates whether or not a YARA rule designed to detect the exploit on an endpoint exists in this artifact.")
     zeroday: Optional[StrictBool] = Field(default=None, description="Zeroday indicates whether or not it is a VulnCheck zeroday.")
     zoom_eye_queries: Optional[List[StrictStr]] = Field(default=None, description="ZoomEyeQueries are raw queries for examining potential Internet-exposed devices & applications with ZoomEye.", alias="zoomEyeQueries")
-    __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "censysQueries", "censysRawQueries", "cloneSSHURL", "dateAdded", "exploit", "fofaQueries", "greynoiseQueries", "nmapScript", "pcap", "product", "shodanQueries", "shodanRawQueries", "snortRule", "suricataRule", "targetDocker", "targetService", "vendor", "versionScanner", "yara", "zeroday", "zoomEyeQueries"]
+    __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "censysQueries", "censysRawQueries", "cloneSSHURL", "dateAdded", "exploit", "fofaQueries", "greynoiseQueries", "mitreAttackTechniques", "nmapScript", "pcap", "product", "shodanQueries", "shodanRawQueries", "snortRule", "suricataRule", "targetDocker", "targetEncryptedComms", "targetService", "vendor", "versionScanner", "yara", "zeroday", "zoomEyeQueries"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -112,6 +114,7 @@ class ApiInitialAccessArtifact(BaseModel):
             "exploit": obj.get("exploit"),
             "fofaQueries": obj.get("fofaQueries"),
             "greynoiseQueries": obj.get("greynoiseQueries"),
+            "mitreAttackTechniques": obj.get("mitreAttackTechniques"),
             "nmapScript": obj.get("nmapScript"),
             "pcap": obj.get("pcap"),
             "product": obj.get("product"),
@@ -120,6 +123,7 @@ class ApiInitialAccessArtifact(BaseModel):
             "snortRule": obj.get("snortRule"),
             "suricataRule": obj.get("suricataRule"),
             "targetDocker": obj.get("targetDocker"),
+            "targetEncryptedComms": obj.get("targetEncryptedComms"),
             "targetService": obj.get("targetService"),
             "vendor": obj.get("vendor"),
             "versionScanner": obj.get("versionScanner"),

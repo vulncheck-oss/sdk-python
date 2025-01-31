@@ -20,17 +20,19 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_ranges_inner_events_inner import AdvisoryPyPAAdvisoryAffectedInnerRangesInnerEventsInner
+from vulncheck_sdk.models.advisory_py_pa_package import AdvisoryPyPAPackage
+from vulncheck_sdk.models.advisory_py_pa_range import AdvisoryPyPARange
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryPyPAAdvisoryAffectedInnerRangesInner(BaseModel):
+class AdvisoryPyPAAffected(BaseModel):
     """
-    AdvisoryPyPAAdvisoryAffectedInnerRangesInner
+    AdvisoryPyPAAffected
     """ # noqa: E501
-    events: Optional[List[AdvisoryPyPAAdvisoryAffectedInnerRangesInnerEventsInner]] = None
-    ranges_type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["events", "ranges_type"]
+    package: Optional[AdvisoryPyPAPackage] = None
+    ranges: Optional[List[AdvisoryPyPARange]] = None
+    versions: Optional[List[StrictStr]] = None
+    __properties: ClassVar[List[str]] = ["package", "ranges", "versions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +52,7 @@ class AdvisoryPyPAAdvisoryAffectedInnerRangesInner(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryPyPAAdvisoryAffectedInnerRangesInner from a JSON string"""
+        """Create an instance of AdvisoryPyPAAffected from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,18 +73,21 @@ class AdvisoryPyPAAdvisoryAffectedInnerRangesInner(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in events (list)
+        # override the default output from pydantic by calling `to_dict()` of package
+        if self.package:
+            _dict['package'] = self.package.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in ranges (list)
         _items = []
-        if self.events:
-            for _item_events in self.events:
-                if _item_events:
-                    _items.append(_item_events.to_dict())
-            _dict['events'] = _items
+        if self.ranges:
+            for _item_ranges in self.ranges:
+                if _item_ranges:
+                    _items.append(_item_ranges.to_dict())
+            _dict['ranges'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryPyPAAdvisoryAffectedInnerRangesInner from a dict"""
+        """Create an instance of AdvisoryPyPAAffected from a dict"""
         if obj is None:
             return None
 
@@ -90,8 +95,9 @@ class AdvisoryPyPAAdvisoryAffectedInnerRangesInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "events": [AdvisoryPyPAAdvisoryAffectedInnerRangesInnerEventsInner.from_dict(_item) for _item in obj["events"]] if obj.get("events") is not None else None,
-            "ranges_type": obj.get("ranges_type")
+            "package": AdvisoryPyPAPackage.from_dict(obj["package"]) if obj.get("package") is not None else None,
+            "ranges": [AdvisoryPyPARange.from_dict(_item) for _item in obj["ranges"]] if obj.get("ranges") is not None else None,
+            "versions": obj.get("versions")
         })
         return _obj
 

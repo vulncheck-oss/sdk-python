@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **advisory** | [**AdvisoryRustsecFrontMatterAdvisory**](AdvisoryRustsecFrontMatterAdvisory.md) |  | [optional] 
 **affected** | [**AdvisoryRustsecAffected**](AdvisoryRustsecAffected.md) |  | [optional] 
+**cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **versions** | [**AdvisoryRustsecFrontMatterVersions**](AdvisoryRustsecFrontMatterVersions.md) |  | [optional] 

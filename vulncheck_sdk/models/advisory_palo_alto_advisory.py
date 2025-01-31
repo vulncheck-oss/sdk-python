@@ -30,6 +30,7 @@ class AdvisoryPaloAltoAdvisory(BaseModel):
     affected: Optional[StrictStr] = None
     applicable_versions: Optional[StrictStr] = Field(default=None, alias="applicableVersions")
     attack_complexity: Optional[StrictStr] = Field(default=None, alias="attackComplexity")
+    attack_requirements: Optional[StrictStr] = Field(default=None, alias="attackRequirements")
     attack_vector: Optional[StrictStr] = Field(default=None, alias="attackVector")
     availability_impact: Optional[StrictStr] = Field(default=None, alias="availabilityImpact")
     confidentiality_impact: Optional[StrictStr] = Field(default=None, alias="confidentialityImpact")
@@ -51,7 +52,7 @@ class AdvisoryPaloAltoAdvisory(BaseModel):
     url: Optional[StrictStr] = None
     user_interaction: Optional[StrictStr] = Field(default=None, alias="userInteraction")
     workaround: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected", "applicableVersions", "attackComplexity", "attackVector", "availabilityImpact", "confidentialityImpact", "cve", "cvssbaseScore", "datePublished", "dateUpdated", "date_added", "id", "integrityImpact", "privilegesRequired", "problem", "product", "scope", "severity", "solution", "title", "unaffected", "url", "userInteraction", "workaround"]
+    __properties: ClassVar[List[str]] = ["affected", "applicableVersions", "attackComplexity", "attackRequirements", "attackVector", "availabilityImpact", "confidentialityImpact", "cve", "cvssbaseScore", "datePublished", "dateUpdated", "date_added", "id", "integrityImpact", "privilegesRequired", "problem", "product", "scope", "severity", "solution", "title", "unaffected", "url", "userInteraction", "workaround"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,6 +108,7 @@ class AdvisoryPaloAltoAdvisory(BaseModel):
             "affected": obj.get("affected"),
             "applicableVersions": obj.get("applicableVersions"),
             "attackComplexity": obj.get("attackComplexity"),
+            "attackRequirements": obj.get("attackRequirements"),
             "attackVector": obj.get("attackVector"),
             "availabilityImpact": obj.get("availabilityImpact"),
             "confidentialityImpact": obj.get("confidentialityImpact"),

@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.advisory_py_pa_advisory_references_inner import AdvisoryPyPAAdvisoryReferencesInner
+from vulncheck_sdk.models.advisory_py_pa_range import AdvisoryPyPARange
 
-class TestAdvisoryPyPAAdvisoryReferencesInner(unittest.TestCase):
-    """AdvisoryPyPAAdvisoryReferencesInner unit test stubs"""
+class TestAdvisoryPyPARange(unittest.TestCase):
+    """AdvisoryPyPARange unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,30 @@ class TestAdvisoryPyPAAdvisoryReferencesInner(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdvisoryPyPAAdvisoryReferencesInner:
-        """Test AdvisoryPyPAAdvisoryReferencesInner
+    def make_instance(self, include_optional) -> AdvisoryPyPARange:
+        """Test AdvisoryPyPARange
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AdvisoryPyPAAdvisoryReferencesInner`
+        # uncomment below to create an instance of `AdvisoryPyPARange`
         """
-        model = AdvisoryPyPAAdvisoryReferencesInner()
+        model = AdvisoryPyPARange()
         if include_optional:
-            return AdvisoryPyPAAdvisoryReferencesInner(
-                refs_type = '',
-                url = ''
+            return AdvisoryPyPARange(
+                events = [
+                    vulncheck_sdk.models.advisory/py_pa_event.advisory.PyPAEvent(
+                        fixed = '', 
+                        introduced = '', )
+                    ],
+                ranges_type = ''
             )
         else:
-            return AdvisoryPyPAAdvisoryReferencesInner(
+            return AdvisoryPyPARange(
         )
         """
 
-    def testAdvisoryPyPAAdvisoryReferencesInner(self):
-        """Test AdvisoryPyPAAdvisoryReferencesInner"""
+    def testAdvisoryPyPARange(self):
+        """Test AdvisoryPyPARange"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
