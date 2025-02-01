@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **affected** | **str** |  | [optional] 
 **applicable_versions** | **str** |  | [optional] 
 **attack_complexity** | **str** |  | [optional] 
+**attack_requirements** | **str** |  | [optional] 
 **attack_vector** | **str** |  | [optional] 
 **availability_impact** | **str** |  | [optional] 
 **confidentiality_impact** | **str** |  | [optional] 

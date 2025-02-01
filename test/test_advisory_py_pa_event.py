@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.advisory_haskell_sadb_version import AdvisoryHaskellSADBVersion
+from vulncheck_sdk.models.advisory_py_pa_event import AdvisoryPyPAEvent
 
-class TestAdvisoryHaskellSADBVersion(unittest.TestCase):
-    """AdvisoryHaskellSADBVersion unit test stubs"""
+class TestAdvisoryPyPAEvent(unittest.TestCase):
+    """AdvisoryPyPAEvent unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,26 @@ class TestAdvisoryHaskellSADBVersion(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdvisoryHaskellSADBVersion:
-        """Test AdvisoryHaskellSADBVersion
+    def make_instance(self, include_optional) -> AdvisoryPyPAEvent:
+        """Test AdvisoryPyPAEvent
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AdvisoryHaskellSADBVersion`
+        # uncomment below to create an instance of `AdvisoryPyPAEvent`
         """
-        model = AdvisoryHaskellSADBVersion()
+        model = AdvisoryPyPAEvent()
         if include_optional:
-            return AdvisoryHaskellSADBVersion(
+            return AdvisoryPyPAEvent(
                 fixed = '',
                 introduced = ''
             )
         else:
-            return AdvisoryHaskellSADBVersion(
+            return AdvisoryPyPAEvent(
         )
         """
 
-    def testAdvisoryHaskellSADBVersion(self):
-        """Test AdvisoryHaskellSADBVersion"""
+    def testAdvisoryPyPAEvent(self):
+        """Test AdvisoryPyPAEvent"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

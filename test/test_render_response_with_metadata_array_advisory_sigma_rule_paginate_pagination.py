@@ -77,6 +77,9 @@ class TestRenderResponseWithMetadataArrayAdvisorySigmaRulePaginatePagination(uni
                             ''
                             ], 
                         date_added = '', 
+                        mitre_attack_techniques = [
+                            ''
+                            ], 
                         sigma_rule = vulncheck_sdk.models.advisory/sigma_rule_rule.advisory.SigmaRuleRule(
                             author = '', 
                             date = '', 

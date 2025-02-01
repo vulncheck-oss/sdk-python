@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.7"
+__version__ = "0.0.8"
 
 # import apis into sdk package
 from vulncheck_sdk.api.endpoints_api import EndpointsApi
@@ -274,9 +274,9 @@ from vulncheck_sdk.models.advisory_hp import AdvisoryHP
 from vulncheck_sdk.models.advisory_hardware_update import AdvisoryHardwareUpdate
 from vulncheck_sdk.models.advisory_harmony_os import AdvisoryHarmonyOS
 from vulncheck_sdk.models.advisory_hashi_corp import AdvisoryHashiCorp
+from vulncheck_sdk.models.advisory_haskell_affected import AdvisoryHaskellAffected
 from vulncheck_sdk.models.advisory_haskell_sadb_advisory import AdvisoryHaskellSADBAdvisory
-from vulncheck_sdk.models.advisory_haskell_sadb_affected import AdvisoryHaskellSADBAffected
-from vulncheck_sdk.models.advisory_haskell_sadb_version import AdvisoryHaskellSADBVersion
+from vulncheck_sdk.models.advisory_haskell_version import AdvisoryHaskellVersion
 from vulncheck_sdk.models.advisory_hillrom_advisory import AdvisoryHillromAdvisory
 from vulncheck_sdk.models.advisory_hitachi import AdvisoryHitachi
 from vulncheck_sdk.models.advisory_hitachi_energy import AdvisoryHitachiEnergy
@@ -451,11 +451,11 @@ from vulncheck_sdk.models.advisory_proofpoint import AdvisoryProofpoint
 from vulncheck_sdk.models.advisory_publisher import AdvisoryPublisher
 from vulncheck_sdk.models.advisory_pure_storage import AdvisoryPureStorage
 from vulncheck_sdk.models.advisory_py_pa_advisory import AdvisoryPyPAAdvisory
-from vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner import AdvisoryPyPAAdvisoryAffectedInner
-from vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_package import AdvisoryPyPAAdvisoryAffectedInnerPackage
-from vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_ranges_inner import AdvisoryPyPAAdvisoryAffectedInnerRangesInner
-from vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_ranges_inner_events_inner import AdvisoryPyPAAdvisoryAffectedInnerRangesInnerEventsInner
-from vulncheck_sdk.models.advisory_py_pa_advisory_references_inner import AdvisoryPyPAAdvisoryReferencesInner
+from vulncheck_sdk.models.advisory_py_pa_affected import AdvisoryPyPAAffected
+from vulncheck_sdk.models.advisory_py_pa_event import AdvisoryPyPAEvent
+from vulncheck_sdk.models.advisory_py_pa_package import AdvisoryPyPAPackage
+from vulncheck_sdk.models.advisory_py_pa_range import AdvisoryPyPARange
+from vulncheck_sdk.models.advisory_py_pa_reference import AdvisoryPyPAReference
 from vulncheck_sdk.models.advisory_qnap_advisory import AdvisoryQNAPAdvisory
 from vulncheck_sdk.models.advisory_qsb import AdvisoryQSB
 from vulncheck_sdk.models.advisory_qualcomm import AdvisoryQualcomm

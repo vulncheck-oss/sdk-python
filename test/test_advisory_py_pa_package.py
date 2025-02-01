@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_package import AdvisoryPyPAAdvisoryAffectedInnerPackage
+from vulncheck_sdk.models.advisory_py_pa_package import AdvisoryPyPAPackage
 
-class TestAdvisoryPyPAAdvisoryAffectedInnerPackage(unittest.TestCase):
-    """AdvisoryPyPAAdvisoryAffectedInnerPackage unit test stubs"""
+class TestAdvisoryPyPAPackage(unittest.TestCase):
+    """AdvisoryPyPAPackage unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,27 +26,27 @@ class TestAdvisoryPyPAAdvisoryAffectedInnerPackage(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdvisoryPyPAAdvisoryAffectedInnerPackage:
-        """Test AdvisoryPyPAAdvisoryAffectedInnerPackage
+    def make_instance(self, include_optional) -> AdvisoryPyPAPackage:
+        """Test AdvisoryPyPAPackage
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AdvisoryPyPAAdvisoryAffectedInnerPackage`
+        # uncomment below to create an instance of `AdvisoryPyPAPackage`
         """
-        model = AdvisoryPyPAAdvisoryAffectedInnerPackage()
+        model = AdvisoryPyPAPackage()
         if include_optional:
-            return AdvisoryPyPAAdvisoryAffectedInnerPackage(
+            return AdvisoryPyPAPackage(
                 ecosystem = '',
                 name = '',
                 purl = ''
             )
         else:
-            return AdvisoryPyPAAdvisoryAffectedInnerPackage(
+            return AdvisoryPyPAPackage(
         )
         """
 
-    def testAdvisoryPyPAAdvisoryAffectedInnerPackage(self):
-        """Test AdvisoryPyPAAdvisoryAffectedInnerPackage"""
+    def testAdvisoryPyPAPackage(self):
+        """Test AdvisoryPyPAPackage"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

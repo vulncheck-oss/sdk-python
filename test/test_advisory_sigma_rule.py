@@ -40,6 +40,9 @@ class TestAdvisorySigmaRule(unittest.TestCase):
                     ''
                     ],
                 date_added = '',
+                mitre_attack_techniques = [
+                    ''
+                    ],
                 sigma_rule = vulncheck_sdk.models.advisory/sigma_rule_rule.advisory.SigmaRuleRule(
                     author = '', 
                     date = '', 

@@ -57,6 +57,9 @@ class TestApiInitialAccess(unittest.TestCase):
                         greynoise_queries = [
                             ''
                             ], 
+                        mitre_attack_techniques = [
+                            ''
+                            ], 
                         nmap_script = True, 
                         pcap = True, 
                         product = [
@@ -71,6 +74,7 @@ class TestApiInitialAccess(unittest.TestCase):
                         snort_rule = True, 
                         suricata_rule = True, 
                         target_docker = True, 
+                        target_encrypted_comms = '', 
                         target_service = '', 
                         vendor = '', 
                         version_scanner = True, 

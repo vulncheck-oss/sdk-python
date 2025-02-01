@@ -23,13 +23,13 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryHaskellSADBVersion(BaseModel):
+class AdvisoryPyPAReference(BaseModel):
     """
-    AdvisoryHaskellSADBVersion
+    AdvisoryPyPAReference
     """ # noqa: E501
-    fixed: Optional[StrictStr] = None
-    introduced: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["fixed", "introduced"]
+    refs_type: Optional[StrictStr] = None
+    url: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["refs_type", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +49,7 @@ class AdvisoryHaskellSADBVersion(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryHaskellSADBVersion from a JSON string"""
+        """Create an instance of AdvisoryPyPAReference from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,7 +74,7 @@ class AdvisoryHaskellSADBVersion(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryHaskellSADBVersion from a dict"""
+        """Create an instance of AdvisoryPyPAReference from a dict"""
         if obj is None:
             return None
 
@@ -82,8 +82,8 @@ class AdvisoryHaskellSADBVersion(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "fixed": obj.get("fixed"),
-            "introduced": obj.get("introduced")
+            "refs_type": obj.get("refs_type"),
+            "url": obj.get("url")
         })
         return _obj
 

@@ -20,8 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner import AdvisoryPyPAAdvisoryAffectedInner
-from vulncheck_sdk.models.advisory_py_pa_advisory_references_inner import AdvisoryPyPAAdvisoryReferencesInner
+from vulncheck_sdk.models.advisory_py_pa_affected import AdvisoryPyPAAffected
+from vulncheck_sdk.models.advisory_py_pa_reference import AdvisoryPyPAReference
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,16 +30,17 @@ class AdvisoryPyPAAdvisory(BaseModel):
     AdvisoryPyPAAdvisory
     """ # noqa: E501
     advisory_id: Optional[StrictStr] = Field(default=None, description="ID is the PYSEC- identifier")
-    affected: Optional[List[AdvisoryPyPAAdvisoryAffectedInner]] = Field(default=None, description="Affected will list out the vulnerable versions.")
+    affected: Optional[List[AdvisoryPyPAAffected]] = Field(default=None, description="Affected will list out the vulnerable versions.")
     aliases: Optional[List[StrictStr]] = Field(default=None, description="Aliases are other identifiers that refer to this, such as a CVE")
-    date_added: Optional[StrictStr] = Field(default=None, description="DateAdded is the RFC3339Nano published timestamp")
+    cve: Optional[List[StrictStr]] = None
+    date_added: Optional[StrictStr] = None
     details: Optional[StrictStr] = Field(default=None, description="Details discuss the vulnerability information")
     modified: Optional[StrictStr] = Field(default=None, description="Modified is non-zero Time if entry was updated")
     published: Optional[StrictStr] = Field(default=None, description="Published is the datetime when this was released")
-    references: Optional[List[AdvisoryPyPAAdvisoryReferencesInner]] = Field(default=None, description="References are links to more detailed advisories, fixes, etc.")
+    references: Optional[List[AdvisoryPyPAReference]] = Field(default=None, description="References are links to more detailed advisories, fixes, etc.")
     was_withdrawn: Optional[StrictBool] = Field(default=None, description="WasWD indicates if the advisory was withdrawn or not.")
     withdrawn: Optional[StrictStr] = Field(default=None, description="Withdrawn is non-zero if this advisory has been withdrawn")
-    __properties: ClassVar[List[str]] = ["advisory_id", "affected", "aliases", "date_added", "details", "modified", "published", "references", "was_withdrawn", "withdrawn"]
+    __properties: ClassVar[List[str]] = ["advisory_id", "affected", "aliases", "cve", "date_added", "details", "modified", "published", "references", "was_withdrawn", "withdrawn"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,13 +108,14 @@ class AdvisoryPyPAAdvisory(BaseModel):
 
         _obj = cls.model_validate({
             "advisory_id": obj.get("advisory_id"),
-            "affected": [AdvisoryPyPAAdvisoryAffectedInner.from_dict(_item) for _item in obj["affected"]] if obj.get("affected") is not None else None,
+            "affected": [AdvisoryPyPAAffected.from_dict(_item) for _item in obj["affected"]] if obj.get("affected") is not None else None,
             "aliases": obj.get("aliases"),
+            "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "details": obj.get("details"),
             "modified": obj.get("modified"),
             "published": obj.get("published"),
-            "references": [AdvisoryPyPAAdvisoryReferencesInner.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
+            "references": [AdvisoryPyPAReference.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
             "was_withdrawn": obj.get("was_withdrawn"),
             "withdrawn": obj.get("withdrawn")
         })

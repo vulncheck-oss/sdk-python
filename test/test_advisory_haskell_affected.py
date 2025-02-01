@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.advisory_haskell_sadb_affected import AdvisoryHaskellSADBAffected
+from vulncheck_sdk.models.advisory_haskell_affected import AdvisoryHaskellAffected
 
-class TestAdvisoryHaskellSADBAffected(unittest.TestCase):
-    """AdvisoryHaskellSADBAffected unit test stubs"""
+class TestAdvisoryHaskellAffected(unittest.TestCase):
+    """AdvisoryHaskellAffected unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,19 +26,19 @@ class TestAdvisoryHaskellSADBAffected(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdvisoryHaskellSADBAffected:
-        """Test AdvisoryHaskellSADBAffected
+    def make_instance(self, include_optional) -> AdvisoryHaskellAffected:
+        """Test AdvisoryHaskellAffected
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AdvisoryHaskellSADBAffected`
+        # uncomment below to create an instance of `AdvisoryHaskellAffected`
         """
-        model = AdvisoryHaskellSADBAffected()
+        model = AdvisoryHaskellAffected()
         if include_optional:
-            return AdvisoryHaskellSADBAffected(
+            return AdvisoryHaskellAffected(
                 affected_constraint = '',
                 affected_versions = [
-                    vulncheck_sdk.models.advisory/haskell_sadb_version.advisory.HaskellSADBVersion(
+                    vulncheck_sdk.models.advisory/haskell_version.advisory.HaskellVersion(
                         fixed = '', 
                         introduced = '', )
                     ],
@@ -52,12 +52,12 @@ class TestAdvisoryHaskellSADBAffected(unittest.TestCase):
                 package = ''
             )
         else:
-            return AdvisoryHaskellSADBAffected(
+            return AdvisoryHaskellAffected(
         )
         """
 
-    def testAdvisoryHaskellSADBAffected(self):
-        """Test AdvisoryHaskellSADBAffected"""
+    def testAdvisoryHaskellAffected(self):
+        """Test AdvisoryHaskellAffected"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

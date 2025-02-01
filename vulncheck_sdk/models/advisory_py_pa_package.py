@@ -20,19 +20,17 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_package import AdvisoryPyPAAdvisoryAffectedInnerPackage
-from vulncheck_sdk.models.advisory_py_pa_advisory_affected_inner_ranges_inner import AdvisoryPyPAAdvisoryAffectedInnerRangesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryPyPAAdvisoryAffectedInner(BaseModel):
+class AdvisoryPyPAPackage(BaseModel):
     """
-    AdvisoryPyPAAdvisoryAffectedInner
+    AdvisoryPyPAPackage
     """ # noqa: E501
-    package: Optional[AdvisoryPyPAAdvisoryAffectedInnerPackage] = None
-    ranges: Optional[List[AdvisoryPyPAAdvisoryAffectedInnerRangesInner]] = None
-    versions: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["package", "ranges", "versions"]
+    ecosystem: Optional[StrictStr] = None
+    name: Optional[StrictStr] = None
+    purl: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["ecosystem", "name", "purl"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +50,7 @@ class AdvisoryPyPAAdvisoryAffectedInner(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryPyPAAdvisoryAffectedInner from a JSON string"""
+        """Create an instance of AdvisoryPyPAPackage from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,21 +71,11 @@ class AdvisoryPyPAAdvisoryAffectedInner(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of package
-        if self.package:
-            _dict['package'] = self.package.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in ranges (list)
-        _items = []
-        if self.ranges:
-            for _item_ranges in self.ranges:
-                if _item_ranges:
-                    _items.append(_item_ranges.to_dict())
-            _dict['ranges'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryPyPAAdvisoryAffectedInner from a dict"""
+        """Create an instance of AdvisoryPyPAPackage from a dict"""
         if obj is None:
             return None
 
@@ -95,9 +83,9 @@ class AdvisoryPyPAAdvisoryAffectedInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "package": AdvisoryPyPAAdvisoryAffectedInnerPackage.from_dict(obj["package"]) if obj.get("package") is not None else None,
-            "ranges": [AdvisoryPyPAAdvisoryAffectedInnerRangesInner.from_dict(_item) for _item in obj["ranges"]] if obj.get("ranges") is not None else None,
-            "versions": obj.get("versions")
+            "ecosystem": obj.get("ecosystem"),
+            "name": obj.get("name"),
+            "purl": obj.get("purl")
         })
         return _obj
 

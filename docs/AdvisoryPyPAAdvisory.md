@@ -6,13 +6,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **advisory_id** | **str** | ID is the PYSEC- identifier | [optional] 
-**affected** | [**List[AdvisoryPyPAAdvisoryAffectedInner]**](AdvisoryPyPAAdvisoryAffectedInner.md) | Affected will list out the vulnerable versions. | [optional] 
+**affected** | [**List[AdvisoryPyPAAffected]**](AdvisoryPyPAAffected.md) | Affected will list out the vulnerable versions. | [optional] 
 **aliases** | **List[str]** | Aliases are other identifiers that refer to this, such as a CVE | [optional] 
-**date_added** | **str** | DateAdded is the RFC3339Nano published timestamp | [optional] 
+**cve** | **List[str]** |  | [optional] 
+**date_added** | **str** |  | [optional] 
 **details** | **str** | Details discuss the vulnerability information | [optional] 
 **modified** | **str** | Modified is non-zero Time if entry was updated | [optional] 
 **published** | **str** | Published is the datetime when this was released | [optional] 
-**references** | [**List[AdvisoryPyPAAdvisoryReferencesInner]**](AdvisoryPyPAAdvisoryReferencesInner.md) | References are links to more detailed advisories, fixes, etc. | [optional] 
+**references** | [**List[AdvisoryPyPAReference]**](AdvisoryPyPAReference.md) | References are links to more detailed advisories, fixes, etc. | [optional] 
 **was_withdrawn** | **bool** | WasWD indicates if the advisory was withdrawn or not. | [optional] 
 **withdrawn** | **str** | Withdrawn is non-zero if this advisory has been withdrawn | [optional] 
 

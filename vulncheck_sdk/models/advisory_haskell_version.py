@@ -18,23 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.models.advisory_haskell_sadb_version import AdvisoryHaskellSADBVersion
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryHaskellSADBAffected(BaseModel):
+class AdvisoryHaskellVersion(BaseModel):
     """
-    AdvisoryHaskellSADBAffected
+    AdvisoryHaskellVersion
     """ # noqa: E501
-    affected_constraint: Optional[StrictStr] = Field(default=None, description="We produce AffectedConstraint based on AffectedVersions")
-    affected_versions: Optional[List[AdvisoryHaskellSADBVersion]] = None
-    arch: Optional[List[StrictStr]] = None
-    cvss: Optional[StrictStr] = None
-    os: Optional[List[StrictStr]] = None
-    package: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected_constraint", "affected_versions", "arch", "cvss", "os", "package"]
+    fixed: Optional[StrictStr] = None
+    introduced: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["fixed", "introduced"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -54,7 +49,7 @@ class AdvisoryHaskellSADBAffected(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryHaskellSADBAffected from a JSON string"""
+        """Create an instance of AdvisoryHaskellVersion from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,18 +70,11 @@ class AdvisoryHaskellSADBAffected(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in affected_versions (list)
-        _items = []
-        if self.affected_versions:
-            for _item_affected_versions in self.affected_versions:
-                if _item_affected_versions:
-                    _items.append(_item_affected_versions.to_dict())
-            _dict['affected_versions'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryHaskellSADBAffected from a dict"""
+        """Create an instance of AdvisoryHaskellVersion from a dict"""
         if obj is None:
             return None
 
@@ -94,12 +82,8 @@ class AdvisoryHaskellSADBAffected(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "affected_constraint": obj.get("affected_constraint"),
-            "affected_versions": [AdvisoryHaskellSADBVersion.from_dict(_item) for _item in obj["affected_versions"]] if obj.get("affected_versions") is not None else None,
-            "arch": obj.get("arch"),
-            "cvss": obj.get("cvss"),
-            "os": obj.get("os"),
-            "package": obj.get("package")
+            "fixed": obj.get("fixed"),
+            "introduced": obj.get("introduced")
         })
         return _obj
 

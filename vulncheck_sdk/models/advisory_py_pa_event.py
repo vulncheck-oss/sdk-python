@@ -23,9 +23,9 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryPyPAAdvisoryAffectedInnerRangesInnerEventsInner(BaseModel):
+class AdvisoryPyPAEvent(BaseModel):
     """
-    AdvisoryPyPAAdvisoryAffectedInnerRangesInnerEventsInner
+    AdvisoryPyPAEvent
     """ # noqa: E501
     fixed: Optional[StrictStr] = None
     introduced: Optional[StrictStr] = None
@@ -49,7 +49,7 @@ class AdvisoryPyPAAdvisoryAffectedInnerRangesInnerEventsInner(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryPyPAAdvisoryAffectedInnerRangesInnerEventsInner from a JSON string"""
+        """Create an instance of AdvisoryPyPAEvent from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,7 +74,7 @@ class AdvisoryPyPAAdvisoryAffectedInnerRangesInnerEventsInner(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryPyPAAdvisoryAffectedInnerRangesInnerEventsInner from a dict"""
+        """Create an instance of AdvisoryPyPAEvent from a dict"""
         if obj is None:
             return None
 

@@ -104,6 +104,9 @@ class TestRenderResponseWithMetadataArrayAdvisoryRustsecAdvisoryPaginatePaginati
                             os = [
                                 ''
                                 ], ), 
+                        cve = [
+                            ''
+                            ], 
                         date_added = '', 
                         description = '', 
                         versions = vulncheck_sdk.models.advisory/rustsec_front_matter_versions.advisory.RustsecFrontMatterVersions(

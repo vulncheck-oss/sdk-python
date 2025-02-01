@@ -39,6 +39,7 @@ class TestAdvisoryPaloAltoAdvisory(unittest.TestCase):
                 affected = '',
                 applicable_versions = '',
                 attack_complexity = '',
+                attack_requirements = '',
                 attack_vector = '',
                 availability_impact = '',
                 confidentiality_impact = '',

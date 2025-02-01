@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
+**mitre_attack_techniques** | **List[str]** |  | [optional] 
 **sigma_rule** | [**AdvisorySigmaRuleRule**](AdvisorySigmaRuleRule.md) |  | [optional] 
 **summary** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
