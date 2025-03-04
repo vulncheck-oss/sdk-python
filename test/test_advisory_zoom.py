@@ -39,6 +39,8 @@ class TestAdvisoryZoom(unittest.TestCase):
                 cve = [
                     ''
                     ],
+                cvss_score = '',
+                cvss_vector = '',
                 date_added = '',
                 title = '',
                 url = '',

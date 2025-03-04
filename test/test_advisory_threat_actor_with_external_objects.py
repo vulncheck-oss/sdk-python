@@ -123,6 +123,11 @@ class TestAdvisoryThreatActorWithExternalObjects(unittest.TestCase):
                         threat_actor_name = '', 
                         url = '', 
                         vendor_name = '', )
+                    ],
+                vendors_and_products_targeted = [
+                    vulncheck_sdk.models.advisory/vendor_product.advisory.VendorProduct(
+                        product = '', 
+                        vendor = '', )
                     ]
             )
         else:

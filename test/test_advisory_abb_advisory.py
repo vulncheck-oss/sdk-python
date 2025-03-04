@@ -43,6 +43,7 @@ class TestAdvisoryABBAdvisory(unittest.TestCase):
                     ''
                     ],
                 date_added = '',
+                updated_at = '',
                 url = ''
             )
         else:

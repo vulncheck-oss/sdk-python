@@ -6,6 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cve** | **List[str]** |  | [optional] 
+**cvss_score** | **str** |  | [optional] 
+**cvss_vector** | **str** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 

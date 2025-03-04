@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **date_added** | **str** |  | [optional] 
 **fixed** | **List[str]** |  | [optional] 
 **id** | **str** |  | [optional] 
+**mendix_id** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 

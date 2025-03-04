@@ -26,6 +26,7 @@ from vulncheck_sdk.models.advisory_mitre_attack_group_no_id import AdvisoryMITRE
 from vulncheck_sdk.models.advisory_mitre_group_cti import AdvisoryMitreGroupCTI
 from vulncheck_sdk.models.advisory_tool import AdvisoryTool
 from vulncheck_sdk.models.advisory_vendor_name_for_threat_actor import AdvisoryVendorNameForThreatActor
+from vulncheck_sdk.models.advisory_vendor_product import AdvisoryVendorProduct
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -45,7 +46,8 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
     threat_actor_name: Optional[StrictStr] = None
     tools: Optional[List[AdvisoryTool]] = None
     vendor_names_for_threat_actors: Optional[List[AdvisoryVendorNameForThreatActor]] = None
-    __properties: ClassVar[List[str]] = ["country", "cve_references", "date_added", "malpedia_url", "misp_id", "misp_threat_actor", "mitre_attack_group", "mitre_group_cti", "mitre_id", "threat_actor_name", "tools", "vendor_names_for_threat_actors"]
+    vendors_and_products_targeted: Optional[List[AdvisoryVendorProduct]] = None
+    __properties: ClassVar[List[str]] = ["country", "cve_references", "date_added", "malpedia_url", "misp_id", "misp_threat_actor", "mitre_attack_group", "mitre_group_cti", "mitre_id", "threat_actor_name", "tools", "vendor_names_for_threat_actors", "vendors_and_products_targeted"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -116,6 +118,13 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
                 if _item_vendor_names_for_threat_actors:
                     _items.append(_item_vendor_names_for_threat_actors.to_dict())
             _dict['vendor_names_for_threat_actors'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in vendors_and_products_targeted (list)
+        _items = []
+        if self.vendors_and_products_targeted:
+            for _item_vendors_and_products_targeted in self.vendors_and_products_targeted:
+                if _item_vendors_and_products_targeted:
+                    _items.append(_item_vendors_and_products_targeted.to_dict())
+            _dict['vendors_and_products_targeted'] = _items
         return _dict
 
     @classmethod
@@ -139,7 +148,8 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
             "mitre_id": obj.get("mitre_id"),
             "threat_actor_name": obj.get("threat_actor_name"),
             "tools": [AdvisoryTool.from_dict(_item) for _item in obj["tools"]] if obj.get("tools") is not None else None,
-            "vendor_names_for_threat_actors": [AdvisoryVendorNameForThreatActor.from_dict(_item) for _item in obj["vendor_names_for_threat_actors"]] if obj.get("vendor_names_for_threat_actors") is not None else None
+            "vendor_names_for_threat_actors": [AdvisoryVendorNameForThreatActor.from_dict(_item) for _item in obj["vendor_names_for_threat_actors"]] if obj.get("vendor_names_for_threat_actors") is not None else None,
+            "vendors_and_products_targeted": [AdvisoryVendorProduct.from_dict(_item) for _item in obj["vendors_and_products_targeted"]] if obj.get("vendors_and_products_targeted") is not None else None
         })
         return _obj
 

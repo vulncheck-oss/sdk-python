@@ -29,10 +29,13 @@ class AdvisoryTeamViewer(BaseModel):
     """ # noqa: E501
     bulletin_id: Optional[StrictStr] = None
     cve: Optional[List[StrictStr]] = None
+    cvss_score: Optional[StrictStr] = None
+    cvss_vector: Optional[StrictStr] = None
     date_added: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["bulletin_id", "cve", "date_added", "title", "url"]
+    __properties: ClassVar[List[str]] = ["bulletin_id", "cve", "cvss_score", "cvss_vector", "date_added", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,8 +90,11 @@ class AdvisoryTeamViewer(BaseModel):
         _obj = cls.model_validate({
             "bulletin_id": obj.get("bulletin_id"),
             "cve": obj.get("cve"),
+            "cvss_score": obj.get("cvss_score"),
+            "cvss_vector": obj.get("cvss_vector"),
             "date_added": obj.get("date_added"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

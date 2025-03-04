@@ -76,6 +76,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryZoomPaginatePagination(unittest
                         cve = [
                             ''
                             ], 
+                        cvss_score = '', 
+                        cvss_vector = '', 
                         date_added = '', 
                         title = '', 
                         url = '', 

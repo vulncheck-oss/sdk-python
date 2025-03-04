@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**adobe_cves** | [**List[AdvisoryAdobeCVE]**](AdvisoryAdobeCVE.md) |  | [optional] 
 **affected** | [**List[AdvisoryAdobeAffected]**](AdvisoryAdobeAffected.md) |  | [optional] 
 **bulletin_id** | **str** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 

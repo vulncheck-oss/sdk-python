@@ -84,6 +84,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryRockwellPaginatePagination(unit
                             ], 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

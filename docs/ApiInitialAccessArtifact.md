@@ -7,12 +7,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **artifact_name** | **str** | ArtifactName is a title to associate with this artifact. | [optional] 
 **artifacts_url** | **List[str]** | ArtifactsURL are URLs to the available artifact. | [optional] 
+**baidu_queries** | **List[str]** | ... | [optional] 
+**baidu_raw_queries** | **List[str]** | ... | [optional] 
 **censys_queries** | **List[str]** | CensysQueries are queries for examining potential Internet-exposed devices &amp; applications with Censys in URL form. | [optional] 
 **censys_raw_queries** | **List[str]** | CensysRawQueries are raw queries for examining potential Internet-exposed devices &amp; applications with Censys. | [optional] 
 **clone_sshurl** | **str** | CloneSSHURL is the git URL to clone the artifact with. | [optional] 
 **date_added** | **str** | DateAdded is when this artifact entry was first added to the InitialAccess data set. | [optional] 
 **exploit** | **bool** | Exploit indicates whether or not an exploit is available in this artifact. | [optional] 
 **fofa_queries** | **List[str]** | FOFAQueries are raw queries for examining potential Internet-exposed devices &amp; applications with FOFA. | [optional] 
+**fofa_raw_queries** | **List[str]** |  | [optional] 
+**google_queries** | **List[str]** | google queries | [optional] 
+**google_raw_queries** | **List[str]** | raw google queries | [optional] 
 **greynoise_queries** | **List[str]** | GreynoiseQueries are queries for finding the vulnerability via honeypot data. | [optional] 
 **mitre_attack_techniques** | **List[str]** | MITRE ATT&amp;CK techniques | [optional] 
 **nmap_script** | **bool** | NmapScript indicates whether or not an nmap script for scanning environment exists in this artifact. | [optional] 
@@ -30,6 +35,7 @@ Name | Type | Description | Notes
 **yara** | **bool** | YARA indicates whether or not a YARA rule designed to detect the exploit on an endpoint exists in this artifact. | [optional] 
 **zeroday** | **bool** | Zeroday indicates whether or not it is a VulnCheck zeroday. | [optional] 
 **zoom_eye_queries** | **List[str]** | ZoomEyeQueries are raw queries for examining potential Internet-exposed devices &amp; applications with ZoomEye. | [optional] 
+**zoom_eye_raw_queries** | **List[str]** |  | [optional] 
 
 ## Example
 

@@ -42,6 +42,12 @@ class TestAdvisoryDell(unittest.TestCase):
                     ''
                     ],
                 date_added = '',
+                dell_cves = [
+                    vulncheck_sdk.models.advisory/dell_cve.advisory.DellCVE(
+                        cve = '', 
+                        cvss_score = '', 
+                        cvss_vector = '', )
+                    ],
                 severity = '',
                 title = '',
                 url = ''

@@ -79,6 +79,11 @@ class TestRenderResponseWithMetadataArrayAdvisoryDellPaginatePagination(unittest
                             ''
                             ], 
                         date_added = '', 
+                        dell_cves = [
+                            vulncheck_sdk.models.advisory/dell_cve.advisory.DellCVE(
+                                cvss_score = '', 
+                                cvss_vector = '', )
+                            ], 
                         severity = '', 
                         title = '', 
                         url = '', )

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **combined_product_list** | **str** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
+**dell_cves** | [**List[AdvisoryDellCVE]**](AdvisoryDellCVE.md) |  | [optional] 
 **severity** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 

@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_adobe_affected import AdvisoryAdobeAffected
+from vulncheck_sdk.models.advisory_adobe_cve import AdvisoryAdobeCVE
 from vulncheck_sdk.models.advisory_adobe_solution import AdvisoryAdobeSolution
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,13 +30,14 @@ class AdvisoryAdobeAdvisory(BaseModel):
     """
     AdvisoryAdobeAdvisory
     """ # noqa: E501
+    adobe_cves: Optional[List[AdvisoryAdobeCVE]] = None
     affected: Optional[List[AdvisoryAdobeAffected]] = None
     bulletin_id: Optional[StrictStr] = Field(default=None, alias="bulletinId")
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     link: Optional[StrictStr] = None
     solutions: Optional[List[AdvisoryAdobeSolution]] = None
-    __properties: ClassVar[List[str]] = ["affected", "bulletinId", "cve", "date_added", "link", "solutions"]
+    __properties: ClassVar[List[str]] = ["adobe_cves", "affected", "bulletinId", "cve", "date_added", "link", "solutions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +78,13 @@ class AdvisoryAdobeAdvisory(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in adobe_cves (list)
+        _items = []
+        if self.adobe_cves:
+            for _item_adobe_cves in self.adobe_cves:
+                if _item_adobe_cves:
+                    _items.append(_item_adobe_cves.to_dict())
+            _dict['adobe_cves'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in affected (list)
         _items = []
         if self.affected:
@@ -102,6 +111,7 @@ class AdvisoryAdobeAdvisory(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "adobe_cves": [AdvisoryAdobeCVE.from_dict(_item) for _item in obj["adobe_cves"]] if obj.get("adobe_cves") is not None else None,
             "affected": [AdvisoryAdobeAffected.from_dict(_item) for _item in obj["affected"]] if obj.get("affected") is not None else None,
             "bulletinId": obj.get("bulletinId"),
             "cve": obj.get("cve"),

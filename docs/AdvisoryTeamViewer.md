@@ -7,8 +7,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bulletin_id** | **str** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
+**cvss_score** | **str** |  | [optional] 
+**cvss_vector** | **str** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

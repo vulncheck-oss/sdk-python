@@ -45,8 +45,17 @@ class TestAdvisorySchneiderElectricAdvisory(unittest.TestCase):
                     ],
                 date_added = '',
                 pdf_url = '',
+                schneider_cves = [
+                    vulncheck_sdk.models.advisory/schneider_cve.advisory.SchneiderCVE(
+                        cve = '', 
+                        cvss_score3 = '', 
+                        cvss_score4 = '', 
+                        cvss_vector3 = '', 
+                        cvss_vector4 = '', )
+                    ],
                 schneider_electric_id = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.advisory_dell_cve import AdvisoryDellCVE
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,10 +32,11 @@ class AdvisoryDell(BaseModel):
     combined_product_list: Optional[StrictStr] = Field(default=None, alias="combinedProductList")
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
+    dell_cves: Optional[List[AdvisoryDellCVE]] = None
     severity: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["articleNumber", "combinedProductList", "cve", "date_added", "severity", "title", "url"]
+    __properties: ClassVar[List[str]] = ["articleNumber", "combinedProductList", "cve", "date_added", "dell_cves", "severity", "title", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,6 +77,13 @@ class AdvisoryDell(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in dell_cves (list)
+        _items = []
+        if self.dell_cves:
+            for _item_dell_cves in self.dell_cves:
+                if _item_dell_cves:
+                    _items.append(_item_dell_cves.to_dict())
+            _dict['dell_cves'] = _items
         return _dict
 
     @classmethod
@@ -91,6 +100,7 @@ class AdvisoryDell(BaseModel):
             "combinedProductList": obj.get("combinedProductList"),
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
+            "dell_cves": [AdvisoryDellCVE.from_dict(_item) for _item in obj["dell_cves"]] if obj.get("dell_cves") is not None else None,
             "severity": obj.get("severity"),
             "title": obj.get("title"),
             "url": obj.get("url")

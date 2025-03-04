@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **threat_actor_name** | **str** |  | [optional] 
 **tools** | [**List[AdvisoryTool]**](AdvisoryTool.md) |  | [optional] 
 **vendor_names_for_threat_actors** | [**List[AdvisoryVendorNameForThreatActor]**](AdvisoryVendorNameForThreatActor.md) |  | [optional] 
+**vendors_and_products_targeted** | [**List[AdvisoryVendorProduct]**](AdvisoryVendorProduct.md) |  | [optional] 
 
 ## Example
 
