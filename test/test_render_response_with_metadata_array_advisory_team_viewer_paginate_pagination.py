@@ -77,8 +77,11 @@ class TestRenderResponseWithMetadataArrayAdvisoryTeamViewerPaginatePagination(un
                         cve = [
                             ''
                             ], 
+                        cvss_score = '', 
+                        cvss_vector = '', 
                         date_added = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

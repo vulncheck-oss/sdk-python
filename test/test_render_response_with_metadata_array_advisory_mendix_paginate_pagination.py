@@ -84,6 +84,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMendixPaginatePagination(unitte
                             ''
                             ], 
                         id = '', 
+                        mendix_id = '', 
                         summary = '', 
                         title = '', 
                         url = '', )

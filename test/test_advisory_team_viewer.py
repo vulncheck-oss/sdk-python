@@ -40,8 +40,11 @@ class TestAdvisoryTeamViewer(unittest.TestCase):
                 cve = [
                     ''
                     ],
+                cvss_score = '',
+                cvss_vector = '',
                 date_added = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

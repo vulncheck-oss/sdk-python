@@ -28,11 +28,13 @@ class AdvisoryZoom(BaseModel):
     AdvisoryZoom
     """ # noqa: E501
     cve: Optional[List[StrictStr]] = None
+    cvss_score: Optional[StrictStr] = None
+    cvss_vector: Optional[StrictStr] = None
     date_added: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     zsb: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "title", "url", "zsb"]
+    __properties: ClassVar[List[str]] = ["cve", "cvss_score", "cvss_vector", "date_added", "title", "url", "zsb"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +88,8 @@ class AdvisoryZoom(BaseModel):
 
         _obj = cls.model_validate({
             "cve": obj.get("cve"),
+            "cvss_score": obj.get("cvss_score"),
+            "cvss_vector": obj.get("cvss_vector"),
             "date_added": obj.get("date_added"),
             "title": obj.get("title"),
             "url": obj.get("url"),

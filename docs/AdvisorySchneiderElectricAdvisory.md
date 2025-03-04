@@ -10,8 +10,10 @@ Name | Type | Description | Notes
 **cwe** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **pdf_url** | **str** |  | [optional] 
+**schneider_cves** | [**List[AdvisorySchneiderCVE]**](AdvisorySchneiderCVE.md) |  | [optional] 
 **schneider_electric_id** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

@@ -73,6 +73,12 @@ class TestRenderResponseWithMetadataArrayAdvisoryAdobeAdvisoryPaginatePagination
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/adobe_advisory.advisory.AdobeAdvisory(
+                        adobe_cves = [
+                            vulncheck_sdk.models.advisory/adobe_cve.advisory.AdobeCVE(
+                                cve = '', 
+                                cvss_score = '', 
+                                cvss_vector = '', )
+                            ], 
                         affected = [
                             vulncheck_sdk.models.advisory/adobe_affected.advisory.AdobeAffected(
                                 platform = '', 

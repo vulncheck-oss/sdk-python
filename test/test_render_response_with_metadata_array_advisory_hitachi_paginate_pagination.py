@@ -84,6 +84,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryHitachiPaginatePagination(unitt
                             ''
                             ], 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

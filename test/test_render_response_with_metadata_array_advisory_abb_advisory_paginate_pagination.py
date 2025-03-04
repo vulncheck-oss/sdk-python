@@ -80,6 +80,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryABBAdvisoryPaginatePagination(u
                             ''
                             ], 
                         date_added = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

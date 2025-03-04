@@ -27,6 +27,13 @@ class TestIndicesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_index7zip_get(self) -> None:
+        """Test case for index7zip_get
+
+        Return vulnerability data stored in index \"7zip\"
+        """
+        pass
+
     def test_index_a10_get(self) -> None:
         """Test case for index_a10_get
 
@@ -101,6 +108,20 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_alpine_get
 
         Return vulnerability data stored in index \"alpine\"
+        """
+        pass
+
+    def test_index_alpine_purls_get(self) -> None:
+        """Test case for index_alpine_purls_get
+
+        Return vulnerability data stored in index \"alpine-purls\"
+        """
+        pass
+
+    def test_index_amazon_cve_get(self) -> None:
+        """Test case for index_amazon_cve_get
+
+        Return vulnerability data stored in index \"amazon-cve\"
         """
         pass
 
@@ -374,6 +395,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_asterisk_get
 
         Return vulnerability data stored in index \"asterisk\"
+        """
+        pass
+
+    def test_index_astra_get(self) -> None:
+        """Test case for index_astra_get
+
+        Return vulnerability data stored in index \"astra\"
         """
         pass
 
@@ -699,6 +727,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_cisco_csaf_get(self) -> None:
+        """Test case for index_cisco_csaf_get
+
+        Return vulnerability data stored in index \"cisco-csaf\"
+        """
+        pass
+
     def test_index_cisco_get(self) -> None:
         """Test case for index_cisco_get
 
@@ -794,6 +829,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_conan_get
 
         Return vulnerability data stored in index \"conan\"
+        """
+        pass
+
+    def test_index_coreimpact_get(self) -> None:
+        """Test case for index_coreimpact_get
+
+        Return vulnerability data stored in index \"coreimpact\"
         """
         pass
 
@@ -895,6 +937,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_drupal_get(self) -> None:
+        """Test case for index_drupal_get
+
+        Return vulnerability data stored in index \"drupal\"
+        """
+        pass
+
     def test_index_eaton_get(self) -> None:
         """Test case for index_eaton_get
 
@@ -927,6 +976,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_emerson_get
 
         Return vulnerability data stored in index \"emerson\"
+        """
+        pass
+
+    def test_index_endoflife_get(self) -> None:
+        """Test case for index_endoflife_get
+
+        Return vulnerability data stored in index \"endoflife\"
         """
         pass
 
@@ -1018,6 +1074,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_filecloud_get
 
         Return vulnerability data stored in index \"filecloud\"
+        """
+        pass
+
+    def test_index_filezilla_get(self) -> None:
+        """Test case for index_filezilla_get
+
+        Return vulnerability data stored in index \"filezilla\"
         """
         pass
 
@@ -1763,6 +1826,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_nist_nvd2_sources_get(self) -> None:
+        """Test case for index_nist_nvd2_sources_get
+
+        Return vulnerability data stored in index \"nist-nvd2-sources\"
+        """
+        pass
+
     def test_index_nist_nvd_get(self) -> None:
         """Test case for index_nist_nvd_get
 
@@ -1882,6 +1952,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_openjdk_get(self) -> None:
+        """Test case for index_openjdk_get
+
+        Return vulnerability data stored in index \"openjdk\"
+        """
+        pass
+
     def test_index_openssh_get(self) -> None:
         """Test case for index_openssh_get
 
@@ -1949,6 +2026,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_owncloud_get
 
         Return vulnerability data stored in index \"owncloud\"
+        """
+        pass
+
+    def test_index_packetstorm_get(self) -> None:
+        """Test case for index_packetstorm_get
+
+        Return vulnerability data stored in index \"packetstorm\"
         """
         pass
 
@@ -2127,6 +2211,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_roche_get(self) -> None:
+        """Test case for index_roche_get
+
+        Return vulnerability data stored in index \"roche\"
+        """
+        pass
+
     def test_index_rockwell_get(self) -> None:
         """Test case for index_rockwell_get
 
@@ -2145,6 +2236,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_rocky_get
 
         Return vulnerability data stored in index \"rocky\"
+        """
+        pass
+
+    def test_index_rocky_purls_get(self) -> None:
+        """Test case for index_rocky_purls_get
+
+        Return vulnerability data stored in index \"rocky-purls\"
         """
         pass
 
@@ -2281,10 +2379,10 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
-    def test_index_sigma_rules_get(self) -> None:
-        """Test case for index_sigma_rules_get
+    def test_index_sigmahq_sigma_rules_get(self) -> None:
+        """Test case for index_sigmahq_sigma_rules_get
 
-        Return vulnerability data stored in index \"sigma-rules\"
+        Return vulnerability data stored in index \"sigmahq-sigma-rules\"
         """
         pass
 
@@ -2313,6 +2411,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_solr_get
 
         Return vulnerability data stored in index \"solr\"
+        """
+        pass
+
+    def test_index_sonatype_get(self) -> None:
+        """Test case for index_sonatype_get
+
+        Return vulnerability data stored in index \"sonatype\"
         """
         pass
 
@@ -2376,6 +2481,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_suse_get
 
         Return vulnerability data stored in index \"suse\"
+        """
+        pass
+
+    def test_index_suse_security_get(self) -> None:
+        """Test case for index_suse_security_get
+
+        Return vulnerability data stored in index \"suse-security\"
         """
         pass
 
@@ -2600,6 +2712,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_virtuozzo_get
 
         Return vulnerability data stored in index \"virtuozzo\"
+        """
+        pass
+
+    def test_index_vlc_get(self) -> None:
+        """Test case for index_vlc_get
+
+        Return vulnerability data stored in index \"vlc\"
         """
         pass
 

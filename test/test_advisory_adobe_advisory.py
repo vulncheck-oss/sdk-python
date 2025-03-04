@@ -36,6 +36,12 @@ class TestAdvisoryAdobeAdvisory(unittest.TestCase):
         model = AdvisoryAdobeAdvisory()
         if include_optional:
             return AdvisoryAdobeAdvisory(
+                adobe_cves = [
+                    vulncheck_sdk.models.advisory/adobe_cve.advisory.AdobeCVE(
+                        cve = '', 
+                        cvss_score = '', 
+                        cvss_vector = '', )
+                    ],
                 affected = [
                     vulncheck_sdk.models.advisory/adobe_affected.advisory.AdobeAffected(
                         platform = '', 

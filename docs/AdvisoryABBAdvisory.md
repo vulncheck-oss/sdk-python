@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **abb_vulnerability_id** | **List[str]** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

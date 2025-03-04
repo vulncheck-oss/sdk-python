@@ -40,6 +40,12 @@ class TestApiInitialAccessArtifact(unittest.TestCase):
                 artifacts_url = [
                     ''
                     ],
+                baidu_queries = [
+                    ''
+                    ],
+                baidu_raw_queries = [
+                    ''
+                    ],
                 censys_queries = [
                     ''
                     ],
@@ -50,6 +56,15 @@ class TestApiInitialAccessArtifact(unittest.TestCase):
                 date_added = '',
                 exploit = True,
                 fofa_queries = [
+                    ''
+                    ],
+                fofa_raw_queries = [
+                    ''
+                    ],
+                google_queries = [
+                    ''
+                    ],
+                google_raw_queries = [
                     ''
                     ],
                 greynoise_queries = [
@@ -79,6 +94,9 @@ class TestApiInitialAccessArtifact(unittest.TestCase):
                 yara = True,
                 zeroday = True,
                 zoom_eye_queries = [
+                    ''
+                    ],
+                zoom_eye_raw_queries = [
                     ''
                     ]
             )

@@ -47,6 +47,7 @@ class TestAdvisoryMendix(unittest.TestCase):
                     ''
                     ],
                 id = '',
+                mendix_id = '',
                 summary = '',
                 title = '',
                 url = ''

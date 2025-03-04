@@ -30,8 +30,9 @@ class AdvisoryABBAdvisory(BaseModel):
     abb_vulnerability_id: Optional[List[StrictStr]] = None
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["abb_vulnerability_id", "cve", "date_added", "url"]
+    __properties: ClassVar[List[str]] = ["abb_vulnerability_id", "cve", "date_added", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,6 +88,7 @@ class AdvisoryABBAdvisory(BaseModel):
             "abb_vulnerability_id": obj.get("abb_vulnerability_id"),
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

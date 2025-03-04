@@ -29,12 +29,17 @@ class ApiInitialAccessArtifact(BaseModel):
     """ # noqa: E501
     artifact_name: Optional[StrictStr] = Field(default=None, description="ArtifactName is a title to associate with this artifact.", alias="artifactName")
     artifacts_url: Optional[List[StrictStr]] = Field(default=None, description="ArtifactsURL are URLs to the available artifact.", alias="artifactsURL")
+    baidu_queries: Optional[List[StrictStr]] = Field(default=None, description="...", alias="baiduQueries")
+    baidu_raw_queries: Optional[List[StrictStr]] = Field(default=None, description="...", alias="baiduRawQueries")
     censys_queries: Optional[List[StrictStr]] = Field(default=None, description="CensysQueries are queries for examining potential Internet-exposed devices & applications with Censys in URL form.", alias="censysQueries")
     censys_raw_queries: Optional[List[StrictStr]] = Field(default=None, description="CensysRawQueries are raw queries for examining potential Internet-exposed devices & applications with Censys.", alias="censysRawQueries")
     clone_sshurl: Optional[StrictStr] = Field(default=None, description="CloneSSHURL is the git URL to clone the artifact with.", alias="cloneSSHURL")
     date_added: Optional[StrictStr] = Field(default=None, description="DateAdded is when this artifact entry was first added to the InitialAccess data set.", alias="dateAdded")
     exploit: Optional[StrictBool] = Field(default=None, description="Exploit indicates whether or not an exploit is available in this artifact.")
     fofa_queries: Optional[List[StrictStr]] = Field(default=None, description="FOFAQueries are raw queries for examining potential Internet-exposed devices & applications with FOFA.", alias="fofaQueries")
+    fofa_raw_queries: Optional[List[StrictStr]] = Field(default=None, alias="fofaRawQueries")
+    google_queries: Optional[List[StrictStr]] = Field(default=None, description="google queries", alias="googleQueries")
+    google_raw_queries: Optional[List[StrictStr]] = Field(default=None, description="raw google queries", alias="googleRawQueries")
     greynoise_queries: Optional[List[StrictStr]] = Field(default=None, description="GreynoiseQueries are queries for finding the vulnerability via honeypot data.", alias="greynoiseQueries")
     mitre_attack_techniques: Optional[List[StrictStr]] = Field(default=None, description="MITRE ATT&CK techniques", alias="mitreAttackTechniques")
     nmap_script: Optional[StrictBool] = Field(default=None, description="NmapScript indicates whether or not an nmap script for scanning environment exists in this artifact.", alias="nmapScript")
@@ -52,7 +57,8 @@ class ApiInitialAccessArtifact(BaseModel):
     yara: Optional[StrictBool] = Field(default=None, description="YARA indicates whether or not a YARA rule designed to detect the exploit on an endpoint exists in this artifact.")
     zeroday: Optional[StrictBool] = Field(default=None, description="Zeroday indicates whether or not it is a VulnCheck zeroday.")
     zoom_eye_queries: Optional[List[StrictStr]] = Field(default=None, description="ZoomEyeQueries are raw queries for examining potential Internet-exposed devices & applications with ZoomEye.", alias="zoomEyeQueries")
-    __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "censysQueries", "censysRawQueries", "cloneSSHURL", "dateAdded", "exploit", "fofaQueries", "greynoiseQueries", "mitreAttackTechniques", "nmapScript", "pcap", "product", "shodanQueries", "shodanRawQueries", "snortRule", "suricataRule", "targetDocker", "targetEncryptedComms", "targetService", "vendor", "versionScanner", "yara", "zeroday", "zoomEyeQueries"]
+    zoom_eye_raw_queries: Optional[List[StrictStr]] = Field(default=None, alias="zoomEyeRawQueries")
+    __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "baiduQueries", "baiduRawQueries", "censysQueries", "censysRawQueries", "cloneSSHURL", "dateAdded", "exploit", "fofaQueries", "fofaRawQueries", "googleQueries", "googleRawQueries", "greynoiseQueries", "mitreAttackTechniques", "nmapScript", "pcap", "product", "shodanQueries", "shodanRawQueries", "snortRule", "suricataRule", "targetDocker", "targetEncryptedComms", "targetService", "vendor", "versionScanner", "yara", "zeroday", "zoomEyeQueries", "zoomEyeRawQueries"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,12 +113,17 @@ class ApiInitialAccessArtifact(BaseModel):
         _obj = cls.model_validate({
             "artifactName": obj.get("artifactName"),
             "artifactsURL": obj.get("artifactsURL"),
+            "baiduQueries": obj.get("baiduQueries"),
+            "baiduRawQueries": obj.get("baiduRawQueries"),
             "censysQueries": obj.get("censysQueries"),
             "censysRawQueries": obj.get("censysRawQueries"),
             "cloneSSHURL": obj.get("cloneSSHURL"),
             "dateAdded": obj.get("dateAdded"),
             "exploit": obj.get("exploit"),
             "fofaQueries": obj.get("fofaQueries"),
+            "fofaRawQueries": obj.get("fofaRawQueries"),
+            "googleQueries": obj.get("googleQueries"),
+            "googleRawQueries": obj.get("googleRawQueries"),
             "greynoiseQueries": obj.get("greynoiseQueries"),
             "mitreAttackTechniques": obj.get("mitreAttackTechniques"),
             "nmapScript": obj.get("nmapScript"),
@@ -129,7 +140,8 @@ class ApiInitialAccessArtifact(BaseModel):
             "versionScanner": obj.get("versionScanner"),
             "yara": obj.get("yara"),
             "zeroday": obj.get("zeroday"),
-            "zoomEyeQueries": obj.get("zoomEyeQueries")
+            "zoomEyeQueries": obj.get("zoomEyeQueries"),
+            "zoomEyeRawQueries": obj.get("zoomEyeRawQueries")
         })
         return _obj
 

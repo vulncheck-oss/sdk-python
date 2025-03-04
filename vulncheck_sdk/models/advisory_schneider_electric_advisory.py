@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.advisory_schneider_cve import AdvisorySchneiderCVE
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,10 +33,12 @@ class AdvisorySchneiderElectricAdvisory(BaseModel):
     cwe: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     pdf_url: Optional[StrictStr] = None
+    schneider_cves: Optional[List[AdvisorySchneiderCVE]] = None
     schneider_electric_id: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["csaf_url", "cve", "cwe", "date_added", "pdf_url", "schneider_electric_id", "title", "url"]
+    __properties: ClassVar[List[str]] = ["csaf_url", "cve", "cwe", "date_added", "pdf_url", "schneider_cves", "schneider_electric_id", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +79,13 @@ class AdvisorySchneiderElectricAdvisory(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in schneider_cves (list)
+        _items = []
+        if self.schneider_cves:
+            for _item_schneider_cves in self.schneider_cves:
+                if _item_schneider_cves:
+                    _items.append(_item_schneider_cves.to_dict())
+            _dict['schneider_cves'] = _items
         return _dict
 
     @classmethod
@@ -93,8 +103,10 @@ class AdvisorySchneiderElectricAdvisory(BaseModel):
             "cwe": obj.get("cwe"),
             "date_added": obj.get("date_added"),
             "pdf_url": obj.get("pdf_url"),
+            "schneider_cves": [AdvisorySchneiderCVE.from_dict(_item) for _item in obj["schneider_cves"]] if obj.get("schneider_cves") is not None else None,
             "schneider_electric_id": obj.get("schneider_electric_id"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

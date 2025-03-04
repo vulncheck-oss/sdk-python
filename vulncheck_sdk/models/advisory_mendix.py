@@ -32,10 +32,11 @@ class AdvisoryMendix(BaseModel):
     date_added: Optional[StrictStr] = None
     fixed: Optional[List[StrictStr]] = None
     id: Optional[StrictStr] = None
+    mendix_id: Optional[StrictStr] = None
     summary: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected", "cve", "date_added", "fixed", "id", "summary", "title", "url"]
+    __properties: ClassVar[List[str]] = ["affected", "cve", "date_added", "fixed", "id", "mendix_id", "summary", "title", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,7 @@ class AdvisoryMendix(BaseModel):
             "date_added": obj.get("date_added"),
             "fixed": obj.get("fixed"),
             "id": obj.get("id"),
+            "mendix_id": obj.get("mendix_id"),
             "summary": obj.get("summary"),
             "title": obj.get("title"),
             "url": obj.get("url")
