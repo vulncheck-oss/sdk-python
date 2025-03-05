@@ -35,13 +35,3 @@ jobs:
         env:
           VULNCHECK_API_TOKEN: ${{ secrets.VULNCHECK_API_TOKEN }}
         run: make test
-
-  vulncheck-scan:
-    runs-on: ubuntu-latest
-    permissions: write-all
-    steps:
-      - uses: actions/checkout@v4
-      - uses: vulncheck-oss/action@v1.1.2
-        with:
-          command: scan
-          token: ${{ secrets.VULNCHECK_API_TOKEN }}
