@@ -27,43 +27,43 @@ class AdvisoryCVSSV40(BaseModel):
     """
     AdvisoryCVSSV40
     """ # noqa: E501
+    automatable: Optional[StrictStr] = Field(default=None, alias="Automatable")
+    recovery: Optional[StrictStr] = Field(default=None, alias="Recovery")
+    safety: Optional[StrictStr] = Field(default=None, alias="Safety")
     attack_complexity: Optional[StrictStr] = Field(default=None, alias="attackComplexity")
     attack_requirements: Optional[StrictStr] = Field(default=None, alias="attackRequirements")
     attack_vector: Optional[StrictStr] = Field(default=None, alias="attackVector")
-    automatable: Optional[StrictStr] = Field(default=None, description="mod NVD")
-    availability_requirements: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="availabilityRequirements")
+    availability_requirement: Optional[StrictStr] = Field(default=None, alias="availabilityRequirement")
     base_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="baseScore")
     base_severity: Optional[StrictStr] = Field(default=None, alias="baseSeverity")
-    confidentiality_requirements: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="confidentialityRequirements")
+    confidentiality_requirement: Optional[StrictStr] = Field(default=None, alias="confidentialityRequirement")
     exploit_maturity: Optional[StrictStr] = Field(default=None, alias="exploitMaturity")
-    integrity_requirements: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="integrityRequirements")
+    integrity_requirement: Optional[StrictStr] = Field(default=None, alias="integrityRequirement")
     modified_attack_complexity: Optional[StrictStr] = Field(default=None, alias="modifiedAttackComplexity")
     modified_attack_requirements: Optional[StrictStr] = Field(default=None, alias="modifiedAttackRequirements")
     modified_attack_vector: Optional[StrictStr] = Field(default=None, alias="modifiedAttackVector")
     modified_privileges_required: Optional[StrictStr] = Field(default=None, alias="modifiedPrivilegesRequired")
-    modified_subsequent_system_availability: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="modifiedSubsequentSystemAvailability")
-    modified_subsequent_system_confidentiality: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="modifiedSubsequentSystemConfidentiality")
-    modified_subsequent_system_integrity: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="modifiedSubsequentSystemIntegrity")
+    modified_sub_availability_impact: Optional[StrictStr] = Field(default=None, alias="modifiedSubAvailabilityImpact")
+    modified_sub_confidentiality_impact: Optional[StrictStr] = Field(default=None, alias="modifiedSubConfidentialityImpact")
+    modified_sub_integrity_impact: Optional[StrictStr] = Field(default=None, alias="modifiedSubIntegrityImpact")
     modified_user_interaction: Optional[StrictStr] = Field(default=None, alias="modifiedUserInteraction")
-    modified_vulnerable_system_availability: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="modifiedVulnerableSystemAvailability")
-    modified_vulnerable_system_confidentiality: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="modifiedVulnerableSystemConfidentiality")
-    modified_vulnerable_system_integrity: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="modifiedVulnerableSystemIntegrity")
+    modified_vuln_availability_impact: Optional[StrictStr] = Field(default=None, alias="modifiedVulnAvailabilityImpact")
+    modified_vuln_confidentiality_impact: Optional[StrictStr] = Field(default=None, alias="modifiedVulnConfidentialityImpact")
+    modified_vuln_integrity_impact: Optional[StrictStr] = Field(default=None, alias="modifiedVulnIntegrityImpact")
     privileges_required: Optional[StrictStr] = Field(default=None, alias="privilegesRequired")
     provider_urgency: Optional[StrictStr] = Field(default=None, alias="providerUrgency")
-    recovery: Optional[StrictStr] = Field(default=None, description="mod NVD")
-    safety: Optional[StrictStr] = Field(default=None, description="mod NVD")
-    subsequent_system_availability: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="subsequentSystemAvailability")
-    subsequent_system_confidentiality: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="subsequentSystemConfidentiality")
-    subsequent_system_integrity: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="subsequentSystemIntegrity")
+    sub_availability_impact: Optional[StrictStr] = Field(default=None, alias="subAvailabilityImpact")
+    sub_confidentiality_impact: Optional[StrictStr] = Field(default=None, alias="subConfidentialityImpact")
+    sub_integrity_impact: Optional[StrictStr] = Field(default=None, alias="subIntegrityImpact")
     user_interaction: Optional[StrictStr] = Field(default=None, alias="userInteraction")
     value_density: Optional[StrictStr] = Field(default=None, alias="valueDensity")
     vector_string: Optional[StrictStr] = Field(default=None, alias="vectorString")
     version: Optional[StrictStr] = None
+    vuln_availability_impact: Optional[StrictStr] = Field(default=None, alias="vulnAvailabilityImpact")
+    vuln_confidentiality_impact: Optional[StrictStr] = Field(default=None, alias="vulnConfidentialityImpact")
+    vuln_integrity_impact: Optional[StrictStr] = Field(default=None, alias="vulnIntegrityImpact")
     vulnerability_response_effort: Optional[StrictStr] = Field(default=None, alias="vulnerabilityResponseEffort")
-    vulnerable_system_availability: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="vulnerableSystemAvailability")
-    vulnerable_system_confidentiality: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="vulnerableSystemConfidentiality")
-    vulnerable_system_integrity: Optional[StrictStr] = Field(default=None, description="mod NVD", alias="vulnerableSystemIntegrity")
-    __properties: ClassVar[List[str]] = ["attackComplexity", "attackRequirements", "attackVector", "automatable", "availabilityRequirements", "baseScore", "baseSeverity", "confidentialityRequirements", "exploitMaturity", "integrityRequirements", "modifiedAttackComplexity", "modifiedAttackRequirements", "modifiedAttackVector", "modifiedPrivilegesRequired", "modifiedSubsequentSystemAvailability", "modifiedSubsequentSystemConfidentiality", "modifiedSubsequentSystemIntegrity", "modifiedUserInteraction", "modifiedVulnerableSystemAvailability", "modifiedVulnerableSystemConfidentiality", "modifiedVulnerableSystemIntegrity", "privilegesRequired", "providerUrgency", "recovery", "safety", "subsequentSystemAvailability", "subsequentSystemConfidentiality", "subsequentSystemIntegrity", "userInteraction", "valueDensity", "vectorString", "version", "vulnerabilityResponseEffort", "vulnerableSystemAvailability", "vulnerableSystemConfidentiality", "vulnerableSystemIntegrity"]
+    __properties: ClassVar[List[str]] = ["Automatable", "Recovery", "Safety", "attackComplexity", "attackRequirements", "attackVector", "availabilityRequirement", "baseScore", "baseSeverity", "confidentialityRequirement", "exploitMaturity", "integrityRequirement", "modifiedAttackComplexity", "modifiedAttackRequirements", "modifiedAttackVector", "modifiedPrivilegesRequired", "modifiedSubAvailabilityImpact", "modifiedSubConfidentialityImpact", "modifiedSubIntegrityImpact", "modifiedUserInteraction", "modifiedVulnAvailabilityImpact", "modifiedVulnConfidentialityImpact", "modifiedVulnIntegrityImpact", "privilegesRequired", "providerUrgency", "subAvailabilityImpact", "subConfidentialityImpact", "subIntegrityImpact", "userInteraction", "valueDensity", "vectorString", "version", "vulnAvailabilityImpact", "vulnConfidentialityImpact", "vulnIntegrityImpact", "vulnerabilityResponseEffort"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -116,42 +116,42 @@ class AdvisoryCVSSV40(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "Automatable": obj.get("Automatable"),
+            "Recovery": obj.get("Recovery"),
+            "Safety": obj.get("Safety"),
             "attackComplexity": obj.get("attackComplexity"),
             "attackRequirements": obj.get("attackRequirements"),
             "attackVector": obj.get("attackVector"),
-            "automatable": obj.get("automatable"),
-            "availabilityRequirements": obj.get("availabilityRequirements"),
+            "availabilityRequirement": obj.get("availabilityRequirement"),
             "baseScore": obj.get("baseScore"),
             "baseSeverity": obj.get("baseSeverity"),
-            "confidentialityRequirements": obj.get("confidentialityRequirements"),
+            "confidentialityRequirement": obj.get("confidentialityRequirement"),
             "exploitMaturity": obj.get("exploitMaturity"),
-            "integrityRequirements": obj.get("integrityRequirements"),
+            "integrityRequirement": obj.get("integrityRequirement"),
             "modifiedAttackComplexity": obj.get("modifiedAttackComplexity"),
             "modifiedAttackRequirements": obj.get("modifiedAttackRequirements"),
             "modifiedAttackVector": obj.get("modifiedAttackVector"),
             "modifiedPrivilegesRequired": obj.get("modifiedPrivilegesRequired"),
-            "modifiedSubsequentSystemAvailability": obj.get("modifiedSubsequentSystemAvailability"),
-            "modifiedSubsequentSystemConfidentiality": obj.get("modifiedSubsequentSystemConfidentiality"),
-            "modifiedSubsequentSystemIntegrity": obj.get("modifiedSubsequentSystemIntegrity"),
+            "modifiedSubAvailabilityImpact": obj.get("modifiedSubAvailabilityImpact"),
+            "modifiedSubConfidentialityImpact": obj.get("modifiedSubConfidentialityImpact"),
+            "modifiedSubIntegrityImpact": obj.get("modifiedSubIntegrityImpact"),
             "modifiedUserInteraction": obj.get("modifiedUserInteraction"),
-            "modifiedVulnerableSystemAvailability": obj.get("modifiedVulnerableSystemAvailability"),
-            "modifiedVulnerableSystemConfidentiality": obj.get("modifiedVulnerableSystemConfidentiality"),
-            "modifiedVulnerableSystemIntegrity": obj.get("modifiedVulnerableSystemIntegrity"),
+            "modifiedVulnAvailabilityImpact": obj.get("modifiedVulnAvailabilityImpact"),
+            "modifiedVulnConfidentialityImpact": obj.get("modifiedVulnConfidentialityImpact"),
+            "modifiedVulnIntegrityImpact": obj.get("modifiedVulnIntegrityImpact"),
             "privilegesRequired": obj.get("privilegesRequired"),
             "providerUrgency": obj.get("providerUrgency"),
-            "recovery": obj.get("recovery"),
-            "safety": obj.get("safety"),
-            "subsequentSystemAvailability": obj.get("subsequentSystemAvailability"),
-            "subsequentSystemConfidentiality": obj.get("subsequentSystemConfidentiality"),
-            "subsequentSystemIntegrity": obj.get("subsequentSystemIntegrity"),
+            "subAvailabilityImpact": obj.get("subAvailabilityImpact"),
+            "subConfidentialityImpact": obj.get("subConfidentialityImpact"),
+            "subIntegrityImpact": obj.get("subIntegrityImpact"),
             "userInteraction": obj.get("userInteraction"),
             "valueDensity": obj.get("valueDensity"),
             "vectorString": obj.get("vectorString"),
             "version": obj.get("version"),
-            "vulnerabilityResponseEffort": obj.get("vulnerabilityResponseEffort"),
-            "vulnerableSystemAvailability": obj.get("vulnerableSystemAvailability"),
-            "vulnerableSystemConfidentiality": obj.get("vulnerableSystemConfidentiality"),
-            "vulnerableSystemIntegrity": obj.get("vulnerableSystemIntegrity")
+            "vulnAvailabilityImpact": obj.get("vulnAvailabilityImpact"),
+            "vulnConfidentialityImpact": obj.get("vulnConfidentialityImpact"),
+            "vulnIntegrityImpact": obj.get("vulnIntegrityImpact"),
+            "vulnerabilityResponseEffort": obj.get("vulnerabilityResponseEffort")
         })
         return _obj
 

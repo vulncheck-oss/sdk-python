@@ -43,6 +43,7 @@ class TestAdvisoryCiscoCSAF(unittest.TestCase):
                 date_added = '',
                 identifier = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

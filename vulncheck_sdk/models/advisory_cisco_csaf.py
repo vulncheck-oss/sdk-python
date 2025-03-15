@@ -32,8 +32,9 @@ class AdvisoryCiscoCSAF(BaseModel):
     date_added: Optional[StrictStr] = None
     identifier: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["csaf", "cve", "date_added", "identifier", "title", "url"]
+    __properties: ClassVar[List[str]] = ["csaf", "cve", "date_added", "identifier", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +92,7 @@ class AdvisoryCiscoCSAF(BaseModel):
             "date_added": obj.get("date_added"),
             "identifier": obj.get("identifier"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

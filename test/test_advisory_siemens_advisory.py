@@ -142,7 +142,8 @@ class TestAdvisorySiemensAdvisory(unittest.TestCase):
                     ''
                     ],
                 title = '',
-                txt_url = ''
+                txt_url = '',
+                updated_at = ''
             )
         else:
             return AdvisorySiemensAdvisory(

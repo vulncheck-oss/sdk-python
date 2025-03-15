@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,11 +31,12 @@ class AdvisoryBeckhoffAdvisory(BaseModel):
     cve: Optional[List[StrictStr]] = None
     cwe: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
-    date_last_revised: Optional[StrictStr] = None
+    date_last_revised: Optional[StrictStr] = Field(default=None, description="if in the future we can delete this great - it's just a dupe to normalize the field names")
     name: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     vde: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["beckhoff_id", "cve", "cwe", "date_added", "date_last_revised", "name", "url", "vde"]
+    __properties: ClassVar[List[str]] = ["beckhoff_id", "cve", "cwe", "date_added", "date_last_revised", "name", "updated_at", "url", "vde"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +95,7 @@ class AdvisoryBeckhoffAdvisory(BaseModel):
             "date_added": obj.get("date_added"),
             "date_last_revised": obj.get("date_last_revised"),
             "name": obj.get("name"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url"),
             "vde": obj.get("vde")
         })

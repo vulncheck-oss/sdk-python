@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **mitigations** | **str** |  | [optional] 
 **release_date** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **vendor** | **str** |  | [optional] 
 

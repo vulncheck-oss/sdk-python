@@ -50,6 +50,7 @@ class TestAdvisoryCISAAlert(unittest.TestCase):
                 mitigations = '',
                 release_date = '',
                 title = '',
+                updated_at = '',
                 url = '',
                 vendor = ''
             )

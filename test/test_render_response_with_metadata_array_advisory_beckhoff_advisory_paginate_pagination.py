@@ -83,6 +83,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryBeckhoffAdvisoryPaginatePaginat
                         date_added = '', 
                         date_last_revised = '', 
                         name = '', 
+                        updated_at = '', 
                         url = '', 
                         vde = [
                             ''

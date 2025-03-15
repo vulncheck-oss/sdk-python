@@ -45,6 +45,7 @@ class TestAdvisoryYokogawaAdvisory(unittest.TestCase):
                 date_added = '',
                 date_last_revised = '',
                 name = '',
+                updated_at = '',
                 url = '',
                 ysar_id = ''
             )
