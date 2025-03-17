@@ -11,13 +11,14 @@ Name | Type | Description | Notes
 **date_added** | **str** |  | [optional] 
 **html_url** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
-**last_update** | **str** |  | [optional] 
+**last_update** | **str** | could potentially kill this in the future as it&#39;s a dupe | [optional] 
 **pdf_url** | **str** |  | [optional] 
 **products** | **List[str]** |  | [optional] 
 **ssa** | [**AdvisorySSASource**](AdvisorySSASource.md) |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
 **title** | **str** |  | [optional] 
 **txt_url** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 

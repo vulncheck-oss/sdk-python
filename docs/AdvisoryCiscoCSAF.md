@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **date_added** | **str** |  | [optional] 
 **identifier** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

@@ -42,11 +42,12 @@ class AdvisoryCiscoAdvisory(BaseModel):
     summary: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     total_count: Optional[StrictInt] = Field(default=None, alias="totalCount")
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     version: Optional[StrictStr] = None
     workarounds: Optional[StrictStr] = None
     workflow_status: Optional[StrictStr] = Field(default=None, alias="workflowStatus")
-    __properties: ClassVar[List[str]] = ["ciscoBugId", "csaf", "cve", "cvrf", "cwe", "date_added", "id", "identifier", "name", "related_resources", "severity", "status", "summary", "title", "totalCount", "url", "version", "workarounds", "workflowStatus"]
+    __properties: ClassVar[List[str]] = ["ciscoBugId", "csaf", "cve", "cvrf", "cwe", "date_added", "id", "identifier", "name", "related_resources", "severity", "status", "summary", "title", "totalCount", "updated_at", "url", "version", "workarounds", "workflowStatus"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -114,6 +115,7 @@ class AdvisoryCiscoAdvisory(BaseModel):
             "summary": obj.get("summary"),
             "title": obj.get("title"),
             "totalCount": obj.get("totalCount"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url"),
             "version": obj.get("version"),
             "workarounds": obj.get("workarounds"),

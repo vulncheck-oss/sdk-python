@@ -80,6 +80,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryCiscoCSAFPaginatePagination(uni
                         date_added = '', 
                         identifier = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

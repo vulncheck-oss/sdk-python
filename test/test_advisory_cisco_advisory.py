@@ -53,6 +53,7 @@ class TestAdvisoryCiscoAdvisory(unittest.TestCase):
                 summary = '',
                 title = '',
                 total_count = 56,
+                updated_at = '',
                 url = '',
                 version = '',
                 workarounds = '',

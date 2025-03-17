@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,11 +30,12 @@ class AdvisoryMitsubishiElectricAdvisory(BaseModel):
     cve: Optional[List[StrictStr]] = None
     cwe: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
-    date_last_revised: Optional[StrictStr] = None
+    date_last_revised: Optional[StrictStr] = Field(default=None, description="could nuke this at some pt in the future as it's a dupe")
     mitsubishi_electric_id: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "cwe", "date_added", "date_last_revised", "mitsubishi_electric_id", "title", "url"]
+    __properties: ClassVar[List[str]] = ["cve", "cwe", "date_added", "date_last_revised", "mitsubishi_electric_id", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,7 @@ class AdvisoryMitsubishiElectricAdvisory(BaseModel):
             "date_last_revised": obj.get("date_last_revised"),
             "mitsubishi_electric_id": obj.get("mitsubishi_electric_id"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

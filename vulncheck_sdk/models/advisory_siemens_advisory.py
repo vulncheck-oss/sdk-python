@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_ssa_source import AdvisorySSASource
 from typing import Optional, Set
@@ -34,14 +34,15 @@ class AdvisorySiemensAdvisory(BaseModel):
     date_added: Optional[StrictStr] = None
     html_url: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    last_update: Optional[StrictStr] = None
+    last_update: Optional[StrictStr] = Field(default=None, description="could potentially kill this in the future as it's a dupe")
     pdf_url: Optional[StrictStr] = None
     products: Optional[List[StrictStr]] = None
     ssa: Optional[AdvisorySSASource] = None
     tags: Optional[List[StrictStr]] = None
     title: Optional[StrictStr] = None
     txt_url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["csaf_url", "cve", "cvrf_url", "date_added", "html_url", "id", "last_update", "pdf_url", "products", "ssa", "tags", "title", "txt_url"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["csaf_url", "cve", "cvrf_url", "date_added", "html_url", "id", "last_update", "pdf_url", "products", "ssa", "tags", "title", "txt_url", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -109,7 +110,8 @@ class AdvisorySiemensAdvisory(BaseModel):
             "ssa": AdvisorySSASource.from_dict(obj["ssa"]) if obj.get("ssa") is not None else None,
             "tags": obj.get("tags"),
             "title": obj.get("title"),
-            "txt_url": obj.get("txt_url")
+            "txt_url": obj.get("txt_url"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

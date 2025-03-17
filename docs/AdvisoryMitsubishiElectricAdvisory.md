@@ -8,9 +8,10 @@ Name | Type | Description | Notes
 **cve** | **List[str]** |  | [optional] 
 **cwe** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
-**date_last_revised** | **str** |  | [optional] 
+**date_last_revised** | **str** | could nuke this at some pt in the future as it&#39;s a dupe | [optional] 
 **mitsubishi_electric_id** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

@@ -175,7 +175,8 @@ class TestRenderResponseWithMetadataArrayAdvisorySiemensAdvisoryPaginatePaginati
                             ''
                             ], 
                         title = '', 
-                        txt_url = '', )
+                        txt_url = '', 
+                        updated_at = '', )
                     ]
             )
         else:

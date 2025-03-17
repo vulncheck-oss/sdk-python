@@ -39,9 +39,10 @@ class AdvisoryCISAAlert(BaseModel):
     mitigations: Optional[StrictStr] = None
     release_date: Optional[StrictStr] = Field(default=None, alias="releaseDate")
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     vendor: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affectedProducts", "alertID", "archived", "cve", "cveexploitedITW", "cvss", "date_added", "icsa", "icsma", "mitigations", "releaseDate", "title", "url", "vendor"]
+    __properties: ClassVar[List[str]] = ["affectedProducts", "alertID", "archived", "cve", "cveexploitedITW", "cvss", "date_added", "icsa", "icsma", "mitigations", "releaseDate", "title", "updated_at", "url", "vendor"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,6 +107,7 @@ class AdvisoryCISAAlert(BaseModel):
             "mitigations": obj.get("mitigations"),
             "releaseDate": obj.get("releaseDate"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url"),
             "vendor": obj.get("vendor")
         })

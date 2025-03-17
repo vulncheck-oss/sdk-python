@@ -83,6 +83,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitsubishiElectricAdvisoryPagin
                         date_last_revised = '', 
                         mitsubishi_electric_id = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

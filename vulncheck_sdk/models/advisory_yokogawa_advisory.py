@@ -32,9 +32,10 @@ class AdvisoryYokogawaAdvisory(BaseModel):
     date_added: Optional[StrictStr] = None
     date_last_revised: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     ysar_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "cwe", "date_added", "date_last_revised", "name", "url", "ysar_id"]
+    __properties: ClassVar[List[str]] = ["cve", "cwe", "date_added", "date_last_revised", "name", "updated_at", "url", "ysar_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,6 +93,7 @@ class AdvisoryYokogawaAdvisory(BaseModel):
             "date_added": obj.get("date_added"),
             "date_last_revised": obj.get("date_last_revised"),
             "name": obj.get("name"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url"),
             "ysar_id": obj.get("ysar_id")
         })

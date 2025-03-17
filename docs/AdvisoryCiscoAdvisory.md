@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **summary** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **total_count** | **int** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
 **workarounds** | **str** |  | [optional] 
