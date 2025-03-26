@@ -33,9 +33,10 @@ class AdvisoryBeldenAdvisory(BaseModel):
     date_added: Optional[StrictStr] = None
     date_last_updated: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["belden_id", "cve", "cwe", "date_added", "date_last_updated", "title", "url", "version"]
+    __properties: ClassVar[List[str]] = ["belden_id", "cve", "cwe", "date_added", "date_last_updated", "title", "updated_at", "url", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +95,7 @@ class AdvisoryBeldenAdvisory(BaseModel):
             "date_added": obj.get("date_added"),
             "date_last_updated": obj.get("date_last_updated"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url"),
             "version": obj.get("version")
         })
