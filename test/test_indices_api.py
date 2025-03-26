@@ -1042,6 +1042,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_f5_get(self) -> None:
+        """Test case for index_f5_get
+
+        Return vulnerability data stored in index \"f5\"
+        """
+        pass
+
     def test_index_f_secure_get(self) -> None:
         """Test case for index_f_secure_get
 
@@ -1343,6 +1350,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_hpe_get(self) -> None:
+        """Test case for index_hpe_get
+
+        Return vulnerability data stored in index \"hpe\"
+        """
+        pass
+
     def test_index_huawei_euleros_get(self) -> None:
         """Test case for index_huawei_euleros_get
 
@@ -1623,6 +1637,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_mcafee_get(self) -> None:
+        """Test case for index_mcafee_get
+
+        Return vulnerability data stored in index \"mcafee\"
+        """
+        pass
+
     def test_index_mediatek_get(self) -> None:
         """Test case for index_mediatek_get
 
@@ -1770,6 +1791,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_netatalk_get(self) -> None:
+        """Test case for index_netatalk_get
+
+        Return vulnerability data stored in index \"netatalk\"
+        """
+        pass
+
     def test_index_netgate_get(self) -> None:
         """Test case for index_netgate_get
 
@@ -1858,6 +1886,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_nokia_get
 
         Return vulnerability data stored in index \"nokia\"
+        """
+        pass
+
+    def test_index_notepadplusplus_get(self) -> None:
+        """Test case for index_notepadplusplus_get
+
+        Return vulnerability data stored in index \"notepadplusplus\"
         """
         pass
 
@@ -2246,6 +2281,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_rsync_get(self) -> None:
+        """Test case for index_rsync_get
+
+        Return vulnerability data stored in index \"rsync\"
+        """
+        pass
+
     def test_index_ruckus_get(self) -> None:
         """Test case for index_ruckus_get
 
@@ -2530,6 +2572,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_synology_get
 
         Return vulnerability data stored in index \"synology\"
+        """
+        pass
+
+    def test_index_tailscale_get(self) -> None:
+        """Test case for index_tailscale_get
+
+        Return vulnerability data stored in index \"tailscale\"
         """
         pass
 
@@ -2880,6 +2929,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_xylem_get
 
         Return vulnerability data stored in index \"xylem\"
+        """
+        pass
+
+    def test_index_yamaha_get(self) -> None:
+        """Test case for index_yamaha_get
+
+        Return vulnerability data stored in index \"yamaha\"
         """
         pass
 

@@ -79,6 +79,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryPhilipsAdvisoryPaginatePaginati
                         date_added = '', 
                         date_last_updated = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

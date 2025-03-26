@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **date_added** | **str** |  | [optional] 
 **date_last_updated** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
 
