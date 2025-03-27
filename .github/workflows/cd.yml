@@ -42,6 +42,7 @@ jobs:
         with:
           token: ${{ steps.generate-token.outputs.token }}
           branch: update-sdk
+          author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
           delete-branch: true
           labels: bot
           title: "Update Python SDK"
