@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **cwe** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

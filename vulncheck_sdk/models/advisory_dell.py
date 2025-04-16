@@ -35,8 +35,9 @@ class AdvisoryDell(BaseModel):
     dell_cves: Optional[List[AdvisoryDellCVE]] = None
     severity: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["articleNumber", "combinedProductList", "cve", "date_added", "dell_cves", "severity", "title", "url"]
+    __properties: ClassVar[List[str]] = ["articleNumber", "combinedProductList", "cve", "date_added", "dell_cves", "severity", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,6 +104,7 @@ class AdvisoryDell(BaseModel):
             "dell_cves": [AdvisoryDellCVE.from_dict(_item) for _item in obj["dell_cves"]] if obj.get("dell_cves") is not None else None,
             "severity": obj.get("severity"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj
