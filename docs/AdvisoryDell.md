@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **dell_cves** | [**List[AdvisoryDellCVE]**](AdvisoryDellCVE.md) |  | [optional] 
 **severity** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

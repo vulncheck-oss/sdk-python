@@ -81,6 +81,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryHillromAdvisoryPaginatePaginati
                             ], 
                         date_added = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

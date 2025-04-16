@@ -84,6 +84,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryGEHealthcareAdvisoryPaginatePag
                             ''
                             ], 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

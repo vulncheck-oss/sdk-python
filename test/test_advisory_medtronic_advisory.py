@@ -42,6 +42,7 @@ class TestAdvisoryMedtronicAdvisory(unittest.TestCase):
                 date_added = '',
                 description = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:
