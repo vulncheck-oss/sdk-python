@@ -37,6 +37,7 @@ class TestAdvisoryCodesysAdvisory(unittest.TestCase):
         if include_optional:
             return AdvisoryCodesysAdvisory(
                 codesys_id = '',
+                csaf_url = '',
                 cve = [
                     ''
                     ],

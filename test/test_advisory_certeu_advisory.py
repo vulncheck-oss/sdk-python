@@ -52,7 +52,8 @@ class TestAdvisoryCERTEUAdvisory(unittest.TestCase):
                     ],
                 summary = '',
                 technical_details = '',
-                title = ''
+                title = '',
+                updated_at = ''
             )
         else:
             return AdvisoryCERTEUAdvisory(

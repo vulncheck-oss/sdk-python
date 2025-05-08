@@ -83,6 +83,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryBectonDickinsonAdvisoryPaginate
                                 name = '', )
                             ], 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

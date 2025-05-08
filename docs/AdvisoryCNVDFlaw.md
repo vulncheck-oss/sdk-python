@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **submission_time** | **str** |  | [optional] 
 **title_cn** | **str** |  | [optional] 
 **update_time** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **validation_info_cn** | **str** |  | [optional] 
 **validation_info_en** | **str** |  | [optional] 

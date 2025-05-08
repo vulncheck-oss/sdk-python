@@ -93,6 +93,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryLexmarkAdvisoryPaginatePaginati
                             ], 
                         revision = '', 
                         summary = '', 
+                        updated_at = '', 
                         workarounds = '', )
                     ]
             )

@@ -32,8 +32,9 @@ class AdvisoryBectonDickinsonAdvisory(BaseModel):
     date_added: Optional[StrictStr] = None
     products_affected: Optional[List[AdvisoryProductsAffected]] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "products_affected", "title", "url"]
+    __properties: ClassVar[List[str]] = ["cve", "date_added", "products_affected", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +98,7 @@ class AdvisoryBectonDickinsonAdvisory(BaseModel):
             "date_added": obj.get("date_added"),
             "products_affected": [AdvisoryProductsAffected.from_dict(_item) for _item in obj["products_affected"]] if obj.get("products_affected") is not None else None,
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

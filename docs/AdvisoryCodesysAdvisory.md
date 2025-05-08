@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **codesys_id** | **str** |  | [optional] 
+**csaf_url** | **str** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
 **cwe** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 

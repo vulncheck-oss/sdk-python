@@ -74,6 +74,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryCodesysAdvisoryPaginatePaginati
                 data = [
                     vulncheck_sdk.models.advisory/codesys_advisory.advisory.CodesysAdvisory(
                         codesys_id = '', 
+                        csaf_url = '', 
                         cve = [
                             ''
                             ], 

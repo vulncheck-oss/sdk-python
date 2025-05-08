@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **references** | [**List[AdvisoryJVNReference]**](AdvisoryJVNReference.md) |  | [optional] 
 **title** | **str** |  | [optional] 
 **title_en** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **url_en** | **str** |  | [optional] 
 

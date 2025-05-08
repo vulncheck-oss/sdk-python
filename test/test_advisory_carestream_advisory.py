@@ -43,6 +43,7 @@ class TestAdvisoryCarestreamAdvisory(unittest.TestCase):
                 date_added = '',
                 date_last_updated = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

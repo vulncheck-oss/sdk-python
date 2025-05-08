@@ -40,6 +40,7 @@ class AdvisoryCNVDFlaw(BaseModel):
     submission_time: Optional[StrictStr] = None
     title_cn: Optional[StrictStr] = None
     update_time: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     validation_info_cn: Optional[StrictStr] = None
     validation_info_en: Optional[StrictStr] = None
@@ -48,7 +49,7 @@ class AdvisoryCNVDFlaw(BaseModel):
     vuln_description_cn: Optional[StrictStr] = None
     vuln_solution_cn: Optional[StrictStr] = None
     vuln_type_cn: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected_products_cn", "bugtraq_id", "cnvd", "collection_time", "cve", "date_added", "harm_level", "id", "public_date", "reference_urls", "submission_time", "title_cn", "update_time", "url", "validation_info_cn", "validation_info_en", "vendor_patch_cn", "vuln_attachments", "vuln_description_cn", "vuln_solution_cn", "vuln_type_cn"]
+    __properties: ClassVar[List[str]] = ["affected_products_cn", "bugtraq_id", "cnvd", "collection_time", "cve", "date_added", "harm_level", "id", "public_date", "reference_urls", "submission_time", "title_cn", "update_time", "updated_at", "url", "validation_info_cn", "validation_info_en", "vendor_patch_cn", "vuln_attachments", "vuln_description_cn", "vuln_solution_cn", "vuln_type_cn"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -114,6 +115,7 @@ class AdvisoryCNVDFlaw(BaseModel):
             "submission_time": obj.get("submission_time"),
             "title_cn": obj.get("title_cn"),
             "update_time": obj.get("update_time"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url"),
             "validation_info_cn": obj.get("validation_info_cn"),
             "validation_info_en": obj.get("validation_info_en"),

@@ -38,7 +38,8 @@ class AdvisoryCERTEUAdvisory(BaseModel):
     summary: Optional[StrictStr] = None
     technical_details: Optional[StrictStr] = Field(default=None, alias="technicalDetails")
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["advisoryId", "affectedProducts", "cve", "date_added", "history", "link", "recommendations", "references", "summary", "technicalDetails", "title"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["advisoryId", "affectedProducts", "cve", "date_added", "history", "link", "recommendations", "references", "summary", "technicalDetails", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,7 +102,8 @@ class AdvisoryCERTEUAdvisory(BaseModel):
             "references": obj.get("references"),
             "summary": obj.get("summary"),
             "technicalDetails": obj.get("technicalDetails"),
-            "title": obj.get("title")
+            "title": obj.get("title"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

@@ -56,6 +56,7 @@ class TestAdvisoryLexmarkAdvisory(unittest.TestCase):
                     ],
                 revision = '',
                 summary = '',
+                updated_at = '',
                 workarounds = ''
             )
         else:

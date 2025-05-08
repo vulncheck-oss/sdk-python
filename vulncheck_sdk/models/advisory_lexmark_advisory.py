@@ -39,8 +39,9 @@ class AdvisoryLexmarkAdvisory(BaseModel):
     references: Optional[List[StrictStr]] = None
     revision: Optional[StrictStr] = None
     summary: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     workarounds: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affectedProducts", "cve", "date_added", "details", "impact", "lastUpdate", "link", "publicReleaseDate", "references", "revision", "summary", "workarounds"]
+    __properties: ClassVar[List[str]] = ["affectedProducts", "cve", "date_added", "details", "impact", "lastUpdate", "link", "publicReleaseDate", "references", "revision", "summary", "updated_at", "workarounds"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,6 +112,7 @@ class AdvisoryLexmarkAdvisory(BaseModel):
             "references": obj.get("references"),
             "revision": obj.get("revision"),
             "summary": obj.get("summary"),
+            "updated_at": obj.get("updated_at"),
             "workarounds": obj.get("workarounds")
         })
         return _obj

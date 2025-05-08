@@ -50,6 +50,7 @@ class TestAdvisoryDell(unittest.TestCase):
                     ],
                 severity = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

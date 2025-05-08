@@ -90,6 +90,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryCNVDFlawPaginatePagination(unit
                         submission_time = '', 
                         title_cn = '', 
                         update_time = '', 
+                        updated_at = '', 
                         url = '', 
                         validation_info_cn = '', 
                         validation_info_en = '', 

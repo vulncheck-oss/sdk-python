@@ -79,6 +79,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryWordfencePaginatePagination(uni
                         cve = [
                             ''
                             ], 
+                        cvss_score = '', 
+                        cvss_vector = '', 
                         date_added = '', 
                         fixed = [
                             ''
@@ -88,6 +90,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryWordfencePaginatePagination(uni
                             ], 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

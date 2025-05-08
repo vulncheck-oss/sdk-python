@@ -89,7 +89,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryCERTEUAdvisoryPaginatePaginatio
                             ], 
                         summary = '', 
                         technical_details = '', 
-                        title = '', )
+                        title = '', 
+                        updated_at = '', )
                     ]
             )
         else:

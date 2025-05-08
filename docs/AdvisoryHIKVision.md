@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **link** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 

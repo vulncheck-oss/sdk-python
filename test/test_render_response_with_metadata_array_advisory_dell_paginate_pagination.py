@@ -86,6 +86,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryDellPaginatePagination(unittest
                             ], 
                         severity = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )
