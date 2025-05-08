@@ -104,6 +104,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryJVNAdvisoryItemPaginatePaginati
                             ], 
                         title = '', 
                         title_en = '', 
+                        updated_at = '', 
                         url = '', 
                         url_en = '', )
                     ]

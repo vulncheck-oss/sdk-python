@@ -34,8 +34,9 @@ class AdvisoryGEHealthcareAdvisory(BaseModel):
     description: Optional[StrictStr] = None
     references: Optional[List[StrictStr]] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["base_score", "cve", "date_added", "date_last_updated", "description", "references", "title", "url"]
+    __properties: ClassVar[List[str]] = ["base_score", "cve", "date_added", "date_last_updated", "description", "references", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +96,7 @@ class AdvisoryGEHealthcareAdvisory(BaseModel):
             "description": obj.get("description"),
             "references": obj.get("references"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

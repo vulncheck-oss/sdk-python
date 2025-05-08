@@ -33,7 +33,8 @@ class AdvisoryHIKVision(BaseModel):
     description: Optional[StrictStr] = None
     link: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["advisory_id", "cve", "date_added", "description", "link", "title"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["advisory_id", "cve", "date_added", "description", "link", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,7 +92,8 @@ class AdvisoryHIKVision(BaseModel):
             "date_added": obj.get("date_added"),
             "description": obj.get("description"),
             "link": obj.get("link"),
-            "title": obj.get("title")
+            "title": obj.get("title"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

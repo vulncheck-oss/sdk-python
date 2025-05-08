@@ -42,6 +42,8 @@ class TestAdvisoryWordfence(unittest.TestCase):
                 cve = [
                     ''
                     ],
+                cvss_score = '',
+                cvss_vector = '',
                 date_added = '',
                 fixed = [
                     ''
@@ -51,6 +53,7 @@ class TestAdvisoryWordfence(unittest.TestCase):
                     ],
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

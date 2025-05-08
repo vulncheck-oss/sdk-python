@@ -47,6 +47,7 @@ class TestAdvisoryGEHealthcareAdvisory(unittest.TestCase):
                     ''
                     ],
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

@@ -31,8 +31,9 @@ class AdvisoryMedtronicAdvisory(BaseModel):
     date_added: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "description", "title", "url"]
+    __properties: ClassVar[List[str]] = ["cve", "date_added", "description", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +90,7 @@ class AdvisoryMedtronicAdvisory(BaseModel):
             "date_added": obj.get("date_added"),
             "description": obj.get("description"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

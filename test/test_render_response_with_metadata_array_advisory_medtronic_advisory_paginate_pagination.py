@@ -79,6 +79,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMedtronicAdvisoryPaginatePagina
                         date_added = '', 
                         description = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **summary** | **str** |  | [optional] 
 **technical_details** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 

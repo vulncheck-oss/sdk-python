@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **references** | **List[str]** |  | [optional] 
 **revision** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **workarounds** | **str** |  | [optional] 
 
 ## Example

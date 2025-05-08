@@ -32,8 +32,9 @@ class AdvisoryCarestreamAdvisory(BaseModel):
     date_added: Optional[StrictStr] = None
     date_last_updated: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["carestream_id", "cve", "date_added", "date_last_updated", "title", "url"]
+    __properties: ClassVar[List[str]] = ["carestream_id", "cve", "date_added", "date_last_updated", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +92,7 @@ class AdvisoryCarestreamAdvisory(BaseModel):
             "date_added": obj.get("date_added"),
             "date_last_updated": obj.get("date_last_updated"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

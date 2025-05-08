@@ -47,6 +47,7 @@ class TestAdvisoryBectonDickinsonAdvisory(unittest.TestCase):
                         name = '', )
                     ],
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

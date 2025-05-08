@@ -28,13 +28,14 @@ class AdvisoryCodesysAdvisory(BaseModel):
     AdvisoryCodesysAdvisory
     """ # noqa: E501
     codesys_id: Optional[StrictStr] = None
+    csaf_url: Optional[StrictStr] = None
     cve: Optional[List[StrictStr]] = None
     cwe: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     date_last_revised: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["codesys_id", "cve", "cwe", "date_added", "date_last_revised", "title", "url"]
+    __properties: ClassVar[List[str]] = ["codesys_id", "csaf_url", "cve", "cwe", "date_added", "date_last_revised", "title", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,6 +89,7 @@ class AdvisoryCodesysAdvisory(BaseModel):
 
         _obj = cls.model_validate({
             "codesys_id": obj.get("codesys_id"),
+            "csaf_url": obj.get("csaf_url"),
             "cve": obj.get("cve"),
             "cwe": obj.get("cwe"),
             "date_added": obj.get("date_added"),

@@ -80,7 +80,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryHIKVisionPaginatePagination(uni
                         date_added = '', 
                         description = '', 
                         link = '', 
-                        title = '', )
+                        title = '', 
+                        updated_at = '', )
                     ]
             )
         else:

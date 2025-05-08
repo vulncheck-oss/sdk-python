@@ -43,7 +43,8 @@ class TestAdvisoryHIKVision(unittest.TestCase):
                 date_added = '',
                 description = '',
                 link = '',
-                title = ''
+                title = '',
+                updated_at = ''
             )
         else:
             return AdvisoryHIKVision(

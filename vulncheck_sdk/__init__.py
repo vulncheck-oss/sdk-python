@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.11"
+__version__ = "0.0.12"
 
 # import apis into sdk package
 from vulncheck_sdk.api.endpoints_api import EndpointsApi

@@ -42,9 +42,10 @@ class AdvisoryJVNAdvisoryItem(BaseModel):
     references: Optional[List[AdvisoryJVNReference]] = None
     title: Optional[StrictStr] = None
     title_en: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     url_en: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cpe", "cve", "cvss", "date_added", "description", "description_en", "identifier", "issued", "modified", "references", "title", "title_en", "url", "url_en"]
+    __properties: ClassVar[List[str]] = ["cpe", "cve", "cvss", "date_added", "description", "description_en", "identifier", "issued", "modified", "references", "title", "title_en", "updated_at", "url", "url_en"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -130,6 +131,7 @@ class AdvisoryJVNAdvisoryItem(BaseModel):
             "references": [AdvisoryJVNReference.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
             "title": obj.get("title"),
             "title_en": obj.get("title_en"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url"),
             "url_en": obj.get("url_en")
         })
