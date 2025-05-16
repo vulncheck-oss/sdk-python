@@ -92,7 +92,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryAtlassianAdvisoryPaginatePagina
                         release_date = '', 
                         severity = '', 
                         summary = '', 
-                        title = '', )
+                        title = '', 
+                        updated_at = '', )
                     ]
             )
         else:

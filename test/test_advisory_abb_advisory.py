@@ -39,10 +39,12 @@ class TestAdvisoryABBAdvisory(unittest.TestCase):
                 abb_vulnerability_id = [
                     ''
                     ],
+                csaf = '',
                 cve = [
                     ''
                     ],
                 date_added = '',
+                document_id = '',
                 updated_at = '',
                 url = ''
             )

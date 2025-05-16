@@ -39,7 +39,8 @@ class AdvisoryAtlassianAdvisory(BaseModel):
     severity: Optional[StrictStr] = None
     summary: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected_version", "cve", "date_added", "detailed_summary", "fixed_version", "link", "products", "references", "release_date", "severity", "summary", "title"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["affected_version", "cve", "date_added", "detailed_summary", "fixed_version", "link", "products", "references", "release_date", "severity", "summary", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,7 +104,8 @@ class AdvisoryAtlassianAdvisory(BaseModel):
             "release_date": obj.get("release_date"),
             "severity": obj.get("severity"),
             "summary": obj.get("summary"),
-            "title": obj.get("title")
+            "title": obj.get("title"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

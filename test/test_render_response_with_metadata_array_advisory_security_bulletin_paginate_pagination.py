@@ -112,7 +112,8 @@ class TestRenderResponseWithMetadataArrayAdvisorySecurityBulletinPaginatePaginat
                                 software_product = '', 
                                 updated_version = '', )
                             ], 
-                        title = '', )
+                        title = '', 
+                        updated_at = '', )
                     ]
             )
         else:
