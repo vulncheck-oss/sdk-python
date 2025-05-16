@@ -6,8 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **abb_vulnerability_id** | **List[str]** |  | [optional] 
+**csaf** | **str** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
+**document_id** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 

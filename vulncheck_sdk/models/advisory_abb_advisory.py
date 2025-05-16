@@ -28,11 +28,13 @@ class AdvisoryABBAdvisory(BaseModel):
     AdvisoryABBAdvisory
     """ # noqa: E501
     abb_vulnerability_id: Optional[List[StrictStr]] = None
+    csaf: Optional[StrictStr] = None
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
+    document_id: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["abb_vulnerability_id", "cve", "date_added", "updated_at", "url"]
+    __properties: ClassVar[List[str]] = ["abb_vulnerability_id", "csaf", "cve", "date_added", "document_id", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,8 +88,10 @@ class AdvisoryABBAdvisory(BaseModel):
 
         _obj = cls.model_validate({
             "abb_vulnerability_id": obj.get("abb_vulnerability_id"),
+            "csaf": obj.get("csaf"),
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
+            "document_id": obj.get("document_id"),
             "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })

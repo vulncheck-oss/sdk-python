@@ -116,6 +116,7 @@ Method | HTTP request | Description
 [**index_cnvd_flaws_get**](IndicesApi.md#index_cnvd_flaws_get) | **GET** /index/cnvd-flaws | Return vulnerability data stored in index \&quot;cnvd-flaws\&quot;
 [**index_cocoapods_get**](IndicesApi.md#index_cocoapods_get) | **GET** /index/cocoapods | Return vulnerability data stored in index \&quot;cocoapods\&quot;
 [**index_codesys_get**](IndicesApi.md#index_codesys_get) | **GET** /index/codesys | Return vulnerability data stored in index \&quot;codesys\&quot;
+[**index_commvault_get**](IndicesApi.md#index_commvault_get) | **GET** /index/commvault | Return vulnerability data stored in index \&quot;commvault\&quot;
 [**index_compass_security_get**](IndicesApi.md#index_compass_security_get) | **GET** /index/compass-security | Return vulnerability data stored in index \&quot;compass-security\&quot;
 [**index_composer_get**](IndicesApi.md#index_composer_get) | **GET** /index/composer | Return vulnerability data stored in index \&quot;composer\&quot;
 [**index_conan_get**](IndicesApi.md#index_conan_get) | **GET** /index/conan | Return vulnerability data stored in index \&quot;conan\&quot;
@@ -144,6 +145,7 @@ Method | HTTP request | Description
 [**index_eol_get**](IndicesApi.md#index_eol_get) | **GET** /index/eol | Return vulnerability data stored in index \&quot;eol\&quot;
 [**index_eol_microsoft_get**](IndicesApi.md#index_eol_microsoft_get) | **GET** /index/eol-microsoft | Return vulnerability data stored in index \&quot;eol-microsoft\&quot;
 [**index_epss_get**](IndicesApi.md#index_epss_get) | **GET** /index/epss | Return vulnerability data stored in index \&quot;epss\&quot;
+[**index_euvd_get**](IndicesApi.md#index_euvd_get) | **GET** /index/euvd | Return vulnerability data stored in index \&quot;euvd\&quot;
 [**index_exodus_intel_get**](IndicesApi.md#index_exodus_intel_get) | **GET** /index/exodus-intel | Return vulnerability data stored in index \&quot;exodus-intel\&quot;
 [**index_exploit_chains_get**](IndicesApi.md#index_exploit_chains_get) | **GET** /index/exploit-chains | Return vulnerability data stored in index \&quot;exploit-chains\&quot;
 [**index_exploitdb_get**](IndicesApi.md#index_exploitdb_get) | **GET** /index/exploitdb | Return vulnerability data stored in index \&quot;exploitdb\&quot;
@@ -175,6 +177,7 @@ Method | HTTP request | Description
 [**index_gitlab_advisories_community_get**](IndicesApi.md#index_gitlab_advisories_community_get) | **GET** /index/gitlab-advisories-community | Return vulnerability data stored in index \&quot;gitlab-advisories-community\&quot;
 [**index_gitlab_exploits_get**](IndicesApi.md#index_gitlab_exploits_get) | **GET** /index/gitlab-exploits | Return vulnerability data stored in index \&quot;gitlab-exploits\&quot;
 [**index_gnutls_get**](IndicesApi.md#index_gnutls_get) | **GET** /index/gnutls | Return vulnerability data stored in index \&quot;gnutls\&quot;
+[**index_go_vulndb_get**](IndicesApi.md#index_go_vulndb_get) | **GET** /index/go-vulndb | Return vulnerability data stored in index \&quot;go-vulndb\&quot;
 [**index_golang_get**](IndicesApi.md#index_golang_get) | **GET** /index/golang | Return vulnerability data stored in index \&quot;golang\&quot;
 [**index_google0day_itw_get**](IndicesApi.md#index_google0day_itw_get) | **GET** /index/google-0day-itw | Return vulnerability data stored in index \&quot;google-0day-itw\&quot;
 [**index_google_container_optimized_os_get**](IndicesApi.md#index_google_container_optimized_os_get) | **GET** /index/google-container-optimized-os | Return vulnerability data stored in index \&quot;google-container-optimized-os\&quot;
@@ -13872,6 +13875,126 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **index_commvault_get**
+> RenderResponseWithMetadataArrayAdvisoryCommVaultPaginatePagination index_commvault_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published)
+
+Return vulnerability data stored in index \"commvault\"
+
+### Overview
+This endpoint allows you to retrieve a paginated list of all documents from the commvault index. \
+By default, a maximum of 100 documents are shown per page.
+
+**Index Description:** Commvault Cloud Security Advisories
+
+### Paging Over Large Data (cursor)
+In order to allow users to iterate over large index datasets, this endpoint provides a server-side
+"cursor" mechanism. To use the cursor, first call `GET /index/commvault?start_cursor`, the response will
+have a `next_cursor` id that clients will need to pass as a query parameter to the next request like
+`GET /index/commvault?cursor=<next_cursor_id>`
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_comm_vault_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCommVaultPaginatePagination
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.IndicesApi(api_client)
+    page = 56 # int | set the page number of the response (optional)
+    limit = 56 # int | limit the number of findings in the response (optional)
+    cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
+    start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
+    cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
+    alias = 'alias_example' # str | Specify a vulnerability alias to search with. (optional)
+    iava = 'iava_example' # str | Specify an IAVA ID to search with. (optional)
+    jvndb = 'jvndb_example' # str | Specify a JVNDB ID to search with. (optional)
+    ilvn = 'ilvn_example' # str | Specify an ILVN ID to search with. (optional)
+    threat_actor = 'threat_actor_example' # str | Specify a threat actor name to search with. (optional)
+    mitre_id = 'mitre_id_example' # str | Specify a MITRE ID to search with. (optional)
+    misp_id = 'misp_id_example' # str | Specify a MISP ID to search with. (optional)
+    ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
+    botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
+    published = 'published_example' # str | Specify a published date (optional)
+
+    try:
+        # Return vulnerability data stored in index \"commvault\"
+        api_response = api_instance.index_commvault_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published)
+        print("The response of IndicesApi->index_commvault_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IndicesApi->index_commvault_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| set the page number of the response | [optional] 
+ **limit** | **int**| limit the number of findings in the response | [optional] 
+ **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
+ **start_cursor** | **str**| request server-side paging | [optional] 
+ **cve** | **str**| Specify a CVE ID to search with. | [optional] 
+ **alias** | **str**| Specify a vulnerability alias to search with. | [optional] 
+ **iava** | **str**| Specify an IAVA ID to search with. | [optional] 
+ **jvndb** | **str**| Specify a JVNDB ID to search with. | [optional] 
+ **ilvn** | **str**| Specify an ILVN ID to search with. | [optional] 
+ **threat_actor** | **str**| Specify a threat actor name to search with. | [optional] 
+ **mitre_id** | **str**| Specify a MITRE ID to search with. | [optional] 
+ **misp_id** | **str**| Specify a MISP ID to search with. | [optional] 
+ **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
+ **botnet** | **str**| Specify a botnet name to search with. | [optional] 
+ **published** | **str**| Specify a published date | [optional] 
+
+### Return type
+
+[**RenderResponseWithMetadataArrayAdvisoryCommVaultPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryCommVaultPaginatePagination.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **index_compass_security_get**
 > RenderResponseWithMetadataArrayAdvisoryCompassSecurityPaginatePagination index_compass_security_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published)
 
@@ -17212,6 +17335,126 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RenderResponseWithMetadataArrayApiEPSSDataPaginatePagination**](RenderResponseWithMetadataArrayApiEPSSDataPaginatePagination.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **index_euvd_get**
+> RenderResponseWithMetadataArrayAdvisoryEUVDPaginatePagination index_euvd_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published)
+
+Return vulnerability data stored in index \"euvd\"
+
+### Overview
+This endpoint allows you to retrieve a paginated list of all documents from the euvd index. \
+By default, a maximum of 100 documents are shown per page.
+
+**Index Description:** European Union Vulnerability Database
+
+### Paging Over Large Data (cursor)
+In order to allow users to iterate over large index datasets, this endpoint provides a server-side
+"cursor" mechanism. To use the cursor, first call `GET /index/euvd?start_cursor`, the response will
+have a `next_cursor` id that clients will need to pass as a query parameter to the next request like
+`GET /index/euvd?cursor=<next_cursor_id>`
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_euvd_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryEUVDPaginatePagination
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.IndicesApi(api_client)
+    page = 56 # int | set the page number of the response (optional)
+    limit = 56 # int | limit the number of findings in the response (optional)
+    cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
+    start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
+    cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
+    alias = 'alias_example' # str | Specify a vulnerability alias to search with. (optional)
+    iava = 'iava_example' # str | Specify an IAVA ID to search with. (optional)
+    jvndb = 'jvndb_example' # str | Specify a JVNDB ID to search with. (optional)
+    ilvn = 'ilvn_example' # str | Specify an ILVN ID to search with. (optional)
+    threat_actor = 'threat_actor_example' # str | Specify a threat actor name to search with. (optional)
+    mitre_id = 'mitre_id_example' # str | Specify a MITRE ID to search with. (optional)
+    misp_id = 'misp_id_example' # str | Specify a MISP ID to search with. (optional)
+    ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
+    botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
+    published = 'published_example' # str | Specify a published date (optional)
+
+    try:
+        # Return vulnerability data stored in index \"euvd\"
+        api_response = api_instance.index_euvd_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published)
+        print("The response of IndicesApi->index_euvd_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IndicesApi->index_euvd_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| set the page number of the response | [optional] 
+ **limit** | **int**| limit the number of findings in the response | [optional] 
+ **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
+ **start_cursor** | **str**| request server-side paging | [optional] 
+ **cve** | **str**| Specify a CVE ID to search with. | [optional] 
+ **alias** | **str**| Specify a vulnerability alias to search with. | [optional] 
+ **iava** | **str**| Specify an IAVA ID to search with. | [optional] 
+ **jvndb** | **str**| Specify a JVNDB ID to search with. | [optional] 
+ **ilvn** | **str**| Specify an ILVN ID to search with. | [optional] 
+ **threat_actor** | **str**| Specify a threat actor name to search with. | [optional] 
+ **mitre_id** | **str**| Specify a MITRE ID to search with. | [optional] 
+ **misp_id** | **str**| Specify a MISP ID to search with. | [optional] 
+ **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
+ **botnet** | **str**| Specify a botnet name to search with. | [optional] 
+ **published** | **str**| Specify a published date | [optional] 
+
+### Return type
+
+[**RenderResponseWithMetadataArrayAdvisoryEUVDPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryEUVDPaginatePagination.md)
 
 ### Authorization
 
@@ -20932,6 +21175,126 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RenderResponseWithMetadataArrayAdvisoryGnuTLSPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryGnuTLSPaginatePagination.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **index_go_vulndb_get**
+> RenderResponseWithMetadataArrayAdvisoryGoVulnJSONPaginatePagination index_go_vulndb_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published)
+
+Return vulnerability data stored in index \"go-vulndb\"
+
+### Overview
+This endpoint allows you to retrieve a paginated list of all documents from the go-vulndb index. \
+By default, a maximum of 100 documents are shown per page.
+
+**Index Description:** Go Vulnerability Database
+
+### Paging Over Large Data (cursor)
+In order to allow users to iterate over large index datasets, this endpoint provides a server-side
+"cursor" mechanism. To use the cursor, first call `GET /index/go-vulndb?start_cursor`, the response will
+have a `next_cursor` id that clients will need to pass as a query parameter to the next request like
+`GET /index/go-vulndb?cursor=<next_cursor_id>`
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_go_vuln_json_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGoVulnJSONPaginatePagination
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.IndicesApi(api_client)
+    page = 56 # int | set the page number of the response (optional)
+    limit = 56 # int | limit the number of findings in the response (optional)
+    cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
+    start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
+    cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
+    alias = 'alias_example' # str | Specify a vulnerability alias to search with. (optional)
+    iava = 'iava_example' # str | Specify an IAVA ID to search with. (optional)
+    jvndb = 'jvndb_example' # str | Specify a JVNDB ID to search with. (optional)
+    ilvn = 'ilvn_example' # str | Specify an ILVN ID to search with. (optional)
+    threat_actor = 'threat_actor_example' # str | Specify a threat actor name to search with. (optional)
+    mitre_id = 'mitre_id_example' # str | Specify a MITRE ID to search with. (optional)
+    misp_id = 'misp_id_example' # str | Specify a MISP ID to search with. (optional)
+    ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
+    botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
+    published = 'published_example' # str | Specify a published date (optional)
+
+    try:
+        # Return vulnerability data stored in index \"go-vulndb\"
+        api_response = api_instance.index_go_vulndb_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published)
+        print("The response of IndicesApi->index_go_vulndb_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IndicesApi->index_go_vulndb_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| set the page number of the response | [optional] 
+ **limit** | **int**| limit the number of findings in the response | [optional] 
+ **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
+ **start_cursor** | **str**| request server-side paging | [optional] 
+ **cve** | **str**| Specify a CVE ID to search with. | [optional] 
+ **alias** | **str**| Specify a vulnerability alias to search with. | [optional] 
+ **iava** | **str**| Specify an IAVA ID to search with. | [optional] 
+ **jvndb** | **str**| Specify a JVNDB ID to search with. | [optional] 
+ **ilvn** | **str**| Specify an ILVN ID to search with. | [optional] 
+ **threat_actor** | **str**| Specify a threat actor name to search with. | [optional] 
+ **mitre_id** | **str**| Specify a MITRE ID to search with. | [optional] 
+ **misp_id** | **str**| Specify a MISP ID to search with. | [optional] 
+ **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
+ **botnet** | **str**| Specify a botnet name to search with. | [optional] 
+ **published** | **str**| Specify a published date | [optional] 
+
+### Return type
+
+[**RenderResponseWithMetadataArrayAdvisoryGoVulnJSONPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryGoVulnJSONPaginatePagination.md)
 
 ### Authorization
 
