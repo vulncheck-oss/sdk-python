@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **severity** | **str** |  | [optional] 
 **software_updates** | [**List[AdvisorySoftwareUpdate]**](AdvisorySoftwareUpdate.md) |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 

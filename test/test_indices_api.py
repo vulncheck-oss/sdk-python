@@ -811,6 +811,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_commvault_get(self) -> None:
+        """Test case for index_commvault_get
+
+        Return vulnerability data stored in index \"commvault\"
+        """
+        pass
+
     def test_index_compass_security_get(self) -> None:
         """Test case for index_compass_security_get
 
@@ -1004,6 +1011,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_epss_get
 
         Return vulnerability data stored in index \"epss\"
+        """
+        pass
+
+    def test_index_euvd_get(self) -> None:
+        """Test case for index_euvd_get
+
+        Return vulnerability data stored in index \"euvd\"
         """
         pass
 
@@ -1221,6 +1235,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_gnutls_get
 
         Return vulnerability data stored in index \"gnutls\"
+        """
+        pass
+
+    def test_index_go_vulndb_get(self) -> None:
+        """Test case for index_go_vulndb_get
+
+        Return vulnerability data stored in index \"go-vulndb\"
         """
         pass
 

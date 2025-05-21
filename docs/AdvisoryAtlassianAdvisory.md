@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **severity** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 
