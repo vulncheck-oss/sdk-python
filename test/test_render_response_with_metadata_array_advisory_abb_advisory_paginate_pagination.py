@@ -76,10 +76,12 @@ class TestRenderResponseWithMetadataArrayAdvisoryABBAdvisoryPaginatePagination(u
                         abb_vulnerability_id = [
                             ''
                             ], 
+                        csaf = '', 
                         cve = [
                             ''
                             ], 
                         date_added = '', 
+                        document_id = '', 
                         updated_at = '', 
                         url = '', )
                     ]

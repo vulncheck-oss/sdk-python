@@ -43,7 +43,8 @@ class AdvisorySecurityBulletin(BaseModel):
     severity: Optional[StrictStr] = None
     software_updates: Optional[List[AdvisorySoftwareUpdate]] = Field(default=None, alias="softwareUpdates")
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["acknowledgement", "bulletinId", "cve", "cvedetails", "date_added", "hardwareUpdates", "lastUpdated", "link", "revisions", "severity", "softwareUpdates", "title"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["acknowledgement", "bulletinId", "cve", "cvedetails", "date_added", "hardwareUpdates", "lastUpdated", "link", "revisions", "severity", "softwareUpdates", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -135,7 +136,8 @@ class AdvisorySecurityBulletin(BaseModel):
             "revisions": [AdvisoryNvidiaRevision.from_dict(_item) for _item in obj["revisions"]] if obj.get("revisions") is not None else None,
             "severity": obj.get("severity"),
             "softwareUpdates": [AdvisorySoftwareUpdate.from_dict(_item) for _item in obj["softwareUpdates"]] if obj.get("softwareUpdates") is not None else None,
-            "title": obj.get("title")
+            "title": obj.get("title"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

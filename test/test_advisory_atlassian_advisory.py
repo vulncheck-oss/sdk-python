@@ -55,7 +55,8 @@ class TestAdvisoryAtlassianAdvisory(unittest.TestCase):
                 release_date = '',
                 severity = '',
                 summary = '',
-                title = ''
+                title = '',
+                updated_at = ''
             )
         else:
             return AdvisoryAtlassianAdvisory(
