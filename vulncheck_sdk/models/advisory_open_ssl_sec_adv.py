@@ -31,11 +31,13 @@ class AdvisoryOpenSSLSecAdv(BaseModel):
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     date_updated: Optional[StrictStr] = None
+    description: Optional[StrictStr] = None
     filename: Optional[StrictStr] = None
+    references: Optional[List[StrictStr]] = None
     title: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     vulnerabilities: Optional[List[AdvisoryOpenSSLVulnerability]] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "date_updated", "filename", "title", "url", "vulnerabilities"]
+    __properties: ClassVar[List[str]] = ["cve", "date_added", "date_updated", "description", "filename", "references", "title", "url", "vulnerabilities"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +100,9 @@ class AdvisoryOpenSSLSecAdv(BaseModel):
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "date_updated": obj.get("date_updated"),
+            "description": obj.get("description"),
             "filename": obj.get("filename"),
+            "references": obj.get("references"),
             "title": obj.get("title"),
             "url": obj.get("url"),
             "vulnerabilities": [AdvisoryOpenSSLVulnerability.from_dict(_item) for _item in obj["vulnerabilities"]] if obj.get("vulnerabilities") is not None else None
