@@ -18,26 +18,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.models.advisory_open_ssl_vulnerability import AdvisoryOpenSSLVulnerability
+from vulncheck_sdk.models.advisory_m_nodes import AdvisoryMNodes
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryOpenSSLSecAdv(BaseModel):
+class AdvisoryMCPEApplicability(BaseModel):
     """
-    AdvisoryOpenSSLSecAdv
+    AdvisoryMCPEApplicability
     """ # noqa: E501
-    cve: Optional[List[StrictStr]] = None
-    date_added: Optional[StrictStr] = None
-    date_updated: Optional[StrictStr] = None
-    description: Optional[StrictStr] = None
-    filename: Optional[StrictStr] = None
-    references: Optional[List[StrictStr]] = None
-    title: Optional[StrictStr] = None
-    url: Optional[StrictStr] = None
-    vulnerabilities: Optional[List[AdvisoryOpenSSLVulnerability]] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "date_updated", "description", "filename", "references", "title", "url", "vulnerabilities"]
+    negate: Optional[StrictBool] = None
+    nodes: Optional[List[AdvisoryMNodes]] = None
+    operator: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["negate", "nodes", "operator"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -57,7 +51,7 @@ class AdvisoryOpenSSLSecAdv(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryOpenSSLSecAdv from a JSON string"""
+        """Create an instance of AdvisoryMCPEApplicability from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -78,18 +72,18 @@ class AdvisoryOpenSSLSecAdv(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in vulnerabilities (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in nodes (list)
         _items = []
-        if self.vulnerabilities:
-            for _item_vulnerabilities in self.vulnerabilities:
-                if _item_vulnerabilities:
-                    _items.append(_item_vulnerabilities.to_dict())
-            _dict['vulnerabilities'] = _items
+        if self.nodes:
+            for _item_nodes in self.nodes:
+                if _item_nodes:
+                    _items.append(_item_nodes.to_dict())
+            _dict['nodes'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryOpenSSLSecAdv from a dict"""
+        """Create an instance of AdvisoryMCPEApplicability from a dict"""
         if obj is None:
             return None
 
@@ -97,15 +91,9 @@ class AdvisoryOpenSSLSecAdv(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "cve": obj.get("cve"),
-            "date_added": obj.get("date_added"),
-            "date_updated": obj.get("date_updated"),
-            "description": obj.get("description"),
-            "filename": obj.get("filename"),
-            "references": obj.get("references"),
-            "title": obj.get("title"),
-            "url": obj.get("url"),
-            "vulnerabilities": [AdvisoryOpenSSLVulnerability.from_dict(_item) for _item in obj["vulnerabilities"]] if obj.get("vulnerabilities") is not None else None
+            "negate": obj.get("negate"),
+            "nodes": [AdvisoryMNodes.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None,
+            "operator": obj.get("operator")
         })
         return _obj
 

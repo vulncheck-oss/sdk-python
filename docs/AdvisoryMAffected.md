@@ -5,9 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**collection_url** | **str** |  | [optional] 
 **cpes** | **List[str]** |  | [optional] 
+**default_status** | **str** |  | [optional] 
+**package_name** | **str** |  | [optional] 
 **platforms** | **List[str]** |  | [optional] 
 **product** | **str** |  | [optional] 
+**repos** | **str** |  | [optional] 
 **vendor** | **str** |  | [optional] 
 **versions** | [**List[AdvisoryMVersion]**](AdvisoryMVersion.md) |  | [optional] 
 

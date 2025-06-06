@@ -5,8 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**attack_complexity** | **str** |  | [optional] 
+**attack_vector** | **str** |  | [optional] 
+**availability_impact** | **str** |  | [optional] 
 **base_score** | **float** |  | [optional] 
 **base_severity** | **str** |  | [optional] 
+**confidentiality_impact** | **str** |  | [optional] 
+**integrity_impact** | **str** |  | [optional] 
+**privileges_required** | **str** |  | [optional] 
+**scope** | **str** |  | [optional] 
+**user_interaction** | **str** |  | [optional] 
 **vector_string** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
 

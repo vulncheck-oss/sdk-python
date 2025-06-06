@@ -27,10 +27,28 @@ class AdvisoryMCvssV40(BaseModel):
     """
     AdvisoryMCvssV40
     """ # noqa: E501
+    automatable: Optional[StrictStr] = Field(default=None, alias="Automatable")
+    recovery: Optional[StrictStr] = Field(default=None, alias="Recovery")
+    safety: Optional[StrictStr] = Field(default=None, alias="Safety")
+    attack_complexity: Optional[StrictStr] = Field(default=None, alias="attackComplexity")
+    attack_requirements: Optional[StrictStr] = Field(default=None, alias="attackRequirements")
+    attack_vector: Optional[StrictStr] = Field(default=None, alias="attackVector")
     base_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="baseScore")
+    base_severity: Optional[StrictStr] = Field(default=None, alias="baseSeverity")
+    privileges_required: Optional[StrictStr] = Field(default=None, alias="privilegesRequired")
+    provider_urgency: Optional[StrictStr] = Field(default=None, alias="providerUrgency")
+    sub_availability_impact: Optional[StrictStr] = Field(default=None, alias="subAvailabilityImpact")
+    sub_confidentiality_impact: Optional[StrictStr] = Field(default=None, alias="subConfidentialityImpact")
+    sub_integrity_impact: Optional[StrictStr] = Field(default=None, alias="subIntegrityImpact")
+    user_interaction: Optional[StrictStr] = Field(default=None, alias="userInteraction")
+    value_density: Optional[StrictStr] = Field(default=None, alias="valueDensity")
     vector_string: Optional[StrictStr] = Field(default=None, alias="vectorString")
     version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["baseScore", "vectorString", "version"]
+    vuln_availability_impact: Optional[StrictStr] = Field(default=None, alias="vulnAvailabilityImpact")
+    vuln_confidentiality_impact: Optional[StrictStr] = Field(default=None, alias="vulnConfidentialityImpact")
+    vuln_integrity_impact: Optional[StrictStr] = Field(default=None, alias="vulnIntegrityImpact")
+    vulnerability_response_effort: Optional[StrictStr] = Field(default=None, alias="vulnerabilityResponseEffort")
+    __properties: ClassVar[List[str]] = ["Automatable", "Recovery", "Safety", "attackComplexity", "attackRequirements", "attackVector", "baseScore", "baseSeverity", "privilegesRequired", "providerUrgency", "subAvailabilityImpact", "subConfidentialityImpact", "subIntegrityImpact", "userInteraction", "valueDensity", "vectorString", "version", "vulnAvailabilityImpact", "vulnConfidentialityImpact", "vulnIntegrityImpact", "vulnerabilityResponseEffort"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,9 +101,27 @@ class AdvisoryMCvssV40(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "Automatable": obj.get("Automatable"),
+            "Recovery": obj.get("Recovery"),
+            "Safety": obj.get("Safety"),
+            "attackComplexity": obj.get("attackComplexity"),
+            "attackRequirements": obj.get("attackRequirements"),
+            "attackVector": obj.get("attackVector"),
             "baseScore": obj.get("baseScore"),
+            "baseSeverity": obj.get("baseSeverity"),
+            "privilegesRequired": obj.get("privilegesRequired"),
+            "providerUrgency": obj.get("providerUrgency"),
+            "subAvailabilityImpact": obj.get("subAvailabilityImpact"),
+            "subConfidentialityImpact": obj.get("subConfidentialityImpact"),
+            "subIntegrityImpact": obj.get("subIntegrityImpact"),
+            "userInteraction": obj.get("userInteraction"),
+            "valueDensity": obj.get("valueDensity"),
             "vectorString": obj.get("vectorString"),
-            "version": obj.get("version")
+            "version": obj.get("version"),
+            "vulnAvailabilityImpact": obj.get("vulnAvailabilityImpact"),
+            "vulnConfidentialityImpact": obj.get("vulnConfidentialityImpact"),
+            "vulnIntegrityImpact": obj.get("vulnIntegrityImpact"),
+            "vulnerabilityResponseEffort": obj.get("vulnerabilityResponseEffort")
         })
         return _obj
 

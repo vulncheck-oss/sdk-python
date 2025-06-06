@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_m_version import AdvisoryMVersion
 from typing import Optional, Set
@@ -28,12 +28,16 @@ class AdvisoryMAffected(BaseModel):
     """
     AdvisoryMAffected
     """ # noqa: E501
+    collection_url: Optional[StrictStr] = Field(default=None, alias="collectionURL")
     cpes: Optional[List[StrictStr]] = None
+    default_status: Optional[StrictStr] = Field(default=None, alias="defaultStatus")
+    package_name: Optional[StrictStr] = Field(default=None, alias="packageName")
     platforms: Optional[List[StrictStr]] = None
     product: Optional[StrictStr] = None
+    repos: Optional[StrictStr] = None
     vendor: Optional[StrictStr] = None
     versions: Optional[List[AdvisoryMVersion]] = None
-    __properties: ClassVar[List[str]] = ["cpes", "platforms", "product", "vendor", "versions"]
+    __properties: ClassVar[List[str]] = ["collectionURL", "cpes", "defaultStatus", "packageName", "platforms", "product", "repos", "vendor", "versions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,9 +97,13 @@ class AdvisoryMAffected(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "collectionURL": obj.get("collectionURL"),
             "cpes": obj.get("cpes"),
+            "defaultStatus": obj.get("defaultStatus"),
+            "packageName": obj.get("packageName"),
             "platforms": obj.get("platforms"),
             "product": obj.get("product"),
+            "repos": obj.get("repos"),
             "vendor": obj.get("vendor"),
             "versions": [AdvisoryMVersion.from_dict(_item) for _item in obj["versions"]] if obj.get("versions") is not None else None
         })

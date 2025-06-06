@@ -36,13 +36,17 @@ class TestAdvisoryMAffected(unittest.TestCase):
         model = AdvisoryMAffected()
         if include_optional:
             return AdvisoryMAffected(
+                collection_url = '',
                 cpes = [
                     ''
                     ],
+                default_status = '',
+                package_name = '',
                 platforms = [
                     ''
                     ],
                 product = '',
+                repos = '',
                 vendor = '',
                 versions = [
                     vulncheck_sdk.models.advisory/m_version.advisory.MVersion(
