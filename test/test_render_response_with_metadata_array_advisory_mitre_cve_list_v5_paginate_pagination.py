@@ -83,13 +83,17 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                     vulncheck_sdk.models.advisory/adp_container.advisory.ADPContainer(
                                         affected = [
                                             vulncheck_sdk.models.advisory/m_affected.advisory.MAffected(
+                                                collection_url = '', 
                                                 cpes = [
                                                     ''
                                                     ], 
+                                                default_status = '', 
+                                                package_name = '', 
                                                 platforms = [
                                                     ''
                                                     ], 
                                                 product = '', 
+                                                repos = '', 
                                                 vendor = '', 
                                                 versions = [
                                                     vulncheck_sdk.models.advisory/m_version.advisory.MVersion(
@@ -113,23 +117,63 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                         metrics = [
                                             vulncheck_sdk.models.advisory/metric.advisory.Metric(
                                                 cvss_v2_0 = vulncheck_sdk.models.advisory/m_cvss_v20.advisory.MCvssV20(
+                                                    access_vector = '', 
+                                                    attack_complexity = '', 
+                                                    authentication = '', 
+                                                    availability_impact = '', 
                                                     base_score = 1.337, 
+                                                    confidentiality_impact = '', 
+                                                    integrity_impact = '', 
                                                     vector_string = '', 
                                                     version = '', ), 
                                                 cvss_v3_0 = vulncheck_sdk.models.advisory/m_cvss_v30.advisory.MCvssV30(
+                                                    attack_complexity = '', 
+                                                    attack_vector = '', 
+                                                    availability_impact = '', 
                                                     base_score = 1.337, 
                                                     base_severity = '', 
+                                                    confidentiality_impact = '', 
+                                                    integrity_impact = '', 
+                                                    privileges_required = '', 
+                                                    scope = '', 
+                                                    user_interaction = '', 
                                                     vector_string = '', 
                                                     version = '', ), 
                                                 cvss_v3_1 = vulncheck_sdk.models.advisory/m_cvss_v31.advisory.MCvssV31(
+                                                    attack_complexity = '', 
+                                                    attack_vector = '', 
+                                                    availability_impact = '', 
                                                     base_score = 1.337, 
                                                     base_severity = '', 
+                                                    confidentiality_impact = '', 
+                                                    integrity_impact = '', 
+                                                    privileges_required = '', 
+                                                    scope = '', 
+                                                    user_interaction = '', 
                                                     vector_string = '', 
                                                     version = '', ), 
                                                 cvss_v4_0 = vulncheck_sdk.models.advisory/m_cvss_v40.advisory.MCvssV40(
+                                                    automatable = '', 
+                                                    recovery = '', 
+                                                    safety = '', 
+                                                    attack_complexity = '', 
+                                                    attack_requirements = '', 
+                                                    attack_vector = '', 
                                                     base_score = 1.337, 
+                                                    base_severity = '', 
+                                                    privileges_required = '', 
+                                                    provider_urgency = '', 
+                                                    sub_availability_impact = '', 
+                                                    sub_confidentiality_impact = '', 
+                                                    sub_integrity_impact = '', 
+                                                    user_interaction = '', 
+                                                    value_density = '', 
                                                     vector_string = '', 
-                                                    version = '', ), 
+                                                    version = '', 
+                                                    vuln_availability_impact = '', 
+                                                    vuln_confidentiality_impact = '', 
+                                                    vuln_integrity_impact = '', 
+                                                    vulnerability_response_effort = '', ), 
                                                 format = '', 
                                                 other = vulncheck_sdk.models.advisory/metrics_other.advisory.MetricsOther(
                                                     content = '', 
@@ -153,6 +197,26 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                         title = '', )
                                     ], 
                                 cna = vulncheck_sdk.models.advisory/m_cna.advisory.MCna(
+                                    cpe_applicability = [
+                                        vulncheck_sdk.models.advisory/mcpe_applicability.advisory.MCPEApplicability(
+                                            negate = True, 
+                                            nodes = [
+                                                vulncheck_sdk.models.advisory/m_nodes.advisory.MNodes(
+                                                    cpe_match = [
+                                                        vulncheck_sdk.models.advisory/mcpe_match.advisory.MCPEMatch(
+                                                            criteria = '', 
+                                                            match_criteria_id = '', 
+                                                            version_end_excluding = '', 
+                                                            version_end_including = '', 
+                                                            version_start_excluding = '', 
+                                                            version_start_including = '', 
+                                                            vulnerable = True, )
+                                                        ], 
+                                                    negate = True, 
+                                                    operator = '', )
+                                                ], 
+                                            operator = '', )
+                                        ], 
                                     credits = [
                                         vulncheck_sdk.models.advisory/credit.advisory.Credit(
                                             lang = '', 

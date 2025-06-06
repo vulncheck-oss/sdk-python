@@ -339,6 +339,8 @@ from vulncheck_sdk.models.advisory_log_source import AdvisoryLogSource
 from vulncheck_sdk.models.advisory_ma_cert import AdvisoryMACert
 from vulncheck_sdk.models.advisory_m_affected import AdvisoryMAffected
 from vulncheck_sdk.models.advisory_m_branch import AdvisoryMBranch
+from vulncheck_sdk.models.advisory_mcpe_applicability import AdvisoryMCPEApplicability
+from vulncheck_sdk.models.advisory_mcpe_match import AdvisoryMCPEMatch
 from vulncheck_sdk.models.advisory_m_cna import AdvisoryMCna
 from vulncheck_sdk.models.advisory_m_containers import AdvisoryMContainers
 from vulncheck_sdk.models.advisory_m_cve_metadata import AdvisoryMCveMetadata
@@ -355,6 +357,7 @@ from vulncheck_sdk.models.advisory_misp_value_no_id import AdvisoryMISPValueNoID
 from vulncheck_sdk.models.advisory_mitre_attack_group_no_id import AdvisoryMITREAttackGroupNoID
 from vulncheck_sdk.models.advisory_m_identification import AdvisoryMIdentification
 from vulncheck_sdk.models.advisory_m_item import AdvisoryMItem
+from vulncheck_sdk.models.advisory_m_nodes import AdvisoryMNodes
 from vulncheck_sdk.models.advisory_m_problem_types import AdvisoryMProblemTypes
 from vulncheck_sdk.models.advisory_m_product_status import AdvisoryMProductStatus
 from vulncheck_sdk.models.advisory_m_product_tree import AdvisoryMProductTree

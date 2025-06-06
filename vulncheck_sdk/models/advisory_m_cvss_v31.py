@@ -27,11 +27,19 @@ class AdvisoryMCvssV31(BaseModel):
     """
     AdvisoryMCvssV31
     """ # noqa: E501
+    attack_complexity: Optional[StrictStr] = Field(default=None, alias="attackComplexity")
+    attack_vector: Optional[StrictStr] = Field(default=None, alias="attackVector")
+    availability_impact: Optional[StrictStr] = Field(default=None, alias="availabilityImpact")
     base_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="baseScore")
     base_severity: Optional[StrictStr] = Field(default=None, alias="baseSeverity")
+    confidentiality_impact: Optional[StrictStr] = Field(default=None, alias="confidentialityImpact")
+    integrity_impact: Optional[StrictStr] = Field(default=None, alias="integrityImpact")
+    privileges_required: Optional[StrictStr] = Field(default=None, alias="privilegesRequired")
+    scope: Optional[StrictStr] = None
+    user_interaction: Optional[StrictStr] = Field(default=None, alias="userInteraction")
     vector_string: Optional[StrictStr] = Field(default=None, alias="vectorString")
     version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["baseScore", "baseSeverity", "vectorString", "version"]
+    __properties: ClassVar[List[str]] = ["attackComplexity", "attackVector", "availabilityImpact", "baseScore", "baseSeverity", "confidentialityImpact", "integrityImpact", "privilegesRequired", "scope", "userInteraction", "vectorString", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,8 +92,16 @@ class AdvisoryMCvssV31(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "attackComplexity": obj.get("attackComplexity"),
+            "attackVector": obj.get("attackVector"),
+            "availabilityImpact": obj.get("availabilityImpact"),
             "baseScore": obj.get("baseScore"),
             "baseSeverity": obj.get("baseSeverity"),
+            "confidentialityImpact": obj.get("confidentialityImpact"),
+            "integrityImpact": obj.get("integrityImpact"),
+            "privilegesRequired": obj.get("privilegesRequired"),
+            "scope": obj.get("scope"),
+            "userInteraction": obj.get("userInteraction"),
             "vectorString": obj.get("vectorString"),
             "version": obj.get("version")
         })

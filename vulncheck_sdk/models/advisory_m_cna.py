@@ -27,6 +27,7 @@ from vulncheck_sdk.models.advisory_m_descriptions import AdvisoryMDescriptions
 from vulncheck_sdk.models.advisory_m_problem_types import AdvisoryMProblemTypes
 from vulncheck_sdk.models.advisory_m_provider_metadata import AdvisoryMProviderMetadata
 from vulncheck_sdk.models.advisory_m_reference import AdvisoryMReference
+from vulncheck_sdk.models.advisory_mcpe_applicability import AdvisoryMCPEApplicability
 from vulncheck_sdk.models.advisory_metric import AdvisoryMetric
 from vulncheck_sdk.models.advisory_timeline import AdvisoryTimeline
 from typing import Optional, Set
@@ -37,6 +38,7 @@ class AdvisoryMCna(BaseModel):
     AdvisoryMCna
     """ # noqa: E501
     affected: Optional[List[AdvisoryMAffected]] = None
+    cpe_applicability: Optional[List[AdvisoryMCPEApplicability]] = Field(default=None, alias="cpeApplicability")
     credits: Optional[List[AdvisoryCredit]] = None
     descriptions: Optional[List[AdvisoryMDescriptions]] = None
     impacts: Optional[List[AdvisoryImpact]] = None
@@ -47,7 +49,7 @@ class AdvisoryMCna(BaseModel):
     tags: Optional[List[StrictStr]] = None
     timeline: Optional[List[AdvisoryTimeline]] = None
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected", "credits", "descriptions", "impacts", "metrics", "problemTypes", "providerMetadata", "references", "tags", "timeline", "title"]
+    __properties: ClassVar[List[str]] = ["affected", "cpeApplicability", "credits", "descriptions", "impacts", "metrics", "problemTypes", "providerMetadata", "references", "tags", "timeline", "title"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +97,13 @@ class AdvisoryMCna(BaseModel):
                 if _item_affected:
                     _items.append(_item_affected.to_dict())
             _dict['affected'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in cpe_applicability (list)
+        _items = []
+        if self.cpe_applicability:
+            for _item_cpe_applicability in self.cpe_applicability:
+                if _item_cpe_applicability:
+                    _items.append(_item_cpe_applicability.to_dict())
+            _dict['cpeApplicability'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in credits (list)
         _items = []
         if self.credits:
@@ -160,6 +169,7 @@ class AdvisoryMCna(BaseModel):
 
         _obj = cls.model_validate({
             "affected": [AdvisoryMAffected.from_dict(_item) for _item in obj["affected"]] if obj.get("affected") is not None else None,
+            "cpeApplicability": [AdvisoryMCPEApplicability.from_dict(_item) for _item in obj["cpeApplicability"]] if obj.get("cpeApplicability") is not None else None,
             "credits": [AdvisoryCredit.from_dict(_item) for _item in obj["credits"]] if obj.get("credits") is not None else None,
             "descriptions": [AdvisoryMDescriptions.from_dict(_item) for _item in obj["descriptions"]] if obj.get("descriptions") is not None else None,
             "impacts": [AdvisoryImpact.from_dict(_item) for _item in obj["impacts"]] if obj.get("impacts") is not None else None,

@@ -18,26 +18,23 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.models.advisory_open_ssl_vulnerability import AdvisoryOpenSSLVulnerability
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryOpenSSLSecAdv(BaseModel):
+class AdvisoryMCPEMatch(BaseModel):
     """
-    AdvisoryOpenSSLSecAdv
+    AdvisoryMCPEMatch
     """ # noqa: E501
-    cve: Optional[List[StrictStr]] = None
-    date_added: Optional[StrictStr] = None
-    date_updated: Optional[StrictStr] = None
-    description: Optional[StrictStr] = None
-    filename: Optional[StrictStr] = None
-    references: Optional[List[StrictStr]] = None
-    title: Optional[StrictStr] = None
-    url: Optional[StrictStr] = None
-    vulnerabilities: Optional[List[AdvisoryOpenSSLVulnerability]] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "date_updated", "description", "filename", "references", "title", "url", "vulnerabilities"]
+    criteria: Optional[StrictStr] = None
+    match_criteria_id: Optional[StrictStr] = Field(default=None, alias="matchCriteriaId")
+    version_end_excluding: Optional[StrictStr] = Field(default=None, alias="versionEndExcluding")
+    version_end_including: Optional[StrictStr] = Field(default=None, alias="versionEndIncluding")
+    version_start_excluding: Optional[StrictStr] = Field(default=None, alias="versionStartExcluding")
+    version_start_including: Optional[StrictStr] = Field(default=None, alias="versionStartIncluding")
+    vulnerable: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["criteria", "matchCriteriaId", "versionEndExcluding", "versionEndIncluding", "versionStartExcluding", "versionStartIncluding", "vulnerable"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -57,7 +54,7 @@ class AdvisoryOpenSSLSecAdv(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryOpenSSLSecAdv from a JSON string"""
+        """Create an instance of AdvisoryMCPEMatch from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -78,18 +75,11 @@ class AdvisoryOpenSSLSecAdv(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in vulnerabilities (list)
-        _items = []
-        if self.vulnerabilities:
-            for _item_vulnerabilities in self.vulnerabilities:
-                if _item_vulnerabilities:
-                    _items.append(_item_vulnerabilities.to_dict())
-            _dict['vulnerabilities'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryOpenSSLSecAdv from a dict"""
+        """Create an instance of AdvisoryMCPEMatch from a dict"""
         if obj is None:
             return None
 
@@ -97,15 +87,13 @@ class AdvisoryOpenSSLSecAdv(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "cve": obj.get("cve"),
-            "date_added": obj.get("date_added"),
-            "date_updated": obj.get("date_updated"),
-            "description": obj.get("description"),
-            "filename": obj.get("filename"),
-            "references": obj.get("references"),
-            "title": obj.get("title"),
-            "url": obj.get("url"),
-            "vulnerabilities": [AdvisoryOpenSSLVulnerability.from_dict(_item) for _item in obj["vulnerabilities"]] if obj.get("vulnerabilities") is not None else None
+            "criteria": obj.get("criteria"),
+            "matchCriteriaId": obj.get("matchCriteriaId"),
+            "versionEndExcluding": obj.get("versionEndExcluding"),
+            "versionEndIncluding": obj.get("versionEndIncluding"),
+            "versionStartExcluding": obj.get("versionStartExcluding"),
+            "versionStartIncluding": obj.get("versionStartIncluding"),
+            "vulnerable": obj.get("vulnerable")
         })
         return _obj
 
