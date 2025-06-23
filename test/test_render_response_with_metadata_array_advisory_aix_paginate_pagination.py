@@ -84,6 +84,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryAIXPaginatePagination(unittest.
                             ], 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

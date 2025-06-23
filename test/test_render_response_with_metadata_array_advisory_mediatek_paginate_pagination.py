@@ -86,6 +86,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMediatekPaginatePagination(unit
                         description = '', 
                         severity = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

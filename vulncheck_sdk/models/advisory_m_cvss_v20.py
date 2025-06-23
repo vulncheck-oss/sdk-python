@@ -27,10 +27,16 @@ class AdvisoryMCvssV20(BaseModel):
     """
     AdvisoryMCvssV20
     """ # noqa: E501
+    access_vector: Optional[StrictStr] = Field(default=None, alias="accessVector")
+    attack_complexity: Optional[StrictStr] = Field(default=None, alias="attackComplexity")
+    authentication: Optional[StrictStr] = None
+    availability_impact: Optional[StrictStr] = Field(default=None, alias="availabilityImpact")
     base_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="baseScore")
+    confidentiality_impact: Optional[StrictStr] = Field(default=None, alias="confidentialityImpact")
+    integrity_impact: Optional[StrictStr] = Field(default=None, alias="integrityImpact")
     vector_string: Optional[StrictStr] = Field(default=None, alias="vectorString")
     version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["baseScore", "vectorString", "version"]
+    __properties: ClassVar[List[str]] = ["accessVector", "attackComplexity", "authentication", "availabilityImpact", "baseScore", "confidentialityImpact", "integrityImpact", "vectorString", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,7 +89,13 @@ class AdvisoryMCvssV20(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "accessVector": obj.get("accessVector"),
+            "attackComplexity": obj.get("attackComplexity"),
+            "authentication": obj.get("authentication"),
+            "availabilityImpact": obj.get("availabilityImpact"),
             "baseScore": obj.get("baseScore"),
+            "confidentialityImpact": obj.get("confidentialityImpact"),
+            "integrityImpact": obj.get("integrityImpact"),
             "vectorString": obj.get("vectorString"),
             "version": obj.get("version")
         })

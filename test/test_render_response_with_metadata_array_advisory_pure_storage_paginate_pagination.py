@@ -76,10 +76,12 @@ class TestRenderResponseWithMetadataArrayAdvisoryPureStoragePaginatePagination(u
                         cve = [
                             ''
                             ], 
-                        cvss = '', 
+                        cvss_score = '', 
+                        cvss_vector = '', 
                         date_added = '', 
                         description = '', 
                         product = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

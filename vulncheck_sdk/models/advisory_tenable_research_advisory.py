@@ -34,8 +34,9 @@ class AdvisoryTenableResearchAdvisory(BaseModel):
     references: Optional[List[StrictStr]] = None
     summary: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected", "cve", "date_added", "id", "references", "summary", "title", "url"]
+    __properties: ClassVar[List[str]] = ["affected", "cve", "date_added", "id", "references", "summary", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +96,7 @@ class AdvisoryTenableResearchAdvisory(BaseModel):
             "references": obj.get("references"),
             "summary": obj.get("summary"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

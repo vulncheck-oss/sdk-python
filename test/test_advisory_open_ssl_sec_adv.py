@@ -41,7 +41,11 @@ class TestAdvisoryOpenSSLSecAdv(unittest.TestCase):
                     ],
                 date_added = '',
                 date_updated = '',
+                description = '',
                 filename = '',
+                references = [
+                    ''
+                    ],
                 title = '',
                 url = '',
                 vulnerabilities = [

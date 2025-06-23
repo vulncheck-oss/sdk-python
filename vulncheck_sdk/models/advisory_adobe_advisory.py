@@ -37,7 +37,8 @@ class AdvisoryAdobeAdvisory(BaseModel):
     date_added: Optional[StrictStr] = None
     link: Optional[StrictStr] = None
     solutions: Optional[List[AdvisoryAdobeSolution]] = None
-    __properties: ClassVar[List[str]] = ["adobe_cves", "affected", "bulletinId", "cve", "date_added", "link", "solutions"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["adobe_cves", "affected", "bulletinId", "cve", "date_added", "link", "solutions", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -117,7 +118,8 @@ class AdvisoryAdobeAdvisory(BaseModel):
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "link": obj.get("link"),
-            "solutions": [AdvisoryAdobeSolution.from_dict(_item) for _item in obj["solutions"]] if obj.get("solutions") is not None else None
+            "solutions": [AdvisoryAdobeSolution.from_dict(_item) for _item in obj["solutions"]] if obj.get("solutions") is not None else None,
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

@@ -47,6 +47,7 @@ class TestAdvisoryTenableResearchAdvisory(unittest.TestCase):
                     ],
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

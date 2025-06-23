@@ -78,7 +78,11 @@ class TestRenderResponseWithMetadataArrayAdvisoryOpenSSLSecAdvPaginatePagination
                             ], 
                         date_added = '', 
                         date_updated = '', 
+                        description = '', 
                         filename = '', 
+                        references = [
+                            ''
+                            ], 
                         title = '', 
                         url = '', 
                         vulnerabilities = [

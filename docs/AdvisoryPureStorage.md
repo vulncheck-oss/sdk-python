@@ -6,10 +6,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cve** | **List[str]** |  | [optional] 
-**cvss** | **str** |  | [optional] 
+**cvss_score** | **str** |  | [optional] 
+**cvss_vector** | **str** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **product** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

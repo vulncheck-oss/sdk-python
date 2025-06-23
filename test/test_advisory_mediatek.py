@@ -49,6 +49,7 @@ class TestAdvisoryMediatek(unittest.TestCase):
                 description = '',
                 severity = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

@@ -37,7 +37,8 @@ class AdvisoryVMWareAdvisory(BaseModel):
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["AdvisoryID", "AdvisoryURL", "CVSSv3Range", "IssueDate", "Severity", "Synopsis", "UpdatedOn", "cve", "date_added", "id"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["AdvisoryID", "AdvisoryURL", "CVSSv3Range", "IssueDate", "Severity", "Synopsis", "UpdatedOn", "cve", "date_added", "id", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,7 +100,8 @@ class AdvisoryVMWareAdvisory(BaseModel):
             "UpdatedOn": obj.get("UpdatedOn"),
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
-            "id": obj.get("id")
+            "id": obj.get("id"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

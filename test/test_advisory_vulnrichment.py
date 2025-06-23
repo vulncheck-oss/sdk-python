@@ -46,13 +46,17 @@ class TestAdvisoryVulnrichment(unittest.TestCase):
                             vulncheck_sdk.models.advisory/adp.advisory.ADP(
                                 affected = [
                                     vulncheck_sdk.models.advisory/m_affected.advisory.MAffected(
+                                        collection_url = '', 
                                         cpes = [
                                             ''
                                             ], 
+                                        default_status = '', 
+                                        package_name = '', 
                                         platforms = [
                                             ''
                                             ], 
                                         product = '', 
+                                        repos = '', 
                                         vendor = '', 
                                         versions = [
                                             vulncheck_sdk.models.advisory/m_version.advisory.MVersion(
@@ -85,6 +89,26 @@ class TestAdvisoryVulnrichment(unittest.TestCase):
                                     short_name = '', ), )
                             ], 
                         cna = vulncheck_sdk.models.advisory/m_cna.advisory.MCna(
+                            cpe_applicability = [
+                                vulncheck_sdk.models.advisory/mcpe_applicability.advisory.MCPEApplicability(
+                                    negate = True, 
+                                    nodes = [
+                                        vulncheck_sdk.models.advisory/m_nodes.advisory.MNodes(
+                                            cpe_match = [
+                                                vulncheck_sdk.models.advisory/mcpe_match.advisory.MCPEMatch(
+                                                    criteria = '', 
+                                                    match_criteria_id = '', 
+                                                    version_end_excluding = '', 
+                                                    version_end_including = '', 
+                                                    version_start_excluding = '', 
+                                                    version_start_including = '', 
+                                                    vulnerable = True, )
+                                                ], 
+                                            negate = True, 
+                                            operator = '', )
+                                        ], 
+                                    operator = '', )
+                                ], 
                             credits = [
                                 vulncheck_sdk.models.advisory/credit.advisory.Credit(
                                     lang = '', 

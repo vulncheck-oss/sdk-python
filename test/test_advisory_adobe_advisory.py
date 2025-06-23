@@ -59,7 +59,8 @@ class TestAdvisoryAdobeAdvisory(unittest.TestCase):
                         platform = '', 
                         product = '', 
                         version = '', )
-                    ]
+                    ],
+                updated_at = ''
             )
         else:
             return AdvisoryAdobeAdvisory(

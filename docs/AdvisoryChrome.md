@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**affected** | [**List[AdvisoryAffectedChrome]**](AdvisoryAffectedChrome.md) |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 

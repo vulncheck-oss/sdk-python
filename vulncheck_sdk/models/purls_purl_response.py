@@ -32,10 +32,11 @@ class PurlsPurlResponse(BaseModel):
     cves: Optional[List[StrictStr]] = None
     licenses: Optional[List[StrictStr]] = None
     name: Optional[StrictStr] = None
+    published_date: Optional[StrictStr] = None
     purl: Optional[List[StrictStr]] = None
     version: Optional[StrictStr] = None
     vulnerabilities: Optional[List[PurlsVulnerability]] = None
-    __properties: ClassVar[List[str]] = ["artifacts", "cves", "licenses", "name", "purl", "version", "vulnerabilities"]
+    __properties: ClassVar[List[str]] = ["artifacts", "cves", "licenses", "name", "published_date", "purl", "version", "vulnerabilities"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,6 +100,7 @@ class PurlsPurlResponse(BaseModel):
             "cves": obj.get("cves"),
             "licenses": obj.get("licenses"),
             "name": obj.get("name"),
+            "published_date": obj.get("published_date"),
             "purl": obj.get("purl"),
             "version": obj.get("version"),
             "vulnerabilities": [PurlsVulnerability.from_dict(_item) for _item in obj["vulnerabilities"]] if obj.get("vulnerabilities") is not None else None

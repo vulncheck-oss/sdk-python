@@ -84,7 +84,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryVMWareAdvisoryPaginatePaginatio
                             ''
                             ], 
                         date_added = '', 
-                        id = '', )
+                        id = '', 
+                        updated_at = '', )
                     ]
             )
         else:

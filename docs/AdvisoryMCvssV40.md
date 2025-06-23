@@ -5,9 +5,27 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**automatable** | **str** |  | [optional] 
+**recovery** | **str** |  | [optional] 
+**safety** | **str** |  | [optional] 
+**attack_complexity** | **str** |  | [optional] 
+**attack_requirements** | **str** |  | [optional] 
+**attack_vector** | **str** |  | [optional] 
 **base_score** | **float** |  | [optional] 
+**base_severity** | **str** |  | [optional] 
+**privileges_required** | **str** |  | [optional] 
+**provider_urgency** | **str** |  | [optional] 
+**sub_availability_impact** | **str** |  | [optional] 
+**sub_confidentiality_impact** | **str** |  | [optional] 
+**sub_integrity_impact** | **str** |  | [optional] 
+**user_interaction** | **str** |  | [optional] 
+**value_density** | **str** |  | [optional] 
 **vector_string** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
+**vuln_availability_impact** | **str** |  | [optional] 
+**vuln_confidentiality_impact** | **str** |  | [optional] 
+**vuln_integrity_impact** | **str** |  | [optional] 
+**vulnerability_response_effort** | **str** |  | [optional] 
 
 ## Example
 

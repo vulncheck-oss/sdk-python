@@ -36,6 +36,11 @@ class TestAdvisoryChrome(unittest.TestCase):
         model = AdvisoryChrome()
         if include_optional:
             return AdvisoryChrome(
+                affected = [
+                    vulncheck_sdk.models.advisory/affected_chrome.advisory.AffectedChrome(
+                        fixed_version = '', 
+                        product = '', )
+                    ],
                 cve = [
                     ''
                     ],

@@ -18,22 +18,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.models.advisory_ref_url import AdvisoryRefURL
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from vulncheck_sdk.models.advisory_qualys_qid import AdvisoryQualysQID
+from vulncheck_sdk.models.paginate_pagination import PaginatePagination
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryScore(BaseModel):
+class RenderResponseWithMetadataArrayAdvisoryQualysQIDPaginatePagination(BaseModel):
     """
-    AdvisoryScore
+    RenderResponseWithMetadataArrayAdvisoryQualysQIDPaginatePagination
     """ # noqa: E501
-    cve: Optional[StrictStr] = None
-    in_kev: Optional[StrictBool] = Field(default=None, alias="inKEV")
-    in_vckev: Optional[StrictBool] = Field(default=None, alias="inVCKEV")
-    reference_urls: Optional[List[AdvisoryRefURL]] = None
-    score: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["cve", "inKEV", "inVCKEV", "reference_urls", "score"]
+    benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="_benchmark")
+    meta: Optional[PaginatePagination] = Field(default=None, alias="_meta")
+    data: Optional[List[AdvisoryQualysQID]] = None
+    __properties: ClassVar[List[str]] = ["_benchmark", "_meta", "data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -53,7 +52,7 @@ class AdvisoryScore(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryScore from a JSON string"""
+        """Create an instance of RenderResponseWithMetadataArrayAdvisoryQualysQIDPaginatePagination from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,18 +73,21 @@ class AdvisoryScore(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in reference_urls (list)
+        # override the default output from pydantic by calling `to_dict()` of meta
+        if self.meta:
+            _dict['_meta'] = self.meta.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
         _items = []
-        if self.reference_urls:
-            for _item_reference_urls in self.reference_urls:
-                if _item_reference_urls:
-                    _items.append(_item_reference_urls.to_dict())
-            _dict['reference_urls'] = _items
+        if self.data:
+            for _item_data in self.data:
+                if _item_data:
+                    _items.append(_item_data.to_dict())
+            _dict['data'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryScore from a dict"""
+        """Create an instance of RenderResponseWithMetadataArrayAdvisoryQualysQIDPaginatePagination from a dict"""
         if obj is None:
             return None
 
@@ -93,11 +95,9 @@ class AdvisoryScore(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "cve": obj.get("cve"),
-            "inKEV": obj.get("inKEV"),
-            "inVCKEV": obj.get("inVCKEV"),
-            "reference_urls": [AdvisoryRefURL.from_dict(_item) for _item in obj["reference_urls"]] if obj.get("reference_urls") is not None else None,
-            "score": obj.get("score")
+            "_benchmark": obj.get("_benchmark"),
+            "_meta": PaginatePagination.from_dict(obj["_meta"]) if obj.get("_meta") is not None else None,
+            "data": [AdvisoryQualysQID.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
         })
         return _obj
 

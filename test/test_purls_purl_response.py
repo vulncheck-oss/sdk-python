@@ -44,6 +44,7 @@ class TestPurlsPurlResponse(unittest.TestCase):
                     ''
                     ],
                 name = '',
+                published_date = '',
                 purl = [
                     ''
                     ],

@@ -63,7 +63,15 @@ class TestAdvisoryDocumentMetadata(unittest.TestCase):
                 tracking = vulncheck_sdk.models.advisory/tracking.advisory.Tracking(
                     current_release_date = '', 
                     id = '', 
-                    initial_release_date = '', )
+                    initial_release_date = '', 
+                    revision_history = [
+                        vulncheck_sdk.models.advisory/revision_history.advisory.RevisionHistory(
+                            date = '', 
+                            number = '', 
+                            summary = '', )
+                        ], 
+                    status = '', 
+                    version = '', )
             )
         else:
             return AdvisoryDocumentMetadata(

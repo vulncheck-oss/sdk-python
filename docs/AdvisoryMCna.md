@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **affected** | [**List[AdvisoryMAffected]**](AdvisoryMAffected.md) |  | [optional] 
+**cpe_applicability** | [**List[AdvisoryMCPEApplicability]**](AdvisoryMCPEApplicability.md) |  | [optional] 
 **credits** | [**List[AdvisoryCredit]**](AdvisoryCredit.md) |  | [optional] 
 **descriptions** | [**List[AdvisoryMDescriptions]**](AdvisoryMDescriptions.md) |  | [optional] 
 **impacts** | [**List[AdvisoryImpact]**](AdvisoryImpact.md) |  | [optional] 

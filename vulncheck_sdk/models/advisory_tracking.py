@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.advisory_revision_history import AdvisoryRevisionHistory
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +31,10 @@ class AdvisoryTracking(BaseModel):
     current_release_date: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     initial_release_date: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["current_release_date", "id", "initial_release_date"]
+    revision_history: Optional[List[AdvisoryRevisionHistory]] = None
+    status: Optional[StrictStr] = None
+    version: Optional[StrictStr] = Field(default=None, description="should match last 'number' in []RevisionHistory")
+    __properties: ClassVar[List[str]] = ["current_release_date", "id", "initial_release_date", "revision_history", "status", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,6 +75,13 @@ class AdvisoryTracking(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in revision_history (list)
+        _items = []
+        if self.revision_history:
+            for _item_revision_history in self.revision_history:
+                if _item_revision_history:
+                    _items.append(_item_revision_history.to_dict())
+            _dict['revision_history'] = _items
         return _dict
 
     @classmethod
@@ -85,7 +96,10 @@ class AdvisoryTracking(BaseModel):
         _obj = cls.model_validate({
             "current_release_date": obj.get("current_release_date"),
             "id": obj.get("id"),
-            "initial_release_date": obj.get("initial_release_date")
+            "initial_release_date": obj.get("initial_release_date"),
+            "revision_history": [AdvisoryRevisionHistory.from_dict(_item) for _item in obj["revision_history"]] if obj.get("revision_history") is not None else None,
+            "status": obj.get("status"),
+            "version": obj.get("version")
         })
         return _obj
 

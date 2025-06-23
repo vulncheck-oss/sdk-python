@@ -28,12 +28,14 @@ class AdvisoryPureStorage(BaseModel):
     AdvisoryPureStorage
     """ # noqa: E501
     cve: Optional[List[StrictStr]] = None
-    cvss: Optional[StrictStr] = None
+    cvss_score: Optional[StrictStr] = None
+    cvss_vector: Optional[StrictStr] = None
     date_added: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     product: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "cvss", "date_added", "description", "product", "url"]
+    __properties: ClassVar[List[str]] = ["cve", "cvss_score", "cvss_vector", "date_added", "description", "product", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,10 +89,12 @@ class AdvisoryPureStorage(BaseModel):
 
         _obj = cls.model_validate({
             "cve": obj.get("cve"),
-            "cvss": obj.get("cvss"),
+            "cvss_score": obj.get("cvss_score"),
+            "cvss_vector": obj.get("cvss_vector"),
             "date_added": obj.get("date_added"),
             "description": obj.get("description"),
             "product": obj.get("product"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj
