@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.advisory_ref_url import AdvisoryRefURL
+from vulncheck_sdk.models.advisory_vc_vulnerable_cpes import AdvisoryVCVulnerableCPEs
 
-class TestAdvisoryRefURL(unittest.TestCase):
-    """AdvisoryRefURL unit test stubs"""
+class TestAdvisoryVCVulnerableCPEs(unittest.TestCase):
+    """AdvisoryVCVulnerableCPEs unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,32 +26,28 @@ class TestAdvisoryRefURL(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdvisoryRefURL:
-        """Test AdvisoryRefURL
+    def make_instance(self, include_optional) -> AdvisoryVCVulnerableCPEs:
+        """Test AdvisoryVCVulnerableCPEs
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AdvisoryRefURL`
+        # uncomment below to create an instance of `AdvisoryVCVulnerableCPEs`
         """
-        model = AdvisoryRefURL()
+        model = AdvisoryVCVulnerableCPEs()
         if include_optional:
-            return AdvisoryRefURL(
-                date_added = '',
-                exploit_availability = '',
-                exploit_maturity = '',
-                lang = '',
-                tags = [
+            return AdvisoryVCVulnerableCPEs(
+                cve = '',
+                unrolled = [
                     ''
-                    ],
-                url = ''
+                    ]
             )
         else:
-            return AdvisoryRefURL(
+            return AdvisoryVCVulnerableCPEs(
         )
         """
 
-    def testAdvisoryRefURL(self):
-        """Test AdvisoryRefURL"""
+    def testAdvisoryVCVulnerableCPEs(self):
+        """Test AdvisoryVCVulnerableCPEs"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -83,6 +83,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryAristaPaginatePagination(unitte
                             ], 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

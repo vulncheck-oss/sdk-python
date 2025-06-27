@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 

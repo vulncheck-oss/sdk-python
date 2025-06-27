@@ -81,6 +81,7 @@ class TestRenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination(uni
                             ''
                             ], 
                         name = '', 
+                        published_date = '', 
                         purl = [
                             ''
                             ], 

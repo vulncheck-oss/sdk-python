@@ -43,6 +43,7 @@ class TestAdvisoryYubico(unittest.TestCase):
                 id = '',
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

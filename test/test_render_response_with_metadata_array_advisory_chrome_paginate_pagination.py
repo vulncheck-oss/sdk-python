@@ -73,6 +73,11 @@ class TestRenderResponseWithMetadataArrayAdvisoryChromePaginatePagination(unitte
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/chrome.advisory.Chrome(
+                        affected = [
+                            vulncheck_sdk.models.advisory/affected_chrome.advisory.AffectedChrome(
+                                fixed_version = '', 
+                                product = '', )
+                            ], 
                         cve = [
                             ''
                             ], 

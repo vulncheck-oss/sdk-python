@@ -38,13 +38,17 @@ class TestAdvisoryADP(unittest.TestCase):
             return AdvisoryADP(
                 affected = [
                     vulncheck_sdk.models.advisory/m_affected.advisory.MAffected(
+                        collection_url = '', 
                         cpes = [
                             ''
                             ], 
+                        default_status = '', 
+                        package_name = '', 
                         platforms = [
                             ''
                             ], 
                         product = '', 
+                        repos = '', 
                         vendor = '', 
                         versions = [
                             vulncheck_sdk.models.advisory/m_version.advisory.MVersion(

@@ -49,6 +49,9 @@ class TestAdvisoryNCSCCVE(unittest.TestCase):
                     vulnerabilities = [
                         vulncheck_sdk.models.advisory/csaf_vulnerability.advisory.CSAFVulnerability(
                             cve = '', 
+                            cwe = vulncheck_sdk.models.advisory/cwe.advisory.Cwe(
+                                id = '', 
+                                name = '', ), 
                             flags = [
                                 vulncheck_sdk.models.advisory/flag.advisory.Flag(
                                     date = '', 
@@ -90,22 +93,41 @@ class TestAdvisoryNCSCCVE(unittest.TestCase):
                                         details = '', ), )
                                 ], 
                             scores = [
-                                vulncheck_sdk.models.advisory/score.advisory.Score(
-                                    cve = '', 
-                                    in_kev = True, 
-                                    in_vckev = True, 
-                                    reference_urls = [
-                                        vulncheck_sdk.models.advisory/ref_url.advisory.RefURL(
-                                            date_added = '', 
-                                            exploit_availability = '', 
-                                            exploit_maturity = '', 
-                                            lang = '', 
-                                            tags = [
-                                                ''
-                                                ], 
-                                            url = '', )
-                                        ], 
-                                    score = 56, )
+                                vulncheck_sdk.models.advisory/csaf_score.advisory.CSAFScore(
+                                    cvss_v2 = vulncheck_sdk.models.advisory/cvssv2.advisory.CVSSV2(
+                                        access_complexity = '', 
+                                        access_vector = '', 
+                                        authentication = '', 
+                                        availability_impact = '', 
+                                        availability_requirement = '', 
+                                        base_score = 1.337, 
+                                        collateral_damage_potential = '', 
+                                        confidentiality_impact = '', 
+                                        confidentiality_requirement = '', 
+                                        environmental_score = 1.337, 
+                                        exploitability = '', 
+                                        integrity_impact = '', 
+                                        integrity_requirement = '', 
+                                        remediation_level = '', 
+                                        report_confidence = '', 
+                                        target_distribution = '', 
+                                        temporal_score = 1.337, ), 
+                                    cvss_v3 = vulncheck_sdk.models.advisory/cvssv3.advisory.CVSSV3(
+                                        attack_complexity = '', 
+                                        attack_vector = '', 
+                                        availability_impact = '', 
+                                        base_score = 1.337, 
+                                        base_severity = '', 
+                                        confidentiality_impact = '', 
+                                        integrity_impact = '', 
+                                        privileges_required = '', 
+                                        scope = '', 
+                                        user_interaction = '', 
+                                        vector_string = '', 
+                                        version = '', ), 
+                                    products = [
+                                        ''
+                                        ], )
                                 ], 
                             threats = [
                                 vulncheck_sdk.models.advisory/threat_data.advisory.ThreatData(

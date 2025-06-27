@@ -8,6 +8,9 @@ Name | Type | Description | Notes
 **current_release_date** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **initial_release_date** | **str** |  | [optional] 
+**revision_history** | [**List[AdvisoryRevisionHistory]**](AdvisoryRevisionHistory.md) |  | [optional] 
+**status** | **str** |  | [optional] 
+**version** | **str** | should match last &#39;number&#39; in []RevisionHistory | [optional] 
 
 ## Example
 

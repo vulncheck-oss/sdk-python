@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.advisory_affected_chrome import AdvisoryAffectedChrome
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,11 +28,12 @@ class AdvisoryChrome(BaseModel):
     """
     AdvisoryChrome
     """ # noqa: E501
+    affected: Optional[List[AdvisoryAffectedChrome]] = None
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "title", "url"]
+    __properties: ClassVar[List[str]] = ["affected", "cve", "date_added", "title", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,6 +74,13 @@ class AdvisoryChrome(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in affected (list)
+        _items = []
+        if self.affected:
+            for _item_affected in self.affected:
+                if _item_affected:
+                    _items.append(_item_affected.to_dict())
+            _dict['affected'] = _items
         return _dict
 
     @classmethod
@@ -84,6 +93,7 @@ class AdvisoryChrome(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "affected": [AdvisoryAffectedChrome.from_dict(_item) for _item in obj["affected"]] if obj.get("affected") is not None else None,
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "title": obj.get("title"),

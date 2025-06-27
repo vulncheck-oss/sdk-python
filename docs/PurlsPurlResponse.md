@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **cves** | **List[str]** |  | [optional] 
 **licenses** | **List[str]** |  | [optional] 
 **name** | **str** |  | [optional] 
+**published_date** | **str** |  | [optional] 
 **purl** | **List[str]** |  | [optional] 
 **version** | **str** |  | [optional] 
 **vulnerabilities** | [**List[PurlsVulnerability]**](PurlsVulnerability.md) |  | [optional] 

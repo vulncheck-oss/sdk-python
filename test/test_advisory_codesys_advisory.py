@@ -47,6 +47,7 @@ class TestAdvisoryCodesysAdvisory(unittest.TestCase):
                 date_added = '',
                 date_last_revised = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

@@ -720,6 +720,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_cisa_csaf_get(self) -> None:
+        """Test case for index_cisa_csaf_get
+
+        Return vulnerability data stored in index \"cisa-csaf\"
+        """
+        pass
+
     def test_index_cisa_kev_get(self) -> None:
         """Test case for index_cisa_kev_get
 
@@ -846,6 +853,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_cpe_vulnerable_get(self) -> None:
+        """Test case for index_cpe_vulnerable_get
+
+        Return vulnerability data stored in index \"cpe-vulnerable\"
+        """
+        pass
+
     def test_index_crestron_get(self) -> None:
         """Test case for index_crestron_get
 
@@ -892,6 +906,20 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_debian_get
 
         Return vulnerability data stored in index \"debian\"
+        """
+        pass
+
+    def test_index_debian_packages_get(self) -> None:
+        """Test case for index_debian_packages_get
+
+        Return vulnerability data stored in index \"debian-packages\"
+        """
+        pass
+
+    def test_index_debian_purls_get(self) -> None:
+        """Test case for index_debian_purls_get
+
+        Return vulnerability data stored in index \"debian-purls\"
         """
         pass
 
@@ -1539,6 +1567,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_juniper_get(self) -> None:
+        """Test case for index_juniper_get
+
+        Return vulnerability data stored in index \"juniper\"
+        """
+        pass
+
     def test_index_jvn_get(self) -> None:
         """Test case for index_jvn_get
 
@@ -1945,6 +1980,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_nvd_cpe_dictionary_get(self) -> None:
+        """Test case for index_nvd_cpe_dictionary_get
+
+        Return vulnerability data stored in index \"nvd-cpe-dictionary\"
+        """
+        pass
+
     def test_index_nvidia_get(self) -> None:
         """Test case for index_nvidia_get
 
@@ -2229,6 +2271,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_qualys_get
 
         Return vulnerability data stored in index \"qualys\"
+        """
+        pass
+
+    def test_index_qualys_qids_get(self) -> None:
+        """Test case for index_qualys_qids_get
+
+        Return vulnerability data stored in index \"qualys-qids\"
         """
         pass
 

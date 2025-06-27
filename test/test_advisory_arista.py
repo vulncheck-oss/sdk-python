@@ -46,6 +46,7 @@ class TestAdvisoryArista(unittest.TestCase):
                     ],
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

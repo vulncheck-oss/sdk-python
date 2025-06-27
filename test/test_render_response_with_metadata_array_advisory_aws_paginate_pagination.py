@@ -79,6 +79,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryAWSPaginatePagination(unittest.
                         date_added = '', 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

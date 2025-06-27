@@ -23,17 +23,13 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryRefURL(BaseModel):
+class AdvisoryVCVulnerableCPEs(BaseModel):
     """
-    AdvisoryRefURL
+    AdvisoryVCVulnerableCPEs
     """ # noqa: E501
-    date_added: Optional[StrictStr] = None
-    exploit_availability: Optional[StrictStr] = None
-    exploit_maturity: Optional[StrictStr] = None
-    lang: Optional[StrictStr] = None
-    tags: Optional[List[StrictStr]] = None
-    url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["date_added", "exploit_availability", "exploit_maturity", "lang", "tags", "url"]
+    cve: Optional[StrictStr] = None
+    unrolled: Optional[List[StrictStr]] = None
+    __properties: ClassVar[List[str]] = ["cve", "unrolled"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -53,7 +49,7 @@ class AdvisoryRefURL(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryRefURL from a JSON string"""
+        """Create an instance of AdvisoryVCVulnerableCPEs from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -78,7 +74,7 @@ class AdvisoryRefURL(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryRefURL from a dict"""
+        """Create an instance of AdvisoryVCVulnerableCPEs from a dict"""
         if obj is None:
             return None
 
@@ -86,12 +82,8 @@ class AdvisoryRefURL(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "date_added": obj.get("date_added"),
-            "exploit_availability": obj.get("exploit_availability"),
-            "exploit_maturity": obj.get("exploit_maturity"),
-            "lang": obj.get("lang"),
-            "tags": obj.get("tags"),
-            "url": obj.get("url")
+            "cve": obj.get("cve"),
+            "unrolled": obj.get("unrolled")
         })
         return _obj
 

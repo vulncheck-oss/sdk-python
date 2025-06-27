@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **date_added** | **str** |  | [optional] 
 **link** | **str** |  | [optional] 
 **solutions** | [**List[AdvisoryAdobeSolution]**](AdvisoryAdobeSolution.md) |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 

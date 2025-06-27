@@ -80,6 +80,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryYubicoPaginatePagination(unitte
                         id = '', 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

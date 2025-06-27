@@ -21,6 +21,7 @@ docs/AdvisoryAdvisory.md
 docs/AdvisoryAdvisoryDetails.md
 docs/AdvisoryAdvisoryRecord.md
 docs/AdvisoryAffected.md
+docs/AdvisoryAffectedChrome.md
 docs/AdvisoryAffectedDebianPackage.md
 docs/AdvisoryAffectedDebianRelease.md
 docs/AdvisoryAffectedDebianRepository.md
@@ -133,12 +134,15 @@ docs/AdvisoryCSAF.md
 docs/AdvisoryCSAFNote.md
 docs/AdvisoryCSAFReference.md
 docs/AdvisoryCSAFRelationship.md
+docs/AdvisoryCSAFScore.md
 docs/AdvisoryCSAFVulnerability.md
 docs/AdvisoryCVEDetail.md
 docs/AdvisoryCVEDetailsLink.md
 docs/AdvisoryCVEReference.md
 docs/AdvisoryCVRFReference.md
 docs/AdvisoryCVSS.md
+docs/AdvisoryCVSSV2.md
+docs/AdvisoryCVSSV3.md
 docs/AdvisoryCVSSV40.md
 docs/AdvisoryCVSSV40Threat.md
 docs/AdvisoryCWENode.md
@@ -157,6 +161,7 @@ docs/AdvisoryChainGuardPackage.md
 docs/AdvisoryChainGuardSecFix.md
 docs/AdvisoryCheckPoint.md
 docs/AdvisoryChrome.md
+docs/AdvisoryCisaCsafAdv.md
 docs/AdvisoryCiscoAdvisory.md
 docs/AdvisoryCiscoCSAF.md
 docs/AdvisoryCitrixAdvisory.md
@@ -182,6 +187,8 @@ docs/AdvisoryCurlCWE.md
 docs/AdvisoryCurlCredit.md
 docs/AdvisoryCurlRange.md
 docs/AdvisoryCvrf.md
+docs/AdvisoryCvsssV23.md
+docs/AdvisoryCwe.md
 docs/AdvisoryCweAcceptanceLevel.md
 docs/AdvisoryCwes.md
 docs/AdvisoryCycle.md
@@ -195,6 +202,8 @@ docs/AdvisoryDebianSecurityAdvisory.md
 docs/AdvisoryDell.md
 docs/AdvisoryDellCVE.md
 docs/AdvisoryDeltaAdvisory.md
+docs/AdvisoryDistroPackage.md
+docs/AdvisoryDistroVersion.md
 docs/AdvisoryDjango.md
 docs/AdvisoryDocumentMetadata.md
 docs/AdvisoryDocumentNote.md
@@ -307,6 +316,7 @@ docs/AdvisoryJVNCPE.md
 docs/AdvisoryJVNReference.md
 docs/AdvisoryJenkins.md
 docs/AdvisoryJetBrains.md
+docs/AdvisoryJuniper.md
 docs/AdvisoryK8S.md
 docs/AdvisoryKEVCatalogVulnerability.md
 docs/AdvisoryKRCertAdvisory.md
@@ -323,6 +333,8 @@ docs/AdvisoryLogSource.md
 docs/AdvisoryMACert.md
 docs/AdvisoryMAffected.md
 docs/AdvisoryMBranch.md
+docs/AdvisoryMCPEApplicability.md
+docs/AdvisoryMCPEMatch.md
 docs/AdvisoryMCna.md
 docs/AdvisoryMContainers.md
 docs/AdvisoryMCveMetadata.md
@@ -339,6 +351,7 @@ docs/AdvisoryMISPValueNoID.md
 docs/AdvisoryMITREAttackGroupNoID.md
 docs/AdvisoryMIdentification.md
 docs/AdvisoryMItem.md
+docs/AdvisoryMNodes.md
 docs/AdvisoryMProblemTypes.md
 docs/AdvisoryMProductStatus.md
 docs/AdvisoryMProductTree.md
@@ -388,6 +401,7 @@ docs/AdvisoryNVD20CVECPEMatch.md
 docs/AdvisoryNVD20Configuration.md
 docs/AdvisoryNVD20Node.md
 docs/AdvisoryNVD20Source.md
+docs/AdvisoryNVDCPEDictionary.md
 docs/AdvisoryNZAdvisory.md
 docs/AdvisoryNaver.md
 docs/AdvisoryNetApp.md
@@ -442,6 +456,7 @@ docs/AdvisoryPalantir.md
 docs/AdvisoryPaloAltoAdvisory.md
 docs/AdvisoryPanasonic.md
 docs/AdvisoryPaperCut.md
+docs/AdvisoryPatch.md
 docs/AdvisoryPega.md
 docs/AdvisoryPhilipsAdvisory.md
 docs/AdvisoryPhoenixContactAdvisory.md
@@ -467,6 +482,7 @@ docs/AdvisoryQNAPAdvisory.md
 docs/AdvisoryQSB.md
 docs/AdvisoryQualcomm.md
 docs/AdvisoryQualys.md
+docs/AdvisoryQualysQID.md
 docs/AdvisoryRDescription.md
 docs/AdvisoryRNote.md
 docs/AdvisoryRRevision.md
@@ -476,7 +492,6 @@ docs/AdvisoryRange.md
 docs/AdvisoryRansomwareExploit.md
 docs/AdvisoryRecordType.md
 docs/AdvisoryRedhatCVE.md
-docs/AdvisoryRefURL.md
 docs/AdvisoryReference.md
 docs/AdvisoryRelatedRule.md
 docs/AdvisoryRelationship.md
@@ -485,6 +500,7 @@ docs/AdvisoryRenesas.md
 docs/AdvisoryReportedExploit.md
 docs/AdvisoryRestartData.md
 docs/AdvisoryRevision.md
+docs/AdvisoryRevisionHistory.md
 docs/AdvisoryRevive.md
 docs/AdvisoryRoche.md
 docs/AdvisoryRocheCVE.md
@@ -511,8 +527,8 @@ docs/AdvisorySalesForce.md
 docs/AdvisorySamba.md
 docs/AdvisorySchneiderCVE.md
 docs/AdvisorySchneiderElectricAdvisory.md
-docs/AdvisoryScore.md
 docs/AdvisoryScoreSet.md
+docs/AdvisorySecFix.md
 docs/AdvisorySecurityBulletin.md
 docs/AdvisorySecurityLab.md
 docs/AdvisorySeebugExploit.md
@@ -606,6 +622,7 @@ docs/AdvisoryUpdate.md
 docs/AdvisoryUpdated.md
 docs/AdvisoryV3AcceptanceLevel.md
 docs/AdvisoryVCCPEDictionary.md
+docs/AdvisoryVCVulnerableCPEs.md
 docs/AdvisoryVDEAdvisory.md
 docs/AdvisoryVLC.md
 docs/AdvisoryVMWareAdvisory.md
@@ -615,6 +632,7 @@ docs/AdvisoryVapidLabsAdvisory.md
 docs/AdvisoryVeeam.md
 docs/AdvisoryVendorNameForThreatActor.md
 docs/AdvisoryVendorProduct.md
+docs/AdvisoryVendorRef.md
 docs/AdvisoryVeritas.md
 docs/AdvisoryVirtuozzo.md
 docs/AdvisoryVoidSec.md
@@ -866,6 +884,7 @@ docs/RenderResponseWithMetadataArrayAdvisoryCertUAPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryChainGuardPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryCheckPointPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryChromePaginatePagination.md
+docs/RenderResponseWithMetadataArrayAdvisoryCisaCsafAdvPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryCiscoAdvisoryPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryCiscoCSAFPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryCitrixAdvisoryPaginatePagination.md
@@ -886,6 +905,7 @@ docs/RenderResponseWithMetadataArrayAdvisoryDassaultPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryDebianSecurityAdvisoryPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryDellPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryDeltaAdvisoryPaginatePagination.md
+docs/RenderResponseWithMetadataArrayAdvisoryDistroPackagePaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryDjangoPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryDotCMSPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryDragosAdvisoryPaginatePagination.md
@@ -961,6 +981,7 @@ docs/RenderResponseWithMetadataArrayAdvisoryJVNAdvisoryItemPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryJVNPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryJenkinsPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryJetBrainsPaginatePagination.md
+docs/RenderResponseWithMetadataArrayAdvisoryJuniperPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryK8SPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryKEVCatalogVulnerabilityPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryKRCertAdvisoryPaginatePagination.md
@@ -999,6 +1020,7 @@ docs/RenderResponseWithMetadataArrayAdvisoryNHSPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryNIPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryNTPPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryNVD20SourcePaginatePagination.md
+docs/RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryNZAdvisoryPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryNaverPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryNetAppPaginatePagination.md
@@ -1047,6 +1069,7 @@ docs/RenderResponseWithMetadataArrayAdvisoryQNAPAdvisoryPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryQSBPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryQualcommPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryQualysPaginatePagination.md
+docs/RenderResponseWithMetadataArrayAdvisoryQualysQIDPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryRansomwareExploitPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryRedhatCVEPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryRenesasPaginatePagination.md
@@ -1119,6 +1142,7 @@ docs/RenderResponseWithMetadataArrayAdvisoryUnifyPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryUnisocPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryUpdatePaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryVCCPEDictionaryPaginatePagination.md
+docs/RenderResponseWithMetadataArrayAdvisoryVCVulnerableCPEsPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryVDEAdvisoryPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryVLCPaginatePagination.md
 docs/RenderResponseWithMetadataArrayAdvisoryVMWareAdvisoryPaginatePagination.md
@@ -1204,6 +1228,7 @@ test/test_advisory_advisory.py
 test/test_advisory_advisory_details.py
 test/test_advisory_advisory_record.py
 test/test_advisory_affected.py
+test/test_advisory_affected_chrome.py
 test/test_advisory_affected_debian_package.py
 test/test_advisory_affected_debian_release.py
 test/test_advisory_affected_debian_repository.py
@@ -1327,6 +1352,7 @@ test/test_advisory_chain_guard_sec_fix.py
 test/test_advisory_check_point.py
 test/test_advisory_chrome.py
 test/test_advisory_cisa_alert.py
+test/test_advisory_cisa_csaf_adv.py
 test/test_advisory_cisco_advisory.py
 test/test_advisory_cisco_csaf.py
 test/test_advisory_citrix_advisory.py
@@ -1356,6 +1382,7 @@ test/test_advisory_csaf.py
 test/test_advisory_csaf_note.py
 test/test_advisory_csaf_reference.py
 test/test_advisory_csaf_relationship.py
+test/test_advisory_csaf_score.py
 test/test_advisory_csaf_vulnerability.py
 test/test_advisory_curl.py
 test/test_advisory_curl_affected.py
@@ -1368,8 +1395,12 @@ test/test_advisory_cve_reference.py
 test/test_advisory_cvrf.py
 test/test_advisory_cvrf_reference.py
 test/test_advisory_cvss.py
+test/test_advisory_cvsss_v23.py
+test/test_advisory_cvssv2.py
+test/test_advisory_cvssv3.py
 test/test_advisory_cvssv40.py
 test/test_advisory_cvssv40_threat.py
+test/test_advisory_cwe.py
 test/test_advisory_cwe_acceptance_level.py
 test/test_advisory_cwe_node.py
 test/test_advisory_cwes.py
@@ -1383,6 +1414,8 @@ test/test_advisory_debian_security_advisory.py
 test/test_advisory_dell.py
 test/test_advisory_dell_cve.py
 test/test_advisory_delta_advisory.py
+test/test_advisory_distro_package.py
+test/test_advisory_distro_version.py
 test/test_advisory_django.py
 test/test_advisory_dnn.py
 test/test_advisory_document_metadata.py
@@ -1492,6 +1525,7 @@ test/test_advisory_j_frog.py
 test/test_advisory_jenkins.py
 test/test_advisory_jet_brains.py
 test/test_advisory_jnj_advisory.py
+test/test_advisory_juniper.py
 test/test_advisory_jvn.py
 test/test_advisory_jvn_advisory_item.py
 test/test_advisory_jvn_reference.py
@@ -1524,6 +1558,7 @@ test/test_advisory_m_files.py
 test/test_advisory_m_full_product_name.py
 test/test_advisory_m_identification.py
 test/test_advisory_m_item.py
+test/test_advisory_m_nodes.py
 test/test_advisory_m_problem_types.py
 test/test_advisory_m_product_status.py
 test/test_advisory_m_product_tree.py
@@ -1538,6 +1573,8 @@ test/test_advisory_manage_engine_advisory.py
 test/test_advisory_mbed_tls.py
 test/test_advisory_mc_afee.py
 test/test_advisory_mc_afee_score.py
+test/test_advisory_mcpe_applicability.py
+test/test_advisory_mcpe_match.py
 test/test_advisory_me_product.py
 test/test_advisory_mediatek.py
 test/test_advisory_medtronic_advisory.py
@@ -1591,6 +1628,7 @@ test/test_advisory_nvd20_configuration.py
 test/test_advisory_nvd20_cvecpe_match.py
 test/test_advisory_nvd20_node.py
 test/test_advisory_nvd20_source.py
+test/test_advisory_nvdcpe_dictionary.py
 test/test_advisory_nvidia_revision.py
 test/test_advisory_nz_advisory.py
 test/test_advisory_o_curl.py
@@ -1627,6 +1665,7 @@ test/test_advisory_palantir.py
 test/test_advisory_palo_alto_advisory.py
 test/test_advisory_panasonic.py
 test/test_advisory_paper_cut.py
+test/test_advisory_patch.py
 test/test_advisory_pega.py
 test/test_advisory_pg_fix.py
 test/test_advisory_philips_advisory.py
@@ -1656,6 +1695,7 @@ test/test_advisory_qnap_advisory.py
 test/test_advisory_qsb.py
 test/test_advisory_qualcomm.py
 test/test_advisory_qualys.py
+test/test_advisory_qualys_qid.py
 test/test_advisory_r_description.py
 test/test_advisory_r_note.py
 test/test_advisory_r_revision.py
@@ -1665,7 +1705,6 @@ test/test_advisory_range.py
 test/test_advisory_ransomware_exploit.py
 test/test_advisory_record_type.py
 test/test_advisory_redhat_cve.py
-test/test_advisory_ref_url.py
 test/test_advisory_reference.py
 test/test_advisory_related_rule.py
 test/test_advisory_relationship.py
@@ -1674,6 +1713,7 @@ test/test_advisory_renesas.py
 test/test_advisory_reported_exploit.py
 test/test_advisory_restart_data.py
 test/test_advisory_revision.py
+test/test_advisory_revision_history.py
 test/test_advisory_revive.py
 test/test_advisory_roche.py
 test/test_advisory_roche_cve.py
@@ -1697,9 +1737,9 @@ test/test_advisory_samba.py
 test/test_advisory_sap.py
 test/test_advisory_schneider_cve.py
 test/test_advisory_schneider_electric_advisory.py
-test/test_advisory_score.py
 test/test_advisory_score_set.py
 test/test_advisory_sec_consult.py
+test/test_advisory_sec_fix.py
 test/test_advisory_security_bulletin.py
 test/test_advisory_security_lab.py
 test/test_advisory_seebug_exploit.py
@@ -1796,11 +1836,13 @@ test/test_advisory_usom_advisory.py
 test/test_advisory_v3_acceptance_level.py
 test/test_advisory_van_dyke.py
 test/test_advisory_vapid_labs_advisory.py
+test/test_advisory_vc_vulnerable_cpes.py
 test/test_advisory_vccpe_dictionary.py
 test/test_advisory_vde_advisory.py
 test/test_advisory_veeam.py
 test/test_advisory_vendor_name_for_threat_actor.py
 test/test_advisory_vendor_product.py
+test/test_advisory_vendor_ref.py
 test/test_advisory_veritas.py
 test/test_advisory_virtuozzo.py
 test/test_advisory_vlc.py
@@ -2052,6 +2094,7 @@ test/test_render_response_with_metadata_array_advisory_chain_guard_paginate_pagi
 test/test_render_response_with_metadata_array_advisory_check_point_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_chrome_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_cisa_alert_paginate_pagination.py
+test/test_render_response_with_metadata_array_advisory_cisa_csaf_adv_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_cisco_advisory_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_cisco_csaf_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_citrix_advisory_paginate_pagination.py
@@ -2074,6 +2117,7 @@ test/test_render_response_with_metadata_array_advisory_dassault_paginate_paginat
 test/test_render_response_with_metadata_array_advisory_debian_security_advisory_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_dell_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_delta_advisory_paginate_pagination.py
+test/test_render_response_with_metadata_array_advisory_distro_package_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_django_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_dnn_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_dot_cms_paginate_pagination.py
@@ -2148,6 +2192,7 @@ test/test_render_response_with_metadata_array_advisory_j_frog_paginate_paginatio
 test/test_render_response_with_metadata_array_advisory_jenkins_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_jet_brains_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_jnj_advisory_paginate_pagination.py
+test/test_render_response_with_metadata_array_advisory_juniper_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_jvn_advisory_item_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_jvn_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_k8_s_paginate_pagination.py
@@ -2200,6 +2245,7 @@ test/test_render_response_with_metadata_array_advisory_note_pad_plus_plus_pagina
 test/test_render_response_with_metadata_array_advisory_nozomi_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_ntp_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_nvd20_source_paginate_pagination.py
+test/test_render_response_with_metadata_array_advisory_nvdcpe_dictionary_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_nz_advisory_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_octopus_deploy_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_okta_paginate_pagination.py
@@ -2236,6 +2282,7 @@ test/test_render_response_with_metadata_array_advisory_qnap_advisory_paginate_pa
 test/test_render_response_with_metadata_array_advisory_qsb_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_qualcomm_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_qualys_paginate_pagination.py
+test/test_render_response_with_metadata_array_advisory_qualys_qid_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_ransomware_exploit_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_redhat_cve_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_renesas_paginate_pagination.py
@@ -2309,6 +2356,7 @@ test/test_render_response_with_metadata_array_advisory_usd_paginate_pagination.p
 test/test_render_response_with_metadata_array_advisory_usom_advisory_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_van_dyke_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_vapid_labs_advisory_paginate_pagination.py
+test/test_render_response_with_metadata_array_advisory_vc_vulnerable_cpes_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_vccpe_dictionary_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_vde_advisory_paginate_pagination.py
 test/test_render_response_with_metadata_array_advisory_veeam_paginate_pagination.py
@@ -2396,6 +2444,7 @@ vulncheck_sdk/models/advisory_advisory.py
 vulncheck_sdk/models/advisory_advisory_details.py
 vulncheck_sdk/models/advisory_advisory_record.py
 vulncheck_sdk/models/advisory_affected.py
+vulncheck_sdk/models/advisory_affected_chrome.py
 vulncheck_sdk/models/advisory_affected_debian_package.py
 vulncheck_sdk/models/advisory_affected_debian_release.py
 vulncheck_sdk/models/advisory_affected_debian_repository.py
@@ -2519,6 +2568,7 @@ vulncheck_sdk/models/advisory_chain_guard_sec_fix.py
 vulncheck_sdk/models/advisory_check_point.py
 vulncheck_sdk/models/advisory_chrome.py
 vulncheck_sdk/models/advisory_cisa_alert.py
+vulncheck_sdk/models/advisory_cisa_csaf_adv.py
 vulncheck_sdk/models/advisory_cisco_advisory.py
 vulncheck_sdk/models/advisory_cisco_csaf.py
 vulncheck_sdk/models/advisory_citrix_advisory.py
@@ -2548,6 +2598,7 @@ vulncheck_sdk/models/advisory_csaf.py
 vulncheck_sdk/models/advisory_csaf_note.py
 vulncheck_sdk/models/advisory_csaf_reference.py
 vulncheck_sdk/models/advisory_csaf_relationship.py
+vulncheck_sdk/models/advisory_csaf_score.py
 vulncheck_sdk/models/advisory_csaf_vulnerability.py
 vulncheck_sdk/models/advisory_curl.py
 vulncheck_sdk/models/advisory_curl_affected.py
@@ -2560,8 +2611,12 @@ vulncheck_sdk/models/advisory_cve_reference.py
 vulncheck_sdk/models/advisory_cvrf.py
 vulncheck_sdk/models/advisory_cvrf_reference.py
 vulncheck_sdk/models/advisory_cvss.py
+vulncheck_sdk/models/advisory_cvsss_v23.py
+vulncheck_sdk/models/advisory_cvssv2.py
+vulncheck_sdk/models/advisory_cvssv3.py
 vulncheck_sdk/models/advisory_cvssv40.py
 vulncheck_sdk/models/advisory_cvssv40_threat.py
+vulncheck_sdk/models/advisory_cwe.py
 vulncheck_sdk/models/advisory_cwe_acceptance_level.py
 vulncheck_sdk/models/advisory_cwe_node.py
 vulncheck_sdk/models/advisory_cwes.py
@@ -2575,6 +2630,8 @@ vulncheck_sdk/models/advisory_debian_security_advisory.py
 vulncheck_sdk/models/advisory_dell.py
 vulncheck_sdk/models/advisory_dell_cve.py
 vulncheck_sdk/models/advisory_delta_advisory.py
+vulncheck_sdk/models/advisory_distro_package.py
+vulncheck_sdk/models/advisory_distro_version.py
 vulncheck_sdk/models/advisory_django.py
 vulncheck_sdk/models/advisory_dnn.py
 vulncheck_sdk/models/advisory_document_metadata.py
@@ -2684,6 +2741,7 @@ vulncheck_sdk/models/advisory_j_frog.py
 vulncheck_sdk/models/advisory_jenkins.py
 vulncheck_sdk/models/advisory_jet_brains.py
 vulncheck_sdk/models/advisory_jnj_advisory.py
+vulncheck_sdk/models/advisory_juniper.py
 vulncheck_sdk/models/advisory_jvn.py
 vulncheck_sdk/models/advisory_jvn_advisory_item.py
 vulncheck_sdk/models/advisory_jvn_reference.py
@@ -2716,6 +2774,7 @@ vulncheck_sdk/models/advisory_m_files.py
 vulncheck_sdk/models/advisory_m_full_product_name.py
 vulncheck_sdk/models/advisory_m_identification.py
 vulncheck_sdk/models/advisory_m_item.py
+vulncheck_sdk/models/advisory_m_nodes.py
 vulncheck_sdk/models/advisory_m_problem_types.py
 vulncheck_sdk/models/advisory_m_product_status.py
 vulncheck_sdk/models/advisory_m_product_tree.py
@@ -2730,6 +2789,8 @@ vulncheck_sdk/models/advisory_manage_engine_advisory.py
 vulncheck_sdk/models/advisory_mbed_tls.py
 vulncheck_sdk/models/advisory_mc_afee.py
 vulncheck_sdk/models/advisory_mc_afee_score.py
+vulncheck_sdk/models/advisory_mcpe_applicability.py
+vulncheck_sdk/models/advisory_mcpe_match.py
 vulncheck_sdk/models/advisory_me_product.py
 vulncheck_sdk/models/advisory_mediatek.py
 vulncheck_sdk/models/advisory_medtronic_advisory.py
@@ -2783,6 +2844,7 @@ vulncheck_sdk/models/advisory_nvd20_configuration.py
 vulncheck_sdk/models/advisory_nvd20_cvecpe_match.py
 vulncheck_sdk/models/advisory_nvd20_node.py
 vulncheck_sdk/models/advisory_nvd20_source.py
+vulncheck_sdk/models/advisory_nvdcpe_dictionary.py
 vulncheck_sdk/models/advisory_nvidia_revision.py
 vulncheck_sdk/models/advisory_nz_advisory.py
 vulncheck_sdk/models/advisory_o_curl.py
@@ -2819,6 +2881,7 @@ vulncheck_sdk/models/advisory_palantir.py
 vulncheck_sdk/models/advisory_palo_alto_advisory.py
 vulncheck_sdk/models/advisory_panasonic.py
 vulncheck_sdk/models/advisory_paper_cut.py
+vulncheck_sdk/models/advisory_patch.py
 vulncheck_sdk/models/advisory_pega.py
 vulncheck_sdk/models/advisory_pg_fix.py
 vulncheck_sdk/models/advisory_philips_advisory.py
@@ -2848,6 +2911,7 @@ vulncheck_sdk/models/advisory_qnap_advisory.py
 vulncheck_sdk/models/advisory_qsb.py
 vulncheck_sdk/models/advisory_qualcomm.py
 vulncheck_sdk/models/advisory_qualys.py
+vulncheck_sdk/models/advisory_qualys_qid.py
 vulncheck_sdk/models/advisory_r_description.py
 vulncheck_sdk/models/advisory_r_note.py
 vulncheck_sdk/models/advisory_r_revision.py
@@ -2857,7 +2921,6 @@ vulncheck_sdk/models/advisory_range.py
 vulncheck_sdk/models/advisory_ransomware_exploit.py
 vulncheck_sdk/models/advisory_record_type.py
 vulncheck_sdk/models/advisory_redhat_cve.py
-vulncheck_sdk/models/advisory_ref_url.py
 vulncheck_sdk/models/advisory_reference.py
 vulncheck_sdk/models/advisory_related_rule.py
 vulncheck_sdk/models/advisory_relationship.py
@@ -2866,6 +2929,7 @@ vulncheck_sdk/models/advisory_renesas.py
 vulncheck_sdk/models/advisory_reported_exploit.py
 vulncheck_sdk/models/advisory_restart_data.py
 vulncheck_sdk/models/advisory_revision.py
+vulncheck_sdk/models/advisory_revision_history.py
 vulncheck_sdk/models/advisory_revive.py
 vulncheck_sdk/models/advisory_roche.py
 vulncheck_sdk/models/advisory_roche_cve.py
@@ -2889,9 +2953,9 @@ vulncheck_sdk/models/advisory_samba.py
 vulncheck_sdk/models/advisory_sap.py
 vulncheck_sdk/models/advisory_schneider_cve.py
 vulncheck_sdk/models/advisory_schneider_electric_advisory.py
-vulncheck_sdk/models/advisory_score.py
 vulncheck_sdk/models/advisory_score_set.py
 vulncheck_sdk/models/advisory_sec_consult.py
+vulncheck_sdk/models/advisory_sec_fix.py
 vulncheck_sdk/models/advisory_security_bulletin.py
 vulncheck_sdk/models/advisory_security_lab.py
 vulncheck_sdk/models/advisory_seebug_exploit.py
@@ -2988,11 +3052,13 @@ vulncheck_sdk/models/advisory_usom_advisory.py
 vulncheck_sdk/models/advisory_v3_acceptance_level.py
 vulncheck_sdk/models/advisory_van_dyke.py
 vulncheck_sdk/models/advisory_vapid_labs_advisory.py
+vulncheck_sdk/models/advisory_vc_vulnerable_cpes.py
 vulncheck_sdk/models/advisory_vccpe_dictionary.py
 vulncheck_sdk/models/advisory_vde_advisory.py
 vulncheck_sdk/models/advisory_veeam.py
 vulncheck_sdk/models/advisory_vendor_name_for_threat_actor.py
 vulncheck_sdk/models/advisory_vendor_product.py
+vulncheck_sdk/models/advisory_vendor_ref.py
 vulncheck_sdk/models/advisory_veritas.py
 vulncheck_sdk/models/advisory_virtuozzo.py
 vulncheck_sdk/models/advisory_vlc.py
@@ -3242,6 +3308,7 @@ vulncheck_sdk/models/render_response_with_metadata_array_advisory_chain_guard_pa
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_check_point_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_chrome_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_cisa_alert_paginate_pagination.py
+vulncheck_sdk/models/render_response_with_metadata_array_advisory_cisa_csaf_adv_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_cisco_advisory_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_cisco_csaf_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_citrix_advisory_paginate_pagination.py
@@ -3264,6 +3331,7 @@ vulncheck_sdk/models/render_response_with_metadata_array_advisory_dassault_pagin
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_debian_security_advisory_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_dell_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_delta_advisory_paginate_pagination.py
+vulncheck_sdk/models/render_response_with_metadata_array_advisory_distro_package_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_django_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_dnn_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_dot_cms_paginate_pagination.py
@@ -3338,6 +3406,7 @@ vulncheck_sdk/models/render_response_with_metadata_array_advisory_j_frog_paginat
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_jenkins_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_jet_brains_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_jnj_advisory_paginate_pagination.py
+vulncheck_sdk/models/render_response_with_metadata_array_advisory_juniper_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_jvn_advisory_item_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_jvn_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_k8_s_paginate_pagination.py
@@ -3390,6 +3459,7 @@ vulncheck_sdk/models/render_response_with_metadata_array_advisory_note_pad_plus_
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_nozomi_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_ntp_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_nvd20_source_paginate_pagination.py
+vulncheck_sdk/models/render_response_with_metadata_array_advisory_nvdcpe_dictionary_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_nz_advisory_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_octopus_deploy_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_okta_paginate_pagination.py
@@ -3426,6 +3496,7 @@ vulncheck_sdk/models/render_response_with_metadata_array_advisory_qnap_advisory_
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_qsb_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_qualcomm_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_qualys_paginate_pagination.py
+vulncheck_sdk/models/render_response_with_metadata_array_advisory_qualys_qid_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_ransomware_exploit_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_redhat_cve_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_renesas_paginate_pagination.py
@@ -3499,6 +3570,7 @@ vulncheck_sdk/models/render_response_with_metadata_array_advisory_usd_paginate_p
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_usom_advisory_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_van_dyke_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_vapid_labs_advisory_paginate_pagination.py
+vulncheck_sdk/models/render_response_with_metadata_array_advisory_vc_vulnerable_cpes_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_vccpe_dictionary_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_vde_advisory_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_advisory_veeam_paginate_pagination.py

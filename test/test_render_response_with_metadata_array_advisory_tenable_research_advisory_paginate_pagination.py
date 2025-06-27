@@ -84,6 +84,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryTenableResearchAdvisoryPaginate
                             ], 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

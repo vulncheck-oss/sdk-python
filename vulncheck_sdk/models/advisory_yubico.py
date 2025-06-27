@@ -32,8 +32,9 @@ class AdvisoryYubico(BaseModel):
     id: Optional[StrictStr] = None
     summary: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "id", "summary", "title", "url"]
+    __properties: ClassVar[List[str]] = ["cve", "date_added", "id", "summary", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +92,7 @@ class AdvisoryYubico(BaseModel):
             "id": obj.get("id"),
             "summary": obj.get("summary"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

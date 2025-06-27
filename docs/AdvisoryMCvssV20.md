@@ -5,7 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**access_vector** | **str** |  | [optional] 
+**attack_complexity** | **str** |  | [optional] 
+**authentication** | **str** |  | [optional] 
+**availability_impact** | **str** |  | [optional] 
 **base_score** | **float** |  | [optional] 
+**confidentiality_impact** | **str** |  | [optional] 
+**integrity_impact** | **str** |  | [optional] 
 **vector_string** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
 

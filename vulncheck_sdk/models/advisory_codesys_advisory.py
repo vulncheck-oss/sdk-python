@@ -34,8 +34,9 @@ class AdvisoryCodesysAdvisory(BaseModel):
     date_added: Optional[StrictStr] = None
     date_last_revised: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["codesys_id", "csaf_url", "cve", "cwe", "date_added", "date_last_revised", "title", "url"]
+    __properties: ClassVar[List[str]] = ["codesys_id", "csaf_url", "cve", "cwe", "date_added", "date_last_revised", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +96,7 @@ class AdvisoryCodesysAdvisory(BaseModel):
             "date_added": obj.get("date_added"),
             "date_last_revised": obj.get("date_last_revised"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

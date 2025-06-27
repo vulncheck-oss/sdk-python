@@ -96,7 +96,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryAdobeAdvisoryPaginatePagination
                                 platform = '', 
                                 product = '', 
                                 version = '', )
-                            ], )
+                            ], 
+                        updated_at = '', )
                     ]
             )
         else:
