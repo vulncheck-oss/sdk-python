@@ -73,6 +73,22 @@ class TestRenderResponseWithMetadataArrayAdvisoryThreatActorWithExternalObjectsP
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/threat_actor_with_external_objects.advisory.ThreatActorWithExternalObjects(
+                        associated_mitre_attack_techniques = [
+                            vulncheck_sdk.models.advisory/mitre_attack_tech_with_refs.advisory.MitreAttackTechWithRefs(
+                                domain = '', 
+                                id = '', 
+                                name = '', 
+                                references = [
+                                    vulncheck_sdk.models.advisory/mitre_attack_ref.advisory.MitreAttackRef(
+                                        date_added = '', 
+                                        url = '', )
+                                    ], 
+                                subtechnique = True, 
+                                tactics = [
+                                    ''
+                                    ], 
+                                url = '', )
+                            ], 
                         country = '', 
                         cve_references = [
                             vulncheck_sdk.models.advisory/cve_reference.advisory.CVEReference(
@@ -133,14 +149,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryThreatActorWithExternalObjectsP
                                 ], ), 
                         mitre_group_cti = vulncheck_sdk.models.advisory/mitre_group_cti.advisory.MitreGroupCTI(
                             description = '', 
-                            id = '', 
-                            references = [
-                                vulncheck_sdk.models.advisory/external_references.advisory.ExternalReferences(
-                                    description = '', 
-                                    external_id = '', 
-                                    source_name = '', 
-                                    url = '', )
-                                ], ), 
+                            id = '', ), 
                         mitre_id = '', 
                         threat_actor_name = '', 
                         tools = [

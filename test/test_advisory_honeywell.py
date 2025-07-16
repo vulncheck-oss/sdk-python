@@ -43,6 +43,7 @@ class TestAdvisoryHoneywell(unittest.TestCase):
                 id = '',
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

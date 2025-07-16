@@ -80,6 +80,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryHoneywellPaginatePagination(uni
                         id = '', 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

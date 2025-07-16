@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_cve_reference import AdvisoryCVEReference
+from vulncheck_sdk.models.advisory_mitre_attack_tech_with_refs import AdvisoryMitreAttackTechWithRefs
 from vulncheck_sdk.models.advisory_tool import AdvisoryTool
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,13 +30,14 @@ class AdvisoryBotnet(BaseModel):
     """
     AdvisoryBotnet
     """ # noqa: E501
+    associated_mitre_attack_techniques: Optional[List[AdvisoryMitreAttackTechWithRefs]] = None
     botnet_name: Optional[StrictStr] = None
     cve: Optional[List[StrictStr]] = None
     cve_references: Optional[List[AdvisoryCVEReference]] = None
     date_added: Optional[StrictStr] = None
     malpedia_url: Optional[StrictStr] = None
     tools: Optional[List[AdvisoryTool]] = None
-    __properties: ClassVar[List[str]] = ["botnet_name", "cve", "cve_references", "date_added", "malpedia_url", "tools"]
+    __properties: ClassVar[List[str]] = ["associated_mitre_attack_techniques", "botnet_name", "cve", "cve_references", "date_added", "malpedia_url", "tools"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +78,13 @@ class AdvisoryBotnet(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in associated_mitre_attack_techniques (list)
+        _items = []
+        if self.associated_mitre_attack_techniques:
+            for _item_associated_mitre_attack_techniques in self.associated_mitre_attack_techniques:
+                if _item_associated_mitre_attack_techniques:
+                    _items.append(_item_associated_mitre_attack_techniques.to_dict())
+            _dict['associated_mitre_attack_techniques'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cve_references (list)
         _items = []
         if self.cve_references:
@@ -102,6 +111,7 @@ class AdvisoryBotnet(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "associated_mitre_attack_techniques": [AdvisoryMitreAttackTechWithRefs.from_dict(_item) for _item in obj["associated_mitre_attack_techniques"]] if obj.get("associated_mitre_attack_techniques") is not None else None,
             "botnet_name": obj.get("botnet_name"),
             "cve": obj.get("cve"),
             "cve_references": [AdvisoryCVEReference.from_dict(_item) for _item in obj["cve_references"]] if obj.get("cve_references") is not None else None,

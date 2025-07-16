@@ -8,8 +8,10 @@ Name | Type | Description | Notes
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **mitre_ref** | [**AdvisoryMitreCVEListV5Ref**](AdvisoryMitreCVEListV5Ref.md) |  | [optional] 
+**references** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

@@ -73,6 +73,22 @@ class TestRenderResponseWithMetadataArrayAdvisoryBotnetPaginatePagination(unitte
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/botnet.advisory.Botnet(
+                        associated_mitre_attack_techniques = [
+                            vulncheck_sdk.models.advisory/mitre_attack_tech_with_refs.advisory.MitreAttackTechWithRefs(
+                                domain = '', 
+                                id = '', 
+                                name = '', 
+                                references = [
+                                    vulncheck_sdk.models.advisory/mitre_attack_ref.advisory.MitreAttackRef(
+                                        date_added = '', 
+                                        url = '', )
+                                    ], 
+                                subtechnique = True, 
+                                tactics = [
+                                    ''
+                                    ], 
+                                url = '', )
+                            ], 
                         botnet_name = '', 
                         cve = [
                             ''
@@ -86,12 +102,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryBotnetPaginatePagination(unitte
                         malpedia_url = '', 
                         tools = [
                             vulncheck_sdk.models.advisory/tool.advisory.Tool(
-                                name = '', 
-                                references = [
-                                    vulncheck_sdk.models.advisory/tool_ref.advisory.ToolRef(
-                                        date_added = '', 
-                                        url = '', )
-                                    ], )
+                                name = '', )
                             ], )
                     ]
             )

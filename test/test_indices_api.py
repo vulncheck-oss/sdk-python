@@ -433,6 +433,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_audiocodes_get(self) -> None:
+        """Test case for index_audiocodes_get
+
+        Return vulnerability data stored in index \"audiocodes\"
+        """
+        pass
+
     def test_index_auscert_get(self) -> None:
         """Test case for index_auscert_get
 
@@ -528,6 +535,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_beckhoff_get
 
         Return vulnerability data stored in index \"beckhoff\"
+        """
+        pass
+
+    def test_index_beckman_coulter_get(self) -> None:
+        """Test case for index_beckman_coulter_get
+
+        Return vulnerability data stored in index \"beckman-coulter\"
         """
         pass
 
@@ -1840,6 +1854,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_nessus_get(self) -> None:
+        """Test case for index_nessus_get
+
+        Return vulnerability data stored in index \"nessus\"
+        """
+        pass
+
     def test_index_netapp_get(self) -> None:
         """Test case for index_netapp_get
 
@@ -2047,6 +2068,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_openbsd_get
 
         Return vulnerability data stored in index \"openbsd\"
+        """
+        pass
+
+    def test_index_opengear_get(self) -> None:
+        """Test case for index_opengear_get
+
+        Return vulnerability data stored in index \"opengear\"
         """
         pass
 
@@ -2295,6 +2323,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_redhat_cves_get(self) -> None:
+        """Test case for index_redhat_cves_get
+
+        Return vulnerability data stored in index \"redhat-cves\"
+        """
+        pass
+
     def test_index_redhat_get(self) -> None:
         """Test case for index_redhat_get
 
@@ -2376,6 +2411,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_sacert_get
 
         Return vulnerability data stored in index \"sacert\"
+        """
+        pass
+
+    def test_index_safran_get(self) -> None:
+        """Test case for index_safran_get
+
+        Return vulnerability data stored in index \"safran\"
         """
         pass
 
@@ -2502,6 +2544,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_singcert_get
 
         Return vulnerability data stored in index \"singcert\"
+        """
+        pass
+
+    def test_index_sitecore_get(self) -> None:
+        """Test case for index_sitecore_get
+
+        Return vulnerability data stored in index \"sitecore\"
         """
         pass
 

@@ -207,8 +207,12 @@ class TestAdvisoryMitreCVEListV5(unittest.TestCase):
                         state = '', ), 
                     data_type = '', 
                     data_version = '', ),
+                references = [
+                    ''
+                    ],
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

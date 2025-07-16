@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **patch_pgp** | **str** |  | [optional] 
 **patch_url** | **str** |  | [optional] 
 **severity** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **vuln_versions** | **List[str]** |  | [optional] 
 

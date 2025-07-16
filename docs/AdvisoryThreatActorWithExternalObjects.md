@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**associated_mitre_attack_techniques** | [**List[AdvisoryMitreAttackTechWithRefs]**](AdvisoryMitreAttackTechWithRefs.md) |  | [optional] 
 **country** | **str** |  | [optional] 
 **cve_references** | [**List[AdvisoryCVEReference]**](AdvisoryCVEReference.md) |  | [optional] 
 **date_added** | **str** |  | [optional] 

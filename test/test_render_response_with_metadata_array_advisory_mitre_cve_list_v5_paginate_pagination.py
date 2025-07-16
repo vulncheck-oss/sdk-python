@@ -244,8 +244,12 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                 state = '', ), 
                             data_type = '', 
                             data_version = '', ), 
+                        references = [
+                            ''
+                            ], 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

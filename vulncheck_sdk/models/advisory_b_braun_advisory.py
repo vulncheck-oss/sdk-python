@@ -33,10 +33,11 @@ class AdvisoryBBraunAdvisory(BaseModel):
     date_added: Optional[StrictStr] = None
     equipment: Optional[List[StrictStr]] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     vendor: Optional[StrictStr] = None
     vulnerabilities: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["attention", "cve", "cwe", "date_added", "equipment", "title", "url", "vendor", "vulnerabilities"]
+    __properties: ClassVar[List[str]] = ["attention", "cve", "cwe", "date_added", "equipment", "title", "updated_at", "url", "vendor", "vulnerabilities"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +96,7 @@ class AdvisoryBBraunAdvisory(BaseModel):
             "date_added": obj.get("date_added"),
             "equipment": obj.get("equipment"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url"),
             "vendor": obj.get("vendor"),
             "vulnerabilities": obj.get("vulnerabilities")

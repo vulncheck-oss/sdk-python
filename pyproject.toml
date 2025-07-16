@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vulncheck_sdk"
-version = "0.0.14"
+version = "0.0.15"
 description = "VulnCheck API"
 authors = ["VulnCheck API Support <support@vulncheck.com>"]
 license = "Apache-2.0"

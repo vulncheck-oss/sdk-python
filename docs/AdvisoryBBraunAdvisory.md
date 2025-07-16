@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **date_added** | **str** |  | [optional] 
 **equipment** | **List[str]** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **vendor** | **str** |  | [optional] 
 **vulnerabilities** | **List[str]** |  | [optional] 
