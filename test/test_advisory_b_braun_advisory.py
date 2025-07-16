@@ -48,6 +48,7 @@ class TestAdvisoryBBraunAdvisory(unittest.TestCase):
                     ''
                     ],
                 title = '',
+                updated_at = '',
                 url = '',
                 vendor = '',
                 vulnerabilities = [

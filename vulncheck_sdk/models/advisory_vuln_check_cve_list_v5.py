@@ -31,10 +31,12 @@ class AdvisoryVulnCheckCVEListV5(BaseModel):
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     mitre_ref: Optional[AdvisoryMitreCVEListV5Ref] = None
+    references: Optional[List[StrictStr]] = None
     summary: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "mitre_ref", "summary", "title", "url"]
+    __properties: ClassVar[List[str]] = ["cve", "date_added", "mitre_ref", "references", "summary", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,8 +95,10 @@ class AdvisoryVulnCheckCVEListV5(BaseModel):
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "mitre_ref": AdvisoryMitreCVEListV5Ref.from_dict(obj["mitre_ref"]) if obj.get("mitre_ref") is not None else None,
+            "references": obj.get("references"),
             "summary": obj.get("summary"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

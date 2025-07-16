@@ -36,6 +36,22 @@ class TestAdvisoryBotnet(unittest.TestCase):
         model = AdvisoryBotnet()
         if include_optional:
             return AdvisoryBotnet(
+                associated_mitre_attack_techniques = [
+                    vulncheck_sdk.models.advisory/mitre_attack_tech_with_refs.advisory.MitreAttackTechWithRefs(
+                        domain = '', 
+                        id = '', 
+                        name = '', 
+                        references = [
+                            vulncheck_sdk.models.advisory/mitre_attack_ref.advisory.MitreAttackRef(
+                                date_added = '', 
+                                url = '', )
+                            ], 
+                        subtechnique = True, 
+                        tactics = [
+                            ''
+                            ], 
+                        url = '', )
+                    ],
                 botnet_name = '',
                 cve = [
                     ''

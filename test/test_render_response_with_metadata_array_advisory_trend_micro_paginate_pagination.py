@@ -84,6 +84,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryTrendMicroPaginatePagination(un
                         solution = '', 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

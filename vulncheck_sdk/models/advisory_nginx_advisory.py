@@ -34,9 +34,10 @@ class AdvisoryNginxAdvisory(BaseModel):
     patch_pgp: Optional[StrictStr] = None
     patch_url: Optional[StrictStr] = None
     severity: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     vuln_versions: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "description", "not_vuln_versions", "patch_pgp", "patch_url", "severity", "url", "vuln_versions"]
+    __properties: ClassVar[List[str]] = ["cve", "date_added", "description", "not_vuln_versions", "patch_pgp", "patch_url", "severity", "updated_at", "url", "vuln_versions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,6 +97,7 @@ class AdvisoryNginxAdvisory(BaseModel):
             "patch_pgp": obj.get("patch_pgp"),
             "patch_url": obj.get("patch_url"),
             "severity": obj.get("severity"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url"),
             "vuln_versions": obj.get("vuln_versions")
         })

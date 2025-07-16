@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **assigner_org_id** | **str** |  | [optional] 
 **assigner_short_name** | **str** |  | [optional] 
 **cve_id** | **str** |  | [optional] 
-**date_published** | **str** | FIXME: flip to time | [optional] 
-**date_reserved** | **str** | FIXME: flip to time | [optional] 
-**date_updated** | **str** | FIXME: flip to time | [optional] 
+**date_published** | **str** |  | [optional] 
+**date_reserved** | **str** |  | [optional] 
+**date_updated** | **str** |  | [optional] 
 **state** | **str** |  | [optional] 
 
 ## Example

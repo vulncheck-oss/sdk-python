@@ -30,9 +30,9 @@ class AdvisoryMCveMetadata(BaseModel):
     assigner_org_id: Optional[StrictStr] = Field(default=None, alias="assignerOrgId")
     assigner_short_name: Optional[StrictStr] = Field(default=None, alias="assignerShortName")
     cve_id: Optional[StrictStr] = Field(default=None, alias="cveId")
-    date_published: Optional[StrictStr] = Field(default=None, description="FIXME: flip to time", alias="datePublished")
-    date_reserved: Optional[StrictStr] = Field(default=None, description="FIXME: flip to time", alias="dateReserved")
-    date_updated: Optional[StrictStr] = Field(default=None, description="FIXME: flip to time", alias="dateUpdated")
+    date_published: Optional[StrictStr] = Field(default=None, alias="datePublished")
+    date_reserved: Optional[StrictStr] = Field(default=None, alias="dateReserved")
+    date_updated: Optional[StrictStr] = Field(default=None, alias="dateUpdated")
     state: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["assignerOrgId", "assignerShortName", "cveId", "datePublished", "dateReserved", "dateUpdated", "state"]
 

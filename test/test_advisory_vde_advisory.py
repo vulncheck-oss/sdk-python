@@ -45,6 +45,7 @@ class TestAdvisoryVDEAdvisory(unittest.TestCase):
                 date_added = '',
                 date_last_revised = '',
                 title = '',
+                updated_at = '',
                 url = '',
                 vde = ''
             )

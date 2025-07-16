@@ -47,6 +47,7 @@ class TestAdvisoryNginxAdvisory(unittest.TestCase):
                 patch_pgp = '',
                 patch_url = '',
                 severity = '',
+                updated_at = '',
                 url = '',
                 vuln_versions = [
                     ''

@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**associated_mitre_attack_techniques** | [**List[AdvisoryMitreAttackTechWithRefs]**](AdvisoryMitreAttackTechWithRefs.md) |  | [optional] 
 **botnet_name** | **str** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
 **cve_references** | [**List[AdvisoryCVEReference]**](AdvisoryCVEReference.md) |  | [optional] 

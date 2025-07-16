@@ -85,6 +85,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryBBraunAdvisoryPaginatePaginatio
                             ''
                             ], 
                         title = '', 
+                        updated_at = '', 
                         url = '', 
                         vendor = '', 
                         vulnerabilities = [

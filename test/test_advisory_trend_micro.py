@@ -47,6 +47,7 @@ class TestAdvisoryTrendMicro(unittest.TestCase):
                 solution = '',
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:
