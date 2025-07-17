@@ -84,7 +84,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryCitrixAdvisoryPaginatePaginatio
                             ''
                             ], 
                         severity = '', 
-                        title = '', )
+                        title = '', 
+                        updated_at = '', )
                     ]
             )
         else:

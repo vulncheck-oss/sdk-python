@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **products** | **List[str]** |  | [optional] 
 **severity** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 
