@@ -47,7 +47,8 @@ class TestAdvisoryCitrixAdvisory(unittest.TestCase):
                     ''
                     ],
                 severity = '',
-                title = ''
+                title = '',
+                updated_at = ''
             )
         else:
             return AdvisoryCitrixAdvisory(

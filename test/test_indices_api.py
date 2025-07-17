@@ -727,6 +727,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_cinea_get(self) -> None:
+        """Test case for index_cinea_get
+
+        Return vulnerability data stored in index \"cinea\"
+        """
+        pass
+
     def test_index_cisa_alerts_get(self) -> None:
         """Test case for index_cisa_alerts_get
 
@@ -1035,6 +1042,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_eol_alibaba_get(self) -> None:
+        """Test case for index_eol_alibaba_get
+
+        Return vulnerability data stored in index \"eol-alibaba\"
+        """
+        pass
+
     def test_index_eol_get(self) -> None:
         """Test case for index_eol_get
 
@@ -1326,6 +1340,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_hackage_get
 
         Return vulnerability data stored in index \"hackage\"
+        """
+        pass
+
+    def test_index_hacktivity_get(self) -> None:
+        """Test case for index_hacktivity_get
+
+        Return vulnerability data stored in index \"hacktivity\"
         """
         pass
 
@@ -2733,6 +2754,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_themissinglink_get
 
         Return vulnerability data stored in index \"themissinglink\"
+        """
+        pass
+
+    def test_index_thermo_fisher_get(self) -> None:
+        """Test case for index_thermo_fisher_get
+
+        Return vulnerability data stored in index \"thermo-fisher\"
         """
         pass
 

@@ -80,6 +80,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryHuaweiPaginatePagination(unitte
                         sa_number = '', 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

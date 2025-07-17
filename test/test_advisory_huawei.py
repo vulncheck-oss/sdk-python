@@ -43,6 +43,7 @@ class TestAdvisoryHuawei(unittest.TestCase):
                 sa_number = '',
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

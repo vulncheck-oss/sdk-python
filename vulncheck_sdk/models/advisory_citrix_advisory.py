@@ -35,7 +35,8 @@ class AdvisoryCitrixAdvisory(BaseModel):
     products: Optional[List[StrictStr]] = None
     severity: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["citrixId", "cve", "date_added", "description", "link", "products", "severity", "title"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["citrixId", "cve", "date_added", "description", "link", "products", "severity", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,7 +96,8 @@ class AdvisoryCitrixAdvisory(BaseModel):
             "link": obj.get("link"),
             "products": obj.get("products"),
             "severity": obj.get("severity"),
-            "title": obj.get("title")
+            "title": obj.get("title"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 
