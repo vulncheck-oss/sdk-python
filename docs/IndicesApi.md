@@ -104,7 +104,7 @@ Method | HTTP request | Description
 [**index_chainguard_get**](IndicesApi.md#index_chainguard_get) | **GET** /index/chainguard | Return vulnerability data stored in index \&quot;chainguard\&quot;
 [**index_checkpoint_get**](IndicesApi.md#index_checkpoint_get) | **GET** /index/checkpoint | Return vulnerability data stored in index \&quot;checkpoint\&quot;
 [**index_chrome_get**](IndicesApi.md#index_chrome_get) | **GET** /index/chrome | Return vulnerability data stored in index \&quot;chrome\&quot;
-[**index_cinea_get**](IndicesApi.md#index_cinea_get) | **GET** /index/cinea | Return vulnerability data stored in index \&quot;cinea\&quot;
+[**index_ciena_get**](IndicesApi.md#index_ciena_get) | **GET** /index/ciena | Return vulnerability data stored in index \&quot;ciena\&quot;
 [**index_cisa_alerts_get**](IndicesApi.md#index_cisa_alerts_get) | **GET** /index/cisa-alerts | Return vulnerability data stored in index \&quot;cisa-alerts\&quot;
 [**index_cisa_csaf_get**](IndicesApi.md#index_cisa_csaf_get) | **GET** /index/cisa-csaf | Return vulnerability data stored in index \&quot;cisa-csaf\&quot;
 [**index_cisa_kev_get**](IndicesApi.md#index_cisa_kev_get) | **GET** /index/cisa-kev | Return vulnerability data stored in index \&quot;cisa-kev\&quot;
@@ -13653,22 +13653,22 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **index_cinea_get**
-> RenderResponseWithMetadataArrayAdvisoryCienaPaginatePagination index_cinea_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+# **index_ciena_get**
+> RenderResponseWithMetadataArrayAdvisoryCienaPaginatePagination index_ciena_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
-Return vulnerability data stored in index \"cinea\"
+Return vulnerability data stored in index \"ciena\"
 
 ### Overview
-This endpoint allows you to retrieve a paginated list of all documents from the cinea index. \
+This endpoint allows you to retrieve a paginated list of all documents from the ciena index. \
 By default, a maximum of 100 documents are shown per page.
 
-**Index Description:** Cinea
+**Index Description:** Ciena
 
 ### Paging Over Large Data (cursor)
 In order to allow users to iterate over large index datasets, this endpoint provides a server-side
-"cursor" mechanism. To use the cursor, first call `GET /index/cinea?start_cursor`, the response will
+"cursor" mechanism. To use the cursor, first call `GET /index/ciena?start_cursor`, the response will
 have a `next_cursor` id that clients will need to pass as a query parameter to the next request like
-`GET /index/cinea?cursor=<next_cursor_id>`
+`GET /index/ciena?cursor=<next_cursor_id>`
 
 
 ### Example
@@ -13725,12 +13725,12 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     pub_end_date = 'pub_end_date_example' # str | Specify an ending published date to filter with. (optional)
 
     try:
-        # Return vulnerability data stored in index \"cinea\"
-        api_response = api_instance.index_cinea_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
-        print("The response of IndicesApi->index_cinea_get:\n")
+        # Return vulnerability data stored in index \"ciena\"
+        api_response = api_instance.index_ciena_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        print("The response of IndicesApi->index_ciena_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IndicesApi->index_cinea_get: %s\n" % e)
+        print("Exception when calling IndicesApi->index_ciena_get: %s\n" % e)
 ```
 
 
