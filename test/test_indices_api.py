@@ -727,10 +727,10 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
-    def test_index_cinea_get(self) -> None:
-        """Test case for index_cinea_get
+    def test_index_ciena_get(self) -> None:
+        """Test case for index_ciena_get
 
-        Return vulnerability data stored in index \"cinea\"
+        Return vulnerability data stored in index \"ciena\"
         """
         pass
 
