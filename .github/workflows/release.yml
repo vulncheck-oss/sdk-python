@@ -1,12 +1,15 @@
+---
 name: Publish Python 🐍 distribution 📦 to PyPI and TestPyPI
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
     paths:
       - "vulncheck_sdk/**"
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -18,6 +21,10 @@ jobs:
         uses: abatilo/actions-poetry@v2
         with:
           poetry-version: "1.8.3"
+      - name: Test with pytest
+        env:
+          VULNCHECK_API_TOKEN: ${{ secrets.VULNCHECK_API_TOKEN }}
+        run: make test
       - name: Build Module
         run: make build
       - name: Store the distribution packages
@@ -67,3 +74,84 @@ jobs:
           path: dist/
       - name: Publish distribution 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+
+  create-release:
+    name: Create release
+    needs:
+      - build
+      - publish-to-pypi
+      - publish-to-testpypi
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/create-github-app-token@v1
+        id: generate-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: Check out HEAD ref
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+          path: head
+          fetch-tags: true
+      - name: Get versions
+        id: versions
+        working-directory: head
+        run: |
+          CURRENT_VERSION=$(yq e '.additionalProperties.packageVersion' python-generator-config.yaml)
+          echo "current_version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          echo "All available tags:"
+          git tag -l
+          LATEST_TAG=$(git tag --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -n1)
+          if [ -z "$LATEST_TAG" ]; then
+            echo "No valid version tags found"
+            exit 1
+          fi
+          echo "Found latest tag: $LATEST_TAG"
+          echo "latest_tag=$LATEST_TAG" >> $GITHUB_OUTPUT
+
+      - name: Check out previous release
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          path: previous
+          ref: ${{ steps.versions.outputs.latest_tag }}
+          fetch-tags: true
+
+      - name: Make temp openapi-diff file
+        run: touch ${{ github.workspace }}/head/openapi-diff.md
+      - name: Run openapi-diff
+        uses: docker://openapitools/openapi-diff:latest
+        with:
+          args: previous/openapi.json head/openapi.json  --markdown head/openapi-diff.md
+
+      - name: Check if tag exists
+        id: check_tag
+        working-directory: head
+        run: |
+          if git ls-remote --exit-code --tags origin "refs/tags/v${{ steps.versions.outputs.current_version }}"; then
+            echo "Tag v${{ steps.versions.outputs.current_version }} already exists, skipping release"
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create and push tag
+        if: steps.check_tag.outputs.exists == 'false'
+        working-directory: head
+        env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token }}
+        run: |
+          git config --global url."https://x-access-token:${GH_TOKEN}@github.com/".insteadOf "https://github.com/"
+          git tag -f v${{ steps.versions.outputs.current_version }}
+          git push --force origin v${{ steps.versions.outputs.current_version }}
+
+      - name: Release
+        if: steps.check_tag.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: ${{ github.workspace }}/head/openapi-diff.md
+          tag_name: v${{ steps.versions.outputs.current_version }}
+          token: ${{ steps.generate_token.outputs.token }}
