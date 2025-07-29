@@ -1,3 +1,4 @@
+---
 name: Generate SDK
 
 on:
@@ -20,24 +21,34 @@ jobs:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
-      - uses: actions/checkout@v4
       - name: Install Poetry
         uses: abatilo/actions-poetry@v2
         with:
           poetry-version: "1.8.3"
 
-      - name: Install Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Install node dependencies
-        run: npm ci
-
+      - uses: actions/checkout@v4
       - name: Generate new sdk
-        run: make generate
+        id: generate
+        run: |
+          ${{ github.workspace }}/scripts/generate.sh
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
 
+      - name: Test with pytest
+        if: steps.generate.outputs.changes == 'true'
+        env:
+          VULNCHECK_API_TOKEN: ${{ secrets.VULNCHECK_API_TOKEN }}
+        run: make test
+
+      - name: Get current date
+        if: steps.generate.outputs.changes == 'true'
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
       - name: Create Pull Request
+        if: steps.generate.outputs.changes == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ steps.generate-token.outputs.token }}
@@ -46,5 +57,5 @@ jobs:
           delete-branch: true
           labels: bot
           title: "Update Python SDK"
-          commit-message: "ci: Update python-sdk"
+          commit-message: "[bot](${{ steps.date.outputs.date }}) Sync SDK with OpenAPI spec"
           body: "New [API](https://api.vulncheck.com/v3/openapi) changes have been detected."

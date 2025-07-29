@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
-
 set -e
 
-PROJECT_ROOT="$1"
 OPENAPI_GENERATOR_VERSION=7.12.0
 OPENAPI_JSON=openapi.json
-NODE_MODULES_BIN=$PROJECT_ROOT/node_modules/.bin
 
 # Pre-Generation Steps ########################################################
 
@@ -22,11 +19,11 @@ get_openapi_spec() {
 }
 
 bump_patch() {
-  PYTHON_GENERATOR_YAML=$PROJECT_ROOT/python-generator-config.yaml
+  PYTHON_GENERATOR_YAML=./python-generator-config.yaml
 
   current_version=$(grep "packageVersion" "$PYTHON_GENERATOR_YAML" | awk -F': ' '{print $2}' | tr -d '"')
   IFS='.' read -r major minor patch <<<"$current_version"
-  ((patch++))
+  patch=$((patch + 1))
   new_version="${major}.${minor}.${patch}"
 
   sed -i "s/packageVersion: \"$current_version\"/packageVersion: \"$new_version\"/" "$PYTHON_GENERATOR_YAML"
@@ -50,7 +47,7 @@ revert_readme() {
 
 # Update the project license
 update_license() {
-  PYPROJECT_TOML=$PROJECT_ROOT/pyproject.toml
+  PYPROJECT_TOML=./pyproject.toml
   if [[ ! -f "$PYPROJECT_TOML" ]]; then
     echo "File '$PYPROJECT_TOML' does not exist."
     exit 1
@@ -74,12 +71,17 @@ post_generation_process() {
 # Generation ##################################################################
 
 generate_sdk() {
-  "$NODE_MODULES_BIN"/openapi-generator-cli version-manager set $OPENAPI_GENERATOR_VERSION
-  "$NODE_MODULES_BIN"/openapi-generator-cli generate -i $OPENAPI_JSON \
+  docker run \
+    --rm \
+    --user "$(id -u):$(id -g)" \
+    -v "${PWD}":/local \
+    openapitools/openapi-generator-cli:v$OPENAPI_GENERATOR_VERSION generate \
+    -i /local/"$OPENAPI_JSON" \
     -g python \
-    --git-user-id "vulncheck-oss" --git-repo-id "sdk-python" \
-    -c python-generator-config.yaml \
-    -o .
+    --git-user-id "vulncheck-oss" \
+    --git-repo-id "sdk-python" \
+    -c /local/python-generator-config.yaml \
+    -o /local/"$OPENAPI_CLIENT_DIR"
 }
 
 # Helpers #####################################################################
