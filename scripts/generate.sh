@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-OPENAPI_GENERATOR_VERSION=7.12.0
+OPENAPI_GENERATOR_VERSION=7.14.0
 OPENAPI_JSON=openapi.json
 
 # Pre-Generation Steps ########################################################
