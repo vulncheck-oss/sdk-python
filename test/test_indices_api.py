@@ -76,6 +76,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_advantech_get(self) -> None:
+        """Test case for index_advantech_get
+
+        Return vulnerability data stored in index \"advantech\"
+        """
+        pass
+
     def test_index_advisories_get(self) -> None:
         """Test case for index_advisories_get
 
@@ -888,6 +895,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_crowdsec_get(self) -> None:
+        """Test case for index_crowdsec_get
+
+        Return vulnerability data stored in index \"crowdsec\"
+        """
+        pass
+
     def test_index_curl_get(self) -> None:
         """Test case for index_curl_get
 
@@ -1147,6 +1161,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_festo_get(self) -> None:
+        """Test case for index_festo_get
+
+        Return vulnerability data stored in index \"festo\"
+        """
+        pass
+
     def test_index_filecloud_get(self) -> None:
         """Test case for index_filecloud_get
 
@@ -1284,6 +1305,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_gitlab_exploits_get
 
         Return vulnerability data stored in index \"gitlab-exploits\"
+        """
+        pass
+
+    def test_index_glibc_get(self) -> None:
+        """Test case for index_glibc_get
+
+        Return vulnerability data stored in index \"glibc\"
         """
         pass
 
@@ -1658,6 +1686,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_kunbus_get(self) -> None:
+        """Test case for index_kunbus_get
+
+        Return vulnerability data stored in index \"kunbus\"
+        """
+        pass
+
     def test_index_lenovo_get(self) -> None:
         """Test case for index_lenovo_get
 
@@ -1914,6 +1949,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_netskope_get
 
         Return vulnerability data stored in index \"netskope\"
+        """
+        pass
+
+    def test_index_nexpose_get(self) -> None:
+        """Test case for index_nexpose_get
+
+        Return vulnerability data stored in index \"nexpose\"
         """
         pass
 
@@ -2306,6 +2348,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_qnap_get
 
         Return vulnerability data stored in index \"qnap\"
+        """
+        pass
+
+    def test_index_qqids_get(self) -> None:
+        """Test case for index_qqids_get
+
+        Return vulnerability data stored in index \"qqids\"
         """
         pass
 
@@ -2712,6 +2761,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_synology_get
 
         Return vulnerability data stored in index \"synology\"
+        """
+        pass
+
+    def test_index_syss_get(self) -> None:
+        """Test case for index_syss_get
+
+        Return vulnerability data stored in index \"syss\"
         """
         pass
 
