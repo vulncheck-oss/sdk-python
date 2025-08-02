@@ -84,6 +84,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryNetAppPaginatePagination(unitte
                             ], 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )
