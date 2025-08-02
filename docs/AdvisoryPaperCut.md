@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **references** | **List[str]** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

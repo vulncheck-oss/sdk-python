@@ -45,6 +45,7 @@ class TestAdvisoryPaperCut(unittest.TestCase):
                     ],
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:
