@@ -82,6 +82,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryPaperCutPaginatePagination(unit
                             ], 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )
