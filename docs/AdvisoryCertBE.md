@@ -5,13 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**affected_software** | **List[str]** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
+**mitigation** | **str** |  | [optional] 
 **references** | **List[str]** |  | [optional] 
+**risk** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
+**vulnerability_type** | **List[str]** |  | [optional] 
 
 ## Example
 

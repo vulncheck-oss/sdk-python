@@ -77,6 +77,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryCrowdSecPaginatePagination(unit
                             ''
                             ], 
                         date_added = '', 
+                        eitw = True, 
                         first_seen = '', 
                         summary = '', 
                         title = '', 

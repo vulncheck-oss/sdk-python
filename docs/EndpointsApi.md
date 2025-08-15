@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cpe_get**
-> RenderResponseWithMetadataArrayStringV3controllersResponseMetadata cpe_get(cpe)
+> RenderResponseWithMetadataArrayStringV3controllersResponseMetadata cpe_get(cpe, is_vulnerable=is_vulnerable)
 
 Return CVE 's associated with a specific NIST CPE
 
@@ -213,10 +213,11 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vulncheck_sdk.EndpointsApi(api_client)
     cpe = 'cpe_example' # str | CPE designation to lookup
+    is_vulnerable = 'is_vulnerable_example' # str | Filter by vulnerability status (true/false). Defaults to false if not provided. (optional)
 
     try:
         # Return CVE 's associated with a specific NIST CPE
-        api_response = api_instance.cpe_get(cpe)
+        api_response = api_instance.cpe_get(cpe, is_vulnerable=is_vulnerable)
         print("The response of EndpointsApi->cpe_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -231,6 +232,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cpe** | **str**| CPE designation to lookup | 
+ **is_vulnerable** | **str**| Filter by vulnerability status (true/false). Defaults to false if not provided. | [optional] 
 
 ### Return type
 

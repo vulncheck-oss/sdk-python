@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,11 +29,12 @@ class AdvisoryCrowdSec(BaseModel):
     """ # noqa: E501
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
+    eitw: Optional[StrictBool] = None
     first_seen: Optional[StrictStr] = None
     summary: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "first_seen", "summary", "title", "url"]
+    __properties: ClassVar[List[str]] = ["cve", "date_added", "eitw", "first_seen", "summary", "title", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,6 +89,7 @@ class AdvisoryCrowdSec(BaseModel):
         _obj = cls.model_validate({
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
+            "eitw": obj.get("eitw"),
             "first_seen": obj.get("first_seen"),
             "summary": obj.get("summary"),
             "title": obj.get("title"),

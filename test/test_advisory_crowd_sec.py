@@ -40,6 +40,7 @@ class TestAdvisoryCrowdSec(unittest.TestCase):
                     ''
                     ],
                 date_added = '',
+                eitw = True,
                 first_seen = '',
                 summary = '',
                 title = '',

@@ -27,14 +27,19 @@ class AdvisoryCertBE(BaseModel):
     """
     AdvisoryCertBE
     """ # noqa: E501
+    affected_software: Optional[List[StrictStr]] = None
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
+    mitigation: Optional[StrictStr] = None
     references: Optional[List[StrictStr]] = None
+    risk: Optional[StrictStr] = None
     summary: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "id", "references", "summary", "title", "url"]
+    vulnerability_type: Optional[List[StrictStr]] = None
+    __properties: ClassVar[List[str]] = ["affected_software", "cve", "date_added", "id", "mitigation", "references", "risk", "summary", "title", "updated_at", "url", "vulnerability_type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,13 +92,18 @@ class AdvisoryCertBE(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "affected_software": obj.get("affected_software"),
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "id": obj.get("id"),
+            "mitigation": obj.get("mitigation"),
             "references": obj.get("references"),
+            "risk": obj.get("risk"),
             "summary": obj.get("summary"),
             "title": obj.get("title"),
-            "url": obj.get("url")
+            "updated_at": obj.get("updated_at"),
+            "url": obj.get("url"),
+            "vulnerability_type": obj.get("vulnerability_type")
         })
         return _obj
 

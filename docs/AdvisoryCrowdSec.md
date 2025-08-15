@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
+**eitw** | **bool** |  | [optional] 
 **first_seen** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 

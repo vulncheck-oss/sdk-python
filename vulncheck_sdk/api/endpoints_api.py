@@ -568,6 +568,7 @@ class EndpointsApi:
     def cpe_get(
         self,
         cpe: Annotated[StrictStr, Field(description="CPE designation to lookup")],
+        is_vulnerable: Annotated[Optional[StrictStr], Field(description="Filter by vulnerability status (true/false). Defaults to false if not provided.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -587,6 +588,8 @@ class EndpointsApi:
 
         :param cpe: CPE designation to lookup (required)
         :type cpe: str
+        :param is_vulnerable: Filter by vulnerability status (true/false). Defaults to false if not provided.
+        :type is_vulnerable: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -611,6 +614,7 @@ class EndpointsApi:
 
         _param = self._cpe_get_serialize(
             cpe=cpe,
+            is_vulnerable=is_vulnerable,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -637,6 +641,7 @@ class EndpointsApi:
     def cpe_get_with_http_info(
         self,
         cpe: Annotated[StrictStr, Field(description="CPE designation to lookup")],
+        is_vulnerable: Annotated[Optional[StrictStr], Field(description="Filter by vulnerability status (true/false). Defaults to false if not provided.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -656,6 +661,8 @@ class EndpointsApi:
 
         :param cpe: CPE designation to lookup (required)
         :type cpe: str
+        :param is_vulnerable: Filter by vulnerability status (true/false). Defaults to false if not provided.
+        :type is_vulnerable: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -680,6 +687,7 @@ class EndpointsApi:
 
         _param = self._cpe_get_serialize(
             cpe=cpe,
+            is_vulnerable=is_vulnerable,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -706,6 +714,7 @@ class EndpointsApi:
     def cpe_get_without_preload_content(
         self,
         cpe: Annotated[StrictStr, Field(description="CPE designation to lookup")],
+        is_vulnerable: Annotated[Optional[StrictStr], Field(description="Filter by vulnerability status (true/false). Defaults to false if not provided.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -725,6 +734,8 @@ class EndpointsApi:
 
         :param cpe: CPE designation to lookup (required)
         :type cpe: str
+        :param is_vulnerable: Filter by vulnerability status (true/false). Defaults to false if not provided.
+        :type is_vulnerable: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -749,6 +760,7 @@ class EndpointsApi:
 
         _param = self._cpe_get_serialize(
             cpe=cpe,
+            is_vulnerable=is_vulnerable,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -770,6 +782,7 @@ class EndpointsApi:
     def _cpe_get_serialize(
         self,
         cpe,
+        is_vulnerable,
         _request_auth,
         _content_type,
         _headers,
@@ -795,6 +808,10 @@ class EndpointsApi:
         if cpe is not None:
             
             _query_params.append(('cpe', cpe))
+            
+        if is_vulnerable is not None:
+            
+            _query_params.append(('isVulnerable', is_vulnerable))
             
         # process the header parameters
         # process the form parameters
