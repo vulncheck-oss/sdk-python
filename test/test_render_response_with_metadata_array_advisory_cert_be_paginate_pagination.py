@@ -73,17 +73,26 @@ class TestRenderResponseWithMetadataArrayAdvisoryCertBEPaginatePagination(unitte
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/cert_be.advisory.CertBE(
+                        affected_software = [
+                            ''
+                            ], 
                         cve = [
                             ''
                             ], 
                         date_added = '', 
                         id = '', 
+                        mitigation = '', 
                         references = [
                             ''
                             ], 
+                        risk = '', 
                         summary = '', 
                         title = '', 
-                        url = '', )
+                        updated_at = '', 
+                        url = '', 
+                        vulnerability_type = [
+                            ''
+                            ], )
                     ]
             )
         else:

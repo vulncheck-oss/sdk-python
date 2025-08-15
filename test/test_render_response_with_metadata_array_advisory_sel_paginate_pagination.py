@@ -79,6 +79,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySelPaginatePagination(unittest.
                             ], 
                         date_added = '', 
                         description = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

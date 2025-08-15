@@ -84,6 +84,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryHashiCorpPaginatePagination(uni
                         remediation = '', 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

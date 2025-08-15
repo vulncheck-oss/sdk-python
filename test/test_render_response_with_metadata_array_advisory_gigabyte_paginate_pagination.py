@@ -78,7 +78,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryGigabytePaginatePagination(unit
                             ], 
                         date_added = '', 
                         link = '', 
-                        title = '', )
+                        title = '', 
+                        updated_at = '', )
                     ]
             )
         else:

@@ -31,8 +31,9 @@ class AdvisorySel(BaseModel):
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["acknowledgement", "cve", "date_added", "description", "url"]
+    __properties: ClassVar[List[str]] = ["acknowledgement", "cve", "date_added", "description", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +90,7 @@ class AdvisorySel(BaseModel):
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "description": obj.get("description"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

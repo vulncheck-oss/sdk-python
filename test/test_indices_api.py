@@ -972,10 +972,24 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_dfn_cert_get(self) -> None:
+        """Test case for index_dfn_cert_get
+
+        Return vulnerability data stored in index \"dfn-cert\"
+        """
+        pass
+
     def test_index_django_get(self) -> None:
         """Test case for index_django_get
 
         Return vulnerability data stored in index \"django\"
+        """
+        pass
+
+    def test_index_dlink_get(self) -> None:
+        """Test case for index_dlink_get
+
+        Return vulnerability data stored in index \"dlink\"
         """
         pass
 
@@ -1259,6 +1273,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_gen_get(self) -> None:
+        """Test case for index_gen_get
+
+        Return vulnerability data stored in index \"gen\"
+        """
+        pass
+
     def test_index_genetec_get(self) -> None:
         """Test case for index_genetec_get
 
@@ -1312,6 +1333,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_glibc_get
 
         Return vulnerability data stored in index \"glibc\"
+        """
+        pass
+
+    def test_index_gmo_cybersecurity_get(self) -> None:
+        """Test case for index_gmo_cybersecurity_get
+
+        Return vulnerability data stored in index \"gmo-cybersecurity\"
         """
         pass
 
@@ -2512,6 +2540,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_sandisk_get(self) -> None:
+        """Test case for index_sandisk_get
+
+        Return vulnerability data stored in index \"sandisk\"
+        """
+        pass
+
     def test_index_sap_get(self) -> None:
         """Test case for index_sap_get
 
@@ -2523,6 +2558,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_schneider_electric_get
 
         Return vulnerability data stored in index \"schneider-electric\"
+        """
+        pass
+
+    def test_index_schutzwerk_get(self) -> None:
+        """Test case for index_schutzwerk_get
+
+        Return vulnerability data stored in index \"schutzwerk\"
         """
         pass
 

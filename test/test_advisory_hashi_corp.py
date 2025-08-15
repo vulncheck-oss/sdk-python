@@ -47,6 +47,7 @@ class TestAdvisoryHashiCorp(unittest.TestCase):
                 remediation = '',
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

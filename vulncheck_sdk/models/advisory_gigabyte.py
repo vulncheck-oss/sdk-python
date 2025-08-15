@@ -31,7 +31,8 @@ class AdvisoryGigabyte(BaseModel):
     date_added: Optional[StrictStr] = None
     link: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "link", "title"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["cve", "date_added", "link", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,7 +88,8 @@ class AdvisoryGigabyte(BaseModel):
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "link": obj.get("link"),
-            "title": obj.get("title")
+            "title": obj.get("title"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 
