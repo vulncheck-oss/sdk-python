@@ -48,6 +48,12 @@ class TestApiInitialAccess(unittest.TestCase):
                         baidu_raw_queries = [
                             ''
                             ], 
+                        censys_legacy_queries = [
+                            ''
+                            ], 
+                        censys_legacy_raw_queries = [
+                            ''
+                            ], 
                         censys_queries = [
                             ''
                             ], 
@@ -56,6 +62,12 @@ class TestApiInitialAccess(unittest.TestCase):
                             ], 
                         clone_sshurl = '', 
                         date_added = '', 
+                        driftnet_queries = [
+                            ''
+                            ], 
+                        driftnet_raw_queries = [
+                            ''
+                            ], 
                         exploit = True, 
                         fofa_queries = [
                             ''
@@ -86,6 +98,7 @@ class TestApiInitialAccess(unittest.TestCase):
                         shodan_raw_queries = [
                             ''
                             ], 
+                        sigma_rule = True, 
                         snort_rule = True, 
                         suricata_rule = True, 
                         target_docker = True, 
