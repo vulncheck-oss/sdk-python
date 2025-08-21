@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.19"
+__version__ = "0.0.20"
 
 # Define package exports
 __all__ = [
@@ -62,6 +62,7 @@ __all__ = [
     "AdvisoryAffectedRel",
     "AdvisoryAffectedUbuntuPackage",
     "AdvisoryAlephResearch",
+    "AdvisoryAlibaba",
     "AdvisoryAlmaDate",
     "AdvisoryAlmaLinuxUpdate",
     "AdvisoryAlmaObjectID",
@@ -858,6 +859,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAdvisoryRecordPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAlephResearchPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryAlibabaPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAlmaLinuxUpdatePaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAlpineLinuxSecDBPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAmazonCVEPaginatePagination",
@@ -1338,6 +1340,7 @@ from vulncheck_sdk.models.advisory_affected_product import AdvisoryAffectedProdu
 from vulncheck_sdk.models.advisory_affected_rel import AdvisoryAffectedRel as AdvisoryAffectedRel
 from vulncheck_sdk.models.advisory_affected_ubuntu_package import AdvisoryAffectedUbuntuPackage as AdvisoryAffectedUbuntuPackage
 from vulncheck_sdk.models.advisory_aleph_research import AdvisoryAlephResearch as AdvisoryAlephResearch
+from vulncheck_sdk.models.advisory_alibaba import AdvisoryAlibaba as AdvisoryAlibaba
 from vulncheck_sdk.models.advisory_alma_date import AdvisoryAlmaDate as AdvisoryAlmaDate
 from vulncheck_sdk.models.advisory_alma_linux_update import AdvisoryAlmaLinuxUpdate as AdvisoryAlmaLinuxUpdate
 from vulncheck_sdk.models.advisory_alma_object_id import AdvisoryAlmaObjectID as AdvisoryAlmaObjectID
@@ -2134,6 +2137,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_advantech
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_advisory_record_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAdvisoryRecordPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAdvisoryRecordPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_aleph_research_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAlephResearchPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAlephResearchPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_alibaba_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAlibabaPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAlibabaPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_alma_linux_update_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAlmaLinuxUpdatePaginatePagination as RenderResponseWithMetadataArrayAdvisoryAlmaLinuxUpdatePaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_alpine_linux_sec_db_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAlpineLinuxSecDBPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAlpineLinuxSecDBPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_amazon_cve_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAmazonCVEPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAmazonCVEPaginatePagination

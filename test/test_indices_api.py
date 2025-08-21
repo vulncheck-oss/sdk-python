@@ -104,6 +104,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_alibaba_advs_get(self) -> None:
+        """Test case for index_alibaba_advs_get
+
+        Return vulnerability data stored in index \"alibaba-advs\"
+        """
+        pass
+
     def test_index_alma_get(self) -> None:
         """Test case for index_alma_get
 

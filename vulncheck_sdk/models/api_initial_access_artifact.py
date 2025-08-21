@@ -31,10 +31,14 @@ class ApiInitialAccessArtifact(BaseModel):
     artifacts_url: Optional[List[StrictStr]] = Field(default=None, description="ArtifactsURL are URLs to the available artifact.", alias="artifactsURL")
     baidu_queries: Optional[List[StrictStr]] = Field(default=None, description="...", alias="baiduQueries")
     baidu_raw_queries: Optional[List[StrictStr]] = Field(default=None, description="...", alias="baiduRawQueries")
+    censys_legacy_queries: Optional[List[StrictStr]] = Field(default=None, description="CensysLegacyQueries are legacy queries for examining potential Internet-exposed devices & applications with Censys in URL form.", alias="censysLegacyQueries")
+    censys_legacy_raw_queries: Optional[List[StrictStr]] = Field(default=None, description="CensysLegacyRawQueries are raw legacy queries for examining potential Internet-exposed devices & applications with Censys.", alias="censysLegacyRawQueries")
     censys_queries: Optional[List[StrictStr]] = Field(default=None, description="CensysQueries are queries for examining potential Internet-exposed devices & applications with Censys in URL form.", alias="censysQueries")
     censys_raw_queries: Optional[List[StrictStr]] = Field(default=None, description="CensysRawQueries are raw queries for examining potential Internet-exposed devices & applications with Censys.", alias="censysRawQueries")
     clone_sshurl: Optional[StrictStr] = Field(default=None, description="CloneSSHURL is the git URL to clone the artifact with.", alias="cloneSSHURL")
     date_added: Optional[StrictStr] = Field(default=None, description="DateAdded is when this artifact entry was first added to the InitialAccess data set.", alias="dateAdded")
+    driftnet_queries: Optional[List[StrictStr]] = Field(default=None, description="DriftnetQueries are queries for examining Internet exposed services with Driftnet.", alias="driftnetQueries")
+    driftnet_raw_queries: Optional[List[StrictStr]] = Field(default=None, description="DriftnetRawQueries are queries for examining Internet exposed services with Driftnet.", alias="driftnetRawQueries")
     exploit: Optional[StrictBool] = Field(default=None, description="Exploit indicates whether or not an exploit is available in this artifact.")
     fofa_queries: Optional[List[StrictStr]] = Field(default=None, description="FOFAQueries are raw queries for examining potential Internet-exposed devices & applications with FOFA.", alias="fofaQueries")
     fofa_raw_queries: Optional[List[StrictStr]] = Field(default=None, alias="fofaRawQueries")
@@ -47,6 +51,7 @@ class ApiInitialAccessArtifact(BaseModel):
     product: Optional[List[StrictStr]] = Field(default=None, description="Product are the software that has the vulnerability.")
     shodan_queries: Optional[List[StrictStr]] = Field(default=None, description="ShodanQueries are queries for examining potential Internet-exposed devices & applications with Shodan in URL form.", alias="shodanQueries")
     shodan_raw_queries: Optional[List[StrictStr]] = Field(default=None, description="ShodanRawQueries are raw queries for examining potential Internet-exposed devices & applications with Shodan.", alias="shodanRawQueries")
+    sigma_rule: Optional[StrictBool] = Field(default=None, description="SigmaRule indicates whether or not a Sigma rule designed to detect the exploitation of the vulnerability over the network exists in this artifact.", alias="sigmaRule")
     snort_rule: Optional[StrictBool] = Field(default=None, description="SnortRule indicates whether or not a Snort rule designed to detect the exploitation of the vulnerability over the network exists in this artifact.", alias="snortRule")
     suricata_rule: Optional[StrictBool] = Field(default=None, description="SuricataRule indicates whether or not a Suricata rule designed to detect the exploitation of the vulnerability over the network exists in this artifact.", alias="suricataRule")
     target_docker: Optional[StrictBool] = Field(default=None, description="TargetDocker indicates whether or not there is an available docker image with the vulnerability.", alias="targetDocker")
@@ -58,7 +63,7 @@ class ApiInitialAccessArtifact(BaseModel):
     zeroday: Optional[StrictBool] = Field(default=None, description="Zeroday indicates whether or not it is a VulnCheck zeroday.")
     zoom_eye_queries: Optional[List[StrictStr]] = Field(default=None, description="ZoomEyeQueries are raw queries for examining potential Internet-exposed devices & applications with ZoomEye.", alias="zoomEyeQueries")
     zoom_eye_raw_queries: Optional[List[StrictStr]] = Field(default=None, alias="zoomEyeRawQueries")
-    __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "baiduQueries", "baiduRawQueries", "censysQueries", "censysRawQueries", "cloneSSHURL", "dateAdded", "exploit", "fofaQueries", "fofaRawQueries", "googleQueries", "googleRawQueries", "greynoiseQueries", "mitreAttackTechniques", "nmapScript", "pcap", "product", "shodanQueries", "shodanRawQueries", "snortRule", "suricataRule", "targetDocker", "targetEncryptedComms", "targetService", "vendor", "versionScanner", "yara", "zeroday", "zoomEyeQueries", "zoomEyeRawQueries"]
+    __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "baiduQueries", "baiduRawQueries", "censysLegacyQueries", "censysLegacyRawQueries", "censysQueries", "censysRawQueries", "cloneSSHURL", "dateAdded", "driftnetQueries", "driftnetRawQueries", "exploit", "fofaQueries", "fofaRawQueries", "googleQueries", "googleRawQueries", "greynoiseQueries", "mitreAttackTechniques", "nmapScript", "pcap", "product", "shodanQueries", "shodanRawQueries", "sigmaRule", "snortRule", "suricataRule", "targetDocker", "targetEncryptedComms", "targetService", "vendor", "versionScanner", "yara", "zeroday", "zoomEyeQueries", "zoomEyeRawQueries"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -115,10 +120,14 @@ class ApiInitialAccessArtifact(BaseModel):
             "artifactsURL": obj.get("artifactsURL"),
             "baiduQueries": obj.get("baiduQueries"),
             "baiduRawQueries": obj.get("baiduRawQueries"),
+            "censysLegacyQueries": obj.get("censysLegacyQueries"),
+            "censysLegacyRawQueries": obj.get("censysLegacyRawQueries"),
             "censysQueries": obj.get("censysQueries"),
             "censysRawQueries": obj.get("censysRawQueries"),
             "cloneSSHURL": obj.get("cloneSSHURL"),
             "dateAdded": obj.get("dateAdded"),
+            "driftnetQueries": obj.get("driftnetQueries"),
+            "driftnetRawQueries": obj.get("driftnetRawQueries"),
             "exploit": obj.get("exploit"),
             "fofaQueries": obj.get("fofaQueries"),
             "fofaRawQueries": obj.get("fofaRawQueries"),
@@ -131,6 +140,7 @@ class ApiInitialAccessArtifact(BaseModel):
             "product": obj.get("product"),
             "shodanQueries": obj.get("shodanQueries"),
             "shodanRawQueries": obj.get("shodanRawQueries"),
+            "sigmaRule": obj.get("sigmaRule"),
             "snortRule": obj.get("snortRule"),
             "suricataRule": obj.get("suricataRule"),
             "targetDocker": obj.get("targetDocker"),
