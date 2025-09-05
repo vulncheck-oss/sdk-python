@@ -203,8 +203,21 @@ class TestApiNVD20CVEExtended(unittest.TestCase):
                         ], ),
                 mitre_attack_techniques = [
                     vulncheck_sdk.models.api/mitre_attack_tech.api.MitreAttackTech(
+                        detections = [
+                            vulncheck_sdk.models.api/mitre_detection_tech.api.MitreDetectionTech(
+                                dastacomponent = '', 
+                                datasource = '', 
+                                detects = '', 
+                                id = '', )
+                            ], 
                         domain = '', 
                         id = '', 
+                        mitigations = [
+                            vulncheck_sdk.models.api/mitre_mitigation_tech.api.MitreMitigationTech(
+                                description = '', 
+                                id = '', 
+                                mitigation_url = '', )
+                            ], 
                         name = '', 
                         subtechnique = True, 
                         tactics = [

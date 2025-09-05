@@ -36,8 +36,21 @@ class TestApiMitreAttackTech(unittest.TestCase):
         model = ApiMitreAttackTech()
         if include_optional:
             return ApiMitreAttackTech(
+                detections = [
+                    vulncheck_sdk.models.api/mitre_detection_tech.api.MitreDetectionTech(
+                        dastacomponent = '', 
+                        datasource = '', 
+                        detects = '', 
+                        id = '', )
+                    ],
                 domain = '',
                 id = '',
+                mitigations = [
+                    vulncheck_sdk.models.api/mitre_mitigation_tech.api.MitreMitigationTech(
+                        description = '', 
+                        id = '', 
+                        mitigation_url = '', )
+                    ],
                 name = '',
                 subtechnique = True,
                 tactics = [

@@ -167,6 +167,7 @@ from vulncheck_sdk.models.advisory_cvssv40 import AdvisoryCVSSV40
 from vulncheck_sdk.models.advisory_cvssv40_threat import AdvisoryCVSSV40Threat
 from vulncheck_sdk.models.advisory_cwe_node import AdvisoryCWENode
 from vulncheck_sdk.models.advisory_canvas_exploit import AdvisoryCanvasExploit
+from vulncheck_sdk.models.advisory_capec import AdvisoryCapec
 from vulncheck_sdk.models.advisory_carestream_advisory import AdvisoryCarestreamAdvisory
 from vulncheck_sdk.models.advisory_carrier import AdvisoryCarrier
 from vulncheck_sdk.models.advisory_centos_package import AdvisoryCentosPackage
@@ -212,6 +213,7 @@ from vulncheck_sdk.models.advisory_cvrf import AdvisoryCvrf
 from vulncheck_sdk.models.advisory_cvsss_v23 import AdvisoryCvsssV23
 from vulncheck_sdk.models.advisory_cwe import AdvisoryCwe
 from vulncheck_sdk.models.advisory_cwe_acceptance_level import AdvisoryCweAcceptanceLevel
+from vulncheck_sdk.models.advisory_cwe_data import AdvisoryCweData
 from vulncheck_sdk.models.advisory_cwes import AdvisoryCwes
 from vulncheck_sdk.models.advisory_cycle import AdvisoryCycle
 from vulncheck_sdk.models.advisory_db_specific import AdvisoryDBSpecific
@@ -763,6 +765,8 @@ from vulncheck_sdk.models.api_initial_access import ApiInitialAccess
 from vulncheck_sdk.models.api_initial_access_artifact import ApiInitialAccessArtifact
 from vulncheck_sdk.models.api_mitre_attack_tech import ApiMitreAttackTech
 from vulncheck_sdk.models.api_mitre_attack_to_cve import ApiMitreAttackToCVE
+from vulncheck_sdk.models.api_mitre_detection_tech import ApiMitreDetectionTech
+from vulncheck_sdk.models.api_mitre_mitigation_tech import ApiMitreMitigationTech
 from vulncheck_sdk.models.api_nvd20_cpe_match import ApiNVD20CPEMatch
 from vulncheck_sdk.models.api_nvd20_cpe_name import ApiNVD20CPEName
 from vulncheck_sdk.models.api_nvd20_cve import ApiNVD20CVE

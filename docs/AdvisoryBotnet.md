@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**associated_capecs** | [**List[AdvisoryCapec]**](AdvisoryCapec.md) |  | [optional] 
+**associated_cwes** | [**List[AdvisoryCweData]**](AdvisoryCweData.md) |  | [optional] 
 **associated_mitre_attack_techniques** | [**List[AdvisoryMitreAttackTechWithRefs]**](AdvisoryMitreAttackTechWithRefs.md) |  | [optional] 
 **botnet_name** | **str** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 

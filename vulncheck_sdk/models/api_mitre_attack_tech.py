@@ -20,6 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.api_mitre_detection_tech import ApiMitreDetectionTech
+from vulncheck_sdk.models.api_mitre_mitigation_tech import ApiMitreMitigationTech
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,13 +29,15 @@ class ApiMitreAttackTech(BaseModel):
     """
     ApiMitreAttackTech
     """ # noqa: E501
+    detections: Optional[List[ApiMitreDetectionTech]] = None
     domain: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
+    mitigations: Optional[List[ApiMitreMitigationTech]] = None
     name: Optional[StrictStr] = None
     subtechnique: Optional[StrictBool] = None
     tactics: Optional[List[StrictStr]] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["domain", "id", "name", "subtechnique", "tactics", "url"]
+    __properties: ClassVar[List[str]] = ["detections", "domain", "id", "mitigations", "name", "subtechnique", "tactics", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,6 +78,20 @@ class ApiMitreAttackTech(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in detections (list)
+        _items = []
+        if self.detections:
+            for _item_detections in self.detections:
+                if _item_detections:
+                    _items.append(_item_detections.to_dict())
+            _dict['detections'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in mitigations (list)
+        _items = []
+        if self.mitigations:
+            for _item_mitigations in self.mitigations:
+                if _item_mitigations:
+                    _items.append(_item_mitigations.to_dict())
+            _dict['mitigations'] = _items
         return _dict
 
     @classmethod
@@ -86,8 +104,10 @@ class ApiMitreAttackTech(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "detections": [ApiMitreDetectionTech.from_dict(_item) for _item in obj["detections"]] if obj.get("detections") is not None else None,
             "domain": obj.get("domain"),
             "id": obj.get("id"),
+            "mitigations": [ApiMitreMitigationTech.from_dict(_item) for _item in obj["mitigations"]] if obj.get("mitigations") is not None else None,
             "name": obj.get("name"),
             "subtechnique": obj.get("subtechnique"),
             "tactics": obj.get("tactics"),

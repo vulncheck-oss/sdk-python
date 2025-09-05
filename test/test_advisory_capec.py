@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.advisory_metrics_other import AdvisoryMetricsOther
+from vulncheck_sdk.models.advisory_capec import AdvisoryCapec
 
-class TestAdvisoryMetricsOther(unittest.TestCase):
-    """AdvisoryMetricsOther unit test stubs"""
+class TestAdvisoryCapec(unittest.TestCase):
+    """AdvisoryCapec unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,28 @@ class TestAdvisoryMetricsOther(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdvisoryMetricsOther:
-        """Test AdvisoryMetricsOther
+    def make_instance(self, include_optional) -> AdvisoryCapec:
+        """Test AdvisoryCapec
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AdvisoryMetricsOther`
+        # uncomment below to create an instance of `AdvisoryCapec`
         """
-        model = AdvisoryMetricsOther()
+        model = AdvisoryCapec()
         if include_optional:
-            return AdvisoryMetricsOther(
-                content = vulncheck_sdk.models.content.content(),
-                type = ''
+            return AdvisoryCapec(
+                capec_id = '',
+                capec_name = '',
+                capec_url = '',
+                lang = ''
             )
         else:
-            return AdvisoryMetricsOther(
+            return AdvisoryCapec(
         )
         """
 
-    def testAdvisoryMetricsOther(self):
-        """Test AdvisoryMetricsOther"""
+    def testAdvisoryCapec(self):
+        """Test AdvisoryCapec"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

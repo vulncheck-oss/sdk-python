@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.advisory_metrics_other import AdvisoryMetricsOther
+from vulncheck_sdk.models.api_mitre_mitigation_tech import ApiMitreMitigationTech
 
-class TestAdvisoryMetricsOther(unittest.TestCase):
-    """AdvisoryMetricsOther unit test stubs"""
+class TestApiMitreMitigationTech(unittest.TestCase):
+    """ApiMitreMitigationTech unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,27 @@ class TestAdvisoryMetricsOther(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdvisoryMetricsOther:
-        """Test AdvisoryMetricsOther
+    def make_instance(self, include_optional) -> ApiMitreMitigationTech:
+        """Test ApiMitreMitigationTech
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AdvisoryMetricsOther`
+        # uncomment below to create an instance of `ApiMitreMitigationTech`
         """
-        model = AdvisoryMetricsOther()
+        model = ApiMitreMitigationTech()
         if include_optional:
-            return AdvisoryMetricsOther(
-                content = vulncheck_sdk.models.content.content(),
-                type = ''
+            return ApiMitreMitigationTech(
+                description = '',
+                id = '',
+                mitigation_url = ''
             )
         else:
-            return AdvisoryMetricsOther(
+            return ApiMitreMitigationTech(
         )
         """
 
-    def testAdvisoryMetricsOther(self):
-        """Test AdvisoryMetricsOther"""
+    def testApiMitreMitigationTech(self):
+        """Test ApiMitreMitigationTech"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

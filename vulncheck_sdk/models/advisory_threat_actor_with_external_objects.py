@@ -20,7 +20,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.advisory_capec import AdvisoryCapec
 from vulncheck_sdk.models.advisory_cve_reference import AdvisoryCVEReference
+from vulncheck_sdk.models.advisory_cwe_data import AdvisoryCweData
 from vulncheck_sdk.models.advisory_misp_value_no_id import AdvisoryMISPValueNoID
 from vulncheck_sdk.models.advisory_mitre_attack_group_no_id import AdvisoryMITREAttackGroupNoID
 from vulncheck_sdk.models.advisory_mitre_attack_tech_with_refs import AdvisoryMitreAttackTechWithRefs
@@ -35,6 +37,8 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
     """
     AdvisoryThreatActorWithExternalObjects
     """ # noqa: E501
+    associated_capecs: Optional[List[AdvisoryCapec]] = None
+    associated_cwes: Optional[List[AdvisoryCweData]] = None
     associated_mitre_attack_techniques: Optional[List[AdvisoryMitreAttackTechWithRefs]] = None
     country: Optional[StrictStr] = None
     cve_references: Optional[List[AdvisoryCVEReference]] = None
@@ -49,7 +53,7 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
     tools: Optional[List[AdvisoryTool]] = None
     vendor_names_for_threat_actors: Optional[List[AdvisoryVendorNameForThreatActor]] = None
     vendors_and_products_targeted: Optional[List[AdvisoryVendorProduct]] = None
-    __properties: ClassVar[List[str]] = ["associated_mitre_attack_techniques", "country", "cve_references", "date_added", "malpedia_url", "misp_id", "misp_threat_actor", "mitre_attack_group", "mitre_group_cti", "mitre_id", "threat_actor_name", "tools", "vendor_names_for_threat_actors", "vendors_and_products_targeted"]
+    __properties: ClassVar[List[str]] = ["associated_capecs", "associated_cwes", "associated_mitre_attack_techniques", "country", "cve_references", "date_added", "malpedia_url", "misp_id", "misp_threat_actor", "mitre_attack_group", "mitre_group_cti", "mitre_id", "threat_actor_name", "tools", "vendor_names_for_threat_actors", "vendors_and_products_targeted"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,6 +94,20 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in associated_capecs (list)
+        _items = []
+        if self.associated_capecs:
+            for _item_associated_capecs in self.associated_capecs:
+                if _item_associated_capecs:
+                    _items.append(_item_associated_capecs.to_dict())
+            _dict['associated_capecs'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in associated_cwes (list)
+        _items = []
+        if self.associated_cwes:
+            for _item_associated_cwes in self.associated_cwes:
+                if _item_associated_cwes:
+                    _items.append(_item_associated_cwes.to_dict())
+            _dict['associated_cwes'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in associated_mitre_attack_techniques (list)
         _items = []
         if self.associated_mitre_attack_techniques:
@@ -146,6 +164,8 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "associated_capecs": [AdvisoryCapec.from_dict(_item) for _item in obj["associated_capecs"]] if obj.get("associated_capecs") is not None else None,
+            "associated_cwes": [AdvisoryCweData.from_dict(_item) for _item in obj["associated_cwes"]] if obj.get("associated_cwes") is not None else None,
             "associated_mitre_attack_techniques": [AdvisoryMitreAttackTechWithRefs.from_dict(_item) for _item in obj["associated_mitre_attack_techniques"]] if obj.get("associated_mitre_attack_techniques") is not None else None,
             "country": obj.get("country"),
             "cve_references": [AdvisoryCVEReference.from_dict(_item) for _item in obj["cve_references"]] if obj.get("cve_references") is not None else None,

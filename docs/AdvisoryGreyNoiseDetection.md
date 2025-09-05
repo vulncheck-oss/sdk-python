@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **references** | **List[str]** |  | [optional] 
 **related_tags** | [**List[AdvisoryGreyNoiseTags]**](AdvisoryGreyNoiseTags.md) |  | [optional] 
 **slug** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example
