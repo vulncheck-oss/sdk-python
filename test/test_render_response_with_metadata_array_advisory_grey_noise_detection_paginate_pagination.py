@@ -96,6 +96,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryGreyNoiseDetectionPaginatePagin
                                 slug = '', )
                             ], 
                         slug = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

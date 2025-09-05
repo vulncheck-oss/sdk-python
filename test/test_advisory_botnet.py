@@ -36,6 +36,20 @@ class TestAdvisoryBotnet(unittest.TestCase):
         model = AdvisoryBotnet()
         if include_optional:
             return AdvisoryBotnet(
+                associated_capecs = [
+                    vulncheck_sdk.models.advisory/capec.advisory.Capec(
+                        capec_id = '', 
+                        capec_name = '', 
+                        capec_url = '', 
+                        lang = '', )
+                    ],
+                associated_cwes = [
+                    vulncheck_sdk.models.advisory/cwe_data.advisory.CweData(
+                        lang = '', 
+                        name = '', 
+                        url = '', 
+                        value = '', )
+                    ],
                 associated_mitre_attack_techniques = [
                     vulncheck_sdk.models.advisory/mitre_attack_tech_with_refs.advisory.MitreAttackTechWithRefs(
                         domain = '', 

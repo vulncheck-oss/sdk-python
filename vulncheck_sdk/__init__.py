@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.20"
+__version__ = "0.0.21"
 
 # Define package exports
 __all__ = [
@@ -182,6 +182,7 @@ __all__ = [
     "AdvisoryCVSSV40Threat",
     "AdvisoryCWENode",
     "AdvisoryCanvasExploit",
+    "AdvisoryCapec",
     "AdvisoryCarestreamAdvisory",
     "AdvisoryCarrier",
     "AdvisoryCentosPackage",
@@ -227,6 +228,7 @@ __all__ = [
     "AdvisoryCvsssV23",
     "AdvisoryCwe",
     "AdvisoryCweAcceptanceLevel",
+    "AdvisoryCweData",
     "AdvisoryCwes",
     "AdvisoryCycle",
     "AdvisoryDBSpecific",
@@ -778,6 +780,8 @@ __all__ = [
     "ApiInitialAccessArtifact",
     "ApiMitreAttackTech",
     "ApiMitreAttackToCVE",
+    "ApiMitreDetectionTech",
+    "ApiMitreMitigationTech",
     "ApiNVD20CPEMatch",
     "ApiNVD20CPEName",
     "ApiNVD20CVE",
@@ -1460,6 +1464,7 @@ from vulncheck_sdk.models.advisory_cvssv40 import AdvisoryCVSSV40 as AdvisoryCVS
 from vulncheck_sdk.models.advisory_cvssv40_threat import AdvisoryCVSSV40Threat as AdvisoryCVSSV40Threat
 from vulncheck_sdk.models.advisory_cwe_node import AdvisoryCWENode as AdvisoryCWENode
 from vulncheck_sdk.models.advisory_canvas_exploit import AdvisoryCanvasExploit as AdvisoryCanvasExploit
+from vulncheck_sdk.models.advisory_capec import AdvisoryCapec as AdvisoryCapec
 from vulncheck_sdk.models.advisory_carestream_advisory import AdvisoryCarestreamAdvisory as AdvisoryCarestreamAdvisory
 from vulncheck_sdk.models.advisory_carrier import AdvisoryCarrier as AdvisoryCarrier
 from vulncheck_sdk.models.advisory_centos_package import AdvisoryCentosPackage as AdvisoryCentosPackage
@@ -1505,6 +1510,7 @@ from vulncheck_sdk.models.advisory_cvrf import AdvisoryCvrf as AdvisoryCvrf
 from vulncheck_sdk.models.advisory_cvsss_v23 import AdvisoryCvsssV23 as AdvisoryCvsssV23
 from vulncheck_sdk.models.advisory_cwe import AdvisoryCwe as AdvisoryCwe
 from vulncheck_sdk.models.advisory_cwe_acceptance_level import AdvisoryCweAcceptanceLevel as AdvisoryCweAcceptanceLevel
+from vulncheck_sdk.models.advisory_cwe_data import AdvisoryCweData as AdvisoryCweData
 from vulncheck_sdk.models.advisory_cwes import AdvisoryCwes as AdvisoryCwes
 from vulncheck_sdk.models.advisory_cycle import AdvisoryCycle as AdvisoryCycle
 from vulncheck_sdk.models.advisory_db_specific import AdvisoryDBSpecific as AdvisoryDBSpecific
@@ -2056,6 +2062,8 @@ from vulncheck_sdk.models.api_initial_access import ApiInitialAccess as ApiIniti
 from vulncheck_sdk.models.api_initial_access_artifact import ApiInitialAccessArtifact as ApiInitialAccessArtifact
 from vulncheck_sdk.models.api_mitre_attack_tech import ApiMitreAttackTech as ApiMitreAttackTech
 from vulncheck_sdk.models.api_mitre_attack_to_cve import ApiMitreAttackToCVE as ApiMitreAttackToCVE
+from vulncheck_sdk.models.api_mitre_detection_tech import ApiMitreDetectionTech as ApiMitreDetectionTech
+from vulncheck_sdk.models.api_mitre_mitigation_tech import ApiMitreMitigationTech as ApiMitreMitigationTech
 from vulncheck_sdk.models.api_nvd20_cpe_match import ApiNVD20CPEMatch as ApiNVD20CPEMatch
 from vulncheck_sdk.models.api_nvd20_cpe_name import ApiNVD20CPEName as ApiNVD20CPEName
 from vulncheck_sdk.models.api_nvd20_cve import ApiNVD20CVE as ApiNVD20CVE

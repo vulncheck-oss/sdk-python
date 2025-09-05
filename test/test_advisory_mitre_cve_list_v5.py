@@ -139,7 +139,7 @@ class TestAdvisoryMitreCVEListV5(unittest.TestCase):
                                             vulnerability_response_effort = '', ), 
                                         format = '', 
                                         other = vulncheck_sdk.models.advisory/metrics_other.advisory.MetricsOther(
-                                            content = '', 
+                                            content = vulncheck_sdk.models.content.content(), 
                                             type = '', ), )
                                     ], 
                                 problem_types = [

@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**detections** | [**List[ApiMitreDetectionTech]**](ApiMitreDetectionTech.md) |  | [optional] 
 **domain** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
+**mitigations** | [**List[ApiMitreMitigationTech]**](ApiMitreMitigationTech.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **subtechnique** | **bool** |  | [optional] 
 **tactics** | **List[str]** |  | [optional] 

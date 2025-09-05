@@ -23,13 +23,15 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryMetricsOther(BaseModel):
+class ApiMitreDetectionTech(BaseModel):
     """
-    AdvisoryMetricsOther
+    ApiMitreDetectionTech
     """ # noqa: E501
-    content: Optional[Dict[str, Any]] = None
-    type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["content", "type"]
+    dastacomponent: Optional[StrictStr] = None
+    datasource: Optional[StrictStr] = None
+    detects: Optional[StrictStr] = None
+    id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["dastacomponent", "datasource", "detects", "id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +51,7 @@ class AdvisoryMetricsOther(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryMetricsOther from a JSON string"""
+        """Create an instance of ApiMitreDetectionTech from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,7 +76,7 @@ class AdvisoryMetricsOther(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryMetricsOther from a dict"""
+        """Create an instance of ApiMitreDetectionTech from a dict"""
         if obj is None:
             return None
 
@@ -82,8 +84,10 @@ class AdvisoryMetricsOther(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "content": obj.get("content"),
-            "type": obj.get("type")
+            "dastacomponent": obj.get("dastacomponent"),
+            "datasource": obj.get("datasource"),
+            "detects": obj.get("detects"),
+            "id": obj.get("id")
         })
         return _obj
 

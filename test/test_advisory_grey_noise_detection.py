@@ -59,6 +59,7 @@ class TestAdvisoryGreyNoiseDetection(unittest.TestCase):
                         slug = '', )
                     ],
                 slug = '',
+                updated_at = '',
                 url = ''
             )
         else:

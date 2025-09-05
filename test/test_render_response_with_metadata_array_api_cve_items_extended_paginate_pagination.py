@@ -244,8 +244,20 @@ class TestRenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination(u
                         last_modified_date = '', 
                         mitre_attack_techniques = [
                             vulncheck_sdk.models.api/mitre_attack_tech.api.MitreAttackTech(
+                                detections = [
+                                    vulncheck_sdk.models.api/mitre_detection_tech.api.MitreDetectionTech(
+                                        dastacomponent = '', 
+                                        datasource = '', 
+                                        detects = '', 
+                                        id = '', )
+                                    ], 
                                 domain = '', 
                                 id = '', 
+                                mitigations = [
+                                    vulncheck_sdk.models.api/mitre_mitigation_tech.api.MitreMitigationTech(
+                                        id = '', 
+                                        mitigation_url = '', )
+                                    ], 
                                 name = '', 
                                 subtechnique = True, 
                                 tactics = [

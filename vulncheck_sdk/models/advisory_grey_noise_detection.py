@@ -40,8 +40,9 @@ class AdvisoryGreyNoiseDetection(BaseModel):
     references: Optional[List[StrictStr]] = None
     related_tags: Optional[List[AdvisoryGreyNoiseTags]] = None
     slug: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["category", "cve", "date_added", "description", "id", "intention", "label", "name", "recommend_block", "references", "related_tags", "slug", "url"]
+    __properties: ClassVar[List[str]] = ["category", "cve", "date_added", "description", "id", "intention", "label", "name", "recommend_block", "references", "related_tags", "slug", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,6 +114,7 @@ class AdvisoryGreyNoiseDetection(BaseModel):
             "references": obj.get("references"),
             "related_tags": [AdvisoryGreyNoiseTags.from_dict(_item) for _item in obj["related_tags"]] if obj.get("related_tags") is not None else None,
             "slug": obj.get("slug"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj
