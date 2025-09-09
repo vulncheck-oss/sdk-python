@@ -12,7 +12,7 @@ If you find a bug in the SDK please submit a [bug with this template](https://gi
 
 Prerequisites:
 
-- Python 3.7+
+- Python 3.8+
 
 Run tests with: `make test`
 
