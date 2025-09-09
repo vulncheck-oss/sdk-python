@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.21"
+__version__ = "0.0.22"
 
 # Define package exports
 __all__ = [
@@ -159,6 +159,7 @@ __all__ = [
     "AdvisoryCERTEUAdvisory",
     "AdvisoryCESA",
     "AdvisoryCISAAlert",
+    "AdvisoryCISControl",
     "AdvisoryCNNVDEntryJSON",
     "AdvisoryCNVDBulletin",
     "AdvisoryCNVDFlaw",
@@ -446,6 +447,7 @@ __all__ = [
     "AdvisoryNEC",
     "AdvisoryNHS",
     "AdvisoryNI",
+    "AdvisoryNISTControl",
     "AdvisoryNTP",
     "AdvisoryNVD20CVECPEMatch",
     "AdvisoryNVD20Configuration",
@@ -780,7 +782,9 @@ __all__ = [
     "ApiInitialAccessArtifact",
     "ApiMitreAttackTech",
     "ApiMitreAttackToCVE",
+    "ApiMitreD3fendTechnique",
     "ApiMitreDetectionTech",
+    "ApiMitreMitigation2D3fendMapping",
     "ApiMitreMitigationTech",
     "ApiNVD20CPEMatch",
     "ApiNVD20CPEName",
@@ -1441,6 +1445,7 @@ from vulncheck_sdk.models.advisory_cbl_mariner import AdvisoryCBLMariner as Advi
 from vulncheck_sdk.models.advisory_certeu_advisory import AdvisoryCERTEUAdvisory as AdvisoryCERTEUAdvisory
 from vulncheck_sdk.models.advisory_cesa import AdvisoryCESA as AdvisoryCESA
 from vulncheck_sdk.models.advisory_cisa_alert import AdvisoryCISAAlert as AdvisoryCISAAlert
+from vulncheck_sdk.models.advisory_cis_control import AdvisoryCISControl as AdvisoryCISControl
 from vulncheck_sdk.models.advisory_cnnvd_entry_json import AdvisoryCNNVDEntryJSON as AdvisoryCNNVDEntryJSON
 from vulncheck_sdk.models.advisory_cnvd_bulletin import AdvisoryCNVDBulletin as AdvisoryCNVDBulletin
 from vulncheck_sdk.models.advisory_cnvd_flaw import AdvisoryCNVDFlaw as AdvisoryCNVDFlaw
@@ -1728,6 +1733,7 @@ from vulncheck_sdk.models.advisory_ncsccve import AdvisoryNCSCCVE as AdvisoryNCS
 from vulncheck_sdk.models.advisory_nec import AdvisoryNEC as AdvisoryNEC
 from vulncheck_sdk.models.advisory_nhs import AdvisoryNHS as AdvisoryNHS
 from vulncheck_sdk.models.advisory_ni import AdvisoryNI as AdvisoryNI
+from vulncheck_sdk.models.advisory_nist_control import AdvisoryNISTControl as AdvisoryNISTControl
 from vulncheck_sdk.models.advisory_ntp import AdvisoryNTP as AdvisoryNTP
 from vulncheck_sdk.models.advisory_nvd20_cvecpe_match import AdvisoryNVD20CVECPEMatch as AdvisoryNVD20CVECPEMatch
 from vulncheck_sdk.models.advisory_nvd20_configuration import AdvisoryNVD20Configuration as AdvisoryNVD20Configuration
@@ -2062,7 +2068,9 @@ from vulncheck_sdk.models.api_initial_access import ApiInitialAccess as ApiIniti
 from vulncheck_sdk.models.api_initial_access_artifact import ApiInitialAccessArtifact as ApiInitialAccessArtifact
 from vulncheck_sdk.models.api_mitre_attack_tech import ApiMitreAttackTech as ApiMitreAttackTech
 from vulncheck_sdk.models.api_mitre_attack_to_cve import ApiMitreAttackToCVE as ApiMitreAttackToCVE
+from vulncheck_sdk.models.api_mitre_d3fend_technique import ApiMitreD3fendTechnique as ApiMitreD3fendTechnique
 from vulncheck_sdk.models.api_mitre_detection_tech import ApiMitreDetectionTech as ApiMitreDetectionTech
+from vulncheck_sdk.models.api_mitre_mitigation2_d3fend_mapping import ApiMitreMitigation2D3fendMapping as ApiMitreMitigation2D3fendMapping
 from vulncheck_sdk.models.api_mitre_mitigation_tech import ApiMitreMitigationTech as ApiMitreMitigationTech
 from vulncheck_sdk.models.api_nvd20_cpe_match import ApiNVD20CPEMatch as ApiNVD20CPEMatch
 from vulncheck_sdk.models.api_nvd20_cpe_name import ApiNVD20CPEName as ApiNVD20CPEName

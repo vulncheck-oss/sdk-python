@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**d3fendmapping** | [**List[ApiMitreMitigation2D3fendMapping]**](ApiMitreMitigation2D3fendMapping.md) |  | [optional] 
 **detections** | [**List[ApiMitreDetectionTech]**](ApiMitreDetectionTech.md) |  | [optional] 
 **domain** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 

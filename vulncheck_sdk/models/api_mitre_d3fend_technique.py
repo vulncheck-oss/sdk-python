@@ -18,26 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.models.advisory_mitre_attack_ref import AdvisoryMitreAttackRef
-from vulncheck_sdk.models.advisory_nist_control import AdvisoryNISTControl
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryMitreAttackTechWithRefs(BaseModel):
+class ApiMitreD3fendTechnique(BaseModel):
     """
-    AdvisoryMitreAttackTechWithRefs
+    ApiMitreD3fendTechnique
     """ # noqa: E501
-    domain: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    nist_controls: Optional[List[AdvisoryNISTControl]] = None
-    references: Optional[List[AdvisoryMitreAttackRef]] = None
-    subtechnique: Optional[StrictBool] = None
-    tactics: Optional[List[StrictStr]] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["domain", "id", "name", "nist_controls", "references", "subtechnique", "tactics", "url"]
+    __properties: ClassVar[List[str]] = ["id", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -57,7 +49,7 @@ class AdvisoryMitreAttackTechWithRefs(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryMitreAttackTechWithRefs from a JSON string"""
+        """Create an instance of ApiMitreD3fendTechnique from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -78,25 +70,11 @@ class AdvisoryMitreAttackTechWithRefs(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in nist_controls (list)
-        _items = []
-        if self.nist_controls:
-            for _item_nist_controls in self.nist_controls:
-                if _item_nist_controls:
-                    _items.append(_item_nist_controls.to_dict())
-            _dict['nist_controls'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in references (list)
-        _items = []
-        if self.references:
-            for _item_references in self.references:
-                if _item_references:
-                    _items.append(_item_references.to_dict())
-            _dict['references'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryMitreAttackTechWithRefs from a dict"""
+        """Create an instance of ApiMitreD3fendTechnique from a dict"""
         if obj is None:
             return None
 
@@ -104,13 +82,7 @@ class AdvisoryMitreAttackTechWithRefs(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "domain": obj.get("domain"),
             "id": obj.get("id"),
-            "name": obj.get("name"),
-            "nist_controls": [AdvisoryNISTControl.from_dict(_item) for _item in obj["nist_controls"]] if obj.get("nist_controls") is not None else None,
-            "references": [AdvisoryMitreAttackRef.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
-            "subtechnique": obj.get("subtechnique"),
-            "tactics": obj.get("tactics"),
             "url": obj.get("url")
         })
         return _obj

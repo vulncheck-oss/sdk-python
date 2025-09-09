@@ -43,7 +43,8 @@ class TestAdvisoryCACyberCentreAdvisory(unittest.TestCase):
                 date_added = '',
                 html_url = '',
                 serial_number = '',
-                title = ''
+                title = '',
+                updated_at = ''
             )
         else:
             return AdvisoryCACyberCentreAdvisory(

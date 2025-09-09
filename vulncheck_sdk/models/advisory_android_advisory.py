@@ -38,7 +38,9 @@ class AdvisoryAndroidAdvisory(BaseModel):
     published: Optional[StrictStr] = None
     references: Optional[List[AdvisoryAndroidReference]] = None
     summary: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected", "aliases", "cve", "date_added", "id", "modified", "published", "references", "summary"]
+    updated_at: Optional[StrictStr] = None
+    url: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["affected", "aliases", "cve", "date_added", "id", "modified", "published", "references", "summary", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,7 +115,9 @@ class AdvisoryAndroidAdvisory(BaseModel):
             "modified": obj.get("modified"),
             "published": obj.get("published"),
             "references": [AdvisoryAndroidReference.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
-            "summary": obj.get("summary")
+            "summary": obj.get("summary"),
+            "updated_at": obj.get("updated_at"),
+            "url": obj.get("url")
         })
         return _obj
 

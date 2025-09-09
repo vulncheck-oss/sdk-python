@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **published** | **str** |  | [optional] 
 **references** | [**List[AdvisoryAndroidReference]**](AdvisoryAndroidReference.md) |  | [optional] 
 **summary** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
 
 ## Example
 

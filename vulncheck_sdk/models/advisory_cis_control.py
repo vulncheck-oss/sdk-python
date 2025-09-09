@@ -23,20 +23,14 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryZoom(BaseModel):
+class AdvisoryCISControl(BaseModel):
     """
-    AdvisoryZoom
+    AdvisoryCISControl
     """ # noqa: E501
-    affected: Optional[List[StrictStr]] = None
-    cve: Optional[List[StrictStr]] = None
-    cvss_score: Optional[StrictStr] = None
-    cvss_vector: Optional[StrictStr] = None
-    date_added: Optional[StrictStr] = None
-    title: Optional[StrictStr] = None
-    updated_at: Optional[StrictStr] = None
-    url: Optional[StrictStr] = None
-    zsb: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected", "cve", "cvss_score", "cvss_vector", "date_added", "title", "updated_at", "url", "zsb"]
+    cis_control_description: Optional[StrictStr] = None
+    cis_control_id: Optional[StrictStr] = None
+    cis_control_name: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["cis_control_description", "cis_control_id", "cis_control_name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -56,7 +50,7 @@ class AdvisoryZoom(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryZoom from a JSON string"""
+        """Create an instance of AdvisoryCISControl from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -81,7 +75,7 @@ class AdvisoryZoom(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryZoom from a dict"""
+        """Create an instance of AdvisoryCISControl from a dict"""
         if obj is None:
             return None
 
@@ -89,15 +83,9 @@ class AdvisoryZoom(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "affected": obj.get("affected"),
-            "cve": obj.get("cve"),
-            "cvss_score": obj.get("cvss_score"),
-            "cvss_vector": obj.get("cvss_vector"),
-            "date_added": obj.get("date_added"),
-            "title": obj.get("title"),
-            "updated_at": obj.get("updated_at"),
-            "url": obj.get("url"),
-            "zsb": obj.get("zsb")
+            "cis_control_description": obj.get("cis_control_description"),
+            "cis_control_id": obj.get("cis_control_id"),
+            "cis_control_name": obj.get("cis_control_name")
         })
         return _obj
 

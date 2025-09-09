@@ -240,9 +240,18 @@ class TestRenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination(u
                                 ], ), 
                         mitre_attack_techniques = [
                             vulncheck_sdk.models.api/mitre_attack_tech.api.MitreAttackTech(
+                                d3fendmapping = [
+                                    vulncheck_sdk.models.api/mitre_mitigation2_d3fend_mapping.api.MitreMitigation2D3fendMapping(
+                                        d3fendtechniques = [
+                                            vulncheck_sdk.models.api/mitre_d3fend_technique.api.MitreD3fendTechnique(
+                                                id = '', 
+                                                url = '', )
+                                            ], 
+                                        id = '', )
+                                    ], 
                                 detections = [
                                     vulncheck_sdk.models.api/mitre_detection_tech.api.MitreDetectionTech(
-                                        dastacomponent = '', 
+                                        datacomponent = '', 
                                         datasource = '', 
                                         detects = '', 
                                         id = '', )

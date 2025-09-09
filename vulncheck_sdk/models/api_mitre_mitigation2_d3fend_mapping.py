@@ -20,23 +20,17 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.api_mitre_d3fend_technique import ApiMitreD3fendTechnique
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryZoom(BaseModel):
+class ApiMitreMitigation2D3fendMapping(BaseModel):
     """
-    AdvisoryZoom
+    ApiMitreMitigation2D3fendMapping
     """ # noqa: E501
-    affected: Optional[List[StrictStr]] = None
-    cve: Optional[List[StrictStr]] = None
-    cvss_score: Optional[StrictStr] = None
-    cvss_vector: Optional[StrictStr] = None
-    date_added: Optional[StrictStr] = None
-    title: Optional[StrictStr] = None
-    updated_at: Optional[StrictStr] = None
-    url: Optional[StrictStr] = None
-    zsb: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected", "cve", "cvss_score", "cvss_vector", "date_added", "title", "updated_at", "url", "zsb"]
+    d3fendtechniques: Optional[List[ApiMitreD3fendTechnique]] = None
+    id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["d3fendtechniques", "id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -56,7 +50,7 @@ class AdvisoryZoom(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryZoom from a JSON string"""
+        """Create an instance of ApiMitreMitigation2D3fendMapping from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,11 +71,18 @@ class AdvisoryZoom(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in d3fendtechniques (list)
+        _items = []
+        if self.d3fendtechniques:
+            for _item_d3fendtechniques in self.d3fendtechniques:
+                if _item_d3fendtechniques:
+                    _items.append(_item_d3fendtechniques.to_dict())
+            _dict['d3fendtechniques'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryZoom from a dict"""
+        """Create an instance of ApiMitreMitigation2D3fendMapping from a dict"""
         if obj is None:
             return None
 
@@ -89,15 +90,8 @@ class AdvisoryZoom(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "affected": obj.get("affected"),
-            "cve": obj.get("cve"),
-            "cvss_score": obj.get("cvss_score"),
-            "cvss_vector": obj.get("cvss_vector"),
-            "date_added": obj.get("date_added"),
-            "title": obj.get("title"),
-            "updated_at": obj.get("updated_at"),
-            "url": obj.get("url"),
-            "zsb": obj.get("zsb")
+            "d3fendtechniques": [ApiMitreD3fendTechnique.from_dict(_item) for _item in obj["d3fendtechniques"]] if obj.get("d3fendtechniques") is not None else None,
+            "id": obj.get("id")
         })
         return _obj
 

@@ -20,23 +20,19 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.advisory_cis_control import AdvisoryCISControl
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryZoom(BaseModel):
+class AdvisoryNISTControl(BaseModel):
     """
-    AdvisoryZoom
+    AdvisoryNISTControl
     """ # noqa: E501
-    affected: Optional[List[StrictStr]] = None
-    cve: Optional[List[StrictStr]] = None
-    cvss_score: Optional[StrictStr] = None
-    cvss_vector: Optional[StrictStr] = None
-    date_added: Optional[StrictStr] = None
-    title: Optional[StrictStr] = None
-    updated_at: Optional[StrictStr] = None
-    url: Optional[StrictStr] = None
-    zsb: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected", "cve", "cvss_score", "cvss_vector", "date_added", "title", "updated_at", "url", "zsb"]
+    cis_controls: Optional[List[AdvisoryCISControl]] = None
+    nist_control_family: Optional[StrictStr] = None
+    nist_control_id: Optional[StrictStr] = None
+    nist_control_name: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["cis_controls", "nist_control_family", "nist_control_id", "nist_control_name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -56,7 +52,7 @@ class AdvisoryZoom(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryZoom from a JSON string"""
+        """Create an instance of AdvisoryNISTControl from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,11 +73,18 @@ class AdvisoryZoom(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in cis_controls (list)
+        _items = []
+        if self.cis_controls:
+            for _item_cis_controls in self.cis_controls:
+                if _item_cis_controls:
+                    _items.append(_item_cis_controls.to_dict())
+            _dict['cis_controls'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryZoom from a dict"""
+        """Create an instance of AdvisoryNISTControl from a dict"""
         if obj is None:
             return None
 
@@ -89,15 +92,10 @@ class AdvisoryZoom(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "affected": obj.get("affected"),
-            "cve": obj.get("cve"),
-            "cvss_score": obj.get("cvss_score"),
-            "cvss_vector": obj.get("cvss_vector"),
-            "date_added": obj.get("date_added"),
-            "title": obj.get("title"),
-            "updated_at": obj.get("updated_at"),
-            "url": obj.get("url"),
-            "zsb": obj.get("zsb")
+            "cis_controls": [AdvisoryCISControl.from_dict(_item) for _item in obj["cis_controls"]] if obj.get("cis_controls") is not None else None,
+            "nist_control_family": obj.get("nist_control_family"),
+            "nist_control_id": obj.get("nist_control_id"),
+            "nist_control_name": obj.get("nist_control_name")
         })
         return _obj
 
