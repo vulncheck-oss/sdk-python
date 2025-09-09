@@ -27,11 +27,11 @@ class ApiMitreDetectionTech(BaseModel):
     """
     ApiMitreDetectionTech
     """ # noqa: E501
-    dastacomponent: Optional[StrictStr] = None
+    datacomponent: Optional[StrictStr] = None
     datasource: Optional[StrictStr] = None
     detects: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["dastacomponent", "datasource", "detects", "id"]
+    __properties: ClassVar[List[str]] = ["datacomponent", "datasource", "detects", "id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,7 +84,7 @@ class ApiMitreDetectionTech(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "dastacomponent": obj.get("dastacomponent"),
+            "datacomponent": obj.get("datacomponent"),
             "datasource": obj.get("datasource"),
             "detects": obj.get("detects"),
             "id": obj.get("id")

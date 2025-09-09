@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **html_url** | **str** |  | [optional] 
 **serial_number** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 

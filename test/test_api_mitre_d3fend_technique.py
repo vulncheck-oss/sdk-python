@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.api_mitre_detection_tech import ApiMitreDetectionTech
+from vulncheck_sdk.models.api_mitre_d3fend_technique import ApiMitreD3fendTechnique
 
-class TestApiMitreDetectionTech(unittest.TestCase):
-    """ApiMitreDetectionTech unit test stubs"""
+class TestApiMitreD3fendTechnique(unittest.TestCase):
+    """ApiMitreD3fendTechnique unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,28 +26,26 @@ class TestApiMitreDetectionTech(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ApiMitreDetectionTech:
-        """Test ApiMitreDetectionTech
+    def make_instance(self, include_optional) -> ApiMitreD3fendTechnique:
+        """Test ApiMitreD3fendTechnique
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ApiMitreDetectionTech`
+        # uncomment below to create an instance of `ApiMitreD3fendTechnique`
         """
-        model = ApiMitreDetectionTech()
+        model = ApiMitreD3fendTechnique()
         if include_optional:
-            return ApiMitreDetectionTech(
-                datacomponent = '',
-                datasource = '',
-                detects = '',
-                id = ''
+            return ApiMitreD3fendTechnique(
+                id = '',
+                url = ''
             )
         else:
-            return ApiMitreDetectionTech(
+            return ApiMitreD3fendTechnique(
         )
         """
 
-    def testApiMitreDetectionTech(self):
-        """Test ApiMitreDetectionTech"""
+    def testApiMitreD3fendTechnique(self):
+        """Test ApiMitreD3fendTechnique"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

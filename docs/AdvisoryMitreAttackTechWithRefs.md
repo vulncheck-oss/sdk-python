@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **domain** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**nist_controls** | [**List[AdvisoryNISTControl]**](AdvisoryNISTControl.md) |  | [optional] 
 **references** | [**List[AdvisoryMitreAttackRef]**](AdvisoryMitreAttackRef.md) |  | [optional] 
 **subtechnique** | **bool** |  | [optional] 
 **tactics** | **List[str]** |  | [optional] 

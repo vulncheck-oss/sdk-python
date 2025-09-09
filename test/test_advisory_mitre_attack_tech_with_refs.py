@@ -39,6 +39,18 @@ class TestAdvisoryMitreAttackTechWithRefs(unittest.TestCase):
                 domain = '',
                 id = '',
                 name = '',
+                nist_controls = [
+                    vulncheck_sdk.models.advisory/nist_control.advisory.NISTControl(
+                        cis_controls = [
+                            vulncheck_sdk.models.advisory/cis_control.advisory.CISControl(
+                                cis_control_description = '', 
+                                cis_control_id = '', 
+                                cis_control_name = '', )
+                            ], 
+                        nist_control_family = '', 
+                        nist_control_id = '', 
+                        nist_control_name = '', )
+                    ],
                 references = [
                     vulncheck_sdk.models.advisory/mitre_attack_ref.advisory.MitreAttackRef(
                         date_added = '', 

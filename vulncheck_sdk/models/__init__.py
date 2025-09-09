@@ -144,6 +144,7 @@ from vulncheck_sdk.models.advisory_cbl_mariner import AdvisoryCBLMariner
 from vulncheck_sdk.models.advisory_certeu_advisory import AdvisoryCERTEUAdvisory
 from vulncheck_sdk.models.advisory_cesa import AdvisoryCESA
 from vulncheck_sdk.models.advisory_cisa_alert import AdvisoryCISAAlert
+from vulncheck_sdk.models.advisory_cis_control import AdvisoryCISControl
 from vulncheck_sdk.models.advisory_cnnvd_entry_json import AdvisoryCNNVDEntryJSON
 from vulncheck_sdk.models.advisory_cnvd_bulletin import AdvisoryCNVDBulletin
 from vulncheck_sdk.models.advisory_cnvd_flaw import AdvisoryCNVDFlaw
@@ -431,6 +432,7 @@ from vulncheck_sdk.models.advisory_ncsccve import AdvisoryNCSCCVE
 from vulncheck_sdk.models.advisory_nec import AdvisoryNEC
 from vulncheck_sdk.models.advisory_nhs import AdvisoryNHS
 from vulncheck_sdk.models.advisory_ni import AdvisoryNI
+from vulncheck_sdk.models.advisory_nist_control import AdvisoryNISTControl
 from vulncheck_sdk.models.advisory_ntp import AdvisoryNTP
 from vulncheck_sdk.models.advisory_nvd20_cvecpe_match import AdvisoryNVD20CVECPEMatch
 from vulncheck_sdk.models.advisory_nvd20_configuration import AdvisoryNVD20Configuration
@@ -765,7 +767,9 @@ from vulncheck_sdk.models.api_initial_access import ApiInitialAccess
 from vulncheck_sdk.models.api_initial_access_artifact import ApiInitialAccessArtifact
 from vulncheck_sdk.models.api_mitre_attack_tech import ApiMitreAttackTech
 from vulncheck_sdk.models.api_mitre_attack_to_cve import ApiMitreAttackToCVE
+from vulncheck_sdk.models.api_mitre_d3fend_technique import ApiMitreD3fendTechnique
 from vulncheck_sdk.models.api_mitre_detection_tech import ApiMitreDetectionTech
+from vulncheck_sdk.models.api_mitre_mitigation2_d3fend_mapping import ApiMitreMitigation2D3fendMapping
 from vulncheck_sdk.models.api_mitre_mitigation_tech import ApiMitreMitigationTech
 from vulncheck_sdk.models.api_nvd20_cpe_match import ApiNVD20CPEMatch
 from vulncheck_sdk.models.api_nvd20_cpe_name import ApiNVD20CPEName

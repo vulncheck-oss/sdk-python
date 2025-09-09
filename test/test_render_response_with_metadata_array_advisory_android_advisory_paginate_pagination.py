@@ -110,7 +110,9 @@ class TestRenderResponseWithMetadataArrayAdvisoryAndroidAdvisoryPaginatePaginati
                                 type = '', 
                                 url = '', )
                             ], 
-                        summary = '', )
+                        summary = '', 
+                        updated_at = '', 
+                        url = '', )
                     ]
             )
         else:

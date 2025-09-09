@@ -36,9 +36,18 @@ class TestApiMitreAttackTech(unittest.TestCase):
         model = ApiMitreAttackTech()
         if include_optional:
             return ApiMitreAttackTech(
+                d3fendmapping = [
+                    vulncheck_sdk.models.api/mitre_mitigation2_d3fend_mapping.api.MitreMitigation2D3fendMapping(
+                        d3fendtechniques = [
+                            vulncheck_sdk.models.api/mitre_d3fend_technique.api.MitreD3fendTechnique(
+                                id = '', 
+                                url = '', )
+                            ], 
+                        id = '', )
+                    ],
                 detections = [
                     vulncheck_sdk.models.api/mitre_detection_tech.api.MitreDetectionTech(
-                        dastacomponent = '', 
+                        datacomponent = '', 
                         datasource = '', 
                         detects = '', 
                         id = '', )

@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.api_mitre_detection_tech import ApiMitreDetectionTech
+from vulncheck_sdk.models.advisory_cis_control import AdvisoryCISControl
 
-class TestApiMitreDetectionTech(unittest.TestCase):
-    """ApiMitreDetectionTech unit test stubs"""
+class TestAdvisoryCISControl(unittest.TestCase):
+    """AdvisoryCISControl unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,28 +26,27 @@ class TestApiMitreDetectionTech(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ApiMitreDetectionTech:
-        """Test ApiMitreDetectionTech
+    def make_instance(self, include_optional) -> AdvisoryCISControl:
+        """Test AdvisoryCISControl
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ApiMitreDetectionTech`
+        # uncomment below to create an instance of `AdvisoryCISControl`
         """
-        model = ApiMitreDetectionTech()
+        model = AdvisoryCISControl()
         if include_optional:
-            return ApiMitreDetectionTech(
-                datacomponent = '',
-                datasource = '',
-                detects = '',
-                id = ''
+            return AdvisoryCISControl(
+                cis_control_description = '',
+                cis_control_id = '',
+                cis_control_name = ''
             )
         else:
-            return ApiMitreDetectionTech(
+            return AdvisoryCISControl(
         )
         """
 
-    def testApiMitreDetectionTech(self):
-        """Test ApiMitreDetectionTech"""
+    def testAdvisoryCISControl(self):
+        """Test AdvisoryCISControl"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

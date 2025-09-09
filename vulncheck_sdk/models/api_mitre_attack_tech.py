@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.api_mitre_detection_tech import ApiMitreDetectionTech
+from vulncheck_sdk.models.api_mitre_mitigation2_d3fend_mapping import ApiMitreMitigation2D3fendMapping
 from vulncheck_sdk.models.api_mitre_mitigation_tech import ApiMitreMitigationTech
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,6 +30,7 @@ class ApiMitreAttackTech(BaseModel):
     """
     ApiMitreAttackTech
     """ # noqa: E501
+    d3fendmapping: Optional[List[ApiMitreMitigation2D3fendMapping]] = None
     detections: Optional[List[ApiMitreDetectionTech]] = None
     domain: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
@@ -37,7 +39,7 @@ class ApiMitreAttackTech(BaseModel):
     subtechnique: Optional[StrictBool] = None
     tactics: Optional[List[StrictStr]] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["detections", "domain", "id", "mitigations", "name", "subtechnique", "tactics", "url"]
+    __properties: ClassVar[List[str]] = ["d3fendmapping", "detections", "domain", "id", "mitigations", "name", "subtechnique", "tactics", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -78,6 +80,13 @@ class ApiMitreAttackTech(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in d3fendmapping (list)
+        _items = []
+        if self.d3fendmapping:
+            for _item_d3fendmapping in self.d3fendmapping:
+                if _item_d3fendmapping:
+                    _items.append(_item_d3fendmapping.to_dict())
+            _dict['d3fendmapping'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in detections (list)
         _items = []
         if self.detections:
@@ -104,6 +113,7 @@ class ApiMitreAttackTech(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "d3fendmapping": [ApiMitreMitigation2D3fendMapping.from_dict(_item) for _item in obj["d3fendmapping"]] if obj.get("d3fendmapping") is not None else None,
             "detections": [ApiMitreDetectionTech.from_dict(_item) for _item in obj["detections"]] if obj.get("detections") is not None else None,
             "domain": obj.get("domain"),
             "id": obj.get("id"),

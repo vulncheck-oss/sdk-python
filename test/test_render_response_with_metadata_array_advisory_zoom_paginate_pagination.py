@@ -73,6 +73,9 @@ class TestRenderResponseWithMetadataArrayAdvisoryZoomPaginatePagination(unittest
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/zoom.advisory.Zoom(
+                        affected = [
+                            ''
+                            ], 
                         cve = [
                             ''
                             ], 
@@ -80,6 +83,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryZoomPaginatePagination(unittest
                         cvss_vector = '', 
                         date_added = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', 
                         zsb = '', )
                     ]

@@ -33,7 +33,8 @@ class AdvisoryCACyberCentreAdvisory(BaseModel):
     html_url: Optional[StrictStr] = None
     serial_number: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["control_systems", "cve", "date_added", "html_url", "serial_number", "title"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["control_systems", "cve", "date_added", "html_url", "serial_number", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,7 +92,8 @@ class AdvisoryCACyberCentreAdvisory(BaseModel):
             "date_added": obj.get("date_added"),
             "html_url": obj.get("html_url"),
             "serial_number": obj.get("serial_number"),
-            "title": obj.get("title")
+            "title": obj.get("title"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

@@ -36,6 +36,9 @@ class TestAdvisoryZoom(unittest.TestCase):
         model = AdvisoryZoom()
         if include_optional:
             return AdvisoryZoom(
+                affected = [
+                    ''
+                    ],
                 cve = [
                     ''
                     ],
@@ -43,6 +46,7 @@ class TestAdvisoryZoom(unittest.TestCase):
                 cvss_vector = '',
                 date_added = '',
                 title = '',
+                updated_at = '',
                 url = '',
                 zsb = ''
             )

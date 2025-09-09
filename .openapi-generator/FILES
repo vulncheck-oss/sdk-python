@@ -128,6 +128,7 @@ docs/AdvisoryCBLMariner.md
 docs/AdvisoryCERTEUAdvisory.md
 docs/AdvisoryCESA.md
 docs/AdvisoryCISAAlert.md
+docs/AdvisoryCISControl.md
 docs/AdvisoryCNNVDEntryJSON.md
 docs/AdvisoryCNVDBulletin.md
 docs/AdvisoryCNVDFlaw.md
@@ -415,6 +416,7 @@ docs/AdvisoryNCSCCVE.md
 docs/AdvisoryNEC.md
 docs/AdvisoryNHS.md
 docs/AdvisoryNI.md
+docs/AdvisoryNISTControl.md
 docs/AdvisoryNTP.md
 docs/AdvisoryNVD20CVECPEMatch.md
 docs/AdvisoryNVD20Configuration.md
@@ -749,7 +751,9 @@ docs/ApiInitialAccess.md
 docs/ApiInitialAccessArtifact.md
 docs/ApiMitreAttackTech.md
 docs/ApiMitreAttackToCVE.md
+docs/ApiMitreD3fendTechnique.md
 docs/ApiMitreDetectionTech.md
+docs/ApiMitreMitigation2D3fendMapping.md
 docs/ApiMitreMitigationTech.md
 docs/ApiNVD20CPEMatch.md
 docs/ApiNVD20CPEName.md
@@ -1416,6 +1420,7 @@ test/test_advisory_chain_guard_sec_fix.py
 test/test_advisory_check_point.py
 test/test_advisory_chrome.py
 test/test_advisory_ciena.py
+test/test_advisory_cis_control.py
 test/test_advisory_cisa_alert.py
 test/test_advisory_cisa_csaf_adv.py
 test/test_advisory_cisco_advisory.py
@@ -1696,6 +1701,7 @@ test/test_advisory_nexpose.py
 test/test_advisory_nginx_advisory.py
 test/test_advisory_nhs.py
 test/test_advisory_ni.py
+test/test_advisory_nist_control.py
 test/test_advisory_node_author.py
 test/test_advisory_node_js.py
 test/test_advisory_node_security.py
@@ -2021,7 +2027,9 @@ test/test_api_initial_access.py
 test/test_api_initial_access_artifact.py
 test/test_api_mitre_attack_tech.py
 test/test_api_mitre_attack_to_cve.py
+test/test_api_mitre_d3fend_technique.py
 test/test_api_mitre_detection_tech.py
+test/test_api_mitre_mitigation2_d3fend_mapping.py
 test/test_api_mitre_mitigation_tech.py
 test/test_api_nodes.py
 test/test_api_normalized_exploit_v3_entry.py
@@ -2691,6 +2699,7 @@ vulncheck_sdk/models/advisory_chain_guard_sec_fix.py
 vulncheck_sdk/models/advisory_check_point.py
 vulncheck_sdk/models/advisory_chrome.py
 vulncheck_sdk/models/advisory_ciena.py
+vulncheck_sdk/models/advisory_cis_control.py
 vulncheck_sdk/models/advisory_cisa_alert.py
 vulncheck_sdk/models/advisory_cisa_csaf_adv.py
 vulncheck_sdk/models/advisory_cisco_advisory.py
@@ -2971,6 +2980,7 @@ vulncheck_sdk/models/advisory_nexpose.py
 vulncheck_sdk/models/advisory_nginx_advisory.py
 vulncheck_sdk/models/advisory_nhs.py
 vulncheck_sdk/models/advisory_ni.py
+vulncheck_sdk/models/advisory_nist_control.py
 vulncheck_sdk/models/advisory_node_author.py
 vulncheck_sdk/models/advisory_node_js.py
 vulncheck_sdk/models/advisory_node_security.py
@@ -3296,7 +3306,9 @@ vulncheck_sdk/models/api_initial_access.py
 vulncheck_sdk/models/api_initial_access_artifact.py
 vulncheck_sdk/models/api_mitre_attack_tech.py
 vulncheck_sdk/models/api_mitre_attack_to_cve.py
+vulncheck_sdk/models/api_mitre_d3fend_technique.py
 vulncheck_sdk/models/api_mitre_detection_tech.py
+vulncheck_sdk/models/api_mitre_mitigation2_d3fend_mapping.py
 vulncheck_sdk/models/api_mitre_mitigation_tech.py
 vulncheck_sdk/models/api_nodes.py
 vulncheck_sdk/models/api_normalized_exploit_v3_entry.py

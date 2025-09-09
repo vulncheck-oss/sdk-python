@@ -73,7 +73,9 @@ class TestAdvisoryAndroidAdvisory(unittest.TestCase):
                         type = '', 
                         url = '', )
                     ],
-                summary = ''
+                summary = '',
+                updated_at = '',
+                url = ''
             )
         else:
             return AdvisoryAndroidAdvisory(

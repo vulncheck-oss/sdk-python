@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dastacomponent** | **str** |  | [optional] 
+**datacomponent** | **str** |  | [optional] 
 **datasource** | **str** |  | [optional] 
 **detects** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 

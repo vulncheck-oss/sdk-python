@@ -5,11 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**affected** | **List[str]** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
 **cvss_score** | **str** |  | [optional] 
 **cvss_vector** | **str** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **zsb** | **str** |  | [optional] 
 
