@@ -7,7 +7,6 @@
 Bring the VulnCheck API to your Python applications.
 
 [![PyPI - Version](https://badge.fury.io/py/vulncheck-sdk.svg)](https://badge.fury.io/py/vulncheck-sdk)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/vulncheck-sdk.svg?logo=python&label=Python&logoColor=gold)](https://pypi.org/project/vulncheck-sdk/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626.svg?style=flat&logo=Jupyter)](https://jupyter.org/)
 
 <!--toc:start-->
