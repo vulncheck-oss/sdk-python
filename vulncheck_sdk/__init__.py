@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.22"
+__version__ = "0.0.23"
 
 # Define package exports
 __all__ = [
@@ -364,6 +364,7 @@ __all__ = [
     "AdvisoryJVNReference",
     "AdvisoryJenkins",
     "AdvisoryJetBrains",
+    "AdvisoryJohnsonControls",
     "AdvisoryJuniper",
     "AdvisoryK8S",
     "AdvisoryKEVCatalogVulnerability",
@@ -1061,6 +1062,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryJVNPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryJenkinsPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryJetBrainsPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryJohnsonControlsPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryJuniperPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryK8SPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryKEVCatalogVulnerabilityPaginatePagination",
@@ -1650,6 +1652,7 @@ from vulncheck_sdk.models.advisory_jvncpe import AdvisoryJVNCPE as AdvisoryJVNCP
 from vulncheck_sdk.models.advisory_jvn_reference import AdvisoryJVNReference as AdvisoryJVNReference
 from vulncheck_sdk.models.advisory_jenkins import AdvisoryJenkins as AdvisoryJenkins
 from vulncheck_sdk.models.advisory_jet_brains import AdvisoryJetBrains as AdvisoryJetBrains
+from vulncheck_sdk.models.advisory_johnson_controls import AdvisoryJohnsonControls as AdvisoryJohnsonControls
 from vulncheck_sdk.models.advisory_juniper import AdvisoryJuniper as AdvisoryJuniper
 from vulncheck_sdk.models.advisory_k8_s import AdvisoryK8S as AdvisoryK8S
 from vulncheck_sdk.models.advisory_kev_catalog_vulnerability import AdvisoryKEVCatalogVulnerability as AdvisoryKEVCatalogVulnerability
@@ -2347,6 +2350,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_jvn_advis
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_jvn_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryJVNPaginatePagination as RenderResponseWithMetadataArrayAdvisoryJVNPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_jenkins_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryJenkinsPaginatePagination as RenderResponseWithMetadataArrayAdvisoryJenkinsPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_jet_brains_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryJetBrainsPaginatePagination as RenderResponseWithMetadataArrayAdvisoryJetBrainsPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_johnson_controls_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryJohnsonControlsPaginatePagination as RenderResponseWithMetadataArrayAdvisoryJohnsonControlsPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_juniper_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryJuniperPaginatePagination as RenderResponseWithMetadataArrayAdvisoryJuniperPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_k8_s_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryK8SPaginatePagination as RenderResponseWithMetadataArrayAdvisoryK8SPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_kev_catalog_vulnerability_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryKEVCatalogVulnerabilityPaginatePagination as RenderResponseWithMetadataArrayAdvisoryKEVCatalogVulnerabilityPaginatePagination

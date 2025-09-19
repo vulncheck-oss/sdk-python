@@ -1665,6 +1665,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_johnson_controls_get(self) -> None:
+        """Test case for index_johnson_controls_get
+
+        Return vulnerability data stored in index \"johnson-controls\"
+        """
+        pass
+
     def test_index_juniper_get(self) -> None:
         """Test case for index_juniper_get
 
