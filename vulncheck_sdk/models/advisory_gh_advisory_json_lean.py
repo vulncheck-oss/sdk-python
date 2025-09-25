@@ -37,6 +37,7 @@ class AdvisoryGHAdvisoryJSONLean(BaseModel):
     cvss: Optional[AdvisoryGHCvss] = None
     cwes: Optional[AdvisoryCwes] = None
     database_id: Optional[StrictInt] = Field(default=None, alias="databaseId")
+    date_added: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     ghsa_id: Optional[StrictStr] = Field(default=None, alias="ghsaId")
     id: Optional[StrictStr] = None
@@ -49,9 +50,10 @@ class AdvisoryGHAdvisoryJSONLean(BaseModel):
     severity: Optional[StrictStr] = None
     summary: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
+    updated_at: Optional[StrictStr] = None
     vulnerabilities: Optional[AdvisoryGHVulnerabilities] = None
     withdrawn_at: Optional[StrictStr] = Field(default=None, alias="withdrawnAt")
-    __properties: ClassVar[List[str]] = ["classification", "cve", "cvss", "cwes", "databaseId", "description", "ghsaId", "id", "identifiers", "notificationsPermalink", "origin", "permalink", "publishedAt", "references", "severity", "summary", "updatedAt", "vulnerabilities", "withdrawnAt"]
+    __properties: ClassVar[List[str]] = ["classification", "cve", "cvss", "cwes", "databaseId", "date_added", "description", "ghsaId", "id", "identifiers", "notificationsPermalink", "origin", "permalink", "publishedAt", "references", "severity", "summary", "updatedAt", "updated_at", "vulnerabilities", "withdrawnAt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -132,6 +134,7 @@ class AdvisoryGHAdvisoryJSONLean(BaseModel):
             "cvss": AdvisoryGHCvss.from_dict(obj["cvss"]) if obj.get("cvss") is not None else None,
             "cwes": AdvisoryCwes.from_dict(obj["cwes"]) if obj.get("cwes") is not None else None,
             "databaseId": obj.get("databaseId"),
+            "date_added": obj.get("date_added"),
             "description": obj.get("description"),
             "ghsaId": obj.get("ghsaId"),
             "id": obj.get("id"),
@@ -144,6 +147,7 @@ class AdvisoryGHAdvisoryJSONLean(BaseModel):
             "severity": obj.get("severity"),
             "summary": obj.get("summary"),
             "updatedAt": obj.get("updatedAt"),
+            "updated_at": obj.get("updated_at"),
             "vulnerabilities": AdvisoryGHVulnerabilities.from_dict(obj["vulnerabilities"]) if obj.get("vulnerabilities") is not None else None,
             "withdrawnAt": obj.get("withdrawnAt")
         })

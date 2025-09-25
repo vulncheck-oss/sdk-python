@@ -85,6 +85,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryVulnCheckKEVPaginatePagination(
                         due_date = '', 
                         known_ransomware_campaign_use = '', 
                         product = '', 
+                        reported_exploited_by_vulncheck_canaries = True, 
                         required_action = '', 
                         short_description = '', 
                         vendor_project = '', 

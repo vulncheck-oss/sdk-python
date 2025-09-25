@@ -90,6 +90,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryGHAdvisoryJSONLeanPaginatePagin
                                 ], 
                             total_count = 56, ), 
                         database_id = 56, 
+                        date_added = '', 
                         description = '', 
                         ghsa_id = '', 
                         id = '', 
@@ -108,6 +109,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryGHAdvisoryJSONLeanPaginatePagin
                             ], 
                         severity = '', 
                         summary = '', 
+                        updated_at = '', 
                         updated_at = '', 
                         vulnerabilities = vulncheck_sdk.models.advisory/gh_vulnerabilities.advisory.GHVulnerabilities(
                             total_count = 56, ), 

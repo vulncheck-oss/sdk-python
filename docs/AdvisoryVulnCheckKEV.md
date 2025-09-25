@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **due_date** | **str** |  | [optional] 
 **known_ransomware_campaign_use** | **str** |  | [optional] 
 **product** | **str** |  | [optional] 
+**reported_exploited_by_vulncheck_canaries** | **bool** |  | [optional] 
 **required_action** | **str** |  | [optional] 
 **short_description** | **str** |  | [optional] 
 **vendor_project** | **str** |  | [optional] 

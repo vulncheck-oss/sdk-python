@@ -53,6 +53,7 @@ class TestAdvisoryGHAdvisoryJSONLean(unittest.TestCase):
                         ], 
                     total_count = 56, ),
                 database_id = 56,
+                date_added = '',
                 description = '',
                 ghsa_id = '',
                 id = '',
@@ -71,6 +72,7 @@ class TestAdvisoryGHAdvisoryJSONLean(unittest.TestCase):
                     ],
                 severity = '',
                 summary = '',
+                updated_at = '',
                 updated_at = '',
                 vulnerabilities = vulncheck_sdk.models.advisory/gh_vulnerabilities.advisory.GHVulnerabilities(
                     nodes = [

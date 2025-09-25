@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_reported_exploit import AdvisoryReportedExploit
 from vulncheck_sdk.models.advisory_xdb import AdvisoryXDB
@@ -37,13 +37,14 @@ class AdvisoryVulnCheckKEV(BaseModel):
     due_date: Optional[StrictStr] = Field(default=None, alias="dueDate")
     known_ransomware_campaign_use: Optional[StrictStr] = Field(default=None, alias="knownRansomwareCampaignUse")
     product: Optional[StrictStr] = None
+    reported_exploited_by_vulncheck_canaries: Optional[StrictBool] = None
     required_action: Optional[StrictStr] = None
     short_description: Optional[StrictStr] = Field(default=None, alias="shortDescription")
     vendor_project: Optional[StrictStr] = Field(default=None, alias="vendorProject")
     vulncheck_reported_exploitation: Optional[List[AdvisoryReportedExploit]] = None
     vulncheck_xdb: Optional[List[AdvisoryXDB]] = None
     vulnerability_name: Optional[StrictStr] = Field(default=None, alias="vulnerabilityName")
-    __properties: ClassVar[List[str]] = ["_timestamp", "cisa_date_added", "cve", "cwes", "date_added", "dueDate", "knownRansomwareCampaignUse", "product", "required_action", "shortDescription", "vendorProject", "vulncheck_reported_exploitation", "vulncheck_xdb", "vulnerabilityName"]
+    __properties: ClassVar[List[str]] = ["_timestamp", "cisa_date_added", "cve", "cwes", "date_added", "dueDate", "knownRansomwareCampaignUse", "product", "reported_exploited_by_vulncheck_canaries", "required_action", "shortDescription", "vendorProject", "vulncheck_reported_exploitation", "vulncheck_xdb", "vulnerabilityName"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -118,6 +119,7 @@ class AdvisoryVulnCheckKEV(BaseModel):
             "dueDate": obj.get("dueDate"),
             "knownRansomwareCampaignUse": obj.get("knownRansomwareCampaignUse"),
             "product": obj.get("product"),
+            "reported_exploited_by_vulncheck_canaries": obj.get("reported_exploited_by_vulncheck_canaries"),
             "required_action": obj.get("required_action"),
             "shortDescription": obj.get("shortDescription"),
             "vendorProject": obj.get("vendorProject"),
