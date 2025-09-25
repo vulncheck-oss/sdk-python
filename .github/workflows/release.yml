@@ -151,10 +151,10 @@ jobs:
           git tag -f v${{ steps.versions.outputs.current_version }}
           git push --force origin v${{ steps.versions.outputs.current_version }}
 
-      - name: Release
-        if: steps.check_tag.outputs.exists == 'false'
-        uses: softprops/action-gh-release@v2
-        with:
-          token: ${{ steps.generate_token.outputs.token }}
-          tag_name: v${{ steps.versions.outputs.current_version }}
-          # body_path: ${{ github.workspace }}/head/openapi-diff.md # FIX: https://github.com/vulncheck-oss/sdk-python/issues/76
+      # - name: Release
+      #   if: steps.check_tag.outputs.exists == 'false'
+      #   uses: softprops/action-gh-release@v2
+      #   with:
+      #     token: ${{ steps.generate_token.outputs.token }}
+      #     tag_name: v${{ steps.versions.outputs.current_version }}
+      #     body_path: ${{ github.workspace }}/head/openapi-diff.md # FIX: https://github.com/vulncheck-oss/sdk-python/issues/76
