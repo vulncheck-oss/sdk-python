@@ -115,20 +115,20 @@ jobs:
           echo "Found latest tag: $LATEST_TAG"
           echo "latest_tag=$LATEST_TAG" >> $GITHUB_OUTPUT
 
-      # FIX: https://github.com/vulncheck-oss/sdk-python/issues/76
-      # - name: Check out previous release
-      #   uses: actions/checkout@v4
-      #   with:
-      #     fetch-depth: 0
-      #     path: previous
-      #     ref: ${{ steps.versions.outputs.latest_tag }}
-      #     fetch-tags: true
-      # - name: Make temp openapi-diff file
-      #   run: touch ${{ github.workspace }}/head/openapi-diff.md
-      # - name: Run openapi-diff
-      #   uses: docker://openapitools/openapi-diff:latest
-      #   with:
-      #     args: previous/openapi.json head/openapi.json  --markdown head/openapi-diff.md
+      - name: Check out previous release
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          path: previous
+          ref: ${{ steps.versions.outputs.latest_tag }}
+          fetch-tags: true
+
+      - name: Make temp openapi-diff file
+        run: touch ${{ github.workspace }}/head/openapi-diff.md
+      - name: Run openapi-diff
+        uses: docker://openapitools/openapi-diff:latest
+        with:
+          args: previous/openapi.json head/openapi.json  --markdown head/openapi-diff.md
 
       - name: Check if tag exists
         id: check_tag
@@ -151,10 +151,10 @@ jobs:
           git tag -f v${{ steps.versions.outputs.current_version }}
           git push --force origin v${{ steps.versions.outputs.current_version }}
 
-      # - name: Release
-      #   if: steps.check_tag.outputs.exists == 'false'
-      #   uses: softprops/action-gh-release@v2
-      #   with:
-      #     token: ${{ steps.generate_token.outputs.token }}
-      #     tag_name: v${{ steps.versions.outputs.current_version }}
-      #     body_path: ${{ github.workspace }}/head/openapi-diff.md # FIX: https://github.com/vulncheck-oss/sdk-python/issues/76
+      - name: Release
+        if: steps.check_tag.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: ${{ github.workspace }}/head/openapi-diff.md
+          tag_name: v${{ steps.versions.outputs.current_version }}
+          token: ${{ steps.generate_token.outputs.token }}
