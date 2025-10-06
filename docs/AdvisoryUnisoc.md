@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **severity** | **str** |  | [optional] 
 **technology** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **vulnerability** | **str** |  | [optional] 
 

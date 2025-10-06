@@ -36,11 +36,16 @@ class TestAdvisoryMedtronicAdvisory(unittest.TestCase):
         model = AdvisoryMedtronicAdvisory()
         if include_optional:
             return AdvisoryMedtronicAdvisory(
+                affected_products = '',
                 cve = [
                     ''
                     ],
                 date_added = '',
                 description = '',
+                mitigation = '',
+                references = [
+                    ''
+                    ],
                 title = '',
                 updated_at = '',
                 url = ''

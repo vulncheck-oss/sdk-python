@@ -86,6 +86,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryUnisocPaginatePagination(unitte
                         severity = '', 
                         technology = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', 
                         vulnerability = '', )
                     ]

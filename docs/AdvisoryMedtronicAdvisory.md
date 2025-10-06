@@ -5,9 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**affected_products** | **str** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**mitigation** | **str** |  | [optional] 
+**references** | **List[str]** |  | [optional] 
 **title** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
