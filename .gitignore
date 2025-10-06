@@ -1,5 +1,4 @@
 node_modules/
-openapi.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
