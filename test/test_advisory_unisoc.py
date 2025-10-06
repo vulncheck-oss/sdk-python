@@ -49,6 +49,7 @@ class TestAdvisoryUnisoc(unittest.TestCase):
                 severity = '',
                 technology = '',
                 title = '',
+                updated_at = '',
                 url = '',
                 vulnerability = ''
             )

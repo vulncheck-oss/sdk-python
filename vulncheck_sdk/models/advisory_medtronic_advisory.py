@@ -27,13 +27,16 @@ class AdvisoryMedtronicAdvisory(BaseModel):
     """
     AdvisoryMedtronicAdvisory
     """ # noqa: E501
+    affected_products: Optional[StrictStr] = None
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
+    mitigation: Optional[StrictStr] = None
+    references: Optional[List[StrictStr]] = None
     title: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "description", "title", "updated_at", "url"]
+    __properties: ClassVar[List[str]] = ["affected_products", "cve", "date_added", "description", "mitigation", "references", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,9 +89,12 @@ class AdvisoryMedtronicAdvisory(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "affected_products": obj.get("affected_products"),
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "description": obj.get("description"),
+            "mitigation": obj.get("mitigation"),
+            "references": obj.get("references"),
             "title": obj.get("title"),
             "updated_at": obj.get("updated_at"),
             "url": obj.get("url")

@@ -73,11 +73,16 @@ class TestRenderResponseWithMetadataArrayAdvisoryMedtronicAdvisoryPaginatePagina
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/medtronic_advisory.advisory.MedtronicAdvisory(
+                        affected_products = '', 
                         cve = [
                             ''
                             ], 
                         date_added = '', 
                         description = '', 
+                        mitigation = '', 
+                        references = [
+                            ''
+                            ], 
                         title = '', 
                         updated_at = '', 
                         url = '', )

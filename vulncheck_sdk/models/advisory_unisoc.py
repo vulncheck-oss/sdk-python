@@ -38,9 +38,10 @@ class AdvisoryUnisoc(BaseModel):
     severity: Optional[StrictStr] = None
     technology: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     vulnerability: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["access_vector", "affected_chipsets", "affected_software", "cve", "date_added", "description", "rating", "score", "severity", "technology", "title", "url", "vulnerability"]
+    __properties: ClassVar[List[str]] = ["access_vector", "affected_chipsets", "affected_software", "cve", "date_added", "description", "rating", "score", "severity", "technology", "title", "updated_at", "url", "vulnerability"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,6 +105,7 @@ class AdvisoryUnisoc(BaseModel):
             "severity": obj.get("severity"),
             "technology": obj.get("technology"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url"),
             "vulnerability": obj.get("vulnerability")
         })
