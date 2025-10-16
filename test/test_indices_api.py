@@ -1770,6 +1770,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_lol_advs_get(self) -> None:
+        """Test case for index_lol_advs_get
+
+        Return vulnerability data stored in index \"lol-advs\"
+        """
+        pass
+
     def test_index_m_files_get(self) -> None:
         """Test case for index_m_files_get
 
