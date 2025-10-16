@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.24"
+__version__ = "0.0.25"
 
 # Define package exports
 __all__ = [
@@ -380,6 +380,7 @@ __all__ = [
     "AdvisoryLibreOffice",
     "AdvisoryLinux",
     "AdvisoryLogSource",
+    "AdvisoryLolAdvs",
     "AdvisoryMACert",
     "AdvisoryMAffected",
     "AdvisoryMBranch",
@@ -1075,6 +1076,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryLexmarkAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryLibreOfficePaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryLinuxPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryLolAdvsPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMACertPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMFilesPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryManageEngineAdvisoryPaginatePagination",
@@ -1668,6 +1670,7 @@ from vulncheck_sdk.models.advisory_lexmark_advisory import AdvisoryLexmarkAdviso
 from vulncheck_sdk.models.advisory_libre_office import AdvisoryLibreOffice as AdvisoryLibreOffice
 from vulncheck_sdk.models.advisory_linux import AdvisoryLinux as AdvisoryLinux
 from vulncheck_sdk.models.advisory_log_source import AdvisoryLogSource as AdvisoryLogSource
+from vulncheck_sdk.models.advisory_lol_advs import AdvisoryLolAdvs as AdvisoryLolAdvs
 from vulncheck_sdk.models.advisory_ma_cert import AdvisoryMACert as AdvisoryMACert
 from vulncheck_sdk.models.advisory_m_affected import AdvisoryMAffected as AdvisoryMAffected
 from vulncheck_sdk.models.advisory_m_branch import AdvisoryMBranch as AdvisoryMBranch
@@ -2363,6 +2366,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_lenovo_pa
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_lexmark_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryLexmarkAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryLexmarkAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_libre_office_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryLibreOfficePaginatePagination as RenderResponseWithMetadataArrayAdvisoryLibreOfficePaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_linux_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryLinuxPaginatePagination as RenderResponseWithMetadataArrayAdvisoryLinuxPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_lol_advs_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryLolAdvsPaginatePagination as RenderResponseWithMetadataArrayAdvisoryLolAdvsPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ma_cert_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMACertPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMACertPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_m_files_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMFilesPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMFilesPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_manage_engine_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryManageEngineAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryManageEngineAdvisoryPaginatePagination
