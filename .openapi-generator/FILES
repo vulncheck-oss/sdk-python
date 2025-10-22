@@ -745,6 +745,7 @@ docs/ApiCVSSV2.md
 docs/ApiCVSSV3.md
 docs/ApiCWE.md
 docs/ApiCategorizationExtended.md
+docs/ApiClientFingerprints.md
 docs/ApiConfigurations.md
 docs/ApiCveItems.md
 docs/ApiCveItemsExtended.md
@@ -761,6 +762,7 @@ docs/ApiExploitsChangelog.md
 docs/ApiExploitsTrending.md
 docs/ApiExploitsV3Count.md
 docs/ApiExploitsV3Timeline.md
+docs/ApiHTTPDetails.md
 docs/ApiImpact.md
 docs/ApiImpactExtended.md
 docs/ApiInitialAccess.md
@@ -822,6 +824,7 @@ docs/ApiTemporalCVSSV3.md
 docs/ApiTemporalMetricV2.md
 docs/ApiTemporalMetricV3.md
 docs/ApiUpdate.md
+docs/ApiVulnCheckCanary.md
 docs/ApiVulnerabilityAlias.md
 docs/EndpointsApi.md
 docs/IndicesApi.md
@@ -1282,6 +1285,7 @@ docs/RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination.md
 docs/RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination.md
 docs/RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination.md
 docs/RenderResponseWithMetadataArrayApiUpdatePaginatePagination.md
+docs/RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination.md
 docs/RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination.md
 docs/RenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination.md
 docs/RenderResponseWithMetadataArrayStringV3controllersResponseMetadata.md
@@ -2033,6 +2037,7 @@ test/test_advisory_zyxel.py
 test/test_api_base_metric_v2.py
 test/test_api_base_metric_v3.py
 test/test_api_categorization_extended.py
+test/test_api_client_fingerprints.py
 test/test_api_configurations.py
 test/test_api_cpe.py
 test/test_api_cpe_match.py
@@ -2059,6 +2064,7 @@ test/test_api_exploits_changelog.py
 test/test_api_exploits_trending.py
 test/test_api_exploits_v3_count.py
 test/test_api_exploits_v3_timeline.py
+test/test_api_http_details.py
 test/test_api_impact.py
 test/test_api_impact_extended.py
 test/test_api_initial_access.py
@@ -2120,6 +2126,7 @@ test/test_api_temporal_cvssv3.py
 test/test_api_temporal_metric_v2.py
 test/test_api_temporal_metric_v3.py
 test/test_api_update.py
+test/test_api_vuln_check_canary.py
 test/test_api_vulnerability_alias.py
 test/test_endpoints_api.py
 test/test_indices_api.py
@@ -2580,6 +2587,7 @@ test/test_render_response_with_metadata_array_api_nvd20_cve_extended_paginate_pa
 test/test_render_response_with_metadata_array_api_nvd20_cve_paginate_pagination.py
 test/test_render_response_with_metadata_array_api_oss_package_paginate_pagination.py
 test/test_render_response_with_metadata_array_api_update_paginate_pagination.py
+test/test_render_response_with_metadata_array_api_vuln_check_canary_paginate_pagination.py
 test/test_render_response_with_metadata_array_api_vulnerability_alias_paginate_pagination.py
 test/test_render_response_with_metadata_array_purls_purl_response_paginate_pagination.py
 test/test_render_response_with_metadata_array_string_v3controllers_response_metadata.py
@@ -3334,6 +3342,7 @@ vulncheck_sdk/models/advisory_zyxel.py
 vulncheck_sdk/models/api_base_metric_v2.py
 vulncheck_sdk/models/api_base_metric_v3.py
 vulncheck_sdk/models/api_categorization_extended.py
+vulncheck_sdk/models/api_client_fingerprints.py
 vulncheck_sdk/models/api_configurations.py
 vulncheck_sdk/models/api_cpe.py
 vulncheck_sdk/models/api_cpe_match.py
@@ -3360,6 +3369,7 @@ vulncheck_sdk/models/api_exploits_changelog.py
 vulncheck_sdk/models/api_exploits_trending.py
 vulncheck_sdk/models/api_exploits_v3_count.py
 vulncheck_sdk/models/api_exploits_v3_timeline.py
+vulncheck_sdk/models/api_http_details.py
 vulncheck_sdk/models/api_impact.py
 vulncheck_sdk/models/api_impact_extended.py
 vulncheck_sdk/models/api_initial_access.py
@@ -3421,6 +3431,7 @@ vulncheck_sdk/models/api_temporal_cvssv3.py
 vulncheck_sdk/models/api_temporal_metric_v2.py
 vulncheck_sdk/models/api_temporal_metric_v3.py
 vulncheck_sdk/models/api_update.py
+vulncheck_sdk/models/api_vuln_check_canary.py
 vulncheck_sdk/models/api_vulnerability_alias.py
 vulncheck_sdk/models/models_entitlements.py
 vulncheck_sdk/models/paginate_match.py
@@ -3879,6 +3890,7 @@ vulncheck_sdk/models/render_response_with_metadata_array_api_nvd20_cve_extended_
 vulncheck_sdk/models/render_response_with_metadata_array_api_nvd20_cve_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_api_oss_package_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_api_update_paginate_pagination.py
+vulncheck_sdk/models/render_response_with_metadata_array_api_vuln_check_canary_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_api_vulnerability_alias_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_purls_purl_response_paginate_pagination.py
 vulncheck_sdk/models/render_response_with_metadata_array_string_v3controllers_response_metadata.py
