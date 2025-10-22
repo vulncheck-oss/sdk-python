@@ -783,6 +783,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_cisco_known_good_values_get(self) -> None:
+        """Test case for index_cisco_known_good_values_get
+
+        Return vulnerability data stored in index \"cisco-known-good-values\"
+        """
+        pass
+
     def test_index_cisco_talos_get(self) -> None:
         """Test case for index_cisco_talos_get
 
@@ -1294,6 +1301,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_ghsa_get(self) -> None:
+        """Test case for index_ghsa_get
+
+        Return vulnerability data stored in index \"ghsa\"
+        """
+        pass
+
     def test_index_gigabyte_get(self) -> None:
         """Test case for index_gigabyte_get
 
@@ -1788,6 +1802,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_macert_get
 
         Return vulnerability data stored in index \"macert\"
+        """
+        pass
+
+    def test_index_malicious_packages_get(self) -> None:
+        """Test case for index_malicious_packages_get
+
+        Return vulnerability data stored in index \"malicious-packages\"
         """
         pass
 
@@ -2327,6 +2348,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_php_my_admin_get
 
         Return vulnerability data stored in index \"php-my-admin\"
+        """
+        pass
+
+    def test_index_pkcert_get(self) -> None:
+        """Test case for index_pkcert_get
+
+        Return vulnerability data stored in index \"pkcert\"
         """
         pass
 

@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.25"
+__version__ = "0.0.26"
 
 # Define package exports
 __all__ = [
@@ -202,6 +202,7 @@ __all__ = [
     "AdvisoryCisaCsafAdv",
     "AdvisoryCiscoAdvisory",
     "AdvisoryCiscoCSAF",
+    "AdvisoryCiscoKnownGoodValue",
     "AdvisoryCitrixAdvisory",
     "AdvisoryClarotyVulnerability",
     "AdvisoryCloudBees",
@@ -296,6 +297,15 @@ __all__ = [
     "AdvisoryGHNode",
     "AdvisoryGHPackage",
     "AdvisoryGHReference",
+    "AdvisoryGHSA",
+    "AdvisoryGHSAAffected",
+    "AdvisoryGHSADatabaseSpecific",
+    "AdvisoryGHSAEcoSystemSpecific",
+    "AdvisoryGHSAEvent",
+    "AdvisoryGHSAPackage",
+    "AdvisoryGHSARange",
+    "AdvisoryGHSAReference",
+    "AdvisoryGHSASeverity",
     "AdvisoryGHVulnerabilities",
     "AdvisoryGMOCyberSecurity",
     "AdvisoryGallagher",
@@ -413,6 +423,7 @@ __all__ = [
     "AdvisoryMSDocumentTitle",
     "AdvisoryMVersion",
     "AdvisoryMVulnerability",
+    "AdvisoryMaliciousPackage",
     "AdvisoryManageEngine",
     "AdvisoryManageEngineAdvisory",
     "AdvisoryMbedTLS",
@@ -495,6 +506,7 @@ __all__ = [
     "AdvisoryOpengear",
     "AdvisoryOracleCPU",
     "AdvisoryOracleCPUCSAF",
+    "AdvisoryOriginalGHSA",
     "AdvisoryOvalCVE",
     "AdvisoryOvalReference",
     "AdvisoryOverride",
@@ -504,6 +516,7 @@ __all__ = [
     "AdvisoryOwnCloud",
     "AdvisoryPGFix",
     "AdvisoryPHPMyAdmin",
+    "AdvisoryPKCert",
     "AdvisoryPTC",
     "AdvisoryPTMDescriptions",
     "AdvisoryPackage",
@@ -564,6 +577,7 @@ __all__ = [
     "AdvisoryRoche",
     "AdvisoryRocheCVE",
     "AdvisoryRockwell",
+    "AdvisoryRockwellAffectedProduct",
     "AdvisoryRockyAdvisory",
     "AdvisoryRockyCve",
     "AdvisoryRockyErrata",
@@ -960,6 +974,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryCisaCsafAdvPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCiscoAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCiscoCSAFPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryCiscoKnownGoodValuePaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCitrixAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryClarotyVulnerabilityPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCloudBeesPaginatePagination",
@@ -1015,6 +1030,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryGEGasPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGEHealthcareAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGHAdvisoryJSONLeanPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryGHSAPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGMOCyberSecurityPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGallagherPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGenPaginatePagination",
@@ -1079,6 +1095,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryLolAdvsPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMACertPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMFilesPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryMaliciousPackagePaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryManageEngineAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMbedTLSPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMcAfeePaginatePagination",
@@ -1138,6 +1155,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryOracleCPUPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryOwnCloudPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryPHPMyAdminPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryPKCertPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryPTCPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryPacketstormExploitPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryPalantirPaginatePagination",
@@ -1492,6 +1510,7 @@ from vulncheck_sdk.models.advisory_ciena import AdvisoryCiena as AdvisoryCiena
 from vulncheck_sdk.models.advisory_cisa_csaf_adv import AdvisoryCisaCsafAdv as AdvisoryCisaCsafAdv
 from vulncheck_sdk.models.advisory_cisco_advisory import AdvisoryCiscoAdvisory as AdvisoryCiscoAdvisory
 from vulncheck_sdk.models.advisory_cisco_csaf import AdvisoryCiscoCSAF as AdvisoryCiscoCSAF
+from vulncheck_sdk.models.advisory_cisco_known_good_value import AdvisoryCiscoKnownGoodValue as AdvisoryCiscoKnownGoodValue
 from vulncheck_sdk.models.advisory_citrix_advisory import AdvisoryCitrixAdvisory as AdvisoryCitrixAdvisory
 from vulncheck_sdk.models.advisory_claroty_vulnerability import AdvisoryClarotyVulnerability as AdvisoryClarotyVulnerability
 from vulncheck_sdk.models.advisory_cloud_bees import AdvisoryCloudBees as AdvisoryCloudBees
@@ -1586,6 +1605,15 @@ from vulncheck_sdk.models.advisory_gh_identifier import AdvisoryGHIdentifier as 
 from vulncheck_sdk.models.advisory_gh_node import AdvisoryGHNode as AdvisoryGHNode
 from vulncheck_sdk.models.advisory_gh_package import AdvisoryGHPackage as AdvisoryGHPackage
 from vulncheck_sdk.models.advisory_gh_reference import AdvisoryGHReference as AdvisoryGHReference
+from vulncheck_sdk.models.advisory_ghsa import AdvisoryGHSA as AdvisoryGHSA
+from vulncheck_sdk.models.advisory_ghsa_affected import AdvisoryGHSAAffected as AdvisoryGHSAAffected
+from vulncheck_sdk.models.advisory_ghsa_database_specific import AdvisoryGHSADatabaseSpecific as AdvisoryGHSADatabaseSpecific
+from vulncheck_sdk.models.advisory_ghsa_eco_system_specific import AdvisoryGHSAEcoSystemSpecific as AdvisoryGHSAEcoSystemSpecific
+from vulncheck_sdk.models.advisory_ghsa_event import AdvisoryGHSAEvent as AdvisoryGHSAEvent
+from vulncheck_sdk.models.advisory_ghsa_package import AdvisoryGHSAPackage as AdvisoryGHSAPackage
+from vulncheck_sdk.models.advisory_ghsa_range import AdvisoryGHSARange as AdvisoryGHSARange
+from vulncheck_sdk.models.advisory_ghsa_reference import AdvisoryGHSAReference as AdvisoryGHSAReference
+from vulncheck_sdk.models.advisory_ghsa_severity import AdvisoryGHSASeverity as AdvisoryGHSASeverity
 from vulncheck_sdk.models.advisory_gh_vulnerabilities import AdvisoryGHVulnerabilities as AdvisoryGHVulnerabilities
 from vulncheck_sdk.models.advisory_gmo_cyber_security import AdvisoryGMOCyberSecurity as AdvisoryGMOCyberSecurity
 from vulncheck_sdk.models.advisory_gallagher import AdvisoryGallagher as AdvisoryGallagher
@@ -1703,6 +1731,7 @@ from vulncheck_sdk.models.advisory_mscvrf import AdvisoryMSCVRF as AdvisoryMSCVR
 from vulncheck_sdk.models.advisory_ms_document_title import AdvisoryMSDocumentTitle as AdvisoryMSDocumentTitle
 from vulncheck_sdk.models.advisory_m_version import AdvisoryMVersion as AdvisoryMVersion
 from vulncheck_sdk.models.advisory_m_vulnerability import AdvisoryMVulnerability as AdvisoryMVulnerability
+from vulncheck_sdk.models.advisory_malicious_package import AdvisoryMaliciousPackage as AdvisoryMaliciousPackage
 from vulncheck_sdk.models.advisory_manage_engine import AdvisoryManageEngine as AdvisoryManageEngine
 from vulncheck_sdk.models.advisory_manage_engine_advisory import AdvisoryManageEngineAdvisory as AdvisoryManageEngineAdvisory
 from vulncheck_sdk.models.advisory_mbed_tls import AdvisoryMbedTLS as AdvisoryMbedTLS
@@ -1785,6 +1814,7 @@ from vulncheck_sdk.models.advisory_open_stack import AdvisoryOpenStack as Adviso
 from vulncheck_sdk.models.advisory_opengear import AdvisoryOpengear as AdvisoryOpengear
 from vulncheck_sdk.models.advisory_oracle_cpu import AdvisoryOracleCPU as AdvisoryOracleCPU
 from vulncheck_sdk.models.advisory_oracle_cpucsaf import AdvisoryOracleCPUCSAF as AdvisoryOracleCPUCSAF
+from vulncheck_sdk.models.advisory_original_ghsa import AdvisoryOriginalGHSA as AdvisoryOriginalGHSA
 from vulncheck_sdk.models.advisory_oval_cve import AdvisoryOvalCVE as AdvisoryOvalCVE
 from vulncheck_sdk.models.advisory_oval_reference import AdvisoryOvalReference as AdvisoryOvalReference
 from vulncheck_sdk.models.advisory_override import AdvisoryOverride as AdvisoryOverride
@@ -1794,6 +1824,7 @@ from vulncheck_sdk.models.advisory_override_configuration import AdvisoryOverrid
 from vulncheck_sdk.models.advisory_own_cloud import AdvisoryOwnCloud as AdvisoryOwnCloud
 from vulncheck_sdk.models.advisory_pg_fix import AdvisoryPGFix as AdvisoryPGFix
 from vulncheck_sdk.models.advisory_phpmy_admin import AdvisoryPHPMyAdmin as AdvisoryPHPMyAdmin
+from vulncheck_sdk.models.advisory_pk_cert import AdvisoryPKCert as AdvisoryPKCert
 from vulncheck_sdk.models.advisory_ptc import AdvisoryPTC as AdvisoryPTC
 from vulncheck_sdk.models.advisory_ptm_descriptions import AdvisoryPTMDescriptions as AdvisoryPTMDescriptions
 from vulncheck_sdk.models.advisory_package import AdvisoryPackage as AdvisoryPackage
@@ -1854,6 +1885,7 @@ from vulncheck_sdk.models.advisory_rhel_cve import AdvisoryRhelCVE as AdvisoryRh
 from vulncheck_sdk.models.advisory_roche import AdvisoryRoche as AdvisoryRoche
 from vulncheck_sdk.models.advisory_roche_cve import AdvisoryRocheCVE as AdvisoryRocheCVE
 from vulncheck_sdk.models.advisory_rockwell import AdvisoryRockwell as AdvisoryRockwell
+from vulncheck_sdk.models.advisory_rockwell_affected_product import AdvisoryRockwellAffectedProduct as AdvisoryRockwellAffectedProduct
 from vulncheck_sdk.models.advisory_rocky_advisory import AdvisoryRockyAdvisory as AdvisoryRockyAdvisory
 from vulncheck_sdk.models.advisory_rocky_cve import AdvisoryRockyCve as AdvisoryRockyCve
 from vulncheck_sdk.models.advisory_rocky_errata import AdvisoryRockyErrata as AdvisoryRockyErrata
@@ -2250,6 +2282,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ciena_pag
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_cisa_csaf_adv_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCisaCsafAdvPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCisaCsafAdvPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_cisco_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCiscoAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCiscoAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_cisco_csaf_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCiscoCSAFPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCiscoCSAFPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_cisco_known_good_value_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCiscoKnownGoodValuePaginatePagination as RenderResponseWithMetadataArrayAdvisoryCiscoKnownGoodValuePaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_citrix_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCitrixAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCitrixAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_claroty_vulnerability_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryClarotyVulnerabilityPaginatePagination as RenderResponseWithMetadataArrayAdvisoryClarotyVulnerabilityPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_cloud_bees_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCloudBeesPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCloudBeesPaginatePagination
@@ -2305,6 +2338,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_gcp_pagin
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ge_gas_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGEGasPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGEGasPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ge_healthcare_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGEHealthcareAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGEHealthcareAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_gh_advisory_json_lean_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGHAdvisoryJSONLeanPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGHAdvisoryJSONLeanPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ghsa_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGHSAPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGHSAPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_gmo_cyber_security_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGMOCyberSecurityPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGMOCyberSecurityPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_gallagher_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGallagherPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGallagherPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_gen_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGenPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGenPaginatePagination
@@ -2369,6 +2403,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_linux_pag
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_lol_advs_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryLolAdvsPaginatePagination as RenderResponseWithMetadataArrayAdvisoryLolAdvsPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ma_cert_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMACertPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMACertPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_m_files_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMFilesPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMFilesPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_malicious_package_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMaliciousPackagePaginatePagination as RenderResponseWithMetadataArrayAdvisoryMaliciousPackagePaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_manage_engine_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryManageEngineAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryManageEngineAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_mbed_tls_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMbedTLSPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMbedTLSPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_mc_afee_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMcAfeePaginatePagination as RenderResponseWithMetadataArrayAdvisoryMcAfeePaginatePagination
@@ -2428,6 +2463,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_oracle_cp
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_oracle_cpu_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryOracleCPUPaginatePagination as RenderResponseWithMetadataArrayAdvisoryOracleCPUPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_own_cloud_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryOwnCloudPaginatePagination as RenderResponseWithMetadataArrayAdvisoryOwnCloudPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_phpmy_admin_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryPHPMyAdminPaginatePagination as RenderResponseWithMetadataArrayAdvisoryPHPMyAdminPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_pk_cert_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryPKCertPaginatePagination as RenderResponseWithMetadataArrayAdvisoryPKCertPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ptc_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryPTCPaginatePagination as RenderResponseWithMetadataArrayAdvisoryPTCPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_packetstorm_exploit_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryPacketstormExploitPaginatePagination as RenderResponseWithMetadataArrayAdvisoryPacketstormExploitPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_palantir_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryPalantirPaginatePagination as RenderResponseWithMetadataArrayAdvisoryPalantirPaginatePagination

@@ -110,7 +110,6 @@ class TestRenderResponseWithMetadataArrayAdvisoryGHAdvisoryJSONLeanPaginatePagin
                         severity = '', 
                         summary = '', 
                         updated_at = '', 
-                        updated_at = '', 
                         vulnerabilities = vulncheck_sdk.models.advisory/gh_vulnerabilities.advisory.GHVulnerabilities(
                             total_count = 56, ), 
                         withdrawn_at = '', )

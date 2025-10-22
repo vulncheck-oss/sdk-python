@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**affected_products** | [**List[AdvisoryRockwellAffectedProduct]**](AdvisoryRockwellAffectedProduct.md) |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
