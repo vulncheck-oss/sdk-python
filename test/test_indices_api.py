@@ -3079,6 +3079,41 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_vulncheck_canaries10d_get(self) -> None:
+        """Test case for index_vulncheck_canaries10d_get
+
+        Return vulnerability data stored in index \"vulncheck-canaries-10d\"
+        """
+        pass
+
+    def test_index_vulncheck_canaries30d_get(self) -> None:
+        """Test case for index_vulncheck_canaries30d_get
+
+        Return vulnerability data stored in index \"vulncheck-canaries-30d\"
+        """
+        pass
+
+    def test_index_vulncheck_canaries3d_get(self) -> None:
+        """Test case for index_vulncheck_canaries3d_get
+
+        Return vulnerability data stored in index \"vulncheck-canaries-3d\"
+        """
+        pass
+
+    def test_index_vulncheck_canaries90d_get(self) -> None:
+        """Test case for index_vulncheck_canaries90d_get
+
+        Return vulnerability data stored in index \"vulncheck-canaries-90d\"
+        """
+        pass
+
+    def test_index_vulncheck_canaries_get(self) -> None:
+        """Test case for index_vulncheck_canaries_get
+
+        Return vulnerability data stored in index \"vulncheck-canaries\"
+        """
+        pass
+
     def test_index_vulncheck_config_get(self) -> None:
         """Test case for index_vulncheck_config_get
 

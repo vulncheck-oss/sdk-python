@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.26"
+__version__ = "0.0.27"
 
 # Define package exports
 __all__ = [
@@ -776,6 +776,7 @@ __all__ = [
     "ApiCVSSV3",
     "ApiCWE",
     "ApiCategorizationExtended",
+    "ApiClientFingerprints",
     "ApiConfigurations",
     "ApiCveItems",
     "ApiCveItemsExtended",
@@ -792,6 +793,7 @@ __all__ = [
     "ApiExploitsTrending",
     "ApiExploitsV3Count",
     "ApiExploitsV3Timeline",
+    "ApiHTTPDetails",
     "ApiImpact",
     "ApiImpactExtended",
     "ApiInitialAccess",
@@ -853,6 +855,7 @@ __all__ = [
     "ApiTemporalMetricV2",
     "ApiTemporalMetricV3",
     "ApiUpdate",
+    "ApiVulnCheckCanary",
     "ApiVulnerabilityAlias",
     "ModelsEntitlements",
     "PaginateMatch",
@@ -1311,6 +1314,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination",
     "RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination",
     "RenderResponseWithMetadataArrayApiUpdatePaginatePagination",
+    "RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination",
     "RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination",
     "RenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination",
     "RenderResponseWithMetadataArrayStringV3controllersResponseMetadata",
@@ -2084,6 +2088,7 @@ from vulncheck_sdk.models.api_cvssv2 import ApiCVSSV2 as ApiCVSSV2
 from vulncheck_sdk.models.api_cvssv3 import ApiCVSSV3 as ApiCVSSV3
 from vulncheck_sdk.models.api_cwe import ApiCWE as ApiCWE
 from vulncheck_sdk.models.api_categorization_extended import ApiCategorizationExtended as ApiCategorizationExtended
+from vulncheck_sdk.models.api_client_fingerprints import ApiClientFingerprints as ApiClientFingerprints
 from vulncheck_sdk.models.api_configurations import ApiConfigurations as ApiConfigurations
 from vulncheck_sdk.models.api_cve_items import ApiCveItems as ApiCveItems
 from vulncheck_sdk.models.api_cve_items_extended import ApiCveItemsExtended as ApiCveItemsExtended
@@ -2100,6 +2105,7 @@ from vulncheck_sdk.models.api_exploits_changelog import ApiExploitsChangelog as 
 from vulncheck_sdk.models.api_exploits_trending import ApiExploitsTrending as ApiExploitsTrending
 from vulncheck_sdk.models.api_exploits_v3_count import ApiExploitsV3Count as ApiExploitsV3Count
 from vulncheck_sdk.models.api_exploits_v3_timeline import ApiExploitsV3Timeline as ApiExploitsV3Timeline
+from vulncheck_sdk.models.api_http_details import ApiHTTPDetails as ApiHTTPDetails
 from vulncheck_sdk.models.api_impact import ApiImpact as ApiImpact
 from vulncheck_sdk.models.api_impact_extended import ApiImpactExtended as ApiImpactExtended
 from vulncheck_sdk.models.api_initial_access import ApiInitialAccess as ApiInitialAccess
@@ -2161,6 +2167,7 @@ from vulncheck_sdk.models.api_temporal_cvssv3 import ApiTemporalCVSSV3 as ApiTem
 from vulncheck_sdk.models.api_temporal_metric_v2 import ApiTemporalMetricV2 as ApiTemporalMetricV2
 from vulncheck_sdk.models.api_temporal_metric_v3 import ApiTemporalMetricV3 as ApiTemporalMetricV3
 from vulncheck_sdk.models.api_update import ApiUpdate as ApiUpdate
+from vulncheck_sdk.models.api_vuln_check_canary import ApiVulnCheckCanary as ApiVulnCheckCanary
 from vulncheck_sdk.models.api_vulnerability_alias import ApiVulnerabilityAlias as ApiVulnerabilityAlias
 from vulncheck_sdk.models.models_entitlements import ModelsEntitlements as ModelsEntitlements
 from vulncheck_sdk.models.paginate_match import PaginateMatch as PaginateMatch
@@ -2619,6 +2626,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_api_nvd20_cve_exte
 from vulncheck_sdk.models.render_response_with_metadata_array_api_nvd20_cve_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_oss_package_paginate_pagination import RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination as RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_update_paginate_pagination import RenderResponseWithMetadataArrayApiUpdatePaginatePagination as RenderResponseWithMetadataArrayApiUpdatePaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_api_vuln_check_canary_paginate_pagination import RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination as RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_vulnerability_alias_paginate_pagination import RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination as RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_purls_purl_response_paginate_pagination import RenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination as RenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_string_v3controllers_response_metadata import RenderResponseWithMetadataArrayStringV3controllersResponseMetadata as RenderResponseWithMetadataArrayStringV3controllersResponseMetadata
