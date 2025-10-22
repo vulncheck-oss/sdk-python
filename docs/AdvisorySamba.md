@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **issues** | **str** |  | [optional] 
+**patches** | **List[str]** |  | [optional] 
 **references** | **List[str]** |  | [optional] 
 
 ## Example

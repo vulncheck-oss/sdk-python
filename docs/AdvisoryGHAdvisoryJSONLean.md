@@ -23,7 +23,6 @@ Name | Type | Description | Notes
 **severity** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
-**updated_at** | **str** |  | [optional] 
 **vulnerabilities** | [**AdvisoryGHVulnerabilities**](AdvisoryGHVulnerabilities.md) |  | [optional] 
 **withdrawn_at** | **str** |  | [optional] 
 

@@ -73,6 +73,14 @@ class TestRenderResponseWithMetadataArrayAdvisoryRockwellPaginatePagination(unit
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/rockwell.advisory.Rockwell(
+                        affected_products = [
+                            vulncheck_sdk.models.advisory/rockwell_affected_product.advisory.RockwellAffectedProduct(
+                                affected_catalog_number = '', 
+                                affected_version = '', 
+                                corrected_version = '', 
+                                cve = '', 
+                                product = '', )
+                            ], 
                         cve = [
                             ''
                             ], 

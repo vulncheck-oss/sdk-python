@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.advisory_rockwell_affected_product import AdvisoryRockwellAffectedProduct
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,6 +28,7 @@ class AdvisoryRockwell(BaseModel):
     """
     AdvisoryRockwell
     """ # noqa: E501
+    affected_products: Optional[List[AdvisoryRockwellAffectedProduct]] = None
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
@@ -36,7 +38,7 @@ class AdvisoryRockwell(BaseModel):
     title: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "id", "impact", "references", "summary", "title", "updated_at", "url"]
+    __properties: ClassVar[List[str]] = ["affected_products", "cve", "date_added", "id", "impact", "references", "summary", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,6 +79,13 @@ class AdvisoryRockwell(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in affected_products (list)
+        _items = []
+        if self.affected_products:
+            for _item_affected_products in self.affected_products:
+                if _item_affected_products:
+                    _items.append(_item_affected_products.to_dict())
+            _dict['affected_products'] = _items
         return _dict
 
     @classmethod
@@ -89,6 +98,7 @@ class AdvisoryRockwell(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "affected_products": [AdvisoryRockwellAffectedProduct.from_dict(_item) for _item in obj["affected_products"]] if obj.get("affected_products") is not None else None,
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "id": obj.get("id"),

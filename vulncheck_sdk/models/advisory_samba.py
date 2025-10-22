@@ -31,8 +31,9 @@ class AdvisorySamba(BaseModel):
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     issues: Optional[StrictStr] = None
+    patches: Optional[List[StrictStr]] = None
     references: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["affected", "cve", "date_added", "issues", "references"]
+    __properties: ClassVar[List[str]] = ["affected", "cve", "date_added", "issues", "patches", "references"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +90,7 @@ class AdvisorySamba(BaseModel):
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "issues": obj.get("issues"),
+            "patches": obj.get("patches"),
             "references": obj.get("references")
         })
         return _obj

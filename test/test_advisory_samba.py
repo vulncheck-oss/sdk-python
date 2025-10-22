@@ -42,6 +42,9 @@ class TestAdvisorySamba(unittest.TestCase):
                     ],
                 date_added = '',
                 issues = '',
+                patches = [
+                    ''
+                    ],
                 references = [
                     ''
                     ]

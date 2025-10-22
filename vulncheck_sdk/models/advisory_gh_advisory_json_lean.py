@@ -49,11 +49,10 @@ class AdvisoryGHAdvisoryJSONLean(BaseModel):
     references: Optional[List[AdvisoryGHReference]] = None
     severity: Optional[StrictStr] = None
     summary: Optional[StrictStr] = None
-    updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
     updated_at: Optional[StrictStr] = None
     vulnerabilities: Optional[AdvisoryGHVulnerabilities] = None
     withdrawn_at: Optional[StrictStr] = Field(default=None, alias="withdrawnAt")
-    __properties: ClassVar[List[str]] = ["classification", "cve", "cvss", "cwes", "databaseId", "date_added", "description", "ghsaId", "id", "identifiers", "notificationsPermalink", "origin", "permalink", "publishedAt", "references", "severity", "summary", "updatedAt", "updated_at", "vulnerabilities", "withdrawnAt"]
+    __properties: ClassVar[List[str]] = ["classification", "cve", "cvss", "cwes", "databaseId", "date_added", "description", "ghsaId", "id", "identifiers", "notificationsPermalink", "origin", "permalink", "publishedAt", "references", "severity", "summary", "updated_at", "vulnerabilities", "withdrawnAt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -146,7 +145,6 @@ class AdvisoryGHAdvisoryJSONLean(BaseModel):
             "references": [AdvisoryGHReference.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
             "severity": obj.get("severity"),
             "summary": obj.get("summary"),
-            "updatedAt": obj.get("updatedAt"),
             "updated_at": obj.get("updated_at"),
             "vulnerabilities": AdvisoryGHVulnerabilities.from_dict(obj["vulnerabilities"]) if obj.get("vulnerabilities") is not None else None,
             "withdrawnAt": obj.get("withdrawnAt")

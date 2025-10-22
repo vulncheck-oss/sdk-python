@@ -79,6 +79,9 @@ class TestRenderResponseWithMetadataArrayAdvisorySambaPaginatePagination(unittes
                             ], 
                         date_added = '', 
                         issues = '', 
+                        patches = [
+                            ''
+                            ], 
                         references = [
                             ''
                             ], )

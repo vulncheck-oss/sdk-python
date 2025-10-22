@@ -73,7 +73,6 @@ class TestAdvisoryGHAdvisoryJSONLean(unittest.TestCase):
                 severity = '',
                 summary = '',
                 updated_at = '',
-                updated_at = '',
                 vulnerabilities = vulncheck_sdk.models.advisory/gh_vulnerabilities.advisory.GHVulnerabilities(
                     nodes = [
                         vulncheck_sdk.models.advisory/gh_node.advisory.GHNode(
