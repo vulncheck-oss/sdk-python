@@ -34,8 +34,9 @@ class AdvisoryMicrosoftCVRF(BaseModel):
     date_added: Optional[StrictStr] = None
     exploited_list: Optional[List[AdvisoryITW]] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "cvrf", "date_added", "exploited_list", "title", "url"]
+    __properties: ClassVar[List[str]] = ["cve", "cvrf", "date_added", "exploited_list", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,6 +104,7 @@ class AdvisoryMicrosoftCVRF(BaseModel):
             "date_added": obj.get("date_added"),
             "exploited_list": [AdvisoryITW.from_dict(_item) for _item in obj["exploited_list"]] if obj.get("exploited_list") is not None else None,
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

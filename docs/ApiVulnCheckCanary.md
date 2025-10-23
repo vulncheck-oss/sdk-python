@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **signature** | **str** |  | [optional] 
 **signature_id** | **int** |  | [optional] 
 **src_country** | **str** |  | [optional] 
-**src_ip** | **List[int]** |  | [optional] 
+**src_ip** | **str** |  | [optional] 
 **src_port** | **int** |  | [optional] 
 **timestamp** | **str** |  | [optional] 
 

@@ -164,6 +164,7 @@ class TestAdvisoryMicrosoftCVRF(unittest.TestCase):
                         title = '', )
                     ],
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:
