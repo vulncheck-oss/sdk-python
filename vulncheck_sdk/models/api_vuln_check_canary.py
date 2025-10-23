@@ -38,7 +38,7 @@ class ApiVulnCheckCanary(BaseModel):
     signature: Optional[StrictStr] = None
     signature_id: Optional[StrictInt] = None
     src_country: Optional[StrictStr] = None
-    src_ip: Optional[List[StrictInt]] = None
+    src_ip: Optional[StrictStr] = None
     src_port: Optional[StrictInt] = None
     timestamp: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["category", "client_fingerprints", "cve", "dst_country", "http", "severity", "signature", "signature_id", "src_country", "src_ip", "src_port", "timestamp"]

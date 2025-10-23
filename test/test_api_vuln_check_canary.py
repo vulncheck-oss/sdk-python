@@ -53,9 +53,7 @@ class TestApiVulnCheckCanary(unittest.TestCase):
                 signature = '',
                 signature_id = 56,
                 src_country = '',
-                src_ip = [
-                    56
-                    ],
+                src_ip = '',
                 src_port = 56,
                 timestamp = ''
             )
