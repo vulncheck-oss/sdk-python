@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **cve** | **str** |  | [optional] 
 **dst_country** | **str** |  | [optional] 
 **http** | [**ApiHTTPDetails**](ApiHTTPDetails.md) |  | [optional] 
+**payload** | **str** |  | [optional] 
 **severity** | **int** |  | [optional] 
 **signature** | **str** |  | [optional] 
 **signature_id** | **int** |  | [optional] 

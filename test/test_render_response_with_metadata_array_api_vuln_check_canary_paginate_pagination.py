@@ -86,6 +86,7 @@ class TestRenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination(un
                             method = '', 
                             protocol = '', 
                             url = '', ), 
+                        payload = '', 
                         severity = 56, 
                         signature = '', 
                         signature_id = 56, 
