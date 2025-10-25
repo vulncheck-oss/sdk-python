@@ -34,6 +34,7 @@ class ApiVulnCheckCanary(BaseModel):
     cve: Optional[StrictStr] = None
     dst_country: Optional[StrictStr] = None
     http: Optional[ApiHTTPDetails] = None
+    payload: Optional[StrictStr] = None
     severity: Optional[StrictInt] = None
     signature: Optional[StrictStr] = None
     signature_id: Optional[StrictInt] = None
@@ -41,7 +42,7 @@ class ApiVulnCheckCanary(BaseModel):
     src_ip: Optional[StrictStr] = None
     src_port: Optional[StrictInt] = None
     timestamp: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["category", "client_fingerprints", "cve", "dst_country", "http", "severity", "signature", "signature_id", "src_country", "src_ip", "src_port", "timestamp"]
+    __properties: ClassVar[List[str]] = ["category", "client_fingerprints", "cve", "dst_country", "http", "payload", "severity", "signature", "signature_id", "src_country", "src_ip", "src_port", "timestamp"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -105,6 +106,7 @@ class ApiVulnCheckCanary(BaseModel):
             "cve": obj.get("cve"),
             "dst_country": obj.get("dst_country"),
             "http": ApiHTTPDetails.from_dict(obj["http"]) if obj.get("http") is not None else None,
+            "payload": obj.get("payload"),
             "severity": obj.get("severity"),
             "signature": obj.get("signature"),
             "signature_id": obj.get("signature_id"),

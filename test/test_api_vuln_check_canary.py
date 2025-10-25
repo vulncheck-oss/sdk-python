@@ -49,6 +49,7 @@ class TestApiVulnCheckCanary(unittest.TestCase):
                     method = '', 
                     protocol = '', 
                     url = '', ),
+                payload = '',
                 severity = 56,
                 signature = '',
                 signature_id = 56,
