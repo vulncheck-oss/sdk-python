@@ -37,6 +37,8 @@ class TestAdvisoryOverrideAnnotation(unittest.TestCase):
         if include_optional:
             return AdvisoryOverrideAnnotation(
                 cve_id = '',
+                modified = '',
+                published = '',
                 reason = '',
                 snapshot = '',
                 triage_notes = vulncheck_sdk.models.advisory/triage_notes.advisory.TriageNotes(

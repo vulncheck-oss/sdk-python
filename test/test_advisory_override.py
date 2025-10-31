@@ -38,6 +38,8 @@ class TestAdvisoryOverride(unittest.TestCase):
             return AdvisoryOverride(
                 annotation = vulncheck_sdk.models.advisory/override_annotation.advisory.OverrideAnnotation(
                     cve_id = '', 
+                    modified = '', 
+                    published = '', 
                     reason = '', 
                     snapshot = '', 
                     triage_notes = vulncheck_sdk.models.advisory/triage_notes.advisory.TriageNotes(
