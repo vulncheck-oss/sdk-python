@@ -6,6 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cve_id** | **str** |  | [optional] 
+**modified** | **str** |  | [optional] 
+**published** | **str** |  | [optional] 
 **reason** | **str** |  | [optional] 
 **snapshot** | **str** |  | [optional] 
 **triage_notes** | [**AdvisoryTriageNotes**](AdvisoryTriageNotes.md) |  | [optional] 

@@ -29,10 +29,12 @@ class AdvisoryOverrideAnnotation(BaseModel):
     AdvisoryOverrideAnnotation
     """ # noqa: E501
     cve_id: Optional[StrictStr] = None
+    modified: Optional[StrictStr] = None
+    published: Optional[StrictStr] = None
     reason: Optional[StrictStr] = None
     snapshot: Optional[StrictStr] = None
     triage_notes: Optional[AdvisoryTriageNotes] = None
-    __properties: ClassVar[List[str]] = ["cve_id", "reason", "snapshot", "triage_notes"]
+    __properties: ClassVar[List[str]] = ["cve_id", "modified", "published", "reason", "snapshot", "triage_notes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +91,8 @@ class AdvisoryOverrideAnnotation(BaseModel):
 
         _obj = cls.model_validate({
             "cve_id": obj.get("cve_id"),
+            "modified": obj.get("modified"),
+            "published": obj.get("published"),
             "reason": obj.get("reason"),
             "snapshot": obj.get("snapshot"),
             "triage_notes": AdvisoryTriageNotes.from_dict(obj["triage_notes"]) if obj.get("triage_notes") is not None else None
