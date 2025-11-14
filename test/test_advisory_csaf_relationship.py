@@ -40,9 +40,7 @@ class TestAdvisoryCSAFRelationship(unittest.TestCase):
                 full_product_name = vulncheck_sdk.models.advisory/product.advisory.Product(
                     name = '', 
                     product_id = '', 
-                    product_identification_helper = {
-                        'key' : ''
-                        }, ),
+                    product_identification_helper = { }, ),
                 product_reference = '',
                 relates_to_product_reference = ''
             )

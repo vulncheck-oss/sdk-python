@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**automatable** | **str** |  | [optional] 
-**recovery** | **str** |  | [optional] 
-**safety** | **str** |  | [optional] 
 **attack_complexity** | **str** |  | [optional] 
 **attack_requirements** | **str** |  | [optional] 
 **attack_vector** | **str** |  | [optional] 
+**automatable** | **str** |  | [optional] 
 **base_score** | **float** |  | [optional] 
 **base_severity** | **str** |  | [optional] 
 **privileges_required** | **str** |  | [optional] 
 **provider_urgency** | **str** |  | [optional] 
+**recovery** | **str** |  | [optional] 
+**safety** | **str** |  | [optional] 
 **sub_availability_impact** | **str** |  | [optional] 
 **sub_confidentiality_impact** | **str** |  | [optional] 
 **sub_integrity_impact** | **str** |  | [optional] 

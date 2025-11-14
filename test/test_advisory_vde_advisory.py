@@ -36,6 +36,105 @@ class TestAdvisoryVDEAdvisory(unittest.TestCase):
         model = AdvisoryVDEAdvisory()
         if include_optional:
             return AdvisoryVDEAdvisory(
+                csaf_json = vulncheck_sdk.models.advisory/csaf.advisory.CSAF(
+                    document = vulncheck_sdk.models.document.document(), 
+                    notes = [
+                        vulncheck_sdk.models.advisory/csaf_note.advisory.CSAFNote(
+                            audience = '', 
+                            category = '', 
+                            text = '', 
+                            title = '', )
+                        ], 
+                    product_tree = vulncheck_sdk.models.product_tree.product_tree(), 
+                    vulnerabilities = [
+                        vulncheck_sdk.models.advisory/csaf_vulnerability.advisory.CSAFVulnerability(
+                            cve = '', 
+                            cwe = vulncheck_sdk.models.advisory/cwe.advisory.Cwe(
+                                id = '', 
+                                name = '', ), 
+                            flags = [
+                                vulncheck_sdk.models.advisory/flag.advisory.Flag(
+                                    date = '', 
+                                    group_ids = [
+                                        ''
+                                        ], 
+                                    label = '', 
+                                    product_ids = [
+                                        ''
+                                        ], )
+                                ], 
+                            ids = [
+                                vulncheck_sdk.models.advisory/tracking_id.advisory.TrackingID(
+                                    system_name = '', 
+                                    text = '', )
+                                ], 
+                            product_status = {
+                                'key' : [
+                                    ''
+                                    ]
+                                }, 
+                            references = [
+                                vulncheck_sdk.models.advisory/csaf_reference.advisory.CSAFReference(
+                                    category = '', 
+                                    summary = '', 
+                                    url = '', )
+                                ], 
+                            release_date = '', 
+                            remediations = [
+                                vulncheck_sdk.models.advisory/remediation_data.advisory.RemediationData(
+                                    category = '', 
+                                    date = '', 
+                                    details = '', 
+                                    entitlements = [
+                                        ''
+                                        ], 
+                                    restart_required = vulncheck_sdk.models.advisory/restart_data.advisory.RestartData(
+                                        category = '', 
+                                        details = '', ), )
+                                ], 
+                            scores = [
+                                vulncheck_sdk.models.advisory/csaf_score.advisory.CSAFScore(
+                                    cvss_v2 = vulncheck_sdk.models.advisory/cvssv2.advisory.CVSSV2(
+                                        access_complexity = '', 
+                                        access_vector = '', 
+                                        authentication = '', 
+                                        availability_impact = '', 
+                                        availability_requirement = '', 
+                                        base_score = 1.337, 
+                                        collateral_damage_potential = '', 
+                                        confidentiality_impact = '', 
+                                        confidentiality_requirement = '', 
+                                        environmental_score = 1.337, 
+                                        exploitability = '', 
+                                        integrity_impact = '', 
+                                        integrity_requirement = '', 
+                                        remediation_level = '', 
+                                        report_confidence = '', 
+                                        target_distribution = '', 
+                                        temporal_score = 1.337, ), 
+                                    cvss_v3 = vulncheck_sdk.models.advisory/cvssv3.advisory.CVSSV3(
+                                        attack_complexity = '', 
+                                        attack_vector = '', 
+                                        availability_impact = '', 
+                                        base_score = 1.337, 
+                                        base_severity = '', 
+                                        confidentiality_impact = '', 
+                                        integrity_impact = '', 
+                                        privileges_required = '', 
+                                        scope = '', 
+                                        user_interaction = '', 
+                                        vector_string = '', 
+                                        version = '', ), 
+                                    products = [
+                                        ''
+                                        ], )
+                                ], 
+                            threats = [
+                                vulncheck_sdk.models.advisory/threat_data.advisory.ThreatData(
+                                    category = '', 
+                                    details = '', )
+                                ], )
+                        ], ),
                 cve = [
                     ''
                     ],

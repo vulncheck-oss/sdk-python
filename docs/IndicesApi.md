@@ -59816,7 +59816,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_vulncheck_canaries10d_get**
-> RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination index_vulncheck_canaries10d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+> RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination index_vulncheck_canaries10d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, published=published, src_country=src_country, dst_country=dst_country, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
 Return vulnerability data stored in index \"vulncheck-canaries-10d\"
 
@@ -59869,16 +59869,9 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
     start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
     cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
-    alias = 'alias_example' # str | Specify a vulnerability alias to search with. (optional)
-    iava = 'iava_example' # str | Specify an IAVA ID to search with. (optional)
-    jvndb = 'jvndb_example' # str | Specify a JVNDB ID to search with. (optional)
-    ilvn = 'ilvn_example' # str | Specify an ILVN ID to search with. (optional)
-    threat_actor = 'threat_actor_example' # str | Specify a threat actor name to search with. (optional)
-    mitre_id = 'mitre_id_example' # str | Specify a MITRE ID to search with. (optional)
-    misp_id = 'misp_id_example' # str | Specify a MISP ID to search with. (optional)
-    ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
-    botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
     published = 'published_example' # str | Specify a published date (optional)
+    src_country = 'src_country_example' # str | Country code in ISO-3166 format (optional)
+    dst_country = 'dst_country_example' # str | Country code in ISO-3166 format (optional)
     var_date = 'var_date_example' # str | Specify a starting published date to filter with. (optional)
     var_date2 = 'var_date_example' # str | Specify an ending published date to filter with. (optional)
     updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
@@ -59890,7 +59883,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Return vulnerability data stored in index \"vulncheck-canaries-10d\"
-        api_response = api_instance.index_vulncheck_canaries10d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        api_response = api_instance.index_vulncheck_canaries10d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, published=published, src_country=src_country, dst_country=dst_country, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
         print("The response of IndicesApi->index_vulncheck_canaries10d_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -59909,16 +59902,9 @@ Name | Type | Description  | Notes
  **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
  **start_cursor** | **str**| request server-side paging | [optional] 
  **cve** | **str**| Specify a CVE ID to search with. | [optional] 
- **alias** | **str**| Specify a vulnerability alias to search with. | [optional] 
- **iava** | **str**| Specify an IAVA ID to search with. | [optional] 
- **jvndb** | **str**| Specify a JVNDB ID to search with. | [optional] 
- **ilvn** | **str**| Specify an ILVN ID to search with. | [optional] 
- **threat_actor** | **str**| Specify a threat actor name to search with. | [optional] 
- **mitre_id** | **str**| Specify a MITRE ID to search with. | [optional] 
- **misp_id** | **str**| Specify a MISP ID to search with. | [optional] 
- **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
- **botnet** | **str**| Specify a botnet name to search with. | [optional] 
  **published** | **str**| Specify a published date | [optional] 
+ **src_country** | **str**| Country code in ISO-3166 format | [optional] 
+ **dst_country** | **str**| Country code in ISO-3166 format | [optional] 
  **var_date** | **str**| Specify a starting published date to filter with. | [optional] 
  **var_date2** | **str**| Specify an ending published date to filter with. | [optional] 
  **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 
@@ -59952,7 +59938,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_vulncheck_canaries30d_get**
-> RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination index_vulncheck_canaries30d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+> RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination index_vulncheck_canaries30d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, published=published, src_country=src_country, dst_country=dst_country, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
 Return vulnerability data stored in index \"vulncheck-canaries-30d\"
 
@@ -60005,16 +59991,9 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
     start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
     cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
-    alias = 'alias_example' # str | Specify a vulnerability alias to search with. (optional)
-    iava = 'iava_example' # str | Specify an IAVA ID to search with. (optional)
-    jvndb = 'jvndb_example' # str | Specify a JVNDB ID to search with. (optional)
-    ilvn = 'ilvn_example' # str | Specify an ILVN ID to search with. (optional)
-    threat_actor = 'threat_actor_example' # str | Specify a threat actor name to search with. (optional)
-    mitre_id = 'mitre_id_example' # str | Specify a MITRE ID to search with. (optional)
-    misp_id = 'misp_id_example' # str | Specify a MISP ID to search with. (optional)
-    ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
-    botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
     published = 'published_example' # str | Specify a published date (optional)
+    src_country = 'src_country_example' # str | Country code in ISO-3166 format (optional)
+    dst_country = 'dst_country_example' # str | Country code in ISO-3166 format (optional)
     var_date = 'var_date_example' # str | Specify a starting published date to filter with. (optional)
     var_date2 = 'var_date_example' # str | Specify an ending published date to filter with. (optional)
     updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
@@ -60026,7 +60005,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Return vulnerability data stored in index \"vulncheck-canaries-30d\"
-        api_response = api_instance.index_vulncheck_canaries30d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        api_response = api_instance.index_vulncheck_canaries30d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, published=published, src_country=src_country, dst_country=dst_country, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
         print("The response of IndicesApi->index_vulncheck_canaries30d_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -60045,16 +60024,9 @@ Name | Type | Description  | Notes
  **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
  **start_cursor** | **str**| request server-side paging | [optional] 
  **cve** | **str**| Specify a CVE ID to search with. | [optional] 
- **alias** | **str**| Specify a vulnerability alias to search with. | [optional] 
- **iava** | **str**| Specify an IAVA ID to search with. | [optional] 
- **jvndb** | **str**| Specify a JVNDB ID to search with. | [optional] 
- **ilvn** | **str**| Specify an ILVN ID to search with. | [optional] 
- **threat_actor** | **str**| Specify a threat actor name to search with. | [optional] 
- **mitre_id** | **str**| Specify a MITRE ID to search with. | [optional] 
- **misp_id** | **str**| Specify a MISP ID to search with. | [optional] 
- **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
- **botnet** | **str**| Specify a botnet name to search with. | [optional] 
  **published** | **str**| Specify a published date | [optional] 
+ **src_country** | **str**| Country code in ISO-3166 format | [optional] 
+ **dst_country** | **str**| Country code in ISO-3166 format | [optional] 
  **var_date** | **str**| Specify a starting published date to filter with. | [optional] 
  **var_date2** | **str**| Specify an ending published date to filter with. | [optional] 
  **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 
@@ -60088,7 +60060,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_vulncheck_canaries3d_get**
-> RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination index_vulncheck_canaries3d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+> RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination index_vulncheck_canaries3d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, published=published, src_country=src_country, dst_country=dst_country, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
 Return vulnerability data stored in index \"vulncheck-canaries-3d\"
 
@@ -60141,16 +60113,9 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
     start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
     cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
-    alias = 'alias_example' # str | Specify a vulnerability alias to search with. (optional)
-    iava = 'iava_example' # str | Specify an IAVA ID to search with. (optional)
-    jvndb = 'jvndb_example' # str | Specify a JVNDB ID to search with. (optional)
-    ilvn = 'ilvn_example' # str | Specify an ILVN ID to search with. (optional)
-    threat_actor = 'threat_actor_example' # str | Specify a threat actor name to search with. (optional)
-    mitre_id = 'mitre_id_example' # str | Specify a MITRE ID to search with. (optional)
-    misp_id = 'misp_id_example' # str | Specify a MISP ID to search with. (optional)
-    ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
-    botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
     published = 'published_example' # str | Specify a published date (optional)
+    src_country = 'src_country_example' # str | Country code in ISO-3166 format (optional)
+    dst_country = 'dst_country_example' # str | Country code in ISO-3166 format (optional)
     var_date = 'var_date_example' # str | Specify a starting published date to filter with. (optional)
     var_date2 = 'var_date_example' # str | Specify an ending published date to filter with. (optional)
     updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
@@ -60162,7 +60127,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Return vulnerability data stored in index \"vulncheck-canaries-3d\"
-        api_response = api_instance.index_vulncheck_canaries3d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        api_response = api_instance.index_vulncheck_canaries3d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, published=published, src_country=src_country, dst_country=dst_country, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
         print("The response of IndicesApi->index_vulncheck_canaries3d_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -60181,16 +60146,9 @@ Name | Type | Description  | Notes
  **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
  **start_cursor** | **str**| request server-side paging | [optional] 
  **cve** | **str**| Specify a CVE ID to search with. | [optional] 
- **alias** | **str**| Specify a vulnerability alias to search with. | [optional] 
- **iava** | **str**| Specify an IAVA ID to search with. | [optional] 
- **jvndb** | **str**| Specify a JVNDB ID to search with. | [optional] 
- **ilvn** | **str**| Specify an ILVN ID to search with. | [optional] 
- **threat_actor** | **str**| Specify a threat actor name to search with. | [optional] 
- **mitre_id** | **str**| Specify a MITRE ID to search with. | [optional] 
- **misp_id** | **str**| Specify a MISP ID to search with. | [optional] 
- **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
- **botnet** | **str**| Specify a botnet name to search with. | [optional] 
  **published** | **str**| Specify a published date | [optional] 
+ **src_country** | **str**| Country code in ISO-3166 format | [optional] 
+ **dst_country** | **str**| Country code in ISO-3166 format | [optional] 
  **var_date** | **str**| Specify a starting published date to filter with. | [optional] 
  **var_date2** | **str**| Specify an ending published date to filter with. | [optional] 
  **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 
@@ -60224,7 +60182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_vulncheck_canaries90d_get**
-> RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination index_vulncheck_canaries90d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+> RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination index_vulncheck_canaries90d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, published=published, src_country=src_country, dst_country=dst_country, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
 Return vulnerability data stored in index \"vulncheck-canaries-90d\"
 
@@ -60277,16 +60235,9 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
     start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
     cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
-    alias = 'alias_example' # str | Specify a vulnerability alias to search with. (optional)
-    iava = 'iava_example' # str | Specify an IAVA ID to search with. (optional)
-    jvndb = 'jvndb_example' # str | Specify a JVNDB ID to search with. (optional)
-    ilvn = 'ilvn_example' # str | Specify an ILVN ID to search with. (optional)
-    threat_actor = 'threat_actor_example' # str | Specify a threat actor name to search with. (optional)
-    mitre_id = 'mitre_id_example' # str | Specify a MITRE ID to search with. (optional)
-    misp_id = 'misp_id_example' # str | Specify a MISP ID to search with. (optional)
-    ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
-    botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
     published = 'published_example' # str | Specify a published date (optional)
+    src_country = 'src_country_example' # str | Country code in ISO-3166 format (optional)
+    dst_country = 'dst_country_example' # str | Country code in ISO-3166 format (optional)
     var_date = 'var_date_example' # str | Specify a starting published date to filter with. (optional)
     var_date2 = 'var_date_example' # str | Specify an ending published date to filter with. (optional)
     updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
@@ -60298,7 +60249,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Return vulnerability data stored in index \"vulncheck-canaries-90d\"
-        api_response = api_instance.index_vulncheck_canaries90d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        api_response = api_instance.index_vulncheck_canaries90d_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, published=published, src_country=src_country, dst_country=dst_country, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
         print("The response of IndicesApi->index_vulncheck_canaries90d_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -60317,16 +60268,9 @@ Name | Type | Description  | Notes
  **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
  **start_cursor** | **str**| request server-side paging | [optional] 
  **cve** | **str**| Specify a CVE ID to search with. | [optional] 
- **alias** | **str**| Specify a vulnerability alias to search with. | [optional] 
- **iava** | **str**| Specify an IAVA ID to search with. | [optional] 
- **jvndb** | **str**| Specify a JVNDB ID to search with. | [optional] 
- **ilvn** | **str**| Specify an ILVN ID to search with. | [optional] 
- **threat_actor** | **str**| Specify a threat actor name to search with. | [optional] 
- **mitre_id** | **str**| Specify a MITRE ID to search with. | [optional] 
- **misp_id** | **str**| Specify a MISP ID to search with. | [optional] 
- **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
- **botnet** | **str**| Specify a botnet name to search with. | [optional] 
  **published** | **str**| Specify a published date | [optional] 
+ **src_country** | **str**| Country code in ISO-3166 format | [optional] 
+ **dst_country** | **str**| Country code in ISO-3166 format | [optional] 
  **var_date** | **str**| Specify a starting published date to filter with. | [optional] 
  **var_date2** | **str**| Specify an ending published date to filter with. | [optional] 
  **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 
@@ -60360,7 +60304,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_vulncheck_canaries_get**
-> RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination index_vulncheck_canaries_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+> RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination index_vulncheck_canaries_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, published=published, src_country=src_country, dst_country=dst_country, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
 Return vulnerability data stored in index \"vulncheck-canaries\"
 
@@ -60413,16 +60357,9 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
     start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
     cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
-    alias = 'alias_example' # str | Specify a vulnerability alias to search with. (optional)
-    iava = 'iava_example' # str | Specify an IAVA ID to search with. (optional)
-    jvndb = 'jvndb_example' # str | Specify a JVNDB ID to search with. (optional)
-    ilvn = 'ilvn_example' # str | Specify an ILVN ID to search with. (optional)
-    threat_actor = 'threat_actor_example' # str | Specify a threat actor name to search with. (optional)
-    mitre_id = 'mitre_id_example' # str | Specify a MITRE ID to search with. (optional)
-    misp_id = 'misp_id_example' # str | Specify a MISP ID to search with. (optional)
-    ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
-    botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
     published = 'published_example' # str | Specify a published date (optional)
+    src_country = 'src_country_example' # str | Country code in ISO-3166 format (optional)
+    dst_country = 'dst_country_example' # str | Country code in ISO-3166 format (optional)
     var_date = 'var_date_example' # str | Specify a starting published date to filter with. (optional)
     var_date2 = 'var_date_example' # str | Specify an ending published date to filter with. (optional)
     updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
@@ -60434,7 +60371,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Return vulnerability data stored in index \"vulncheck-canaries\"
-        api_response = api_instance.index_vulncheck_canaries_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        api_response = api_instance.index_vulncheck_canaries_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, published=published, src_country=src_country, dst_country=dst_country, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
         print("The response of IndicesApi->index_vulncheck_canaries_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -60453,16 +60390,9 @@ Name | Type | Description  | Notes
  **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
  **start_cursor** | **str**| request server-side paging | [optional] 
  **cve** | **str**| Specify a CVE ID to search with. | [optional] 
- **alias** | **str**| Specify a vulnerability alias to search with. | [optional] 
- **iava** | **str**| Specify an IAVA ID to search with. | [optional] 
- **jvndb** | **str**| Specify a JVNDB ID to search with. | [optional] 
- **ilvn** | **str**| Specify an ILVN ID to search with. | [optional] 
- **threat_actor** | **str**| Specify a threat actor name to search with. | [optional] 
- **mitre_id** | **str**| Specify a MITRE ID to search with. | [optional] 
- **misp_id** | **str**| Specify a MISP ID to search with. | [optional] 
- **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
- **botnet** | **str**| Specify a botnet name to search with. | [optional] 
  **published** | **str**| Specify a published date | [optional] 
+ **src_country** | **str**| Country code in ISO-3166 format | [optional] 
+ **dst_country** | **str**| Country code in ISO-3166 format | [optional] 
  **var_date** | **str**| Specify a starting published date to filter with. | [optional] 
  **var_date2** | **str**| Specify an ending published date to filter with. | [optional] 
  **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 

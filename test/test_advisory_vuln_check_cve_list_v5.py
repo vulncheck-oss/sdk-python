@@ -52,11 +52,12 @@ class TestAdvisoryVulnCheckCVEListV5(unittest.TestCase):
                                             ], 
                                         default_status = '', 
                                         package_name = '', 
+                                        package_url = '', 
                                         platforms = [
                                             ''
                                             ], 
                                         product = '', 
-                                        repos = '', 
+                                        repo = '', 
                                         vendor = '', 
                                         versions = [
                                             vulncheck_sdk.models.advisory/m_version.advisory.MVersion(
@@ -116,16 +117,16 @@ class TestAdvisoryVulnCheckCVEListV5(unittest.TestCase):
                                             vector_string = '', 
                                             version = '', ), 
                                         cvss_v4_0 = vulncheck_sdk.models.advisory/m_cvss_v40.advisory.MCvssV40(
-                                            automatable = '', 
-                                            recovery = '', 
-                                            safety = '', 
                                             attack_complexity = '', 
                                             attack_requirements = '', 
                                             attack_vector = '', 
+                                            automatable = '', 
                                             base_score = 1.337, 
                                             base_severity = '', 
                                             privileges_required = '', 
                                             provider_urgency = '', 
+                                            recovery = '', 
+                                            safety = '', 
                                             sub_availability_impact = '', 
                                             sub_confidentiality_impact = '', 
                                             sub_integrity_impact = '', 
@@ -140,7 +141,12 @@ class TestAdvisoryVulnCheckCVEListV5(unittest.TestCase):
                                         format = '', 
                                         other = vulncheck_sdk.models.advisory/metrics_other.advisory.MetricsOther(
                                             content = vulncheck_sdk.models.content.content(), 
-                                            type = '', ), )
+                                            type = '', ), 
+                                        scenarios = [
+                                            vulncheck_sdk.models.advisory/metric_scenario.advisory.MetricScenario(
+                                                lang = '', 
+                                                value = '', )
+                                            ], )
                                     ], 
                                 problem_types = [
                                     vulncheck_sdk.models.advisory/m_problem_types.advisory.MProblemTypes()

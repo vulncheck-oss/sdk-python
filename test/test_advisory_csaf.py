@@ -88,9 +88,7 @@ class TestAdvisoryCSAF(unittest.TestCase):
                             product = vulncheck_sdk.models.advisory/product.advisory.Product(
                                 name = '', 
                                 product_id = '', 
-                                product_identification_helper = {
-                                    'key' : ''
-                                    }, ), 
+                                product_identification_helper = { }, ), 
                             relationships = [
                                 vulncheck_sdk.models.advisory/csaf_relationship.advisory.CSAFRelationship(
                                     category = '', 

@@ -9,9 +9,10 @@ Name | Type | Description | Notes
 **cpes** | **List[str]** |  | [optional] 
 **default_status** | **str** |  | [optional] 
 **package_name** | **str** |  | [optional] 
+**package_url** | **str** |  | [optional] 
 **platforms** | **List[str]** |  | [optional] 
 **product** | **str** |  | [optional] 
-**repos** | **str** |  | [optional] 
+**repo** | **str** |  | [optional] 
 **vendor** | **str** |  | [optional] 
 **versions** | [**List[AdvisoryMVersion]**](AdvisoryMVersion.md) |  | [optional] 
 

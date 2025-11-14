@@ -420,6 +420,7 @@ from vulncheck_sdk.models.advisory_mendix import AdvisoryMendix
 from vulncheck_sdk.models.advisory_meta_data import AdvisoryMetaData
 from vulncheck_sdk.models.advisory_metasploit_exploit import AdvisoryMetasploitExploit
 from vulncheck_sdk.models.advisory_metric import AdvisoryMetric
+from vulncheck_sdk.models.advisory_metric_scenario import AdvisoryMetricScenario
 from vulncheck_sdk.models.advisory_metrics_other import AdvisoryMetricsOther
 from vulncheck_sdk.models.advisory_microsoft_cvrf import AdvisoryMicrosoftCVRF
 from vulncheck_sdk.models.advisory_microsoft_kb import AdvisoryMicrosoftKb

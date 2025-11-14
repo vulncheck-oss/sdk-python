@@ -29,7 +29,7 @@ class AdvisoryProduct(BaseModel):
     """ # noqa: E501
     name: Optional[StrictStr] = None
     product_id: Optional[StrictStr] = None
-    product_identification_helper: Optional[Dict[str, StrictStr]] = None
+    product_identification_helper: Optional[Dict[str, Any]] = None
     __properties: ClassVar[List[str]] = ["name", "product_id", "product_identification_helper"]
 
     model_config = ConfigDict(

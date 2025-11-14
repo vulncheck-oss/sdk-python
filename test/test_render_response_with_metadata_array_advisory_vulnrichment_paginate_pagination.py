@@ -89,11 +89,12 @@ class TestRenderResponseWithMetadataArrayAdvisoryVulnrichmentPaginatePagination(
                                                     ], 
                                                 default_status = '', 
                                                 package_name = '', 
+                                                package_url = '', 
                                                 platforms = [
                                                     ''
                                                     ], 
                                                 product = '', 
-                                                repos = '', 
+                                                repo = '', 
                                                 vendor = '', 
                                                 versions = [
                                                     vulncheck_sdk.models.advisory/m_version.advisory.MVersion(
