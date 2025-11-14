@@ -24,6 +24,7 @@ from vulncheck_sdk.models.advisory_m_cvss_v20 import AdvisoryMCvssV20
 from vulncheck_sdk.models.advisory_m_cvss_v30 import AdvisoryMCvssV30
 from vulncheck_sdk.models.advisory_m_cvss_v31 import AdvisoryMCvssV31
 from vulncheck_sdk.models.advisory_m_cvss_v40 import AdvisoryMCvssV40
+from vulncheck_sdk.models.advisory_metric_scenario import AdvisoryMetricScenario
 from vulncheck_sdk.models.advisory_metrics_other import AdvisoryMetricsOther
 from typing import Optional, Set
 from typing_extensions import Self
@@ -38,7 +39,8 @@ class AdvisoryMetric(BaseModel):
     cvss_v4_0: Optional[AdvisoryMCvssV40] = Field(default=None, alias="cvssV4_0")
     format: Optional[StrictStr] = None
     other: Optional[AdvisoryMetricsOther] = None
-    __properties: ClassVar[List[str]] = ["cvssV2_0", "cvssV3_0", "cvssV3_1", "cvssV4_0", "format", "other"]
+    scenarios: Optional[List[AdvisoryMetricScenario]] = None
+    __properties: ClassVar[List[str]] = ["cvssV2_0", "cvssV3_0", "cvssV3_1", "cvssV4_0", "format", "other", "scenarios"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +96,13 @@ class AdvisoryMetric(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of other
         if self.other:
             _dict['other'] = self.other.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in scenarios (list)
+        _items = []
+        if self.scenarios:
+            for _item_scenarios in self.scenarios:
+                if _item_scenarios:
+                    _items.append(_item_scenarios.to_dict())
+            _dict['scenarios'] = _items
         return _dict
 
     @classmethod
@@ -111,7 +120,8 @@ class AdvisoryMetric(BaseModel):
             "cvssV3_1": AdvisoryMCvssV31.from_dict(obj["cvssV3_1"]) if obj.get("cvssV3_1") is not None else None,
             "cvssV4_0": AdvisoryMCvssV40.from_dict(obj["cvssV4_0"]) if obj.get("cvssV4_0") is not None else None,
             "format": obj.get("format"),
-            "other": AdvisoryMetricsOther.from_dict(obj["other"]) if obj.get("other") is not None else None
+            "other": AdvisoryMetricsOther.from_dict(obj["other"]) if obj.get("other") is not None else None,
+            "scenarios": [AdvisoryMetricScenario.from_dict(_item) for _item in obj["scenarios"]] if obj.get("scenarios") is not None else None
         })
         return _obj
 

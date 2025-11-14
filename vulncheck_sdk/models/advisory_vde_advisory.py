@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.advisory_csaf import AdvisoryCSAF
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,6 +28,7 @@ class AdvisoryVDEAdvisory(BaseModel):
     """
     AdvisoryVDEAdvisory
     """ # noqa: E501
+    csaf_json: Optional[AdvisoryCSAF] = None
     cve: Optional[List[StrictStr]] = None
     cwe: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
@@ -35,7 +37,7 @@ class AdvisoryVDEAdvisory(BaseModel):
     updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     vde: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "cwe", "date_added", "date_last_revised", "title", "updated_at", "url", "vde"]
+    __properties: ClassVar[List[str]] = ["csaf_json", "cve", "cwe", "date_added", "date_last_revised", "title", "updated_at", "url", "vde"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +78,9 @@ class AdvisoryVDEAdvisory(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of csaf_json
+        if self.csaf_json:
+            _dict['csaf_json'] = self.csaf_json.to_dict()
         return _dict
 
     @classmethod
@@ -88,6 +93,7 @@ class AdvisoryVDEAdvisory(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "csaf_json": AdvisoryCSAF.from_dict(obj["csaf_json"]) if obj.get("csaf_json") is not None else None,
             "cve": obj.get("cve"),
             "cwe": obj.get("cwe"),
             "date_added": obj.get("date_added"),

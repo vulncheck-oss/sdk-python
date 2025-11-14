@@ -36,16 +36,16 @@ class TestAdvisoryMCvssV40(unittest.TestCase):
         model = AdvisoryMCvssV40()
         if include_optional:
             return AdvisoryMCvssV40(
-                automatable = '',
-                recovery = '',
-                safety = '',
                 attack_complexity = '',
                 attack_requirements = '',
                 attack_vector = '',
+                automatable = '',
                 base_score = 1.337,
                 base_severity = '',
                 privileges_required = '',
                 provider_urgency = '',
+                recovery = '',
+                safety = '',
                 sub_availability_impact = '',
                 sub_confidentiality_impact = '',
                 sub_integrity_impact = '',

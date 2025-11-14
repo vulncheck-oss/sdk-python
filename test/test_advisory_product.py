@@ -38,9 +38,7 @@ class TestAdvisoryProduct(unittest.TestCase):
             return AdvisoryProduct(
                 name = '',
                 product_id = '',
-                product_identification_helper = {
-                    'key' : ''
-                    }
+                product_identification_helper = { }
             )
         else:
             return AdvisoryProduct(

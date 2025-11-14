@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **cvss_v4_0** | [**AdvisoryMCvssV40**](AdvisoryMCvssV40.md) |  | [optional] 
 **format** | **str** |  | [optional] 
 **other** | [**AdvisoryMetricsOther**](AdvisoryMetricsOther.md) |  | [optional] 
+**scenarios** | [**List[AdvisoryMetricScenario]**](AdvisoryMetricScenario.md) |  | [optional] 
 
 ## Example
 

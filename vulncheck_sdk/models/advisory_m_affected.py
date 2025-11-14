@@ -32,12 +32,13 @@ class AdvisoryMAffected(BaseModel):
     cpes: Optional[List[StrictStr]] = None
     default_status: Optional[StrictStr] = Field(default=None, alias="defaultStatus")
     package_name: Optional[StrictStr] = Field(default=None, alias="packageName")
+    package_url: Optional[StrictStr] = Field(default=None, alias="packageURL")
     platforms: Optional[List[StrictStr]] = None
     product: Optional[StrictStr] = None
-    repos: Optional[StrictStr] = None
+    repo: Optional[StrictStr] = None
     vendor: Optional[StrictStr] = None
     versions: Optional[List[AdvisoryMVersion]] = None
-    __properties: ClassVar[List[str]] = ["collectionURL", "cpes", "defaultStatus", "packageName", "platforms", "product", "repos", "vendor", "versions"]
+    __properties: ClassVar[List[str]] = ["collectionURL", "cpes", "defaultStatus", "packageName", "packageURL", "platforms", "product", "repo", "vendor", "versions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,9 +102,10 @@ class AdvisoryMAffected(BaseModel):
             "cpes": obj.get("cpes"),
             "defaultStatus": obj.get("defaultStatus"),
             "packageName": obj.get("packageName"),
+            "packageURL": obj.get("packageURL"),
             "platforms": obj.get("platforms"),
             "product": obj.get("product"),
-            "repos": obj.get("repos"),
+            "repo": obj.get("repo"),
             "vendor": obj.get("vendor"),
             "versions": [AdvisoryMVersion.from_dict(_item) for _item in obj["versions"]] if obj.get("versions") is not None else None
         })

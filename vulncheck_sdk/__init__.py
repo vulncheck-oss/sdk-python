@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.30"
+__version__ = "0.0.31"
 
 # Define package exports
 __all__ = [
@@ -435,6 +435,7 @@ __all__ = [
     "AdvisoryMetaData",
     "AdvisoryMetasploitExploit",
     "AdvisoryMetric",
+    "AdvisoryMetricScenario",
     "AdvisoryMetricsOther",
     "AdvisoryMicrosoftCVRF",
     "AdvisoryMicrosoftKb",
@@ -1747,6 +1748,7 @@ from vulncheck_sdk.models.advisory_mendix import AdvisoryMendix as AdvisoryMendi
 from vulncheck_sdk.models.advisory_meta_data import AdvisoryMetaData as AdvisoryMetaData
 from vulncheck_sdk.models.advisory_metasploit_exploit import AdvisoryMetasploitExploit as AdvisoryMetasploitExploit
 from vulncheck_sdk.models.advisory_metric import AdvisoryMetric as AdvisoryMetric
+from vulncheck_sdk.models.advisory_metric_scenario import AdvisoryMetricScenario as AdvisoryMetricScenario
 from vulncheck_sdk.models.advisory_metrics_other import AdvisoryMetricsOther as AdvisoryMetricsOther
 from vulncheck_sdk.models.advisory_microsoft_cvrf import AdvisoryMicrosoftCVRF as AdvisoryMicrosoftCVRF
 from vulncheck_sdk.models.advisory_microsoft_kb import AdvisoryMicrosoftKb as AdvisoryMicrosoftKb

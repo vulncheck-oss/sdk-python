@@ -404,6 +404,7 @@ docs/AdvisoryMendix.md
 docs/AdvisoryMetaData.md
 docs/AdvisoryMetasploitExploit.md
 docs/AdvisoryMetric.md
+docs/AdvisoryMetricScenario.md
 docs/AdvisoryMetricsOther.md
 docs/AdvisoryMicrosoftCVRF.md
 docs/AdvisoryMicrosoftKb.md
@@ -1702,6 +1703,7 @@ test/test_advisory_mendix.py
 test/test_advisory_meta_data.py
 test/test_advisory_metasploit_exploit.py
 test/test_advisory_metric.py
+test/test_advisory_metric_scenario.py
 test/test_advisory_metrics_other.py
 test/test_advisory_microsoft_cvrf.py
 test/test_advisory_microsoft_kb.py
@@ -3007,6 +3009,7 @@ vulncheck_sdk/models/advisory_mendix.py
 vulncheck_sdk/models/advisory_meta_data.py
 vulncheck_sdk/models/advisory_metasploit_exploit.py
 vulncheck_sdk/models/advisory_metric.py
+vulncheck_sdk/models/advisory_metric_scenario.py
 vulncheck_sdk/models/advisory_metrics_other.py
 vulncheck_sdk/models/advisory_microsoft_cvrf.py
 vulncheck_sdk/models/advisory_microsoft_kb.py
