@@ -36,6 +36,9 @@ class TestAdvisoryPhilipsAdvisory(unittest.TestCase):
         model = AdvisoryPhilipsAdvisory()
         if include_optional:
             return AdvisoryPhilipsAdvisory(
+                affected_products = [
+                    ''
+                    ],
                 cve = [
                     ''
                     ],

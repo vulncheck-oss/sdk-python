@@ -482,6 +482,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_avidml_advs_get(self) -> None:
+        """Test case for index_avidml_advs_get
+
+        Return vulnerability data stored in index \"avidml-advs\"
+        """
+        pass
+
     def test_index_avigilon_get(self) -> None:
         """Test case for index_avigilon_get
 
@@ -1084,6 +1091,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_endress_get(self) -> None:
+        """Test case for index_endress_get
+
+        Return vulnerability data stored in index \"endress\"
+        """
+        pass
+
     def test_index_eol_alibaba_get(self) -> None:
         """Test case for index_eol_alibaba_get
 
@@ -1560,6 +1574,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_igel_get(self) -> None:
+        """Test case for index_igel_get
+
+        Return vulnerability data stored in index \"igel\"
+        """
+        pass
+
     def test_index_il_alerts_get(self) -> None:
         """Test case for index_il_alerts_get
 
@@ -1875,6 +1896,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_microsoft_driver_block_list_get(self) -> None:
+        """Test case for index_microsoft_driver_block_list_get
+
+        Return vulnerability data stored in index \"microsoft-driver-block-list\"
+        """
+        pass
+
     def test_index_microsoft_kb_get(self) -> None:
         """Test case for index_microsoft_kb_get
 
@@ -2124,6 +2152,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_ntp_get
 
         Return vulnerability data stored in index \"ntp\"
+        """
+        pass
+
+    def test_index_nuclei_get(self) -> None:
+        """Test case for index_nuclei_get
+
+        Return vulnerability data stored in index \"nuclei\"
         """
         pass
 
@@ -2596,6 +2631,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_sans_dshield_get(self) -> None:
+        """Test case for index_sans_dshield_get
+
+        Return vulnerability data stored in index \"sans-dshield\"
+        """
+        pass
+
     def test_index_sap_get(self) -> None:
         """Test case for index_sap_get
 
@@ -2978,6 +3020,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_ubuntu_get
 
         Return vulnerability data stored in index \"ubuntu\"
+        """
+        pass
+
+    def test_index_ubuntu_purls_get(self) -> None:
+        """Test case for index_ubuntu_purls_get
+
+        Return vulnerability data stored in index \"ubuntu-purls\"
         """
         pass
 

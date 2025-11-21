@@ -27,13 +27,14 @@ class AdvisoryPhilipsAdvisory(BaseModel):
     """
     AdvisoryPhilipsAdvisory
     """ # noqa: E501
+    affected_products: Optional[List[StrictStr]] = None
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     date_last_updated: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "date_last_updated", "title", "updated_at", "url"]
+    __properties: ClassVar[List[str]] = ["affected_products", "cve", "date_added", "date_last_updated", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +87,7 @@ class AdvisoryPhilipsAdvisory(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "affected_products": obj.get("affected_products"),
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "date_last_updated": obj.get("date_last_updated"),

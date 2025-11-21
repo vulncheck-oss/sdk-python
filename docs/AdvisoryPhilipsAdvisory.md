@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**affected_products** | **List[str]** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **date_last_updated** | **str** |  | [optional] 

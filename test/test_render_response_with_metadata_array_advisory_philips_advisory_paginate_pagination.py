@@ -73,6 +73,9 @@ class TestRenderResponseWithMetadataArrayAdvisoryPhilipsAdvisoryPaginatePaginati
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/philips_advisory.advisory.PhilipsAdvisory(
+                        affected_products = [
+                            ''
+                            ], 
                         cve = [
                             ''
                             ], 
