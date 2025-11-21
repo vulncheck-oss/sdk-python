@@ -29,6 +29,7 @@ class AdvisoryVDEAdvisory(BaseModel):
     AdvisoryVDEAdvisory
     """ # noqa: E501
     csaf_json: Optional[AdvisoryCSAF] = None
+    csaf_url: Optional[StrictStr] = None
     cve: Optional[List[StrictStr]] = None
     cwe: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
@@ -37,7 +38,7 @@ class AdvisoryVDEAdvisory(BaseModel):
     updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     vde: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["csaf_json", "cve", "cwe", "date_added", "date_last_revised", "title", "updated_at", "url", "vde"]
+    __properties: ClassVar[List[str]] = ["csaf_json", "csaf_url", "cve", "cwe", "date_added", "date_last_revised", "title", "updated_at", "url", "vde"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +95,7 @@ class AdvisoryVDEAdvisory(BaseModel):
 
         _obj = cls.model_validate({
             "csaf_json": AdvisoryCSAF.from_dict(obj["csaf_json"]) if obj.get("csaf_json") is not None else None,
+            "csaf_url": obj.get("csaf_url"),
             "cve": obj.get("cve"),
             "cwe": obj.get("cwe"),
             "date_added": obj.get("date_added"),

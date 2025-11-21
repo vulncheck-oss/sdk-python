@@ -135,6 +135,7 @@ class TestAdvisoryVDEAdvisory(unittest.TestCase):
                                     details = '', )
                                 ], )
                         ], ),
+                csaf_url = '',
                 cve = [
                     ''
                     ],

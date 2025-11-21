@@ -172,6 +172,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryVDEAdvisoryPaginatePagination(u
                                             details = '', )
                                         ], )
                                 ], ), 
+                        csaf_url = '', 
                         cve = [
                             ''
                             ], 
