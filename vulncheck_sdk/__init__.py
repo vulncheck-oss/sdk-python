@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.32"
+__version__ = "0.0.33"
 
 # Define package exports
 __all__ = [
@@ -239,6 +239,8 @@ __all__ = [
     "AdvisoryDLink",
     "AdvisoryDNN",
     "AdvisoryDahua",
+    "AdvisoryDanFossCVEDetails",
+    "AdvisoryDanfoss",
     "AdvisoryDassault",
     "AdvisoryDateTime",
     "AdvisoryDebianCVE",
@@ -388,6 +390,7 @@ __all__ = [
     "AdvisoryKoreLogic",
     "AdvisoryKunbus",
     "AdvisoryLG",
+    "AdvisoryLantronix",
     "AdvisoryLenovo",
     "AdvisoryLexmarkAdvisory",
     "AdvisoryLibreOffice",
@@ -1004,6 +1007,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryDLinkPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryDNNPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryDahuaPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryDanfossPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryDassaultPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryDebianSecurityAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryDellPaginatePagination",
@@ -1102,6 +1106,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryKoreLogicPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryKunbusPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryLGPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryLantronixPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryLenovoPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryLexmarkAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryLibreOfficePaginatePagination",
@@ -1565,6 +1570,8 @@ from vulncheck_sdk.models.advisory_dfn_cert import AdvisoryDFNCert as AdvisoryDF
 from vulncheck_sdk.models.advisory_d_link import AdvisoryDLink as AdvisoryDLink
 from vulncheck_sdk.models.advisory_dnn import AdvisoryDNN as AdvisoryDNN
 from vulncheck_sdk.models.advisory_dahua import AdvisoryDahua as AdvisoryDahua
+from vulncheck_sdk.models.advisory_dan_foss_cve_details import AdvisoryDanFossCVEDetails as AdvisoryDanFossCVEDetails
+from vulncheck_sdk.models.advisory_danfoss import AdvisoryDanfoss as AdvisoryDanfoss
 from vulncheck_sdk.models.advisory_dassault import AdvisoryDassault as AdvisoryDassault
 from vulncheck_sdk.models.advisory_date_time import AdvisoryDateTime as AdvisoryDateTime
 from vulncheck_sdk.models.advisory_debian_cve import AdvisoryDebianCVE as AdvisoryDebianCVE
@@ -1714,6 +1721,7 @@ from vulncheck_sdk.models.advisory_kb_threat_description import AdvisoryKbThreat
 from vulncheck_sdk.models.advisory_kore_logic import AdvisoryKoreLogic as AdvisoryKoreLogic
 from vulncheck_sdk.models.advisory_kunbus import AdvisoryKunbus as AdvisoryKunbus
 from vulncheck_sdk.models.advisory_lg import AdvisoryLG as AdvisoryLG
+from vulncheck_sdk.models.advisory_lantronix import AdvisoryLantronix as AdvisoryLantronix
 from vulncheck_sdk.models.advisory_lenovo import AdvisoryLenovo as AdvisoryLenovo
 from vulncheck_sdk.models.advisory_lexmark_advisory import AdvisoryLexmarkAdvisory as AdvisoryLexmarkAdvisory
 from vulncheck_sdk.models.advisory_libre_office import AdvisoryLibreOffice as AdvisoryLibreOffice
@@ -2330,6 +2338,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_dfn_cert_
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_d_link_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDLinkPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDLinkPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_dnn_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDNNPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDNNPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_dahua_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDahuaPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDahuaPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_danfoss_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDanfossPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDanfossPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_dassault_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDassaultPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDassaultPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_debian_security_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDebianSecurityAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDebianSecurityAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_dell_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDellPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDellPaginatePagination
@@ -2428,6 +2437,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_kaspersky
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_kore_logic_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryKoreLogicPaginatePagination as RenderResponseWithMetadataArrayAdvisoryKoreLogicPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_kunbus_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryKunbusPaginatePagination as RenderResponseWithMetadataArrayAdvisoryKunbusPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_lg_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryLGPaginatePagination as RenderResponseWithMetadataArrayAdvisoryLGPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_lantronix_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryLantronixPaginatePagination as RenderResponseWithMetadataArrayAdvisoryLantronixPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_lenovo_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryLenovoPaginatePagination as RenderResponseWithMetadataArrayAdvisoryLenovoPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_lexmark_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryLexmarkAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryLexmarkAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_libre_office_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryLibreOfficePaginatePagination as RenderResponseWithMetadataArrayAdvisoryLibreOfficePaginatePagination
