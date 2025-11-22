@@ -944,6 +944,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_danfoss_get(self) -> None:
+        """Test case for index_danfoss_get
+
+        Return vulnerability data stored in index \"danfoss\"
+        """
+        pass
+
     def test_index_dassault_get(self) -> None:
         """Test case for index_dassault_get
 
@@ -1767,6 +1774,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_kunbus_get
 
         Return vulnerability data stored in index \"kunbus\"
+        """
+        pass
+
+    def test_index_lantronix_get(self) -> None:
+        """Test case for index_lantronix_get
+
+        Return vulnerability data stored in index \"lantronix\"
         """
         pass
 
