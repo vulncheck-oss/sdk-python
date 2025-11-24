@@ -47,6 +47,7 @@ pip install vulncheck-sdk
 
 ```python
 import vulncheck_sdk
+import os
 
 # First let's setup a few variables to help us
 DEFAULT_HOST = "https://api.vulncheck.com"
@@ -103,6 +104,7 @@ import vulncheck_sdk
 from vulncheck_sdk.models.v3controllers_purl_response_data import (
     V3controllersPurlResponseData,
 )
+import os
 
 DEFAULT_HOST = "https://api.vulncheck.com"
 DEFAULT_API = DEFAULT_HOST + "/v3"
@@ -128,6 +130,7 @@ Get all CPE's related to a CVE
 
 ```python
 import vulncheck_sdk
+import os
 
 DEFAULT_HOST = "https://api.vulncheck.com"
 DEFAULT_API = DEFAULT_HOST + "/v3"
@@ -154,6 +157,7 @@ Download the backup for an index
 ```python
 import requests
 import vulncheck_sdk
+import os
 
 DEFAULT_HOST = "https://api.vulncheck.com"
 DEFAULT_API = DEFAULT_HOST + "/v3"
@@ -182,6 +186,7 @@ Get all available indices
 
 ```python
 import vulncheck_sdk
+import os
 
 DEFAULT_HOST = "https://api.vulncheck.com"
 DEFAULT_API = DEFAULT_HOST + "/v3"
@@ -205,6 +210,7 @@ Query VulnCheck-NVD2 for `CVE-2019-19781`
 
 ```python
 import vulncheck_sdk
+import os
 
 DEFAULT_HOST = "https://api.vulncheck.com"
 DEFAULT_API = DEFAULT_HOST + "/v3"
@@ -227,6 +233,7 @@ Paginate over results for a query to VulnCheck-KEV using `cursor`
 
 ```python
 import vulncheck_sdk
+import os
 
 DEFAULT_HOST = "https://api.vulncheck.com"
 DEFAULT_API = DEFAULT_HOST + "/v3"
