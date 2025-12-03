@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.33"
+__version__ = "0.0.34"
 
 # Define package exports
 __all__ = [
@@ -292,6 +292,7 @@ __all__ = [
     "AdvisoryFortinetIPS",
     "AdvisoryFoxit",
     "AdvisoryFoxitAffected",
+    "AdvisoryFresenius",
     "AdvisoryGCP",
     "AdvisoryGEGas",
     "AdvisoryGEHealthcareAdvisory",
@@ -1043,6 +1044,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryFortinetAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryFortinetIPSPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryFoxitPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryFreseniusPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGCPPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGEGasPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGEHealthcareAdvisoryPaginatePagination",
@@ -1623,6 +1625,7 @@ from vulncheck_sdk.models.advisory_fortinet_advisory import AdvisoryFortinetAdvi
 from vulncheck_sdk.models.advisory_fortinet_ips import AdvisoryFortinetIPS as AdvisoryFortinetIPS
 from vulncheck_sdk.models.advisory_foxit import AdvisoryFoxit as AdvisoryFoxit
 from vulncheck_sdk.models.advisory_foxit_affected import AdvisoryFoxitAffected as AdvisoryFoxitAffected
+from vulncheck_sdk.models.advisory_fresenius import AdvisoryFresenius as AdvisoryFresenius
 from vulncheck_sdk.models.advisory_gcp import AdvisoryGCP as AdvisoryGCP
 from vulncheck_sdk.models.advisory_ge_gas import AdvisoryGEGas as AdvisoryGEGas
 from vulncheck_sdk.models.advisory_ge_healthcare_advisory import AdvisoryGEHealthcareAdvisory as AdvisoryGEHealthcareAdvisory
@@ -2374,6 +2377,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_forge_roc
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_fortinet_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryFortinetAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryFortinetAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_fortinet_ips_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryFortinetIPSPaginatePagination as RenderResponseWithMetadataArrayAdvisoryFortinetIPSPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_foxit_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryFoxitPaginatePagination as RenderResponseWithMetadataArrayAdvisoryFoxitPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_fresenius_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryFreseniusPaginatePagination as RenderResponseWithMetadataArrayAdvisoryFreseniusPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_gcp_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGCPPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGCPPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ge_gas_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGEGasPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGEGasPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ge_healthcare_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGEHealthcareAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGEHealthcareAdvisoryPaginatePagination

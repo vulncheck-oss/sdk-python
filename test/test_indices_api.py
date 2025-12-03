@@ -1273,6 +1273,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_fresenius_get(self) -> None:
+        """Test case for index_fresenius_get
+
+        Return vulnerability data stored in index \"fresenius\"
+        """
+        pass
+
     def test_index_gallagher_get(self) -> None:
         """Test case for index_gallagher_get
 
