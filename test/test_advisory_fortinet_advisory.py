@@ -54,7 +54,8 @@ class TestAdvisoryFortinetAdvisory(unittest.TestCase):
                     ''
                     ],
                 summary = '',
-                title = ''
+                title = '',
+                updated_at = ''
             )
         else:
             return AdvisoryFortinetAdvisory(

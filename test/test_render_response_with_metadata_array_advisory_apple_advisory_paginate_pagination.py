@@ -89,6 +89,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryAppleAdvisoryPaginatePagination
                             ], 
                         date_added = '', 
                         name = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

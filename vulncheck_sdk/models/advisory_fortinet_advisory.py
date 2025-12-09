@@ -38,7 +38,8 @@ class AdvisoryFortinetAdvisory(BaseModel):
     solutions: Optional[List[StrictStr]] = None
     summary: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["acknowledgement", "affectedProducts", "cve", "cvssv3", "date_added", "irnumber", "link", "references", "solutions", "summary", "title"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["acknowledgement", "affectedProducts", "cve", "cvssv3", "date_added", "irnumber", "link", "references", "solutions", "summary", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,7 +102,8 @@ class AdvisoryFortinetAdvisory(BaseModel):
             "references": obj.get("references"),
             "solutions": obj.get("solutions"),
             "summary": obj.get("summary"),
-            "title": obj.get("title")
+            "title": obj.get("title"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

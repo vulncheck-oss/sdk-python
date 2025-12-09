@@ -83,6 +83,13 @@ class TestEndpointsApi(unittest.TestCase):
         """
         pass
 
+    def test_purls_post(self) -> None:
+        """Test case for purls_post
+
+        Request vulnerabilities related to a list of PURLs
+        """
+        pass
+
     def test_rules_initial_access_type_get(self) -> None:
         """Test case for rules_initial_access_type_get
 
