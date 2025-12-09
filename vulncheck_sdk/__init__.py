@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.34"
+__version__ = "0.0.35"
 
 # Define package exports
 __all__ = [
@@ -876,6 +876,7 @@ __all__ = [
     "ParamsIndexBackup",
     "ParamsIndexBackupList",
     "ParamsIndexList",
+    "PurlBatchVulnFinding",
     "PurlPackageURLJSON",
     "PurlQualifierJSON",
     "PurlsPurlResponse",
@@ -1341,9 +1342,11 @@ __all__ = [
     "RenderResponseWithMetadataArrayStringV3controllersResponseMetadata",
     "RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata",
     "RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata",
+    "RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata",
     "V3controllersBackupResponseMetadata",
     "V3controllersPurlResponseData",
     "V3controllersPurlResponseMetadata",
+    "V3controllersPurlsResponseMetadata",
     "V3controllersResponseMetadata",
 ]
 
@@ -2209,6 +2212,7 @@ from vulncheck_sdk.models.paginate_param import PaginateParam as PaginateParam
 from vulncheck_sdk.models.params_index_backup import ParamsIndexBackup as ParamsIndexBackup
 from vulncheck_sdk.models.params_index_backup_list import ParamsIndexBackupList as ParamsIndexBackupList
 from vulncheck_sdk.models.params_index_list import ParamsIndexList as ParamsIndexList
+from vulncheck_sdk.models.purl_batch_vuln_finding import PurlBatchVulnFinding as PurlBatchVulnFinding
 from vulncheck_sdk.models.purl_package_urljson import PurlPackageURLJSON as PurlPackageURLJSON
 from vulncheck_sdk.models.purl_qualifier_json import PurlQualifierJSON as PurlQualifierJSON
 from vulncheck_sdk.models.purls_purl_response import PurlsPurlResponse as PurlsPurlResponse
@@ -2674,7 +2678,9 @@ from vulncheck_sdk.models.render_response_with_metadata_array_purls_purl_respons
 from vulncheck_sdk.models.render_response_with_metadata_array_string_v3controllers_response_metadata import RenderResponseWithMetadataArrayStringV3controllersResponseMetadata as RenderResponseWithMetadataArrayStringV3controllersResponseMetadata
 from vulncheck_sdk.models.render_response_with_metadata_v3controllers_backup_response_data_v3controllers_backup_response_metadata import RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata as RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata
 from vulncheck_sdk.models.render_response_with_metadata_v3controllers_purl_response_data_v3controllers_purl_response_metadata import RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata as RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata
+from vulncheck_sdk.models.render_response_with_metadata_v3controllers_purls_response_data_v3controllers_purls_response_metadata import RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata as RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata
 from vulncheck_sdk.models.v3controllers_backup_response_metadata import V3controllersBackupResponseMetadata as V3controllersBackupResponseMetadata
 from vulncheck_sdk.models.v3controllers_purl_response_data import V3controllersPurlResponseData as V3controllersPurlResponseData
 from vulncheck_sdk.models.v3controllers_purl_response_metadata import V3controllersPurlResponseMetadata as V3controllersPurlResponseMetadata
+from vulncheck_sdk.models.v3controllers_purls_response_metadata import V3controllersPurlsResponseMetadata as V3controllersPurlsResponseMetadata
 from vulncheck_sdk.models.v3controllers_response_metadata import V3controllersResponseMetadata as V3controllersResponseMetadata

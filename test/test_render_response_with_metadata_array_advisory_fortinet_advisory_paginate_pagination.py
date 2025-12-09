@@ -91,7 +91,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryFortinetAdvisoryPaginatePaginat
                             ''
                             ], 
                         summary = '', 
-                        title = '', )
+                        title = '', 
+                        updated_at = '', )
                     ]
             )
         else:

@@ -52,6 +52,7 @@ class TestAdvisoryAppleAdvisory(unittest.TestCase):
                     ],
                 date_added = '',
                 name = '',
+                updated_at = '',
                 url = ''
             )
         else:

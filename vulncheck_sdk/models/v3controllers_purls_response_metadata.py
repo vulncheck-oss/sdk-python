@@ -18,23 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.models.advisory_apple_component import AdvisoryAppleComponent
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryAppleAdvisory(BaseModel):
+class V3controllersPurlsResponseMetadata(BaseModel):
     """
-    AdvisoryAppleAdvisory
+    V3controllersPurlsResponseMetadata
     """ # noqa: E501
-    components: Optional[List[AdvisoryAppleComponent]] = None
-    cve: Optional[List[StrictStr]] = None
-    date_added: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    updated_at: Optional[StrictStr] = None
-    url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["components", "cve", "date_added", "name", "updated_at", "url"]
+    timestamp: Optional[StrictStr] = Field(default=None, description="time of the transaction")
+    total_documents: Optional[StrictInt] = Field(default=None, description="number of results found")
+    __properties: ClassVar[List[str]] = ["timestamp", "total_documents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -54,7 +49,7 @@ class AdvisoryAppleAdvisory(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryAppleAdvisory from a JSON string"""
+        """Create an instance of V3controllersPurlsResponseMetadata from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,18 +70,11 @@ class AdvisoryAppleAdvisory(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in components (list)
-        _items = []
-        if self.components:
-            for _item_components in self.components:
-                if _item_components:
-                    _items.append(_item_components.to_dict())
-            _dict['components'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryAppleAdvisory from a dict"""
+        """Create an instance of V3controllersPurlsResponseMetadata from a dict"""
         if obj is None:
             return None
 
@@ -94,12 +82,8 @@ class AdvisoryAppleAdvisory(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "components": [AdvisoryAppleComponent.from_dict(_item) for _item in obj["components"]] if obj.get("components") is not None else None,
-            "cve": obj.get("cve"),
-            "date_added": obj.get("date_added"),
-            "name": obj.get("name"),
-            "updated_at": obj.get("updated_at"),
-            "url": obj.get("url")
+            "timestamp": obj.get("timestamp"),
+            "total_documents": obj.get("total_documents")
         })
         return _obj
 

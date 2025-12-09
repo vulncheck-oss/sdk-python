@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**openapi_get**](EndpointsApi.md#openapi_get) | **GET** /openapi | Return OpenAPI specification
 [**pdns_vulncheck_c2_get**](EndpointsApi.md#pdns_vulncheck_c2_get) | **GET** /pdns/vulncheck-c2 | Retrieve a list of C2 Hostnames
 [**purl_get**](EndpointsApi.md#purl_get) | **GET** /purl | Request vulnerabilities related to a PURL
+[**purls_post**](EndpointsApi.md#purls_post) | **POST** /purls | Request vulnerabilities related to a list of PURLs
 [**rules_initial_access_type_get**](EndpointsApi.md#rules_initial_access_type_get) | **GET** /rules/initial-access/{type} | Retrieve set of initial-access detection rules
 [**tags_vulncheck_c2_get**](EndpointsApi.md#tags_vulncheck_c2_get) | **GET** /tags/vulncheck-c2 | Retrieve a list of C2 IP addresses
 
@@ -627,6 +628,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata**](RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **purls_post**
+> RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata purls_post(purls)
+
+Request vulnerabilities related to a list of PURLs
+
+Accepts a JSON array of PURLs in the request body and returns a list of vulnerabilities
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.render_response_with_metadata_v3controllers_purls_response_data_v3controllers_purls_response_metadata import RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.EndpointsApi(api_client)
+    purls = ['purls_example'] # List[str] | PURL strings used to identify and locate software packages
+
+    try:
+        # Request vulnerabilities related to a list of PURLs
+        api_response = api_instance.purls_post(purls)
+        print("The response of EndpointsApi->purls_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EndpointsApi->purls_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **purls** | [**List[str]**](str.md)| PURL strings used to identify and locate software packages | 
+
+### Return type
+
+[**RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata**](RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata.md)
 
 ### Authorization
 
