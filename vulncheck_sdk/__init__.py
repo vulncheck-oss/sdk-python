@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.35"
+__version__ = "0.0.36"
 
 # Define package exports
 __all__ = [
@@ -339,6 +339,7 @@ __all__ = [
     "AdvisoryHCL",
     "AdvisoryHIKVision",
     "AdvisoryHKCert",
+    "AdvisoryHMS",
     "AdvisoryHP",
     "AdvisoryHPE",
     "AdvisoryHacktivity",
@@ -573,6 +574,7 @@ __all__ = [
     "AdvisoryRange",
     "AdvisoryRansomwareExploit",
     "AdvisoryRecordType",
+    "AdvisoryRedLion",
     "AdvisoryRedhatCVE",
     "AdvisoryReference",
     "AdvisoryRelatedRule",
@@ -1068,6 +1070,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryHCLPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryHIKVisionPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryHKCertPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryHMSPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryHPEPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryHPPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryHacktivityPaginatePagination",
@@ -1202,6 +1205,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryQualysPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryQualysQIDPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryRansomwareExploitPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryRedLionPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryRedhatCVEPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryRenesasPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryRevivePaginatePagination",
@@ -1675,6 +1679,7 @@ from vulncheck_sdk.models.advisory_grey_noise_tags import AdvisoryGreyNoiseTags 
 from vulncheck_sdk.models.advisory_hcl import AdvisoryHCL as AdvisoryHCL
 from vulncheck_sdk.models.advisory_hik_vision import AdvisoryHIKVision as AdvisoryHIKVision
 from vulncheck_sdk.models.advisory_hk_cert import AdvisoryHKCert as AdvisoryHKCert
+from vulncheck_sdk.models.advisory_hms import AdvisoryHMS as AdvisoryHMS
 from vulncheck_sdk.models.advisory_hp import AdvisoryHP as AdvisoryHP
 from vulncheck_sdk.models.advisory_hpe import AdvisoryHPE as AdvisoryHPE
 from vulncheck_sdk.models.advisory_hacktivity import AdvisoryHacktivity as AdvisoryHacktivity
@@ -1909,6 +1914,7 @@ from vulncheck_sdk.models.advisory_r_threat import AdvisoryRThreat as AdvisoryRT
 from vulncheck_sdk.models.advisory_range import AdvisoryRange as AdvisoryRange
 from vulncheck_sdk.models.advisory_ransomware_exploit import AdvisoryRansomwareExploit as AdvisoryRansomwareExploit
 from vulncheck_sdk.models.advisory_record_type import AdvisoryRecordType as AdvisoryRecordType
+from vulncheck_sdk.models.advisory_red_lion import AdvisoryRedLion as AdvisoryRedLion
 from vulncheck_sdk.models.advisory_redhat_cve import AdvisoryRedhatCVE as AdvisoryRedhatCVE
 from vulncheck_sdk.models.advisory_reference import AdvisoryReference as AdvisoryReference
 from vulncheck_sdk.models.advisory_related_rule import AdvisoryRelatedRule as AdvisoryRelatedRule
@@ -2404,6 +2410,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_grey_nois
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_hcl_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryHCLPaginatePagination as RenderResponseWithMetadataArrayAdvisoryHCLPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_hik_vision_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryHIKVisionPaginatePagination as RenderResponseWithMetadataArrayAdvisoryHIKVisionPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_hk_cert_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryHKCertPaginatePagination as RenderResponseWithMetadataArrayAdvisoryHKCertPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_hms_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryHMSPaginatePagination as RenderResponseWithMetadataArrayAdvisoryHMSPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_hpe_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryHPEPaginatePagination as RenderResponseWithMetadataArrayAdvisoryHPEPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_hp_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryHPPaginatePagination as RenderResponseWithMetadataArrayAdvisoryHPPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_hacktivity_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryHacktivityPaginatePagination as RenderResponseWithMetadataArrayAdvisoryHacktivityPaginatePagination
@@ -2538,6 +2545,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_qualcomm_
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_qualys_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryQualysPaginatePagination as RenderResponseWithMetadataArrayAdvisoryQualysPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_qualys_qid_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryQualysQIDPaginatePagination as RenderResponseWithMetadataArrayAdvisoryQualysQIDPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ransomware_exploit_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryRansomwareExploitPaginatePagination as RenderResponseWithMetadataArrayAdvisoryRansomwareExploitPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_red_lion_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryRedLionPaginatePagination as RenderResponseWithMetadataArrayAdvisoryRedLionPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_redhat_cve_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryRedhatCVEPaginatePagination as RenderResponseWithMetadataArrayAdvisoryRedhatCVEPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_renesas_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryRenesasPaginatePagination as RenderResponseWithMetadataArrayAdvisoryRenesasPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_revive_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryRevivePaginatePagination as RenderResponseWithMetadataArrayAdvisoryRevivePaginatePagination

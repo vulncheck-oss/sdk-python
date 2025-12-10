@@ -1525,6 +1525,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_hms_get(self) -> None:
+        """Test case for index_hms_get
+
+        Return vulnerability data stored in index \"hms\"
+        """
+        pass
+
     def test_index_honeywell_get(self) -> None:
         """Test case for index_honeywell_get
 
@@ -2523,6 +2530,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_ransomware_get
 
         Return vulnerability data stored in index \"ransomware\"
+        """
+        pass
+
+    def test_index_red_lion_get(self) -> None:
+        """Test case for index_red_lion_get
+
+        Return vulnerability data stored in index \"red-lion\"
         """
         pass
 
