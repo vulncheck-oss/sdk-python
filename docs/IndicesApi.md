@@ -218,6 +218,7 @@ Method | HTTP request | Description
 [**index_hitachi_energy_get**](IndicesApi.md#index_hitachi_energy_get) | **GET** /index/hitachi-energy | Return vulnerability data stored in index \&quot;hitachi-energy\&quot;
 [**index_hitachi_get**](IndicesApi.md#index_hitachi_get) | **GET** /index/hitachi | Return vulnerability data stored in index \&quot;hitachi\&quot;
 [**index_hkcert_get**](IndicesApi.md#index_hkcert_get) | **GET** /index/hkcert | Return vulnerability data stored in index \&quot;hkcert\&quot;
+[**index_hms_get**](IndicesApi.md#index_hms_get) | **GET** /index/hms | Return vulnerability data stored in index \&quot;hms\&quot;
 [**index_honeywell_get**](IndicesApi.md#index_honeywell_get) | **GET** /index/honeywell | Return vulnerability data stored in index \&quot;honeywell\&quot;
 [**index_hp_get**](IndicesApi.md#index_hp_get) | **GET** /index/hp | Return vulnerability data stored in index \&quot;hp\&quot;
 [**index_hpe_get**](IndicesApi.md#index_hpe_get) | **GET** /index/hpe | Return vulnerability data stored in index \&quot;hpe\&quot;
@@ -361,6 +362,7 @@ Method | HTTP request | Description
 [**index_qualys_qids_get**](IndicesApi.md#index_qualys_qids_get) | **GET** /index/qualys-qids | Return vulnerability data stored in index \&quot;qualys-qids\&quot;
 [**index_qubes_qsb_get**](IndicesApi.md#index_qubes_qsb_get) | **GET** /index/qubes-qsb | Return vulnerability data stored in index \&quot;qubes-qsb\&quot;
 [**index_ransomware_get**](IndicesApi.md#index_ransomware_get) | **GET** /index/ransomware | Return vulnerability data stored in index \&quot;ransomware\&quot;
+[**index_red_lion_get**](IndicesApi.md#index_red_lion_get) | **GET** /index/red-lion | Return vulnerability data stored in index \&quot;red-lion\&quot;
 [**index_redhat_cves_get**](IndicesApi.md#index_redhat_cves_get) | **GET** /index/redhat-cves | Return vulnerability data stored in index \&quot;redhat-cves\&quot;
 [**index_redhat_get**](IndicesApi.md#index_redhat_get) | **GET** /index/redhat | Return vulnerability data stored in index \&quot;redhat\&quot;
 [**index_renesas_get**](IndicesApi.md#index_renesas_get) | **GET** /index/renesas | Return vulnerability data stored in index \&quot;renesas\&quot;
@@ -29593,6 +29595,142 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **index_hms_get**
+> RenderResponseWithMetadataArrayAdvisoryHMSPaginatePagination index_hms_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+
+Return vulnerability data stored in index \"hms\"
+
+### Overview
+This endpoint allows you to retrieve a paginated list of all documents from the hms index. \
+By default, a maximum of 100 documents are shown per page.
+
+**Index Description:** HMS (Hardware Meets Software) Security Advisories
+
+### Paging Over Large Data (cursor)
+In order to allow users to iterate over large index datasets, this endpoint provides a server-side
+"cursor" mechanism. To use the cursor, first call `GET /index/hms?start_cursor`, the response will
+have a `next_cursor` id that clients will need to pass as a query parameter to the next request like
+`GET /index/hms?cursor=<next_cursor_id>`
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_hms_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryHMSPaginatePagination
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.IndicesApi(api_client)
+    page = 56 # int | set the page number of the response (optional)
+    limit = 56 # int | limit the number of findings in the response (optional)
+    cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
+    start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
+    cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
+    alias = 'alias_example' # str | Specify a vulnerability alias to search with. (optional)
+    iava = 'iava_example' # str | Specify an IAVA ID to search with. (optional)
+    jvndb = 'jvndb_example' # str | Specify a JVNDB ID to search with. (optional)
+    ilvn = 'ilvn_example' # str | Specify an ILVN ID to search with. (optional)
+    threat_actor = 'threat_actor_example' # str | Specify a threat actor name to search with. (optional)
+    mitre_id = 'mitre_id_example' # str | Specify a MITRE ID to search with. (optional)
+    misp_id = 'misp_id_example' # str | Specify a MISP ID to search with. (optional)
+    ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
+    botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
+    published = 'published_example' # str | Specify a published date (optional)
+    var_date = 'var_date_example' # str | Specify a starting published date to filter with. (optional)
+    var_date2 = 'var_date_example' # str | Specify an ending published date to filter with. (optional)
+    updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
+    updated_at_end_date = 'updated_at_end_date_example' # str | Specify an ending 'updated-at' date to filter with. (optional)
+    last_mod_start_date = 'last_mod_start_date_example' # str | Specify a starting last modified date to filter with. (optional)
+    last_mod_end_date = 'last_mod_end_date_example' # str | Specify an ending last modified date to filter with. (optional)
+    pub_start_date = 'pub_start_date_example' # str | Specify a starting published date to filter with. (optional)
+    pub_end_date = 'pub_end_date_example' # str | Specify an ending published date to filter with. (optional)
+
+    try:
+        # Return vulnerability data stored in index \"hms\"
+        api_response = api_instance.index_hms_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        print("The response of IndicesApi->index_hms_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IndicesApi->index_hms_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| set the page number of the response | [optional] 
+ **limit** | **int**| limit the number of findings in the response | [optional] 
+ **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
+ **start_cursor** | **str**| request server-side paging | [optional] 
+ **cve** | **str**| Specify a CVE ID to search with. | [optional] 
+ **alias** | **str**| Specify a vulnerability alias to search with. | [optional] 
+ **iava** | **str**| Specify an IAVA ID to search with. | [optional] 
+ **jvndb** | **str**| Specify a JVNDB ID to search with. | [optional] 
+ **ilvn** | **str**| Specify an ILVN ID to search with. | [optional] 
+ **threat_actor** | **str**| Specify a threat actor name to search with. | [optional] 
+ **mitre_id** | **str**| Specify a MITRE ID to search with. | [optional] 
+ **misp_id** | **str**| Specify a MISP ID to search with. | [optional] 
+ **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
+ **botnet** | **str**| Specify a botnet name to search with. | [optional] 
+ **published** | **str**| Specify a published date | [optional] 
+ **var_date** | **str**| Specify a starting published date to filter with. | [optional] 
+ **var_date2** | **str**| Specify an ending published date to filter with. | [optional] 
+ **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 
+ **updated_at_end_date** | **str**| Specify an ending &#39;updated-at&#39; date to filter with. | [optional] 
+ **last_mod_start_date** | **str**| Specify a starting last modified date to filter with. | [optional] 
+ **last_mod_end_date** | **str**| Specify an ending last modified date to filter with. | [optional] 
+ **pub_start_date** | **str**| Specify a starting published date to filter with. | [optional] 
+ **pub_end_date** | **str**| Specify an ending published date to filter with. | [optional] 
+
+### Return type
+
+[**RenderResponseWithMetadataArrayAdvisoryHMSPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryHMSPaginatePagination.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **index_honeywell_get**
 > RenderResponseWithMetadataArrayAdvisoryHoneywellPaginatePagination index_honeywell_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
@@ -49061,6 +49199,142 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RenderResponseWithMetadataArrayAdvisoryRansomwareExploitPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryRansomwareExploitPaginatePagination.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **index_red_lion_get**
+> RenderResponseWithMetadataArrayAdvisoryRedLionPaginatePagination index_red_lion_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+
+Return vulnerability data stored in index \"red-lion\"
+
+### Overview
+This endpoint allows you to retrieve a paginated list of all documents from the red-lion index. \
+By default, a maximum of 100 documents are shown per page.
+
+**Index Description:** Red-Lion Security Advisories
+
+### Paging Over Large Data (cursor)
+In order to allow users to iterate over large index datasets, this endpoint provides a server-side
+"cursor" mechanism. To use the cursor, first call `GET /index/red-lion?start_cursor`, the response will
+have a `next_cursor` id that clients will need to pass as a query parameter to the next request like
+`GET /index/red-lion?cursor=<next_cursor_id>`
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_red_lion_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryRedLionPaginatePagination
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.IndicesApi(api_client)
+    page = 56 # int | set the page number of the response (optional)
+    limit = 56 # int | limit the number of findings in the response (optional)
+    cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
+    start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
+    cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
+    alias = 'alias_example' # str | Specify a vulnerability alias to search with. (optional)
+    iava = 'iava_example' # str | Specify an IAVA ID to search with. (optional)
+    jvndb = 'jvndb_example' # str | Specify a JVNDB ID to search with. (optional)
+    ilvn = 'ilvn_example' # str | Specify an ILVN ID to search with. (optional)
+    threat_actor = 'threat_actor_example' # str | Specify a threat actor name to search with. (optional)
+    mitre_id = 'mitre_id_example' # str | Specify a MITRE ID to search with. (optional)
+    misp_id = 'misp_id_example' # str | Specify a MISP ID to search with. (optional)
+    ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
+    botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
+    published = 'published_example' # str | Specify a published date (optional)
+    var_date = 'var_date_example' # str | Specify a starting published date to filter with. (optional)
+    var_date2 = 'var_date_example' # str | Specify an ending published date to filter with. (optional)
+    updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
+    updated_at_end_date = 'updated_at_end_date_example' # str | Specify an ending 'updated-at' date to filter with. (optional)
+    last_mod_start_date = 'last_mod_start_date_example' # str | Specify a starting last modified date to filter with. (optional)
+    last_mod_end_date = 'last_mod_end_date_example' # str | Specify an ending last modified date to filter with. (optional)
+    pub_start_date = 'pub_start_date_example' # str | Specify a starting published date to filter with. (optional)
+    pub_end_date = 'pub_end_date_example' # str | Specify an ending published date to filter with. (optional)
+
+    try:
+        # Return vulnerability data stored in index \"red-lion\"
+        api_response = api_instance.index_red_lion_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, var_date2=var_date2, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        print("The response of IndicesApi->index_red_lion_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IndicesApi->index_red_lion_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| set the page number of the response | [optional] 
+ **limit** | **int**| limit the number of findings in the response | [optional] 
+ **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
+ **start_cursor** | **str**| request server-side paging | [optional] 
+ **cve** | **str**| Specify a CVE ID to search with. | [optional] 
+ **alias** | **str**| Specify a vulnerability alias to search with. | [optional] 
+ **iava** | **str**| Specify an IAVA ID to search with. | [optional] 
+ **jvndb** | **str**| Specify a JVNDB ID to search with. | [optional] 
+ **ilvn** | **str**| Specify an ILVN ID to search with. | [optional] 
+ **threat_actor** | **str**| Specify a threat actor name to search with. | [optional] 
+ **mitre_id** | **str**| Specify a MITRE ID to search with. | [optional] 
+ **misp_id** | **str**| Specify a MISP ID to search with. | [optional] 
+ **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
+ **botnet** | **str**| Specify a botnet name to search with. | [optional] 
+ **published** | **str**| Specify a published date | [optional] 
+ **var_date** | **str**| Specify a starting published date to filter with. | [optional] 
+ **var_date2** | **str**| Specify an ending published date to filter with. | [optional] 
+ **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 
+ **updated_at_end_date** | **str**| Specify an ending &#39;updated-at&#39; date to filter with. | [optional] 
+ **last_mod_start_date** | **str**| Specify a starting last modified date to filter with. | [optional] 
+ **last_mod_end_date** | **str**| Specify an ending last modified date to filter with. | [optional] 
+ **pub_start_date** | **str**| Specify a starting published date to filter with. | [optional] 
+ **pub_end_date** | **str**| Specify an ending published date to filter with. | [optional] 
+
+### Return type
+
+[**RenderResponseWithMetadataArrayAdvisoryRedLionPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryRedLionPaginatePagination.md)
 
 ### Authorization
 
