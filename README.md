@@ -48,6 +48,7 @@ pip install vulncheck-sdk
 ```python
 import vulncheck_sdk
 import os
+import requests
 
 # First let's setup a few variables to help us
 DEFAULT_HOST = "https://api.vulncheck.com"
