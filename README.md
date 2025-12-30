@@ -79,7 +79,8 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
         print(cve)
 
     # Download a Backup
-    api_response = endpoints_client.backup_index_get("initial-access")
+    index = "initial-access"
+    api_response = endpoints_client.backup_index_get(index)
     backup_url = requests.get(api_response.data[0].url)
     file_path = f"{index}.zip"
     with open(file_path, "wb") as file:
