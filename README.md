@@ -68,7 +68,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     # PURL
     api_response = endpoints_client.purl_get("pkg:hex/coherence@0.1.2")
-    data: V3controllersPurlResponseData = api_response.data
+    data = V3controllersPurlResponseData = api_response.data
     print(data.cves)
 
     # CPE
