@@ -48,6 +48,7 @@ pip install vulncheck-sdk
 ```python
 import vulncheck_sdk
 import os
+import requests
 
 # First let's setup a few variables to help us
 DEFAULT_HOST = "https://api.vulncheck.com"
@@ -68,7 +69,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     # PURL
     api_response = endpoints_client.purl_get("pkg:hex/coherence@0.1.2")
-    data: V3controllersPurlResponseData = api_response.data
+    data = V3controllersPurlResponseData = api_response.data
     print(data.cves)
 
     # CPE
@@ -78,7 +79,8 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
         print(cve)
 
     # Download a Backup
-    api_response = endpoints_client.backup_index_get("initial-access")
+    index = "initial-access"
+    api_response = endpoints_client.backup_index_get(index)
     backup_url = requests.get(api_response.data[0].url)
     file_path = f"{index}.zip"
     with open(file_path, "wb") as file:
