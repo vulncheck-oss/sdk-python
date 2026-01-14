@@ -26,8 +26,9 @@ jobs:
         with:
           poetry-version: "2.2.1"
 
-      - name: Install cog
-        run: pip install cogapp==3.6.0
+      - name: Install cog, requests for testing
+        run: pip install requests==2.32.5 cogapp==3.6.0
+
 
       - uses: actions/checkout@v4
 
