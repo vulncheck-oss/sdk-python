@@ -1,0 +1,138 @@
+<p align="center">
+    <img src="https://raw.githubusercontent.com/vulncheck-oss/sdk-python/refs/heads/main/logo-sdk.png" align="center" alt="VulnCheck Logo" width="150" />
+</p>
+
+# The VulnCheck SDK For Python
+
+Bring the VulnCheck API to your Python applications.
+
+[![PyPI - Version](https://badge.fury.io/py/vulncheck-sdk.svg)](https://badge.fury.io/py/vulncheck-sdk)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626.svg?style=flat&logo=Jupyter)](https://jupyter.org/)
+
+<!--toc:start-->
+- [The VulnCheck SDK For Python](#the-vulncheck-sdk-for-python)
+  - [Installation](#installation)
+  - [Resources](#resources)
+  - [Quickstart](#quickstart)
+  - [Examples](#examples)
+    - [PURL](#purl)
+    - [CPE](#cpe)
+    - [Backup](#backup)
+    - [Indices](#indices)
+    - [Index](#index)
+    - [Pagination](#pagination)
+  - [Contributing](#contributing)
+  - [Security](#security)
+  - [Sponsorship](#sponsorship)
+  - [License](#license)
+<!--toc:end-->
+
+## Installation
+
+```sh
+# From PyPi
+pip install vulncheck-sdk
+```
+
+> [!IMPORTANT]
+> Windows users may need to enable [Long Path Support](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry#enable-long-paths-in-windows-10-version-1607-and-later)
+
+## Resources
+
+- [OpenAPI Documentation](./vulncheck_sdk_README.md)
+- [VulnCheck API Docs](https://docs.vulncheck.com/api)
+- [VulnCheck Python SDK Docs](https://docs.vulncheck.com/tools/python-sdk/introduction)
+
+## Quickstart
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/quickstart.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+## Examples
+
+### PURL
+
+Get the CVE's for a given PURL
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/purl.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+### CPE
+
+Get all CPE's related to a CVE
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/cpe.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+### Backup
+
+Download the backup for an index
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/backup.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+### Indices
+
+Get all available indices
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/indicies.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+### Index
+
+Query VulnCheck-NVD2 for `CVE-2019-19781`
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/index.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+### Pagination
+
+Paginate over results for a query to VulnCheck-KEV using `cursor`
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/pagination.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+## Contributing
+
+Please see [CONTRIBUTING](./.github/CONTRIBUTING.md) for details.
+
+## Security
+
+If you discover any security related issues, please create an [issue](https://github.com/vulncheck-oss/sdk-python/issues/new?template=1_BUG-FORM.yaml).
+
+## Sponsorship
+
+Development of this project is sponsored by [VulnCheck](https://vulncheck.com/) learn more about us!
+
+## License
+
+Apache License 2.0. Please see [License File](./LICENSE) for more information.
+

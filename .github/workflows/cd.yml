@@ -24,9 +24,14 @@ jobs:
       - name: Install Poetry # Used in the generate.sh script
         uses: abatilo/actions-poetry@v2
         with:
-          poetry-version: "2.1.3"
+          poetry-version: "2.2.1"
+
+      - name: Install cog, requests for testing
+        run: pip install requests==2.32.5 cogapp==3.6.0
+
 
       - uses: actions/checkout@v4
+
       - name: Generate new sdk
         id: generate
         run: |
@@ -41,6 +46,7 @@ jobs:
         if: steps.generate.outputs.changes == 'true'
         id: date
         run: echo "date=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
+        
       - name: Create Pull Request
         if: steps.generate.outputs.changes == 'true'
         uses: peter-evans/create-pull-request@v7
@@ -53,3 +59,4 @@ jobs:
           title: "Update Python SDK"
           commit-message: "[bot](${{ steps.date.outputs.date }}) Sync SDK with OpenAPI spec"
           body: "New [API](https://api.vulncheck.com/v3/openapi) changes have been detected."
+
