@@ -65,15 +65,6 @@ with open("./tests/purl.py", 'r') as f:
 ]]] -->
 <!-- [[[end]]] -->
 
-Aio example
-
-<!-- [[[cog
-import cog, glob
-with open("./tests/purl_aio.py", 'r') as f:
-    cog.outl(f"```python\n{f.read().strip()}\n```\n")
-]]] -->
-<!-- [[[end]]] -->
-
 ### CPE
 
 Get all CPE's related to a CVE
