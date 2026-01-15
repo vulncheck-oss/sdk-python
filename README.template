@@ -53,12 +53,14 @@ with open("./tests/quickstart.py", 'r') as f:
 <!-- [[[end]]] -->
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 <!-- [[[cog
 import cog, glob
 with open("./tests/quickstart_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
+
 </details>
 
 ## Examples
@@ -75,12 +77,14 @@ with open("./tests/purl.py", 'r') as f:
 <!-- [[[end]]] -->
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 <!-- [[[cog
 import cog, glob
 with open("./tests/purl_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
+
 </details>
 
 ### CPE
@@ -95,12 +99,14 @@ with open("./tests/cpe.py", 'r') as f:
 <!-- [[[end]]] -->
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 <!-- [[[cog
 import cog, glob
 with open("./tests/cpe_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
+
 </details>
 
 ### Backup
@@ -115,12 +121,14 @@ with open("./tests/backup.py", 'r') as f:
 <!-- [[[end]]] -->
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 <!-- [[[cog
 import cog, glob
 with open("./tests/backup_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
+
 </details>
 
 ### Indices
@@ -135,12 +143,14 @@ with open("./tests/indicies.py", 'r') as f:
 <!-- [[[end]]] -->
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 <!-- [[[cog
 import cog, glob
 with open("./tests/indicies_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
+
 </details>
 
 ### Index
@@ -155,12 +165,14 @@ with open("./tests/index.py", 'r') as f:
 <!-- [[[end]]] -->
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 <!-- [[[cog
 import cog, glob
 with open("./tests/index_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
+
 </details>
 
 ### Pagination
@@ -175,12 +187,14 @@ with open("./tests/pagination.py", 'r') as f:
 <!-- [[[end]]] -->
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 <!-- [[[cog
 import cog, glob
 with open("./tests/pagination_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
+
 </details>
 
 ## Contributing
