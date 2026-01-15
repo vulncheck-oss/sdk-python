@@ -20,7 +20,10 @@ jobs:
       - name: Install Poetry
         uses: abatilo/actions-poetry@v2
         with:
-          poetry-version: "2.1.3"
+          poetry-version: "2.2.1"
+      
+      - name: Install testing requirements
+        run: poetry add requests==2.32.5
 
       - name: Install dependencies
         run: make deps
