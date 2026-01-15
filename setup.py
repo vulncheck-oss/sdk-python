@@ -25,6 +25,8 @@ NAME = "vulncheck-sdk"
 VERSION = "0.0.36"
 PYTHON_REQUIRES = ">= 3.9"
 REQUIRES = [
+    "aiohttp_retry >= 2.9.1",
+    "aiohttp >= 3.13.2",
     "urllib3 >= 2.1.0, < 3.0.0",
     "python-dateutil >= 2.8.2",
     "pydantic >= 2",
