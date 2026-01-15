@@ -38,7 +38,7 @@ bump_patch() {
 	patch=$((patch + 1))
 	new_version="${major}.${minor}.${patch}"
 
-	echo "${SED_FLAGS[@]}" "s/packageVersion: \"$current_version\"/packageVersion: \"$new_version\"/" "$PYTHON_GENERATOR_YAML"
+	sed "${SED_FLAGS[@]}" "s/packageVersion: \"$current_version\"/packageVersion: \"$new_version\"/" "$PYTHON_GENERATOR_YAML"
 
 	echo "SDK Version bumped to $new_version"
 }
