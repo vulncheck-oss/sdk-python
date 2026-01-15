@@ -8,7 +8,9 @@ Name | Type | Description | Notes
 **cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **details** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 
