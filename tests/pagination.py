@@ -14,7 +14,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
         start_cursor="true",
         # `limit` increases the size of each page, making it faster
         # to download large datasets
-        limit = 300
+        limit=300,
     )
 
     print(api_response.data)
