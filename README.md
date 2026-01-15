@@ -98,6 +98,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 ```python
 import asyncio
 import os
@@ -166,6 +167,7 @@ if __name__ == "__main__":
     asyncio.run(run_vulnerability_checks())
 ```
 
+
 </details>
 
 ## Examples
@@ -201,6 +203,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 ```python
 import asyncio
 import os
@@ -247,6 +250,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
+
 </details>
 
 ### CPE
@@ -277,6 +281,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 ```python
 import asyncio
 import os
@@ -314,6 +319,7 @@ if __name__ == "__main__":
     asyncio.run(get_cpe_vulnerabilities())
 ```
 
+
 </details>
 
 ### Backup
@@ -348,6 +354,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 ```python
 import asyncio
 import os
@@ -403,6 +410,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
+
 </details>
 
 ### Indices
@@ -431,6 +439,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 ```python
 import asyncio
 import os
@@ -468,6 +477,7 @@ if __name__ == "__main__":
     asyncio.run(list_indices())
 ```
 
+
 </details>
 
 ### Index
@@ -495,6 +505,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 ```python
 import asyncio
 import os
@@ -530,6 +541,7 @@ if __name__ == "__main__":
     # Start the async event loop
     asyncio.run(get_cve_details())
 ```
+
 
 </details>
 
@@ -568,6 +580,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 
 <details><summary><b>Click to View Async Implementation</b></summary>
+
 ```python
 import asyncio
 import os
@@ -615,6 +628,7 @@ if __name__ == "__main__":
     # Entry point to run the async event loop
     asyncio.run(fetch_kev_data())
 ```
+
 
 </details>
 
