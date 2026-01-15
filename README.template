@@ -52,7 +52,7 @@ with open("./tests/quickstart.py", 'r') as f:
 ]]] -->
 <!-- [[[end]]] -->
 
-<details><summary><b>Click to View Async implementation</b></summary>
+<details><summary><b>Click to View Async Implementation</b></summary>
 <!-- [[[cog
 import cog, glob
 with open("./tests/quickstart_aio.py", 'r') as f:
@@ -74,7 +74,7 @@ with open("./tests/purl.py", 'r') as f:
 ]]] -->
 <!-- [[[end]]] -->
 
-<details><summary><b>Click to View Async implementation</b></summary>
+<details><summary><b>Click to View Async Implementation</b></summary>
 <!-- [[[cog
 import cog, glob
 with open("./tests/purl_aio.py", 'r') as f:
@@ -94,7 +94,7 @@ with open("./tests/cpe.py", 'r') as f:
 ]]] -->
 <!-- [[[end]]] -->
 
-<details><summary><b>Click to View Async implementation</b></summary>
+<details><summary><b>Click to View Async Implementation</b></summary>
 <!-- [[[cog
 import cog, glob
 with open("./tests/cpe_aio.py", 'r') as f:
@@ -114,7 +114,7 @@ with open("./tests/backup.py", 'r') as f:
 ]]] -->
 <!-- [[[end]]] -->
 
-<details><summary><b>Click to View Async implementation</b></summary>
+<details><summary><b>Click to View Async Implementation</b></summary>
 <!-- [[[cog
 import cog, glob
 with open("./tests/backup_aio.py", 'r') as f:
@@ -134,7 +134,7 @@ with open("./tests/indicies.py", 'r') as f:
 ]]] -->
 <!-- [[[end]]] -->
 
-<details><summary><b>Click to View Async implementation</b></summary>
+<details><summary><b>Click to View Async Implementation</b></summary>
 <!-- [[[cog
 import cog, glob
 with open("./tests/indicies_aio.py", 'r') as f:
@@ -154,7 +154,7 @@ with open("./tests/index.py", 'r') as f:
 ]]] -->
 <!-- [[[end]]] -->
 
-<details><summary><b>Click to View Async implementation</b></summary>
+<details><summary><b>Click to View Async Implementation</b></summary>
 <!-- [[[cog
 import cog, glob
 with open("./tests/index_aio.py", 'r') as f:
@@ -174,7 +174,7 @@ with open("./tests/pagination.py", 'r') as f:
 ]]] -->
 <!-- [[[end]]] -->
 
-<details><summary><b>Click to View Async implementation</b></summary>
+<details><summary><b>Click to View Async Implementation</b></summary>
 <!-- [[[cog
 import cog, glob
 with open("./tests/pagination_aio.py", 'r') as f:
