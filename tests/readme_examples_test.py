@@ -14,7 +14,7 @@ API_TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
 
 # List of python programs to test
-PROGRAMS = ["./tests/backup.py", "./tests/cpe.py", "./tests/index.py", "./tests/indicies.py","./tests/pagination.py","./tests/purl.py","./tests/quickstart.py"]
+PROGRAMS = ["./tests/backup.py", "./tests/cpe.py", "./tests/index.py", "./tests/indicies.py","./tests/pagination.py","./tests/purl.py","./tests/quickstart.py","./tests/purl_aio.py"]
 
 @pytest.mark.parametrize("program_file", PROGRAMS)
 def test_external_program(program_file):
