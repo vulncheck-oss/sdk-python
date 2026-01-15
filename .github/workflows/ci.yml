@@ -23,6 +23,9 @@ jobs:
         with:
           poetry-version: "2.2.1"
 
+      - name: Install testing requirements
+        run: poetry add requests==2.32.5
+
       - name: Install dependencies
         run: make deps
 
