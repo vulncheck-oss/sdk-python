@@ -69,7 +69,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     # PURL
     api_response = endpoints_client.purl_get("pkg:hex/coherence@0.1.2")
-    data = V3controllersPurlResponseData = api_response.data
+    data= V3controllersPurlResponseData = api_response.data
     print(data.cves)
 
     # CPE
@@ -82,6 +82,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     index = "initial-access"
     api_response = endpoints_client.backup_index_get(index)
     backup_url = requests.get(api_response.data[0].url)
+    
     file_path = f"{index}.zip"
     with open(file_path, "wb") as file:
       file.write(backup_url.content)
@@ -94,6 +95,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     print(api_response.data)
 ```
+
 
 ## Examples
 
@@ -126,6 +128,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     print(data.cves)
 ```
 
+
 ### CPE
 
 Get all CPE's related to a CVE
@@ -151,6 +154,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     for cve in api_response.data:
         print(cve)
 ```
+
 
 ### Backup
 
@@ -182,6 +186,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
       file.write(backup_url.content)
 ```
 
+
 ### Indices
 
 Get all available indices
@@ -206,6 +211,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
         print(index.name)
 ```
 
+
 ### Index
 
 Query VulnCheck-NVD2 for `CVE-2019-19781`
@@ -228,6 +234,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     print(api_response.data)
 ```
+
 
 ### Pagination
 
@@ -262,6 +269,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
         print(api_response.data)
 ```
 
+
 ## Contributing
 
 Please see [CONTRIBUTING](./.github/CONTRIBUTING.md) for details.
@@ -277,3 +285,4 @@ Development of this project is sponsored by [VulnCheck](https://vulncheck.com/) 
 ## License
 
 Apache License 2.0. Please see [License File](./LICENSE) for more information.
+
