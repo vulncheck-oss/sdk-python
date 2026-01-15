@@ -59,7 +59,7 @@ with open("./tests/quickstart_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
-<details>
+</details>
 
 ## Examples
 
@@ -81,7 +81,7 @@ with open("./tests/purl_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
-<details>
+</details>
 
 ### CPE
 
@@ -101,7 +101,7 @@ with open("./tests/cpe_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
-<details>
+</details>
 
 ### Backup
 
@@ -121,7 +121,7 @@ with open("./tests/backup_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
-<details>
+</details>
 
 ### Indices
 
@@ -141,7 +141,7 @@ with open("./tests/indicies_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
-<details>
+</details>
 
 ### Index
 
@@ -161,7 +161,7 @@ with open("./tests/index_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
-<details>
+</details>
 
 ### Pagination
 
@@ -181,7 +181,7 @@ with open("./tests/pagination_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
-<details>
+</details>
 
 ## Contributing
 
