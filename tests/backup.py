@@ -20,4 +20,4 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     file_path = f"{index}.zip"
     with open(file_path, "wb") as file:
-      file.write(backup_url.content)
+        file.write(backup_url.content)

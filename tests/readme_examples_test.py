@@ -14,7 +14,23 @@ API_TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
 
 # List of python programs to test
-PROGRAMS = ["./tests/backup.py", "./tests/cpe.py", "./tests/index.py", "./tests/indicies.py","./tests/pagination.py","./tests/purl.py","./tests/quickstart.py","./tests/purl_aio.py"]
+PROGRAMS = [
+    "./tests/backup.py",
+    "./tests/backup_aio.py",
+    "./tests/cpe.py",
+    "./tests/cpe_aio.py",
+    "./tests/index.py",
+    "./tests/index_aio.py",
+    "./tests/indicies.py",
+    "./tests/indicies_aio.py",
+    "./tests/pagination.py",
+    "./tests/pagination_aio.py",
+    "./tests/purl.py",
+    "./tests/purl_aio.py",
+    "./tests/quickstart.py",
+    "./tests/quickstart_aio.py",
+]
+
 
 @pytest.mark.parametrize("program_file", PROGRAMS)
 def test_external_program(program_file):
@@ -22,7 +38,7 @@ def test_external_program(program_file):
     Runs an external python program with a specific TOKEN env var.
     Fails if the program returns a non-zero exit code.
     """
-    
+
     # verify file exists before trying to run it
     if not os.path.exists(program_file):
         pytest.fail(f"Program file not found: {program_file}")
@@ -33,7 +49,7 @@ def test_external_program(program_file):
         [sys.executable, program_file],
         env=os.environ.copy(),
         capture_output=True,
-        text=True
+        text=True,
     )
 
     # Assert Success
