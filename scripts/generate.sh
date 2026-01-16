@@ -194,8 +194,15 @@ post_build_cleanup() {
 }
 
 check_git_status() {
+	# Check if there are any changes (including untracked files)
 	if [ -n "$(git status --porcelain)" ]; then
-		echo "New API changes!"
+		echo "New API changes detected!"
+		echo "::group::Stats"
+		git diff --stat
+		echo "::endGroup::"
+		echo "::group::Full"
+		git diff
+		echo "::endGroup::"
 	else
 		echo "No changes detected."
 		exit 0
