@@ -29,6 +29,7 @@ PROGRAMS = [
     "./tests/purl_aio.py",
     "./tests/quickstart.py",
     "./tests/quickstart_aio.py",
+    "./tests/integration_aio.py"
 ]
 
 
