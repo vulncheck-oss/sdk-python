@@ -77,27 +77,40 @@ remove_dependencies() {
 
 # Fix the setupfiles
 fix_setupfiles() {
-	local LIBRARY=$1
+    local LIBRARY=$1
+    local TARGET_FILE="setup.py"
 
-	echo "--- updating dependencies for:$LIBRARY ---"
+    if [[ ! -f "$TARGET_FILE" ]]; then
+        echo "Error: $TARGET_FILE not found."
+        return 1
+    fi
 
-	case "$LIBRARY" in
-	"asyncio")
-		poetry add aiohttp aiohttp_retry
-		echo "aiohttp>=3.13.2" >>requirements.txt
-		echo "aiohttp_retry>=2.9.1" >>requirements.txt
+    echo "--- Updating dependencies for: $LIBRARY ---"
 
-		sed "${SED_FLAGS[@]}" "/REQUIRES = \[/a\\
-    \"aiohttp >= 3.13.2\"," setup.py
-		sed "${SED_FLAGS[@]}" "/REQUIRES = \[/a\\
-    \"aiohttp_retry >= 2.9.1\"," setup.py
-		;;
+    case "$LIBRARY" in
+        "asyncio")
+            # Update package managers
+            poetry add aiohttp aiohttp_retry
+            echo "aiohttp>=3.13.2" >> requirements.txt
+            echo "aiohttp_retry>=2.9.1" >> requirements.txt
 
-	*)
-		echo "Error: Unsupported library '$LIBRARY'. Use 'aiohttp'."
-		return 1
-		;;
-	esac
+            # Update setup.py
+            if [[ "$SED_FLAVOR" == "GNU" ]]; then
+                sed "${SED_FLAGS[@]}" "/REQUIRES = \[/a \    \"aiohttp >= 3.13.2\"," "$TARGET_FILE"
+                sed "${SED_FLAGS[@]}" "/REQUIRES = \[/a \    \"aiohttp_retry >= 2.9.1\"," "$TARGET_FILE"
+            else
+                # BSD sed is very picky about the newline after 'a\'
+                sed "${SED_FLAGS[@]}" "/REQUIRES = \[/a\\
+    \"aiohttp >= 3.13.2\"," "$TARGET_FILE"
+                sed "${SED_FLAGS[@]}" "/REQUIRES = \[/a\\
+    \"aiohttp_retry >= 2.9.1\"," "$TARGET_FILE"
+            fi
+            ;;
+        *)
+            echo "Error: Unsupported library '$LIBRARY'. Use 'asyncio'."
+            return 1
+            ;;
+    esac
 }
 
 generate_readme() {
@@ -194,8 +207,15 @@ post_build_cleanup() {
 }
 
 check_git_status() {
+	# Check if there are any changes (including untracked files)
 	if [ -n "$(git status --porcelain)" ]; then
-		echo "New API changes!"
+		echo "New API changes detected!"
+		echo "::group::Stats"
+		git diff --stat
+		echo "::endGroup::"
+		echo "::group::Full"
+		git diff
+		echo "::endGroup::"
 	else
 		echo "No changes detected."
 		exit 0
