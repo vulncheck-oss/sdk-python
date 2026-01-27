@@ -86,6 +86,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryOpenStackPaginatePagination(uni
                             ], 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

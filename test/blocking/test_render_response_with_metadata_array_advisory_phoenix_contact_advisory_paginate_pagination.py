@@ -81,6 +81,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryPhoenixContactAdvisoryPaginateP
                             ], 
                         date_added = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', 
                         vde = [
                             ''

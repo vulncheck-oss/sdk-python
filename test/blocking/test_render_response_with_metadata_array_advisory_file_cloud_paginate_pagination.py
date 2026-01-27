@@ -81,6 +81,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryFileCloudPaginatePagination(uni
                         fixed = '', 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )
