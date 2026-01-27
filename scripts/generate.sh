@@ -79,31 +79,43 @@ remove_dependencies() {
 fix_setupfiles() {
     local LIBRARY=$1
     local TARGET_FILE="setup.py"
+	local PYPROJECT_FILE="vulncheck_sdk/aio/pyproject.toml"
 
     if [[ ! -f "$TARGET_FILE" ]]; then
         echo "Error: $TARGET_FILE not found."
         return 1
     fi
 
+    if [[ ! -f "$PYPROJECT_FILE" ]]; then
+        echo "Warning: $PYPROJECT_FILE not found. Using defaults."
+        AIOHTTP_VERSION="3.13.2"
+        AIOHTTPRETRY_VERSION="2.9.1"
+        return
+    fi
+
+    # Extract versions: 
+    AIOHTTP_VERSION=$(grep "aiohttp " "$PYPROJECT_FILE" | sed -E 's/.*>=([^")]+).*/\1/')
+    AIOHTTPRETRY_VERSION=$(grep "aiohttp-retry" "$PYPROJECT_FILE" | sed -E 's/.*>=([^")]+).*/\1/')
+
     echo "--- Updating dependencies for: $LIBRARY ---"
 
     case "$LIBRARY" in
         "asyncio")
             # Update package managers
-            poetry add aiohttp aiohttp_retry
-            echo "aiohttp>=3.13.2" >> requirements.txt
-            echo "aiohttp_retry>=2.9.1" >> requirements.txt
+            poetry add "aiohttp>=$AIOHTTP_VERSION" "aiohttp_retry>=$AIOHTTPRETRY_VERSION"
+            echo "aiohttp>=$AIOHTTP_VERSION" >> requirements.txt
+            echo "aiohttp_retry>=$AIOHTTPRETRY_VERSION" >> requirements.txt
 
             # Update setup.py
             if [[ "$SED_FLAVOR" == "GNU" ]]; then
-                sed "${SED_FLAGS[@]}" "/REQUIRES = \[/a \    \"aiohttp >= 3.13.2\"," "$TARGET_FILE"
-                sed "${SED_FLAGS[@]}" "/REQUIRES = \[/a \    \"aiohttp_retry >= 2.9.1\"," "$TARGET_FILE"
+                sed "${SED_FLAGS[@]}" "/REQUIRES = \[/a \    \"aiohttp >= $AIOHTTP_VERSION\"," "$TARGET_FILE"
+                sed "${SED_FLAGS[@]}" "/REQUIRES = \[/a \    \"aiohttp_retry >= $AIOHTTPRETRY_VERSION\"," "$TARGET_FILE"
             else
                 # BSD sed is very picky about the newline after 'a\'
                 sed "${SED_FLAGS[@]}" "/REQUIRES = \[/a\\
-    \"aiohttp >= 3.13.2\"," "$TARGET_FILE"
+    \"aiohttp >= $AIOHTTP_VERSION\"," "$TARGET_FILE"
                 sed "${SED_FLAGS[@]}" "/REQUIRES = \[/a\\
-    \"aiohttp_retry >= 2.9.1\"," "$TARGET_FILE"
+    \"aiohttp_retry >= $AIOHTTPRETRY_VERSION\"," "$TARGET_FILE"
             fi
             ;;
         *)
@@ -111,6 +123,8 @@ fix_setupfiles() {
             return 1
             ;;
     esac
+
+	rm -rf vulncheck_sdk/aio/pyproject.toml
 }
 
 generate_readme() {
@@ -199,7 +213,7 @@ post_build_cleanup() {
 
 	rm -rf git_push.sh
 	rm -rf vulncheck_sdk.egg-info
-	rm -rf vulncheck_sdk/aio/pyproject.toml vulncheck_sdk/aio/requirements.txt vulncheck_sdk/aio/setup.py vulncheck_sdk/aio/setup.cfg poetry.lock
+	rm -rf vulncheck_sdk/aio/requirements.txt vulncheck_sdk/aio/setup.py vulncheck_sdk/aio/setup.cfg poetry.lock
 	rm -rf vulncheck_sdk/aio/.github vulncheck_sdk/aio/.gitignore vulncheck_sdk/aio/.gitlab-ci.yml vulncheck_sdk/aio/.openapi-generator
 	rm -rf vulncheck_sdk/aio/.openapi-generator-ignore vulncheck_sdk/aio/.travis.yml vulncheck_sdk/aio/README.md vulncheck_sdk/aio/git_push.sh
 	rm -rf vulncheck_sdk/aio/tox.ini vulncheck_sdk/aio/test-requirements.txt
@@ -207,19 +221,24 @@ post_build_cleanup() {
 }
 
 check_git_status() {
-	# Check if there are any changes (including untracked files)
-	if [ -n "$(git status --porcelain)" ]; then
-		echo "New API changes detected!"
-		echo "::group::Stats"
-		git diff --stat
-		echo "::endGroup::"
-		echo "::group::Full"
-		git diff
-		echo "::endGroup::"
-	else
-		echo "No changes detected."
-		exit 0
-	fi
+    # Define the paths we care about
+    local WATCHED_PATHS="vulncheck_sdk/ pyproject.toml"
+
+    # Check if there are any changes in the specific paths
+    if [ -n "$(git --no-pager status --porcelain $WATCHED_PATHS)" ]; then
+        echo "Changes detected in core SDK or pyproject.toml!"
+        
+        echo "::group::Stats"
+        git --no-pager diff --stat $WATCHED_PATHS
+        echo "::endGroup::"
+        
+        echo "::group::Full Diff"
+        git --no-pager diff $WATCHED_PATHS
+        echo "::endGroup::"
+    else
+        echo "No relevant changes detected in: $WATCHED_PATHS. Exiting."
+        exit 0
+    fi
 }
 
 # Main #########################################################################
