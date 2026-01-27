@@ -32,10 +32,12 @@ class AdvisoryDeltaAdvisory(BaseModel):
     cvss: Optional[StrictStr] = None
     date_added: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
+    id: Optional[StrictStr] = None
     link: Optional[StrictStr] = None
     recommended_action: Optional[StrictStr] = Field(default=None, alias="recommendedAction")
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affectedProducts", "cve", "cvss", "date_added", "description", "link", "recommendedAction", "title"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["affectedProducts", "cve", "cvss", "date_added", "description", "id", "link", "recommendedAction", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,9 +95,11 @@ class AdvisoryDeltaAdvisory(BaseModel):
             "cvss": obj.get("cvss"),
             "date_added": obj.get("date_added"),
             "description": obj.get("description"),
+            "id": obj.get("id"),
             "link": obj.get("link"),
             "recommendedAction": obj.get("recommendedAction"),
-            "title": obj.get("title")
+            "title": obj.get("title"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

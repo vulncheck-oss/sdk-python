@@ -80,9 +80,11 @@ class TestRenderResponseWithMetadataArrayAdvisoryDeltaAdvisoryPaginatePagination
                         cvss = '', 
                         date_added = '', 
                         description = '', 
+                        id = '', 
                         link = '', 
                         recommended_action = '', 
-                        title = '', )
+                        title = '', 
+                        updated_at = '', )
                     ]
             )
         else:

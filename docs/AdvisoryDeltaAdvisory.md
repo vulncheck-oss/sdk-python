@@ -10,9 +10,11 @@ Name | Type | Description | Notes
 **cvss** | **str** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
 **link** | **str** |  | [optional] 
 **recommended_action** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 

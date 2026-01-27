@@ -44,6 +44,7 @@ class TestAdvisoryFileCloud(unittest.TestCase):
                 fixed = '',
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:
