@@ -32,8 +32,9 @@ class AdvisoryCarrier(BaseModel):
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     summary: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["advisory_id", "affected_product", "cve", "date_added", "summary", "url"]
+    __properties: ClassVar[List[str]] = ["advisory_id", "affected_product", "cve", "date_added", "summary", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +92,7 @@ class AdvisoryCarrier(BaseModel):
             "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "summary": obj.get("summary"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj
