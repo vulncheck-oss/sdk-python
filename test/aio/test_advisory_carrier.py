@@ -43,6 +43,7 @@ class TestAdvisoryCarrier(unittest.TestCase):
                     ],
                 date_added = '',
                 summary = '',
+                updated_at = '',
                 url = ''
             )
         else:

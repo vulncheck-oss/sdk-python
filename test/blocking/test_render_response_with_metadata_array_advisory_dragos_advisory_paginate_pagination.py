@@ -78,7 +78,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryDragosAdvisoryPaginatePaginatio
                             ], 
                         date_added = '', 
                         link = '', 
-                        title = '', )
+                        title = '', 
+                        updated_at = '', )
                     ]
             )
         else:

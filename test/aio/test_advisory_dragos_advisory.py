@@ -41,7 +41,8 @@ class TestAdvisoryDragosAdvisory(unittest.TestCase):
                     ],
                 date_added = '',
                 link = '',
-                title = ''
+                title = '',
+                updated_at = ''
             )
         else:
             return AdvisoryDragosAdvisory(

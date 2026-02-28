@@ -41,6 +41,7 @@ class TestAdvisoryGrafana(unittest.TestCase):
                     ],
                 date_added = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:
