@@ -1924,6 +1924,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """
         pass
 
+    async def test_index_microsoft_csaf_get(self) -> None:
+        """Test case for index_microsoft_csaf_get
+
+        Return vulnerability data stored in index \"microsoft-csaf\"
+        """
+        pass
+
     async def test_index_microsoft_cvrf_get(self) -> None:
         """Test case for index_microsoft_cvrf_get
 

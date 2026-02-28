@@ -78,6 +78,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMikrotikPaginatePagination(unit
                             ], 
                         date_added = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

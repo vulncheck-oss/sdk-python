@@ -80,6 +80,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryCarrierPaginatePagination(unitt
                             ], 
                         date_added = '', 
                         summary = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )
