@@ -222,21 +222,21 @@ post_build_cleanup() {
 
 check_git_status() {
   # Define the paths we care about
-  local WATCHED_PATHS="vulncheck_sdk/ pyproject.toml"
+  local -a WATCHED_PATHS=("vulncheck_sdk/" "pyproject.toml")
 
   # Check if there are any changes in the specific paths
-  if [ -n "$(git --no-pager status --porcelain "$WATCHED_PATHS")" ]; then
+  if [ -n "$(git --no-pager status --porcelain "${WATCHED_PATHS[@]}")" ]; then
     echo "Changes detected in core SDK or pyproject.toml!"
 
     echo "::group::Stats"
-    git --no-pager diff --stat "$WATCHED_PATHS"
+    git --no-pager diff --stat "${WATCHED_PATHS[@]}"
     echo "::endGroup::"
 
     echo "::group::Full Diff"
-    git --no-pager diff "$WATCHED_PATHS"
+    git --no-pager diff "${WATCHED_PATHS[@]}"
     echo "::endGroup::"
   else
-    echo "No relevant changes detected in: $WATCHED_PATHS. Exiting."
+    echo "No relevant changes detected in: ${WATCHED_PATHS[*]}. Exiting."
     if [ -n "${GITHUB_OUTPUT:-}" ]; then
       echo "changes=false" >>"$GITHUB_OUTPUT"
     fi
