@@ -3,12 +3,10 @@ import vulncheck_sdk
 import os
 
 # First let's setup a few variables to help us
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ["VULNCHECK_API_TOKEN"]  # Remember to store your token securely!
 
 # Now let's create a configuration object
-configuration = vulncheck_sdk.Configuration(host=DEFAULT_API, ignore_operation_servers=True)
+configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 # Pass that config object to our API client and now...

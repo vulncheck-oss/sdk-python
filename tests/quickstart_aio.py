@@ -4,11 +4,9 @@ import aiohttp
 import vulncheck_sdk.aio as vcaio
 
 # Configuration
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
-configuration = vcaio.Configuration(host=DEFAULT_API, ignore_operation_servers=True)
+configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 

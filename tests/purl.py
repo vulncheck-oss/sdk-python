@@ -4,11 +4,9 @@ from vulncheck_sdk.models.v3controllers_purl_response_data import (
 )
 import os
 
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
-configuration = vulncheck_sdk.Configuration(host=DEFAULT_API, ignore_operation_servers=True)
+configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 with vulncheck_sdk.ApiClient(configuration) as api_client:

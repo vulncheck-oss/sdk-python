@@ -8,8 +8,6 @@ from vulncheck_sdk.api.indices_api import IndicesApi
 from vulncheck_sdk.api_response import ApiResponse
 from vulncheck_sdk.exceptions import ApiException, UnauthorizedException
 
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 API_TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
 
