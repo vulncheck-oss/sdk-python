@@ -24,10 +24,11 @@ clean() {
 }
 
 get_openapi_spec() {
-  curl --request GET \
-    --url https://api.vulncheck.com/v3/openapi \
-    --verbose \
-    --header "Accept: application/json" >$OPENAPI_JSON
+  # use the combined output
+  curl --silent --fail \
+   --url https://api.vulncheck.com/openapi/combined \
+   --header "Accept: application/json" \
+   >"$OPENAPI_JSON"
 }
 
 bump_patch() {
