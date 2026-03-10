@@ -123,11 +123,11 @@ def _get_http_status(func, params=None, limit=None, page=None) -> int:
         return 401
     except ApiException as e:
         print(f"ApiException when calling {func}: {e}\n")
-        return api_response.status_code
+        return e.status
 
 
 def _get_api_instance(token: str = "") -> EndpointsApi:
-    config = vulncheck_sdk.Configuration(host=DEFAULT_API)
+    config = vulncheck_sdk.Configuration(host=DEFAULT_API, ignore_operation_servers=True)
     if token != "":
         config.api_key["Bearer"] = token
     client = vulncheck_sdk.ApiClient(config)
@@ -135,7 +135,7 @@ def _get_api_instance(token: str = "") -> EndpointsApi:
 
 
 def _get_indices_instance(token: str = "") -> IndicesApi:
-    config = vulncheck_sdk.Configuration(host=DEFAULT_API)
+    config = vulncheck_sdk.Configuration(host=DEFAULT_API, ignore_operation_servers=True)
     if token != "":
         config.api_key["Bearer"] = token
     client = vulncheck_sdk.ApiClient(config)

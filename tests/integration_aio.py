@@ -118,7 +118,7 @@ async def main():
     if not API_TOKEN:
         print("Warning: VULNCHECK_API_TOKEN is not set.")
 
-    config = vcaio.Configuration(host=DEFAULT_API)
+    config = vcaio.Configuration(host=DEFAULT_API, ignore_operation_servers=True)
     config.api_key["Bearer"] = API_TOKEN
 
     # The 'async with' ensures the ClientSession is closed
