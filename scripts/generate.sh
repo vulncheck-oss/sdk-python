@@ -24,7 +24,7 @@ clean() {
 }
 
 get_openapi_spec() {
-  use the combined output
+  #use the combined output
   curl --silent --fail \
    --url https://api.vulncheck.com/openapi/combined \
    --header "Accept: application/json" \
