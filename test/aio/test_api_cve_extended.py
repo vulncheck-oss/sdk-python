@@ -50,7 +50,7 @@ class TestApiCVEExtended(unittest.TestCase):
                 data_version = '',
                 description = vulncheck_sdk.aio.models.api/description.api.Description(
                     description_data = [
-                        vulncheck_sdk.aio.models.api/description_data.api.DescriptionData(
+                        vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
                             lang = '', 
                             value = '', )
                         ], ),
@@ -58,7 +58,7 @@ class TestApiCVEExtended(unittest.TestCase):
                     problemtype_data = [
                         vulncheck_sdk.aio.models.api/problem_type_data_extended.api.ProblemTypeDataExtended(
                             description = [
-                                vulncheck_sdk.aio.models.api/problem_type_description_extended.api.ProblemTypeDescriptionExtended(
+                                vulncheck_sdk.aio.models.advisory/cwe_data.advisory.CweData(
                                     lang = '', 
                                     name = '', 
                                     url = '', 

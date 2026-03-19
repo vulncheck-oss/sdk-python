@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheSparkPaginatePagination(u
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/apache_spark.advisory.ApacheSpark(
+                    vulncheck_sdk.aio.models.advisory/apache_archiva.advisory.ApacheArchiva(
                         affected = '', 
                         cve = [
                             ''

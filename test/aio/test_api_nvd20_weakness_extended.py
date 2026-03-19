@@ -37,7 +37,7 @@ class TestApiNVD20WeaknessExtended(unittest.TestCase):
         if include_optional:
             return ApiNVD20WeaknessExtended(
                 description = [
-                    vulncheck_sdk.aio.models.api/nvd20_weakness_desc_extended.api.NVD20WeaknessDescExtended(
+                    vulncheck_sdk.aio.models.advisory/cwe_data.advisory.CweData(
                         lang = '', 
                         name = '', 
                         url = '', 

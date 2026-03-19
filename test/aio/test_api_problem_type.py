@@ -39,7 +39,7 @@ class TestApiProblemType(unittest.TestCase):
                 problemtype_data = [
                     vulncheck_sdk.aio.models.api/problem_type_data.api.ProblemTypeData(
                         description = [
-                            vulncheck_sdk.aio.models.api/problem_type_description.api.ProblemTypeDescription(
+                            vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
                                 lang = '', 
                                 value = '', )
                             ], )

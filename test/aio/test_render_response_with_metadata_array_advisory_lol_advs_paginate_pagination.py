@@ -80,7 +80,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryLolAdvsPaginatePagination(unitt
                         description = '', 
                         id = '', 
                         lol_json = {
-                            'key' : None
+                            'key' : null
                             }, 
                         mitre_id = '', 
                         references = [

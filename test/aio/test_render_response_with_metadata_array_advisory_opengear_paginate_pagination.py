@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryOpengearPaginatePagination(unit
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/opengear.advisory.Opengear(
+                    vulncheck_sdk.aio.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

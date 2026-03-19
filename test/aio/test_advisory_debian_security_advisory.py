@@ -37,7 +37,7 @@ class TestAdvisoryDebianSecurityAdvisory(unittest.TestCase):
         if include_optional:
             return AdvisoryDebianSecurityAdvisory(
                 affected_packages = [
-                    vulncheck_sdk.aio.models.advisory/affected_debian_package.advisory.AffectedDebianPackage(
+                    vulncheck_sdk.aio.models.advisory/vulnerable_product.advisory.VulnerableProduct(
                         name = '', 
                         version = '', )
                     ],

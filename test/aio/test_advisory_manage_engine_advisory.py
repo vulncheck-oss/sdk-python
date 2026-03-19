@@ -60,9 +60,7 @@ class TestAdvisoryManageEngineAdvisory(unittest.TestCase):
                             display_value = '', )
                         ], 
                     product_specific_details = [
-                        vulncheck_sdk.aio.models.advisory/product_specific_detail.advisory.ProductSpecificDetail(
-                            id = '', 
-                            display_value = '', )
+                        
                         ], 
                     summary = '', 
                     version = '', 

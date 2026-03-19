@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryNaverPaginatePagination(unittes
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/naver.advisory.Naver(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

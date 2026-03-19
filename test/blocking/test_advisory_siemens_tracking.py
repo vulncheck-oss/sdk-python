@@ -38,7 +38,7 @@ class TestAdvisorySiemensTracking(unittest.TestCase):
             return AdvisorySiemensTracking(
                 current_release_date = '',
                 generator = vulncheck_sdk.models.advisory/siemens_generator.advisory.SiemensGenerator(
-                    engine = vulncheck_sdk.models.advisory/siemens_engine.advisory.SiemensEngine(
+                    engine = vulncheck_sdk.models.advisory/vulnerable_product.advisory.VulnerableProduct(
                         name = '', 
                         version = '', ), ),
                 id = '',

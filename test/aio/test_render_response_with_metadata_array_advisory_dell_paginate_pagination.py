@@ -80,7 +80,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryDellPaginatePagination(unittest
                             ], 
                         date_added = '', 
                         dell_cves = [
-                            vulncheck_sdk.aio.models.advisory/dell_cve.advisory.DellCVE(
+                            vulncheck_sdk.aio.models.advisory/adobe_cve.advisory.AdobeCVE(
                                 cvss_score = '', 
                                 cvss_vector = '', )
                             ], 

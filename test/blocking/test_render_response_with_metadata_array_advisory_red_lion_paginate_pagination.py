@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryRedLionPaginatePagination(unitt
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/red_lion.advisory.RedLion(
+                    vulncheck_sdk.models.advisory/grafana.advisory.Grafana(
                         cve = [
                             ''
                             ], 

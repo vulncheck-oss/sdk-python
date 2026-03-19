@@ -28,7 +28,7 @@ class V3controllersPurlResponseMetadata(BaseModel):
     """
     V3controllersPurlResponseMetadata
     """ # noqa: E501
-    purl_struct: Optional[PurlPackageURLJSON] = Field(default=None, description="meta-data about the purl")
+    purl_struct: Optional[PurlPackageURLJSON] = None
     timestamp: Optional[StrictStr] = Field(default=None, description="time of the transaction")
     total_documents: Optional[StrictInt] = Field(default=None, description="number of results found")
     __properties: ClassVar[List[str]] = ["purl_struct", "timestamp", "total_documents"]

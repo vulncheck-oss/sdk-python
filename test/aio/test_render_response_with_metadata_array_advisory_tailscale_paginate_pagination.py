@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryTailscalePaginatePagination(uni
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/tailscale.advisory.Tailscale(
+                    vulncheck_sdk.aio.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

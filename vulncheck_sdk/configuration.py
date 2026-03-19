@@ -537,7 +537,7 @@ conf = vulncheck_sdk.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 3.0\n"\
-               "SDK Package Version: 0.0.41".\
+               "SDK Package Version: 0.0.42".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self) -> List[HostSetting]:
@@ -548,7 +548,7 @@ conf = vulncheck_sdk.Configuration(
         return [
             {
                 'url': "/v3",
-                'description': "No description provided",
+                'description': "VulnCheck API v3",
             }
         ]
 

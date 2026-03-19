@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryAxisPaginatePagination(unittest
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/axis.advisory.Axis(
+                    vulncheck_sdk.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

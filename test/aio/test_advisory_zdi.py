@@ -63,7 +63,7 @@ class TestAdvisoryZDI(unittest.TestCase):
                     vulncheck_sdk.aio.models.advisory/zdi_response.advisory.ZDIResponse(
                         text = '', 
                         uri = '', 
-                        vendor = vulncheck_sdk.aio.models.advisory/zdi_response_vendor.advisory.ZDIResponseVendor(
+                        vendor = vulncheck_sdk.aio.models.advisory/go_credits.advisory.GoCredits(
                             name = '', ), )
                     ],
                 title = '',

@@ -38,7 +38,7 @@ class TestAdvisoryTool(unittest.TestCase):
             return AdvisoryTool(
                 name = '',
                 references = [
-                    vulncheck_sdk.models.advisory/tool_ref.advisory.ToolRef(
+                    vulncheck_sdk.models.advisory/mitre_attack_ref.advisory.MitreAttackRef(
                         date_added = '', 
                         url = '', )
                     ]

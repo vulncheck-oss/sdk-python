@@ -84,7 +84,9 @@ class TestRenderResponseWithMetadataArrayAdvisorySigmaRulePaginatePagination(uni
                             author = '', 
                             date = '', 
                             description = '', 
-                            detection = { }, 
+                            detection = {
+                                'key' : null
+                                }, 
                             false_positives = [
                                 ''
                                 ], 

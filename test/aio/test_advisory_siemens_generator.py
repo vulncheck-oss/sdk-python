@@ -36,7 +36,7 @@ class TestAdvisorySiemensGenerator(unittest.TestCase):
         model = AdvisorySiemensGenerator()
         if include_optional:
             return AdvisorySiemensGenerator(
-                engine = vulncheck_sdk.aio.models.advisory/siemens_engine.advisory.SiemensEngine(
+                engine = vulncheck_sdk.aio.models.advisory/vulnerable_product.advisory.VulnerableProduct(
                     name = '', 
                     version = '', )
             )

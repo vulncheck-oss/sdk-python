@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryOmronPaginatePagination(unittes
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/omron.advisory.Omron(
+                    vulncheck_sdk.aio.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

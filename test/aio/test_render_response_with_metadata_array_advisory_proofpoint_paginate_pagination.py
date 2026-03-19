@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryProofpointPaginatePagination(un
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/proofpoint.advisory.Proofpoint(
+                    vulncheck_sdk.aio.models.advisory/netskope.advisory.Netskope(
                         advisory_id = '', 
                         cve = [
                             ''

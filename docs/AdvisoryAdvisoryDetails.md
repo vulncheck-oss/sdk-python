@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bugzilla** | [**AdvisoryBugzilla**](AdvisoryBugzilla.md) |  | [optional] 
 **cve** | [**AdvisoryOvalCVE**](AdvisoryOvalCVE.md) |  | [optional] 
-**issued** | [**AdvisoryIssued**](AdvisoryIssued.md) |  | [optional] 
+**issued** | **object** |  | [optional] 
 **severity** | **str** |  | [optional] 
-**updated** | [**AdvisoryUpdated**](AdvisoryUpdated.md) |  | [optional] 
+**updated** | **object** |  | [optional] 
 
 ## Example
 

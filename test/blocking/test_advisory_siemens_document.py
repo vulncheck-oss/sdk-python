@@ -62,7 +62,7 @@ class TestAdvisorySiemensDocument(unittest.TestCase):
                     name = '', 
                     namespace = '', ),
                 references = [
-                    vulncheck_sdk.models.advisory/siemens_references.advisory.SiemensReferences(
+                    vulncheck_sdk.models.advisory/csaf_reference.advisory.CSAFReference(
                         category = '', 
                         summary = '', 
                         url = '', )
@@ -71,7 +71,7 @@ class TestAdvisorySiemensDocument(unittest.TestCase):
                 tracking = vulncheck_sdk.models.advisory/siemens_tracking.advisory.SiemensTracking(
                     current_release_date = '', 
                     generator = vulncheck_sdk.models.advisory/siemens_generator.advisory.SiemensGenerator(
-                        engine = vulncheck_sdk.models.advisory/siemens_engine.advisory.SiemensEngine(
+                        engine = vulncheck_sdk.models.advisory/vulnerable_product.advisory.VulnerableProduct(
                             name = '', 
                             version = '', ), ), 
                     id = '', 

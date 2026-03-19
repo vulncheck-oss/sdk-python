@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheCouchDBPaginatePagination
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/apache_couch_db.advisory.ApacheCouchDB(
+                    vulncheck_sdk.aio.models.advisory/apache_archiva.advisory.ApacheArchiva(
                         affected = '', 
                         cve = [
                             ''

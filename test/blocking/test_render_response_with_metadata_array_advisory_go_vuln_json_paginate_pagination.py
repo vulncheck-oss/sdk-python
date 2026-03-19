@@ -76,7 +76,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryGoVulnJSONPaginatePagination(un
                         advisory_url = '', 
                         affected = [
                             vulncheck_sdk.models.advisory/go_vuln_affected.advisory.GoVulnAffected(
-                                database_specific = vulncheck_sdk.models.advisory/go_vuln_database_specific.advisory.GoVulnDatabaseSpecific(
+                                database_specific = vulncheck_sdk.models.advisory/gh_reference.advisory.GHReference(
                                     url = '', ), 
                                 ecosystem_specific = vulncheck_sdk.models.advisory/go_vuln_ecosystem_specific.advisory.GoVulnEcosystemSpecific(
                                     imports = [
@@ -86,13 +86,13 @@ class TestRenderResponseWithMetadataArrayAdvisoryGoVulnJSONPaginatePagination(un
                                                 ''
                                                 ], )
                                         ], ), 
-                                package = vulncheck_sdk.models.advisory/go_vuln_package.advisory.GoVulnPackage(
+                                package = vulncheck_sdk.models.advisory/android_package.advisory.AndroidPackage(
                                     ecosystem = '', 
                                     name = '', ), 
                                 ranges = [
                                     vulncheck_sdk.models.advisory/go_vuln_ranges.advisory.GoVulnRanges(
                                         events = [
-                                            vulncheck_sdk.models.advisory/go_event.advisory.GoEvent(
+                                            vulncheck_sdk.models.advisory/android_event.advisory.AndroidEvent(
                                                 fixed = '', 
                                                 introduced = '', )
                                             ], 
@@ -118,7 +118,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryGoVulnJSONPaginatePagination(un
                         modified = '', 
                         published = '', 
                         references = [
-                            vulncheck_sdk.models.advisory/go_vuln_reference.advisory.GoVulnReference(
+                            vulncheck_sdk.models.advisory/android_reference.advisory.AndroidReference(
                                 type = '', 
                                 url = '', )
                             ], )

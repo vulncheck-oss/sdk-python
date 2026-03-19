@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySevenZipPaginatePagination(unit
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/seven_zip.advisory.SevenZip(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

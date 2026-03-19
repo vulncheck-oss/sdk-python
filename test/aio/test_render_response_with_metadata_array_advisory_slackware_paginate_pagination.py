@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySlackwarePaginatePagination(uni
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/slackware.advisory.Slackware(
+                    vulncheck_sdk.aio.models.advisory/autodesk.advisory.Autodesk(
                         cve = [
                             ''
                             ], 

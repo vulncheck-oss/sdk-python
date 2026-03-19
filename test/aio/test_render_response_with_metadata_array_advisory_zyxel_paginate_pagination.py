@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryZyxelPaginatePagination(unittes
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/zyxel.advisory.Zyxel(
+                    vulncheck_sdk.aio.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

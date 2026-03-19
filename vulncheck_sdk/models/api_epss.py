@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class ApiEPSS(BaseModel):
     """
-    ApiEPSS
+    exclude EPSS from changelog
     """ # noqa: E501
     epss_percentile: Optional[Union[StrictFloat, StrictInt]] = None
     epss_score: Optional[Union[StrictFloat, StrictInt]] = None

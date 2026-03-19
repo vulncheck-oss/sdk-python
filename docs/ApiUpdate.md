@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **date_added** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** | sort // key | [optional] 
-**issued** | [**ApiDateTime**](ApiDateTime.md) |  | [optional] 
+**issued** | **object** |  | [optional] 
 **os_arch** | **str** |  | [optional] 
 **os_version** | **str** |  | [optional] 
 **packages** | [**List[ApiPackage]**](ApiPackage.md) |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **severity** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
-**updated** | [**ApiDateTime**](ApiDateTime.md) |  | [optional] 
+**updated** | **object** |  | [optional] 
 
 ## Example
 

@@ -32,7 +32,7 @@ class ApiImpact(BaseModel):
     """ # noqa: E501
     base_metric_v2: Optional[ApiBaseMetricV2] = Field(default=None, alias="baseMetricV2")
     base_metric_v3: Optional[ApiBaseMetricV3] = Field(default=None, alias="baseMetricV3")
-    metric_v40: Optional[AdvisoryCVSSV40] = Field(default=None, description="this isn't called baseMetric, because it can contain other metrics -- typically supplemental metrics", alias="metricV40")
+    metric_v40: Optional[AdvisoryCVSSV40] = Field(default=None, alias="metricV40")
     __properties: ClassVar[List[str]] = ["baseMetricV2", "baseMetricV3", "metricV40"]
 
     model_config = ConfigDict(

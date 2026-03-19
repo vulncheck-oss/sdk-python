@@ -44,7 +44,7 @@ class TestAdvisoryBDUAdvisory(unittest.TestCase):
                     vector = vulncheck_sdk.models.advisory/bdu_vector.advisory.BDUVector(
                         score = '', 
                         text = '', ), ),
-                cvss3 = vulncheck_sdk.models.advisory/bdu_cvss3.advisory.BDUCvss3(
+                cvss3 = vulncheck_sdk.models.advisory/bdu_cvss.advisory.BDUCvss(
                     vector = vulncheck_sdk.models.advisory/bdu_vector.advisory.BDUVector(
                         score = '', 
                         text = '', ), ),

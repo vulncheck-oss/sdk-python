@@ -44,7 +44,7 @@ class TestApiCVE(unittest.TestCase):
                 data_version = '',
                 description = vulncheck_sdk.aio.models.api/description.api.Description(
                     description_data = [
-                        vulncheck_sdk.aio.models.api/description_data.api.DescriptionData(
+                        vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
                             lang = '', 
                             value = '', )
                         ], ),
@@ -52,7 +52,7 @@ class TestApiCVE(unittest.TestCase):
                     problemtype_data = [
                         vulncheck_sdk.aio.models.api/problem_type_data.api.ProblemTypeData(
                             description = [
-                                vulncheck_sdk.aio.models.api/problem_type_description.api.ProblemTypeDescription(
+                                vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
                                     lang = '', 
                                     value = '', )
                                 ], )

@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryAvigilonPaginatePagination(unit
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/avigilon.advisory.Avigilon(
+                    vulncheck_sdk.aio.models.advisory/autodesk.advisory.Autodesk(
                         cve = [
                             ''
                             ], 

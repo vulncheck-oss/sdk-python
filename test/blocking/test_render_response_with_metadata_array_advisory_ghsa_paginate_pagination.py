@@ -84,13 +84,13 @@ class TestRenderResponseWithMetadataArrayAdvisoryGHSAPaginatePagination(unittest
                                         affected_functions = [
                                             ''
                                             ], ), 
-                                    package = vulncheck_sdk.models.advisory/ghsa_package.advisory.GHSAPackage(
+                                    package = vulncheck_sdk.models.advisory/android_package.advisory.AndroidPackage(
                                         ecosystem = '', 
                                         name = '', ), 
                                     ranges = [
                                         vulncheck_sdk.models.advisory/ghsa_range.advisory.GHSARange(
                                             events = [
-                                                vulncheck_sdk.models.advisory/ghsa_event.advisory.GHSAEvent(
+                                                vulncheck_sdk.models.advisory/android_event.advisory.AndroidEvent(
                                                     fixed = '', 
                                                     introduced = '', )
                                                 ], 
@@ -113,13 +113,13 @@ class TestRenderResponseWithMetadataArrayAdvisoryGHSAPaginatePagination(unittest
                             modified = '', 
                             published = '', 
                             references = [
-                                vulncheck_sdk.models.advisory/ghsa_reference.advisory.GHSAReference(
+                                vulncheck_sdk.models.advisory/android_reference.advisory.AndroidReference(
                                     type = '', 
                                     url = '', )
                                 ], 
                             schema_version = '', 
                             severity = [
-                                vulncheck_sdk.models.advisory/ghsa_severity.advisory.GHSASeverity(
+                                vulncheck_sdk.models.advisory/severity.advisory.Severity(
                                     score = '', 
                                     type = '', )
                                 ], 

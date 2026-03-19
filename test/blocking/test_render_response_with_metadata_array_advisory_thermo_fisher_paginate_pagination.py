@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryThermoFisherPaginatePagination(
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/thermo_fisher.advisory.ThermoFisher(
+                    vulncheck_sdk.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

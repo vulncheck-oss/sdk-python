@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryDNNPaginatePagination(unittest.
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/dnn.advisory.DNN(
+                    vulncheck_sdk.aio.models.advisory/apache_hadoop.advisory.ApacheHadoop(
                         affected = '', 
                         cve = [
                             ''

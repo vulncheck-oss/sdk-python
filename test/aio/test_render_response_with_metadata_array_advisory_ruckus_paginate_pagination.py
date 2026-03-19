@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryRuckusPaginatePagination(unitte
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/ruckus.advisory.Ruckus(
+                    vulncheck_sdk.aio.models.advisory/appgate.advisory.Appgate(
                         cve = [
                             ''
                             ], 

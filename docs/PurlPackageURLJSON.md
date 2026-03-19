@@ -1,5 +1,6 @@
 # PurlPackageURLJSON
 
+meta-data about the purl
 
 ## Properties
 

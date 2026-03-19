@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**database_specific** | **object** | The meaning of the values within the object is entirely defined by the database | [optional] 
-**ecosystem_specific** | **object** | The meaning of the values within the object is entirely defined by the ecosystem | [optional] 
+**database_specific** | **object** |  | [optional] 
+**ecosystem_specific** | **object** |  | [optional] 
 **package** | [**AdvisoryOSVPackage**](AdvisoryOSVPackage.md) |  | [optional] 
 **ranges** | [**List[AdvisoryRange]**](AdvisoryRange.md) |  | [optional] 
 **severity** | [**List[AdvisorySeverity]**](AdvisorySeverity.md) |  | [optional] 

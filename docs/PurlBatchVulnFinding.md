@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cves** | **List[str]** | list of associated CVE &#39;s | [optional] 
 **purl** | **str** | the purl, ex. hex/coherence@0.1.2 | [optional] 
-**purl_struct** | [**PurlPackageURLJSON**](PurlPackageURLJSON.md) | meta-data about the purl | [optional] 
+**purl_struct** | [**PurlPackageURLJSON**](PurlPackageURLJSON.md) |  | [optional] 
 **research_attributes** | [**ApiOSSPackageResearchAttributes**](ApiOSSPackageResearchAttributes.md) |  | [optional] 
 **vulnerabilities** | [**List[ApiOSSPackageVulnerability]**](ApiOSSPackageVulnerability.md) | list of associated vulnerabilities | [optional] 
 

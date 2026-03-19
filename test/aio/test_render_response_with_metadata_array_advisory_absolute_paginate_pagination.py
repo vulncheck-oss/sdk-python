@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryAbsolutePaginatePagination(unit
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/absolute.advisory.Absolute(
+                    vulncheck_sdk.aio.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

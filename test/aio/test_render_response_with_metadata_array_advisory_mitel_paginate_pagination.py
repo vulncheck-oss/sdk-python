@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitelPaginatePagination(unittes
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/mitel.advisory.Mitel(
+                    vulncheck_sdk.aio.models.advisory/asterisk.advisory.Asterisk(
                         cve = [
                             ''
                             ], 

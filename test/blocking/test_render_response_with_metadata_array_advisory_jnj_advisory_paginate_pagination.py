@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryJNJAdvisoryPaginatePagination(u
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/jnj_advisory.advisory.JNJAdvisory(
+                    vulncheck_sdk.models.advisory/apache_http.advisory.ApacheHTTP(
                         cve = [
                             ''
                             ], 

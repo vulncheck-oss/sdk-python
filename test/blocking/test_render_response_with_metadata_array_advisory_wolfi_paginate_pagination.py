@@ -82,7 +82,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryWolfiPaginatePagination(unittes
                             vulncheck_sdk.models.advisory/wolfi_package.advisory.WolfiPackage(
                                 name = '', 
                                 secfixes = [
-                                    vulncheck_sdk.models.advisory/wolfi_sec_fix.advisory.WolfiSecFix(
+                                    vulncheck_sdk.models.advisory/chain_guard_sec_fix.advisory.ChainGuardSecFix(
                                         cve = [
                                             ''
                                             ], 

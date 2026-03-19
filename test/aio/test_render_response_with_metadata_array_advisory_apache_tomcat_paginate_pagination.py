@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheTomcatPaginatePagination(
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/apache_tomcat.advisory.ApacheTomcat(
+                    vulncheck_sdk.aio.models.advisory/apache_http.advisory.ApacheHTTP(
                         cve = [
                             ''
                             ], 

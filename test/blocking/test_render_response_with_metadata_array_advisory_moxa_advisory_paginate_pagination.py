@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMoxaAdvisoryPaginatePagination(
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/moxa_advisory.advisory.MoxaAdvisory(
+                    vulncheck_sdk.models.advisory/advantech.advisory.Advantech(
                         advisory_id = '', 
                         cve = [
                             ''

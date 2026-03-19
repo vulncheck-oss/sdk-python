@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryWithSecurePaginatePagination(un
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/with_secure.advisory.WithSecure(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

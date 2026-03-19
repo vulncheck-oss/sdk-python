@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheKafkaPaginatePagination(u
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/apache_kafka.advisory.ApacheKafka(
+                    vulncheck_sdk.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

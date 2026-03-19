@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryDLinkPaginatePagination(unittes
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/d_link.advisory.DLink(
+                    vulncheck_sdk.aio.models.advisory/appgate.advisory.Appgate(
                         cve = [
                             ''
                             ], 

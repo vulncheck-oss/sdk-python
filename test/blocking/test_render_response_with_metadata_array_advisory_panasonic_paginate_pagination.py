@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryPanasonicPaginatePagination(uni
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/panasonic.advisory.Panasonic(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

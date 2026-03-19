@@ -39,7 +39,7 @@ class TestApiProblemTypeExtended(unittest.TestCase):
                 problemtype_data = [
                     vulncheck_sdk.aio.models.api/problem_type_data_extended.api.ProblemTypeDataExtended(
                         description = [
-                            vulncheck_sdk.aio.models.api/problem_type_description_extended.api.ProblemTypeDescriptionExtended(
+                            vulncheck_sdk.aio.models.advisory/cwe_data.advisory.CweData(
                                 lang = '', 
                                 name = '', 
                                 url = '', 

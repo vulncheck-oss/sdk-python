@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMikrotikPaginatePagination(unit
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/mikrotik.advisory.Mikrotik(
+                    vulncheck_sdk.aio.models.advisory/grafana.advisory.Grafana(
                         cve = [
                             ''
                             ], 

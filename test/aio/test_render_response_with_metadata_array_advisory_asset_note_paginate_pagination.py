@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryAssetNotePaginatePagination(uni
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/asset_note.advisory.AssetNote(
+                    vulncheck_sdk.aio.models.advisory/apache_commons.advisory.ApacheCommons(
                         cve = [
                             ''
                             ], 

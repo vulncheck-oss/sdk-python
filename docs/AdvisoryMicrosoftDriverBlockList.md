@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **date_added** | **str** |  | [optional] 
 **file_id** | **str** | From FileAttrib or Deny | [optional] 
-**file_metadata** | [**AdvisoryMicrosoftFileMetadata**](AdvisoryMicrosoftFileMetadata.md) | File-level metadata | [optional] 
+**file_metadata** | [**AdvisoryMicrosoftFileMetadata**](AdvisoryMicrosoftFileMetadata.md) |  | [optional] 
 
 ## Example
 

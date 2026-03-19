@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryKunbusPaginatePagination(unitte
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/kunbus.advisory.Kunbus(
+                    vulncheck_sdk.models.advisory/appgate.advisory.Appgate(
                         cve = [
                             ''
                             ], 

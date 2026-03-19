@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **purls_post**
-> RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata purls_post(purls)
+> RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata purls_post(request_body)
 
 Request vulnerabilities related to a list of PURLs
 
@@ -686,11 +686,11 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with vulncheck_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vulncheck_sdk.EndpointsApi(api_client)
-    purls = ['purls_example'] # List[str] | PURL strings used to identify and locate software packages
+    request_body = ['request_body_example'] # List[str] | PURL strings used to identify and locate software packages
 
     try:
         # Request vulnerabilities related to a list of PURLs
-        api_response = api_instance.purls_post(purls)
+        api_response = api_instance.purls_post(request_body)
         print("The response of EndpointsApi->purls_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -704,7 +704,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purls** | [**List[str]**](str.md)| PURL strings used to identify and locate software packages | 
+ **request_body** | [**List[str]**](str.md)| PURL strings used to identify and locate software packages | 
 
 ### Return type
 
@@ -716,7 +716,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

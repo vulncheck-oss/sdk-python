@@ -90,7 +90,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryVulnCheckKEVPaginatePagination(
                         short_description = '', 
                         vendor_project = '', 
                         vulncheck_reported_exploitation = [
-                            vulncheck_sdk.models.advisory/reported_exploit.advisory.ReportedExploit(
+                            vulncheck_sdk.models.advisory/mitre_attack_ref.advisory.MitreAttackRef(
                                 date_added = '', 
                                 url = '', )
                             ], 

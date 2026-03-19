@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryAbbottPaginatePagination(unitte
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/abbott.advisory.Abbott(
+                    vulncheck_sdk.aio.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

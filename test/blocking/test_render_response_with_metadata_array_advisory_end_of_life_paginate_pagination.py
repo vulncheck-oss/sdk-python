@@ -80,16 +80,16 @@ class TestRenderResponseWithMetadataArrayAdvisoryEndOfLifePaginatePagination(uni
                             vulncheck_sdk.models.advisory/cycle.advisory.Cycle(
                                 codename = '', 
                                 cycle = '', 
-                                discontinued = vulncheck_sdk.models.discontinued.discontinued(), 
-                                eol = vulncheck_sdk.models.eol.eol(), 
-                                extended_support = vulncheck_sdk.models.extended_support.extendedSupport(), 
+                                discontinued = null, 
+                                eol = null, 
+                                extended_support = null, 
                                 latest = '', 
                                 latest_release_date = '', 
                                 link = '', 
-                                lts = vulncheck_sdk.models.lts.lts(), 
+                                lts = null, 
                                 release_date = '', 
                                 release_label = '', 
-                                support = vulncheck_sdk.models.support.support(), )
+                                support = null, )
                             ], 
                         date_added = '', 
                         name = '', 

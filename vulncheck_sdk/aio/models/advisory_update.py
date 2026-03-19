@@ -20,7 +20,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.aio.models.advisory_date_time import AdvisoryDateTime
 from vulncheck_sdk.aio.models.advisory_package import AdvisoryPackage
 from vulncheck_sdk.aio.models.advisory_reference import AdvisoryReference
 from typing import Optional, Set
@@ -34,7 +33,7 @@ class AdvisoryUpdate(BaseModel):
     date_added: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(default=None, description="sort // key")
-    issued: Optional[AdvisoryDateTime] = None
+    issued: Optional[Dict[str, Any]] = None
     os_arch: Optional[StrictStr] = None
     os_version: Optional[StrictStr] = None
     packages: Optional[List[AdvisoryPackage]] = None
@@ -42,7 +41,7 @@ class AdvisoryUpdate(BaseModel):
     severity: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
-    updated: Optional[AdvisoryDateTime] = None
+    updated: Optional[Dict[str, Any]] = None
     __properties: ClassVar[List[str]] = ["cve", "date_added", "description", "id", "issued", "os_arch", "os_version", "packages", "references", "severity", "title", "type", "updated"]
 
     model_config = ConfigDict(
@@ -84,9 +83,6 @@ class AdvisoryUpdate(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of issued
-        if self.issued:
-            _dict['issued'] = self.issued.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in packages (list)
         _items = []
         if self.packages:
@@ -101,9 +97,6 @@ class AdvisoryUpdate(BaseModel):
                 if _item_references:
                     _items.append(_item_references.to_dict())
             _dict['references'] = _items
-        # override the default output from pydantic by calling `to_dict()` of updated
-        if self.updated:
-            _dict['updated'] = self.updated.to_dict()
         return _dict
 
     @classmethod
@@ -120,7 +113,7 @@ class AdvisoryUpdate(BaseModel):
             "date_added": obj.get("date_added"),
             "description": obj.get("description"),
             "id": obj.get("id"),
-            "issued": AdvisoryDateTime.from_dict(obj["issued"]) if obj.get("issued") is not None else None,
+            "issued": obj.get("issued"),
             "os_arch": obj.get("os_arch"),
             "os_version": obj.get("os_version"),
             "packages": [AdvisoryPackage.from_dict(_item) for _item in obj["packages"]] if obj.get("packages") is not None else None,
@@ -128,7 +121,7 @@ class AdvisoryUpdate(BaseModel):
             "severity": obj.get("severity"),
             "title": obj.get("title"),
             "type": obj.get("type"),
-            "updated": AdvisoryDateTime.from_dict(obj["updated"]) if obj.get("updated") is not None else None
+            "updated": obj.get("updated")
         })
         return _obj
 

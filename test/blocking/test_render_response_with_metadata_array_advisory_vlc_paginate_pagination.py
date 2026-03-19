@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryVLCPaginatePagination(unittest.
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/vlc.advisory.VLC(
+                    vulncheck_sdk.models.advisory/autodesk.advisory.Autodesk(
                         cve = [
                             ''
                             ], 

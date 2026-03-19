@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySymfonyPaginatePagination(unitt
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/symfony.advisory.Symfony(
+                    vulncheck_sdk.aio.models.advisory/apache_archiva.advisory.ApacheArchiva(
                         affected = '', 
                         cve = [
                             ''

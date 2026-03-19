@@ -82,13 +82,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryGHAdvisoryJSONLeanPaginatePagin
                             vector_string = '', ), 
                         cwes = vulncheck_sdk.aio.models.advisory/cwes.advisory.Cwes(
                             nodes = [
-                                vulncheck_sdk.aio.models.advisory/cwe_node.advisory.CWENode(
-                                    cweid = '', 
-                                    description = '', 
-                                    id = '', 
-                                    name = '', )
-                                ], 
-                            total_count = 56, ), 
+                                vulncheck_sdk.aio.models.advisory/csaf_distribution.advisory.CSAFDistribution()
+                                ], ), 
                         database_id = 56, 
                         date_added = '', 
                         description = '', 

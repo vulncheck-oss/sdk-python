@@ -36,7 +36,7 @@ class TestAdvisoryMSCVRF(unittest.TestCase):
         model = AdvisoryMSCVRF()
         if include_optional:
             return AdvisoryMSCVRF(
-                document_title = vulncheck_sdk.models.advisory/ms_document_title.advisory.MSDocumentTitle(
+                document_title = vulncheck_sdk.models.advisory/i_val.advisory.IVal(
                     value = '', ),
                 document_tracking = vulncheck_sdk.models.advisory/m_document_tracking.advisory.MDocumentTracking(
                     current_release_date = '', 

@@ -45,13 +45,8 @@ class TestAdvisoryGHAdvisoryJSONLean(unittest.TestCase):
                     vector_string = '', ),
                 cwes = vulncheck_sdk.models.advisory/cwes.advisory.Cwes(
                     nodes = [
-                        vulncheck_sdk.models.advisory/cwe_node.advisory.CWENode(
-                            cweid = '', 
-                            description = '', 
-                            id = '', 
-                            name = '', )
-                        ], 
-                    total_count = 56, ),
+                        vulncheck_sdk.models.advisory/csaf_distribution.advisory.CSAFDistribution()
+                        ], ),
                 database_id = 56,
                 date_added = '',
                 description = '',
@@ -76,7 +71,7 @@ class TestAdvisoryGHAdvisoryJSONLean(unittest.TestCase):
                 vulnerabilities = vulncheck_sdk.models.advisory/gh_vulnerabilities.advisory.GHVulnerabilities(
                     nodes = [
                         vulncheck_sdk.models.advisory/gh_node.advisory.GHNode(
-                            package = vulncheck_sdk.models.advisory/gh_package.advisory.GHPackage(
+                            package = vulncheck_sdk.models.advisory/android_package.advisory.AndroidPackage(
                                 ecosystem = '', 
                                 name = '', ), 
                             severity = '', 

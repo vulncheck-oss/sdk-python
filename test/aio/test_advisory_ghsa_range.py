@@ -37,7 +37,7 @@ class TestAdvisoryGHSARange(unittest.TestCase):
         if include_optional:
             return AdvisoryGHSARange(
                 events = [
-                    vulncheck_sdk.aio.models.advisory/ghsa_event.advisory.GHSAEvent(
+                    vulncheck_sdk.aio.models.advisory/android_event.advisory.AndroidEvent(
                         fixed = '', 
                         introduced = '', )
                     ],

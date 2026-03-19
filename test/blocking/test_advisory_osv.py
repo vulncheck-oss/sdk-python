@@ -44,8 +44,8 @@ class TestAdvisoryOSV(unittest.TestCase):
                 osv = vulncheck_sdk.models.advisory/osv_obj.advisory.OSVObj(
                     affected = [
                         vulncheck_sdk.models.advisory/affected.advisory.Affected(
-                            database_specific = vulncheck_sdk.models.database_specific.database_specific(), 
-                            ecosystem_specific = vulncheck_sdk.models.ecosystem_specific.ecosystem_specific(), 
+                            database_specific = null, 
+                            ecosystem_specific = null, 
                             package = vulncheck_sdk.models.advisory/osv_package.advisory.OSVPackage(
                                 ecosystem = '', 
                                 name = '', 
@@ -79,7 +79,7 @@ class TestAdvisoryOSV(unittest.TestCase):
                     modified = '', 
                     published = '', 
                     references = [
-                        vulncheck_sdk.models.advisory/osv_reference.advisory.OSVReference(
+                        vulncheck_sdk.models.advisory/android_reference.advisory.AndroidReference(
                             type = '', 
                             url = '', )
                         ], 

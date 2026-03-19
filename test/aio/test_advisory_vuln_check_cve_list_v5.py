@@ -103,7 +103,7 @@ class TestAdvisoryVulnCheckCVEListV5(unittest.TestCase):
                                             user_interaction = '', 
                                             vector_string = '', 
                                             version = '', ), 
-                                        cvss_v3_1 = vulncheck_sdk.aio.models.advisory/m_cvss_v31.advisory.MCvssV31(
+                                        cvss_v3_1 = vulncheck_sdk.aio.models.advisory/m_cvss_v30.advisory.MCvssV30(
                                             attack_complexity = '', 
                                             attack_vector = '', 
                                             availability_impact = '', 
@@ -143,7 +143,7 @@ class TestAdvisoryVulnCheckCVEListV5(unittest.TestCase):
                                             content = vulncheck_sdk.aio.models.content.content(), 
                                             type = '', ), 
                                         scenarios = [
-                                            vulncheck_sdk.aio.models.advisory/metric_scenario.advisory.MetricScenario(
+                                            vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
                                                 lang = '', 
                                                 value = '', )
                                             ], )
@@ -151,7 +151,10 @@ class TestAdvisoryVulnCheckCVEListV5(unittest.TestCase):
                                 problem_types = [
                                     vulncheck_sdk.aio.models.advisory/m_problem_types.advisory.MProblemTypes()
                                     ], 
-                                provider_metadata = vulncheck_sdk.aio.models.provider_metadata.providerMetadata(), 
+                                provider_metadata = vulncheck_sdk.aio.models.advisory/m_provider_metadata.advisory.MProviderMetadata(
+                                    date_updated = '', 
+                                    org_id = '', 
+                                    short_name = '', ), 
                                 references = [
                                     vulncheck_sdk.aio.models.advisory/m_reference.advisory.MReference(
                                         name = '', 
@@ -172,7 +175,7 @@ class TestAdvisoryVulnCheckCVEListV5(unittest.TestCase):
                                     nodes = [
                                         vulncheck_sdk.aio.models.advisory/m_nodes.advisory.MNodes(
                                             cpe_match = [
-                                                vulncheck_sdk.aio.models.advisory/mcpe_match.advisory.MCPEMatch(
+                                                vulncheck_sdk.aio.models.advisory/nvd20_cvecpe_match.advisory.NVD20CVECPEMatch(
                                                     criteria = '', 
                                                     match_criteria_id = '', 
                                                     version_end_excluding = '', 
@@ -192,10 +195,6 @@ class TestAdvisoryVulnCheckCVEListV5(unittest.TestCase):
                                     type = '', 
                                     value = '', )
                                 ], 
-                            provider_metadata = vulncheck_sdk.aio.models.advisory/m_provider_metadata.advisory.MProviderMetadata(
-                                date_updated = '', 
-                                org_id = '', 
-                                short_name = '', ), 
                             timeline = [
                                 vulncheck_sdk.aio.models.advisory/timeline.advisory.Timeline(
                                     lang = '', 

@@ -21,9 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.advisory_bugzilla import AdvisoryBugzilla
-from vulncheck_sdk.aio.models.advisory_issued import AdvisoryIssued
 from vulncheck_sdk.aio.models.advisory_oval_cve import AdvisoryOvalCVE
-from vulncheck_sdk.aio.models.advisory_updated import AdvisoryUpdated
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,9 +31,9 @@ class AdvisoryAdvisoryDetails(BaseModel):
     """ # noqa: E501
     bugzilla: Optional[AdvisoryBugzilla] = None
     cve: Optional[AdvisoryOvalCVE] = None
-    issued: Optional[AdvisoryIssued] = None
+    issued: Optional[Dict[str, Any]] = None
     severity: Optional[StrictStr] = None
-    updated: Optional[AdvisoryUpdated] = None
+    updated: Optional[Dict[str, Any]] = None
     __properties: ClassVar[List[str]] = ["bugzilla", "cve", "issued", "severity", "updated"]
 
     model_config = ConfigDict(
@@ -83,12 +81,6 @@ class AdvisoryAdvisoryDetails(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of cve
         if self.cve:
             _dict['cve'] = self.cve.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of issued
-        if self.issued:
-            _dict['issued'] = self.issued.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of updated
-        if self.updated:
-            _dict['updated'] = self.updated.to_dict()
         return _dict
 
     @classmethod
@@ -103,9 +95,9 @@ class AdvisoryAdvisoryDetails(BaseModel):
         _obj = cls.model_validate({
             "bugzilla": AdvisoryBugzilla.from_dict(obj["bugzilla"]) if obj.get("bugzilla") is not None else None,
             "cve": AdvisoryOvalCVE.from_dict(obj["cve"]) if obj.get("cve") is not None else None,
-            "issued": AdvisoryIssued.from_dict(obj["issued"]) if obj.get("issued") is not None else None,
+            "issued": obj.get("issued"),
             "severity": obj.get("severity"),
-            "updated": AdvisoryUpdated.from_dict(obj["updated"]) if obj.get("updated") is not None else None
+            "updated": obj.get("updated")
         })
         return _obj
 

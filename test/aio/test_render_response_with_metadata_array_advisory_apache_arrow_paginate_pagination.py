@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheArrowPaginatePagination(u
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/apache_arrow.advisory.ApacheArrow(
+                    vulncheck_sdk.aio.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

@@ -133,7 +133,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryVulnrichmentPaginatePagination(
                                             nodes = [
                                                 vulncheck_sdk.models.advisory/m_nodes.advisory.MNodes(
                                                     cpe_match = [
-                                                        vulncheck_sdk.models.advisory/mcpe_match.advisory.MCPEMatch(
+                                                        vulncheck_sdk.models.advisory/nvd20_cvecpe_match.advisory.NVD20CVECPEMatch(
                                                             criteria = '', 
                                                             match_criteria_id = '', 
                                                             version_end_excluding = '', 

@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryDraytekPaginatePagination(unitt
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/draytek.advisory.Draytek(
+                    vulncheck_sdk.models.advisory/django.advisory.Django(
                         affected = [
                             ''
                             ], 

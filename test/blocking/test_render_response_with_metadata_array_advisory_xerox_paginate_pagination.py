@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryXeroxPaginatePagination(unittes
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/xerox.advisory.Xerox(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

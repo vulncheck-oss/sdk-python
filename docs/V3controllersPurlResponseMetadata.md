@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**purl_struct** | [**PurlPackageURLJSON**](PurlPackageURLJSON.md) | meta-data about the purl | [optional] 
+**purl_struct** | [**PurlPackageURLJSON**](PurlPackageURLJSON.md) |  | [optional] 
 **timestamp** | **str** | time of the transaction | [optional] 
 **total_documents** | **int** | number of results found | [optional] 
 

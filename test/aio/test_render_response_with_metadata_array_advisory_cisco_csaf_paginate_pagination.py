@@ -73,7 +73,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryCiscoCSAFPaginatePagination(uni
                         ], ),
                 data = [
                     vulncheck_sdk.aio.models.advisory/cisco_csaf.advisory.CiscoCSAF(
-                        csaf = vulncheck_sdk.aio.models.csaf.csaf(), 
+                        csaf = null, 
                         cve = [
                             ''
                             ], 

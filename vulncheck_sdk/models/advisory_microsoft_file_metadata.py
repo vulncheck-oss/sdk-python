@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class AdvisoryMicrosoftFileMetadata(BaseModel):
     """
-    AdvisoryMicrosoftFileMetadata
+    File-level metadata
     """ # noqa: E501
     file_name: Optional[StrictStr] = Field(default=None, description="Full path (FilePath + FileName or FriendlyName)")
     maximum_file_version: Optional[StrictStr] = None

@@ -6,12 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cve** | **List[str]** |  | [optional] 
-**notes** | [**List[AdvisoryDocumentNote]**](AdvisoryDocumentNote.md) |  | [optional] 
-**product_tree** | [**AdvisoryProductTree**](AdvisoryProductTree.md) |  | [optional] 
-**references** | [**List[AdvisoryCVRFReference]**](AdvisoryCVRFReference.md) |  | [optional] 
-**title** | **str** |  | [optional] 
-**tracking** | [**AdvisoryDocumentTracking**](AdvisoryDocumentTracking.md) |  | [optional] 
-**vulnerabilities** | [**List[AdvisoryVulnerability]**](AdvisoryVulnerability.md) |  | [optional] 
 
 ## Example
 

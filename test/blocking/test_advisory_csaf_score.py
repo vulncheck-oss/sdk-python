@@ -54,7 +54,7 @@ class TestAdvisoryCSAFScore(unittest.TestCase):
                     report_confidence = '', 
                     target_distribution = '', 
                     temporal_score = 1.337, ),
-                cvss_v3 = vulncheck_sdk.models.advisory/cvssv3.advisory.CVSSV3(
+                cvss_v3 = vulncheck_sdk.models.advisory/m_cvss_v30.advisory.MCvssV30(
                     attack_complexity = '', 
                     attack_vector = '', 
                     availability_impact = '', 

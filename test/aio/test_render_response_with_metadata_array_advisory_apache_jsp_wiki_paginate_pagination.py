@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheJSPWikiPaginatePagination
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/apache_jsp_wiki.advisory.ApacheJSPWiki(
+                    vulncheck_sdk.aio.models.advisory/apache_archiva.advisory.ApacheArchiva(
                         affected = '', 
                         cve = [
                             ''

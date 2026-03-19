@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryYubicoPaginatePagination(unitte
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/yubico.advisory.Yubico(
+                    vulncheck_sdk.aio.models.advisory/appgate.advisory.Appgate(
                         cve = [
                             ''
                             ], 

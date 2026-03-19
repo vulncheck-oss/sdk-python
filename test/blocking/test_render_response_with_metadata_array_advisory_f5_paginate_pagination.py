@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryF5PaginatePagination(unittest.T
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/f5.advisory.F5(
+                    vulncheck_sdk.models.advisory/appgate.advisory.Appgate(
                         cve = [
                             ''
                             ], 

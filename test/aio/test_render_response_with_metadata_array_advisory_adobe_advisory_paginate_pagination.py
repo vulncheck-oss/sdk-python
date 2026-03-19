@@ -92,7 +92,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryAdobeAdvisoryPaginatePagination
                         date_added = '', 
                         link = '', 
                         solutions = [
-                            vulncheck_sdk.aio.models.advisory/adobe_solution.advisory.AdobeSolution(
+                            vulncheck_sdk.aio.models.advisory/adobe_affected.advisory.AdobeAffected(
                                 platform = '', 
                                 product = '', 
                                 version = '', )

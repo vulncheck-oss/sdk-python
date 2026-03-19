@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryDahuaPaginatePagination(unittes
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/dahua.advisory.Dahua(
+                    vulncheck_sdk.models.advisory/autodesk.advisory.Autodesk(
                         cve = [
                             ''
                             ], 

@@ -88,7 +88,9 @@ class TestAdvisoryCSAF(unittest.TestCase):
                             product = vulncheck_sdk.aio.models.advisory/product.advisory.Product(
                                 name = '', 
                                 product_id = '', 
-                                product_identification_helper = { }, ), 
+                                product_identification_helper = {
+                                    'key' : null
+                                    }, ), 
                             relationships = [
                                 vulncheck_sdk.aio.models.advisory/csaf_relationship.advisory.CSAFRelationship(
                                     category = '', 
@@ -181,7 +183,7 @@ class TestAdvisoryCSAF(unittest.TestCase):
                                     report_confidence = '', 
                                     target_distribution = '', 
                                     temporal_score = 1.337, ), 
-                                cvss_v3 = vulncheck_sdk.aio.models.advisory/cvssv3.advisory.CVSSV3(
+                                cvss_v3 = vulncheck_sdk.aio.models.advisory/m_cvss_v30.advisory.MCvssV30(
                                     attack_complexity = '', 
                                     attack_vector = '', 
                                     availability_impact = '', 

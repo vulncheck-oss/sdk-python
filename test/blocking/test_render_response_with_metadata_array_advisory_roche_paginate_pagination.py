@@ -78,7 +78,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryRochePaginatePagination(unittes
                             ], 
                         date_added = '', 
                         roche_cves = [
-                            vulncheck_sdk.models.advisory/roche_cve.advisory.RocheCVE(
+                            vulncheck_sdk.models.advisory/adobe_cve.advisory.AdobeCVE(
                                 cvss_score = '', 
                                 cvss_vector = '', )
                             ], 

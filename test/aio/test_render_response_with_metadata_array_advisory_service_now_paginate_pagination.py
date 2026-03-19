@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryServiceNowPaginatePagination(un
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/service_now.advisory.ServiceNow(
+                    vulncheck_sdk.aio.models.advisory/apache_commons.advisory.ApacheCommons(
                         cve = [
                             ''
                             ], 

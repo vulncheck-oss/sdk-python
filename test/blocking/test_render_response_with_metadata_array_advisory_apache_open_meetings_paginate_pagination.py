@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheOpenMeetingsPaginatePagin
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/apache_open_meetings.advisory.ApacheOpenMeetings(
+                    vulncheck_sdk.models.advisory/apache_archiva.advisory.ApacheArchiva(
                         affected = '', 
                         cve = [
                             ''

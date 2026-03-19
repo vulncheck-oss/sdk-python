@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryBeyondTrustPaginatePagination(u
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/beyond_trust.advisory.BeyondTrust(
+                    vulncheck_sdk.models.advisory/appgate.advisory.Appgate(
                         cve = [
                             ''
                             ], 

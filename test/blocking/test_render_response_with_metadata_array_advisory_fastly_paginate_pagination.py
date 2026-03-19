@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryFastlyPaginatePagination(unitte
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/fastly.advisory.Fastly(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryVanDykePaginatePagination(unitt
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/van_dyke.advisory.VanDyke(
+                    vulncheck_sdk.aio.models.advisory/apache_commons.advisory.ApacheCommons(
                         cve = [
                             ''
                             ], 

@@ -96,7 +96,7 @@ class TestAdvisoryBotnet(unittest.TestCase):
                     vulncheck_sdk.aio.models.advisory/tool.advisory.Tool(
                         name = '', 
                         references = [
-                            vulncheck_sdk.aio.models.advisory/tool_ref.advisory.ToolRef(
+                            vulncheck_sdk.aio.models.advisory/mitre_attack_ref.advisory.MitreAttackRef(
                                 date_added = '', 
                                 url = '', )
                             ], )

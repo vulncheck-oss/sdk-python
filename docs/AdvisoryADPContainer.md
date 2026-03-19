@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **impacts** | [**List[AdvisoryImpact]**](AdvisoryImpact.md) | OK | [optional] 
 **metrics** | [**List[AdvisoryMetric]**](AdvisoryMetric.md) | OK | [optional] 
 **problem_types** | [**List[AdvisoryMProblemTypes]**](AdvisoryMProblemTypes.md) | OK | [optional] 
-**provider_metadata** | [**AdvisoryMProviderMetadata**](AdvisoryMProviderMetadata.md) | OK | [optional] 
+**provider_metadata** | [**AdvisoryMProviderMetadata**](AdvisoryMProviderMetadata.md) |  | [optional] 
 **references** | [**List[AdvisoryMReference]**](AdvisoryMReference.md) |  | [optional] 
 **tags** | **List[str]** | OK | [optional] 
 **title** | **str** | OK | [optional] 

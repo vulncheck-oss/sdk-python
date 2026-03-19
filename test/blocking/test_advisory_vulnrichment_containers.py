@@ -114,7 +114,7 @@ class TestAdvisoryVulnrichmentContainers(unittest.TestCase):
                             nodes = [
                                 vulncheck_sdk.models.advisory/m_nodes.advisory.MNodes(
                                     cpe_match = [
-                                        vulncheck_sdk.models.advisory/mcpe_match.advisory.MCPEMatch(
+                                        vulncheck_sdk.models.advisory/nvd20_cvecpe_match.advisory.NVD20CVECPEMatch(
                                             criteria = '', 
                                             match_criteria_id = '', 
                                             version_end_excluding = '', 
@@ -168,7 +168,7 @@ class TestAdvisoryVulnrichmentContainers(unittest.TestCase):
                                 user_interaction = '', 
                                 vector_string = '', 
                                 version = '', ), 
-                            cvss_v3_1 = vulncheck_sdk.models.advisory/m_cvss_v31.advisory.MCvssV31(
+                            cvss_v3_1 = vulncheck_sdk.models.advisory/m_cvss_v30.advisory.MCvssV30(
                                 attack_complexity = '', 
                                 attack_vector = '', 
                                 availability_impact = '', 
@@ -208,7 +208,7 @@ class TestAdvisoryVulnrichmentContainers(unittest.TestCase):
                                 content = vulncheck_sdk.models.content.content(), 
                                 type = '', ), 
                             scenarios = [
-                                vulncheck_sdk.models.advisory/metric_scenario.advisory.MetricScenario(
+                                vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
                                     lang = '', 
                                     value = '', )
                                 ], )

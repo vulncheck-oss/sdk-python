@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryZebraPaginatePagination(unittes
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/zebra.advisory.Zebra(
+                    vulncheck_sdk.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

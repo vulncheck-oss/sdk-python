@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryBeckmanCoulterPaginatePaginatio
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/beckman_coulter.advisory.BeckmanCoulter(
+                    vulncheck_sdk.aio.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

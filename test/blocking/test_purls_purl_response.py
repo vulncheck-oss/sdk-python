@@ -36,7 +36,7 @@ class TestPurlsPurlResponse(unittest.TestCase):
         model = PurlsPurlResponse()
         if include_optional:
             return PurlsPurlResponse(
-                artifacts = None,
+                artifacts = vulncheck_sdk.models.advisory/csaf_distribution.advisory.CSAFDistribution(),
                 cves = [
                     ''
                     ],
