@@ -1,5 +1,6 @@
 # AdvisoryNetatalk
 
+advisory.Netatalk
 
 ## Properties
 

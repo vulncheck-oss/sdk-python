@@ -1,5 +1,6 @@
 # AdvisoryVendorRef
 
+advisory.VendorRef
 
 ## Properties
 

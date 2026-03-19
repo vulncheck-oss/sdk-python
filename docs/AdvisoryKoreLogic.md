@@ -1,5 +1,6 @@
 # AdvisoryKoreLogic
 
+advisory.KoreLogic
 
 ## Properties
 

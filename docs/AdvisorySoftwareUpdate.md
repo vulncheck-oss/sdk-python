@@ -1,5 +1,6 @@
 # AdvisorySoftwareUpdate
 
+advisory.SoftwareUpdate
 
 ## Properties
 

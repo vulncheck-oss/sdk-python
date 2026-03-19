@@ -1,5 +1,6 @@
 # AdvisoryApacheOpenOffice
 
+advisory.ApacheOpenOffice
 
 ## Properties
 

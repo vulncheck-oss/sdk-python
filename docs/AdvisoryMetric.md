@@ -1,5 +1,6 @@
 # AdvisoryMetric
 
+advisory.Metric
 
 ## Properties
 

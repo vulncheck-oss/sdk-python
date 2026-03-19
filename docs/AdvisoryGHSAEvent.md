@@ -1,5 +1,6 @@
 # AdvisoryGHSAEvent
 
+advisory.GHSAEvent
 
 ## Properties
 

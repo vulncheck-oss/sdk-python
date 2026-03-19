@@ -1,5 +1,6 @@
 # AdvisoryDraytek
 
+advisory.Draytek
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryMITREAttackGroupNoID
 
+advisory.MITREAttackGroupNoID
 
 ## Properties
 

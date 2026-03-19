@@ -1,5 +1,6 @@
 # AdvisoryToolRef
 
+advisory.ToolRef
 
 ## Properties
 

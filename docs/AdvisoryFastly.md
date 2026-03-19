@@ -1,5 +1,6 @@
 # AdvisoryFastly
 
+advisory.Fastly
 
 ## Properties
 

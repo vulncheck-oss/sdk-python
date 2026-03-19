@@ -1,5 +1,6 @@
 # ApiRelatedAttackPattern
 
+api.RelatedAttackPattern
 
 ## Properties
 

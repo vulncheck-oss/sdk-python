@@ -1,5 +1,6 @@
 # AdvisoryPyPAReference
 
+advisory.PyPAReference
 
 ## Properties
 

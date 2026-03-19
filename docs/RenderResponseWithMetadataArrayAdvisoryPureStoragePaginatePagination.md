@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryPureStoragePaginatePagination
 
+render.ResponseWithMetadata-array_advisory_PureStorage-paginate_Pagination
 
 ## Properties
 

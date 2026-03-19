@@ -1,5 +1,6 @@
 # AdvisoryHillromAdvisory
 
+advisory.HillromAdvisory
 
 ## Properties
 

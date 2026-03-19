@@ -1,5 +1,6 @@
 # AdvisoryIncibeAdvisory
 
+advisory.IncibeAdvisory
 
 ## Properties
 

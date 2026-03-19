@@ -1,5 +1,6 @@
 # AdvisorySandisk
 
+advisory.Sandisk
 
 ## Properties
 

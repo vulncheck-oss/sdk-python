@@ -1,5 +1,6 @@
 # AdvisoryAdobeCVE
 
+advisory.AdobeCVE
 
 ## Properties
 

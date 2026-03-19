@@ -1,5 +1,6 @@
 # AdvisoryMispRelatedItem
 
+advisory.MispRelatedItem
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryBinarly
 
+advisory.Binarly
 
 ## Properties
 

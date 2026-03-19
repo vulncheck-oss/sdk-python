@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryDotCMSPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_DotCMS-paginate_Pagination
 
 ## Properties
 

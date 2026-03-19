@@ -1,5 +1,6 @@
 # AdvisoryWireshark
 
+advisory.Wireshark
 
 ## Properties
 

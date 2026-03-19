@@ -1,5 +1,6 @@
 # AdvisoryMcAfee
 
+advisory.McAfee
 
 ## Properties
 

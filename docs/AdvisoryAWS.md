@@ -1,5 +1,6 @@
 # AdvisoryAWS
 
+advisory.AWS
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryDeltaAdvisory
 
+advisory.DeltaAdvisory
 
 ## Properties
 

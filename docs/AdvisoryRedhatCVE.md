@@ -1,5 +1,6 @@
 # AdvisoryRedhatCVE
 
+advisory.RedhatCVE
 
 ## Properties
 

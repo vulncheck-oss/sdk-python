@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryMitsubishiElectricAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_MitsubishiElectricAdvisory-paginate_Pagination
 
 ## Properties
 

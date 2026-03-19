@@ -1,5 +1,6 @@
 # AdvisorySiemensCVSSV3
 
+advisory.SiemensCVSSV3
 
 ## Properties
 

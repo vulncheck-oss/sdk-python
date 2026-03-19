@@ -1,5 +1,6 @@
 # AdvisoryArista
 
+advisory.Arista
 
 ## Properties
 

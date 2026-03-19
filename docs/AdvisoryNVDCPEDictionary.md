@@ -1,5 +1,6 @@
 # AdvisoryNVDCPEDictionary
 
+advisory.NVDCPEDictionary
 
 ## Properties
 

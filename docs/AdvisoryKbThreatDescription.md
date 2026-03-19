@@ -1,5 +1,6 @@
 # AdvisoryKbThreatDescription
 
+advisory.KbThreatDescription
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryGreyNoiseDetection
 
+advisory.GreyNoiseDetection
 
 ## Properties
 

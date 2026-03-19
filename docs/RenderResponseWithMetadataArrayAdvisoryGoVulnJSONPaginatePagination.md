@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryGoVulnJSONPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_GoVulnJSON-paginate_Pagination
 
 ## Properties
 

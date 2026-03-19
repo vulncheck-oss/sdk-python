@@ -1,5 +1,6 @@
 # ApiTemporalCVSSV3
 
+api.TemporalCVSSV3
 
 ## Properties
 

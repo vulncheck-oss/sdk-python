@@ -1,5 +1,6 @@
 # AdvisoryVapidLabsAdvisory
 
+advisory.VapidLabsAdvisory
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryGoVulnAffected
 
+advisory.GoVulnAffected
 
 ## Properties
 

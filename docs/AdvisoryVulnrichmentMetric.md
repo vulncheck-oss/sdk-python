@@ -1,5 +1,6 @@
 # AdvisoryVulnrichmentMetric
 
+advisory.VulnrichmentMetric
 
 ## Properties
 

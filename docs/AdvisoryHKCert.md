@@ -1,5 +1,6 @@
 # AdvisoryHKCert
 
+advisory.HKCert
 
 ## Properties
 

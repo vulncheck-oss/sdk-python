@@ -1,5 +1,6 @@
 # AdvisoryAffectedDebianRepository
 
+advisory.AffectedDebianRepository
 
 ## Properties
 

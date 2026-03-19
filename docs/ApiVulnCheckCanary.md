@@ -1,5 +1,6 @@
 # ApiVulnCheckCanary
 
+api.VulnCheckCanary
 
 ## Properties
 

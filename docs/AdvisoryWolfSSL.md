@@ -1,5 +1,6 @@
 # AdvisoryWolfSSL
 
+advisory.WolfSSL
 
 ## Properties
 

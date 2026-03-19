@@ -1,5 +1,6 @@
 # AdvisorySecurityLab
 
+advisory.SecurityLab
 
 ## Properties
 

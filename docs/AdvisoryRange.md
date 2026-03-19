@@ -1,5 +1,6 @@
 # AdvisoryRange
 
+advisory.Range
 
 ## Properties
 

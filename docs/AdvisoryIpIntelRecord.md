@@ -1,5 +1,6 @@
 # AdvisoryIpIntelRecord
 
+advisory.IpIntelRecord
 
 ## Properties
 

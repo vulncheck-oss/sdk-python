@@ -1,5 +1,6 @@
 # AdvisoryOpenSSLSecAdv
 
+advisory.OpenSSLSecAdv
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisorySecurityBulletinPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_SecurityBulletin-paginate_Pagination
 
 ## Properties
 

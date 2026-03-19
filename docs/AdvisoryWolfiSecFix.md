@@ -1,5 +1,6 @@
 # AdvisoryWolfiSecFix
 
+advisory.WolfiSecFix
 
 ## Properties
 

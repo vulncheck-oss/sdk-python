@@ -1,5 +1,6 @@
 # AdvisorySevenZip
 
+advisory.SevenZip
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryXen
 
+advisory.Xen
 
 ## Properties
 

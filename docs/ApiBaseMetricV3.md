@@ -1,5 +1,6 @@
 # ApiBaseMetricV3
 
+api.BaseMetricV3
 
 ## Properties
 

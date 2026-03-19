@@ -1,5 +1,6 @@
 # AdvisoryCSAFNote
 
+advisory.CSAFNote
 
 ## Properties
 

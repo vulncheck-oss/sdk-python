@@ -1,5 +1,6 @@
 # ApiMitreMitigationTech
 
+api.MitreMitigationTech
 
 ## Properties
 

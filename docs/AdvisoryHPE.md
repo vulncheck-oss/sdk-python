@@ -1,5 +1,6 @@
 # AdvisoryHPE
 
+advisory.HPE
 
 ## Properties
 

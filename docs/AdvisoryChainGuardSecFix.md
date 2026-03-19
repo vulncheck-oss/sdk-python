@@ -1,5 +1,6 @@
 # AdvisoryChainGuardSecFix
 
+advisory.ChainGuardSecFix
 
 ## Properties
 

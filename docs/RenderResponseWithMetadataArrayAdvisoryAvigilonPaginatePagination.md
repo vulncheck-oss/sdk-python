@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryAvigilonPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_Avigilon-paginate_Pagination
 
 ## Properties
 

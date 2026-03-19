@@ -1,5 +1,6 @@
 # AdvisoryGHVulnerabilities
 
+advisory.GHVulnerabilities
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisorySentinelOne
 
+advisory.SentinelOne
 
 ## Properties
 

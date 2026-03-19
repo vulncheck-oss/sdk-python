@@ -1,5 +1,6 @@
 # ApiOSSPackageDownloadInfo
 
+api.OSSPackageDownloadInfo
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryRenesas
 
+advisory.Renesas
 
 ## Properties
 

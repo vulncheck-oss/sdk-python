@@ -1,5 +1,6 @@
 # AdvisoryCloudVulnDBAdvisory
 
+advisory.CloudVulnDBAdvisory
 
 ## Properties
 

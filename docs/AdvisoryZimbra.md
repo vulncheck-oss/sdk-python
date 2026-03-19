@@ -1,5 +1,6 @@
 # AdvisoryZimbra
 
+advisory.Zimbra
 
 ## Properties
 

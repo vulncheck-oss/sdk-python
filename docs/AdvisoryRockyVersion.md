@@ -1,5 +1,6 @@
 # AdvisoryRockyVersion
 
+advisory.RockyVersion
 
 ## Properties
 

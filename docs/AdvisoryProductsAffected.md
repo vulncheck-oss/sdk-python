@@ -1,5 +1,6 @@
 # AdvisoryProductsAffected
 
+advisory.ProductsAffected
 
 ## Properties
 

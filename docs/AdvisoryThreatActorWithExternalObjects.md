@@ -1,5 +1,6 @@
 # AdvisoryThreatActorWithExternalObjects
 
+advisory.ThreatActorWithExternalObjects
 
 ## Properties
 

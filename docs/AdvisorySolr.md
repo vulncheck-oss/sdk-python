@@ -1,5 +1,6 @@
 # AdvisorySolr
 
+advisory.Solr
 
 ## Properties
 

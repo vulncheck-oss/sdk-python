@@ -1,5 +1,6 @@
 # AdvisoryNote
 
+advisory.Note
 
 ## Properties
 

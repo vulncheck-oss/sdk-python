@@ -1,5 +1,6 @@
 # AdvisoryVulnCheckCVEListV5
 
+advisory.VulnCheckCVEListV5
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryVDEAdvisory
 
+advisory.VDEAdvisory
 
 ## Properties
 

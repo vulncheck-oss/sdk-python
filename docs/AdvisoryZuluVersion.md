@@ -1,5 +1,6 @@
 # AdvisoryZuluVersion
 
+advisory.ZuluVersion
 
 ## Properties
 

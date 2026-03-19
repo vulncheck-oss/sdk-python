@@ -1,5 +1,6 @@
 # AdvisoryForgeRock
 
+advisory.ForgeRock
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryApacheTomcat
 
+advisory.ApacheTomcat
 
 ## Properties
 

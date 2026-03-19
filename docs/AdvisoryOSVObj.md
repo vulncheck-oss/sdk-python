@@ -1,5 +1,6 @@
 # AdvisoryOSVObj
 
+advisory.OSVObj
 
 ## Properties
 

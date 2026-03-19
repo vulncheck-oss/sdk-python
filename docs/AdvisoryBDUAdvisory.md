@@ -1,5 +1,6 @@
 # AdvisoryBDUAdvisory
 
+advisory.BDUAdvisory
 
 ## Properties
 

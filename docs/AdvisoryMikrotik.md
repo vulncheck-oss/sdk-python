@@ -1,5 +1,6 @@
 # AdvisoryMikrotik
 
+advisory.Mikrotik
 
 ## Properties
 

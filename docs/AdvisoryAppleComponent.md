@@ -1,5 +1,6 @@
 # AdvisoryAppleComponent
 
+advisory.AppleComponent
 
 ## Properties
 

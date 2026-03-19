@@ -1,5 +1,6 @@
 # AdvisoryCiscoAdvisory
 
+advisory.CiscoAdvisory
 
 ## Properties
 

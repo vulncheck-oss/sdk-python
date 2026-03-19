@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryTrustwavePaginatePagination
 
+render.ResponseWithMetadata-array_advisory_Trustwave-paginate_Pagination
 
 ## Properties
 

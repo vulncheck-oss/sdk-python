@@ -1,5 +1,6 @@
 # AdvisoryWatchGuard
 
+advisory.WatchGuard
 
 ## Properties
 

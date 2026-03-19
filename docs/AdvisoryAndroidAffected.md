@@ -1,5 +1,6 @@
 # AdvisoryAndroidAffected
 
+advisory.AndroidAffected
 
 ## Properties
 

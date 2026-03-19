@@ -1,5 +1,6 @@
 # AdvisoryAndroidEvent
 
+advisory.AndroidEvent
 
 ## Properties
 

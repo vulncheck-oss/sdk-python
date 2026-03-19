@@ -1,5 +1,6 @@
 # AdvisoryZDIResponse
 
+advisory.ZDIResponse
 
 ## Properties
 

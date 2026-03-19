@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryFastlyPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_Fastly-paginate_Pagination
 
 ## Properties
 

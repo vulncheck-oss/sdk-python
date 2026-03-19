@@ -1,5 +1,6 @@
 # AdvisoryRevisionHistory
 
+advisory.RevisionHistory
 
 ## Properties
 

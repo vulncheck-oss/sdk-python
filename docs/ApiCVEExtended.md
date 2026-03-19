@@ -1,5 +1,6 @@
 # ApiCVEExtended
 
+api.CVEExtended
 
 ## Properties
 

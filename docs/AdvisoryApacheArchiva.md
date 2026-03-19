@@ -1,5 +1,6 @@
 # AdvisoryApacheArchiva
 
+advisory.ApacheArchiva
 
 ## Properties
 

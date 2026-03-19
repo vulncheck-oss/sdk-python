@@ -1,5 +1,6 @@
 # ApiNVD20VendorComment
 
+api.NVD20VendorComment
 
 ## Properties
 

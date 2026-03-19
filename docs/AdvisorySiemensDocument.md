@@ -1,5 +1,6 @@
 # AdvisorySiemensDocument
 
+advisory.SiemensDocument
 
 ## Properties
 

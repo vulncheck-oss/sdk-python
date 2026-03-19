@@ -1,5 +1,6 @@
 # AdvisoryCommVaultResolution
 
+advisory.CommVaultResolution
 
 ## Properties
 

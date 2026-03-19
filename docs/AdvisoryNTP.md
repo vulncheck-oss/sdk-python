@@ -1,5 +1,6 @@
 # AdvisoryNTP
 
+advisory.NTP
 
 ## Properties
 

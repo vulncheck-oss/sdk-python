@@ -1,5 +1,6 @@
 # ApiNVD20ThreatAssociatedBaseMetric
 
+api.NVD20ThreatAssociatedBaseMetric
 
 ## Properties
 

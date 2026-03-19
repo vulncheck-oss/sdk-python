@@ -1,5 +1,6 @@
 # AdvisoryAtlassianVuln
 
+advisory.AtlassianVuln
 
 ## Properties
 

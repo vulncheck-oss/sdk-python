@@ -1,5 +1,6 @@
 # AdvisoryCodesysAdvisory
 
+advisory.CodesysAdvisory
 
 ## Properties
 

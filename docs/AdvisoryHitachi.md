@@ -1,5 +1,6 @@
 # AdvisoryHitachi
 
+advisory.Hitachi
 
 ## Properties
 

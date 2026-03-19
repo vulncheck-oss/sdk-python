@@ -1,5 +1,6 @@
 # AdvisoryStrykerAdvisory
 
+advisory.StrykerAdvisory
 
 ## Properties
 

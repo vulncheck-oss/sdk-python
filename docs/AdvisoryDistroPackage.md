@@ -1,5 +1,6 @@
 # AdvisoryDistroPackage
 
+advisory.DistroPackage
 
 ## Properties
 

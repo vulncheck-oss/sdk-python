@@ -1,5 +1,6 @@
 # AdvisoryOmron
 
+advisory.Omron
 
 ## Properties
 

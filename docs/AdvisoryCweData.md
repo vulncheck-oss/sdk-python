@@ -1,5 +1,6 @@
 # AdvisoryCweData
 
+advisory.CweData
 
 ## Properties
 

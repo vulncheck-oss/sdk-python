@@ -1,5 +1,6 @@
 # AdvisoryGHReference
 
+advisory.GHReference
 
 ## Properties
 

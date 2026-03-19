@@ -1,5 +1,6 @@
 # AdvisoryTrendMicro
 
+advisory.TrendMicro
 
 ## Properties
 

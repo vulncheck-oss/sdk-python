@@ -1,5 +1,6 @@
 # AdvisoryApacheGuacamole
 
+advisory.ApacheGuacamole
 
 ## Properties
 

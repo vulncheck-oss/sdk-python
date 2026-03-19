@@ -1,5 +1,6 @@
 # AdvisoryAlmaDate
 
+advisory.AlmaDate
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryAlmaLinuxUpdate
 
+advisory.AlmaLinuxUpdate
 
 ## Properties
 

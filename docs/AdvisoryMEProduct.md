@@ -1,5 +1,6 @@
 # AdvisoryMEProduct
 
+advisory.MEProduct
 
 ## Properties
 

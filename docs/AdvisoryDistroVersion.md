@@ -1,5 +1,6 @@
 # AdvisoryDistroVersion
 
+advisory.DistroVersion
 
 ## Properties
 

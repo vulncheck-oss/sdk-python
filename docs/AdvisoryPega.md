@@ -1,5 +1,6 @@
 # AdvisoryPega
 
+advisory.Pega
 
 ## Properties
 

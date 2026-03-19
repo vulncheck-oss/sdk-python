@@ -1,5 +1,6 @@
 # AdvisoryHaskellVersion
 
+advisory.HaskellVersion
 
 ## Properties
 

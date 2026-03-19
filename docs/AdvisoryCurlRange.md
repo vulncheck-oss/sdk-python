@@ -1,5 +1,6 @@
 # AdvisoryCurlRange
 
+advisory.CurlRange
 
 ## Properties
 

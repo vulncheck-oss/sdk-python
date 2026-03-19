@@ -1,5 +1,6 @@
 # AdvisoryProduct
 
+advisory.Product
 
 ## Properties
 
@@ -7,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
 **product_id** | **str** |  | [optional] 
-**product_identification_helper** | **Dict[str, object]** |  | [optional] 
+**product_identification_helper** | **Dict[str, object]** | advisory.IdentificationHelper | [optional] 
 
 ## Example
 

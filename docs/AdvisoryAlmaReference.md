@@ -1,5 +1,6 @@
 # AdvisoryAlmaReference
 
+advisory.AlmaReference
 
 ## Properties
 

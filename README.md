@@ -46,17 +46,15 @@ pip install vulncheck-sdk
 ## Quickstart
 
 ```python
+import urllib.request
 import vulncheck_sdk
 import os
-import requests
 
 # First let's setup a few variables to help us
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ["VULNCHECK_API_TOKEN"]  # Remember to store your token securely!
 
 # Now let's create a configuration object
-configuration = vulncheck_sdk.Configuration(host=DEFAULT_API)
+configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 # Pass that config object to our API client and now...
@@ -81,11 +79,10 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     # Download a Backup
     index = "initial-access"
     api_response = endpoints_client.backup_index_get(index)
-    backup_url = requests.get(api_response.data[0].url)
-
     file_path = f"{index}.zip"
-    with open(file_path, "wb") as file:
-        file.write(backup_url.content)
+    with urllib.request.urlopen(api_response.data[0].url) as response:
+        with open(file_path, "wb") as file:
+            file.write(response.read())
 
     ### IndicesApi has methods for each index
     indices_client = vulncheck_sdk.IndicesApi(api_client)
@@ -106,11 +103,9 @@ import aiohttp
 import vulncheck_sdk.aio as vcaio
 
 # Configuration
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
-configuration = vcaio.Configuration(host=DEFAULT_API)
+configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 
@@ -183,11 +178,9 @@ from vulncheck_sdk.models.v3controllers_purl_response_data import (
 )
 import os
 
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
-configuration = vulncheck_sdk.Configuration(host=DEFAULT_API)
+configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 with vulncheck_sdk.ApiClient(configuration) as api_client:
@@ -213,11 +206,9 @@ from vulncheck_sdk.aio.models.v3controllers_purl_response_data import (
 )
 
 # Configuration
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
-configuration = vcaio.Configuration(host=DEFAULT_API)
+configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 
@@ -261,11 +252,9 @@ Get all CPE's related to a CVE
 import vulncheck_sdk
 import os
 
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
-configuration = vulncheck_sdk.Configuration(host=DEFAULT_API)
+configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 with vulncheck_sdk.ApiClient(configuration) as api_client:
@@ -288,11 +277,9 @@ import os
 import vulncheck_sdk.aio as vcaio
 
 # Configuration
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
-configuration = vcaio.Configuration(host=DEFAULT_API)
+configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 
@@ -327,15 +314,13 @@ if __name__ == "__main__":
 Download the backup for an index
 
 ```python
-import requests
+import urllib.request
 import vulncheck_sdk
 import os
 
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
-configuration = vulncheck_sdk.Configuration(host=DEFAULT_API)
+configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 with vulncheck_sdk.ApiClient(configuration) as api_client:
@@ -345,11 +330,10 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     api_response = endpoints_client.backup_index_get(index)
 
-    backup_url = requests.get(api_response.data[0].url)
-
     file_path = f"{index}.zip"
-    with open(file_path, "wb") as file:
-        file.write(backup_url.content)
+    with urllib.request.urlopen(api_response.data[0].url) as response:
+        with open(file_path, "wb") as file:
+            file.write(response.read())
 ```
 
 
@@ -358,27 +342,24 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 ```python
 import asyncio
 import os
-import requests
+import urllib.request
 import vulncheck_sdk.aio as vcaio
 
 # Configuration
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
-configuration = vcaio.Configuration(host=DEFAULT_API)
+configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 
 def download_sync(url, file_path):
     """
-    Standard synchronous download using requests.
+    Standard synchronous download using urllib.request.
     This runs in a separate thread to avoid blocking the event loop.
     """
-    response = requests.get(url)
-    response.raise_for_status()
-    with open(file_path, "wb") as file:
-        file.write(response.content)
+    with urllib.request.urlopen(url) as response:
+        with open(file_path, "wb") as file:
+            file.write(response.read())
 
 
 async def main():
@@ -397,9 +378,9 @@ async def main():
         download_url = api_response.data[0].url
         file_path = f"{index}.zip"
 
-        print(f"Downloading {index} via requests (offloaded to thread)...")
+        print(f"Downloading {index} via urllib (offloaded to thread)...")
 
-        # Use asyncio.to_thread to run the blocking requests call safely
+        # Use asyncio.to_thread to run the blocking call safely
         # 'await' the coroutine to get the actual response data
         await asyncio.to_thread(download_sync, download_url, file_path)
 
@@ -421,11 +402,9 @@ Get all available indices
 import vulncheck_sdk
 import os
 
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
-configuration = vulncheck_sdk.Configuration(host=DEFAULT_API)
+configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 with vulncheck_sdk.ApiClient(configuration) as api_client:
@@ -446,11 +425,9 @@ import os
 import vulncheck_sdk.aio as vcaio
 
 # Configuration
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
-configuration = vcaio.Configuration(host=DEFAULT_API)
+configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 
@@ -488,11 +465,9 @@ Query VulnCheck-NVD2 for `CVE-2019-19781`
 import vulncheck_sdk
 import os
 
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
-configuration = vulncheck_sdk.Configuration(host=DEFAULT_API)
+configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 with vulncheck_sdk.ApiClient(configuration) as api_client:
@@ -512,11 +487,9 @@ import os
 import vulncheck_sdk.aio as vcaio
 
 # Configuration
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
-configuration = vcaio.Configuration(host=DEFAULT_API)
+configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 
@@ -553,11 +526,9 @@ Paginate over results for a query to VulnCheck-KEV using `cursor`
 import vulncheck_sdk
 import os
 
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
-configuration = vulncheck_sdk.Configuration(host=DEFAULT_API)
+configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 with vulncheck_sdk.ApiClient(configuration) as api_client:
@@ -587,11 +558,9 @@ import os
 import vulncheck_sdk.aio as vcaio
 
 # Configuration
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
-configuration = vcaio.Configuration(host=DEFAULT_API)
+configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 

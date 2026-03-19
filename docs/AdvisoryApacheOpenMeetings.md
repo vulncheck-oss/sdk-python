@@ -1,5 +1,6 @@
 # AdvisoryApacheOpenMeetings
 
+advisory.ApacheOpenMeetings
 
 ## Properties
 

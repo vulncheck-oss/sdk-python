@@ -1,5 +1,6 @@
 # AdvisoryAstra
 
+advisory.Astra
 
 ## Properties
 

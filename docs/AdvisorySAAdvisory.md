@@ -1,5 +1,6 @@
 # AdvisorySAAdvisory
 
+advisory.SAAdvisory
 
 ## Properties
 

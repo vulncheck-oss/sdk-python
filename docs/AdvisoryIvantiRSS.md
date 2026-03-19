@@ -1,5 +1,6 @@
 # AdvisoryIvantiRSS
 
+advisory.IvantiRSS
 
 ## Properties
 

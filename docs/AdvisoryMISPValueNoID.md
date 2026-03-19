@@ -1,5 +1,6 @@
 # AdvisoryMISPValueNoID
 
+advisory.MISPValueNoID
 
 ## Properties
 

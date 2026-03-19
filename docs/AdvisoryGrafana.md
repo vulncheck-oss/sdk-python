@@ -1,5 +1,6 @@
 # AdvisoryGrafana
 
+advisory.Grafana
 
 ## Properties
 

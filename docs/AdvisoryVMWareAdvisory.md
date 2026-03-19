@@ -1,5 +1,6 @@
 # AdvisoryVMWareAdvisory
 
+advisory.VMWareAdvisory
 
 ## Properties
 

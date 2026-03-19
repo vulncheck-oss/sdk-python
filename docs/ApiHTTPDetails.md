@@ -1,5 +1,6 @@
 # ApiHTTPDetails
 
+api.HTTPDetails
 
 ## Properties
 

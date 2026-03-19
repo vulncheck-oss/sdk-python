@@ -1,5 +1,6 @@
 # AdvisorySiemensDistribution
 
+advisory.SiemensDistribution
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryAmazonCVE
 
+advisory.AmazonCVE
 
 ## Properties
 

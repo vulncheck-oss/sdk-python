@@ -1,5 +1,6 @@
 # AdvisoryFSecure
 
+advisory.FSecure
 
 ## Properties
 

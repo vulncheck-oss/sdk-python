@@ -1,5 +1,6 @@
 # AdvisoryEndOfLife
 
+advisory.EndOfLife
 
 ## Properties
 

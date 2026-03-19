@@ -1,5 +1,6 @@
 # AdvisoryFanuc
 
+advisory.Fanuc
 
 ## Properties
 

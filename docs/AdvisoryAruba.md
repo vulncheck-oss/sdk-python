@@ -1,5 +1,6 @@
 # AdvisoryAruba
 
+advisory.Aruba
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryGoVulnDatabaseSpecific
 
+advisory.GoVulnDatabaseSpecific
 
 ## Properties
 

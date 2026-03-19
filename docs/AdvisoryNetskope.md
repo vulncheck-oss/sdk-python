@@ -1,5 +1,6 @@
 # AdvisoryNetskope
 
+advisory.Netskope
 
 ## Properties
 

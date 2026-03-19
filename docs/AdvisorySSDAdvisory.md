@@ -1,5 +1,6 @@
 # AdvisorySSDAdvisory
 
+advisory.SSDAdvisory
 
 ## Properties
 

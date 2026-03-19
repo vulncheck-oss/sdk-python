@@ -1,5 +1,6 @@
 # AdvisoryNVD20Configuration
 
+advisory.NVD20Configuration
 
 ## Properties
 

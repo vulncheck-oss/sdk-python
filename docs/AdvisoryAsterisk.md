@@ -1,5 +1,6 @@
 # AdvisoryAsterisk
 
+advisory.Asterisk
 
 ## Properties
 

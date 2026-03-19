@@ -1,5 +1,6 @@
 # AdvisoryPGFix
 
+advisory.PGFix
 
 ## Properties
 

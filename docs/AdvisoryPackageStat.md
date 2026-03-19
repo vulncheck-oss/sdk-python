@@ -1,5 +1,6 @@
 # AdvisoryPackageStat
 
+advisory.PackageStat
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryIntel
 
+advisory.Intel
 
 ## Properties
 

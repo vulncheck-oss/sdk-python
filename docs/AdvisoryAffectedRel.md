@@ -1,5 +1,6 @@
 # AdvisoryAffectedRel
 
+advisory.AffectedRel
 
 ## Properties
 

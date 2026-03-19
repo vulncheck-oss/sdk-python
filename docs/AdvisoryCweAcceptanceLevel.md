@@ -1,5 +1,6 @@
 # AdvisoryCweAcceptanceLevel
 
+advisory.CweAcceptanceLevel
 
 ## Properties
 

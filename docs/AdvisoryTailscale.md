@@ -1,5 +1,6 @@
 # AdvisoryTailscale
 
+advisory.Tailscale
 
 ## Properties
 

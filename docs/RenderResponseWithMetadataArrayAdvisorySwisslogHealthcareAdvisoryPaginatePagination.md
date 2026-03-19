@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisorySwisslogHealthcareAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_SwisslogHealthcareAdvisory-paginate_Pagination
 
 ## Properties
 

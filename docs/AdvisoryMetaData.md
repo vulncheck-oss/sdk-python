@@ -1,5 +1,6 @@
 # AdvisoryMetaData
 
+advisory.MetaData
 
 ## Properties
 

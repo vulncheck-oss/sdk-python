@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryTrendMicroPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_TrendMicro-paginate_Pagination
 
 ## Properties
 

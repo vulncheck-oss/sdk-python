@@ -1,5 +1,6 @@
 # AdvisoryGigabyte
 
+advisory.Gigabyte
 
 ## Properties
 

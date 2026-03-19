@@ -1,5 +1,6 @@
 # AdvisoryAtlassianAdvisory
 
+advisory.AtlassianAdvisory
 
 ## Properties
 

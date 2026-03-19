@@ -1,5 +1,6 @@
 # AdvisoryJFrog
 
+advisory.JFrog
 
 ## Properties
 

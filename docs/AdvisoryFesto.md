@@ -1,5 +1,6 @@
 # AdvisoryFesto
 
+advisory.Festo
 
 ## Properties
 

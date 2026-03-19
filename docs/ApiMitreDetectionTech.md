@@ -1,5 +1,6 @@
 # ApiMitreDetectionTech
 
+api.MitreDetectionTech
 
 ## Properties
 

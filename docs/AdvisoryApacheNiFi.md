@@ -1,5 +1,6 @@
 # AdvisoryApacheNiFi
 
+advisory.ApacheNiFi
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryUbuntuCVE
 
+advisory.UbuntuCVE
 
 ## Properties
 

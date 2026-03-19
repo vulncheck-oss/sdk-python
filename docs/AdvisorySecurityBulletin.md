@@ -1,5 +1,6 @@
 # AdvisorySecurityBulletin
 
+advisory.SecurityBulletin
 
 ## Properties
 

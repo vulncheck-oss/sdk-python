@@ -1,5 +1,6 @@
 # AdvisoryGHSAReference
 
+advisory.GHSAReference
 
 ## Properties
 

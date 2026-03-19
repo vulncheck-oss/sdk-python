@@ -1,5 +1,6 @@
 # AdvisorySigmaRule
 
+advisory.SigmaRule
 
 ## Properties
 

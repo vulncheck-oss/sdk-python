@@ -1,5 +1,6 @@
 # ApiNVD20CvssMetricV3
 
+api.NVD20CvssMetricV3
 
 ## Properties
 

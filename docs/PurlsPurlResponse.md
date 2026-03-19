@@ -1,11 +1,12 @@
 # PurlsPurlResponse
 
+purls.PurlResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**artifacts** | **object** |  | [optional] 
+**artifacts** | **object** | purls.Artifact | [optional] 
 **cves** | **List[str]** |  | [optional] 
 **licenses** | **List[str]** |  | [optional] 
 **name** | **str** |  | [optional] 

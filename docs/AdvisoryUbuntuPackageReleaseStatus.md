@@ -1,5 +1,6 @@
 # AdvisoryUbuntuPackageReleaseStatus
 
+advisory.UbuntuPackageReleaseStatus
 
 ## Properties
 

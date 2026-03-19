@@ -1,5 +1,6 @@
 # AdvisoryMozillaAdvisory
 
+advisory.MozillaAdvisory
 
 ## Properties
 

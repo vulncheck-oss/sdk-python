@@ -1,5 +1,6 @@
 # AdvisoryBeckhoffAdvisory
 
+advisory.BeckhoffAdvisory
 
 ## Properties
 

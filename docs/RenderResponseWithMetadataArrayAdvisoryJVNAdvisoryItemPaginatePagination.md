@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryJVNAdvisoryItemPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_JVNAdvisoryItem-paginate_Pagination
 
 ## Properties
 

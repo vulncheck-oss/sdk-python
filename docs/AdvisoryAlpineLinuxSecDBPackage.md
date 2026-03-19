@@ -1,5 +1,6 @@
 # AdvisoryAlpineLinuxSecDBPackage
 
+advisory.AlpineLinuxSecDBPackage
 
 ## Properties
 

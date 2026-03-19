@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryBDUAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_BDUAdvisory-paginate_Pagination
 
 ## Properties
 

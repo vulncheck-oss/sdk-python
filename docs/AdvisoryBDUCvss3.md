@@ -1,5 +1,6 @@
 # AdvisoryBDUCvss3
 
+advisory.BDUCvss3
 
 ## Properties
 

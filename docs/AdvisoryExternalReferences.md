@@ -1,5 +1,6 @@
 # AdvisoryExternalReferences
 
+advisory.ExternalReferences
 
 ## Properties
 

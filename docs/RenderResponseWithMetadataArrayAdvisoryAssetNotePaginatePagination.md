@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryAssetNotePaginatePagination
 
+render.ResponseWithMetadata-array_advisory_AssetNote-paginate_Pagination
 
 ## Properties
 

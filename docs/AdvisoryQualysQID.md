@@ -1,5 +1,6 @@
 # AdvisoryQualysQID
 
+advisory.QualysQID
 
 ## Properties
 

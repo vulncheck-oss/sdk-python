@@ -1,5 +1,6 @@
 # AdvisoryAppCheck
 
+advisory.AppCheck
 
 ## Properties
 

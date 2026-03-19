@@ -1,5 +1,6 @@
 # AdvisoryHuaweiEulerOS
 
+advisory.HuaweiEulerOS
 
 ## Properties
 

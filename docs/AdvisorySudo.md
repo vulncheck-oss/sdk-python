@@ -1,5 +1,6 @@
 # AdvisorySudo
 
+advisory.Sudo
 
 ## Properties
 

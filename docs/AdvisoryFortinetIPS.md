@@ -1,5 +1,6 @@
 # AdvisoryFortinetIPS
 
+advisory.FortinetIPS
 
 ## Properties
 

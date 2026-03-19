@@ -1,5 +1,6 @@
 # AdvisoryAdvisoryDetails
 
+advisory.AdvisoryDetails
 
 ## Properties
 
@@ -7,9 +8,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bugzilla** | [**AdvisoryBugzilla**](AdvisoryBugzilla.md) |  | [optional] 
 **cve** | [**AdvisoryOvalCVE**](AdvisoryOvalCVE.md) |  | [optional] 
-**issued** | [**AdvisoryIssued**](AdvisoryIssued.md) |  | [optional] 
+**issued** | **object** | advisory.Issued | [optional] 
 **severity** | **str** |  | [optional] 
-**updated** | [**AdvisoryUpdated**](AdvisoryUpdated.md) |  | [optional] 
+**updated** | **object** | advisory.Updated | [optional] 
 
 ## Example
 

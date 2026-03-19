@@ -1,5 +1,6 @@
 # AdvisorySiemensRemediation
 
+advisory.SiemensRemediation
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisorySchneiderCVE
 
+advisory.SchneiderCVE
 
 ## Properties
 

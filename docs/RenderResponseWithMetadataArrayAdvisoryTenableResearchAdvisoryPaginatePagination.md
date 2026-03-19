@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryTenableResearchAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_TenableResearchAdvisory-paginate_Pagination
 
 ## Properties
 

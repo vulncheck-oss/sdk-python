@@ -1,5 +1,6 @@
 # V3controllersPurlsResponseMetadata
 
+v3controllers.PurlsResponseMetadata
 
 ## Properties
 

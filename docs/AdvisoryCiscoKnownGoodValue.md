@@ -1,5 +1,6 @@
 # AdvisoryCiscoKnownGoodValue
 
+advisory.CiscoKnownGoodValue
 
 ## Properties
 

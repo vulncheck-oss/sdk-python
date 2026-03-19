@@ -1,5 +1,6 @@
 # AdvisoryMetaAdvisories
 
+advisory.MetaAdvisories
 
 ## Properties
 

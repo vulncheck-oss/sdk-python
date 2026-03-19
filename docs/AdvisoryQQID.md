@@ -1,5 +1,6 @@
 # AdvisoryQQID
 
+advisory.QQID
 
 ## Properties
 

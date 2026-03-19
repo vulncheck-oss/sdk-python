@@ -1,5 +1,6 @@
 # AdvisoryZDIResponseVendor
 
+advisory.ZDIResponseVendor
 
 ## Properties
 

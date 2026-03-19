@@ -1,5 +1,6 @@
 # AdvisoryApacheStruts
 
+advisory.ApacheStruts
 
 ## Properties
 

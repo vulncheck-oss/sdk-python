@@ -1,5 +1,6 @@
 # AdvisoryNaver
 
+advisory.Naver
 
 ## Properties
 

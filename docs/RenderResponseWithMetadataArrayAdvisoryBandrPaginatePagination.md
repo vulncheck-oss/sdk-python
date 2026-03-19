@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryBandrPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_Bandr-paginate_Pagination
 
 ## Properties
 

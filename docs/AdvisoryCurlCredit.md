@@ -1,5 +1,6 @@
 # AdvisoryCurlCredit
 
+advisory.CurlCredit
 
 ## Properties
 

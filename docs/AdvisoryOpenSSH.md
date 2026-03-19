@@ -1,5 +1,6 @@
 # AdvisoryOpenSSH
 
+advisory.OpenSSH
 
 ## Properties
 

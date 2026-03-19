@@ -1,5 +1,6 @@
 # AdvisoryJVNReference
 
+advisory.JVNReference
 
 ## Properties
 

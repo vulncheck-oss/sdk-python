@@ -1,5 +1,6 @@
 # AdvisoryBaxterAdvisory
 
+advisory.BaxterAdvisory
 
 ## Properties
 

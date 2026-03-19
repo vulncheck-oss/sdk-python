@@ -1,5 +1,6 @@
 # AdvisoryHoneywell
 
+advisory.Honeywell
 
 ## Properties
 

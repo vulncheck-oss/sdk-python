@@ -1,5 +1,6 @@
 # AdvisoryGHSADatabaseSpecific
 
+advisory.GHSADatabaseSpecific
 
 ## Properties
 

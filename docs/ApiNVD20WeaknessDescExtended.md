@@ -1,5 +1,6 @@
 # ApiNVD20WeaknessDescExtended
 
+api.NVD20WeaknessDescExtended
 
 ## Properties
 

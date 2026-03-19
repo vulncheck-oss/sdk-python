@@ -1,5 +1,6 @@
 # AdvisorySitecore
 
+advisory.Sitecore
 
 ## Properties
 

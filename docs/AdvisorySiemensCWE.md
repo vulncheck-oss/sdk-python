@@ -1,5 +1,6 @@
 # AdvisorySiemensCWE
 
+advisory.SiemensCWE
 
 ## Properties
 

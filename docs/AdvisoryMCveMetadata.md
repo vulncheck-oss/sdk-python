@@ -1,5 +1,6 @@
 # AdvisoryMCveMetadata
 
+advisory.MCveMetadata
 
 ## Properties
 

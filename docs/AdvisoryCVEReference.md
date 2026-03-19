@@ -1,5 +1,6 @@
 # AdvisoryCVEReference
 
+advisory.CVEReference
 
 ## Properties
 

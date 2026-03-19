@@ -1,5 +1,6 @@
 # ApiMitreAttackTech
 
+api.MitreAttackTech
 
 ## Properties
 

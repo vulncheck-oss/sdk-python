@@ -1,5 +1,6 @@
 # AdvisoryVulnrichmentCVERef
 
+advisory.VulnrichmentCVERef
 
 ## Properties
 

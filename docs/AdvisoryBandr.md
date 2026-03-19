@@ -1,5 +1,6 @@
 # AdvisoryBandr
 
+advisory.Bandr
 
 ## Properties
 

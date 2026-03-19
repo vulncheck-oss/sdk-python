@@ -1,5 +1,6 @@
 # AdvisoryCSAFReference
 
+advisory.CSAFReference
 
 ## Properties
 

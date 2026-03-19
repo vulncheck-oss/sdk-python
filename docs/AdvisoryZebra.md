@@ -1,5 +1,6 @@
 # AdvisoryZebra
 
+advisory.Zebra
 
 ## Properties
 

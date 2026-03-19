@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryGHAdvisoryJSONLeanPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_GHAdvisoryJSONLean-paginate_Pagination
 
 ## Properties
 

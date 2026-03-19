@@ -1,5 +1,6 @@
 # AdvisoryUnisoc
 
+advisory.Unisoc
 
 ## Properties
 

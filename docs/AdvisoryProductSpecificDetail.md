@@ -1,5 +1,6 @@
 # AdvisoryProductSpecificDetail
 
+advisory.ProductSpecificDetail
 
 ## Properties
 

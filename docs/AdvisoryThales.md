@@ -1,5 +1,6 @@
 # AdvisoryThales
 
+advisory.Thales
 
 ## Properties
 

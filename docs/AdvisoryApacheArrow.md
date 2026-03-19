@@ -1,5 +1,6 @@
 # AdvisoryApacheArrow
 
+advisory.ApacheArrow
 
 ## Properties
 

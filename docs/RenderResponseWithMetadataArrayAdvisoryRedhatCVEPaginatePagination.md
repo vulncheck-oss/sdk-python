@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryRedhatCVEPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_RedhatCVE-paginate_Pagination
 
 ## Properties
 

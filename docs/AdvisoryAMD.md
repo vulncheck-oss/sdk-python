@@ -1,5 +1,6 @@
 # AdvisoryAMD
 
+advisory.AMD
 
 ## Properties
 

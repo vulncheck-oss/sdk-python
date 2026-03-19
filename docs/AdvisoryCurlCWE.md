@@ -1,5 +1,6 @@
 # AdvisoryCurlCWE
 
+advisory.CurlCWE
 
 ## Properties
 

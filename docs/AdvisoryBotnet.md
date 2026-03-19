@@ -1,5 +1,6 @@
 # AdvisoryBotnet
 
+advisory.Botnet
 
 ## Properties
 

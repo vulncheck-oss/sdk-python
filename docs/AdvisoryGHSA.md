@@ -1,5 +1,6 @@
 # AdvisoryGHSA
 
+advisory.GHSA
 
 ## Properties
 

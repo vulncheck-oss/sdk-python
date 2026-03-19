@@ -1,5 +1,6 @@
 # AdvisoryHashiCorp
 
+advisory.HashiCorp
 
 ## Properties
 

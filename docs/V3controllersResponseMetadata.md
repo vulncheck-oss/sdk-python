@@ -1,5 +1,6 @@
 # V3controllersResponseMetadata
 
+v3controllers.ResponseMetadata
 
 ## Properties
 

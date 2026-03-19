@@ -1,5 +1,6 @@
 # AdvisoryBoschAdvisory
 
+advisory.BoschAdvisory
 
 ## Properties
 

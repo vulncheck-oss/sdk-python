@@ -1,5 +1,6 @@
 # AdvisoryRustsecFrontMatterVersions
 
+advisory.RustsecFrontMatterVersions
 
 ## Properties
 

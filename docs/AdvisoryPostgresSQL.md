@@ -1,5 +1,6 @@
 # AdvisoryPostgresSQL
 
+advisory.PostgresSQL
 
 ## Properties
 

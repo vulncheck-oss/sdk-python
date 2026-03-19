@@ -1,5 +1,6 @@
 # AdvisoryOctopusDeploy
 
+advisory.OctopusDeploy
 
 ## Properties
 

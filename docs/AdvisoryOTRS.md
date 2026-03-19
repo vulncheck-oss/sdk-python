@@ -1,5 +1,6 @@
 # AdvisoryOTRS
 
+advisory.OTRS
 
 ## Properties
 

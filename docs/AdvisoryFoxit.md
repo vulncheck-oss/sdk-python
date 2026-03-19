@@ -1,5 +1,6 @@
 # AdvisoryFoxit
 
+advisory.Foxit
 
 ## Properties
 
