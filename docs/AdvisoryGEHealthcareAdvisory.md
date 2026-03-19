@@ -1,5 +1,6 @@
 # AdvisoryGEHealthcareAdvisory
 
+advisory.GEHealthcareAdvisory
 
 ## Properties
 

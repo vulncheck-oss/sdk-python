@@ -1,5 +1,6 @@
 # AdvisoryIvanti
 
+advisory.Ivanti
 
 ## Properties
 

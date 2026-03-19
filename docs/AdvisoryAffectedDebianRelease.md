@@ -1,5 +1,6 @@
 # AdvisoryAffectedDebianRelease
 
+advisory.AffectedDebianRelease
 
 ## Properties
 

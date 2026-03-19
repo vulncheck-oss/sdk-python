@@ -1,5 +1,6 @@
 # AdvisoryAlmaPackageList
 
+advisory.AlmaPackageList
 
 ## Properties
 

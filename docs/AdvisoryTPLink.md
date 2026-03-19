@@ -1,5 +1,6 @@
 # AdvisoryTPLink
 
+advisory.TPLink
 
 ## Properties
 

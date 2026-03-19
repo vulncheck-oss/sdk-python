@@ -1,5 +1,6 @@
 # AdvisoryCertFRAdvisory
 
+advisory.CertFRAdvisory
 
 ## Properties
 

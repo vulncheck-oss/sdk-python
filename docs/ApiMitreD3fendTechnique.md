@@ -1,5 +1,6 @@
 # ApiMitreD3fendTechnique
 
+api.MitreD3fendTechnique
 
 ## Properties
 

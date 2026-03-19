@@ -1,5 +1,6 @@
 # AdvisoryArchIssue
 
+advisory.ArchIssue
 
 ## Properties
 

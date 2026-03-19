@@ -1,5 +1,6 @@
 # AdvisoryOvalCVE
 
+advisory.OvalCVE
 
 ## Properties
 

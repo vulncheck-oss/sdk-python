@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisorySitecorePaginatePagination
 
+render.ResponseWithMetadata-array_advisory_Sitecore-paginate_Pagination
 
 ## Properties
 

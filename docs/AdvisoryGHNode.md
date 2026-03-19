@@ -1,5 +1,6 @@
 # AdvisoryGHNode
 
+advisory.GHNode
 
 ## Properties
 

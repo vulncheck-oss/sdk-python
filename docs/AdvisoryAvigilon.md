@@ -1,5 +1,6 @@
 # AdvisoryAvigilon
 
+advisory.Avigilon
 
 ## Properties
 

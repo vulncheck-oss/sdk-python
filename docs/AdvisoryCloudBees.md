@@ -1,5 +1,6 @@
 # AdvisoryCloudBees
 
+advisory.CloudBees
 
 ## Properties
 

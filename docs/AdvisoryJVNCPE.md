@@ -1,5 +1,6 @@
 # AdvisoryJVNCPE
 
+advisory.JVNCPE
 
 ## Properties
 

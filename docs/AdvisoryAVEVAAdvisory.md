@@ -1,5 +1,6 @@
 # AdvisoryAVEVAAdvisory
 
+advisory.AVEVAAdvisory
 
 ## Properties
 

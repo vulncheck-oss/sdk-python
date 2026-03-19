@@ -1,5 +1,6 @@
 # AdvisorySiemensAdvisory
 
+advisory.SiemensAdvisory
 
 ## Properties
 

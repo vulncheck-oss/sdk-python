@@ -1,5 +1,6 @@
 # PaginateParam
 
+paginate.Param
 
 ## Properties
 

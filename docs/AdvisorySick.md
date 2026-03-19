@@ -1,5 +1,6 @@
 # AdvisorySick
 
+advisory.Sick
 
 ## Properties
 

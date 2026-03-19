@@ -1,5 +1,6 @@
 # AdvisoryApacheFlink
 
+advisory.ApacheFlink
 
 ## Properties
 

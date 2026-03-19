@@ -1,5 +1,6 @@
 # AdvisoryVirtuozzo
 
+advisory.Virtuozzo
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryPhoenixContactAdvisory
 
+advisory.PhoenixContactAdvisory
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryVulnCheckKEV
 
+advisory.VulnCheckKEV
 
 ## Properties
 

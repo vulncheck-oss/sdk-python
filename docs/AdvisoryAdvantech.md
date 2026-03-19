@@ -1,5 +1,6 @@
 # AdvisoryAdvantech
 
+advisory.Advantech
 
 ## Properties
 

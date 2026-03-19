@@ -1,5 +1,6 @@
 # AdvisoryKasperskyICSCERTAdvisory
 
+advisory.KasperskyICSCERTAdvisory
 
 ## Properties
 

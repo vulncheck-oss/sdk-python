@@ -1,5 +1,6 @@
 # AdvisoryWibu
 
+advisory.Wibu
 
 ## Properties
 

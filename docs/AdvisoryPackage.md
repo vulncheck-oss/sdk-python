@@ -1,5 +1,6 @@
 # AdvisoryPackage
 
+advisory.Package
 
 ## Properties
 

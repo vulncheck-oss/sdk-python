@@ -1,5 +1,6 @@
 # AdvisoryPrimeVersion
 
+advisory.PrimeVersion
 
 ## Properties
 

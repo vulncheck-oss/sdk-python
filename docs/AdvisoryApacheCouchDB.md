@@ -1,5 +1,6 @@
 # AdvisoryApacheCouchDB
 
+advisory.ApacheCouchDB
 
 ## Properties
 

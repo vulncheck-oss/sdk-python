@@ -1,5 +1,6 @@
 # AdvisoryAtlassianProducts
 
+advisory.AtlassianProducts
 
 ## Properties
 

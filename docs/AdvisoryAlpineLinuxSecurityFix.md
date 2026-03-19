@@ -1,5 +1,6 @@
 # AdvisoryAlpineLinuxSecurityFix
 
+advisory.AlpineLinuxSecurityFix
 
 ## Properties
 

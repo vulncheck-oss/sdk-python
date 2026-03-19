@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisorySafranPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_Safran-paginate_Pagination
 
 ## Properties
 

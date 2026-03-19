@@ -1,5 +1,6 @@
 # ApiNVD20CVE
 
+api.NVD20CVE
 
 ## Properties
 

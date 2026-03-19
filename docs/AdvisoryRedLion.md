@@ -1,5 +1,6 @@
 # AdvisoryRedLion
 
+advisory.RedLion
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryAlibaba
 
+advisory.Alibaba
 
 ## Properties
 

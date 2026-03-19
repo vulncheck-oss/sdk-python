@@ -1,5 +1,6 @@
 # AdvisoryEvent
 
+advisory.Event
 
 ## Properties
 

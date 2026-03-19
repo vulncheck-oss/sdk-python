@@ -1,5 +1,6 @@
 # AdvisoryGoVulnReference
 
+advisory.GoVulnReference
 
 ## Properties
 

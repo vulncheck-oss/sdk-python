@@ -1,5 +1,6 @@
 # AdvisoryTWCertAdvisory
 
+advisory.TWCertAdvisory
 
 ## Properties
 

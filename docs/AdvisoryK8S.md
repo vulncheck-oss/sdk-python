@@ -1,5 +1,6 @@
 # AdvisoryK8S
 
+advisory.K8S
 
 ## Properties
 

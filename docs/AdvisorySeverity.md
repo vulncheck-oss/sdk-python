@@ -1,5 +1,6 @@
 # AdvisorySeverity
 
+advisory.Severity
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryApacheCamel
 
+advisory.ApacheCamel
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryGoEvent
 
+advisory.GoEvent
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryCVSSV40Threat
 
+advisory.CVSSV40Threat
 
 ## Properties
 

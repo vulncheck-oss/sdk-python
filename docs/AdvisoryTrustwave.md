@@ -1,5 +1,6 @@
 # AdvisoryTrustwave
 
+advisory.Trustwave
 
 ## Properties
 

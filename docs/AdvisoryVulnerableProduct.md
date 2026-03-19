@@ -1,5 +1,6 @@
 # AdvisoryVulnerableProduct
 
+advisory.VulnerableProduct
 
 ## Properties
 

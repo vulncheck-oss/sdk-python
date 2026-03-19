@@ -1,5 +1,6 @@
 # AdvisoryPHPMyAdmin
 
+advisory.PHPMyAdmin
 
 ## Properties
 

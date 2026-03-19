@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisorySolrPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_Solr-paginate_Pagination
 
 ## Properties
 

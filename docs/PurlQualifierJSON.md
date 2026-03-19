@@ -1,5 +1,6 @@
 # PurlQualifierJSON
 
+purl.QualifierJSON
 
 ## Properties
 

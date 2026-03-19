@@ -1,5 +1,6 @@
 # AdvisoryRuckus
 
+advisory.Ruckus
 
 ## Properties
 

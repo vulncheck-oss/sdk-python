@@ -1,5 +1,6 @@
 # AdvisoryRockyCve
 
+advisory.RockyCve
 
 ## Properties
 

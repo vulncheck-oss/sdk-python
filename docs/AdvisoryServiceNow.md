@@ -1,5 +1,6 @@
 # AdvisoryServiceNow
 
+advisory.ServiceNow
 
 ## Properties
 

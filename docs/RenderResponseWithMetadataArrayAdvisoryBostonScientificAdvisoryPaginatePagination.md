@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryBostonScientificAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_BostonScientificAdvisory-paginate_Pagination
 
 ## Properties
 

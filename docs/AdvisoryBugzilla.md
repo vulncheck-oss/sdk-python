@@ -1,5 +1,6 @@
 # AdvisoryBugzilla
 
+advisory.Bugzilla
 
 ## Properties
 

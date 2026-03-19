@@ -1,5 +1,6 @@
 # AdvisoryUpdate
 
+advisory.Update
 
 ## Properties
 
@@ -9,7 +10,7 @@ Name | Type | Description | Notes
 **date_added** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** | sort // key | [optional] 
-**issued** | [**AdvisoryDateTime**](AdvisoryDateTime.md) |  | [optional] 
+**issued** | **object** | advisory.DateTime | [optional] 
 **os_arch** | **str** |  | [optional] 
 **os_version** | **str** |  | [optional] 
 **packages** | [**List[AdvisoryPackage]**](AdvisoryPackage.md) |  | [optional] 
@@ -17,7 +18,7 @@ Name | Type | Description | Notes
 **severity** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
-**updated** | [**AdvisoryDateTime**](AdvisoryDateTime.md) |  | [optional] 
+**updated** | **object** | advisory.DateTime | [optional] 
 
 ## Example
 

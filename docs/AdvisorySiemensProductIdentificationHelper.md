@@ -1,5 +1,6 @@
 # AdvisorySiemensProductIdentificationHelper
 
+advisory.SiemensProductIdentificationHelper
 
 ## Properties
 

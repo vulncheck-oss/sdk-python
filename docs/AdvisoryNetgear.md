@@ -1,5 +1,6 @@
 # AdvisoryNetgear
 
+advisory.Netgear
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryCommVaultImpactedProductDetails
 
+advisory.CommVaultImpactedProductDetails
 
 ## Properties
 

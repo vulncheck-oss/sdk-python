@@ -1,5 +1,6 @@
 # AdvisoryCSAFRelationship
 
+advisory.CSAFRelationship
 
 ## Properties
 

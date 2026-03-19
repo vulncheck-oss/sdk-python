@@ -1,5 +1,6 @@
 # AdvisoryMitreAttackRef
 
+advisory.MitreAttackRef
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryExodusIntel
 
+advisory.ExodusIntel
 
 ## Properties
 

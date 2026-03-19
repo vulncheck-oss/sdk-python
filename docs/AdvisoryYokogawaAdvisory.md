@@ -1,5 +1,6 @@
 # AdvisoryYokogawaAdvisory
 
+advisory.YokogawaAdvisory
 
 ## Properties
 

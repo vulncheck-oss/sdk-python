@@ -1,5 +1,6 @@
 # ApiConfigurations
 
+api.Configurations
 
 ## Properties
 

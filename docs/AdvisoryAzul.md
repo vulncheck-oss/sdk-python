@@ -1,5 +1,6 @@
 # AdvisoryAzul
 
+advisory.Azul
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryOpenStack
 
+advisory.OpenStack
 
 ## Properties
 

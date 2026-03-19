@@ -1,5 +1,6 @@
 # AdvisoryApacheJSPWiki
 
+advisory.ApacheJSPWiki
 
 ## Properties
 

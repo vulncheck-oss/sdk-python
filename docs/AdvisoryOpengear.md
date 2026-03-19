@@ -1,5 +1,6 @@
 # AdvisoryOpengear
 
+advisory.Opengear
 
 ## Properties
 

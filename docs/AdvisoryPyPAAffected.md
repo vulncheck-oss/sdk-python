@@ -1,5 +1,6 @@
 # AdvisoryPyPAAffected
 
+advisory.PyPAAffected
 
 ## Properties
 

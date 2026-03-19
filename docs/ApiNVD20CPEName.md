@@ -1,5 +1,6 @@
 # ApiNVD20CPEName
 
+api.NVD20CPEName
 
 ## Properties
 

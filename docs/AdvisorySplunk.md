@@ -1,5 +1,6 @@
 # AdvisorySplunk
 
+advisory.Splunk
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryGoVulnRanges
 
+advisory.GoVulnRanges
 
 ## Properties
 

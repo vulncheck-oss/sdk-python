@@ -1,5 +1,6 @@
 # AdvisoryDellCVE
 
+advisory.DellCVE
 
 ## Properties
 

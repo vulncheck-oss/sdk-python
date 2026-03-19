@@ -1,5 +1,6 @@
 # AdvisorySSASource
 
+advisory.SSASource
 
 ## Properties
 

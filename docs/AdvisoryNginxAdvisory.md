@@ -1,5 +1,6 @@
 # AdvisoryNginxAdvisory
 
+advisory.NginxAdvisory
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryMispMeta
 
+advisory.MispMeta
 
 ## Properties
 

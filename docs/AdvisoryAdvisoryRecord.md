@@ -1,5 +1,6 @@
 # AdvisoryAdvisoryRecord
 
+advisory.AdvisoryRecord
 
 ## Properties
 

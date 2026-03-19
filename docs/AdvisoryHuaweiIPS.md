@@ -1,5 +1,6 @@
 # AdvisoryHuaweiIPS
 
+advisory.HuaweiIPS
 
 ## Properties
 

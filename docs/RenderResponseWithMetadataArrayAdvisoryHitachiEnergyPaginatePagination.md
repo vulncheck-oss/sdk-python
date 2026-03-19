@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryHitachiEnergyPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_HitachiEnergy-paginate_Pagination
 
 ## Properties
 

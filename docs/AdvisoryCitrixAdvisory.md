@@ -1,5 +1,6 @@
 # AdvisoryCitrixAdvisory
 
+advisory.CitrixAdvisory
 
 ## Properties
 

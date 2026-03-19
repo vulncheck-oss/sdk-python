@@ -1,5 +1,6 @@
 # AdvisoryNISTControl
 
+advisory.NISTControl
 
 ## Properties
 

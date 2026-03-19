@@ -1,12 +1,12 @@
 # AdvisoryCwes
 
+advisory.Cwes
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**nodes** | [**List[AdvisoryCWENode]**](AdvisoryCWENode.md) |  | [optional] 
-**total_count** | **int** |  | [optional] 
+**nodes** | **List[object]** |  | [optional] 
 
 ## Example
 

@@ -1,5 +1,6 @@
 # AdvisoryEOLReleaseData
 
+advisory.EOLReleaseData
 
 ## Properties
 

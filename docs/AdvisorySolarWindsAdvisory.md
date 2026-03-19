@@ -1,5 +1,6 @@
 # AdvisorySolarWindsAdvisory
 
+advisory.SolarWindsAdvisory
 
 ## Properties
 

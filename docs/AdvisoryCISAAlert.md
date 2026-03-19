@@ -1,5 +1,6 @@
 # AdvisoryCISAAlert
 
+advisory.CISAAlert
 
 ## Properties
 

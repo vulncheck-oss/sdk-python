@@ -1,5 +1,6 @@
 # AdvisoryAcknowledgement
 
+advisory.Acknowledgement
 
 ## Properties
 

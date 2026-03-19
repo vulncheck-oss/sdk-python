@@ -1,5 +1,6 @@
 # AdvisoryCVSSV2
 
+advisory.CVSSV2
 
 ## Properties
 

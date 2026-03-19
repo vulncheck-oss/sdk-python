@@ -1,5 +1,6 @@
 # ApiCveItemsExtended
 
+api.CveItemsExtended
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryDocumentMetadata
 
+Document contains metadata about the CSAF document itself.  https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#321-document-property
 
 ## Properties
 
@@ -7,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **category** | **str** |  | [optional] 
 **csaf_version** | **str** |  | [optional] 
-**distribution** | **object** |  | [optional] 
+**distribution** | **object** | advisory.CSAFDistribution | [optional] 
 **lang** | **str** |  | [optional] 
 **notes** | [**List[AdvisoryCSAFNote]**](AdvisoryCSAFNote.md) | used by ncsc | [optional] 
 **publisher** | [**AdvisoryPublisher**](AdvisoryPublisher.md) |  | [optional] 

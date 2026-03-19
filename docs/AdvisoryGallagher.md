@@ -1,5 +1,6 @@
 # AdvisoryGallagher
 
+advisory.Gallagher
 
 ## Properties
 

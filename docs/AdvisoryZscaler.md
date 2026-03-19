@@ -1,5 +1,6 @@
 # AdvisoryZscaler
 
+advisory.Zscaler
 
 ## Properties
 

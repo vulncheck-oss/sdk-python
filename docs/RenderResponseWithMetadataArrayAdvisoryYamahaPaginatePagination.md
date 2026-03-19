@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryYamahaPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_Yamaha-paginate_Pagination
 
 ## Properties
 

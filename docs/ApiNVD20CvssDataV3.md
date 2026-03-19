@@ -1,5 +1,6 @@
 # ApiNVD20CvssDataV3
 
+api.NVD20CvssDataV3
 
 ## Properties
 

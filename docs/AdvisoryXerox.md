@@ -1,5 +1,6 @@
 # AdvisoryXerox
 
+advisory.Xerox
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryAVIDMLAdvs
 
+advisory.AVIDMLAdvs
 
 ## Properties
 

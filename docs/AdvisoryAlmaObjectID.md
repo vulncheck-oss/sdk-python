@@ -1,5 +1,6 @@
 # AdvisoryAlmaObjectID
 
+advisory.AlmaObjectID
 
 ## Properties
 

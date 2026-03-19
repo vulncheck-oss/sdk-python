@@ -1,5 +1,6 @@
 # AdvisoryIsraeliAlert
 
+advisory.IsraeliAlert
 
 ## Properties
 

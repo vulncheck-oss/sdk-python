@@ -1,5 +1,6 @@
 # AdvisorySiemensPublisher
 
+advisory.SiemensPublisher
 
 ## Properties
 

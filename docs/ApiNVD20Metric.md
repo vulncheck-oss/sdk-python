@@ -1,5 +1,6 @@
 # ApiNVD20Metric
 
+api.NVD20Metric
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryBBraunAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_BBraunAdvisory-paginate_Pagination
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryCiscoCSAF
 
+advisory.CiscoCSAF
 
 ## Properties
 

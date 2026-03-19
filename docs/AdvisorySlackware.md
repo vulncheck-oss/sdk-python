@@ -1,5 +1,6 @@
 # AdvisorySlackware
 
+advisory.Slackware
 
 ## Properties
 

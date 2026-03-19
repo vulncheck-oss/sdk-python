@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryVapidLabsAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_VapidLabsAdvisory-paginate_Pagination
 
 ## Properties
 

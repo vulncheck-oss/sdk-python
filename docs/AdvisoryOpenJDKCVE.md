@@ -1,5 +1,6 @@
 # AdvisoryOpenJDKCVE
 
+advisory.OpenJDKCVE
 
 ## Properties
 

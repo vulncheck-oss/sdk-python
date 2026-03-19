@@ -1,5 +1,6 @@
 # AdvisoryQNAPAdvisory
 
+advisory.QNAPAdvisory
 
 ## Properties
 

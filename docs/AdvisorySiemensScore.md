@@ -1,5 +1,6 @@
 # AdvisorySiemensScore
 
+advisory.SiemensScore
 
 ## Properties
 

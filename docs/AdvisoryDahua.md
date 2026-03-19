@@ -1,5 +1,6 @@
 # AdvisoryDahua
 
+advisory.Dahua
 
 ## Properties
 

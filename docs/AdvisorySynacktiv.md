@@ -1,5 +1,6 @@
 # AdvisorySynacktiv
 
+advisory.Synacktiv
 
 ## Properties
 

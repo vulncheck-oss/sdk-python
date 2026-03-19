@@ -1,5 +1,6 @@
 # AdvisoryPyPARange
 
+advisory.PyPARange
 
 ## Properties
 

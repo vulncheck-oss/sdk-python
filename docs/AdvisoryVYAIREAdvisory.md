@@ -1,5 +1,6 @@
 # AdvisoryVYAIREAdvisory
 
+advisory.VYAIREAdvisory
 
 ## Properties
 

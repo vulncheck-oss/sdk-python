@@ -1,5 +1,6 @@
 # AdvisoryPaloAltoAdvisory
 
+advisory.PaloAltoAdvisory
 
 ## Properties
 

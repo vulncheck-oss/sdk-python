@@ -1,5 +1,6 @@
 # AdvisoryMCvssV30
 
+advisory.MCvssV30
 
 ## Properties
 

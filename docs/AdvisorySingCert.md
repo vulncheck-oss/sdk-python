@@ -1,5 +1,6 @@
 # AdvisorySingCert
 
+advisory.SingCert
 
 ## Properties
 

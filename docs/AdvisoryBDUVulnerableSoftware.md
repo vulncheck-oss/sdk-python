@@ -1,5 +1,6 @@
 # AdvisoryBDUVulnerableSoftware
 
+advisory.BDUVulnerableSoftware
 
 ## Properties
 

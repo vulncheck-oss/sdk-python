@@ -1,5 +1,6 @@
 # AdvisoryJenkins
 
+advisory.Jenkins
 
 ## Properties
 

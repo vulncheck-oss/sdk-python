@@ -1,5 +1,6 @@
 # AdvisoryCVSS
 
+advisory.CVSS
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryAndroidReference
 
+advisory.AndroidReference
 
 ## Properties
 

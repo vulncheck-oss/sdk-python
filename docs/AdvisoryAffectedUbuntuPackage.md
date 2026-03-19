@@ -1,5 +1,6 @@
 # AdvisoryAffectedUbuntuPackage
 
+advisory.AffectedUbuntuPackage
 
 ## Properties
 

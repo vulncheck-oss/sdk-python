@@ -1,5 +1,6 @@
 # AdvisorySafran
 
+advisory.Safran
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryGenetec
 
+advisory.Genetec
 
 ## Properties
 

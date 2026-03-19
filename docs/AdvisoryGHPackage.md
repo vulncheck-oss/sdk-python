@@ -1,5 +1,6 @@
 # AdvisoryGHPackage
 
+advisory.GHPackage
 
 ## Properties
 

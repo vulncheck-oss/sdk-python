@@ -1,5 +1,6 @@
 # AdvisoryLG
 
+advisory.LG
 
 ## Properties
 

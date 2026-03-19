@@ -1,5 +1,6 @@
 # AdvisoryBostonScientificAdvisory
 
+advisory.BostonScientificAdvisory
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryMcAfeePaginatePagination
 
+render.ResponseWithMetadata-array_advisory_McAfee-paginate_Pagination
 
 ## Properties
 

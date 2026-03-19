@@ -1,5 +1,6 @@
 # AdvisoryRustsecAdvisory
 
+advisory.RustsecAdvisory
 
 ## Properties
 

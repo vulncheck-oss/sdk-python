@@ -1,5 +1,6 @@
 # AdvisoryBitDefender
 
+advisory.BitDefender
 
 ## Properties
 

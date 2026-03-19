@@ -1,5 +1,6 @@
 # AdvisoryNuclei
 
+advisory.Nuclei
 
 ## Properties
 

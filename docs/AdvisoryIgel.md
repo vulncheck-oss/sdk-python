@@ -1,5 +1,6 @@
 # AdvisoryIgel
 
+advisory.Igel
 
 ## Properties
 

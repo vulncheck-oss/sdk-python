@@ -1,5 +1,6 @@
 # AdvisoryLantronix
 
+advisory.Lantronix
 
 ## Properties
 

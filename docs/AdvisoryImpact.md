@@ -1,5 +1,6 @@
 # AdvisoryImpact
 
+advisory.Impact
 
 ## Properties
 

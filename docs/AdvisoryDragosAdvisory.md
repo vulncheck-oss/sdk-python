@@ -1,5 +1,6 @@
 # AdvisoryDragosAdvisory
 
+advisory.DragosAdvisory
 
 ## Properties
 

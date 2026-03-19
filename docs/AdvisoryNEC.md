@@ -1,5 +1,6 @@
 # AdvisoryNEC
 
+advisory.NEC
 
 ## Properties
 

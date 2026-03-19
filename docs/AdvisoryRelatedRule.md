@@ -1,5 +1,6 @@
 # AdvisoryRelatedRule
 
+advisory.RelatedRule
 
 ## Properties
 

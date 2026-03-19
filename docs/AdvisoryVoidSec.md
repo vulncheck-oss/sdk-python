@@ -1,5 +1,6 @@
 # AdvisoryVoidSec
 
+advisory.VoidSec
 
 ## Properties
 

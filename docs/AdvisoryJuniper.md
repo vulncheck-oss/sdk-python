@@ -1,5 +1,6 @@
 # AdvisoryJuniper
 
+advisory.Juniper
 
 ## Properties
 

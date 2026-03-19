@@ -1,5 +1,6 @@
 # AdvisoryNexpose
 
+advisory.Nexpose
 
 ## Properties
 

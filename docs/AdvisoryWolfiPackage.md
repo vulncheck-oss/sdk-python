@@ -1,5 +1,6 @@
 # AdvisoryWolfiPackage
 
+advisory.WolfiPackage
 
 ## Properties
 

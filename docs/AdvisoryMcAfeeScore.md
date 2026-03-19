@@ -1,5 +1,6 @@
 # AdvisoryMcAfeeScore
 
+advisory.McAfeeScore
 
 ## Properties
 

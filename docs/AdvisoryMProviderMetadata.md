@@ -1,5 +1,6 @@
 # AdvisoryMProviderMetadata
 
+OK
 
 ## Properties
 

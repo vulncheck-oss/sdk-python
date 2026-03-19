@@ -1,5 +1,6 @@
 # AdvisoryUSD
 
+advisory.USD
 
 ## Properties
 

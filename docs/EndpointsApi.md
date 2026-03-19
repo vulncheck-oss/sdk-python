@@ -1,6 +1,6 @@
 # vulncheck_sdk.EndpointsApi
 
-All URIs are relative to */v3*
+All URIs are relative to *https://api.vulncheck.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -34,10 +34,10 @@ from vulncheck_sdk.models.render_response_array_params_index_backup_list import 
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /v3
+# Defining the host is optional and defaults to https://api.vulncheck.com/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = vulncheck_sdk.Configuration(
-    host = "/v3"
+    host = "https://api.vulncheck.com/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -111,10 +111,10 @@ from vulncheck_sdk.models.render_response_with_metadata_v3controllers_backup_res
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /v3
+# Defining the host is optional and defaults to https://api.vulncheck.com/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = vulncheck_sdk.Configuration(
-    host = "/v3"
+    host = "https://api.vulncheck.com/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -192,10 +192,10 @@ from vulncheck_sdk.models.render_response_with_metadata_array_string_v3controlle
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /v3
+# Defining the host is optional and defaults to https://api.vulncheck.com/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = vulncheck_sdk.Configuration(
-    host = "/v3"
+    host = "https://api.vulncheck.com/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -275,10 +275,10 @@ from vulncheck_sdk.models.models_entitlements import ModelsEntitlements
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /v3
+# Defining the host is optional and defaults to https://api.vulncheck.com/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = vulncheck_sdk.Configuration(
-    host = "/v3"
+    host = "https://api.vulncheck.com/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -352,10 +352,10 @@ from vulncheck_sdk.models.render_response_array_params_index_list import RenderR
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /v3
+# Defining the host is optional and defaults to https://api.vulncheck.com/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = vulncheck_sdk.Configuration(
-    host = "/v3"
+    host = "https://api.vulncheck.com/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -428,10 +428,10 @@ import vulncheck_sdk
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /v3
+# Defining the host is optional and defaults to https://api.vulncheck.com/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = vulncheck_sdk.Configuration(
-    host = "/v3"
+    host = "https://api.vulncheck.com/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -503,10 +503,10 @@ import vulncheck_sdk
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /v3
+# Defining the host is optional and defaults to https://api.vulncheck.com/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = vulncheck_sdk.Configuration(
-    host = "/v3"
+    host = "https://api.vulncheck.com/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -584,10 +584,10 @@ from vulncheck_sdk.models.render_response_with_metadata_v3controllers_purl_respo
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /v3
+# Defining the host is optional and defaults to https://api.vulncheck.com/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = vulncheck_sdk.Configuration(
-    host = "/v3"
+    host = "https://api.vulncheck.com/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **purls_post**
-> RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata purls_post(purls)
+> RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata purls_post(request_body)
 
 Request vulnerabilities related to a list of PURLs
 
@@ -665,10 +665,10 @@ from vulncheck_sdk.models.render_response_with_metadata_v3controllers_purls_resp
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /v3
+# Defining the host is optional and defaults to https://api.vulncheck.com/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = vulncheck_sdk.Configuration(
-    host = "/v3"
+    host = "https://api.vulncheck.com/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -686,11 +686,11 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with vulncheck_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vulncheck_sdk.EndpointsApi(api_client)
-    purls = ['purls_example'] # List[str] | PURL strings used to identify and locate software packages
+    request_body = ['request_body_example'] # List[str] | PURL strings used to identify and locate software packages
 
     try:
         # Request vulnerabilities related to a list of PURLs
-        api_response = api_instance.purls_post(purls)
+        api_response = api_instance.purls_post(request_body)
         print("The response of EndpointsApi->purls_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -704,7 +704,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purls** | [**List[str]**](str.md)| PURL strings used to identify and locate software packages | 
+ **request_body** | [**List[str]**](str.md)| PURL strings used to identify and locate software packages | 
 
 ### Return type
 
@@ -716,7 +716,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -745,10 +745,10 @@ import vulncheck_sdk
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /v3
+# Defining the host is optional and defaults to https://api.vulncheck.com/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = vulncheck_sdk.Configuration(
-    host = "/v3"
+    host = "https://api.vulncheck.com/v3"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -825,10 +825,10 @@ import vulncheck_sdk
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to /v3
+# Defining the host is optional and defaults to https://api.vulncheck.com/v3
 # See configuration.py for a list of all supported configuration parameters.
 configuration = vulncheck_sdk.Configuration(
-    host = "/v3"
+    host = "https://api.vulncheck.com/v3"
 )
 
 # The client must configure the authentication and authorization parameters

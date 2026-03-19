@@ -1,5 +1,6 @@
 # AdvisoryBDUVector
 
+advisory.BDUVector
 
 ## Properties
 

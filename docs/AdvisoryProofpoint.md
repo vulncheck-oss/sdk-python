@@ -1,5 +1,6 @@
 # AdvisoryProofpoint
 
+advisory.Proofpoint
 
 ## Properties
 

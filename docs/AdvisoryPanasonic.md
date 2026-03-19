@@ -1,5 +1,6 @@
 # AdvisoryPanasonic
 
+advisory.Panasonic
 
 ## Properties
 

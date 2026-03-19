@@ -1,5 +1,6 @@
 # AdvisorySynology
 
+advisory.Synology
 
 ## Properties
 

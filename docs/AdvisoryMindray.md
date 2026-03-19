@@ -1,5 +1,6 @@
 # AdvisoryMindray
 
+advisory.Mindray
 
 ## Properties
 

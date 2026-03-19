@@ -1,5 +1,6 @@
 # AdvisoryOSV
 
+advisory.OSV
 
 ## Properties
 

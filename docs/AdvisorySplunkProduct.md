@@ -1,5 +1,6 @@
 # AdvisorySplunkProduct
 
+advisory.SplunkProduct
 
 ## Properties
 

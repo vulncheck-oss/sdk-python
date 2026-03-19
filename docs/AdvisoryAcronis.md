@@ -1,5 +1,6 @@
 # AdvisoryAcronis
 
+advisory.Acronis
 
 ## Properties
 

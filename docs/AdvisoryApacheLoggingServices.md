@@ -1,5 +1,6 @@
 # AdvisoryApacheLoggingServices
 
+advisory.ApacheLoggingServices
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryMaliciousPackage
 
+advisory.MaliciousPackage
 
 ## Properties
 

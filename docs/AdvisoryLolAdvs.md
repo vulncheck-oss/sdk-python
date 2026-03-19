@@ -1,5 +1,6 @@
 # AdvisoryLolAdvs
 
+advisory.LolAdvs
 
 ## Properties
 

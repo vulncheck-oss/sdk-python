@@ -1,5 +1,6 @@
 # ApiProblemType
 
+api.ProblemType
 
 ## Properties
 

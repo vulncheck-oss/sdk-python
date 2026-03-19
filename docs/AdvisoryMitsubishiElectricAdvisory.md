@@ -1,5 +1,6 @@
 # AdvisoryMitsubishiElectricAdvisory
 
+advisory.MitsubishiElectricAdvisory
 
 ## Properties
 

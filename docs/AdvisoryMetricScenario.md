@@ -1,5 +1,6 @@
 # AdvisoryMetricScenario
 
+advisory.MetricScenario
 
 ## Properties
 

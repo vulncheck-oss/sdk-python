@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryCNVDBulletinPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_CNVDBulletin-paginate_Pagination
 
 ## Properties
 

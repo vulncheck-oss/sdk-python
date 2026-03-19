@@ -1,5 +1,6 @@
 # AdvisoryApacheShiro
 
+advisory.ApacheShiro
 
 ## Properties
 

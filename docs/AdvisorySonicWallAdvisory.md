@@ -1,5 +1,6 @@
 # AdvisorySonicWallAdvisory
 
+advisory.SonicWallAdvisory
 
 ## Properties
 

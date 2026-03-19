@@ -1,5 +1,6 @@
 # AdvisoryQualys
 
+advisory.Qualys
 
 ## Properties
 

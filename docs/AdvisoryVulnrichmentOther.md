@@ -1,5 +1,6 @@
 # AdvisoryVulnrichmentOther
 
+advisory.VulnrichmentOther
 
 ## Properties
 

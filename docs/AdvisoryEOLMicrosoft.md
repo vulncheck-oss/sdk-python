@@ -1,5 +1,6 @@
 # AdvisoryEOLMicrosoft
 
+advisory.EOLMicrosoft
 
 ## Properties
 

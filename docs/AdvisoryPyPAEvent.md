@@ -1,5 +1,6 @@
 # AdvisoryPyPAEvent
 
+advisory.PyPAEvent
 
 ## Properties
 

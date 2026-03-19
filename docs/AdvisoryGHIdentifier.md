@@ -1,5 +1,6 @@
 # AdvisoryGHIdentifier
 
+advisory.GHIdentifier
 
 ## Properties
 

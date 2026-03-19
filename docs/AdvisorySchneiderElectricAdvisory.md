@@ -1,5 +1,6 @@
 # AdvisorySchneiderElectricAdvisory
 
+advisory.SchneiderElectricAdvisory
 
 ## Properties
 

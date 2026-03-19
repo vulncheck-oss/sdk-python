@@ -1,5 +1,6 @@
 # AdvisoryGHSARange
 
+advisory.GHSARange
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryAbsolute
 
+advisory.Absolute
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryYubico
 
+advisory.Yubico
 
 ## Properties
 

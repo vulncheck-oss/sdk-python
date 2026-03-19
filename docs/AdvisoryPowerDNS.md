@@ -1,5 +1,6 @@
 # AdvisoryPowerDNS
 
+advisory.PowerDNS
 
 ## Properties
 

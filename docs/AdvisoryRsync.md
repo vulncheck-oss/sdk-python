@@ -1,5 +1,6 @@
 # AdvisoryRsync
 
+advisory.Rsync
 
 ## Properties
 

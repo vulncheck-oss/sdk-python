@@ -1,5 +1,6 @@
 # AdvisorySonatype
 
+advisory.Sonatype
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryQSB
 
+advisory.QSB
 
 ## Properties
 

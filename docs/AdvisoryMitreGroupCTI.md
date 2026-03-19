@@ -1,5 +1,6 @@
 # AdvisoryMitreGroupCTI
 
+advisory.MitreGroupCTI
 
 ## Properties
 

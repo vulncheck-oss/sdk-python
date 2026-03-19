@@ -1,5 +1,6 @@
 # AdvisoryCompassSecurity
 
+advisory.CompassSecurity
 
 ## Properties
 

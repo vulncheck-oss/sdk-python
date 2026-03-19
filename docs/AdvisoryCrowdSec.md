@@ -1,5 +1,6 @@
 # AdvisoryCrowdSec
 
+advisory.CrowdSec
 
 ## Properties
 

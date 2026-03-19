@@ -1,5 +1,6 @@
 # AdvisoryUbiquiti
 
+advisory.Ubiquiti
 
 ## Properties
 

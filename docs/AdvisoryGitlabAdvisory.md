@@ -1,5 +1,6 @@
 # AdvisoryGitlabAdvisory
 
+advisory.GitlabAdvisory
 
 ## Properties
 

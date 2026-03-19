@@ -1,5 +1,6 @@
 # AdvisoryCOSUpdate
 
+advisory.COSUpdate
 
 ## Properties
 

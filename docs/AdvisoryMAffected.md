@@ -1,5 +1,6 @@
 # AdvisoryMAffected
 
+advisory.MAffected
 
 ## Properties
 

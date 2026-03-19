@@ -1,5 +1,6 @@
 # AdvisoryMedtronicAdvisory
 
+advisory.MedtronicAdvisory
 
 ## Properties
 

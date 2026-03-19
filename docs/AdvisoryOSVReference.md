@@ -1,5 +1,6 @@
 # AdvisoryOSVReference
 
+advisory.OSVReference
 
 ## Properties
 

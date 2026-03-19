@@ -1,5 +1,6 @@
 # AdvisoryMediatek
 
+advisory.Mediatek
 
 ## Properties
 

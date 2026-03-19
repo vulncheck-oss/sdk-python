@@ -1,5 +1,6 @@
 # AdvisoryVulnrichmentOption
 
+advisory.VulnrichmentOption
 
 ## Properties
 

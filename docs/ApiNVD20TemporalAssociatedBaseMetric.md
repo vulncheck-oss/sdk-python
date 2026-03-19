@@ -1,5 +1,6 @@
 # ApiNVD20TemporalAssociatedBaseMetric
 
+api.NVD20TemporalAssociatedBaseMetric
 
 ## Properties
 

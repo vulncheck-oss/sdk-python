@@ -1,5 +1,6 @@
 # AdvisoryCwe
 
+advisory.Cwe
 
 ## Properties
 

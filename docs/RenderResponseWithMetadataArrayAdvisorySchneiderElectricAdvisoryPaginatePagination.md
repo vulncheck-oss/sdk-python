@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisorySchneiderElectricAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_SchneiderElectricAdvisory-paginate_Pagination
 
 ## Properties
 

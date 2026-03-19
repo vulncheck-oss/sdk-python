@@ -1,5 +1,6 @@
 # AdvisoryPhilipsAdvisory
 
+advisory.PhilipsAdvisory
 
 ## Properties
 

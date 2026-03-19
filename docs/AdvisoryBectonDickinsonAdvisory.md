@@ -1,5 +1,6 @@
 # AdvisoryBectonDickinsonAdvisory
 
+advisory.BectonDickinsonAdvisory
 
 ## Properties
 

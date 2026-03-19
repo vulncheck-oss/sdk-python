@@ -1,5 +1,6 @@
 # AdvisoryRemediationData
 
+advisory.RemediationData
 
 ## Properties
 

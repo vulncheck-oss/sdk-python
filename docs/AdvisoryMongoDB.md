@@ -1,5 +1,6 @@
 # AdvisoryMongoDB
 
+advisory.MongoDB
 
 ## Properties
 

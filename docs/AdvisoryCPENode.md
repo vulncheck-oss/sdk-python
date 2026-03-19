@@ -1,5 +1,6 @@
 # AdvisoryCPENode
 
+advisory.CPENode
 
 ## Properties
 

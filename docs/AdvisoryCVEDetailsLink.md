@@ -1,5 +1,6 @@
 # AdvisoryCVEDetailsLink
 
+advisory.CVEDetailsLink
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryVulnrichmentContainers
 
+advisory.VulnrichmentContainers
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryOpenCVDB
 
+advisory.OpenCVDB
 
 ## Properties
 

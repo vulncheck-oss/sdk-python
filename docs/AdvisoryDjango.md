@@ -1,5 +1,6 @@
 # AdvisoryDjango
 
+advisory.Django
 
 ## Properties
 

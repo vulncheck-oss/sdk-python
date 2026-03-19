@@ -1,5 +1,6 @@
 # ApiInitialAccess
 
+api.InitialAccess
 
 ## Properties
 

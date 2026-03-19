@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryWordfencePaginatePagination
 
+render.ResponseWithMetadata-array_advisory_Wordfence-paginate_Pagination
 
 ## Properties
 

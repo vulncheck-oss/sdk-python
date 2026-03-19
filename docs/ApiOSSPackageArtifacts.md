@@ -1,5 +1,6 @@
 # ApiOSSPackageArtifacts
 
+api.OSSPackageArtifacts
 
 ## Properties
 

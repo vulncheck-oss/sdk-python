@@ -1,5 +1,6 @@
 # AdvisoryAndroidPackage
 
+advisory.AndroidPackage
 
 ## Properties
 

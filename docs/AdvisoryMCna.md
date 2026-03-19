@@ -1,5 +1,6 @@
 # AdvisoryMCna
 
+advisory.MCna
 
 ## Properties
 

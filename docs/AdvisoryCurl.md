@@ -1,5 +1,6 @@
 # AdvisoryCurl
 
+advisory.Curl
 
 ## Properties
 

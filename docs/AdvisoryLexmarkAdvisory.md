@@ -1,5 +1,6 @@
 # AdvisoryLexmarkAdvisory
 
+advisory.LexmarkAdvisory
 
 ## Properties
 

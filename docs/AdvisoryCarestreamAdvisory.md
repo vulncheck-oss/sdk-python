@@ -1,5 +1,6 @@
 # AdvisoryCarestreamAdvisory
 
+advisory.CarestreamAdvisory
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryGoVulnPackage
 
+advisory.GoVulnPackage
 
 ## Properties
 

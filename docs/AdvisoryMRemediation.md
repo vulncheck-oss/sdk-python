@@ -1,5 +1,6 @@
 # AdvisoryMRemediation
 
+advisory.MRemediation
 
 ## Properties
 

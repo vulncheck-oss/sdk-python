@@ -1,5 +1,6 @@
 # AdvisoryMendix
 
+advisory.Mendix
 
 ## Properties
 

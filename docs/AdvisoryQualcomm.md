@@ -1,5 +1,6 @@
 # AdvisoryQualcomm
 
+advisory.Qualcomm
 
 ## Properties
 

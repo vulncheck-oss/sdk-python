@@ -1,5 +1,6 @@
 # AdvisoryKRCertAdvisory
 
+advisory.KRCertAdvisory
 
 ## Properties
 

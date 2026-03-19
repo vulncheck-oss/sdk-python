@@ -1,5 +1,6 @@
 # AdvisoryGHCvss
 
+advisory.GHCvss
 
 ## Properties
 

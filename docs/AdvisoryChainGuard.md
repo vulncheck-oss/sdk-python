@@ -1,5 +1,6 @@
 # AdvisoryChainGuard
 
+advisory.ChainGuard
 
 ## Properties
 

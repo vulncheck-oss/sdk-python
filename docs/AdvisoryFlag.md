@@ -1,5 +1,6 @@
 # AdvisoryFlag
 
+advisory.Flag
 
 ## Properties
 

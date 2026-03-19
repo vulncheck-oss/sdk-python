@@ -1,5 +1,6 @@
 # AdvisoryMitreCVEListV5Ref
 
+advisory.MitreCVEListV5Ref
 
 ## Properties
 

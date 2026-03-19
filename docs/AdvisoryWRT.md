@@ -1,5 +1,6 @@
 # AdvisoryWRT
 
+advisory.WRT
 
 ## Properties
 
