@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryOneEPaginatePagination(unittest
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/one_e.advisory.OneE(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

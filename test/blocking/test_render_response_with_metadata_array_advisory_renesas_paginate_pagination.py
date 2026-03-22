@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryRenesasPaginatePagination(unitt
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/renesas.advisory.Renesas(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

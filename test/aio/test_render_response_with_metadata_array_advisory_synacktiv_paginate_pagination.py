@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySynacktivPaginatePagination(uni
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/synacktiv.advisory.Synacktiv(
+                    vulncheck_sdk.aio.models.advisory/apache_hadoop.advisory.ApacheHadoop(
                         affected = '', 
                         cve = [
                             ''

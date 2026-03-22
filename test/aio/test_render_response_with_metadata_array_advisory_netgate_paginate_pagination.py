@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryNetgatePaginatePagination(unitt
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/netgate.advisory.Netgate(
+                    vulncheck_sdk.aio.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

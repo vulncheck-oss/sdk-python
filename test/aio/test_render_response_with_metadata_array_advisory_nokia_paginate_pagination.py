@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryNokiaPaginatePagination(unittes
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/nokia.advisory.Nokia(
+                    vulncheck_sdk.aio.models.advisory/forge_rock.advisory.ForgeRock(
                         cve = [
                             ''
                             ], 

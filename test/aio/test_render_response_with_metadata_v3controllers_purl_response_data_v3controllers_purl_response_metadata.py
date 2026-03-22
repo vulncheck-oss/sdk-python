@@ -38,7 +38,17 @@ class TestRenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPu
             return RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata(
                 benchmark = 1.337,
                 meta = vulncheck_sdk.aio.models.v3controllers/purl_response_metadata.v3controllers.PurlResponseMetadata(
-                    purl_struct = vulncheck_sdk.aio.models.purl_struct.purl_struct(), 
+                    purl_struct = vulncheck_sdk.aio.models.purl/package_urljson.purl.PackageURLJSON(
+                        name = '', 
+                        namespace = '', 
+                        qualifiers = [
+                            vulncheck_sdk.aio.models.purl/qualifier_json.purl.QualifierJSON(
+                                key = '', 
+                                value = '', )
+                            ], 
+                        subpath = '', 
+                        type = '', 
+                        version = '', ), 
                     timestamp = '', 
                     total_documents = 56, ),
                 data = vulncheck_sdk.aio.models.v3controllers/purl_response_data.v3controllers.PurlResponseData(

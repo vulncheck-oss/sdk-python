@@ -38,7 +38,7 @@ class TestAdvisoryWolfiPackage(unittest.TestCase):
             return AdvisoryWolfiPackage(
                 name = '',
                 secfixes = [
-                    vulncheck_sdk.models.advisory/wolfi_sec_fix.advisory.WolfiSecFix(
+                    vulncheck_sdk.models.advisory/chain_guard_sec_fix.advisory.ChainGuardSecFix(
                         cve = [
                             ''
                             ], 

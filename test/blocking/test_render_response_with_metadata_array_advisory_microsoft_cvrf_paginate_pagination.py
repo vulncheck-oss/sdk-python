@@ -77,7 +77,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMicrosoftCVRFPaginatePagination
                             ''
                             ], 
                         cvrf = vulncheck_sdk.models.advisory/mscvrf.advisory.MSCVRF(
-                            document_title = vulncheck_sdk.models.advisory/ms_document_title.advisory.MSDocumentTitle(
+                            document_title = vulncheck_sdk.models.advisory/i_val.advisory.IVal(
                                 value = '', ), 
                             document_tracking = vulncheck_sdk.models.advisory/m_document_tracking.advisory.MDocumentTracking(
                                 current_release_date = '', 
@@ -85,8 +85,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMicrosoftCVRFPaginatePagination
                                 identification = vulncheck_sdk.models.advisory/m_identification.advisory.MIdentification(
                                     alias = vulncheck_sdk.models.advisory/i_val.advisory.IVal(
                                         value = '', ), 
-                                    id = vulncheck_sdk.models.advisory/i_val.advisory.IVal(
-                                        value = '', ), ), 
+                                    id = , ), 
                                 revisionhistory = [
                                     vulncheck_sdk.models.advisory/r_revision.advisory.RRevision(
                                         date = '', 

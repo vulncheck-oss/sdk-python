@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySpacelabsHealthcareAdvisoryPagi
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/spacelabs_healthcare_advisory.advisory.SpacelabsHealthcareAdvisory(
+                    vulncheck_sdk.models.advisory/apache_http.advisory.ApacheHTTP(
                         cve = [
                             ''
                             ], 

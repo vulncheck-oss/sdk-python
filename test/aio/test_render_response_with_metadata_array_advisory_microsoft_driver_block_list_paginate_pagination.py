@@ -75,7 +75,13 @@ class TestRenderResponseWithMetadataArrayAdvisoryMicrosoftDriverBlockListPaginat
                     vulncheck_sdk.aio.models.advisory/microsoft_driver_block_list.advisory.MicrosoftDriverBlockList(
                         date_added = '', 
                         file_id = '', 
-                        file_metadata = vulncheck_sdk.aio.models.file_metadata.file_metadata(), )
+                        file_metadata = vulncheck_sdk.aio.models.advisory/microsoft_file_metadata.advisory.MicrosoftFileMetadata(
+                            file_name = '', 
+                            maximum_file_version = '', 
+                            minimum_file_version = '', 
+                            product_name = '', 
+                            sha1_hash = '', 
+                            sha256_hash = '', ), )
                     ]
             )
         else:

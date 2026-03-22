@@ -73,7 +73,7 @@ class TestRenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination(uni
                         ], ),
                 data = [
                     vulncheck_sdk.aio.models.purls/purl_response.purls.PurlResponse(
-                        artifacts = vulncheck_sdk.aio.models.artifacts.artifacts(), 
+                        artifacts = vulncheck_sdk.aio.models.advisory/csaf_distribution.advisory.CSAFDistribution(), 
                         cves = [
                             ''
                             ], 

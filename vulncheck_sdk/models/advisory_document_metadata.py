@@ -29,7 +29,7 @@ from typing_extensions import Self
 
 class AdvisoryDocumentMetadata(BaseModel):
     """
-    AdvisoryDocumentMetadata
+    Document contains metadata about the CSAF document itself.  https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#321-document-property
     """ # noqa: E501
     category: Optional[StrictStr] = None
     csaf_version: Optional[StrictStr] = None

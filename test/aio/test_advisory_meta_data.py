@@ -41,15 +41,13 @@ class TestAdvisoryMetaData(unittest.TestCase):
                         href = '', 
                         id = '', 
                         title = '', ), 
-                    cve = vulncheck_sdk.aio.models.advisory/oval_cve.advisory.OvalCVE(
+                    cve = vulncheck_sdk.aio.models.advisory/bugzilla.advisory.Bugzilla(
                         href = '', 
                         id = '', 
                         title = '', ), 
-                    issued = vulncheck_sdk.aio.models.advisory/issued.advisory.Issued(
-                        date = '', ), 
+                    issued = vulncheck_sdk.aio.models.advisory/csaf_distribution.advisory.CSAFDistribution(), 
                     severity = '', 
-                    updated = vulncheck_sdk.aio.models.advisory/updated.advisory.Updated(
-                        date = '', ), ),
+                    updated = vulncheck_sdk.aio.models.advisory/csaf_distribution.advisory.CSAFDistribution(), ),
                 cve = [
                     ''
                     ],

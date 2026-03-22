@@ -39,14 +39,14 @@ class TestAdvisoryPyPAAdvisory(unittest.TestCase):
                 advisory_id = '',
                 affected = [
                     vulncheck_sdk.models.advisory/py_pa_affected.advisory.PyPAAffected(
-                        package = vulncheck_sdk.models.advisory/py_pa_package.advisory.PyPAPackage(
+                        package = vulncheck_sdk.models.advisory/osv_package.advisory.OSVPackage(
                             ecosystem = '', 
                             name = '', 
                             purl = '', ), 
                         ranges = [
                             vulncheck_sdk.models.advisory/py_pa_range.advisory.PyPARange(
                                 events = [
-                                    vulncheck_sdk.models.advisory/py_pa_event.advisory.PyPAEvent(
+                                    vulncheck_sdk.models.advisory/android_event.advisory.AndroidEvent(
                                         fixed = '', 
                                         introduced = '', )
                                     ], 

@@ -42,8 +42,7 @@ class TestAdvisoryUpdate(unittest.TestCase):
                 date_added = '',
                 description = '',
                 id = '',
-                issued = vulncheck_sdk.models.advisory/date_time.advisory.DateTime(
-                    date = '', ),
+                issued = vulncheck_sdk.models.advisory/csaf_distribution.advisory.CSAFDistribution(),
                 os_arch = '',
                 os_version = '',
                 packages = [
@@ -64,8 +63,7 @@ class TestAdvisoryUpdate(unittest.TestCase):
                 severity = '',
                 title = '',
                 type = '',
-                updated = vulncheck_sdk.models.advisory/date_time.advisory.DateTime(
-                    date = '', )
+                updated = vulncheck_sdk.models.advisory/csaf_distribution.advisory.CSAFDistribution()
             )
         else:
             return AdvisoryUpdate(

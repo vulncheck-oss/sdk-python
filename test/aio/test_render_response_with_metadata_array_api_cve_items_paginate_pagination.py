@@ -118,7 +118,7 @@ class TestRenderResponseWithMetadataArrayApiCveItemsPaginatePagination(unittest.
                             data_version = '', 
                             description = vulncheck_sdk.aio.models.api/description.api.Description(
                                 description_data = [
-                                    vulncheck_sdk.aio.models.api/description_data.api.DescriptionData(
+                                    vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
                                         lang = '', 
                                         value = '', )
                                     ], ), 
@@ -157,7 +157,7 @@ class TestRenderResponseWithMetadataArrayApiCveItemsPaginatePagination(unittest.
                                 severity = '', 
                                 user_interaction_required = True, ), 
                             base_metric_v3 = vulncheck_sdk.aio.models.api/base_metric_v3.api.BaseMetricV3(
-                                cvss_v3 = vulncheck_sdk.aio.models.api/cvssv3.api.CVSSV3(
+                                cvss_v3 = vulncheck_sdk.aio.models.advisory/m_cvss_v30.advisory.MCvssV30(
                                     attack_complexity = '', 
                                     attack_vector = '', 
                                     availability_impact = '', 
@@ -172,7 +172,43 @@ class TestRenderResponseWithMetadataArrayApiCveItemsPaginatePagination(unittest.
                                     version = '', ), 
                                 exploitability_score = 1.337, 
                                 impact_score = 1.337, ), 
-                            metric_v40 = vulncheck_sdk.aio.models.metric_v40.metricV40(), ), 
+                            metric_v40 = vulncheck_sdk.aio.models.advisory/cvssv40.advisory.CVSSV40(
+                                automatable = '', 
+                                recovery = '', 
+                                safety = '', 
+                                attack_complexity = '', 
+                                attack_requirements = '', 
+                                attack_vector = '', 
+                                availability_requirement = '', 
+                                base_score = 1.337, 
+                                base_severity = '', 
+                                confidentiality_requirement = '', 
+                                exploit_maturity = '', 
+                                integrity_requirement = '', 
+                                modified_attack_complexity = '', 
+                                modified_attack_requirements = '', 
+                                modified_attack_vector = '', 
+                                modified_privileges_required = '', 
+                                modified_sub_availability_impact = '', 
+                                modified_sub_confidentiality_impact = '', 
+                                modified_sub_integrity_impact = '', 
+                                modified_user_interaction = '', 
+                                modified_vuln_availability_impact = '', 
+                                modified_vuln_confidentiality_impact = '', 
+                                modified_vuln_integrity_impact = '', 
+                                privileges_required = '', 
+                                provider_urgency = '', 
+                                sub_availability_impact = '', 
+                                sub_confidentiality_impact = '', 
+                                sub_integrity_impact = '', 
+                                user_interaction = '', 
+                                value_density = '', 
+                                vector_string = '', 
+                                version = '', 
+                                vuln_availability_impact = '', 
+                                vuln_confidentiality_impact = '', 
+                                vuln_integrity_impact = '', 
+                                vulnerability_response_effort = '', ), ), 
                         last_modified_date = '', 
                         published_date = '', 
                         vc_configurations = vulncheck_sdk.aio.models.api/configurations.api.Configurations(

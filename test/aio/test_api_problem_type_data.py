@@ -37,7 +37,7 @@ class TestApiProblemTypeData(unittest.TestCase):
         if include_optional:
             return ApiProblemTypeData(
                 description = [
-                    vulncheck_sdk.aio.models.api/problem_type_description.api.ProblemTypeDescription(
+                    vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
                         lang = '', 
                         value = '', )
                     ]

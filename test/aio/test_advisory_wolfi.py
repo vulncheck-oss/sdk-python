@@ -45,7 +45,7 @@ class TestAdvisoryWolfi(unittest.TestCase):
                     vulncheck_sdk.aio.models.advisory/wolfi_package.advisory.WolfiPackage(
                         name = '', 
                         secfixes = [
-                            vulncheck_sdk.aio.models.advisory/wolfi_sec_fix.advisory.WolfiSecFix(
+                            vulncheck_sdk.aio.models.advisory/chain_guard_sec_fix.advisory.ChainGuardSecFix(
                                 cve = [
                                     ''
                                     ], 

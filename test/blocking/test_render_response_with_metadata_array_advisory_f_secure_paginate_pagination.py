@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryFSecurePaginatePagination(unitt
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/f_secure.advisory.FSecure(
+                    vulncheck_sdk.models.advisory/apache_archiva.advisory.ApacheArchiva(
                         affected = '', 
                         cve = [
                             ''

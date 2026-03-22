@@ -40,13 +40,13 @@ class TestAdvisoryGHSAAffected(unittest.TestCase):
                     affected_functions = [
                         ''
                         ], ),
-                package = vulncheck_sdk.aio.models.advisory/ghsa_package.advisory.GHSAPackage(
+                package = vulncheck_sdk.aio.models.advisory/android_package.advisory.AndroidPackage(
                     ecosystem = '', 
                     name = '', ),
                 ranges = [
                     vulncheck_sdk.aio.models.advisory/ghsa_range.advisory.GHSARange(
                         events = [
-                            vulncheck_sdk.aio.models.advisory/ghsa_event.advisory.GHSAEvent(
+                            vulncheck_sdk.aio.models.advisory/android_event.advisory.AndroidEvent(
                                 fixed = '', 
                                 introduced = '', )
                             ], 

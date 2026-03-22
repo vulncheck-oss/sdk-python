@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryPKCertPaginatePagination(unitte
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/pk_cert.advisory.PKCert(
+                    vulncheck_sdk.models.advisory/appgate.advisory.Appgate(
                         cve = [
                             ''
                             ], 

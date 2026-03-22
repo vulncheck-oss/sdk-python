@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryWhatsAppPaginatePagination(unit
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/whats_app.advisory.WhatsApp(
+                    vulncheck_sdk.aio.models.advisory/apache_shiro.advisory.ApacheShiro(
                         cve = [
                             ''
                             ], 

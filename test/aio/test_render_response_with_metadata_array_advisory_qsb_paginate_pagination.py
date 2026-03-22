@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryQSBPaginatePagination(unittest.
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/qsb.advisory.QSB(
+                    vulncheck_sdk.aio.models.advisory/binarly.advisory.Binarly(
                         cve = [
                             ''
                             ], 

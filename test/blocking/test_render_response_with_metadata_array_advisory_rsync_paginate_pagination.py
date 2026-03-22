@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryRsyncPaginatePagination(unittes
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/rsync.advisory.Rsync(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySchutzwerkPaginatePagination(un
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/schutzwerk.advisory.Schutzwerk(
+                    vulncheck_sdk.aio.models.advisory/appgate.advisory.Appgate(
                         cve = [
                             ''
                             ], 

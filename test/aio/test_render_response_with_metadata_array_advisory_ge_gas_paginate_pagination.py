@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryGEGasPaginatePagination(unittes
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/ge_gas.advisory.GEGas(
+                    vulncheck_sdk.aio.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

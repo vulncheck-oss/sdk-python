@@ -36,7 +36,7 @@ class TestApiNVD20ThreatCVSSV40(unittest.TestCase):
         model = ApiNVD20ThreatCVSSV40()
         if include_optional:
             return ApiNVD20ThreatCVSSV40(
-                associated_base_metric_v40 = vulncheck_sdk.aio.models.api/nvd20_threat_associated_base_metric.api.NVD20ThreatAssociatedBaseMetric(
+                associated_base_metric_v40 = vulncheck_sdk.aio.models.api/nvd20_temporal_associated_base_metric.api.NVD20TemporalAssociatedBaseMetric(
                     base_score = 1.337, 
                     source = '', 
                     type = '', ),

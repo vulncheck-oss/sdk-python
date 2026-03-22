@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheGuacamolePaginatePaginati
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/apache_guacamole.advisory.ApacheGuacamole(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

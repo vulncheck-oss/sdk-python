@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySolrPaginatePagination(unittest
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/solr.advisory.Solr(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

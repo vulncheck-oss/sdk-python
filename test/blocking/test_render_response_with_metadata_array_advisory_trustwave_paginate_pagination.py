@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryTrustwavePaginatePagination(uni
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/trustwave.advisory.Trustwave(
+                    vulncheck_sdk.models.advisory/binarly.advisory.Binarly(
                         cve = [
                             ''
                             ], 

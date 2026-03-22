@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryCertINPaginatePagination(unitte
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/cert_in.advisory.CertIN(
+                    vulncheck_sdk.models.advisory/binarly.advisory.Binarly(
                         cve = [
                             ''
                             ], 

@@ -36,7 +36,7 @@ class TestApiBaseMetricV3(unittest.TestCase):
         model = ApiBaseMetricV3()
         if include_optional:
             return ApiBaseMetricV3(
-                cvss_v3 = vulncheck_sdk.aio.models.api/cvssv3.api.CVSSV3(
+                cvss_v3 = vulncheck_sdk.aio.models.advisory/m_cvss_v30.advisory.MCvssV30(
                     attack_complexity = '', 
                     attack_vector = '', 
                     availability_impact = '', 

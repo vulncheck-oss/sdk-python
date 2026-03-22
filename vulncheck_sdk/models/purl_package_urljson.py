@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class PurlPackageURLJSON(BaseModel):
     """
-    PurlPackageURLJSON
+    meta-data about the purl
     """ # noqa: E501
     name: Optional[StrictStr] = None
     namespace: Optional[StrictStr] = None

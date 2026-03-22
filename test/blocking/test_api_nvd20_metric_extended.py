@@ -271,7 +271,7 @@ class TestApiNVD20MetricExtended(unittest.TestCase):
                         version = '', )
                     ],
                 threat_cvssv40 = vulncheck_sdk.models.api/nvd20_threat_cvssv40.api.NVD20ThreatCVSSV40(
-                    associated_base_metric_v40 = vulncheck_sdk.models.api/nvd20_threat_associated_base_metric.api.NVD20ThreatAssociatedBaseMetric(
+                    associated_base_metric_v40 = vulncheck_sdk.models.api/nvd20_temporal_associated_base_metric.api.NVD20TemporalAssociatedBaseMetric(
                         base_score = 1.337, 
                         source = '', 
                         type = '', ), 
@@ -280,7 +280,7 @@ class TestApiNVD20MetricExtended(unittest.TestCase):
                     exploit_maturity = '', ),
                 threat_cvssv40_secondary = [
                     vulncheck_sdk.models.api/nvd20_threat_cvssv40.api.NVD20ThreatCVSSV40(
-                        associated_base_metric_v40 = vulncheck_sdk.models.api/nvd20_threat_associated_base_metric.api.NVD20ThreatAssociatedBaseMetric(
+                        associated_base_metric_v40 = vulncheck_sdk.models.api/nvd20_temporal_associated_base_metric.api.NVD20TemporalAssociatedBaseMetric(
                             base_score = 1.337, 
                             source = '', 
                             type = '', ), 

@@ -114,7 +114,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySiemensAdvisoryPaginatePaginati
                                     name = '', 
                                     namespace = '', ), 
                                 references = [
-                                    vulncheck_sdk.aio.models.advisory/siemens_references.advisory.SiemensReferences(
+                                    vulncheck_sdk.aio.models.advisory/csaf_reference.advisory.CSAFReference(
                                         category = '', 
                                         summary = '', 
                                         url = '', )
@@ -123,7 +123,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySiemensAdvisoryPaginatePaginati
                                 tracking = vulncheck_sdk.aio.models.advisory/siemens_tracking.advisory.SiemensTracking(
                                     current_release_date = '', 
                                     generator = vulncheck_sdk.aio.models.advisory/siemens_generator.advisory.SiemensGenerator(
-                                        engine = vulncheck_sdk.aio.models.advisory/siemens_engine.advisory.SiemensEngine(
+                                        engine = vulncheck_sdk.aio.models.advisory/vulnerable_product.advisory.VulnerableProduct(
                                             name = '', 
                                             version = '', ), ), 
                                     id = '', 
@@ -145,7 +145,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySiemensAdvisoryPaginatePaginati
                                     ], ), 
                             vulnerabilities = [
                                 vulncheck_sdk.aio.models.advisory/siemens_vulnerability.advisory.SiemensVulnerability(
-                                    cwe = vulncheck_sdk.aio.models.advisory/siemens_cwe.advisory.SiemensCWE(
+                                    cwe = vulncheck_sdk.aio.models.advisory/cwe.advisory.Cwe(
                                         id = '', 
                                         name = '', ), 
                                     product_status = vulncheck_sdk.aio.models.advisory/siemens_product_status.advisory.SiemensProductStatus(

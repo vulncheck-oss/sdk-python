@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryCloudBeesPaginatePagination(uni
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/cloud_bees.advisory.CloudBees(
+                    vulncheck_sdk.models.advisory/autodesk.advisory.Autodesk(
                         cve = [
                             ''
                             ], 

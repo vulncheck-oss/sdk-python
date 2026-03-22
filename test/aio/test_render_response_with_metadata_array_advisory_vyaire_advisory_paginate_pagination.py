@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryVYAIREAdvisoryPaginatePaginatio
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/vyaire_advisory.advisory.VYAIREAdvisory(
+                    vulncheck_sdk.aio.models.advisory/apache_http.advisory.ApacheHTTP(
                         cve = [
                             ''
                             ], 

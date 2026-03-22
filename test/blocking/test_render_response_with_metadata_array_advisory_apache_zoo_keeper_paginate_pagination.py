@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheZooKeeperPaginatePaginati
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/apache_zoo_keeper.advisory.ApacheZooKeeper(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

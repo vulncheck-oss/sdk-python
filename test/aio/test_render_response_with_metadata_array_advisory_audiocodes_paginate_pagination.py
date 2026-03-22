@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryAudiocodesPaginatePagination(un
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/audiocodes.advisory.Audiocodes(
+                    vulncheck_sdk.aio.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

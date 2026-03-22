@@ -40,7 +40,7 @@ class TestAdvisoryMicrosoftCVRF(unittest.TestCase):
                     ''
                     ],
                 cvrf = vulncheck_sdk.aio.models.advisory/mscvrf.advisory.MSCVRF(
-                    document_title = vulncheck_sdk.aio.models.advisory/ms_document_title.advisory.MSDocumentTitle(
+                    document_title = vulncheck_sdk.aio.models.advisory/i_val.advisory.IVal(
                         value = '', ), 
                     document_tracking = vulncheck_sdk.aio.models.advisory/m_document_tracking.advisory.MDocumentTracking(
                         current_release_date = '', 
@@ -48,8 +48,7 @@ class TestAdvisoryMicrosoftCVRF(unittest.TestCase):
                         identification = vulncheck_sdk.aio.models.advisory/m_identification.advisory.MIdentification(
                             alias = vulncheck_sdk.aio.models.advisory/i_val.advisory.IVal(
                                 value = '', ), 
-                            id = vulncheck_sdk.aio.models.advisory/i_val.advisory.IVal(
-                                value = '', ), ), 
+                            id = , ), 
                         revisionhistory = [
                             vulncheck_sdk.aio.models.advisory/r_revision.advisory.RRevision(
                                 date = '', 

@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryOpenSSHPaginatePagination(unitt
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/open_ssh.advisory.OpenSSH(
+                    vulncheck_sdk.aio.models.advisory/apache_pulsar.advisory.ApachePulsar(
                         affected = '', 
                         cve = [
                             ''

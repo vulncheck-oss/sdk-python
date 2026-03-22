@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryZscalerPaginatePagination(unitt
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/zscaler.advisory.Zscaler(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

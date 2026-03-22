@@ -32,7 +32,7 @@ class PurlBatchVulnFinding(BaseModel):
     """ # noqa: E501
     cves: Optional[List[StrictStr]] = Field(default=None, description="list of associated CVE 's")
     purl: Optional[StrictStr] = Field(default=None, description="the purl, ex. hex/coherence@0.1.2")
-    purl_struct: Optional[PurlPackageURLJSON] = Field(default=None, description="meta-data about the purl")
+    purl_struct: Optional[PurlPackageURLJSON] = None
     research_attributes: Optional[ApiOSSPackageResearchAttributes] = None
     vulnerabilities: Optional[List[ApiOSSPackageVulnerability]] = Field(default=None, description="list of associated vulnerabilities")
     __properties: ClassVar[List[str]] = ["cves", "purl", "purl_struct", "research_attributes", "vulnerabilities"]

@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class AdvisoryCVSSV40(BaseModel):
     """
-    AdvisoryCVSSV40
+    this isn't called baseMetric, because it can contain other metrics -- typically supplemental metrics
     """ # noqa: E501
     automatable: Optional[StrictStr] = Field(default=None, alias="Automatable")
     recovery: Optional[StrictStr] = Field(default=None, alias="Recovery")

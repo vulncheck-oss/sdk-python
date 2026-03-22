@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryWibuPaginatePagination(unittest
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/wibu.advisory.Wibu(
+                    vulncheck_sdk.aio.models.advisory/autodesk.advisory.Autodesk(
                         cve = [
                             ''
                             ], 

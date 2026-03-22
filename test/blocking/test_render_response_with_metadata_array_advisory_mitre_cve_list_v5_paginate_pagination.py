@@ -140,7 +140,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                                     user_interaction = '', 
                                                     vector_string = '', 
                                                     version = '', ), 
-                                                cvss_v3_1 = vulncheck_sdk.models.advisory/m_cvss_v31.advisory.MCvssV31(
+                                                cvss_v3_1 = vulncheck_sdk.models.advisory/m_cvss_v30.advisory.MCvssV30(
                                                     attack_complexity = '', 
                                                     attack_vector = '', 
                                                     availability_impact = '', 
@@ -180,7 +180,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                                     content = vulncheck_sdk.models.content.content(), 
                                                     type = '', ), 
                                                 scenarios = [
-                                                    vulncheck_sdk.models.advisory/metric_scenario.advisory.MetricScenario(
+                                                    vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
                                                         lang = '', 
                                                         value = '', )
                                                     ], )
@@ -188,7 +188,10 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                         problem_types = [
                                             vulncheck_sdk.models.advisory/m_problem_types.advisory.MProblemTypes()
                                             ], 
-                                        provider_metadata = vulncheck_sdk.models.provider_metadata.providerMetadata(), 
+                                        provider_metadata = vulncheck_sdk.models.advisory/m_provider_metadata.advisory.MProviderMetadata(
+                                            date_updated = '', 
+                                            org_id = '', 
+                                            short_name = '', ), 
                                         references = [
                                             vulncheck_sdk.models.advisory/m_reference.advisory.MReference(
                                                 name = '', 
@@ -209,7 +212,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                             nodes = [
                                                 vulncheck_sdk.models.advisory/m_nodes.advisory.MNodes(
                                                     cpe_match = [
-                                                        vulncheck_sdk.models.advisory/mcpe_match.advisory.MCPEMatch(
+                                                        vulncheck_sdk.models.advisory/nvd20_cvecpe_match.advisory.NVD20CVECPEMatch(
                                                             criteria = '', 
                                                             match_criteria_id = '', 
                                                             version_end_excluding = '', 
@@ -229,10 +232,6 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                             type = '', 
                                             value = '', )
                                         ], 
-                                    provider_metadata = vulncheck_sdk.models.advisory/m_provider_metadata.advisory.MProviderMetadata(
-                                        date_updated = '', 
-                                        org_id = '', 
-                                        short_name = '', ), 
                                     timeline = [
                                         vulncheck_sdk.models.advisory/timeline.advisory.Timeline(
                                             lang = '', 

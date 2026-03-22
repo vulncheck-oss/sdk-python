@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryHarmonyOSPaginatePagination(uni
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/harmony_os.advisory.HarmonyOS(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

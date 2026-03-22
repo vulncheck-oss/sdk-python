@@ -78,7 +78,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryHaskellSADBAdvisoryPaginatePagi
                             vulncheck_sdk.aio.models.advisory/haskell_affected.advisory.HaskellAffected(
                                 affected_constraint = '', 
                                 affected_versions = [
-                                    vulncheck_sdk.aio.models.advisory/haskell_version.advisory.HaskellVersion(
+                                    vulncheck_sdk.aio.models.advisory/android_event.advisory.AndroidEvent(
                                         fixed = '', 
                                         introduced = '', )
                                     ], 

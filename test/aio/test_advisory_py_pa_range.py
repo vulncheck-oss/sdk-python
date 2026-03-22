@@ -37,7 +37,7 @@ class TestAdvisoryPyPARange(unittest.TestCase):
         if include_optional:
             return AdvisoryPyPARange(
                 events = [
-                    vulncheck_sdk.aio.models.advisory/py_pa_event.advisory.PyPAEvent(
+                    vulncheck_sdk.aio.models.advisory/android_event.advisory.AndroidEvent(
                         fixed = '', 
                         introduced = '', )
                     ],

@@ -31,7 +31,7 @@ class AdvisoryLolAdvs(BaseModel):
     date_added: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    lol_json: Optional[Dict[str, Dict[str, Any]]] = None
+    lol_json: Optional[Dict[str, Any]] = None
     mitre_id: Optional[StrictStr] = None
     references: Optional[List[StrictStr]] = None
     updated_at: Optional[StrictStr] = None

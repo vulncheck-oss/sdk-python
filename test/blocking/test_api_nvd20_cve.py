@@ -61,7 +61,7 @@ class TestApiNVD20CVE(unittest.TestCase):
                         operator = '', )
                     ],
                 descriptions = [
-                    vulncheck_sdk.models.api/nvd20_description.api.NVD20Description(
+                    vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
                         lang = '', 
                         value = '', )
                     ],
@@ -166,7 +166,7 @@ class TestApiNVD20CVE(unittest.TestCase):
                 weaknesses = [
                     vulncheck_sdk.models.api/nvd20_weakness.api.NVD20Weakness(
                         description = [
-                            vulncheck_sdk.models.api/nvd20_description.api.NVD20Description(
+                            vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
                                 lang = '', 
                                 value = '', )
                             ], 

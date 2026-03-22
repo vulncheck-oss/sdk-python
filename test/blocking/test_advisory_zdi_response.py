@@ -38,7 +38,7 @@ class TestAdvisoryZDIResponse(unittest.TestCase):
             return AdvisoryZDIResponse(
                 text = '',
                 uri = '',
-                vendor = vulncheck_sdk.models.advisory/zdi_response_vendor.advisory.ZDIResponseVendor(
+                vendor = vulncheck_sdk.models.advisory/go_credits.advisory.GoCredits(
                     name = '', )
             )
         else:

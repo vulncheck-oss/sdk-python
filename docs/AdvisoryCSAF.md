@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**document** | [**AdvisoryDocumentMetadata**](AdvisoryDocumentMetadata.md) | Document contains metadata about the CSAF document itself.  https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#321-document-property | [optional] 
+**document** | [**AdvisoryDocumentMetadata**](AdvisoryDocumentMetadata.md) |  | [optional] 
 **notes** | [**List[AdvisoryCSAFNote]**](AdvisoryCSAFNote.md) | Notes holds notes associated with the whole document. https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3217-document-property---notes | [optional] 
-**product_tree** | [**AdvisoryProductBranch**](AdvisoryProductBranch.md) | ProductTree contains information about the product tree (branches only).  https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#322-product-tree-property | [optional] 
+**product_tree** | [**AdvisoryProductBranch**](AdvisoryProductBranch.md) |  | [optional] 
 **vulnerabilities** | [**List[AdvisoryCSAFVulnerability]**](AdvisoryCSAFVulnerability.md) | Vulnerabilities contains information about the vulnerabilities, (i.e. CVEs), associated threats, and product status.  https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#323-vulnerabilities-property | [optional] 
 
 ## Example

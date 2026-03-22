@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryPHPMyAdminPaginatePagination(un
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/phpmy_admin.advisory.PHPMyAdmin(
+                    vulncheck_sdk.aio.models.advisory/binarly.advisory.Binarly(
                         cve = [
                             ''
                             ], 

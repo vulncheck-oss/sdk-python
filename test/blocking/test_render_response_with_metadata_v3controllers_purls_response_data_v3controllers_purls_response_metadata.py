@@ -46,7 +46,17 @@ class TestRenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersP
                             ''
                             ], 
                         purl = '', 
-                        purl_struct = vulncheck_sdk.models.purl_struct.purl_struct(), 
+                        purl_struct = vulncheck_sdk.models.purl/package_urljson.purl.PackageURLJSON(
+                            name = '', 
+                            namespace = '', 
+                            qualifiers = [
+                                vulncheck_sdk.models.purl/qualifier_json.purl.QualifierJSON(
+                                    key = '', 
+                                    value = '', )
+                                ], 
+                            subpath = '', 
+                            type = '', 
+                            version = '', ), 
                         research_attributes = vulncheck_sdk.models.api/oss_package_research_attributes.api.OSSPackageResearchAttributes(
                             abandoned = True, 
                             eol = True, 

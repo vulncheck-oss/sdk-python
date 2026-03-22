@@ -37,7 +37,43 @@ class TestAdvisoryVDEAdvisory(unittest.TestCase):
         if include_optional:
             return AdvisoryVDEAdvisory(
                 csaf_json = vulncheck_sdk.aio.models.advisory/csaf.advisory.CSAF(
-                    document = vulncheck_sdk.aio.models.document.document(), 
+                    document = vulncheck_sdk.aio.models.advisory/document_metadata.advisory.DocumentMetadata(
+                        category = '', 
+                        csaf_version = '', 
+                        distribution = vulncheck_sdk.aio.models.advisory/csaf_distribution.advisory.CSAFDistribution(), 
+                        lang = '', 
+                        notes = [
+                            vulncheck_sdk.aio.models.advisory/csaf_note.advisory.CSAFNote(
+                                audience = '', 
+                                category = '', 
+                                text = '', 
+                                title = '', )
+                            ], 
+                        publisher = vulncheck_sdk.aio.models.advisory/publisher.advisory.Publisher(
+                            category = '', 
+                            contact_details = '', 
+                            issuing_authority = '', 
+                            name = '', 
+                            namespace = '', ), 
+                        references = [
+                            vulncheck_sdk.aio.models.advisory/csaf_reference.advisory.CSAFReference(
+                                category = '', 
+                                summary = '', 
+                                url = '', )
+                            ], 
+                        title = '', 
+                        tracking = vulncheck_sdk.aio.models.advisory/tracking.advisory.Tracking(
+                            current_release_date = '', 
+                            id = '', 
+                            initial_release_date = '', 
+                            revision_history = [
+                                vulncheck_sdk.aio.models.advisory/revision_history.advisory.RevisionHistory(
+                                    date = '', 
+                                    number = '', 
+                                    summary = '', )
+                                ], 
+                            status = '', 
+                            version = '', ), ), 
                     notes = [
                         vulncheck_sdk.aio.models.advisory/csaf_note.advisory.CSAFNote(
                             audience = '', 
@@ -45,7 +81,36 @@ class TestAdvisoryVDEAdvisory(unittest.TestCase):
                             text = '', 
                             title = '', )
                         ], 
-                    product_tree = vulncheck_sdk.aio.models.product_tree.product_tree(), 
+                    product_tree = vulncheck_sdk.aio.models.advisory/product_branch.advisory.ProductBranch(
+                        branches = [
+                            vulncheck_sdk.aio.models.advisory/product_branch.advisory.ProductBranch(
+                                category = '', 
+                                name = '', 
+                                product = vulncheck_sdk.aio.models.advisory/product.advisory.Product(
+                                    name = '', 
+                                    product_id = '', 
+                                    product_identification_helper = {
+                                        'key' : null
+                                        }, ), 
+                                relationships = [
+                                    vulncheck_sdk.aio.models.advisory/csaf_relationship.advisory.CSAFRelationship(
+                                        category = '', 
+                                        full_product_name = vulncheck_sdk.aio.models.advisory/product.advisory.Product(
+                                            name = '', 
+                                            product_id = '', ), 
+                                        product_reference = '', 
+                                        relates_to_product_reference = '', )
+                                    ], )
+                            ], 
+                        category = '', 
+                        name = '', 
+                        product = , 
+                        relationships = [
+                            vulncheck_sdk.aio.models.advisory/csaf_relationship.advisory.CSAFRelationship(
+                                category = '', 
+                                product_reference = '', 
+                                relates_to_product_reference = '', )
+                            ], ), 
                     vulnerabilities = [
                         vulncheck_sdk.aio.models.advisory/csaf_vulnerability.advisory.CSAFVulnerability(
                             cve = '', 
@@ -73,12 +138,6 @@ class TestAdvisoryVDEAdvisory(unittest.TestCase):
                                     ''
                                     ]
                                 }, 
-                            references = [
-                                vulncheck_sdk.aio.models.advisory/csaf_reference.advisory.CSAFReference(
-                                    category = '', 
-                                    summary = '', 
-                                    url = '', )
-                                ], 
                             release_date = '', 
                             remediations = [
                                 vulncheck_sdk.aio.models.advisory/remediation_data.advisory.RemediationData(
@@ -112,7 +171,7 @@ class TestAdvisoryVDEAdvisory(unittest.TestCase):
                                         report_confidence = '', 
                                         target_distribution = '', 
                                         temporal_score = 1.337, ), 
-                                    cvss_v3 = vulncheck_sdk.aio.models.advisory/cvssv3.advisory.CVSSV3(
+                                    cvss_v3 = vulncheck_sdk.aio.models.advisory/m_cvss_v30.advisory.MCvssV30(
                                         attack_complexity = '', 
                                         attack_vector = '', 
                                         availability_impact = '', 

@@ -43,7 +43,7 @@ class TestAdvisoryLolAdvs(unittest.TestCase):
                 description = '',
                 id = '',
                 lol_json = {
-                    'key' : None
+                    'key' : null
                     },
                 mitre_id = '',
                 references = [

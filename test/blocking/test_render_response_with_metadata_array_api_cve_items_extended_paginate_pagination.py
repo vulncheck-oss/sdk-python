@@ -125,7 +125,7 @@ class TestRenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination(u
                             data_version = '', 
                             description = vulncheck_sdk.models.api/description.api.Description(
                                 description_data = [
-                                    vulncheck_sdk.models.api/description_data.api.DescriptionData(
+                                    vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
                                         lang = '', 
                                         value = '', )
                                     ], ), 
@@ -168,7 +168,7 @@ class TestRenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination(u
                                 severity = '', 
                                 user_interaction_required = True, ), 
                             base_metric_v3 = vulncheck_sdk.models.api/base_metric_v3.api.BaseMetricV3(
-                                cvss_v3 = vulncheck_sdk.models.api/cvssv3.api.CVSSV3(
+                                cvss_v3 = vulncheck_sdk.models.advisory/m_cvss_v30.advisory.MCvssV30(
                                     attack_complexity = '', 
                                     attack_vector = '', 
                                     availability_impact = '', 
@@ -276,7 +276,7 @@ class TestRenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination(u
                             ], 
                         published_date = '', 
                         related_attack_patterns = [
-                            vulncheck_sdk.models.api/related_attack_pattern.api.RelatedAttackPattern(
+                            vulncheck_sdk.models.advisory/capec.advisory.Capec(
                                 capec_id = '', 
                                 capec_name = '', 
                                 capec_url = '', 

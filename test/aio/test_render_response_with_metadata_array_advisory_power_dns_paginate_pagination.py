@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryPowerDNSPaginatePagination(unit
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/power_dns.advisory.PowerDNS(
+                    vulncheck_sdk.aio.models.advisory/apache_archiva.advisory.ApacheArchiva(
                         affected = '', 
                         cve = [
                             ''

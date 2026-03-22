@@ -37,7 +37,7 @@ class TestApiProblemTypeDataExtended(unittest.TestCase):
         if include_optional:
             return ApiProblemTypeDataExtended(
                 description = [
-                    vulncheck_sdk.models.api/problem_type_description_extended.api.ProblemTypeDescriptionExtended(
+                    vulncheck_sdk.models.advisory/cwe_data.advisory.CweData(
                         lang = '', 
                         name = '', 
                         url = '', 

@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySandiskPaginatePagination(unitt
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/sandisk.advisory.Sandisk(
+                    vulncheck_sdk.aio.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

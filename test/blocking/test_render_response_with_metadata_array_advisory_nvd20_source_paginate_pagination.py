@@ -83,7 +83,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryNVD20SourcePaginatePagination(u
                         source_identifiers = [
                             ''
                             ], 
-                        v3_acceptance_level = vulncheck_sdk.models.advisory/v3_acceptance_level.advisory.V3AcceptanceLevel(
+                        v3_acceptance_level = vulncheck_sdk.models.advisory/cwe_acceptance_level.advisory.CweAcceptanceLevel(
                             description = '', 
                             last_modified = '', ), )
                     ]

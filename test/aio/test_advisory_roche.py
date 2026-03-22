@@ -41,7 +41,7 @@ class TestAdvisoryRoche(unittest.TestCase):
                     ],
                 date_added = '',
                 roche_cves = [
-                    vulncheck_sdk.aio.models.advisory/roche_cve.advisory.RocheCVE(
+                    vulncheck_sdk.aio.models.advisory/adobe_cve.advisory.AdobeCVE(
                         cve = '', 
                         cvss_score = '', 
                         cvss_vector = '', )

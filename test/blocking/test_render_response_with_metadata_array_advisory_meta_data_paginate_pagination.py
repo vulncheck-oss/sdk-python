@@ -78,15 +78,13 @@ class TestRenderResponseWithMetadataArrayAdvisoryMetaDataPaginatePagination(unit
                                 href = '', 
                                 id = '', 
                                 title = '', ), 
-                            cve = vulncheck_sdk.models.advisory/oval_cve.advisory.OvalCVE(
+                            cve = vulncheck_sdk.models.advisory/bugzilla.advisory.Bugzilla(
                                 href = '', 
                                 id = '', 
                                 title = '', ), 
-                            issued = vulncheck_sdk.models.advisory/issued.advisory.Issued(
-                                date = '', ), 
+                            issued = vulncheck_sdk.models.advisory/csaf_distribution.advisory.CSAFDistribution(), 
                             severity = '', 
-                            updated = vulncheck_sdk.models.advisory/updated.advisory.Updated(
-                                date = '', ), ), 
+                            updated = vulncheck_sdk.models.advisory/csaf_distribution.advisory.CSAFDistribution(), ), 
                         cve = [
                             ''
                             ], 

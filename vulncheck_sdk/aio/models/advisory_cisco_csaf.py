@@ -27,7 +27,7 @@ class AdvisoryCiscoCSAF(BaseModel):
     """
     AdvisoryCiscoCSAF
     """ # noqa: E501
-    csaf: Optional[Dict[str, Any]] = None
+    csaf: Optional[Any] = None
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     identifier: Optional[StrictStr] = None
@@ -75,6 +75,11 @@ class AdvisoryCiscoCSAF(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if csaf (nullable) is None
+        # and model_fields_set contains the field
+        if self.csaf is None and "csaf" in self.model_fields_set:
+            _dict['csaf'] = None
+
         return _dict
 
     @classmethod

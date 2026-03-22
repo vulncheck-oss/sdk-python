@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySECConsultPaginatePagination(un
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/sec_consult.advisory.SECConsult(
+                    vulncheck_sdk.models.advisory/apache_hadoop.advisory.ApacheHadoop(
                         affected = '', 
                         cve = [
                             ''

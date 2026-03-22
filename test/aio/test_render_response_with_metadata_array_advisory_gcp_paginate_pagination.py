@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryGCPPaginatePagination(unittest.
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/gcp.advisory.GCP(
+                    vulncheck_sdk.aio.models.advisory/asterisk.advisory.Asterisk(
                         cve = [
                             ''
                             ], 

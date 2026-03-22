@@ -2145,7 +2145,7 @@ class EndpointsApi:
     @validate_call
     def purls_post(
         self,
-        purls: Annotated[List[StrictStr], Field(description="PURL strings used to identify and locate software packages")],
+        request_body: Annotated[List[StrictStr], Field(description="PURL strings used to identify and locate software packages")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2163,8 +2163,8 @@ class EndpointsApi:
 
         Accepts a JSON array of PURLs in the request body and returns a list of vulnerabilities
 
-        :param purls: PURL strings used to identify and locate software packages (required)
-        :type purls: List[str]
+        :param request_body: PURL strings used to identify and locate software packages (required)
+        :type request_body: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2188,7 +2188,7 @@ class EndpointsApi:
         """ # noqa: E501
 
         _param = self._purls_post_serialize(
-            purls=purls,
+            request_body=request_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2214,7 +2214,7 @@ class EndpointsApi:
     @validate_call
     def purls_post_with_http_info(
         self,
-        purls: Annotated[List[StrictStr], Field(description="PURL strings used to identify and locate software packages")],
+        request_body: Annotated[List[StrictStr], Field(description="PURL strings used to identify and locate software packages")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2232,8 +2232,8 @@ class EndpointsApi:
 
         Accepts a JSON array of PURLs in the request body and returns a list of vulnerabilities
 
-        :param purls: PURL strings used to identify and locate software packages (required)
-        :type purls: List[str]
+        :param request_body: PURL strings used to identify and locate software packages (required)
+        :type request_body: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2257,7 +2257,7 @@ class EndpointsApi:
         """ # noqa: E501
 
         _param = self._purls_post_serialize(
-            purls=purls,
+            request_body=request_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2283,7 +2283,7 @@ class EndpointsApi:
     @validate_call
     def purls_post_without_preload_content(
         self,
-        purls: Annotated[List[StrictStr], Field(description="PURL strings used to identify and locate software packages")],
+        request_body: Annotated[List[StrictStr], Field(description="PURL strings used to identify and locate software packages")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2301,8 +2301,8 @@ class EndpointsApi:
 
         Accepts a JSON array of PURLs in the request body and returns a list of vulnerabilities
 
-        :param purls: PURL strings used to identify and locate software packages (required)
-        :type purls: List[str]
+        :param request_body: PURL strings used to identify and locate software packages (required)
+        :type request_body: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2326,7 +2326,7 @@ class EndpointsApi:
         """ # noqa: E501
 
         _param = self._purls_post_serialize(
-            purls=purls,
+            request_body=request_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2347,7 +2347,7 @@ class EndpointsApi:
 
     def _purls_post_serialize(
         self,
-        purls,
+        request_body,
         _request_auth,
         _content_type,
         _headers,
@@ -2357,7 +2357,7 @@ class EndpointsApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'purls': '',
+            'request_body': '',
         }
 
         _path_params: Dict[str, str] = {}
@@ -2374,8 +2374,8 @@ class EndpointsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if purls is not None:
-            _body_params = purls
+        if request_body is not None:
+            _body_params = request_body
 
 
         # set the HTTP header `Accept`
@@ -2386,6 +2386,19 @@ class EndpointsApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [

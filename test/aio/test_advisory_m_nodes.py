@@ -37,7 +37,7 @@ class TestAdvisoryMNodes(unittest.TestCase):
         if include_optional:
             return AdvisoryMNodes(
                 cpe_match = [
-                    vulncheck_sdk.aio.models.advisory/mcpe_match.advisory.MCPEMatch(
+                    vulncheck_sdk.aio.models.advisory/nvd20_cvecpe_match.advisory.NVD20CVECPEMatch(
                         criteria = '', 
                         match_criteria_id = '', 
                         version_end_excluding = '', 

@@ -79,12 +79,11 @@ class TestRenderResponseWithMetadataArrayApiUpdatePaginatePagination(unittest.Te
                         date_added = '', 
                         description = '', 
                         id = '', 
-                        issued = vulncheck_sdk.models.api/date_time.api.DateTime(
-                            date = '', ), 
+                        issued = vulncheck_sdk.models.advisory/csaf_distribution.advisory.CSAFDistribution(), 
                         os_arch = '', 
                         os_version = '', 
                         packages = [
-                            vulncheck_sdk.models.api/package.api.Package(
+                            vulncheck_sdk.models.advisory/package.advisory.Package(
                                 filename = '', 
                                 name = '', 
                                 release = '', 
@@ -92,7 +91,7 @@ class TestRenderResponseWithMetadataArrayApiUpdatePaginatePagination(unittest.Te
                                 version = '', )
                             ], 
                         references = [
-                            vulncheck_sdk.models.api/reference.api.Reference(
+                            vulncheck_sdk.models.advisory/reference.advisory.Reference(
                                 href = '', 
                                 id = '', 
                                 title = '', 
@@ -101,8 +100,7 @@ class TestRenderResponseWithMetadataArrayApiUpdatePaginatePagination(unittest.Te
                         severity = '', 
                         title = '', 
                         type = '', 
-                        updated = vulncheck_sdk.models.api/date_time.api.DateTime(
-                            date = '', ), )
+                        updated = vulncheck_sdk.models.advisory/csaf_distribution.advisory.CSAFDistribution(), )
                     ]
             )
         else:

@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheOpenOfficePaginatePaginat
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/apache_open_office.advisory.ApacheOpenOffice(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

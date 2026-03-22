@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySafranPaginatePagination(unitte
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/safran.advisory.Safran(
+                    vulncheck_sdk.aio.models.advisory/apache_http.advisory.ApacheHTTP(
                         cve = [
                             ''
                             ], 

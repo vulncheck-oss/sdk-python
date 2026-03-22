@@ -98,7 +98,7 @@ class TestRenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination(unittest.
                                 operator = '', )
                             ], 
                         descriptions = [
-                            vulncheck_sdk.aio.models.api/nvd20_description.api.NVD20Description(
+                            vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
                                 lang = '', 
                                 value = '', )
                             ], 
@@ -188,7 +188,7 @@ class TestRenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination(unittest.
                         weaknesses = [
                             vulncheck_sdk.aio.models.api/nvd20_weakness.api.NVD20Weakness(
                                 description = [
-                                    vulncheck_sdk.aio.models.api/nvd20_description.api.NVD20Description(
+                                    vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
                                         lang = '', 
                                         value = '', )
                                     ], 

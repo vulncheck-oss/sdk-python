@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryWiresharkPaginatePagination(uni
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/wireshark.advisory.Wireshark(
+                    vulncheck_sdk.aio.models.advisory/revive.advisory.Revive(
                         affected = '', 
                         cve = [
                             ''

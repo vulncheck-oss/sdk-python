@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryPTCPaginatePagination(unittest.
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/ptc.advisory.PTC(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

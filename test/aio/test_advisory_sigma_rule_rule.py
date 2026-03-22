@@ -39,7 +39,9 @@ class TestAdvisorySigmaRuleRule(unittest.TestCase):
                 author = '',
                 var_date = '',
                 description = '',
-                detection = { },
+                detection = {
+                    'key' : null
+                    },
                 false_positives = [
                     ''
                     ],

@@ -69,7 +69,7 @@ class TestApiNVD20CVEExtended(unittest.TestCase):
                     ],
                 date_added = '',
                 descriptions = [
-                    vulncheck_sdk.models.api/nvd20_description.api.NVD20Description(
+                    vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
                         lang = '', 
                         value = '', )
                     ],
@@ -188,10 +188,7 @@ class TestApiNVD20CVEExtended(unittest.TestCase):
                         
                         ], 
                     threat_cvssv40 = vulncheck_sdk.models.api/nvd20_threat_cvssv40.api.NVD20ThreatCVSSV40(
-                        associated_base_metric_v40 = vulncheck_sdk.models.api/nvd20_threat_associated_base_metric.api.NVD20ThreatAssociatedBaseMetric(
-                            base_score = 1.337, 
-                            source = '', 
-                            type = '', ), 
+                        associated_base_metric_v40 = , 
                         base_threat_score = 1.337, 
                         base_threat_severity = '', 
                         exploit_maturity = '', ), 
@@ -251,7 +248,7 @@ class TestApiNVD20CVEExtended(unittest.TestCase):
                         url = '', )
                     ],
                 related_attack_patterns = [
-                    vulncheck_sdk.models.api/related_attack_pattern.api.RelatedAttackPattern(
+                    vulncheck_sdk.models.advisory/capec.advisory.Capec(
                         capec_id = '', 
                         capec_name = '', 
                         capec_url = '', 
@@ -295,7 +292,7 @@ class TestApiNVD20CVEExtended(unittest.TestCase):
                 weaknesses = [
                     vulncheck_sdk.models.api/nvd20_weakness_extended.api.NVD20WeaknessExtended(
                         description = [
-                            vulncheck_sdk.models.api/nvd20_weakness_desc_extended.api.NVD20WeaknessDescExtended(
+                            vulncheck_sdk.models.advisory/cwe_data.advisory.CweData(
                                 lang = '', 
                                 name = '', 
                                 url = '', 

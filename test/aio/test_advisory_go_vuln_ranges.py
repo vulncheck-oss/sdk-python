@@ -37,7 +37,7 @@ class TestAdvisoryGoVulnRanges(unittest.TestCase):
         if include_optional:
             return AdvisoryGoVulnRanges(
                 events = [
-                    vulncheck_sdk.aio.models.advisory/go_event.advisory.GoEvent(
+                    vulncheck_sdk.aio.models.advisory/android_event.advisory.AndroidEvent(
                         fixed = '', 
                         introduced = '', )
                     ],

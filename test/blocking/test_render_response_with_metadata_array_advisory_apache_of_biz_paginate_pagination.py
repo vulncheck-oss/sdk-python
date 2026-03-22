@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheOFBizPaginatePagination(u
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/apache_of_biz.advisory.ApacheOFBiz(
+                    vulncheck_sdk.models.advisory/apache_flink.advisory.ApacheFlink(
                         affected = '', 
                         cve = [
                             ''

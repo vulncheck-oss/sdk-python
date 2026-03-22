@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryProgressPaginatePagination(unit
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/progress.advisory.Progress(
+                    vulncheck_sdk.aio.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

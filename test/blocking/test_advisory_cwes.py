@@ -37,13 +37,8 @@ class TestAdvisoryCwes(unittest.TestCase):
         if include_optional:
             return AdvisoryCwes(
                 nodes = [
-                    vulncheck_sdk.models.advisory/cwe_node.advisory.CWENode(
-                        cweid = '', 
-                        description = '', 
-                        id = '', 
-                        name = '', )
-                    ],
-                total_count = 56
+                    vulncheck_sdk.models.advisory/csaf_distribution.advisory.CSAFDistribution()
+                    ]
             )
         else:
             return AdvisoryCwes(

@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryNotePadPlusPlusPaginatePaginati
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/note_pad_plus_plus.advisory.NotePadPlusPlus(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

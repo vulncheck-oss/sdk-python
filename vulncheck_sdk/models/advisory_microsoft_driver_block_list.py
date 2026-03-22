@@ -30,7 +30,7 @@ class AdvisoryMicrosoftDriverBlockList(BaseModel):
     """ # noqa: E501
     date_added: Optional[StrictStr] = None
     file_id: Optional[StrictStr] = Field(default=None, description="From FileAttrib or Deny")
-    file_metadata: Optional[AdvisoryMicrosoftFileMetadata] = Field(default=None, description="File-level metadata")
+    file_metadata: Optional[AdvisoryMicrosoftFileMetadata] = None
     __properties: ClassVar[List[str]] = ["date_added", "file_id", "file_metadata"]
 
     model_config = ConfigDict(

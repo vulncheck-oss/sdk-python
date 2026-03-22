@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryIvantiRSSPaginatePagination(uni
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/ivanti_rss.advisory.IvantiRSS(
+                    vulncheck_sdk.aio.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

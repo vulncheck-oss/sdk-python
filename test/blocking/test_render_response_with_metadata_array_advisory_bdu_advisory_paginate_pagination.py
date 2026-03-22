@@ -81,7 +81,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryBDUAdvisoryPaginatePagination(u
                             vector = vulncheck_sdk.models.advisory/bdu_vector.advisory.BDUVector(
                                 score = '', 
                                 text = '', ), ), 
-                        cvss3 = vulncheck_sdk.models.advisory/bdu_cvss3.advisory.BDUCvss3(), 
+                        cvss3 = vulncheck_sdk.models.advisory/bdu_cvss.advisory.BDUCvss(), 
                         cwe = '', 
                         date_added = '', 
                         description_ru = '', 

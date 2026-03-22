@@ -56,7 +56,7 @@ class TestApiImpact(unittest.TestCase):
                     severity = '', 
                     user_interaction_required = True, ),
                 base_metric_v3 = vulncheck_sdk.models.api/base_metric_v3.api.BaseMetricV3(
-                    cvss_v3 = vulncheck_sdk.models.api/cvssv3.api.CVSSV3(
+                    cvss_v3 = vulncheck_sdk.models.advisory/m_cvss_v30.advisory.MCvssV30(
                         attack_complexity = '', 
                         attack_vector = '', 
                         availability_impact = '', 

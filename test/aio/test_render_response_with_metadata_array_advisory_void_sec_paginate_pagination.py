@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryVoidSecPaginatePagination(unitt
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/void_sec.advisory.VoidSec(
+                    vulncheck_sdk.aio.models.advisory/apache_commons.advisory.ApacheCommons(
                         cve = [
                             ''
                             ], 

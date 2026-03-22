@@ -40,7 +40,7 @@ class AdvisoryADPContainer(BaseModel):
     impacts: Optional[List[AdvisoryImpact]] = Field(default=None, description="OK")
     metrics: Optional[List[AdvisoryMetric]] = Field(default=None, description="OK")
     problem_types: Optional[List[AdvisoryMProblemTypes]] = Field(default=None, description="OK", alias="problemTypes")
-    provider_metadata: Optional[AdvisoryMProviderMetadata] = Field(default=None, description="OK", alias="providerMetadata")
+    provider_metadata: Optional[AdvisoryMProviderMetadata] = Field(default=None, alias="providerMetadata")
     references: Optional[List[AdvisoryMReference]] = None
     tags: Optional[List[StrictStr]] = Field(default=None, description="OK")
     title: Optional[StrictStr] = Field(default=None, description="OK")

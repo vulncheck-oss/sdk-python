@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryGigabytePaginatePagination(unit
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/gigabyte.advisory.Gigabyte(
+                    vulncheck_sdk.aio.models.advisory/dragos_advisory.advisory.DragosAdvisory(
                         cve = [
                             ''
                             ], 

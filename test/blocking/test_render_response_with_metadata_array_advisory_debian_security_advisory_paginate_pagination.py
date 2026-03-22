@@ -74,7 +74,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryDebianSecurityAdvisoryPaginateP
                 data = [
                     vulncheck_sdk.models.advisory/debian_security_advisory.advisory.DebianSecurityAdvisory(
                         affected_packages = [
-                            vulncheck_sdk.models.advisory/affected_debian_package.advisory.AffectedDebianPackage(
+                            vulncheck_sdk.models.advisory/vulnerable_product.advisory.VulnerableProduct(
                                 name = '', 
                                 version = '', )
                             ], 

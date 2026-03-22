@@ -43,7 +43,7 @@ class TestAdvisoryDell(unittest.TestCase):
                     ],
                 date_added = '',
                 dell_cves = [
-                    vulncheck_sdk.aio.models.advisory/dell_cve.advisory.DellCVE(
+                    vulncheck_sdk.aio.models.advisory/adobe_cve.advisory.AdobeCVE(
                         cve = '', 
                         cvss_score = '', 
                         cvss_vector = '', )

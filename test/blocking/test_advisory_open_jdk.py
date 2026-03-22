@@ -41,7 +41,7 @@ class TestAdvisoryOpenJDK(unittest.TestCase):
                     ],
                 date_added = '',
                 openjdk_cves = [
-                    vulncheck_sdk.models.advisory/open_jdkcve.advisory.OpenJDKCVE(
+                    vulncheck_sdk.models.advisory/adobe_cve.advisory.AdobeCVE(
                         cve = '', 
                         cvss_score = '', 
                         cvss_vector = '', )

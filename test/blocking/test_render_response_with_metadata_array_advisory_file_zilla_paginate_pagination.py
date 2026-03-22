@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryFileZillaPaginatePagination(uni
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/file_zilla.advisory.FileZilla(
+                    vulncheck_sdk.models.advisory/aws.advisory.AWS(
                         cve = [
                             ''
                             ], 

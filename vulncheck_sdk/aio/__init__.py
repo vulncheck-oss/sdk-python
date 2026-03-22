@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.41"
+__version__ = "0.0.42"
 
 # Define package exports
 __all__ = [
@@ -176,13 +176,11 @@ __all__ = [
     "AdvisoryCVEDetail",
     "AdvisoryCVEDetailsLink",
     "AdvisoryCVEReference",
-    "AdvisoryCVRFReference",
     "AdvisoryCVSS",
     "AdvisoryCVSSV2",
     "AdvisoryCVSSV3",
     "AdvisoryCVSSV40",
     "AdvisoryCVSSV40Threat",
-    "AdvisoryCWENode",
     "AdvisoryCanvasExploit",
     "AdvisoryCapec",
     "AdvisoryCarestreamAdvisory",
@@ -242,7 +240,6 @@ __all__ = [
     "AdvisoryDanFossCVEDetails",
     "AdvisoryDanfoss",
     "AdvisoryDassault",
-    "AdvisoryDateTime",
     "AdvisoryDebianCVE",
     "AdvisoryDebianSecurityAdvisory",
     "AdvisoryDell",
@@ -252,9 +249,7 @@ __all__ = [
     "AdvisoryDistroVersion",
     "AdvisoryDjango",
     "AdvisoryDocumentMetadata",
-    "AdvisoryDocumentNote",
     "AdvisoryDocumentPublisher",
-    "AdvisoryDocumentTracking",
     "AdvisoryDotCMS",
     "AdvisoryDragosAdvisory",
     "AdvisoryDraytek",
@@ -369,7 +364,6 @@ __all__ = [
     "AdvisoryIpIntelRecord",
     "AdvisoryIsraeliAlert",
     "AdvisoryIsraeliVulnerability",
-    "AdvisoryIssued",
     "AdvisoryIstio",
     "AdvisoryIvanti",
     "AdvisoryIvantiRSS",
@@ -550,7 +544,6 @@ __all__ = [
     "AdvisoryProduct",
     "AdvisoryProductBranch",
     "AdvisoryProductSpecificDetail",
-    "AdvisoryProductTree",
     "AdvisoryProductsAffected",
     "AdvisoryProgress",
     "AdvisoryProofpoint",
@@ -580,12 +573,10 @@ __all__ = [
     "AdvisoryRedhatCVE",
     "AdvisoryReference",
     "AdvisoryRelatedRule",
-    "AdvisoryRelationship",
     "AdvisoryRemediationData",
     "AdvisoryRenesas",
     "AdvisoryReportedExploit",
     "AdvisoryRestartData",
-    "AdvisoryRevision",
     "AdvisoryRevisionHistory",
     "AdvisoryRevive",
     "AdvisoryRhelCVE",
@@ -619,7 +610,6 @@ __all__ = [
     "AdvisorySchneiderCVE",
     "AdvisorySchneiderElectricAdvisory",
     "AdvisorySchutzwerk",
-    "AdvisoryScoreSet",
     "AdvisorySecFix",
     "AdvisorySecurityBulletin",
     "AdvisorySecurityLab",
@@ -671,7 +661,6 @@ __all__ = [
     "AdvisorySplunk",
     "AdvisorySplunkProduct",
     "AdvisorySpring",
-    "AdvisoryStatus",
     "AdvisoryStormshield",
     "AdvisoryStrykerAdvisory",
     "AdvisorySudo",
@@ -693,7 +682,6 @@ __all__ = [
     "AdvisoryThales",
     "AdvisoryTheMissingLink",
     "AdvisoryThermoFisher",
-    "AdvisoryThreat",
     "AdvisoryThreatActorWithExternalObjects",
     "AdvisoryThreatData",
     "AdvisoryTibco",
@@ -714,7 +702,6 @@ __all__ = [
     "AdvisoryUnify",
     "AdvisoryUnisoc",
     "AdvisoryUpdate",
-    "AdvisoryUpdated",
     "AdvisoryV3AcceptanceLevel",
     "AdvisoryVCCPEDictionary",
     "AdvisoryVCVulnerableCPEs",
@@ -736,7 +723,6 @@ __all__ = [
     "AdvisoryVulnCheckConfig",
     "AdvisoryVulnCheckKEV",
     "AdvisoryVulnCheckPackage",
-    "AdvisoryVulnerability",
     "AdvisoryVulnerableDebianPackage",
     "AdvisoryVulnerableProduct",
     "AdvisoryVulnrichment",
@@ -796,7 +782,6 @@ __all__ = [
     "ApiConfigurations",
     "ApiCveItems",
     "ApiCveItemsExtended",
-    "ApiDateTime",
     "ApiDescription",
     "ApiDescriptionData",
     "ApiEPSS",
@@ -1520,13 +1505,11 @@ from vulncheck_sdk.aio.models.advisory_csaf_vulnerability import AdvisoryCSAFVul
 from vulncheck_sdk.aio.models.advisory_cve_detail import AdvisoryCVEDetail as AdvisoryCVEDetail
 from vulncheck_sdk.aio.models.advisory_cve_details_link import AdvisoryCVEDetailsLink as AdvisoryCVEDetailsLink
 from vulncheck_sdk.aio.models.advisory_cve_reference import AdvisoryCVEReference as AdvisoryCVEReference
-from vulncheck_sdk.aio.models.advisory_cvrf_reference import AdvisoryCVRFReference as AdvisoryCVRFReference
 from vulncheck_sdk.aio.models.advisory_cvss import AdvisoryCVSS as AdvisoryCVSS
 from vulncheck_sdk.aio.models.advisory_cvssv2 import AdvisoryCVSSV2 as AdvisoryCVSSV2
 from vulncheck_sdk.aio.models.advisory_cvssv3 import AdvisoryCVSSV3 as AdvisoryCVSSV3
 from vulncheck_sdk.aio.models.advisory_cvssv40 import AdvisoryCVSSV40 as AdvisoryCVSSV40
 from vulncheck_sdk.aio.models.advisory_cvssv40_threat import AdvisoryCVSSV40Threat as AdvisoryCVSSV40Threat
-from vulncheck_sdk.aio.models.advisory_cwe_node import AdvisoryCWENode as AdvisoryCWENode
 from vulncheck_sdk.aio.models.advisory_canvas_exploit import AdvisoryCanvasExploit as AdvisoryCanvasExploit
 from vulncheck_sdk.aio.models.advisory_capec import AdvisoryCapec as AdvisoryCapec
 from vulncheck_sdk.aio.models.advisory_carestream_advisory import AdvisoryCarestreamAdvisory as AdvisoryCarestreamAdvisory
@@ -1586,7 +1569,6 @@ from vulncheck_sdk.aio.models.advisory_dahua import AdvisoryDahua as AdvisoryDah
 from vulncheck_sdk.aio.models.advisory_dan_foss_cve_details import AdvisoryDanFossCVEDetails as AdvisoryDanFossCVEDetails
 from vulncheck_sdk.aio.models.advisory_danfoss import AdvisoryDanfoss as AdvisoryDanfoss
 from vulncheck_sdk.aio.models.advisory_dassault import AdvisoryDassault as AdvisoryDassault
-from vulncheck_sdk.aio.models.advisory_date_time import AdvisoryDateTime as AdvisoryDateTime
 from vulncheck_sdk.aio.models.advisory_debian_cve import AdvisoryDebianCVE as AdvisoryDebianCVE
 from vulncheck_sdk.aio.models.advisory_debian_security_advisory import AdvisoryDebianSecurityAdvisory as AdvisoryDebianSecurityAdvisory
 from vulncheck_sdk.aio.models.advisory_dell import AdvisoryDell as AdvisoryDell
@@ -1596,9 +1578,7 @@ from vulncheck_sdk.aio.models.advisory_distro_package import AdvisoryDistroPacka
 from vulncheck_sdk.aio.models.advisory_distro_version import AdvisoryDistroVersion as AdvisoryDistroVersion
 from vulncheck_sdk.aio.models.advisory_django import AdvisoryDjango as AdvisoryDjango
 from vulncheck_sdk.aio.models.advisory_document_metadata import AdvisoryDocumentMetadata as AdvisoryDocumentMetadata
-from vulncheck_sdk.aio.models.advisory_document_note import AdvisoryDocumentNote as AdvisoryDocumentNote
 from vulncheck_sdk.aio.models.advisory_document_publisher import AdvisoryDocumentPublisher as AdvisoryDocumentPublisher
-from vulncheck_sdk.aio.models.advisory_document_tracking import AdvisoryDocumentTracking as AdvisoryDocumentTracking
 from vulncheck_sdk.aio.models.advisory_dot_cms import AdvisoryDotCMS as AdvisoryDotCMS
 from vulncheck_sdk.aio.models.advisory_dragos_advisory import AdvisoryDragosAdvisory as AdvisoryDragosAdvisory
 from vulncheck_sdk.aio.models.advisory_draytek import AdvisoryDraytek as AdvisoryDraytek
@@ -1713,7 +1693,6 @@ from vulncheck_sdk.aio.models.advisory_intel import AdvisoryIntel as AdvisoryInt
 from vulncheck_sdk.aio.models.advisory_ip_intel_record import AdvisoryIpIntelRecord as AdvisoryIpIntelRecord
 from vulncheck_sdk.aio.models.advisory_israeli_alert import AdvisoryIsraeliAlert as AdvisoryIsraeliAlert
 from vulncheck_sdk.aio.models.advisory_israeli_vulnerability import AdvisoryIsraeliVulnerability as AdvisoryIsraeliVulnerability
-from vulncheck_sdk.aio.models.advisory_issued import AdvisoryIssued as AdvisoryIssued
 from vulncheck_sdk.aio.models.advisory_istio import AdvisoryIstio as AdvisoryIstio
 from vulncheck_sdk.aio.models.advisory_ivanti import AdvisoryIvanti as AdvisoryIvanti
 from vulncheck_sdk.aio.models.advisory_ivanti_rss import AdvisoryIvantiRSS as AdvisoryIvantiRSS
@@ -1894,7 +1873,6 @@ from vulncheck_sdk.aio.models.advisory_prime_version import AdvisoryPrimeVersion
 from vulncheck_sdk.aio.models.advisory_product import AdvisoryProduct as AdvisoryProduct
 from vulncheck_sdk.aio.models.advisory_product_branch import AdvisoryProductBranch as AdvisoryProductBranch
 from vulncheck_sdk.aio.models.advisory_product_specific_detail import AdvisoryProductSpecificDetail as AdvisoryProductSpecificDetail
-from vulncheck_sdk.aio.models.advisory_product_tree import AdvisoryProductTree as AdvisoryProductTree
 from vulncheck_sdk.aio.models.advisory_products_affected import AdvisoryProductsAffected as AdvisoryProductsAffected
 from vulncheck_sdk.aio.models.advisory_progress import AdvisoryProgress as AdvisoryProgress
 from vulncheck_sdk.aio.models.advisory_proofpoint import AdvisoryProofpoint as AdvisoryProofpoint
@@ -1924,12 +1902,10 @@ from vulncheck_sdk.aio.models.advisory_red_lion import AdvisoryRedLion as Adviso
 from vulncheck_sdk.aio.models.advisory_redhat_cve import AdvisoryRedhatCVE as AdvisoryRedhatCVE
 from vulncheck_sdk.aio.models.advisory_reference import AdvisoryReference as AdvisoryReference
 from vulncheck_sdk.aio.models.advisory_related_rule import AdvisoryRelatedRule as AdvisoryRelatedRule
-from vulncheck_sdk.aio.models.advisory_relationship import AdvisoryRelationship as AdvisoryRelationship
 from vulncheck_sdk.aio.models.advisory_remediation_data import AdvisoryRemediationData as AdvisoryRemediationData
 from vulncheck_sdk.aio.models.advisory_renesas import AdvisoryRenesas as AdvisoryRenesas
 from vulncheck_sdk.aio.models.advisory_reported_exploit import AdvisoryReportedExploit as AdvisoryReportedExploit
 from vulncheck_sdk.aio.models.advisory_restart_data import AdvisoryRestartData as AdvisoryRestartData
-from vulncheck_sdk.aio.models.advisory_revision import AdvisoryRevision as AdvisoryRevision
 from vulncheck_sdk.aio.models.advisory_revision_history import AdvisoryRevisionHistory as AdvisoryRevisionHistory
 from vulncheck_sdk.aio.models.advisory_revive import AdvisoryRevive as AdvisoryRevive
 from vulncheck_sdk.aio.models.advisory_rhel_cve import AdvisoryRhelCVE as AdvisoryRhelCVE
@@ -1963,7 +1939,6 @@ from vulncheck_sdk.aio.models.advisory_sans_dshield import AdvisorySansDshield a
 from vulncheck_sdk.aio.models.advisory_schneider_cve import AdvisorySchneiderCVE as AdvisorySchneiderCVE
 from vulncheck_sdk.aio.models.advisory_schneider_electric_advisory import AdvisorySchneiderElectricAdvisory as AdvisorySchneiderElectricAdvisory
 from vulncheck_sdk.aio.models.advisory_schutzwerk import AdvisorySchutzwerk as AdvisorySchutzwerk
-from vulncheck_sdk.aio.models.advisory_score_set import AdvisoryScoreSet as AdvisoryScoreSet
 from vulncheck_sdk.aio.models.advisory_sec_fix import AdvisorySecFix as AdvisorySecFix
 from vulncheck_sdk.aio.models.advisory_security_bulletin import AdvisorySecurityBulletin as AdvisorySecurityBulletin
 from vulncheck_sdk.aio.models.advisory_security_lab import AdvisorySecurityLab as AdvisorySecurityLab
@@ -2015,7 +1990,6 @@ from vulncheck_sdk.aio.models.advisory_spacelabs_healthcare_advisory import Advi
 from vulncheck_sdk.aio.models.advisory_splunk import AdvisorySplunk as AdvisorySplunk
 from vulncheck_sdk.aio.models.advisory_splunk_product import AdvisorySplunkProduct as AdvisorySplunkProduct
 from vulncheck_sdk.aio.models.advisory_spring import AdvisorySpring as AdvisorySpring
-from vulncheck_sdk.aio.models.advisory_status import AdvisoryStatus as AdvisoryStatus
 from vulncheck_sdk.aio.models.advisory_stormshield import AdvisoryStormshield as AdvisoryStormshield
 from vulncheck_sdk.aio.models.advisory_stryker_advisory import AdvisoryStrykerAdvisory as AdvisoryStrykerAdvisory
 from vulncheck_sdk.aio.models.advisory_sudo import AdvisorySudo as AdvisorySudo
@@ -2037,7 +2011,6 @@ from vulncheck_sdk.aio.models.advisory_tencent import AdvisoryTencent as Advisor
 from vulncheck_sdk.aio.models.advisory_thales import AdvisoryThales as AdvisoryThales
 from vulncheck_sdk.aio.models.advisory_the_missing_link import AdvisoryTheMissingLink as AdvisoryTheMissingLink
 from vulncheck_sdk.aio.models.advisory_thermo_fisher import AdvisoryThermoFisher as AdvisoryThermoFisher
-from vulncheck_sdk.aio.models.advisory_threat import AdvisoryThreat as AdvisoryThreat
 from vulncheck_sdk.aio.models.advisory_threat_actor_with_external_objects import AdvisoryThreatActorWithExternalObjects as AdvisoryThreatActorWithExternalObjects
 from vulncheck_sdk.aio.models.advisory_threat_data import AdvisoryThreatData as AdvisoryThreatData
 from vulncheck_sdk.aio.models.advisory_tibco import AdvisoryTibco as AdvisoryTibco
@@ -2058,7 +2031,6 @@ from vulncheck_sdk.aio.models.advisory_ubuntu_package_release_status import Advi
 from vulncheck_sdk.aio.models.advisory_unify import AdvisoryUnify as AdvisoryUnify
 from vulncheck_sdk.aio.models.advisory_unisoc import AdvisoryUnisoc as AdvisoryUnisoc
 from vulncheck_sdk.aio.models.advisory_update import AdvisoryUpdate as AdvisoryUpdate
-from vulncheck_sdk.aio.models.advisory_updated import AdvisoryUpdated as AdvisoryUpdated
 from vulncheck_sdk.aio.models.advisory_v3_acceptance_level import AdvisoryV3AcceptanceLevel as AdvisoryV3AcceptanceLevel
 from vulncheck_sdk.aio.models.advisory_vccpe_dictionary import AdvisoryVCCPEDictionary as AdvisoryVCCPEDictionary
 from vulncheck_sdk.aio.models.advisory_vc_vulnerable_cpes import AdvisoryVCVulnerableCPEs as AdvisoryVCVulnerableCPEs
@@ -2080,7 +2052,6 @@ from vulncheck_sdk.aio.models.advisory_vuln_check_cve_list_v5 import AdvisoryVul
 from vulncheck_sdk.aio.models.advisory_vuln_check_config import AdvisoryVulnCheckConfig as AdvisoryVulnCheckConfig
 from vulncheck_sdk.aio.models.advisory_vuln_check_kev import AdvisoryVulnCheckKEV as AdvisoryVulnCheckKEV
 from vulncheck_sdk.aio.models.advisory_vuln_check_package import AdvisoryVulnCheckPackage as AdvisoryVulnCheckPackage
-from vulncheck_sdk.aio.models.advisory_vulnerability import AdvisoryVulnerability as AdvisoryVulnerability
 from vulncheck_sdk.aio.models.advisory_vulnerable_debian_package import AdvisoryVulnerableDebianPackage as AdvisoryVulnerableDebianPackage
 from vulncheck_sdk.aio.models.advisory_vulnerable_product import AdvisoryVulnerableProduct as AdvisoryVulnerableProduct
 from vulncheck_sdk.aio.models.advisory_vulnrichment import AdvisoryVulnrichment as AdvisoryVulnrichment
@@ -2140,7 +2111,6 @@ from vulncheck_sdk.aio.models.api_client_fingerprints import ApiClientFingerprin
 from vulncheck_sdk.aio.models.api_configurations import ApiConfigurations as ApiConfigurations
 from vulncheck_sdk.aio.models.api_cve_items import ApiCveItems as ApiCveItems
 from vulncheck_sdk.aio.models.api_cve_items_extended import ApiCveItemsExtended as ApiCveItemsExtended
-from vulncheck_sdk.aio.models.api_date_time import ApiDateTime as ApiDateTime
 from vulncheck_sdk.aio.models.api_description import ApiDescription as ApiDescription
 from vulncheck_sdk.aio.models.api_description_data import ApiDescriptionData as ApiDescriptionData
 from vulncheck_sdk.aio.models.api_epss import ApiEPSS as ApiEPSS

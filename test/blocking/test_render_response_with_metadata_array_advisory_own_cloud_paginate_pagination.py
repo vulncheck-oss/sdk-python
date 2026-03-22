@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryOwnCloudPaginatePagination(unit
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/own_cloud.advisory.OwnCloud(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

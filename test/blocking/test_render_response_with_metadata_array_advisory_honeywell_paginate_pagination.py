@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryHoneywellPaginatePagination(uni
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/honeywell.advisory.Honeywell(
+                    vulncheck_sdk.models.advisory/appgate.advisory.Appgate(
                         cve = [
                             ''
                             ], 

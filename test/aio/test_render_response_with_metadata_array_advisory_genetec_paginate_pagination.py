@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryGenetecPaginatePagination(unitt
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.advisory/genetec.advisory.Genetec(
+                    vulncheck_sdk.aio.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 

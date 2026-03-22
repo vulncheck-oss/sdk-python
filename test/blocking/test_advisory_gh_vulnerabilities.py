@@ -38,7 +38,7 @@ class TestAdvisoryGHVulnerabilities(unittest.TestCase):
             return AdvisoryGHVulnerabilities(
                 nodes = [
                     vulncheck_sdk.models.advisory/gh_node.advisory.GHNode(
-                        package = vulncheck_sdk.models.advisory/gh_package.advisory.GHPackage(
+                        package = vulncheck_sdk.models.advisory/android_package.advisory.AndroidPackage(
                             ecosystem = '', 
                             name = '', ), 
                         severity = '', 

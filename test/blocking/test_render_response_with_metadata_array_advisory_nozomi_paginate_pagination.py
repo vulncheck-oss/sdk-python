@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryNozomiPaginatePagination(unitte
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/nozomi.advisory.Nozomi(
+                    vulncheck_sdk.models.advisory/glibc.advisory.Glibc(
                         affected = '', 
                         cve = [
                             ''

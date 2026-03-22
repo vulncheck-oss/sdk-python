@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryLinuxPaginatePagination(unittes
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/linux.advisory.Linux(
+                    vulncheck_sdk.models.advisory/aleph_research.advisory.AlephResearch(
                         cve = [
                             ''
                             ], 
