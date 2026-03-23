@@ -1,5 +1,6 @@
 # AdvisorySel
 
+advisory.Sel
 
 ## Properties
 

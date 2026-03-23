@@ -1,5 +1,6 @@
 # AdvisoryMitel
 
+advisory.Mitel
 
 ## Properties
 

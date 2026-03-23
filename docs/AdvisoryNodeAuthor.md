@@ -1,5 +1,6 @@
 # AdvisoryNodeAuthor
 
+advisory.NodeAuthor
 
 ## Properties
 

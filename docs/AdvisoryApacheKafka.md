@@ -1,5 +1,6 @@
 # AdvisoryApacheKafka
 
+advisory.ApacheKafka
 
 ## Properties
 

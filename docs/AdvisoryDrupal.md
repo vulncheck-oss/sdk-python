@@ -1,5 +1,6 @@
 # AdvisoryDrupal
 
+advisory.Drupal
 
 ## Properties
 

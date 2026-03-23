@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryApacheStrutsPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_ApacheStruts-paginate_Pagination
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # ApiTemporalMetricV3
 
+api.TemporalMetricV3
 
 ## Properties
 

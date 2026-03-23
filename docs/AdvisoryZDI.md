@@ -1,5 +1,6 @@
 # AdvisoryZDI
 
+advisory.ZDI
 
 ## Properties
 

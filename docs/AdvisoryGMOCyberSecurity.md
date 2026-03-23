@@ -1,5 +1,6 @@
 # AdvisoryGMOCyberSecurity
 
+advisory.GMOCyberSecurity
 
 ## Properties
 

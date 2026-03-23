@@ -1,5 +1,6 @@
 # AdvisoryCISControl
 
+advisory.CISControl
 
 ## Properties
 

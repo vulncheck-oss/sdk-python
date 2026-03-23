@@ -1,5 +1,6 @@
 # AdvisoryVeritas
 
+advisory.Veritas
 
 ## Properties
 

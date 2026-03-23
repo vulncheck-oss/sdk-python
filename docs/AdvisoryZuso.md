@@ -1,5 +1,6 @@
 # AdvisoryZuso
 
+advisory.Zuso
 
 ## Properties
 

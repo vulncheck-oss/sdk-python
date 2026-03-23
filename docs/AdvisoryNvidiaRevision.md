@@ -1,5 +1,6 @@
 # AdvisoryNvidiaRevision
 
+advisory.NvidiaRevision
 
 ## Properties
 

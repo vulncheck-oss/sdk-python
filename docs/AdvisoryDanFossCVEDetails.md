@@ -1,5 +1,6 @@
 # AdvisoryDanFossCVEDetails
 
+advisory.DanFossCVEDetails
 
 ## Properties
 

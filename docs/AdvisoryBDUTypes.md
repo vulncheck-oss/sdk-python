@@ -1,5 +1,6 @@
 # AdvisoryBDUTypes
 
+advisory.BDUTypes
 
 ## Properties
 

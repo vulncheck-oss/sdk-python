@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryMozillaAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_MozillaAdvisory-paginate_Pagination
 
 ## Properties
 

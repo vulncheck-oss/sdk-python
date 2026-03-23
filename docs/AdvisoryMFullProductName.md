@@ -1,5 +1,6 @@
 # AdvisoryMFullProductName
 
+advisory.MFullProductName
 
 ## Properties
 

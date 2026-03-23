@@ -1,5 +1,6 @@
 # AdvisoryDassault
 
+advisory.Dassault
 
 ## Properties
 

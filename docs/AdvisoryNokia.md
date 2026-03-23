@@ -1,5 +1,6 @@
 # AdvisoryNokia
 
+advisory.Nokia
 
 ## Properties
 

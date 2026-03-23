@@ -1,5 +1,6 @@
 # ApiOSSPackageHashInfo
 
+api.OSSPackageHashInfo
 
 ## Properties
 

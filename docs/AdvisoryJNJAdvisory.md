@@ -1,5 +1,6 @@
 # AdvisoryJNJAdvisory
 
+advisory.JNJAdvisory
 
 ## Properties
 

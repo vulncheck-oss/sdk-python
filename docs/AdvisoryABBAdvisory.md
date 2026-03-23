@@ -1,5 +1,6 @@
 # AdvisoryABBAdvisory
 
+advisory.ABBAdvisory
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryNessus
 
+advisory.Nessus
 
 ## Properties
 

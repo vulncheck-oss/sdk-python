@@ -1,5 +1,6 @@
 # AdvisoryCNVDBulletin
 
+advisory.CNVDBulletin
 
 ## Properties
 

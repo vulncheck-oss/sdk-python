@@ -1,5 +1,6 @@
 # AdvisoryLibreOffice
 
+advisory.LibreOffice
 
 ## Properties
 

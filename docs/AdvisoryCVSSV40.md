@@ -1,5 +1,6 @@
 # AdvisoryCVSSV40
 
+this isn't called baseMetric, because it can contain other metrics -- typically supplemental metrics
 
 ## Properties
 

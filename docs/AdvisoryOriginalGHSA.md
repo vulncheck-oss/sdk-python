@@ -1,5 +1,6 @@
 # AdvisoryOriginalGHSA
 
+advisory.OriginalGHSA
 
 ## Properties
 

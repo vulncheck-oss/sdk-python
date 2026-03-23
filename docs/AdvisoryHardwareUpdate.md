@@ -1,5 +1,6 @@
 # AdvisoryHardwareUpdate
 
+advisory.HardwareUpdate
 
 ## Properties
 

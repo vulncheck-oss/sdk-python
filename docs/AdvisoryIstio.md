@@ -1,5 +1,6 @@
 # AdvisoryIstio
 
+advisory.Istio
 
 ## Properties
 

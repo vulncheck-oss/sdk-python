@@ -1,5 +1,6 @@
 # AdvisoryCSAFScore
 
+advisory.CSAFScore
 
 ## Properties
 

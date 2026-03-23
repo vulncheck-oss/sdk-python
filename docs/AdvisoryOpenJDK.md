@@ -1,5 +1,6 @@
 # AdvisoryOpenJDK
 
+advisory.OpenJDK
 
 ## Properties
 

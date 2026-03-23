@@ -1,5 +1,6 @@
 # AdvisoryCESA
 
+advisory.CESA
 
 ## Properties
 

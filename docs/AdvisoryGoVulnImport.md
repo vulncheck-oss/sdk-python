@@ -1,5 +1,6 @@
 # AdvisoryGoVulnImport
 
+advisory.GoVulnImport
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryCNVDFlaw
 
+advisory.CNVDFlaw
 
 ## Properties
 

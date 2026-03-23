@@ -1,5 +1,6 @@
 # AdvisoryThermoFisher
 
+advisory.ThermoFisher
 
 ## Properties
 

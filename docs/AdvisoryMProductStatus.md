@@ -1,5 +1,6 @@
 # AdvisoryMProductStatus
 
+advisory.MProductStatus
 
 ## Properties
 

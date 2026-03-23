@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryBoschAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_BoschAdvisory-paginate_Pagination
 
 ## Properties
 

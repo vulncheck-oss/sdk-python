@@ -1,5 +1,6 @@
 # ApiNVD20Description
 
+api.NVD20Description
 
 ## Properties
 

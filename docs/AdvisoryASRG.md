@@ -1,5 +1,6 @@
 # AdvisoryASRG
 
+advisory.ASRG
 
 ## Properties
 

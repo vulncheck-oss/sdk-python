@@ -1,5 +1,6 @@
 # AdvisoryYamaha
 
+advisory.Yamaha
 
 ## Properties
 

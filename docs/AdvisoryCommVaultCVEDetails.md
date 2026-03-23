@@ -1,5 +1,6 @@
 # AdvisoryCommVaultCVEDetails
 
+advisory.CommVaultCVEDetails
 
 ## Properties
 

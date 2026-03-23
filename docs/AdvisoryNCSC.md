@@ -1,5 +1,6 @@
 # AdvisoryNCSC
 
+advisory.NCSC
 
 ## Properties
 

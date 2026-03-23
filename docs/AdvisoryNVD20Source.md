@@ -1,5 +1,6 @@
 # AdvisoryNVD20Source
 
+advisory.NVD20Source
 
 ## Properties
 

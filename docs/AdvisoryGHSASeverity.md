@@ -1,5 +1,6 @@
 # AdvisoryGHSASeverity
 
+advisory.GHSASeverity
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryAdobeAffected
 
+advisory.AdobeAffected
 
 ## Properties
 

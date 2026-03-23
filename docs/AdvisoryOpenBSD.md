@@ -1,5 +1,6 @@
 # AdvisoryOpenBSD
 
+advisory.OpenBSD
 
 ## Properties
 

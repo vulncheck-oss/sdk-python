@@ -8,8 +8,6 @@ from vulncheck_sdk.api.indices_api import IndicesApi
 from vulncheck_sdk.api_response import ApiResponse
 from vulncheck_sdk.exceptions import ApiException, UnauthorizedException
 
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 API_TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
 
@@ -46,9 +44,12 @@ def test_external_program(program_file):
 
     # Execute the program
     # capture_output=True allows us to see stdout/stderr if the test fails
+    env = os.environ.copy()
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    env["PYTHONPATH"] = project_root + (os.pathsep + env["PYTHONPATH"] if "PYTHONPATH" in env else "")
     result = subprocess.run(
         [sys.executable, program_file],
-        env=os.environ.copy(),
+        env=env,
         capture_output=True,
         text=True,
     )

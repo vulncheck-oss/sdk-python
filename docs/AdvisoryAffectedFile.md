@@ -1,5 +1,6 @@
 # AdvisoryAffectedFile
 
+advisory.AffectedFile
 
 ## Properties
 

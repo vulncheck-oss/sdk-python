@@ -1,5 +1,6 @@
 # AdvisoryF5
 
+advisory.F5
 
 ## Properties
 

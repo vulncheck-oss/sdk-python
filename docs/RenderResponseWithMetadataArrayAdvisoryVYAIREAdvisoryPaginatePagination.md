@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryVYAIREAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_VYAIREAdvisory-paginate_Pagination
 
 ## Properties
 

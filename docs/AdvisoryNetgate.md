@@ -1,5 +1,6 @@
 # AdvisoryNetgate
 
+advisory.Netgate
 
 ## Properties
 

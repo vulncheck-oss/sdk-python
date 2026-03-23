@@ -1,5 +1,6 @@
 # AdvisoryMProblemTypes
 
+advisory.MProblemTypes
 
 ## Properties
 

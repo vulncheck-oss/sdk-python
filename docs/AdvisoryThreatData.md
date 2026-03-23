@@ -1,5 +1,6 @@
 # AdvisoryThreatData
 
+advisory.ThreatData
 
 ## Properties
 

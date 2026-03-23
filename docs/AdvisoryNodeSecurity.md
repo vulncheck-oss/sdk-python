@@ -1,5 +1,6 @@
 # AdvisoryNodeSecurity
 
+advisory.NodeSecurity
 
 ## Properties
 

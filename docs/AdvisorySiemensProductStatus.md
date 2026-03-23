@@ -1,5 +1,6 @@
 # AdvisorySiemensProductStatus
 
+advisory.SiemensProductStatus
 
 ## Properties
 

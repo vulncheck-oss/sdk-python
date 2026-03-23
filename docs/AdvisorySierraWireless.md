@@ -1,5 +1,6 @@
 # AdvisorySierraWireless
 
+advisory.SierraWireless
 
 ## Properties
 

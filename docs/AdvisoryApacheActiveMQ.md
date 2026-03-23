@@ -1,5 +1,6 @@
 # AdvisoryApacheActiveMQ
 
+advisory.ApacheActiveMQ
 
 ## Properties
 

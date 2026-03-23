@@ -1,5 +1,6 @@
 # AdvisoryNZAdvisory
 
+advisory.NZAdvisory
 
 ## Properties
 

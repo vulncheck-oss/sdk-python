@@ -1,5 +1,6 @@
 # AdvisorySiemensGenerator
 
+advisory.SiemensGenerator
 
 ## Properties
 

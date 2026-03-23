@@ -1,5 +1,6 @@
 # AdvisoryVeeam
 
+advisory.Veeam
 
 ## Properties
 

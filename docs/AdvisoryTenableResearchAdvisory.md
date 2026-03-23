@@ -1,5 +1,6 @@
 # AdvisoryTenableResearchAdvisory
 
+advisory.TenableResearchAdvisory
 
 ## Properties
 

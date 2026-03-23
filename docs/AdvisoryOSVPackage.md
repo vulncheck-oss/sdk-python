@@ -1,5 +1,6 @@
 # AdvisoryOSVPackage
 
+advisory.OSVPackage
 
 ## Properties
 

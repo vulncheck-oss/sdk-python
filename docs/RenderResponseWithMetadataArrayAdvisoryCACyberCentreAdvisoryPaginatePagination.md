@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryCACyberCentreAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_CACyberCentreAdvisory-paginate_Pagination
 
 ## Properties
 

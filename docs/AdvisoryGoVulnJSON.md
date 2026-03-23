@@ -1,5 +1,6 @@
 # AdvisoryGoVulnJSON
 
+advisory.GoVulnJSON
 
 ## Properties
 

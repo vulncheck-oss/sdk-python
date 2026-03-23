@@ -1,5 +1,6 @@
 # AdvisoryJVN
 
+advisory.JVN
 
 ## Properties
 

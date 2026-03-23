@@ -1,5 +1,6 @@
 # AdvisoryVulnCheck
 
+advisory.VulnCheck
 
 ## Properties
 

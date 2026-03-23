@@ -1,5 +1,6 @@
 # AdvisorySymfony
 
+advisory.Symfony
 
 ## Properties
 

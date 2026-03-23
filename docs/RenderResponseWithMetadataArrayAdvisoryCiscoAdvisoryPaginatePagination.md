@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryCiscoAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_CiscoAdvisory-paginate_Pagination
 
 ## Properties
 

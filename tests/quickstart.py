@@ -1,14 +1,12 @@
+import urllib.request
 import vulncheck_sdk
 import os
-import requests
 
 # First let's setup a few variables to help us
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ["VULNCHECK_API_TOKEN"]  # Remember to store your token securely!
 
 # Now let's create a configuration object
-configuration = vulncheck_sdk.Configuration(host=DEFAULT_API)
+configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 # Pass that config object to our API client and now...
@@ -33,11 +31,10 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     # Download a Backup
     index = "initial-access"
     api_response = endpoints_client.backup_index_get(index)
-    backup_url = requests.get(api_response.data[0].url)
-
     file_path = f"{index}.zip"
-    with open(file_path, "wb") as file:
-        file.write(backup_url.content)
+    with urllib.request.urlopen(api_response.data[0].url) as response:
+        with open(file_path, "wb") as file:
+            file.write(response.read())
 
     ### IndicesApi has methods for each index
     indices_client = vulncheck_sdk.IndicesApi(api_client)

@@ -1,5 +1,6 @@
 # AdvisorySamba
 
+advisory.Samba
 
 ## Properties
 

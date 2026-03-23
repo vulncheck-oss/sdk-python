@@ -1,5 +1,6 @@
 # AdvisoryLogSource
 
+advisory.LogSource
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryAppleAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_AppleAdvisory-paginate_Pagination
 
 ## Properties
 

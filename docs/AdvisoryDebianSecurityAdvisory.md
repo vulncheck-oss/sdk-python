@@ -1,5 +1,6 @@
 # AdvisoryDebianSecurityAdvisory
 
+advisory.DebianSecurityAdvisory
 
 ## Properties
 

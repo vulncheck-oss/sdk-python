@@ -1,5 +1,6 @@
 # ApiNormalizedReportV3Entry
 
+api.NormalizedReportV3Entry
 
 ## Properties
 

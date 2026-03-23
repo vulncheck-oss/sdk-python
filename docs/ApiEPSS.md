@@ -1,5 +1,6 @@
 # ApiEPSS
 
+exclude EPSS from changelog
 
 ## Properties
 

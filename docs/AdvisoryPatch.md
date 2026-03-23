@@ -1,5 +1,6 @@
 # AdvisoryPatch
 
+advisory.Patch
 
 ## Properties
 

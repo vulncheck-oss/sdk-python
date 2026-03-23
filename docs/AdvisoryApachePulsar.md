@@ -1,5 +1,6 @@
 # AdvisoryApachePulsar
 
+advisory.ApachePulsar
 
 ## Properties
 

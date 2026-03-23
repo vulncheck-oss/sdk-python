@@ -1,5 +1,6 @@
 # AdvisoryVulnerableDebianPackage
 
+advisory.VulnerableDebianPackage
 
 ## Properties
 

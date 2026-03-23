@@ -1,5 +1,6 @@
 # ApiOSSPackageResearchAttributes
 
+api.OSSPackageResearchAttributes
 
 ## Properties
 

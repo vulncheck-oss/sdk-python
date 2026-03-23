@@ -1,5 +1,6 @@
 # AdvisoryCertIRSecurityAlert
 
+advisory.CertIRSecurityAlert
 
 ## Properties
 

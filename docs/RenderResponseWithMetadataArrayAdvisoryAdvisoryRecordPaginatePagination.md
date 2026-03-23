@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryAdvisoryRecordPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_AdvisoryRecord-paginate_Pagination
 
 ## Properties
 

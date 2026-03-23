@@ -1,5 +1,6 @@
 # AdvisorySiemensProduct
 
+advisory.SiemensProduct
 
 ## Properties
 

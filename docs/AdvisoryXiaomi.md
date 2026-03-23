@@ -1,5 +1,6 @@
 # AdvisoryXiaomi
 
+advisory.Xiaomi
 
 ## Properties
 

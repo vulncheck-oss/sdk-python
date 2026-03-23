@@ -1,5 +1,6 @@
 # V3controllersPurlResponseData
 
+v3controllers.PurlResponseData
 
 ## Properties
 

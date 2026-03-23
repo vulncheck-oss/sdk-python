@@ -1,5 +1,6 @@
 # AdvisoryAndroidRange
 
+advisory.AndroidRange
 
 ## Properties
 

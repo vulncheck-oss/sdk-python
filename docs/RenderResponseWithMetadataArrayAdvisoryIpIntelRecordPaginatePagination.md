@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryIpIntelRecordPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_IpIntelRecord-paginate_Pagination
 
 ## Properties
 

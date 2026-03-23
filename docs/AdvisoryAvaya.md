@@ -1,5 +1,6 @@
 # AdvisoryAvaya
 
+advisory.Avaya
 
 ## Properties
 

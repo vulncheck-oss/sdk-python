@@ -1,5 +1,6 @@
 # AdvisoryBeldenAdvisory
 
+advisory.BeldenAdvisory
 
 ## Properties
 

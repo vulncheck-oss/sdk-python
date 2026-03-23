@@ -1,5 +1,6 @@
 # AdvisoryCapec
 
+advisory.Capec
 
 ## Properties
 

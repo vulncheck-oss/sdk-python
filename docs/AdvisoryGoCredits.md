@@ -1,5 +1,6 @@
 # AdvisoryGoCredits
 
+advisory.GoCredits
 
 ## Properties
 

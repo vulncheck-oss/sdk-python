@@ -1,5 +1,6 @@
 # AdvisoryApacheZooKeeper
 
+advisory.ApacheZooKeeper
 
 ## Properties
 

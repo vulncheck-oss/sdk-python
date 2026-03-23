@@ -1,5 +1,6 @@
 # ApiCVSSV2
 
+api.CVSSV2
 
 ## Properties
 

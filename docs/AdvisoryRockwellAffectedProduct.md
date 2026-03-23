@@ -1,5 +1,6 @@
 # AdvisoryRockwellAffectedProduct
 
+advisory.RockwellAffectedProduct
 
 ## Properties
 

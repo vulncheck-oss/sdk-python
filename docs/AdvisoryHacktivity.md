@@ -1,5 +1,6 @@
 # AdvisoryHacktivity
 
+advisory.Hacktivity
 
 ## Properties
 

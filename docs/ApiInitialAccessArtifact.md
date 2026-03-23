@@ -1,5 +1,6 @@
 # ApiInitialAccessArtifact
 
+api.InitialAccessArtifact
 
 ## Properties
 

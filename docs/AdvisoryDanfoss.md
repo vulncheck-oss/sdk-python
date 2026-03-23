@@ -1,5 +1,6 @@
 # AdvisoryDanfoss
 
+advisory.Danfoss
 
 ## Properties
 

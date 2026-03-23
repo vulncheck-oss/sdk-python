@@ -1,5 +1,6 @@
 # AdvisoryBeckmanCoulter
 
+advisory.BeckmanCoulter
 
 ## Properties
 

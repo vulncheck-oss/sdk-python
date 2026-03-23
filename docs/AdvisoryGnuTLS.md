@@ -1,5 +1,6 @@
 # AdvisoryGnuTLS
 
+advisory.GnuTLS
 
 ## Properties
 

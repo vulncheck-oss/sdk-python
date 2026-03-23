@@ -1,5 +1,6 @@
 # AdvisoryHarmonyOS
 
+advisory.HarmonyOS
 
 ## Properties
 

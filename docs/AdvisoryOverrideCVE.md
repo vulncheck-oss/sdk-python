@@ -1,5 +1,6 @@
 # AdvisoryOverrideCVE
 
+advisory.OverrideCVE
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # ApiClientFingerprints
 
+api.ClientFingerprints
 
 ## Properties
 

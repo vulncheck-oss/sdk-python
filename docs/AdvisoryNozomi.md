@@ -1,5 +1,6 @@
 # AdvisoryNozomi
 
+advisory.Nozomi
 
 ## Properties
 

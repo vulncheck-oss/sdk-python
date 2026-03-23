@@ -1,5 +1,6 @@
 # ApiCVEDataMeta
 
+api.CVEDataMeta
 
 ## Properties
 

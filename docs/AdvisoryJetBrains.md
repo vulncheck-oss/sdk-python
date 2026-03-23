@@ -1,5 +1,6 @@
 # AdvisoryJetBrains
 
+advisory.JetBrains
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryHaskellAffected
 
+advisory.HaskellAffected
 
 ## Properties
 

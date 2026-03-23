@@ -1,5 +1,6 @@
 # AdvisoryMozillaComponent
 
+advisory.MozillaComponent
 
 ## Properties
 

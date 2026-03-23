@@ -1,5 +1,6 @@
 # PaginatePagination
 
+paginate.Pagination
 
 ## Properties
 

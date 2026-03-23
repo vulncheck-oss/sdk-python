@@ -1,5 +1,6 @@
 # AdvisoryNVD20Node
 
+advisory.NVD20Node
 
 ## Properties
 

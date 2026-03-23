@@ -1,5 +1,6 @@
 # AdvisoryTraneTechnology
 
+advisory.TraneTechnology
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryApacheOFBiz
 
+advisory.ApacheOFBiz
 
 ## Properties
 

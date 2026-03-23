@@ -1,5 +1,6 @@
 # AdvisoryGHAdvisoryJSONLean
 
+advisory.GHAdvisoryJSONLean
 
 ## Properties
 

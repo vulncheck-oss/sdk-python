@@ -1,5 +1,6 @@
 # AdvisoryRhelCVE
 
+advisory.RhelCVE
 
 ## Properties
 

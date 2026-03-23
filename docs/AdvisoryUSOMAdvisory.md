@@ -1,5 +1,6 @@
 # AdvisoryUSOMAdvisory
 
+advisory.USOMAdvisory
 
 ## Properties
 

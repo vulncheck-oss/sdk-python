@@ -1,5 +1,6 @@
 # AdvisoryRecordType
 
+advisory.RecordType
 
 ## Properties
 

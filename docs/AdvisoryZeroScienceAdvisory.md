@@ -1,5 +1,6 @@
 # AdvisoryZeroScienceAdvisory
 
+advisory.ZeroScienceAdvisory
 
 ## Properties
 

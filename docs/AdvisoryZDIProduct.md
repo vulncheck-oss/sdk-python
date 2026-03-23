@@ -1,5 +1,6 @@
 # AdvisoryZDIProduct
 
+advisory.ZDIProduct
 
 ## Properties
 

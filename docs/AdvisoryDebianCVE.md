@@ -1,5 +1,6 @@
 # AdvisoryDebianCVE
 
+advisory.DebianCVE
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryFileZilla
 
+advisory.FileZilla
 
 ## Properties
 

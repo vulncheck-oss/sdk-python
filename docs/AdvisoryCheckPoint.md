@@ -1,5 +1,6 @@
 # AdvisoryCheckPoint
 
+advisory.CheckPoint
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryJVNAdvisoryItem
 
+advisory.JVNAdvisoryItem
 
 ## Properties
 

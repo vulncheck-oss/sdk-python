@@ -1,5 +1,6 @@
 # AdvisoryPublisher
 
+advisory.Publisher
 
 ## Properties
 

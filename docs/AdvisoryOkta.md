@@ -1,5 +1,6 @@
 # AdvisoryOkta
 
+advisory.Okta
 
 ## Properties
 

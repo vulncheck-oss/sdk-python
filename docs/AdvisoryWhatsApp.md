@@ -1,5 +1,6 @@
 # AdvisoryWhatsApp
 
+advisory.WhatsApp
 
 ## Properties
 

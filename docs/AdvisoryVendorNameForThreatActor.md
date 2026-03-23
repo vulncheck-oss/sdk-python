@@ -1,5 +1,6 @@
 # AdvisoryVendorNameForThreatActor
 
+advisory.VendorNameForThreatActor
 
 ## Properties
 

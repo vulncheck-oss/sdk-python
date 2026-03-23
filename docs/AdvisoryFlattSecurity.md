@@ -1,5 +1,6 @@
 # AdvisoryFlattSecurity
 
+advisory.FlattSecurity
 
 ## Properties
 

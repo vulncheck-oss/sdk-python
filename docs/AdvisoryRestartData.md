@@ -1,5 +1,6 @@
 # AdvisoryRestartData
 
+advisory.RestartData
 
 ## Properties
 

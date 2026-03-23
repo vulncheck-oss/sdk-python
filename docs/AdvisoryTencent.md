@@ -1,5 +1,6 @@
 # AdvisoryTencent
 
+advisory.Tencent
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryHaskellSADBAdvisory
 
+advisory.HaskellSADBAdvisory
 
 ## Properties
 

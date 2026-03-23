@@ -1,5 +1,6 @@
 # AdvisoryDFNCert
 
+advisory.DFNCert
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryKunbus
 
+advisory.Kunbus
 
 ## Properties
 

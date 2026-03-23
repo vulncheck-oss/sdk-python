@@ -1,5 +1,6 @@
 # AdvisoryA10
 
+advisory.A10
 
 ## Properties
 

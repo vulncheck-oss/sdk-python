@@ -1,5 +1,6 @@
 # AdvisorySwisslogHealthcareAdvisory
 
+advisory.SwisslogHealthcareAdvisory
 
 ## Properties
 

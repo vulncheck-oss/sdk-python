@@ -1,5 +1,6 @@
 # AdvisoryMicrosoftKb
 
+advisory.MicrosoftKb
 
 ## Properties
 

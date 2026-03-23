@@ -1,5 +1,6 @@
 # AdvisoryMoxaAdvisory
 
+advisory.MoxaAdvisory
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryCBLMariner
 
+advisory.CBLMariner
 
 ## Properties
 

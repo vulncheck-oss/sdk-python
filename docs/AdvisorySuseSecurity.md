@@ -1,5 +1,6 @@
 # AdvisorySuseSecurity
 
+advisory.SuseSecurity
 
 ## Properties
 

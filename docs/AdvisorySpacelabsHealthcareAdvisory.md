@@ -1,5 +1,6 @@
 # AdvisorySpacelabsHealthcareAdvisory
 
+advisory.SpacelabsHealthcareAdvisory
 
 ## Properties
 

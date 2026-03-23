@@ -1,5 +1,6 @@
 # AdvisoryOracleCPU
 
+advisory.OracleCPU
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryAIX
 
+advisory.AIX
 
 ## Properties
 

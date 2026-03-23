@@ -1,5 +1,6 @@
 # AdvisoryHitachiEnergy
 
+advisory.HitachiEnergy
 
 ## Properties
 

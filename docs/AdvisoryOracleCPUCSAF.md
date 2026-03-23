@@ -1,5 +1,6 @@
 # AdvisoryOracleCPUCSAF
 
+advisory.OracleCPUCSAF
 
 ## Properties
 

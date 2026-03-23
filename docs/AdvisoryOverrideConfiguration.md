@@ -1,5 +1,6 @@
 # AdvisoryOverrideConfiguration
 
+advisory.OverrideConfiguration
 
 ## Properties
 

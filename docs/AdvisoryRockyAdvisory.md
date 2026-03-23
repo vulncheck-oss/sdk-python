@@ -1,5 +1,6 @@
 # AdvisoryRockyAdvisory
 
+advisory.RockyAdvisory
 
 ## Properties
 
@@ -14,7 +15,7 @@ Name | Type | Description | Notes
 **published_at** | **str** |  | [optional] 
 **reboot_suggested** | **bool** |  | [optional] 
 **references** | **List[str]** |  | [optional] 
-**rpms** | [**Dict[str, AdvisoryRockyVersion]**](AdvisoryRockyVersion.md) |  | [optional] 
+**rpms** | [**Dict[str, AdvisoryRockyVersion]**](AdvisoryRockyVersion.md) | advisory.RockyRpms | [optional] 
 **severity** | **str** |  | [optional] 
 **short_code** | **str** |  | [optional] 
 **solution** | **str** |  | [optional] 

@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryXiaomiPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_Xiaomi-paginate_Pagination
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryApacheHadoop
 
+advisory.ApacheHadoop
 
 ## Properties
 

@@ -6,11 +6,9 @@ from vulncheck_sdk.aio.models.v3controllers_purl_response_data import (
 )
 
 # Configuration
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
-configuration = vcaio.Configuration(host=DEFAULT_API)
+configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 

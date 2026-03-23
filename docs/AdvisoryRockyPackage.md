@@ -1,5 +1,6 @@
 # AdvisoryRockyPackage
 
+advisory.RockyPackage
 
 ## Properties
 

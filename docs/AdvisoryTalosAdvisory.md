@@ -1,5 +1,6 @@
 # AdvisoryTalosAdvisory
 
+advisory.TalosAdvisory
 
 ## Properties
 

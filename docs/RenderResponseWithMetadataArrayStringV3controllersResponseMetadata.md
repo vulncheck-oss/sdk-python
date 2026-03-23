@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayStringV3controllersResponseMetadata
 
+render.ResponseWithMetadata-array_string-v3controllers_ResponseMetadata
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryEatonAdvisory
 
+advisory.EatonAdvisory
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryGoVulnEcosystemSpecific
 
+advisory.GoVulnEcosystemSpecific
 
 ## Properties
 

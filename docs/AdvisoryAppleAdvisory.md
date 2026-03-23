@@ -1,5 +1,6 @@
 # AdvisoryAppleAdvisory
 
+advisory.AppleAdvisory
 
 ## Properties
 

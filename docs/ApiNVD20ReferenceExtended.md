@@ -1,5 +1,6 @@
 # ApiNVD20ReferenceExtended
 
+api.NVD20ReferenceExtended
 
 ## Properties
 

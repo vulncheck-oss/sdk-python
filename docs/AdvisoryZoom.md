@@ -1,5 +1,6 @@
 # AdvisoryZoom
 
+advisory.Zoom
 
 ## Properties
 

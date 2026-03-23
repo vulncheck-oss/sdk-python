@@ -1,5 +1,6 @@
 # AdvisoryManageEngineAdvisory
 
+advisory.ManageEngineAdvisory
 
 ## Properties
 

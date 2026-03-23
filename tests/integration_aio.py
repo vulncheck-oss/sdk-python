@@ -5,8 +5,6 @@ from vulncheck_sdk.aio.api.endpoints_api import EndpointsApi
 from vulncheck_sdk.aio.api.indices_api import IndicesApi
 from vulncheck_sdk.aio.exceptions import ApiException, UnauthorizedException
 
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 API_TOKEN = os.environ.get("VULNCHECK_API_TOKEN", "")
 
 # --- Helpers ---
@@ -118,7 +116,7 @@ async def main():
     if not API_TOKEN:
         print("Warning: VULNCHECK_API_TOKEN is not set.")
 
-    config = vcaio.Configuration(host=DEFAULT_API)
+    config = vcaio.Configuration()
     config.api_key["Bearer"] = API_TOKEN
 
     # The 'async with' ensures the ClientSession is closed

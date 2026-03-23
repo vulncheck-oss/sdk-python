@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryKasperskyICSCERTAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_KasperskyICSCERTAdvisory-paginate_Pagination
 
 ## Properties
 

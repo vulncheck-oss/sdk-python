@@ -1,5 +1,6 @@
 # AdvisoryCentosPackage
 
+advisory.CentosPackage
 
 ## Properties
 

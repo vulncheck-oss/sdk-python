@@ -1,5 +1,6 @@
 # AdvisoryCisaCsafAdv
 
+advisory.CisaCsafAdv
 
 ## Properties
 

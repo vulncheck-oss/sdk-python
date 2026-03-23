@@ -1,5 +1,6 @@
 # AdvisoryMicrosoftCSAF
 
+advisory.MicrosoftCSAF
 
 ## Properties
 

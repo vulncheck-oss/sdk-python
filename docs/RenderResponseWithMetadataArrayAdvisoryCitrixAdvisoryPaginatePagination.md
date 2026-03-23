@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryCitrixAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_CitrixAdvisory-paginate_Pagination
 
 ## Properties
 

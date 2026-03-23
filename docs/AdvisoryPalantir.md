@@ -1,5 +1,6 @@
 # AdvisoryPalantir
 
+advisory.Palantir
 
 ## Properties
 

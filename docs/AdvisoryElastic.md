@@ -1,5 +1,6 @@
 # AdvisoryElastic
 
+advisory.Elastic
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryHIKVision
 
+advisory.HIKVision
 
 ## Properties
 

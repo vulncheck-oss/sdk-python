@@ -1,5 +1,6 @@
 # AdvisoryLenovo
 
+advisory.Lenovo
 
 ## Properties
 

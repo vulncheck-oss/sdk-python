@@ -1,5 +1,6 @@
 # AdvisoryProductBranch
 
+ProductTree contains information about the product tree (branches only).  https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#322-product-tree-property
 
 ## Properties
 

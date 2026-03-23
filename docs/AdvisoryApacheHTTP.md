@@ -1,5 +1,6 @@
 # AdvisoryApacheHTTP
 
+advisory.ApacheHTTP
 
 ## Properties
 

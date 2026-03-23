@@ -1,5 +1,6 @@
 # AdvisoryGHSAPackage
 
+advisory.GHSAPackage
 
 ## Properties
 

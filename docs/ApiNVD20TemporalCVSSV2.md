@@ -1,5 +1,6 @@
 # ApiNVD20TemporalCVSSV2
 
+api.NVD20TemporalCVSSV2
 
 ## Properties
 

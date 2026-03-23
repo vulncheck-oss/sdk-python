@@ -1,5 +1,6 @@
 # AdvisoryPyPAPackage
 
+advisory.PyPAPackage
 
 ## Properties
 

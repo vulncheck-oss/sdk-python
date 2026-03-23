@@ -5,8 +5,6 @@ from vulncheck_sdk.api.indices_api import IndicesApi
 from vulncheck_sdk.api_response import ApiResponse
 from vulncheck_sdk.exceptions import ApiException, UnauthorizedException
 
-DEFAULT_HOST = "https://api.vulncheck.com"
-DEFAULT_API = DEFAULT_HOST + "/v3"
 API_TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
 """
@@ -123,11 +121,11 @@ def _get_http_status(func, params=None, limit=None, page=None) -> int:
         return 401
     except ApiException as e:
         print(f"ApiException when calling {func}: {e}\n")
-        return api_response.status_code
+        return e.status
 
 
 def _get_api_instance(token: str = "") -> EndpointsApi:
-    config = vulncheck_sdk.Configuration(host=DEFAULT_API)
+    config = vulncheck_sdk.Configuration()
     if token != "":
         config.api_key["Bearer"] = token
     client = vulncheck_sdk.ApiClient(config)
@@ -135,7 +133,7 @@ def _get_api_instance(token: str = "") -> EndpointsApi:
 
 
 def _get_indices_instance(token: str = "") -> IndicesApi:
-    config = vulncheck_sdk.Configuration(host=DEFAULT_API)
+    config = vulncheck_sdk.Configuration()
     if token != "":
         config.api_key["Bearer"] = token
     client = vulncheck_sdk.ApiClient(config)

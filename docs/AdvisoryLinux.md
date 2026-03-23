@@ -1,5 +1,6 @@
 # AdvisoryLinux
 
+advisory.Linux
 
 ## Properties
 

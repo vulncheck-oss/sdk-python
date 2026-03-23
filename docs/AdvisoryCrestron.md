@@ -1,5 +1,6 @@
 # AdvisoryCrestron
 
+advisory.Crestron
 
 ## Properties
 

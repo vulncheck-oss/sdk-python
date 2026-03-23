@@ -1,5 +1,6 @@
 # AdvisoryFortinetAdvisory
 
+advisory.FortinetAdvisory
 
 ## Properties
 

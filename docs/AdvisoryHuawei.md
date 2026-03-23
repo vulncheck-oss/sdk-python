@@ -1,5 +1,6 @@
 # AdvisoryHuawei
 
+advisory.Huawei
 
 ## Properties
 

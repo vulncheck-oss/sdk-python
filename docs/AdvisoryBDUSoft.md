@@ -1,5 +1,6 @@
 # AdvisoryBDUSoft
 
+advisory.BDUSoft
 
 ## Properties
 

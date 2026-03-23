@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryCiscoKnownGoodValuePaginatePagination
 
+render.ResponseWithMetadata-array_advisory_CiscoKnownGoodValue-paginate_Pagination
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryBeyondTrust
 
+advisory.BeyondTrust
 
 ## Properties
 

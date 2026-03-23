@@ -1,5 +1,6 @@
 # AdvisoryCERTEUAdvisory
 
+advisory.CERTEUAdvisory
 
 ## Properties
 

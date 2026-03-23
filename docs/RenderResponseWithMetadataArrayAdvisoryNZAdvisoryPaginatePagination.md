@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryNZAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_NZAdvisory-paginate_Pagination
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryProgress
 
+advisory.Progress
 
 ## Properties
 

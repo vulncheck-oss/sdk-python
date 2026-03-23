@@ -1,5 +1,6 @@
 # AdvisoryAmazonAffectedPackage
 
+advisory.AmazonAffectedPackage
 
 ## Properties
 

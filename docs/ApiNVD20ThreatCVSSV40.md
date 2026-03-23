@@ -1,5 +1,6 @@
 # ApiNVD20ThreatCVSSV40
 
+api.NVD20ThreatCVSSV40
 
 ## Properties
 

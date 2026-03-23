@@ -24,10 +24,11 @@ clean() {
 }
 
 get_openapi_spec() {
-  curl --request GET \
-    --url https://api.vulncheck.com/v3/openapi \
-    --verbose \
-    --header "Accept: application/json" >$OPENAPI_JSON
+  #use the combined output
+  curl --silent --fail \
+   --url https://api.vulncheck.com/openapi/combined \
+   --header "Accept: application/json" \
+   >"$OPENAPI_JSON"
 }
 
 bump_patch() {
@@ -218,6 +219,12 @@ post_build_cleanup() {
   rm -rf vulncheck_sdk/aio/.openapi-generator-ignore vulncheck_sdk/aio/.travis.yml vulncheck_sdk/aio/README.md vulncheck_sdk/aio/git_push.sh
   rm -rf vulncheck_sdk/aio/tox.ini vulncheck_sdk/aio/test-requirements.txt
   rm -rf vulncheck_sdk/aio/vulncheck_sdk tox.ini
+
+  # Rename var_date -> date in generated Python files.
+  # The openapi-generator prefixes 'date' with 'var_' because it conflicts with
+  # the Python datetime.date builtin. The wire format remains 'date' unchanged.
+  echo "--- renaming var_date -> date in generated files ---"
+  find vulncheck_sdk -name "*.py" | xargs sed "${SED_FLAGS[@]}" 's/var_date/date/g'
 }
 
 check_git_status() {

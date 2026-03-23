@@ -1,5 +1,6 @@
 # AdvisoryMCPEApplicability
 
+advisory.MCPEApplicability
 
 ## Properties
 

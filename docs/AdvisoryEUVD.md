@@ -1,5 +1,6 @@
 # AdvisoryEUVD
 
+advisory.EUVD
 
 ## Properties
 

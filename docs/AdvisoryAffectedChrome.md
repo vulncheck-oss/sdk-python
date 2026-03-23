@@ -1,5 +1,6 @@
 # AdvisoryAffectedChrome
 
+advisory.AffectedChrome
 
 ## Properties
 

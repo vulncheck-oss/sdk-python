@@ -1,5 +1,6 @@
 # AdvisoryApacheSubversion
 
+advisory.ApacheSubversion
 
 ## Properties
 

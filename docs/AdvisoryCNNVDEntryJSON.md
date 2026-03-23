@@ -1,5 +1,6 @@
 # AdvisoryCNNVDEntryJSON
 
+advisory.CNNVDEntryJSON
 
 ## Properties
 

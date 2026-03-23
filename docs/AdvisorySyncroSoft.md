@@ -1,5 +1,6 @@
 # AdvisorySyncroSoft
 
+advisory.SyncroSoft
 
 ## Properties
 

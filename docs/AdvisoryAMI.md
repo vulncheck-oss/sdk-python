@@ -1,5 +1,6 @@
 # AdvisoryAMI
 
+advisory.AMI
 
 ## Properties
 

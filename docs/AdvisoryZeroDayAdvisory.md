@@ -1,5 +1,6 @@
 # AdvisoryZeroDayAdvisory
 
+advisory.ZeroDayAdvisory
 
 ## Properties
 

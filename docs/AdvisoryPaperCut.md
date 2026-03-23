@@ -1,5 +1,6 @@
 # AdvisoryPaperCut
 
+advisory.PaperCut
 
 ## Properties
 

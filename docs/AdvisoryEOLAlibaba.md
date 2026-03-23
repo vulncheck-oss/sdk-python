@@ -1,5 +1,6 @@
 # AdvisoryEOLAlibaba
 
+advisory.EOLAlibaba
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryEmergingThreatsSnort
 
+advisory.EmergingThreatsSnort
 
 ## Properties
 

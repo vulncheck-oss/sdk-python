@@ -1,5 +1,6 @@
 # ModelsEntitlements
 
+models.Entitlements
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # AdvisoryWithSecure
 
+advisory.WithSecure
 
 ## Properties
 

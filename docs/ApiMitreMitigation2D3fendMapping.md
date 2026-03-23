@@ -1,5 +1,6 @@
 # ApiMitreMitigation2D3fendMapping
 
+api.MitreMitigation2D3fendMapping
 
 ## Properties
 

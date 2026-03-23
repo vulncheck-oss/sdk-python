@@ -1,5 +1,6 @@
 # AdvisoryMitreAttackTechnique
 
+advisory.MitreAttackTechnique
 
 ## Properties
 

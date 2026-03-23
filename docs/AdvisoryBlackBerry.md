@@ -1,5 +1,6 @@
 # AdvisoryBlackBerry
 
+advisory.BlackBerry
 
 ## Properties
 

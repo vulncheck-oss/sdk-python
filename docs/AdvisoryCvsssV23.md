@@ -1,5 +1,6 @@
 # AdvisoryCvsssV23
 
+advisory.CvsssV2_3
 
 ## Properties
 

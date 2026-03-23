@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryBotnetPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_Botnet-paginate_Pagination
 
 ## Properties
 

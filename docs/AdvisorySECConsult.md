@@ -1,5 +1,6 @@
 # AdvisorySECConsult
 
+advisory.SECConsult
 
 ## Properties
 

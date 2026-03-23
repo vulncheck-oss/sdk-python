@@ -1,5 +1,6 @@
 # RenderResponseWithMetadataArrayAdvisoryFortinetAdvisoryPaginatePagination
 
+render.ResponseWithMetadata-array_advisory_FortinetAdvisory-paginate_Pagination
 
 ## Properties
 

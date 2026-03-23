@@ -1,5 +1,6 @@
 # AdvisoryAsus
 
+advisory.Asus
 
 ## Properties
 

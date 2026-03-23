@@ -1,5 +1,6 @@
 # AdvisoryAssetNote
 
+advisory.AssetNote
 
 ## Properties
 
