@@ -9,18 +9,17 @@ Name | Type | Description | Notes
 **affected_products** | **str** |  | [optional] 
 **alert_id** | **str** |  | [optional] 
 **archived** | **bool** |  | [optional] 
-**cve** | **List[str]** |  | [optional] 
-**cveexploited_itw** | **bool** |  | [optional] 
+**cve_exploited_itw** | **bool** |  | [optional] 
 **cvss** | **str** |  | [optional] 
-**date_added** | **str** |  | [optional] 
-**icsa** | **bool** |  | [optional] 
 **icsma** | **bool** |  | [optional] 
 **mitigations** | **str** |  | [optional] 
 **release_date** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
-**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **vendor** | **str** |  | [optional] 
+**cve** | **List[str]** |  | [optional] 
+**date_added** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 

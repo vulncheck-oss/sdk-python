@@ -58,6 +58,9 @@ class TestApiInitialAccessArtifact(unittest.TestCase):
                 censys_raw_queries = [
                     ''
                     ],
+                chain = [
+                    ''
+                    ],
                 clone_sshurl = '',
                 date_added = '',
                 driftnet_queries = [
@@ -88,6 +91,9 @@ class TestApiInitialAccessArtifact(unittest.TestCase):
                 nmap_script = True,
                 pcap = True,
                 product = [
+                    ''
+                    ],
+                related = [
                     ''
                     ],
                 shodan_queries = [

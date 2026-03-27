@@ -47,7 +47,8 @@ class TestAdvisorySSDAdvisory(unittest.TestCase):
                 published = '',
                 response_ref = '',
                 summary = '',
-                title = ''
+                title = '',
+                updated_at = ''
             )
         else:
             return AdvisorySSDAdvisory(

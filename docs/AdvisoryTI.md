@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **incident_id** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

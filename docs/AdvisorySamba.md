@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **issues** | **str** |  | [optional] 
 **patches** | **List[str]** |  | [optional] 
 **references** | **List[str]** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
 
 ## Example
 

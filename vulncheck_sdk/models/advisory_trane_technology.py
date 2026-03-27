@@ -33,8 +33,9 @@ class AdvisoryTraneTechnology(BaseModel):
     id: Optional[StrictStr] = None
     product: Optional[StrictStr] = None
     summary: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["brand", "cve", "date_added", "id", "product", "summary", "url"]
+    __properties: ClassVar[List[str]] = ["brand", "cve", "date_added", "id", "product", "summary", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,7 @@ class AdvisoryTraneTechnology(BaseModel):
             "id": obj.get("id"),
             "product": obj.get("product"),
             "summary": obj.get("summary"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

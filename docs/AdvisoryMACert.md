@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **risks_fr** | **str** |  | [optional] 
 **solution_fr** | **str** |  | [optional] 
 **title_fr** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **problem_type** | **str** |  | [optional] 
 **references** | **List[str]** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

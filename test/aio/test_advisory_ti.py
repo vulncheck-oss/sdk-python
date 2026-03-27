@@ -43,6 +43,7 @@ class TestAdvisoryTI(unittest.TestCase):
                 incident_id = '',
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

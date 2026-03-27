@@ -46,6 +46,7 @@ pip install vulncheck-sdk
 ## Quickstart
 
 ```python
+import json
 import urllib.request
 import vulncheck_sdk
 import os
@@ -56,6 +57,7 @@ TOKEN = os.environ["VULNCHECK_API_TOKEN"]  # Remember to store your token secure
 # Now let's create a configuration object
 configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
+configuration.ignore_operation_servers = True
 
 # Pass that config object to our API client and now...
 with vulncheck_sdk.ApiClient(configuration) as api_client:
@@ -77,10 +79,13 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
         print(cve)
 
     # Download a Backup
+    backup_client = vulncheck_sdk.BackupApi(api_client)
     index = "initial-access"
-    api_response = endpoints_client.backup_index_get(index)
+    raw = backup_client.backup_index_get_without_preload_content(index)
+    response_data = json.loads(raw.read())
+    download_url = response_data["data"][0]["url"]
     file_path = f"{index}.zip"
-    with urllib.request.urlopen(api_response.data[0].url) as response:
+    with urllib.request.urlopen(download_url) as response:
         with open(file_path, "wb") as file:
             file.write(response.read())
 
@@ -98,6 +103,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 ```python
 import asyncio
+import json
 import os
 import aiohttp
 import vulncheck_sdk.aio as vcaio
@@ -107,6 +113,7 @@ TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
 configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
+configuration.ignore_operation_servers = True
 
 
 async def run_vulnerability_checks():
@@ -114,6 +121,7 @@ async def run_vulnerability_checks():
     async with vcaio.ApiClient(configuration) as api_client:
         endpoints_client = vcaio.EndpointsApi(api_client)
         indices_client = vcaio.IndicesApi(api_client)
+        backup_client = vcaio.BackupApi(api_client)
 
         # --- PURL Search ---
         # 'await' the coroutine to get results
@@ -138,11 +146,12 @@ async def run_vulnerability_checks():
 
         # --- Download Backup (Async) ---
         index_name = "initial-access"
-        # 'await' the coroutine to get results
-        backup_response = await endpoints_client.backup_index_get(index_name)
+        # 'await' the coroutine to get raw response bytes
+        raw = await backup_client.backup_index_get_without_preload_content(index_name)
+        response_data = json.loads(await raw.read())
 
-        if backup_response.data:
-            download_url = backup_response.data[0].url
+        if response_data.get("data"):
+            download_url = response_data["data"][0]["url"]
             file_path = f"{index_name}.zip"
 
             print(f"Downloading backup from {download_url}...")
@@ -314,6 +323,7 @@ if __name__ == "__main__":
 Download the backup for an index
 
 ```python
+import json
 import urllib.request
 import vulncheck_sdk
 import os
@@ -322,16 +332,19 @@ TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
 configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
+configuration.ignore_operation_servers = True
 
 with vulncheck_sdk.ApiClient(configuration) as api_client:
-    endpoints_client = vulncheck_sdk.EndpointsApi(api_client)
+    backup_client = vulncheck_sdk.BackupApi(api_client)
 
     index = "initial-access"
 
-    api_response = endpoints_client.backup_index_get(index)
+    raw = backup_client.backup_index_get_without_preload_content(index)
+    response_data = json.loads(raw.read())
+    download_url = response_data["data"][0]["url"]
 
     file_path = f"{index}.zip"
-    with urllib.request.urlopen(api_response.data[0].url) as response:
+    with urllib.request.urlopen(download_url) as response:
         with open(file_path, "wb") as file:
             file.write(response.read())
 ```
@@ -341,6 +354,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
 ```python
 import asyncio
+import json
 import os
 import urllib.request
 import vulncheck_sdk.aio as vcaio
@@ -350,6 +364,7 @@ TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
 configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
+configuration.ignore_operation_servers = True
 
 
 def download_sync(url, file_path):
@@ -365,23 +380,19 @@ def download_sync(url, file_path):
 async def main():
     # Use 'async with' to manage the connection life-cycle
     async with vcaio.ApiClient(configuration) as api_client:
-        endpoints_client = vcaio.EndpointsApi(api_client)
+        backup_client = vcaio.BackupApi(api_client)
         index = "initial-access"
 
-        # 'await' the coroutine to get the actual response data
-        api_response = await endpoints_client.backup_index_get(index)
+        # 'await' the coroutine to get the raw response bytes
+        raw = await backup_client.backup_index_get_without_preload_content(index)
+        response_data = json.loads(await raw.read())
+        download_url = response_data["data"][0]["url"]
 
-        if not api_response.data:
-            print("No backup URL found.")
-            return
-
-        download_url = api_response.data[0].url
         file_path = f"{index}.zip"
 
         print(f"Downloading {index} via urllib (offloaded to thread)...")
 
         # Use asyncio.to_thread to run the blocking call safely
-        # 'await' the coroutine to get the actual response data
         await asyncio.to_thread(download_sync, download_url, file_path)
 
         print(f"Successfully saved to {file_path}")

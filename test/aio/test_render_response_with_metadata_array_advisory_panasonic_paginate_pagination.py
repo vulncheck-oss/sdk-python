@@ -79,6 +79,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryPanasonicPaginatePagination(uni
                         date_added = '', 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

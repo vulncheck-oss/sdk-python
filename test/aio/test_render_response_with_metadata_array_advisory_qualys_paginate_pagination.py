@@ -81,6 +81,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryQualysPaginatePagination(unitte
                             ''
                             ], 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

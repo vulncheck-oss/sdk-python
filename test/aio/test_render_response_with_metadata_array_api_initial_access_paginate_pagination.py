@@ -97,6 +97,9 @@ class TestRenderResponseWithMetadataArrayApiInitialAccessPaginatePagination(unit
                                 censys_raw_queries = [
                                     ''
                                     ], 
+                                chain = [
+                                    ''
+                                    ], 
                                 clone_sshurl = '', 
                                 date_added = '', 
                                 driftnet_queries = [
@@ -127,6 +130,9 @@ class TestRenderResponseWithMetadataArrayApiInitialAccessPaginatePagination(unit
                                 nmap_script = True, 
                                 pcap = True, 
                                 product = [
+                                    ''
+                                    ], 
+                                related = [
                                     ''
                                     ], 
                                 shodan_queries = [
