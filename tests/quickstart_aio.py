@@ -17,8 +17,6 @@ async def run_vulnerability_checks():
     async with vcaio.ApiClient(configuration) as api_client:
         endpoints_client = vcaio.EndpointsApi(api_client)
         indices_client = vcaio.IndicesApi(api_client)
-        backup_client = vcaio.BackupApi(api_client)
-
         # --- PURL Search ---
         # 'await' the coroutine to get results
         purl_response = await endpoints_client.purl_get("pkg:hex/coherence@0.1.2")
@@ -43,7 +41,7 @@ async def run_vulnerability_checks():
         # --- Download Backup (Async) ---
         index_name = "initial-access"
         # 'await' the coroutine to get raw response bytes
-        raw = await backup_client.backup_index_get_without_preload_content(index_name)
+        raw = await endpoints_client.backup_index_get_without_preload_content(index_name)
         response_data = json.loads(await raw.read())
 
         if response_data.get("data"):
