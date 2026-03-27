@@ -35,6 +35,7 @@ class ApiInitialAccessArtifact(BaseModel):
     censys_legacy_raw_queries: Optional[List[StrictStr]] = Field(default=None, description="CensysLegacyRawQueries are raw legacy queries for examining potential Internet-exposed devices & applications with Censys.", alias="censysLegacyRawQueries")
     censys_queries: Optional[List[StrictStr]] = Field(default=None, description="CensysQueries are queries for examining potential Internet-exposed devices & applications with Censys in URL form.", alias="censysQueries")
     censys_raw_queries: Optional[List[StrictStr]] = Field(default=None, description="CensysRawQueries are raw queries for examining potential Internet-exposed devices & applications with Censys.", alias="censysRawQueries")
+    chain: Optional[List[StrictStr]] = Field(default=None, description="Chain can represent the chain of exploitation.")
     clone_sshurl: Optional[StrictStr] = Field(default=None, description="CloneSSHURL is the git URL to clone the artifact with.", alias="cloneSSHURL")
     date_added: Optional[StrictStr] = Field(default=None, description="DateAdded is when this artifact entry was first added to the InitialAccess data set.", alias="dateAdded")
     driftnet_queries: Optional[List[StrictStr]] = Field(default=None, description="DriftnetQueries are queries for examining Internet exposed services with Driftnet.", alias="driftnetQueries")
@@ -49,6 +50,7 @@ class ApiInitialAccessArtifact(BaseModel):
     nmap_script: Optional[StrictBool] = Field(default=None, description="NmapScript indicates whether or not an nmap script for scanning environment exists in this artifact.", alias="nmapScript")
     pcap: Optional[StrictBool] = Field(default=None, description="PCAP indicates whether of not a package capture of the exploit PoC exploiting a vulnerable system exists in this artifact.")
     product: Optional[List[StrictStr]] = Field(default=None, description="Product are the software that has the vulnerability.")
+    related: Optional[List[StrictStr]] = Field(default=None, description="Related is a set of related cves.")
     shodan_queries: Optional[List[StrictStr]] = Field(default=None, description="ShodanQueries are queries for examining potential Internet-exposed devices & applications with Shodan in URL form.", alias="shodanQueries")
     shodan_raw_queries: Optional[List[StrictStr]] = Field(default=None, description="ShodanRawQueries are raw queries for examining potential Internet-exposed devices & applications with Shodan.", alias="shodanRawQueries")
     sigma_rule: Optional[StrictBool] = Field(default=None, description="SigmaRule indicates whether or not a Sigma rule designed to detect the exploitation of the vulnerability over the network exists in this artifact.", alias="sigmaRule")
@@ -63,7 +65,7 @@ class ApiInitialAccessArtifact(BaseModel):
     zeroday: Optional[StrictBool] = Field(default=None, description="Zeroday indicates whether or not it is a VulnCheck zeroday.")
     zoom_eye_queries: Optional[List[StrictStr]] = Field(default=None, description="ZoomEyeQueries are raw queries for examining potential Internet-exposed devices & applications with ZoomEye.", alias="zoomEyeQueries")
     zoom_eye_raw_queries: Optional[List[StrictStr]] = Field(default=None, alias="zoomEyeRawQueries")
-    __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "baiduQueries", "baiduRawQueries", "censysLegacyQueries", "censysLegacyRawQueries", "censysQueries", "censysRawQueries", "cloneSSHURL", "dateAdded", "driftnetQueries", "driftnetRawQueries", "exploit", "fofaQueries", "fofaRawQueries", "googleQueries", "googleRawQueries", "greynoiseQueries", "mitreAttackTechniques", "nmapScript", "pcap", "product", "shodanQueries", "shodanRawQueries", "sigmaRule", "snortRule", "suricataRule", "targetDocker", "targetEncryptedComms", "targetService", "vendor", "versionScanner", "yara", "zeroday", "zoomEyeQueries", "zoomEyeRawQueries"]
+    __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "baiduQueries", "baiduRawQueries", "censysLegacyQueries", "censysLegacyRawQueries", "censysQueries", "censysRawQueries", "chain", "cloneSSHURL", "dateAdded", "driftnetQueries", "driftnetRawQueries", "exploit", "fofaQueries", "fofaRawQueries", "googleQueries", "googleRawQueries", "greynoiseQueries", "mitreAttackTechniques", "nmapScript", "pcap", "product", "related", "shodanQueries", "shodanRawQueries", "sigmaRule", "snortRule", "suricataRule", "targetDocker", "targetEncryptedComms", "targetService", "vendor", "versionScanner", "yara", "zeroday", "zoomEyeQueries", "zoomEyeRawQueries"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -124,6 +126,7 @@ class ApiInitialAccessArtifact(BaseModel):
             "censysLegacyRawQueries": obj.get("censysLegacyRawQueries"),
             "censysQueries": obj.get("censysQueries"),
             "censysRawQueries": obj.get("censysRawQueries"),
+            "chain": obj.get("chain"),
             "cloneSSHURL": obj.get("cloneSSHURL"),
             "dateAdded": obj.get("dateAdded"),
             "driftnetQueries": obj.get("driftnetQueries"),
@@ -138,6 +141,7 @@ class ApiInitialAccessArtifact(BaseModel):
             "nmapScript": obj.get("nmapScript"),
             "pcap": obj.get("pcap"),
             "product": obj.get("product"),
+            "related": obj.get("related"),
             "shodanQueries": obj.get("shodanQueries"),
             "shodanRawQueries": obj.get("shodanRawQueries"),
             "sigmaRule": obj.get("sigmaRule"),

@@ -32,8 +32,9 @@ class AdvisoryNI(BaseModel):
     ovewrview: Optional[StrictStr] = None
     references: Optional[List[StrictStr]] = None
     title: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "date_added", "ovewrview", "references", "title", "url"]
+    __properties: ClassVar[List[str]] = ["cve", "date_added", "ovewrview", "references", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +92,7 @@ class AdvisoryNI(BaseModel):
             "ovewrview": obj.get("ovewrview"),
             "references": obj.get("references"),
             "title": obj.get("title"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

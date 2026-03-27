@@ -88,6 +88,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMACertPaginatePagination(unitte
                         risks_fr = '', 
                         solution_fr = '', 
                         title_fr = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

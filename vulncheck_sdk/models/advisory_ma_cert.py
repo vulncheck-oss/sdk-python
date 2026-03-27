@@ -38,8 +38,9 @@ class AdvisoryMACert(BaseModel):
     risks_fr: Optional[StrictStr] = None
     solution_fr: Optional[StrictStr] = None
     title_fr: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected_systems_fr", "assessment_fr", "cve", "date_added", "impact_fr", "reference", "references", "risk_fr", "risks_fr", "solution_fr", "title_fr", "url"]
+    __properties: ClassVar[List[str]] = ["affected_systems_fr", "assessment_fr", "cve", "date_added", "impact_fr", "reference", "references", "risk_fr", "risks_fr", "solution_fr", "title_fr", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,6 +104,7 @@ class AdvisoryMACert(BaseModel):
             "risks_fr": obj.get("risks_fr"),
             "solution_fr": obj.get("solution_fr"),
             "title_fr": obj.get("title_fr"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url")
         })
         return _obj

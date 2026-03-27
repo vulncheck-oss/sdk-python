@@ -111,7 +111,8 @@ class TestRenderResponseWithMetadataArrayAdvisoryHaskellSADBAdvisoryPaginatePagi
                             }, 
                         related_vulns = [
                             ''
-                            ], )
+                            ], 
+                        updated_at = '', )
                     ]
             )
         else:

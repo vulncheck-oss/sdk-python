@@ -47,7 +47,9 @@ class TestAdvisorySamba(unittest.TestCase):
                     ],
                 references = [
                     ''
-                    ]
+                    ],
+                updated_at = '',
+                url = ''
             )
         else:
             return AdvisorySamba(

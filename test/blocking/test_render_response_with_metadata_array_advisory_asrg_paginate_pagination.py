@@ -86,6 +86,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryASRGPaginatePagination(unittest
                             ''
                             ], 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **keywords** | **List[str]** |  | [optional] 
 **references** | **Dict[str, List[str]]** |  | [optional] 
 **related_vulns** | **List[str]** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 

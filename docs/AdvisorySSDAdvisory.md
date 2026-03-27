@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **response_ref** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 
 ## Example
 

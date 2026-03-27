@@ -44,6 +44,7 @@ class TestAdvisoryTraneTechnology(unittest.TestCase):
                 id = '',
                 product = '',
                 summary = '',
+                updated_at = '',
                 url = ''
             )
         else:

@@ -51,6 +51,7 @@ class TestAdvisoryMACert(unittest.TestCase):
                 risks_fr = '',
                 solution_fr = '',
                 title_fr = '',
+                updated_at = '',
                 url = ''
             )
         else:

@@ -82,6 +82,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryNIPaginatePagination(unittest.T
                             ''
                             ], 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

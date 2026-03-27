@@ -74,7 +74,8 @@ class TestAdvisoryHaskellSADBAdvisory(unittest.TestCase):
                     },
                 related_vulns = [
                     ''
-                    ]
+                    ],
+                updated_at = ''
             )
         else:
             return AdvisoryHaskellSADBAdvisory(

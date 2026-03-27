@@ -80,6 +80,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryTIPaginatePagination(unittest.T
                         incident_id = '', 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

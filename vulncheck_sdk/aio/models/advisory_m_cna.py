@@ -21,13 +21,13 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.advisory_credit import AdvisoryCredit
+from vulncheck_sdk.aio.models.advisory_custom_cpe import AdvisoryCustomCPE
 from vulncheck_sdk.aio.models.advisory_impact import AdvisoryImpact
 from vulncheck_sdk.aio.models.advisory_m_affected import AdvisoryMAffected
 from vulncheck_sdk.aio.models.advisory_m_descriptions import AdvisoryMDescriptions
 from vulncheck_sdk.aio.models.advisory_m_problem_types import AdvisoryMProblemTypes
 from vulncheck_sdk.aio.models.advisory_m_provider_metadata import AdvisoryMProviderMetadata
 from vulncheck_sdk.aio.models.advisory_m_reference import AdvisoryMReference
-from vulncheck_sdk.aio.models.advisory_mcpe_applicability import AdvisoryMCPEApplicability
 from vulncheck_sdk.aio.models.advisory_metric import AdvisoryMetric
 from vulncheck_sdk.aio.models.advisory_timeline import AdvisoryTimeline
 from typing import Optional, Set
@@ -38,7 +38,7 @@ class AdvisoryMCna(BaseModel):
     advisory.MCna
     """ # noqa: E501
     affected: Optional[List[AdvisoryMAffected]] = None
-    cpe_applicability: Optional[List[AdvisoryMCPEApplicability]] = Field(default=None, alias="cpeApplicability")
+    cpe_applicability: Optional[List[AdvisoryCustomCPE]] = Field(default=None, alias="cpeApplicability")
     credits: Optional[List[AdvisoryCredit]] = None
     descriptions: Optional[List[AdvisoryMDescriptions]] = None
     impacts: Optional[List[AdvisoryImpact]] = None
@@ -169,7 +169,7 @@ class AdvisoryMCna(BaseModel):
 
         _obj = cls.model_validate({
             "affected": [AdvisoryMAffected.from_dict(_item) for _item in obj["affected"]] if obj.get("affected") is not None else None,
-            "cpeApplicability": [AdvisoryMCPEApplicability.from_dict(_item) for _item in obj["cpeApplicability"]] if obj.get("cpeApplicability") is not None else None,
+            "cpeApplicability": [AdvisoryCustomCPE.from_dict(_item) for _item in obj["cpeApplicability"]] if obj.get("cpeApplicability") is not None else None,
             "credits": [AdvisoryCredit.from_dict(_item) for _item in obj["credits"]] if obj.get("credits") is not None else None,
             "descriptions": [AdvisoryMDescriptions.from_dict(_item) for _item in obj["descriptions"]] if obj.get("descriptions") is not None else None,
             "impacts": [AdvisoryImpact.from_dict(_item) for _item in obj["impacts"]] if obj.get("impacts") is not None else None,
