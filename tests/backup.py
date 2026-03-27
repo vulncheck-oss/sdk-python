@@ -1,4 +1,3 @@
-import json
 import urllib.request
 import vulncheck_sdk
 import os
@@ -13,11 +12,9 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     index = "initial-access"
 
-    raw = endpoints_client.backup_index_get_without_preload_content(index)
-    response_data = json.loads(raw.read())
-    download_url = response_data["data"][0]["url"]
+    api_response = endpoints_client.backup_index_get(index)
 
     file_path = f"{index}.zip"
-    with urllib.request.urlopen(download_url) as response:
+    with urllib.request.urlopen(api_response.data[0].url) as response:
         with open(file_path, "wb") as file:
             file.write(response.read())
