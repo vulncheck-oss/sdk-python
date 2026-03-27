@@ -1861,6 +1861,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_malicious_vscode_exts_get(self) -> None:
+        """Test case for index_malicious_vscode_exts_get
+
+        Return vulnerability data stored in index \"malicious-vscode-exts\"
+        """
+        pass
+
     def test_index_manageengine_get(self) -> None:
         """Test case for index_manageengine_get
 

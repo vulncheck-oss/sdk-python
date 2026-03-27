@@ -15,11 +15,12 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.42"
+__version__ = "0.0.43"
 
 # Define package exports
 __all__ = [
     "AdvisoryApi",
+    "BackupApi",
     "EndpointsApi",
     "IndicesApi",
     "ApiResponse",
@@ -226,6 +227,7 @@ __all__ = [
     "AdvisoryCurlCWE",
     "AdvisoryCurlCredit",
     "AdvisoryCurlRange",
+    "AdvisoryCustomCPE",
     "AdvisoryCvrf",
     "AdvisoryCvsssV23",
     "AdvisoryCwe",
@@ -427,6 +429,7 @@ __all__ = [
     "AdvisoryMVersion",
     "AdvisoryMVulnerability",
     "AdvisoryMaliciousPackage",
+    "AdvisoryMaliciousVSCodeExts",
     "AdvisoryManageEngine",
     "AdvisoryManageEngineAdvisory",
     "AdvisoryMbedTLS",
@@ -859,6 +862,9 @@ __all__ = [
     "ApiUpdate",
     "ApiVulnCheckCanary",
     "ApiVulnerabilityAlias",
+    "BackupBackupResponse",
+    "BackupFeedItem",
+    "BackupListBackupsResponse",
     "ModelsEntitlements",
     "PaginateMatch",
     "PaginatePagination",
@@ -1109,6 +1115,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryMACertPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMFilesPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMaliciousPackagePaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryMaliciousVSCodeExtsPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryManageEngineAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMbedTLSPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMcAfeePaginatePagination",
@@ -1351,6 +1358,7 @@ __all__ = [
 
 # import apis into sdk package
 from vulncheck_sdk.aio.api.advisory_api import AdvisoryApi as AdvisoryApi
+from vulncheck_sdk.aio.api.backup_api import BackupApi as BackupApi
 from vulncheck_sdk.aio.api.endpoints_api import EndpointsApi as EndpointsApi
 from vulncheck_sdk.aio.api.indices_api import IndicesApi as IndicesApi
 
@@ -1561,6 +1569,7 @@ from vulncheck_sdk.aio.models.advisory_curl_affected import AdvisoryCurlAffected
 from vulncheck_sdk.aio.models.advisory_curl_cwe import AdvisoryCurlCWE as AdvisoryCurlCWE
 from vulncheck_sdk.aio.models.advisory_curl_credit import AdvisoryCurlCredit as AdvisoryCurlCredit
 from vulncheck_sdk.aio.models.advisory_curl_range import AdvisoryCurlRange as AdvisoryCurlRange
+from vulncheck_sdk.aio.models.advisory_custom_cpe import AdvisoryCustomCPE as AdvisoryCustomCPE
 from vulncheck_sdk.aio.models.advisory_cvrf import AdvisoryCvrf as AdvisoryCvrf
 from vulncheck_sdk.aio.models.advisory_cvsss_v23 import AdvisoryCvsssV23 as AdvisoryCvsssV23
 from vulncheck_sdk.aio.models.advisory_cwe import AdvisoryCwe as AdvisoryCwe
@@ -1762,6 +1771,7 @@ from vulncheck_sdk.aio.models.advisory_ms_document_title import AdvisoryMSDocume
 from vulncheck_sdk.aio.models.advisory_m_version import AdvisoryMVersion as AdvisoryMVersion
 from vulncheck_sdk.aio.models.advisory_m_vulnerability import AdvisoryMVulnerability as AdvisoryMVulnerability
 from vulncheck_sdk.aio.models.advisory_malicious_package import AdvisoryMaliciousPackage as AdvisoryMaliciousPackage
+from vulncheck_sdk.aio.models.advisory_malicious_vs_code_exts import AdvisoryMaliciousVSCodeExts as AdvisoryMaliciousVSCodeExts
 from vulncheck_sdk.aio.models.advisory_manage_engine import AdvisoryManageEngine as AdvisoryManageEngine
 from vulncheck_sdk.aio.models.advisory_manage_engine_advisory import AdvisoryManageEngineAdvisory as AdvisoryManageEngineAdvisory
 from vulncheck_sdk.aio.models.advisory_mbed_tls import AdvisoryMbedTLS as AdvisoryMbedTLS
@@ -2194,6 +2204,9 @@ from vulncheck_sdk.aio.models.api_temporal_metric_v3 import ApiTemporalMetricV3 
 from vulncheck_sdk.aio.models.api_update import ApiUpdate as ApiUpdate
 from vulncheck_sdk.aio.models.api_vuln_check_canary import ApiVulnCheckCanary as ApiVulnCheckCanary
 from vulncheck_sdk.aio.models.api_vulnerability_alias import ApiVulnerabilityAlias as ApiVulnerabilityAlias
+from vulncheck_sdk.aio.models.backup_backup_response import BackupBackupResponse as BackupBackupResponse
+from vulncheck_sdk.aio.models.backup_feed_item import BackupFeedItem as BackupFeedItem
+from vulncheck_sdk.aio.models.backup_list_backups_response import BackupListBackupsResponse as BackupListBackupsResponse
 from vulncheck_sdk.aio.models.models_entitlements import ModelsEntitlements as ModelsEntitlements
 from vulncheck_sdk.aio.models.paginate_match import PaginateMatch as PaginateMatch
 from vulncheck_sdk.aio.models.paginate_pagination import PaginatePagination as PaginatePagination
@@ -2444,6 +2457,7 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_lol_a
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_ma_cert_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMACertPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMACertPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_m_files_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMFilesPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMFilesPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_malicious_package_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMaliciousPackagePaginatePagination as RenderResponseWithMetadataArrayAdvisoryMaliciousPackagePaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_malicious_vs_code_exts_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMaliciousVSCodeExtsPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMaliciousVSCodeExtsPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_manage_engine_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryManageEngineAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryManageEngineAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_mbed_tls_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMbedTLSPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMbedTLSPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_mc_afee_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMcAfeePaginatePagination as RenderResponseWithMetadataArrayAdvisoryMcAfeePaginatePagination

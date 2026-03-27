@@ -76,20 +76,19 @@ class TestRenderResponseWithMetadataArrayAdvisoryCISAAlertPaginatePagination(uni
                         affected_products = '', 
                         alert_id = '', 
                         archived = True, 
-                        cve = [
-                            ''
-                            ], 
-                        cveexploited_itw = True, 
+                        cve_exploited_itw = True, 
                         cvss = '', 
-                        date_added = '', 
-                        icsa = True, 
                         icsma = True, 
                         mitigations = '', 
                         release_date = '', 
                         title = '', 
-                        updated_at = '', 
                         url = '', 
-                        vendor = '', )
+                        vendor = '', 
+                        cve = [
+                            ''
+                            ], 
+                        date_added = '', 
+                        updated_at = '', )
                     ]
             )
         else:

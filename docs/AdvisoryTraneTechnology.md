@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **product** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

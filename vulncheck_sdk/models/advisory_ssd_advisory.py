@@ -37,7 +37,8 @@ class AdvisorySSDAdvisory(BaseModel):
     response_ref: Optional[StrictStr] = None
     summary: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["analysis", "credit", "cve", "date_added", "link", "poc", "published", "response_ref", "summary", "title"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["analysis", "credit", "cve", "date_added", "link", "poc", "published", "response_ref", "summary", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,7 +100,8 @@ class AdvisorySSDAdvisory(BaseModel):
             "published": obj.get("published"),
             "response_ref": obj.get("response_ref"),
             "summary": obj.get("summary"),
-            "title": obj.get("title")
+            "title": obj.get("title"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

@@ -207,24 +207,26 @@ class TestRenderResponseWithMetadataArrayAdvisoryVulnCheckCVEListV5PaginatePagin
                                     ], 
                                 cna = vulncheck_sdk.aio.models.advisory/m_cna.advisory.MCna(
                                     cpe_applicability = [
-                                        vulncheck_sdk.aio.models.advisory/mcpe_applicability.advisory.MCPEApplicability(
-                                            negate = True, 
-                                            nodes = [
-                                                vulncheck_sdk.aio.models.advisory/m_nodes.advisory.MNodes(
-                                                    cpe_match = [
-                                                        vulncheck_sdk.aio.models.advisory/mcpe_match.advisory.MCPEMatch(
-                                                            criteria = '', 
-                                                            match_criteria_id = '', 
-                                                            version_end_excluding = '', 
-                                                            version_end_including = '', 
-                                                            version_start_excluding = '', 
-                                                            version_start_including = '', 
-                                                            vulnerable = True, )
-                                                        ], 
-                                                    negate = True, 
-                                                    operator = '', )
-                                                ], 
-                                            operator = '', )
+                                        vulncheck_sdk.aio.models.advisory/custom_cpe.advisory.CustomCPE(
+                                            mcpeapplicability = vulncheck_sdk.aio.models.advisory/mcpe_applicability.advisory.MCPEApplicability(
+                                                negate = True, 
+                                                nodes = [
+                                                    vulncheck_sdk.aio.models.advisory/m_nodes.advisory.MNodes(
+                                                        cpe_match = [
+                                                            vulncheck_sdk.aio.models.advisory/mcpe_match.advisory.MCPEMatch(
+                                                                criteria = '', 
+                                                                match_criteria_id = '', 
+                                                                version_end_excluding = '', 
+                                                                version_end_including = '', 
+                                                                version_start_excluding = '', 
+                                                                version_start_including = '', 
+                                                                vulnerable = True, )
+                                                            ], 
+                                                        negate = True, 
+                                                        operator = '', )
+                                                    ], 
+                                                operator = '', ), 
+                                            string_value = '', )
                                         ], 
                                     credits = [
                                         vulncheck_sdk.aio.models.advisory/credit.advisory.Credit(

@@ -79,6 +79,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryFastlyPaginatePagination(unitte
                         date_added = '', 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

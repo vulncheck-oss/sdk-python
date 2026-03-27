@@ -81,6 +81,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryTraneTechnologyPaginatePaginati
                         id = '', 
                         product = '', 
                         summary = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

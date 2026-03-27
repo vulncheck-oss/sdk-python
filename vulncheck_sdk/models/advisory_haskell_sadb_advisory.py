@@ -37,7 +37,8 @@ class AdvisoryHaskellSADBAdvisory(BaseModel):
     keywords: Optional[List[StrictStr]] = None
     references: Optional[Dict[str, List[StrictStr]]] = None
     related_vulns: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["advisory_id", "affected_packages", "aliases", "cve", "cwes", "date_added", "keywords", "references", "related_vulns"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["advisory_id", "affected_packages", "aliases", "cve", "cwes", "date_added", "keywords", "references", "related_vulns", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -105,7 +106,8 @@ class AdvisoryHaskellSADBAdvisory(BaseModel):
             "date_added": obj.get("date_added"),
             "keywords": obj.get("keywords"),
             "references": obj.get("references"),
-            "related_vulns": obj.get("related_vulns")
+            "related_vulns": obj.get("related_vulns"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

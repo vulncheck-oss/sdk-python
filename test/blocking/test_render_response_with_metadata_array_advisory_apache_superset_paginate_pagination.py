@@ -79,6 +79,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheSupersetPaginatePaginatio
                             ], 
                         date_added = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

@@ -44,6 +44,7 @@ class TestAdvisoryQualys(unittest.TestCase):
                     ''
                     ],
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

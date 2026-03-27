@@ -84,7 +84,9 @@ class TestRenderResponseWithMetadataArrayAdvisorySambaPaginatePagination(unittes
                             ], 
                         references = [
                             ''
-                            ], )
+                            ], 
+                        updated_at = '', 
+                        url = '', )
                     ]
             )
         else:
