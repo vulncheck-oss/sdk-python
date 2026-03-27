@@ -1,6 +1,7 @@
 import os
 import asyncio
 import vulncheck_sdk.aio as vcaio
+from vulncheck_sdk.aio.api.backup_api import BackupApi
 from vulncheck_sdk.aio.api.endpoints_api import EndpointsApi
 from vulncheck_sdk.aio.api.indices_api import IndicesApi
 from vulncheck_sdk.aio.exceptions import ApiException, UnauthorizedException
@@ -30,19 +31,19 @@ async def _get_http_status(func, *args) -> int:
 # --- EndpointsApi Tests ---
 
 
-async def test_openapi_get(api: EndpointsApi):
+async def _check_openapi_get(api: EndpointsApi) -> None:
     print(f"Testing test_openapi_get")
     status = await _get_http_status(api.openapi_get_with_http_info)
     assert status == 200
 
 
-async def test_entitlements_get(api: EndpointsApi):
+async def _check_entitlements_get(api: EndpointsApi) -> None:
     print(f"Testing test_entitlements_get")
     status = await _get_http_status(api.entitlements_get_with_http_info)
     assert status == 200
 
 
-async def test_purl_get(api: EndpointsApi):
+async def _check_purl_get(api: EndpointsApi) -> None:
     print(f"Testing test_purl_get")
     status = await _get_http_status(
         api.purl_get_with_http_info, "pkg:hex/coherence@0.1.2"
@@ -50,13 +51,13 @@ async def test_purl_get(api: EndpointsApi):
     assert status == 200
 
 
-async def test_index_get(api: EndpointsApi):
+async def _check_index_get(api: EndpointsApi) -> None:
     print(f"Testing test_index_get")
     status = await _get_http_status(api.index_get_with_http_info)
     assert status == 200
 
 
-async def test_cpe_get(api: EndpointsApi):
+async def _check_cpe_get(api: EndpointsApi) -> None:
     print(f"Testing test_cpe_get")
     status = await _get_http_status(
         api.cpe_get_with_http_info, "cpe:/a:microsoft:internet_explorer:8.0.6001:beta"
@@ -64,25 +65,25 @@ async def test_cpe_get(api: EndpointsApi):
     assert status == 200
 
 
-async def test_backup_get(api: EndpointsApi):
+async def _check_backup_get(backup: BackupApi) -> None:
     print(f"Testing test_backup_get")
-    status = await _get_http_status(api.backup_get_with_http_info)
+    status = await _get_http_status(backup.backup_get_with_http_info)
     assert status == 200
 
 
-async def test_backup_index_get(api: EndpointsApi):
+async def _check_backup_index_get(backup: BackupApi) -> None:
     print(f"Testing test_backup_index_get")
-    status = await _get_http_status(api.backup_index_get_with_http_info, "")
+    status = await _get_http_status(backup.backup_index_get_with_http_info, "")
     assert status == 200
 
 
-async def test_pdns_vulncheck_c2_get(api: EndpointsApi):
+async def _check_pdns_vulncheck_c2_get(api: EndpointsApi) -> None:
     print(f"Testing test_pdns_vulncheck_c2_get")
     status = await _get_http_status(api.pdns_vulncheck_c2_get_with_http_info, "")
     assert status == 200
 
 
-async def test_rules_initial_access_type_get(api: EndpointsApi):
+async def _check_rules_initial_access_type_get(api: EndpointsApi) -> None:
     print(f"Testing test_rules_initial_access_type_get")
     status = await _get_http_status(
         api.rules_initial_access_type_get_with_http_info, "suricata"
@@ -93,7 +94,7 @@ async def test_rules_initial_access_type_get(api: EndpointsApi):
 # --- IndicesApi Tests ---
 
 
-async def test_all_indices(indices: IndicesApi):
+async def _check_all_indices(indices: IndicesApi) -> None:
     targets = [
         "index_nist_nvd2_get_with_http_info",
         "index_vulncheck_kev_get_with_http_info",
@@ -103,7 +104,6 @@ async def test_all_indices(indices: IndicesApi):
 
     for name in targets:
         method = getattr(indices, name)
-        # Passing strings for limit/page to satisfy Pydantic validation
         status = await _get_http_status(method, 1, 1)
         print(f"Testing {name}: Result {status}")
         assert status == 200
@@ -112,32 +112,39 @@ async def test_all_indices(indices: IndicesApi):
 # --- Orchestrator ---
 
 
-async def main():
+async def main() -> None:
     if not API_TOKEN:
         print("Warning: VULNCHECK_API_TOKEN is not set.")
 
     config = vcaio.Configuration()
     config.api_key["Bearer"] = API_TOKEN
 
+    backup_config = vcaio.Configuration()
+    backup_config.api_key["Bearer"] = API_TOKEN
+    backup_config.ignore_operation_servers = True
+
     # The 'async with' ensures the ClientSession is closed
     async with vcaio.ApiClient(config) as client:
         endpoints_api = vcaio.EndpointsApi(client)
         indices_api = vcaio.IndicesApi(client)
 
-        print("--- Running Tests ---")
-        asyncio.gather(
-            test_openapi_get(endpoints_api),
-            test_entitlements_get(endpoints_api),
-            test_purl_get(endpoints_api),
-            test_index_get(endpoints_api),
-            test_cpe_get(endpoints_api),
-            test_backup_get(endpoints_api),
-            test_backup_index_get(endpoints_api),
-            test_pdns_vulncheck_c2_get(endpoints_api),
-            test_rules_initial_access_type_get(endpoints_api),
-        )
+        async with vcaio.ApiClient(backup_config) as backup_client:
+            backup_api = BackupApi(backup_client)
 
-        await test_all_indices(indices_api)
+            print("--- Running Tests ---")
+            await asyncio.gather(
+                _check_openapi_get(endpoints_api),
+                _check_entitlements_get(endpoints_api),
+                _check_purl_get(endpoints_api),
+                _check_index_get(endpoints_api),
+                _check_cpe_get(endpoints_api),
+                _check_backup_get(backup_api),
+                _check_backup_index_get(backup_api),
+                _check_pdns_vulncheck_c2_get(endpoints_api),
+                _check_rules_initial_access_type_get(endpoints_api),
+            )
+
+            await _check_all_indices(indices_api)
 
     # --- CRITICAL FIX FOR "UNCLOSED CONNECTOR" ---
     # aiohttp requires a small window of time to allow the

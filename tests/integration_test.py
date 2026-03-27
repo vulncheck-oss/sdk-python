@@ -1,5 +1,6 @@
 import os
 import vulncheck_sdk
+from vulncheck_sdk.api.backup_api import BackupApi
 from vulncheck_sdk.api.endpoints_api import EndpointsApi
 from vulncheck_sdk.api.indices_api import IndicesApi
 from vulncheck_sdk.api_response import ApiResponse
@@ -48,13 +49,13 @@ def test_cpe_get():
 
 
 def test_backup_get():
-    api_instance = _get_api_instance(API_TOKEN)
+    api_instance = _get_backup_instance(API_TOKEN)
     status = _get_http_status(api_instance.backup_get_with_http_info)
     assert status == 200
 
 
 def test_backup_index_get():
-    api_instance = _get_api_instance(API_TOKEN)
+    api_instance = _get_backup_instance(API_TOKEN)
     status = _get_http_status(api_instance.backup_index_get_with_http_info, "")
     assert status == 200
 
@@ -130,6 +131,15 @@ def _get_api_instance(token: str = "") -> EndpointsApi:
         config.api_key["Bearer"] = token
     client = vulncheck_sdk.ApiClient(config)
     return vulncheck_sdk.EndpointsApi(client)
+
+
+def _get_backup_instance(token: str = "") -> BackupApi:
+    config = vulncheck_sdk.Configuration()
+    if token != "":
+        config.api_key["Bearer"] = token
+    config.ignore_operation_servers = True
+    client = vulncheck_sdk.ApiClient(config)
+    return BackupApi(client)
 
 
 def _get_indices_instance(token: str = "") -> IndicesApi:
