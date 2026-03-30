@@ -1,15 +1,94 @@
 # vulncheck_sdk.AdvisoryApi
 
-All URIs are relative to *https://api.vulncheck.com/v3*
+All URIs are relative to *https://api.vulncheck.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**advisory_get**](AdvisoryApi.md#advisory_get) | **GET** /advisory | Query advisories
-[**advisory_list_get**](AdvisoryApi.md#advisory_list_get) | **GET** /advisory/list | List advisory feeds
+[**v4_list_advisory_feeds**](AdvisoryApi.md#v4_list_advisory_feeds) | **GET** /v4/advisory/list | List advisory feeds
+[**v4_query_advisories**](AdvisoryApi.md#v4_query_advisories) | **GET** /v4/advisory | Query advisories
 
 
-# **advisory_get**
-> SearchV4AdvisoryReturnValue advisory_get(name=name, cve_id=cve_id, vendor=vendor, product=product, platform=platform, version=version, cpe=cpe, package_name=package_name, purl=purl, reference_url=reference_url, reference_tag=reference_tag, description_lang=description_lang, updated_after=updated_after, updated_before=updated_before, page=page, limit=limit, start_cursor=start_cursor, cursor=cursor)
+# **v4_list_advisory_feeds**
+> SearchV4ListFeedReturnValue v4_list_advisory_feeds()
+
+List advisory feeds
+
+Return a list of available advisory feed names
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.search_v4_list_feed_return_value import SearchV4ListFeedReturnValue
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.vulncheck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "https://api.vulncheck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.AdvisoryApi(api_client)
+
+    try:
+        # List advisory feeds
+        api_response = api_instance.v4_list_advisory_feeds()
+        print("The response of AdvisoryApi->v4_list_advisory_feeds:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdvisoryApi->v4_list_advisory_feeds: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SearchV4ListFeedReturnValue**](SearchV4ListFeedReturnValue.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**503** | Service Unavailable |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v4_query_advisories**
+> SearchV4AdvisoryReturnValue v4_query_advisories(name=name, cve_id=cve_id, vendor=vendor, product=product, platform=platform, version=version, cpe=cpe, package_name=package_name, purl=purl, reference_url=reference_url, reference_tag=reference_tag, description_lang=description_lang, updated_after=updated_after, updated_before=updated_before, page=page, limit=limit, start_cursor=start_cursor, cursor=cursor)
 
 Query advisories
 
@@ -25,10 +104,10 @@ from vulncheck_sdk.models.search_v4_advisory_return_value import SearchV4Advisor
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.vulncheck.com/v3
+# Defining the host is optional and defaults to https://api.vulncheck.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = vulncheck_sdk.Configuration(
-    host = "https://api.vulncheck.com/v3"
+    host = "https://api.vulncheck.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -67,11 +146,11 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Query advisories
-        api_response = api_instance.advisory_get(name=name, cve_id=cve_id, vendor=vendor, product=product, platform=platform, version=version, cpe=cpe, package_name=package_name, purl=purl, reference_url=reference_url, reference_tag=reference_tag, description_lang=description_lang, updated_after=updated_after, updated_before=updated_before, page=page, limit=limit, start_cursor=start_cursor, cursor=cursor)
-        print("The response of AdvisoryApi->advisory_get:\n")
+        api_response = api_instance.v4_query_advisories(name=name, cve_id=cve_id, vendor=vendor, product=product, platform=platform, version=version, cpe=cpe, package_name=package_name, purl=purl, reference_url=reference_url, reference_tag=reference_tag, description_lang=description_lang, updated_after=updated_after, updated_before=updated_before, page=page, limit=limit, start_cursor=start_cursor, cursor=cursor)
+        print("The response of AdvisoryApi->v4_query_advisories:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdvisoryApi->advisory_get: %s\n" % e)
+        print("Exception when calling AdvisoryApi->v4_query_advisories: %s\n" % e)
 ```
 
 
@@ -103,85 +182,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchV4AdvisoryReturnValue**](SearchV4AdvisoryReturnValue.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**503** | Service Unavailable |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **advisory_list_get**
-> SearchV4ListFeedReturnValue advisory_list_get()
-
-List advisory feeds
-
-Return a list of available advisory feed names
-
-### Example
-
-* Api Key Authentication (Bearer):
-
-```python
-import vulncheck_sdk
-from vulncheck_sdk.models.search_v4_list_feed_return_value import SearchV4ListFeedReturnValue
-from vulncheck_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.vulncheck.com/v3
-# See configuration.py for a list of all supported configuration parameters.
-configuration = vulncheck_sdk.Configuration(
-    host = "https://api.vulncheck.com/v3"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with vulncheck_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = vulncheck_sdk.AdvisoryApi(api_client)
-
-    try:
-        # List advisory feeds
-        api_response = api_instance.advisory_list_get()
-        print("The response of AdvisoryApi->advisory_list_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling AdvisoryApi->advisory_list_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**SearchV4ListFeedReturnValue**](SearchV4ListFeedReturnValue.md)
 
 ### Authorization
 
