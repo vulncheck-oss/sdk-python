@@ -21,8 +21,10 @@ from pydantic import Field, StrictStr, field_validator
 from typing import Any, Dict, List, Optional
 from typing_extensions import Annotated
 from vulncheck_sdk.aio.models.models_entitlements import ModelsEntitlements
+from vulncheck_sdk.aio.models.render_response_array_params_index_backup_list import RenderResponseArrayParamsIndexBackupList
 from vulncheck_sdk.aio.models.render_response_array_params_index_list import RenderResponseArrayParamsIndexList
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_string_v3controllers_response_metadata import RenderResponseWithMetadataArrayStringV3controllersResponseMetadata
+from vulncheck_sdk.aio.models.render_response_with_metadata_v3controllers_backup_response_data_v3controllers_backup_response_metadata import RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata
 from vulncheck_sdk.aio.models.render_response_with_metadata_v3controllers_purl_response_data_v3controllers_purl_response_metadata import RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata
 from vulncheck_sdk.aio.models.render_response_with_metadata_v3controllers_purls_response_data_v3controllers_purls_response_metadata import RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata
 
@@ -42,6 +44,531 @@ class EndpointsApi:
         if api_client is None:
             api_client = ApiClient.get_default()
         self.api_client = api_client
+
+
+    @validate_call
+    async def backup_get(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RenderResponseArrayParamsIndexBackupList:
+        """Return a list of indexes with backup and endpoint links
+
+        Return a list of indexes with backup and endpoint links that the user has access to
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._backup_get_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RenderResponseArrayParamsIndexBackupList",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    async def backup_get_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[RenderResponseArrayParamsIndexBackupList]:
+        """Return a list of indexes with backup and endpoint links
+
+        Return a list of indexes with backup and endpoint links that the user has access to
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._backup_get_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RenderResponseArrayParamsIndexBackupList",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    async def backup_get_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Return a list of indexes with backup and endpoint links
+
+        Return a list of indexes with backup and endpoint links that the user has access to
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._backup_get_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RenderResponseArrayParamsIndexBackupList",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _backup_get_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://api.vulncheck.com'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'Bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/backup',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    async def backup_index_get(
+        self,
+        index: Annotated[StrictStr, Field(description="Name of an exploit, vulnerability, or advisory index")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata:
+        """Retrieve a list of backups by index
+
+        Retrieve a list of VulnCheck backups by index
+
+        :param index: Name of an exploit, vulnerability, or advisory index (required)
+        :type index: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._backup_index_get_serialize(
+            index=index,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    async def backup_index_get_with_http_info(
+        self,
+        index: Annotated[StrictStr, Field(description="Name of an exploit, vulnerability, or advisory index")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata]:
+        """Retrieve a list of backups by index
+
+        Retrieve a list of VulnCheck backups by index
+
+        :param index: Name of an exploit, vulnerability, or advisory index (required)
+        :type index: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._backup_index_get_serialize(
+            index=index,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    async def backup_index_get_without_preload_content(
+        self,
+        index: Annotated[StrictStr, Field(description="Name of an exploit, vulnerability, or advisory index")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve a list of backups by index
+
+        Retrieve a list of VulnCheck backups by index
+
+        :param index: Name of an exploit, vulnerability, or advisory index (required)
+        :type index: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._backup_index_get_serialize(
+            index=index,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _backup_index_get_serialize(
+        self,
+        index,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://api.vulncheck.com'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if index is not None:
+            _path_params['index'] = index
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'Bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/backup/{index}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
 
 
     @validate_call
@@ -270,7 +797,7 @@ class EndpointsApi:
     ) -> RequestSerialized:
 
         _hosts = [
-            'https://api.vulncheck.com/v3'
+            'https://api.vulncheck.com'
         ]
         _host = _hosts[_host_index]
 
@@ -317,7 +844,7 @@ class EndpointsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/cpe',
+            resource_path='/v3/cpe',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -533,7 +1060,7 @@ class EndpointsApi:
     ) -> RequestSerialized:
 
         _hosts = [
-            'https://api.vulncheck.com/v3'
+            'https://api.vulncheck.com'
         ]
         _host = _hosts[_host_index]
 
@@ -572,7 +1099,7 @@ class EndpointsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/entitlements',
+            resource_path='/v3/entitlements',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -788,7 +1315,7 @@ class EndpointsApi:
     ) -> RequestSerialized:
 
         _hosts = [
-            'https://api.vulncheck.com/v3'
+            'https://api.vulncheck.com'
         ]
         _host = _hosts[_host_index]
 
@@ -827,7 +1354,7 @@ class EndpointsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/index',
+            resource_path='/v3/index',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1040,7 +1567,7 @@ class EndpointsApi:
     ) -> RequestSerialized:
 
         _hosts = [
-            'https://api.vulncheck.com/v3'
+            'https://api.vulncheck.com'
         ]
         _host = _hosts[_host_index]
 
@@ -1079,7 +1606,7 @@ class EndpointsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/openapi',
+            resource_path='/v3/openapi',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1308,7 +1835,7 @@ class EndpointsApi:
     ) -> RequestSerialized:
 
         _hosts = [
-            'https://api.vulncheck.com/v3'
+            'https://api.vulncheck.com'
         ]
         _host = _hosts[_host_index]
 
@@ -1351,7 +1878,7 @@ class EndpointsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/pdns/vulncheck-c2',
+            resource_path='/v3/pdns/vulncheck-c2',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1580,7 +2107,7 @@ class EndpointsApi:
     ) -> RequestSerialized:
 
         _hosts = [
-            'https://api.vulncheck.com/v3'
+            'https://api.vulncheck.com'
         ]
         _host = _hosts[_host_index]
 
@@ -1623,7 +2150,7 @@ class EndpointsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/purl',
+            resource_path='/v3/purl',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1852,7 +2379,7 @@ class EndpointsApi:
     ) -> RequestSerialized:
 
         _hosts = [
-            'https://api.vulncheck.com/v3'
+            'https://api.vulncheck.com'
         ]
         _host = _hosts[_host_index]
 
@@ -1907,7 +2434,7 @@ class EndpointsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/purls',
+            resource_path='/v3/purls',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2136,7 +2663,7 @@ class EndpointsApi:
     ) -> RequestSerialized:
 
         _hosts = [
-            'https://api.vulncheck.com/v3'
+            'https://api.vulncheck.com'
         ]
         _host = _hosts[_host_index]
 
@@ -2177,7 +2704,7 @@ class EndpointsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/rules/initial-access/{type}',
+            resource_path='/v3/rules/initial-access/{type}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2406,7 +2933,7 @@ class EndpointsApi:
     ) -> RequestSerialized:
 
         _hosts = [
-            'https://api.vulncheck.com/v3'
+            'https://api.vulncheck.com'
         ]
         _host = _hosts[_host_index]
 
@@ -2449,7 +2976,7 @@ class EndpointsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/tags/vulncheck-c2',
+            resource_path='/v3/tags/vulncheck-c2',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

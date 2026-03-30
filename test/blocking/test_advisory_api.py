@@ -27,17 +27,17 @@ class TestAdvisoryApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_advisory_get(self) -> None:
-        """Test case for advisory_get
+    def test_v4_list_advisory_feeds(self) -> None:
+        """Test case for v4_list_advisory_feeds
 
-        Query advisories
+        List advisory feeds
         """
         pass
 
-    def test_advisory_list_get(self) -> None:
-        """Test case for advisory_list_get
+    def test_v4_query_advisories(self) -> None:
+        """Test case for v4_query_advisories
 
-        List advisory feeds
+        Query advisories
         """
         pass
 

@@ -27,17 +27,17 @@ class TestBackupApi(unittest.IsolatedAsyncioTestCase):
     async def asyncTearDown(self) -> None:
         await self.api.api_client.close()
 
-    async def test_backup_get(self) -> None:
-        """Test case for backup_get
+    async def test_v4_get_backup_by_name(self) -> None:
+        """Test case for v4_get_backup_by_name
 
-        List available backups
+        Get backup by feed name
         """
         pass
 
-    async def test_backup_index_get(self) -> None:
-        """Test case for backup_index_get
+    async def test_v4_list_backups(self) -> None:
+        """Test case for v4_list_backups
 
-        Get backup by feed name
+        List available backups
         """
         pass
 
