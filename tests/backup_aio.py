@@ -1,5 +1,4 @@
 import asyncio
-import json
 import os
 import urllib.request
 import vulncheck_sdk.aio as vcaio
@@ -9,7 +8,6 @@ TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
 configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
-configuration.ignore_operation_servers = True
 
 
 def download_sync(url, file_path):
@@ -25,19 +23,23 @@ def download_sync(url, file_path):
 async def main():
     # Use 'async with' to manage the connection life-cycle
     async with vcaio.ApiClient(configuration) as api_client:
-        backup_client = vcaio.BackupApi(api_client)
+        endpoints_client = vcaio.EndpointsApi(api_client)
         index = "initial-access"
 
-        # 'await' the coroutine to get the raw response bytes
-        raw = await backup_client.backup_index_get_without_preload_content(index)
-        response_data = json.loads(await raw.read())
-        download_url = response_data["data"][0]["url"]
+        # 'await' the coroutine to get the actual response data
+        api_response = await endpoints_client.backup_index_get(index)
 
+        if not api_response.data:
+            print("No backup URL found.")
+            return
+
+        download_url = api_response.data[0].url
         file_path = f"{index}.zip"
 
         print(f"Downloading {index} via urllib (offloaded to thread)...")
 
         # Use asyncio.to_thread to run the blocking call safely
+        # 'await' the coroutine to get the actual response data
         await asyncio.to_thread(download_sync, download_url, file_path)
 
         print(f"Successfully saved to {file_path}")

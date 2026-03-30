@@ -1,7 +1,6 @@
 import os
 import asyncio
 import vulncheck_sdk.aio as vcaio
-from vulncheck_sdk.aio.api.backup_api import BackupApi
 from vulncheck_sdk.aio.api.endpoints_api import EndpointsApi
 from vulncheck_sdk.aio.api.indices_api import IndicesApi
 from vulncheck_sdk.aio.exceptions import ApiException, UnauthorizedException
@@ -65,15 +64,15 @@ async def _check_cpe_get(api: EndpointsApi) -> None:
     assert status == 200
 
 
-async def _check_backup_get(backup: BackupApi) -> None:
+async def _check_backup_get(api: EndpointsApi) -> None:
     print(f"Testing test_backup_get")
-    status = await _get_http_status(backup.backup_get_with_http_info)
+    status = await _get_http_status(api.backup_get_with_http_info)
     assert status == 200
 
 
-async def _check_backup_index_get(backup: BackupApi) -> None:
+async def _check_backup_index_get(api: EndpointsApi) -> None:
     print(f"Testing test_backup_index_get")
-    status = await _get_http_status(backup.backup_index_get_with_http_info, "")
+    status = await _get_http_status(api.backup_index_get_with_http_info, "initial-access")
     assert status == 200
 
 
@@ -119,32 +118,25 @@ async def main() -> None:
     config = vcaio.Configuration()
     config.api_key["Bearer"] = API_TOKEN
 
-    backup_config = vcaio.Configuration()
-    backup_config.api_key["Bearer"] = API_TOKEN
-    backup_config.ignore_operation_servers = True
-
     # The 'async with' ensures the ClientSession is closed
     async with vcaio.ApiClient(config) as client:
         endpoints_api = vcaio.EndpointsApi(client)
         indices_api = vcaio.IndicesApi(client)
 
-        async with vcaio.ApiClient(backup_config) as backup_client:
-            backup_api = BackupApi(backup_client)
+        print("--- Running Tests ---")
+        await asyncio.gather(
+            _check_openapi_get(endpoints_api),
+            _check_entitlements_get(endpoints_api),
+            _check_purl_get(endpoints_api),
+            _check_index_get(endpoints_api),
+            _check_cpe_get(endpoints_api),
+            _check_backup_get(endpoints_api),
+            _check_backup_index_get(endpoints_api),
+            _check_pdns_vulncheck_c2_get(endpoints_api),
+            _check_rules_initial_access_type_get(endpoints_api),
+        )
 
-            print("--- Running Tests ---")
-            await asyncio.gather(
-                _check_openapi_get(endpoints_api),
-                _check_entitlements_get(endpoints_api),
-                _check_purl_get(endpoints_api),
-                _check_index_get(endpoints_api),
-                _check_cpe_get(endpoints_api),
-                _check_backup_get(backup_api),
-                _check_backup_index_get(backup_api),
-                _check_pdns_vulncheck_c2_get(endpoints_api),
-                _check_rules_initial_access_type_get(endpoints_api),
-            )
-
-            await _check_all_indices(indices_api)
+        await _check_all_indices(indices_api)
 
     # --- CRITICAL FIX FOR "UNCLOSED CONNECTOR" ---
     # aiohttp requires a small window of time to allow the

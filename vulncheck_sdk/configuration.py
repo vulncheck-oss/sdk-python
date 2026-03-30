@@ -214,7 +214,7 @@ conf = vulncheck_sdk.Configuration(
     ) -> None:
         """Constructor
         """
-        self._base_path = "https://api.vulncheck.com/v3" if host is None else host
+        self._base_path = "https://api.vulncheck.com" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -537,7 +537,7 @@ conf = vulncheck_sdk.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: latest\n"\
-               "SDK Package Version: 0.0.43".\
+               "SDK Package Version: 0.0.44".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self) -> List[HostSetting]:
@@ -547,11 +547,7 @@ conf = vulncheck_sdk.Configuration(
         """
         return [
             {
-                'url': "https://api.vulncheck.com/v3",
-                'description': "No description provided",
-            },
-            {
-                'url': "https://api.vulncheck.com/v4",
+                'url': "https://api.vulncheck.com",
                 'description': "No description provided",
             }
         ]

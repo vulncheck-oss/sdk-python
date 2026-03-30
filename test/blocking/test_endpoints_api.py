@@ -27,6 +27,20 @@ class TestEndpointsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_backup_get(self) -> None:
+        """Test case for backup_get
+
+        Return a list of indexes with backup and endpoint links
+        """
+        pass
+
+    def test_backup_index_get(self) -> None:
+        """Test case for backup_index_get
+
+        Retrieve a list of backups by index
+        """
+        pass
+
     def test_cpe_get(self) -> None:
         """Test case for cpe_get
 
