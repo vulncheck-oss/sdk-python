@@ -328,7 +328,6 @@ if __name__ == "__main__":
 </details>
 
 ### Backup v4
-
 List available v4 backups and download a backup by feed name
 
 ```python

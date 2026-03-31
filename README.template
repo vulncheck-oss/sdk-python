@@ -112,7 +112,6 @@ with open("./tests/backup_aio.py", 'r') as f:
 </details>
 
 ### Backup v4
-
 List available v4 backups and download a backup by feed name
 
 <!-- [[[cog
