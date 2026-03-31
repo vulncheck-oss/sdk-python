@@ -15,12 +15,14 @@ Bring the VulnCheck API to your Python applications.
   - [Resources](#resources)
   - [Quickstart](#quickstart)
   - [Examples](#examples)
-    - [PURL](#purl)
-    - [CPE](#cpe)
+    - [Advisory](#advisory)
     - [Backup](#backup)
-    - [Indices](#indices)
+    - [Backup v4](#backup-v4)
+    - [CPE](#cpe)
     - [Index](#index)
+    - [Indices](#indices)
     - [Pagination](#pagination)
+    - [PURL](#purl)
   - [Contributing](#contributing)
   - [Security](#security)
   - [Sponsorship](#sponsorship)
@@ -167,15 +169,14 @@ if __name__ == "__main__":
 
 ## Examples
 
-### PURL
+### Advisory
 
-Get the CVE's for a given PURL
+List all advisory feeds and query advisories filtered by feed
 
 ```python
 import vulncheck_sdk
-from vulncheck_sdk.models.v3controllers_purl_response_data import (
-    V3controllersPurlResponseData,
-)
+from vulncheck_sdk.models.search_v4_advisory_return_value import SearchV4AdvisoryReturnValue
+from vulncheck_sdk.models.search_v4_list_feed_return_value import SearchV4ListFeedReturnValue
 import os
 
 TOKEN = os.environ["VULNCHECK_API_TOKEN"]
@@ -184,14 +185,20 @@ configuration = vulncheck_sdk.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 with vulncheck_sdk.ApiClient(configuration) as api_client:
-    endpoints_client = vulncheck_sdk.EndpointsApi(api_client)
+    advisory_client = vulncheck_sdk.AdvisoryApi(api_client)
 
-    purl = "pkg:hex/coherence@0.1.2"
+    # List all available advisory feeds (/v4/advisory)
+    feeds: SearchV4ListFeedReturnValue = advisory_client.v4_list_advisory_feeds()
+    print("Available feeds:")
+    for feed in feeds.data:
+        print(f"name: {feed.name}")
 
-    api_response = endpoints_client.purl_get(purl)
-    data: V3controllersPurlResponseData = api_response.data
-
-    print(data.cves)
+    feed = "wolfi"
+    # Query advisories filtered by feed=wolfi (/v4/advisory?feed=wolfi)
+    advisories: SearchV4AdvisoryReturnValue = advisory_client.v4_query_advisories(name=feed)
+    print(f"{feed.capitalize()} advisories (page 1): {len(advisories.data)} results")
+    for advisory in advisories.data:
+        print(f"cve: {advisory.cve_metadata.cve_id}")
 ```
 
 
@@ -201,109 +208,35 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 import asyncio
 import os
 import vulncheck_sdk.aio as vcaio
-from vulncheck_sdk.aio.models.v3controllers_purl_response_data import (
-    V3controllersPurlResponseData,
-)
+from vulncheck_sdk.aio.models.search_v4_advisory_return_value import SearchV4AdvisoryReturnValue
+from vulncheck_sdk.aio.models.search_v4_list_feed_return_value import SearchV4ListFeedReturnValue
 
-# Configuration
 TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
 
 configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
-
-
-async def get_data(client, purl: str):
-    # Await the client call directly
-    api_response = await client.purl_get(purl)
-
-    # Access the data attribute from the response object
-    return api_response.data
 
 
 async def main():
     async with vcaio.ApiClient(configuration) as api_client:
-        endpoints_client = vcaio.EndpointsApi(api_client)
+        advisory_client = vcaio.AdvisoryApi(api_client)
 
-        purl = "pkg:hex/coherence@0.1.2"
+        # List all available advisory feeds (/v4/advisory)
+        feeds: SearchV4ListFeedReturnValue = await advisory_client.v4_list_advisory_feeds()
+        print("Available feeds:")
+        for feed in feeds.data:
+            print(f"name: {feed.name}")
 
-        # 'await' the async function call
-        data: V3controllersPurlResponseData = await get_data(endpoints_client, purl)
-
-        if data and data.cves:
-            print(f"Found {len(data.cves)} CVEs:")
-            for cve in data.cves:
-                print(f"- {cve}")
-        else:
-            print("No CVEs found or data is empty.")
+        feed = "wolfi"
+        # Query advisories filtered by feed=wolfi (/v4/advisory?feed=wolfi)
+        advisories: SearchV4AdvisoryReturnValue = await advisory_client.v4_query_advisories(name=feed)
+        print(f"{feed.capitalize()} advisories (page 1): {len(advisories.data)} results")
+        for advisory in advisories.data:
+            print(f"cve: {advisory.cve_metadata.cve_id}")
 
 
 if __name__ == "__main__":
     asyncio.run(main())
-```
-
-
-</details>
-
-### CPE
-
-Get all CPE's related to a CVE
-
-```python
-import vulncheck_sdk
-import os
-
-TOKEN = os.environ["VULNCHECK_API_TOKEN"]
-
-configuration = vulncheck_sdk.Configuration()
-configuration.api_key["Bearer"] = TOKEN
-
-with vulncheck_sdk.ApiClient(configuration) as api_client:
-    endpoints_client = vulncheck_sdk.EndpointsApi(api_client)
-
-    cpe = "cpe:/a:microsoft:internet_explorer:8.0.6001:beta"
-
-    api_response = endpoints_client.cpe_get(cpe)
-
-    for cve in api_response.data:
-        print(cve)
-```
-
-
-<details><summary><b>Click to View Async Implementation</b></summary>
-
-```python
-import asyncio
-import os
-import vulncheck_sdk.aio as vcaio
-
-# Configuration
-TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
-
-configuration = vcaio.Configuration()
-configuration.api_key["Bearer"] = TOKEN
-
-
-async def get_cpe_vulnerabilities():
-    # 'async with' to manage the connection life-cycle
-    async with vcaio.ApiClient(configuration) as api_client:
-        endpoints_client = vcaio.EndpointsApi(api_client)
-
-        cpe = "cpe:/a:microsoft:internet_explorer:8.0.6001:beta"
-
-        # 'await' the coroutine to get the actual response data
-        api_response = await endpoints_client.cpe_get(cpe)
-
-        # Iterate through the results
-        if api_response.data:
-            for cve in api_response.data:
-                print(cve)
-        else:
-            print(f"No vulnerabilities found for CPE: {cpe}")
-
-
-if __name__ == "__main__":
-    # Run the main async entry point
-    asyncio.run(get_cpe_vulnerabilities())
 ```
 
 
@@ -394,9 +327,103 @@ if __name__ == "__main__":
 
 </details>
 
-### Indices
+### Backup v4
 
-Get all available indices
+List available v4 backups and download a backup by feed name
+
+```python
+import urllib.request
+import vulncheck_sdk
+from vulncheck_sdk.models.backup_list_backups_response import BackupListBackupsResponse
+from vulncheck_sdk.models.backup_feed_item import BackupFeedItem
+import os
+
+TOKEN = os.environ["VULNCHECK_API_TOKEN"]
+
+configuration = vulncheck_sdk.Configuration()
+configuration.api_key["Bearer"] = TOKEN
+
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    backup_client = vulncheck_sdk.BackupApi(api_client)
+
+    # List available backups (/v4/backup)
+    available: BackupListBackupsResponse = backup_client.v4_list_backups()
+
+    for potential_backup in available.data:
+        print(f"Found backup: {potential_backup.name}")
+
+    # Get backup for the wolfi feed (/v4/backup/wolfi)
+    feed = "wolfi"
+    response: BackupListBackupsResponse = backup_client.v4_get_backup_by_name(feed)
+
+    print(f"Downloading {feed} backup")
+    file_path = f"{feed}.zip"
+    with urllib.request.urlopen(response.url) as r:
+        with open(file_path, "wb") as f:
+            f.write(r.read())
+
+    print(f"Successfully saved to {file_path}")
+```
+
+
+<details><summary><b>Click to View Async Implementation</b></summary>
+
+```python
+import asyncio
+import os
+import urllib.request
+import vulncheck_sdk.aio as vcaio
+from vulncheck_sdk.aio.models.backup_list_backups_response import BackupListBackupsResponse
+from vulncheck_sdk.aio.models.backup_backup_response import BackupBackupResponse
+
+TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
+
+configuration = vcaio.Configuration()
+configuration.api_key["Bearer"] = TOKEN
+
+
+def download_sync(url, file_path):
+    """
+    Standard synchronous download using urllib.request.
+    This runs in a separate thread to avoid blocking the event loop.
+    """
+    with urllib.request.urlopen(url) as response:
+        with open(file_path, "wb") as file:
+            file.write(response.read())
+
+
+async def main():
+    async with vcaio.ApiClient(configuration) as api_client:
+        backup_client = vcaio.BackupApi(api_client)
+
+        # List available backups (/v4/backup)
+        available: BackupListBackupsResponse = await backup_client.v4_list_backups()
+        for potential_backup in available.data:
+            print(f"Found backup: {potential_backup.name}")
+
+        # Get backup for the wolfi feed (/v4/backup/wolfi)
+        feed = "wolfi"
+        response: BackupBackupResponse = await backup_client.v4_get_backup_by_name(feed)
+
+
+        file_path = f"{feed}.zip"
+        print(f"Downloading {feed} backup via urllib (offloaded to thread)...")
+
+        await asyncio.to_thread(download_sync, response.url, file_path)
+
+        print(f"Successfully saved to {file_path}")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+
+</details>
+
+### CPE
+
+Get all CPE's related to a CVE
 
 ```python
 import vulncheck_sdk
@@ -410,10 +437,12 @@ configuration.api_key["Bearer"] = TOKEN
 with vulncheck_sdk.ApiClient(configuration) as api_client:
     endpoints_client = vulncheck_sdk.EndpointsApi(api_client)
 
-    api_response = endpoints_client.index_get()
+    cpe = "cpe:/a:microsoft:internet_explorer:8.0.6001:beta"
 
-    for index in api_response.data:
-        print(index.name)
+    api_response = endpoints_client.cpe_get(cpe)
+
+    for cve in api_response.data:
+        print(cve)
 ```
 
 
@@ -431,27 +460,27 @@ configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
 
 
-async def list_indices():
-    # Use 'async with' to manage the connection life-cycle
+async def get_cpe_vulnerabilities():
+    # 'async with' to manage the connection life-cycle
     async with vcaio.ApiClient(configuration) as api_client:
         endpoints_client = vcaio.EndpointsApi(api_client)
 
-        # 'await' the coroutine to get the actual response
-        api_response = await endpoints_client.index_get()
+        cpe = "cpe:/a:microsoft:internet_explorer:8.0.6001:beta"
+
+        # 'await' the coroutine to get the actual response data
+        api_response = await endpoints_client.cpe_get(cpe)
 
         # Iterate through the results
         if api_response.data:
-            print(f"{'Index Name':<30} | {'Description'}")
-            print("-" * 50)
-            for index in api_response.data:
-                print(f"{index.name:<30}")
+            for cve in api_response.data:
+                print(cve)
         else:
-            print("No indices found.")
+            print(f"No vulnerabilities found for CPE: {cpe}")
 
 
 if __name__ == "__main__":
-    # 4. Entry point to run the asynchronous event loop
-    asyncio.run(list_indices())
+    # Run the main async entry point
+    asyncio.run(get_cpe_vulnerabilities())
 ```
 
 
@@ -513,6 +542,69 @@ async def get_cve_details():
 if __name__ == "__main__":
     # Start the async event loop
     asyncio.run(get_cve_details())
+```
+
+
+</details>
+
+### Indices
+
+Get all available indices
+
+```python
+import vulncheck_sdk
+import os
+
+TOKEN = os.environ["VULNCHECK_API_TOKEN"]
+
+configuration = vulncheck_sdk.Configuration()
+configuration.api_key["Bearer"] = TOKEN
+
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    endpoints_client = vulncheck_sdk.EndpointsApi(api_client)
+
+    api_response = endpoints_client.index_get()
+
+    for index in api_response.data:
+        print(index.name)
+```
+
+
+<details><summary><b>Click to View Async Implementation</b></summary>
+
+```python
+import asyncio
+import os
+import vulncheck_sdk.aio as vcaio
+
+# Configuration
+TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
+
+configuration = vcaio.Configuration()
+configuration.api_key["Bearer"] = TOKEN
+
+
+async def list_indices():
+    # Use 'async with' to manage the connection life-cycle
+    async with vcaio.ApiClient(configuration) as api_client:
+        endpoints_client = vcaio.EndpointsApi(api_client)
+
+        # 'await' the coroutine to get the actual response
+        api_response = await endpoints_client.index_get()
+
+        # Iterate through the results
+        if api_response.data:
+            print(f"{'Index Name':<30} | {'Description'}")
+            print("-" * 50)
+            for index in api_response.data:
+                print(f"{index.name:<30}")
+        else:
+            print("No indices found.")
+
+
+if __name__ == "__main__":
+    # 4. Entry point to run the asynchronous event loop
+    asyncio.run(list_indices())
 ```
 
 
@@ -596,6 +688,83 @@ async def fetch_kev_data():
 if __name__ == "__main__":
     # Entry point to run the async event loop
     asyncio.run(fetch_kev_data())
+```
+
+
+</details>
+
+### PURL
+
+Get the CVE's for a given PURL
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.v3controllers_purl_response_data import (
+    V3controllersPurlResponseData,
+)
+import os
+
+TOKEN = os.environ["VULNCHECK_API_TOKEN"]
+
+configuration = vulncheck_sdk.Configuration()
+configuration.api_key["Bearer"] = TOKEN
+
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    endpoints_client = vulncheck_sdk.EndpointsApi(api_client)
+
+    purl = "pkg:hex/coherence@0.1.2"
+
+    api_response = endpoints_client.purl_get(purl)
+    data: V3controllersPurlResponseData = api_response.data
+
+    print(data.cves)
+```
+
+
+<details><summary><b>Click to View Async Implementation</b></summary>
+
+```python
+import asyncio
+import os
+import vulncheck_sdk.aio as vcaio
+from vulncheck_sdk.aio.models.v3controllers_purl_response_data import (
+    V3controllersPurlResponseData,
+)
+
+# Configuration
+TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
+
+configuration = vcaio.Configuration()
+configuration.api_key["Bearer"] = TOKEN
+
+
+async def get_data(client, purl: str):
+    # Await the client call directly
+    api_response = await client.purl_get(purl)
+
+    # Access the data attribute from the response object
+    return api_response.data
+
+
+async def main():
+    async with vcaio.ApiClient(configuration) as api_client:
+        endpoints_client = vcaio.EndpointsApi(api_client)
+
+        purl = "pkg:hex/coherence@0.1.2"
+
+        # 'await' the async function call
+        data: V3controllersPurlResponseData = await get_data(endpoints_client, purl)
+
+        if data and data.cves:
+            print(f"Found {len(data.cves)} CVEs:")
+            for cve in data.cves:
+                print(f"- {cve}")
+        else:
+            print("No CVEs found or data is empty.")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
 ```
 
 
