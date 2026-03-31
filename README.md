@@ -18,6 +18,8 @@ Bring the VulnCheck API to your Python applications.
     - [PURL](#purl)
     - [CPE](#cpe)
     - [Backup](#backup)
+    - [Advisory](#advisory)
+    - [Backup v4](#backup-v4)
     - [Indices](#indices)
     - [Index](#index)
     - [Pagination](#pagination)
@@ -383,6 +385,160 @@ async def main():
         # Use asyncio.to_thread to run the blocking call safely
         # 'await' the coroutine to get the actual response data
         await asyncio.to_thread(download_sync, download_url, file_path)
+
+        print(f"Successfully saved to {file_path}")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+
+</details>
+
+### Advisory
+
+List all advisory feeds and query advisories filtered by feed
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.search_v4_advisory_return_value import SearchV4AdvisoryReturnValue
+from vulncheck_sdk.models.search_v4_list_feed_return_value import SearchV4ListFeedReturnValue
+import os
+
+TOKEN = os.environ["VULNCHECK_API_TOKEN"]
+
+configuration = vulncheck_sdk.Configuration()
+configuration.api_key["Bearer"] = TOKEN
+
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    advisory_client = vulncheck_sdk.AdvisoryApi(api_client)
+
+    # List all available advisory feeds (/v4/advisory)
+    feeds: SearchV4ListFeedReturnValue = advisory_client.v4_list_advisory_feeds()
+    print(f"Available feeds: {feeds.data}")
+
+    # Query advisories filtered by feed=wolfi (/v4/advisory?feed=wolfi)
+    advisories: SearchV4AdvisoryReturnValue = advisory_client.v4_query_advisories(name="wolfi")
+    print(f"Wolfi advisories (page 1): {len(advisories.data)} results")
+    for advisory in advisories.data:
+        print(f"  - {advisory.id}")
+```
+
+
+<details><summary><b>Click to View Async Implementation</b></summary>
+
+```python
+import asyncio
+import os
+import vulncheck_sdk.aio as vcaio
+from vulncheck_sdk.aio.models.search_v4_advisory_return_value import SearchV4AdvisoryReturnValue
+from vulncheck_sdk.aio.models.search_v4_list_feed_return_value import SearchV4ListFeedReturnValue
+
+TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
+
+configuration = vcaio.Configuration()
+configuration.api_key["Bearer"] = TOKEN
+
+
+async def main():
+    async with vcaio.ApiClient(configuration) as api_client:
+        advisory_client = vcaio.AdvisoryApi(api_client)
+
+        # List all available advisory feeds (/v4/advisory)
+        feeds: SearchV4ListFeedReturnValue = await advisory_client.v4_list_advisory_feeds()
+        print(f"Available feeds: {feeds.data}")
+
+        # Query advisories filtered by feed=wolfi (/v4/advisory?feed=wolfi)
+        advisories: SearchV4AdvisoryReturnValue = await advisory_client.v4_query_advisories(name="wolfi")
+        print(f"Wolfi advisories (page 1): {len(advisories.data)} results")
+        for advisory in advisories.data:
+            print(f"  - {advisory.id}")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+
+</details>
+
+### Backup v4
+
+List available v4 backups and download a backup by feed name
+
+```python
+import urllib.request
+import vulncheck_sdk
+from vulncheck_sdk.models.backup_list_backups_response import BackupListBackupsResponse
+from vulncheck_sdk.models.backup_feed_item import BackupFeedItem
+import os
+
+TOKEN = os.environ["VULNCHECK_API_TOKEN"]
+
+configuration = vulncheck_sdk.Configuration()
+configuration.api_key["Bearer"] = TOKEN
+
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    backup_client = vulncheck_sdk.BackupApi(api_client)
+
+    # List available backups (/v4/backup)
+    available: BackupListBackupsResponse = backup_client.v4_list_backups()
+    for potential in available.data:
+        print(f"found: {potential.name}")
+
+    # Get backup for the wolfi feed (/v4/backup/wolfi)
+    feed = "wolfi"
+    response = backup_client.v4_get_backup_by_name(feed)
+
+    file_path = f"{feed}.zip"
+    with urllib.request.urlopen(response.url) as r:
+        with open(file_path, "wb") as f:
+            f.write(r.read())
+
+    print(f"Successfully saved to {file_path}")
+```
+
+
+<details><summary><b>Click to View Async Implementation</b></summary>
+
+```python
+import asyncio
+import os
+import urllib.request
+import vulncheck_sdk.aio as vcaio
+from vulncheck_sdk.aio.models.backup_list_backups_response import BackupListBackupsResponse
+from vulncheck_sdk.aio.models.backup_backup_response import BackupBackupResponse
+
+TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
+
+configuration = vcaio.Configuration()
+configuration.api_key["Bearer"] = TOKEN
+
+
+def download_sync(url, file_path):
+    with urllib.request.urlopen(url) as response:
+        with open(file_path, "wb") as file:
+            file.write(response.read())
+
+
+async def main():
+    async with vcaio.ApiClient(configuration) as api_client:
+        backup_client = vcaio.BackupApi(api_client)
+
+        # List available backups (/v4/backup)
+        available: BackupListBackupsResponse = await backup_client.v4_list_backups()
+        for potential in available.data:
+            print(f"Found backup: {potential.name}")
+
+        # Get backup for the wolfi feed (/v4/backup/wolfi)
+        feed = "wolfi"
+        response: BackupBackupResponse = await backup_client.v4_get_backup_by_name(feed)
+
+        file_path = f"{feed}.zip"
+        print(f"Downloading {feed} backup via urllib (offloaded to thread)...")
+
+        await asyncio.to_thread(download_sync, response.url, file_path)
 
         print(f"Successfully saved to {file_path}")
 
