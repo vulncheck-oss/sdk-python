@@ -13,8 +13,12 @@ API_TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
 # List of python programs to test
 PROGRAMS = [
+    "./tests/advisory.py",
+    "./tests/advisory_aio.py",
     "./tests/backup.py",
+    "./tests/backupv4.py",
     "./tests/backup_aio.py",
+    "./tests/backupv4_aio.py",
     "./tests/cpe.py",
     "./tests/cpe_aio.py",
     "./tests/index.py",
