@@ -15,12 +15,14 @@ Bring the VulnCheck API to your Python applications.
   - [Resources](#resources)
   - [Quickstart](#quickstart)
   - [Examples](#examples)
-    - [PURL](#purl)
-    - [CPE](#cpe)
+    - [Advisory](#advisory)
     - [Backup](#backup)
-    - [Indices](#indices)
+    - [Backup v4](#backup-v4)
+    - [CPE](#cpe)
     - [Index](#index)
+    - [Indices](#indices)
     - [Pagination](#pagination)
+    - [PURL](#purl)
   - [Contributing](#contributing)
   - [Security](#security)
   - [Sponsorship](#sponsorship)
@@ -125,6 +127,50 @@ with open("./tests/backup.py", 'r') as f:
 <!-- [[[cog
 import cog, glob
 with open("./tests/backup_aio.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+</details>
+
+### Advisory
+
+List all advisory feeds and query advisories filtered by feed
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/advisory.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+<details><summary><b>Click to View Async Implementation</b></summary>
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/advisory_aio.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+</details>
+
+### Backup v4
+
+List available v4 backups and download a backup by feed name
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/backupv4.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+<details><summary><b>Click to View Async Implementation</b></summary>
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/backupv4_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->
