@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **product** | **str** |  | [optional] 
 **severity** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **versions** | **List[str]** |  | [optional] 
 

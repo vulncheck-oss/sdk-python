@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.44"
+__version__ = "0.0.45"
 
 # Define package exports
 __all__ = [
@@ -313,6 +313,11 @@ __all__ = [
     "AdvisoryGMOCyberSecurity",
     "AdvisoryGallagher",
     "AdvisoryGen",
+    "AdvisoryGenericEOL",
+    "AdvisoryGenericEOLCore",
+    "AdvisoryGenericEOLProduct",
+    "AdvisoryGenericEOLReference",
+    "AdvisoryGenericEOLVCInfo",
     "AdvisoryGenetec",
     "AdvisoryGigabyte",
     "AdvisoryGitHubExploit",
@@ -1050,6 +1055,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryGMOCyberSecurityPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGallagherPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGenPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryGenericEOLPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGenetecPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGigabytePaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryGitHubExploitPaginatePagination",
@@ -1655,6 +1661,11 @@ from vulncheck_sdk.aio.models.advisory_gh_vulnerabilities import AdvisoryGHVulne
 from vulncheck_sdk.aio.models.advisory_gmo_cyber_security import AdvisoryGMOCyberSecurity as AdvisoryGMOCyberSecurity
 from vulncheck_sdk.aio.models.advisory_gallagher import AdvisoryGallagher as AdvisoryGallagher
 from vulncheck_sdk.aio.models.advisory_gen import AdvisoryGen as AdvisoryGen
+from vulncheck_sdk.aio.models.advisory_generic_eol import AdvisoryGenericEOL as AdvisoryGenericEOL
+from vulncheck_sdk.aio.models.advisory_generic_eol_core import AdvisoryGenericEOLCore as AdvisoryGenericEOLCore
+from vulncheck_sdk.aio.models.advisory_generic_eol_product import AdvisoryGenericEOLProduct as AdvisoryGenericEOLProduct
+from vulncheck_sdk.aio.models.advisory_generic_eol_reference import AdvisoryGenericEOLReference as AdvisoryGenericEOLReference
+from vulncheck_sdk.aio.models.advisory_generic_eolvc_info import AdvisoryGenericEOLVCInfo as AdvisoryGenericEOLVCInfo
 from vulncheck_sdk.aio.models.advisory_genetec import AdvisoryGenetec as AdvisoryGenetec
 from vulncheck_sdk.aio.models.advisory_gigabyte import AdvisoryGigabyte as AdvisoryGigabyte
 from vulncheck_sdk.aio.models.advisory_git_hub_exploit import AdvisoryGitHubExploit as AdvisoryGitHubExploit
@@ -2392,6 +2403,7 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_ghsa_
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_gmo_cyber_security_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGMOCyberSecurityPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGMOCyberSecurityPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_gallagher_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGallagherPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGallagherPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_gen_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGenPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGenPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_generic_eol_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGenericEOLPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGenericEOLPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_genetec_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGenetecPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGenetecPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_gigabyte_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGigabytePaginatePagination as RenderResponseWithMetadataArrayAdvisoryGigabytePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_git_hub_exploit_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryGitHubExploitPaginatePagination as RenderResponseWithMetadataArrayAdvisoryGitHubExploitPaginatePagination

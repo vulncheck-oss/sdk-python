@@ -53,6 +53,7 @@ class TestAdvisoryJFrog(unittest.TestCase):
                 product = '',
                 severity = '',
                 summary = '',
+                updated_at = '',
                 url = '',
                 versions = [
                     ''

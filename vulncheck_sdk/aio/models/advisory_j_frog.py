@@ -34,9 +34,10 @@ class AdvisoryJFrog(BaseModel):
     product: Optional[StrictStr] = None
     severity: Optional[StrictStr] = None
     summary: Optional[StrictStr] = None
+    updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
     versions: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["cpes", "cve", "date_added", "product", "severity", "summary", "url", "versions"]
+    __properties: ClassVar[List[str]] = ["cpes", "cve", "date_added", "product", "severity", "summary", "updated_at", "url", "versions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,6 +103,7 @@ class AdvisoryJFrog(BaseModel):
             "product": obj.get("product"),
             "severity": obj.get("severity"),
             "summary": obj.get("summary"),
+            "updated_at": obj.get("updated_at"),
             "url": obj.get("url"),
             "versions": obj.get("versions")
         })

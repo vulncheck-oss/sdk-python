@@ -2253,6 +2253,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_omron_eol_get(self) -> None:
+        """Test case for index_omron_eol_get
+
+        Return vulnerability data stored in index \"omron-eol\"
+        """
+        pass
+
     def test_index_omron_get(self) -> None:
         """Test case for index_omron_get
 
@@ -3391,6 +3398,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_zdi_get
 
         Return vulnerability data stored in index \"zdi\"
+        """
+        pass
+
+    def test_index_zebra_eol_get(self) -> None:
+        """Test case for index_zebra_eol_get
+
+        Return vulnerability data stored in index \"zebra-eol\"
         """
         pass
 

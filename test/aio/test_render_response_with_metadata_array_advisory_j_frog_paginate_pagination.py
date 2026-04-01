@@ -90,6 +90,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryJFrogPaginatePagination(unittes
                         product = '', 
                         severity = '', 
                         summary = '', 
+                        updated_at = '', 
                         url = '', 
                         versions = [
                             ''
