@@ -29,7 +29,7 @@ jobs:
       - name: Install cog, requests for testing
         run: pip install requests==2.32.5 cogapp==3.6.0
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Generate new sdk
         id: generate
