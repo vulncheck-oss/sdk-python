@@ -1539,10 +1539,24 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """
         pass
 
+    async def test_index_hp_eol_get(self) -> None:
+        """Test case for index_hp_eol_get
+
+        Return vulnerability data stored in index \"hp-eol\"
+        """
+        pass
+
     async def test_index_hp_get(self) -> None:
         """Test case for index_hp_get
 
         Return vulnerability data stored in index \"hp\"
+        """
+        pass
+
+    async def test_index_hpe_eol_get(self) -> None:
+        """Test case for index_hpe_eol_get
+
+        Return vulnerability data stored in index \"hpe-eol\"
         """
         pass
 
