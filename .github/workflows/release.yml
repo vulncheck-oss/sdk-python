@@ -134,7 +134,7 @@ jobs:
 
       - name: Release
         if: steps.check_tag.outputs.exists == 'false'
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           body_path: ${{ github.workspace }}/head/openapi-diff.md
           tag_name: v${{ steps.versions.outputs.current_version }}
