@@ -67,7 +67,7 @@ jobs:
       - publish-to-pypi
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/create-github-app-token@v1
+      - uses: actions/create-github-app-token@v3
         id: generate_token
         with:
           app-id: ${{ secrets.APP_ID }}
