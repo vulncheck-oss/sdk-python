@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **archived** | **bool** |  | [optional] 
 **cve_exploited_itw** | **bool** |  | [optional] 
 **cvss** | **str** |  | [optional] 
+**icsa** | **bool** |  | [optional] 
 **icsma** | **bool** |  | [optional] 
 **mitigations** | **str** |  | [optional] 
 **release_date** | **str** |  | [optional] 

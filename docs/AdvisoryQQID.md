@@ -6,6 +6,7 @@ advisory.QQID
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**compliance** | [**List[AdvisoryQCompliance]**](AdvisoryQCompliance.md) |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
 **cvss3_score** | **str** |  | [optional] 
 **cvss_score** | **str** |  | [optional] 

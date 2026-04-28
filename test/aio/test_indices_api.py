@@ -111,6 +111,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """
         pass
 
+    async def test_index_alibabacloud_eol_get(self) -> None:
+        """Test case for index_alibabacloud_eol_get
+
+        Return vulnerability data stored in index \"alibabacloud-eol\"
+        """
+        pass
+
     async def test_index_alma_get(self) -> None:
         """Test case for index_alma_get
 
@@ -1966,6 +1973,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """
         pass
 
+    async def test_index_microsoft_eol_get(self) -> None:
+        """Test case for index_microsoft_eol_get
+
+        Return vulnerability data stored in index \"microsoft-eol\"
+        """
+        pass
+
     async def test_index_microsoft_kb_get(self) -> None:
         """Test case for index_microsoft_kb_get
 
@@ -2985,6 +2999,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """Test case for index_tailscale_get
 
         Return vulnerability data stored in index \"tailscale\"
+        """
+        pass
+
+    async def test_index_target_intel_get(self) -> None:
+        """Test case for index_target_intel_get
+
+        Return vulnerability data stored in index \"target-intel\"
         """
         pass
 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +31,9 @@ class AdvisoryCycle(BaseModel):
     cycle: Optional[StrictStr] = None
     discontinued: Optional[Any] = None
     eol: Optional[Any] = None
+    eol_date: Optional[StrictStr] = Field(default=None, alias="eolDate")
     extended_support: Optional[Any] = Field(default=None, alias="extendedSupport")
+    is_eol: Optional[StrictBool] = Field(default=None, alias="isEol")
     latest: Optional[StrictStr] = None
     latest_release_date: Optional[StrictStr] = Field(default=None, alias="latestReleaseDate")
     link: Optional[StrictStr] = None
@@ -39,7 +41,7 @@ class AdvisoryCycle(BaseModel):
     release_date: Optional[StrictStr] = Field(default=None, alias="releaseDate")
     release_label: Optional[StrictStr] = Field(default=None, alias="releaseLabel")
     support: Optional[Any] = None
-    __properties: ClassVar[List[str]] = ["codename", "cycle", "discontinued", "eol", "extendedSupport", "latest", "latestReleaseDate", "link", "lts", "releaseDate", "releaseLabel", "support"]
+    __properties: ClassVar[List[str]] = ["codename", "cycle", "discontinued", "eol", "eolDate", "extendedSupport", "isEol", "latest", "latestReleaseDate", "link", "lts", "releaseDate", "releaseLabel", "support"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -121,7 +123,9 @@ class AdvisoryCycle(BaseModel):
             "cycle": obj.get("cycle"),
             "discontinued": obj.get("discontinued"),
             "eol": obj.get("eol"),
+            "eolDate": obj.get("eolDate"),
             "extendedSupport": obj.get("extendedSupport"),
+            "isEol": obj.get("isEol"),
             "latest": obj.get("latest"),
             "latestReleaseDate": obj.get("latestReleaseDate"),
             "link": obj.get("link"),

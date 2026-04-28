@@ -22,9 +22,11 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     feed = "wolfi"
     response: BackupListBackupsResponse = backup_client.v4_get_backup_by_name(feed)
 
+    print(response.to_json())
+
     print(f"Downloading {feed} backup")
     file_path = f"{feed}.zip"
-    with urllib.request.urlopen(response.url) as r:
+    with urllib.request.urlopen(response.url_mrap) as r:
         with open(file_path, "wb") as f:
             f.write(r.read())
 

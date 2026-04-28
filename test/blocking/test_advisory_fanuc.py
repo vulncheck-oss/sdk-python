@@ -45,6 +45,7 @@ class TestAdvisoryFanuc(unittest.TestCase):
                 date_added = '',
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

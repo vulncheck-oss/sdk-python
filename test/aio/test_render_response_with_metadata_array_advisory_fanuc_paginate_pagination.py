@@ -82,6 +82,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryFanucPaginatePagination(unittes
                         date_added = '', 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

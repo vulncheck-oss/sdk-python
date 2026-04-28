@@ -46,6 +46,7 @@ class TestAdvisorySolarWindsAdvisory(unittest.TestCase):
                 severity = '',
                 summary = '',
                 title = '',
+                updated_at = '',
                 url = ''
             )
         else:

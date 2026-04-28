@@ -36,6 +36,11 @@ class TestAdvisoryQQID(unittest.TestCase):
         model = AdvisoryQQID()
         if include_optional:
             return AdvisoryQQID(
+                compliance = [
+                    vulncheck_sdk.models.advisory/q_compliance.advisory.QCompliance(
+                        section = '', 
+                        typ = '', )
+                    ],
                 cve = [
                     ''
                     ],

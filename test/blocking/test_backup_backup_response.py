@@ -38,9 +38,13 @@ class TestBackupBackupResponse(unittest.TestCase):
             return BackupBackupResponse(
                 available = True,
                 feed = '',
-                url = '',
-                url_direct = '',
-                url_expires = ''
+                sha256 = '',
+                url_ap_southeast_2 = '',
+                url_eu_west_2 = '',
+                url_expires = '',
+                url_mrap = '',
+                url_ttl_minutes = 56,
+                url_us_east_1 = ''
             )
         else:
             return BackupBackupResponse(

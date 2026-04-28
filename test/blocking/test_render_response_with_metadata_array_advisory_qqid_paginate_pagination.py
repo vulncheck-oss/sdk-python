@@ -73,6 +73,11 @@ class TestRenderResponseWithMetadataArrayAdvisoryQQIDPaginatePagination(unittest
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/qqid.advisory.QQID(
+                        compliance = [
+                            vulncheck_sdk.models.advisory/q_compliance.advisory.QCompliance(
+                                section = '', 
+                                typ = '', )
+                            ], 
                         cve = [
                             ''
                             ], 
