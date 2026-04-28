@@ -39,7 +39,7 @@ async def main():
         file_path = f"{feed}.zip"
         print(f"Downloading {feed} backup via urllib (offloaded to thread)...")
 
-        await asyncio.to_thread(download_sync, response.url, file_path)
+        await asyncio.to_thread(download_sync, response.url_mrap, file_path)
 
         print(f"Successfully saved to {file_path}")
 
