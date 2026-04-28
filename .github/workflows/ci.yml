@@ -26,7 +26,7 @@ jobs:
       - name: Patch Python 3.10 dependencies
         # This fixes the ModuleNotFoundError: No module named 'exceptiongroup'
         if: matrix.python-version == '3.10'
-        run: poetry run pip install exceptiongroup
+        run: poetry run pip install exceptiongroup tomli
 
       - name: Install testing requirements
         run: poetry add requests==2.32.5
