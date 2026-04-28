@@ -26,7 +26,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     print(f"Downloading {feed} backup")
     file_path = f"{feed}.zip"
-    with urllib.request.urlopen(response.url) as r:
+    with urllib.request.urlopen(response.url_mrap) as r:
         with open(file_path, "wb") as f:
             f.write(r.read())
 
