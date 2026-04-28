@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.46"
+__version__ = "0.0.47"
 
 # Define package exports
 __all__ = [
@@ -564,6 +564,7 @@ __all__ = [
     "AdvisoryPyPAPackage",
     "AdvisoryPyPARange",
     "AdvisoryPyPAReference",
+    "AdvisoryQCompliance",
     "AdvisoryQNAPAdvisory",
     "AdvisoryQQID",
     "AdvisoryQSB",
@@ -860,6 +861,7 @@ __all__ = [
     "ApiReferencesExtended",
     "ApiRelatedAttackPattern",
     "ApiSSVC",
+    "ApiTargetIntel",
     "ApiTemporalCVSSV2",
     "ApiTemporalCVSSV3",
     "ApiTemporalMetricV2",
@@ -1342,6 +1344,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination",
     "RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination",
     "RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination",
+    "RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination",
     "RenderResponseWithMetadataArrayApiUpdatePaginatePagination",
     "RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination",
     "RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination",
@@ -1912,6 +1915,7 @@ from vulncheck_sdk.models.advisory_py_pa_event import AdvisoryPyPAEvent as Advis
 from vulncheck_sdk.models.advisory_py_pa_package import AdvisoryPyPAPackage as AdvisoryPyPAPackage
 from vulncheck_sdk.models.advisory_py_pa_range import AdvisoryPyPARange as AdvisoryPyPARange
 from vulncheck_sdk.models.advisory_py_pa_reference import AdvisoryPyPAReference as AdvisoryPyPAReference
+from vulncheck_sdk.models.advisory_q_compliance import AdvisoryQCompliance as AdvisoryQCompliance
 from vulncheck_sdk.models.advisory_qnap_advisory import AdvisoryQNAPAdvisory as AdvisoryQNAPAdvisory
 from vulncheck_sdk.models.advisory_qqid import AdvisoryQQID as AdvisoryQQID
 from vulncheck_sdk.models.advisory_qsb import AdvisoryQSB as AdvisoryQSB
@@ -2208,6 +2212,7 @@ from vulncheck_sdk.models.api_references import ApiReferences as ApiReferences
 from vulncheck_sdk.models.api_references_extended import ApiReferencesExtended as ApiReferencesExtended
 from vulncheck_sdk.models.api_related_attack_pattern import ApiRelatedAttackPattern as ApiRelatedAttackPattern
 from vulncheck_sdk.models.api_ssvc import ApiSSVC as ApiSSVC
+from vulncheck_sdk.models.api_target_intel import ApiTargetIntel as ApiTargetIntel
 from vulncheck_sdk.models.api_temporal_cvssv2 import ApiTemporalCVSSV2 as ApiTemporalCVSSV2
 from vulncheck_sdk.models.api_temporal_cvssv3 import ApiTemporalCVSSV3 as ApiTemporalCVSSV3
 from vulncheck_sdk.models.api_temporal_metric_v2 import ApiTemporalMetricV2 as ApiTemporalMetricV2
@@ -2690,6 +2695,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_api_nvd20_cpe_matc
 from vulncheck_sdk.models.render_response_with_metadata_array_api_nvd20_cve_extended_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_nvd20_cve_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_oss_package_paginate_pagination import RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination as RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_api_target_intel_paginate_pagination import RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination as RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_update_paginate_pagination import RenderResponseWithMetadataArrayApiUpdatePaginatePagination as RenderResponseWithMetadataArrayApiUpdatePaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_vuln_check_canary_paginate_pagination import RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination as RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_vulnerability_alias_paginate_pagination import RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination as RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination

@@ -8,9 +8,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **available** | **bool** |  | [optional] 
 **feed** | **str** |  | [optional] 
-**url** | **str** |  | [optional] 
-**url_direct** | **str** |  | [optional] 
+**sha256** | **str** |  | [optional] 
+**url_ap_southeast_2** | **str** |  | [optional] 
+**url_eu_west_2** | **str** |  | [optional] 
 **url_expires** | **str** |  | [optional] 
+**url_mrap** | **str** |  | [optional] 
+**url_ttl_minutes** | **int** |  | [optional] 
+**url_us_east_1** | **str** |  | [optional] 
 
 ## Example
 

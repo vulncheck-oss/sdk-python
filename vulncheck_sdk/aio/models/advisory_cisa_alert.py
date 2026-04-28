@@ -32,6 +32,7 @@ class AdvisoryCISAAlert(BaseModel):
     archived: Optional[StrictBool] = Field(default=None, alias="Archived")
     cve_exploited_itw: Optional[StrictBool] = Field(default=None, alias="CVEExploitedITW")
     cvss: Optional[StrictStr] = Field(default=None, alias="CVSS")
+    icsa: Optional[StrictBool] = Field(default=None, alias="ICSA")
     icsma: Optional[StrictBool] = Field(default=None, alias="ICSMA")
     mitigations: Optional[StrictStr] = Field(default=None, alias="Mitigations")
     release_date: Optional[StrictStr] = Field(default=None, alias="ReleaseDate")
@@ -41,7 +42,7 @@ class AdvisoryCISAAlert(BaseModel):
     cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["AffectedProducts", "AlertID", "Archived", "CVEExploitedITW", "CVSS", "ICSMA", "Mitigations", "ReleaseDate", "Title", "Url", "Vendor", "cve", "date_added", "updated_at"]
+    __properties: ClassVar[List[str]] = ["AffectedProducts", "AlertID", "Archived", "CVEExploitedITW", "CVSS", "ICSA", "ICSMA", "Mitigations", "ReleaseDate", "Title", "Url", "Vendor", "cve", "date_added", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,6 +100,7 @@ class AdvisoryCISAAlert(BaseModel):
             "Archived": obj.get("Archived"),
             "CVEExploitedITW": obj.get("CVEExploitedITW"),
             "CVSS": obj.get("CVSS"),
+            "ICSA": obj.get("ICSA"),
             "ICSMA": obj.get("ICSMA"),
             "Mitigations": obj.get("Mitigations"),
             "ReleaseDate": obj.get("ReleaseDate"),

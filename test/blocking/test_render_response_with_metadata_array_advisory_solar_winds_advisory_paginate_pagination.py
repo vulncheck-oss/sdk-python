@@ -83,6 +83,7 @@ class TestRenderResponseWithMetadataArrayAdvisorySolarWindsAdvisoryPaginatePagin
                         severity = '', 
                         summary = '', 
                         title = '', 
+                        updated_at = '', 
                         url = '', )
                     ]
             )

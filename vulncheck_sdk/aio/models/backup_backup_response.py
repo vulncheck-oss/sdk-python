@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,10 +29,14 @@ class BackupBackupResponse(BaseModel):
     """ # noqa: E501
     available: Optional[StrictBool] = None
     feed: Optional[StrictStr] = None
-    url: Optional[StrictStr] = None
-    url_direct: Optional[StrictStr] = None
+    sha256: Optional[StrictStr] = None
+    url_ap_southeast_2: Optional[StrictStr] = Field(default=None, alias="url_ap-southeast-2")
+    url_eu_west_2: Optional[StrictStr] = Field(default=None, alias="url_eu-west-2")
     url_expires: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["available", "feed", "url", "url_direct", "url_expires"]
+    url_mrap: Optional[StrictStr] = None
+    url_ttl_minutes: Optional[StrictInt] = None
+    url_us_east_1: Optional[StrictStr] = Field(default=None, alias="url_us-east-1")
+    __properties: ClassVar[List[str]] = ["available", "feed", "sha256", "url_ap-southeast-2", "url_eu-west-2", "url_expires", "url_mrap", "url_ttl_minutes", "url_us-east-1"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,9 +91,13 @@ class BackupBackupResponse(BaseModel):
         _obj = cls.model_validate({
             "available": obj.get("available"),
             "feed": obj.get("feed"),
-            "url": obj.get("url"),
-            "url_direct": obj.get("url_direct"),
-            "url_expires": obj.get("url_expires")
+            "sha256": obj.get("sha256"),
+            "url_ap-southeast-2": obj.get("url_ap-southeast-2"),
+            "url_eu-west-2": obj.get("url_eu-west-2"),
+            "url_expires": obj.get("url_expires"),
+            "url_mrap": obj.get("url_mrap"),
+            "url_ttl_minutes": obj.get("url_ttl_minutes"),
+            "url_us-east-1": obj.get("url_us-east-1")
         })
         return _obj
 

@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.advisory_q_compliance import AdvisoryQCompliance
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,6 +28,7 @@ class AdvisoryQQID(BaseModel):
     """
     advisory.QQID
     """ # noqa: E501
+    compliance: Optional[List[AdvisoryQCompliance]] = None
     cve: Optional[List[StrictStr]] = None
     cvss3_score: Optional[StrictStr] = None
     cvss_score: Optional[StrictStr] = None
@@ -35,7 +37,7 @@ class AdvisoryQQID(BaseModel):
     title: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cve", "cvss3_score", "cvss_score", "date_added", "qid", "title", "updated_at", "url"]
+    __properties: ClassVar[List[str]] = ["compliance", "cve", "cvss3_score", "cvss_score", "date_added", "qid", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +78,13 @@ class AdvisoryQQID(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in compliance (list)
+        _items = []
+        if self.compliance:
+            for _item_compliance in self.compliance:
+                if _item_compliance:
+                    _items.append(_item_compliance.to_dict())
+            _dict['compliance'] = _items
         return _dict
 
     @classmethod
@@ -88,6 +97,7 @@ class AdvisoryQQID(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "compliance": [AdvisoryQCompliance.from_dict(_item) for _item in obj["compliance"]] if obj.get("compliance") is not None else None,
             "cve": obj.get("cve"),
             "cvss3_score": obj.get("cvss3_score"),
             "cvss_score": obj.get("cvss_score"),

@@ -78,6 +78,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryCISAAlertPaginatePagination(uni
                         archived = True, 
                         cve_exploited_itw = True, 
                         cvss = '', 
+                        icsa = True, 
                         icsma = True, 
                         mitigations = '', 
                         release_date = '', 
