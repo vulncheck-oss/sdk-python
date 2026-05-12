@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **abstraction** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **kev_count** | **int** |  | [optional] 
+**relationships** | [**List[ApiCWERelationship]**](ApiCWERelationship.md) |  | [optional] 
 **status** | **str** |  | [optional] 
 **structure** | **str** |  | [optional] 
 **vulncheck_nvd_count** | **int** |  | [optional] 

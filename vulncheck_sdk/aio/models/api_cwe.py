@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from vulncheck_sdk.aio.models.api_cwe_relationship import ApiCWERelationship
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,13 +31,14 @@ class ApiCWE(BaseModel):
     abstraction: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     kev_count: Optional[StrictInt] = None
+    relationships: Optional[List[ApiCWERelationship]] = None
     status: Optional[StrictStr] = None
     structure: Optional[StrictStr] = None
     vulncheck_nvd_count: Optional[StrictInt] = None
     weakness_id: Optional[StrictStr] = None
     weakness_name: Optional[StrictStr] = None
     weighted_score: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["abstraction", "description", "kev_count", "status", "structure", "vulncheck_nvd_count", "weakness_id", "weakness_name", "weighted_score"]
+    __properties: ClassVar[List[str]] = ["abstraction", "description", "kev_count", "relationships", "status", "structure", "vulncheck_nvd_count", "weakness_id", "weakness_name", "weighted_score"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,6 +79,13 @@ class ApiCWE(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in relationships (list)
+        _items = []
+        if self.relationships:
+            for _item_relationships in self.relationships:
+                if _item_relationships:
+                    _items.append(_item_relationships.to_dict())
+            _dict['relationships'] = _items
         return _dict
 
     @classmethod
@@ -92,6 +101,7 @@ class ApiCWE(BaseModel):
             "abstraction": obj.get("abstraction"),
             "description": obj.get("description"),
             "kev_count": obj.get("kev_count"),
+            "relationships": [ApiCWERelationship.from_dict(_item) for _item in obj["relationships"]] if obj.get("relationships") is not None else None,
             "status": obj.get("status"),
             "structure": obj.get("structure"),
             "vulncheck_nvd_count": obj.get("vulncheck_nvd_count"),

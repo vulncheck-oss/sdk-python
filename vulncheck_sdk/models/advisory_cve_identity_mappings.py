@@ -18,21 +18,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional, Union
-from vulncheck_sdk.aio.models.api_target_intel import ApiTargetIntel
-from vulncheck_sdk.aio.models.paginate_pagination import PaginatePagination
+from pydantic import BaseModel, ConfigDict, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.advisory_cve_mapping import AdvisoryCVEMapping
 from typing import Optional, Set
 from typing_extensions import Self
 
-class RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(BaseModel):
+class AdvisoryCVEIdentityMappings(BaseModel):
     """
-    render.ResponseWithMetadata-array_api_TargetIntel-paginate_Pagination
+    advisory.CVEIdentityMappings
     """ # noqa: E501
-    benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="_benchmark")
-    meta: Optional[PaginatePagination] = Field(default=None, alias="_meta")
-    data: Optional[List[ApiTargetIntel]] = None
-    __properties: ClassVar[List[str]] = ["_benchmark", "_meta", "data"]
+    cve: Optional[List[StrictStr]] = None
+    mappings: Optional[List[AdvisoryCVEMapping]] = None
+    __properties: ClassVar[List[str]] = ["cve", "mappings"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +50,7 @@ class RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(BaseModel)
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination from a JSON string"""
+        """Create an instance of AdvisoryCVEIdentityMappings from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,21 +71,18 @@ class RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(BaseModel)
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of meta
-        if self.meta:
-            _dict['_meta'] = self.meta.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in mappings (list)
         _items = []
-        if self.data:
-            for _item_data in self.data:
-                if _item_data:
-                    _items.append(_item_data.to_dict())
-            _dict['data'] = _items
+        if self.mappings:
+            for _item_mappings in self.mappings:
+                if _item_mappings:
+                    _items.append(_item_mappings.to_dict())
+            _dict['mappings'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination from a dict"""
+        """Create an instance of AdvisoryCVEIdentityMappings from a dict"""
         if obj is None:
             return None
 
@@ -95,9 +90,8 @@ class RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(BaseModel)
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "_benchmark": obj.get("_benchmark"),
-            "_meta": PaginatePagination.from_dict(obj["_meta"]) if obj.get("_meta") is not None else None,
-            "data": [ApiTargetIntel.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
+            "cve": obj.get("cve"),
+            "mappings": [AdvisoryCVEMapping.from_dict(_item) for _item in obj["mappings"]] if obj.get("mappings") is not None else None
         })
         return _obj
 

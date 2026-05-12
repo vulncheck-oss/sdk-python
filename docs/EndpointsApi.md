@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**purl_get**](EndpointsApi.md#purl_get) | **GET** /v3/purl | Request vulnerabilities related to a PURL
 [**purls_post**](EndpointsApi.md#purls_post) | **POST** /v3/purls | Request vulnerabilities related to a list of PURLs
 [**rules_initial_access_type_get**](EndpointsApi.md#rules_initial_access_type_get) | **GET** /v3/rules/initial-access/{type} | Retrieve set of initial-access detection rules
+[**search_cpe_get**](EndpointsApi.md#search_cpe_get) | **GET** /v3/search/cpe | Return CPEs and associated CPEs by searching CPE fields
 [**tags_vulncheck_c2_get**](EndpointsApi.md#tags_vulncheck_c2_get) | **GET** /v3/tags/vulncheck-c2 | Retrieve a list of C2 IP addresses
 
 
@@ -789,6 +790,95 @@ Name | Type | Description  | Notes
 ### Return type
 
 **str**
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_cpe_get**
+> RenderResponseWithMetadataSearchResponsesSearchResponseMetadata search_cpe_get(part=part, vendor=vendor, product=product, version=version, is_vulnerable=is_vulnerable)
+
+Return CPEs and associated CPEs by searching CPE fields
+
+Based on the specified CPE (Common Platform Enumeration) fields, this endpoint will return a list of matching CPEs and the related CVE vulnerabilities.
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.render_response_with_metadata_search_responses_search_response_metadata import RenderResponseWithMetadataSearchResponsesSearchResponseMetadata
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.vulncheck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "https://api.vulncheck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.EndpointsApi(api_client)
+    part = '[a]pplication, [o]perating system, [h]ardware' # str | CPE part to lookup (optional)
+    vendor = 'vendor_example' # str | CPE vendor to lookup (optional)
+    product = 'product_example' # str | CPE product to lookup (optional)
+    version = 'version_example' # str | CPE version to lookup (optional)
+    is_vulnerable = 'is_vulnerable_example' # str | Filter by vulnerability status (true/false). Defaults to false if not provided. (optional)
+
+    try:
+        # Return CPEs and associated CPEs by searching CPE fields
+        api_response = api_instance.search_cpe_get(part=part, vendor=vendor, product=product, version=version, is_vulnerable=is_vulnerable)
+        print("The response of EndpointsApi->search_cpe_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EndpointsApi->search_cpe_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **part** | **str**| CPE part to lookup | [optional] 
+ **vendor** | **str**| CPE vendor to lookup | [optional] 
+ **product** | **str**| CPE product to lookup | [optional] 
+ **version** | **str**| CPE version to lookup | [optional] 
+ **is_vulnerable** | **str**| Filter by vulnerability status (true/false). Defaults to false if not provided. | [optional] 
+
+### Return type
+
+[**RenderResponseWithMetadataSearchResponsesSearchResponseMetadata**](RenderResponseWithMetadataSearchResponsesSearchResponseMetadata.md)
 
 ### Authorization
 

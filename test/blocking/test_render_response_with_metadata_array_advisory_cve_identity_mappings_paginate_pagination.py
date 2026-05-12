@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.render_response_with_metadata_array_api_target_intel_paginate_pagination import RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_cve_identity_mappings_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination
 
-class TestRenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(unittest.TestCase):
-    """RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination unit test stubs"""
+class TestRenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination(unittest.TestCase):
+    """RenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestRenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(unitte
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination:
-        """Test RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination
+    def make_instance(self, include_optional) -> RenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination:
+        """Test RenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination`
+        # uncomment below to create an instance of `RenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination`
         """
-        model = RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination()
+        model = RenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination()
         if include_optional:
-            return RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(
+            return RenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination(
                 benchmark = 1.337,
                 meta = vulncheck_sdk.models.paginate/pagination.paginate.Pagination(
                     cursor = '', 
@@ -72,44 +72,25 @@ class TestRenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(unitte
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.api/target_intel.api.TargetIntel(
-                        _timestamp = '', 
-                        as_domain = '', 
-                        as_name = '', 
-                        asn = '', 
-                        confidence = 1.337, 
-                        country = '', 
-                        country_code = '', 
-                        cpe = '', 
-                        cves = [
+                    vulncheck_sdk.models.advisory/cve_identity_mappings.advisory.CVEIdentityMappings(
+                        cve = [
                             ''
                             ], 
-                        date_added = '', 
-                        fingerprint_metadata = [
-                            56
-                            ], 
-                        ip = '', 
-                        match_target = '', 
-                        port = 56, 
-                        product = '', 
-                        protocol = '', 
-                        rule_id = '', 
-                        rule_source = '', 
-                        service_metadata = [
-                            56
-                            ], 
-                        type = '', 
-                        vendor = '', 
-                        version = '', )
+                        mappings = [
+                            vulncheck_sdk.models.advisory/cve_mapping.advisory.CVEMapping(
+                                id = '', 
+                                source = '', 
+                                url = '', )
+                            ], )
                     ]
             )
         else:
-            return RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(
+            return RenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination(
         )
         """
 
-    def testRenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(self):
-        """Test RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination"""
+    def testRenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination(self):
+        """Test RenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

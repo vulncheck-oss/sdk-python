@@ -97,6 +97,13 @@ class TestEndpointsApi(unittest.IsolatedAsyncioTestCase):
         """
         pass
 
+    async def test_search_cpe_get(self) -> None:
+        """Test case for search_cpe_get
+
+        Return CPEs and associated CPEs by searching CPE fields
+        """
+        pass
+
     async def test_tags_vulncheck_c2_get(self) -> None:
         """Test case for tags_vulncheck_c2_get
 
