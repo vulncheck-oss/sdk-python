@@ -937,6 +937,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """
         pass
 
+    async def test_index_cves_identity_mappings_get(self) -> None:
+        """Test case for index_cves_identity_mappings_get
+
+        Return vulnerability data stored in index \"cves_identity_mappings\"
+        """
+        pass
+
     async def test_index_cwe_get(self) -> None:
         """Test case for index_cwe_get
 
@@ -2999,13 +3006,6 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """Test case for index_tailscale_get
 
         Return vulnerability data stored in index \"tailscale\"
-        """
-        pass
-
-    async def test_index_target_intel_get(self) -> None:
-        """Test case for index_target_intel_get
-
-        Return vulnerability data stored in index \"target-intel\"
         """
         pass
 

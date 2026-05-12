@@ -76,6 +76,12 @@ class TestRenderResponseWithMetadataArrayApiCWEPaginatePagination(unittest.TestC
                         abstraction = '', 
                         description = '', 
                         kev_count = 56, 
+                        relationships = [
+                            vulncheck_sdk.models.api/cwe_relationship.api.CWERelationship(
+                                cwe_id = '', 
+                                cwe_label = '', 
+                                type = '', )
+                            ], 
                         status = '', 
                         structure = '', 
                         vulncheck_nvd_count = 56, 

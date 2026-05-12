@@ -24,6 +24,7 @@ from vulncheck_sdk.aio.models.models_entitlements import ModelsEntitlements
 from vulncheck_sdk.aio.models.render_response_array_params_index_backup_list import RenderResponseArrayParamsIndexBackupList
 from vulncheck_sdk.aio.models.render_response_array_params_index_list import RenderResponseArrayParamsIndexList
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_string_v3controllers_response_metadata import RenderResponseWithMetadataArrayStringV3controllersResponseMetadata
+from vulncheck_sdk.aio.models.render_response_with_metadata_search_responses_search_response_metadata import RenderResponseWithMetadataSearchResponsesSearchResponseMetadata
 from vulncheck_sdk.aio.models.render_response_with_metadata_v3controllers_backup_response_data_v3controllers_backup_response_metadata import RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata
 from vulncheck_sdk.aio.models.render_response_with_metadata_v3controllers_purl_response_data_v3controllers_purl_response_metadata import RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata
 from vulncheck_sdk.aio.models.render_response_with_metadata_v3controllers_purls_response_data_v3controllers_purls_response_metadata import RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata
@@ -2705,6 +2706,346 @@ class EndpointsApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/v3/rules/initial-access/{type}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    async def search_cpe_get(
+        self,
+        part: Annotated[Optional[StrictStr], Field(description="CPE part to lookup")] = None,
+        vendor: Annotated[Optional[StrictStr], Field(description="CPE vendor to lookup")] = None,
+        product: Annotated[Optional[StrictStr], Field(description="CPE product to lookup")] = None,
+        version: Annotated[Optional[StrictStr], Field(description="CPE version to lookup")] = None,
+        is_vulnerable: Annotated[Optional[StrictStr], Field(description="Filter by vulnerability status (true/false). Defaults to false if not provided.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RenderResponseWithMetadataSearchResponsesSearchResponseMetadata:
+        """Return CPEs and associated CPEs by searching CPE fields
+
+        Based on the specified CPE (Common Platform Enumeration) fields, this endpoint will return a list of matching CPEs and the related CVE vulnerabilities.
+
+        :param part: CPE part to lookup
+        :type part: str
+        :param vendor: CPE vendor to lookup
+        :type vendor: str
+        :param product: CPE product to lookup
+        :type product: str
+        :param version: CPE version to lookup
+        :type version: str
+        :param is_vulnerable: Filter by vulnerability status (true/false). Defaults to false if not provided.
+        :type is_vulnerable: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._search_cpe_get_serialize(
+            part=part,
+            vendor=vendor,
+            product=product,
+            version=version,
+            is_vulnerable=is_vulnerable,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RenderResponseWithMetadataSearchResponsesSearchResponseMetadata",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    async def search_cpe_get_with_http_info(
+        self,
+        part: Annotated[Optional[StrictStr], Field(description="CPE part to lookup")] = None,
+        vendor: Annotated[Optional[StrictStr], Field(description="CPE vendor to lookup")] = None,
+        product: Annotated[Optional[StrictStr], Field(description="CPE product to lookup")] = None,
+        version: Annotated[Optional[StrictStr], Field(description="CPE version to lookup")] = None,
+        is_vulnerable: Annotated[Optional[StrictStr], Field(description="Filter by vulnerability status (true/false). Defaults to false if not provided.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[RenderResponseWithMetadataSearchResponsesSearchResponseMetadata]:
+        """Return CPEs and associated CPEs by searching CPE fields
+
+        Based on the specified CPE (Common Platform Enumeration) fields, this endpoint will return a list of matching CPEs and the related CVE vulnerabilities.
+
+        :param part: CPE part to lookup
+        :type part: str
+        :param vendor: CPE vendor to lookup
+        :type vendor: str
+        :param product: CPE product to lookup
+        :type product: str
+        :param version: CPE version to lookup
+        :type version: str
+        :param is_vulnerable: Filter by vulnerability status (true/false). Defaults to false if not provided.
+        :type is_vulnerable: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._search_cpe_get_serialize(
+            part=part,
+            vendor=vendor,
+            product=product,
+            version=version,
+            is_vulnerable=is_vulnerable,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RenderResponseWithMetadataSearchResponsesSearchResponseMetadata",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    async def search_cpe_get_without_preload_content(
+        self,
+        part: Annotated[Optional[StrictStr], Field(description="CPE part to lookup")] = None,
+        vendor: Annotated[Optional[StrictStr], Field(description="CPE vendor to lookup")] = None,
+        product: Annotated[Optional[StrictStr], Field(description="CPE product to lookup")] = None,
+        version: Annotated[Optional[StrictStr], Field(description="CPE version to lookup")] = None,
+        is_vulnerable: Annotated[Optional[StrictStr], Field(description="Filter by vulnerability status (true/false). Defaults to false if not provided.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Return CPEs and associated CPEs by searching CPE fields
+
+        Based on the specified CPE (Common Platform Enumeration) fields, this endpoint will return a list of matching CPEs and the related CVE vulnerabilities.
+
+        :param part: CPE part to lookup
+        :type part: str
+        :param vendor: CPE vendor to lookup
+        :type vendor: str
+        :param product: CPE product to lookup
+        :type product: str
+        :param version: CPE version to lookup
+        :type version: str
+        :param is_vulnerable: Filter by vulnerability status (true/false). Defaults to false if not provided.
+        :type is_vulnerable: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._search_cpe_get_serialize(
+            part=part,
+            vendor=vendor,
+            product=product,
+            version=version,
+            is_vulnerable=is_vulnerable,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RenderResponseWithMetadataSearchResponsesSearchResponseMetadata",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _search_cpe_get_serialize(
+        self,
+        part,
+        vendor,
+        product,
+        version,
+        is_vulnerable,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://api.vulncheck.com'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if part is not None:
+            
+            _query_params.append(('part', part))
+            
+        if vendor is not None:
+            
+            _query_params.append(('vendor', vendor))
+            
+        if product is not None:
+            
+            _query_params.append(('product', product))
+            
+        if version is not None:
+            
+            _query_params.append(('version', version))
+            
+        if is_vulnerable is not None:
+            
+            _query_params.append(('isVulnerable', is_vulnerable))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'Bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/search/cpe',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
