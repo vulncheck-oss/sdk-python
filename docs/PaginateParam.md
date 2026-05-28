@@ -6,9 +6,9 @@ paginate.Param
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**filtering** | **str** |  | [optional] 
-**format** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
+**filtering** | **str** | Filtering indicates the type of filtering this parameter supports. Examples: \&quot;exact\&quot;, \&quot;range\&quot;, \&quot;wildcard\&quot;, \&quot;boolean\&quot; | [optional] 
+**format** | **str** | Format describes the expected parameter format or pattern. Examples: \&quot;CVE-YYYY-N{4-7}\&quot;, \&quot;YYYY-MM-DD\&quot;, \&quot;numeric\&quot; | [optional] 
+**name** | **str** | Name is the query parameter name (e.g., \&quot;cve\&quot;, \&quot;date\&quot;, \&quot;limit\&quot;). | [optional] 
 
 ## Example
 

@@ -1,6 +1,6 @@
 # V3controllersPurlResponseData
 
-v3controllers.PurlResponseData
+Data is the data returned by the endpoint
 
 ## Properties
 

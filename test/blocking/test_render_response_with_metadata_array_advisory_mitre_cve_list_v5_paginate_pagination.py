@@ -88,16 +88,31 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                                     ''
                                                     ], 
                                                 default_status = '', 
+                                                modules = [
+                                                    ''
+                                                    ], 
                                                 package_name = '', 
                                                 package_url = '', 
                                                 platforms = [
                                                     ''
                                                     ], 
                                                 product = '', 
+                                                program_files = [
+                                                    ''
+                                                    ], 
+                                                program_routines = [
+                                                    vulncheck_sdk.models.advisory/program_routine.advisory.ProgramRoutine(
+                                                        name = '', )
+                                                    ], 
                                                 repo = '', 
                                                 vendor = '', 
                                                 versions = [
                                                     vulncheck_sdk.models.advisory/m_version.advisory.MVersion(
+                                                        changes = [
+                                                            vulncheck_sdk.models.advisory/version_change.advisory.VersionChange(
+                                                                at = '', 
+                                                                status = '', )
+                                                            ], 
                                                         less_than = '', 
                                                         less_than_or_equal = '', 
                                                         status = '', 
@@ -105,11 +120,48 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                                         version_type = '', )
                                                     ], )
                                             ], 
+                                        configurations = [
+                                            vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
+                                                lang = '', 
+                                                value = '', )
+                                            ], 
+                                        cpe_applicability = [
+                                            vulncheck_sdk.models.advisory/custom_cpe.advisory.CustomCPE(
+                                                mcpeapplicability = vulncheck_sdk.models.advisory/mcpe_applicability.advisory.MCPEApplicability(
+                                                    negate = True, 
+                                                    nodes = [
+                                                        vulncheck_sdk.models.advisory/m_nodes.advisory.MNodes(
+                                                            cpe_match = [
+                                                                vulncheck_sdk.models.advisory/mcpe_match.advisory.MCPEMatch(
+                                                                    criteria = '', 
+                                                                    match_criteria_id = '', 
+                                                                    version_end_excluding = '', 
+                                                                    version_end_including = '', 
+                                                                    version_start_excluding = '', 
+                                                                    version_start_including = '', 
+                                                                    vulnerable = True, )
+                                                                ], 
+                                                            negate = True, 
+                                                            operator = '', )
+                                                        ], 
+                                                    operator = '', ), 
+                                                string_value = '', )
+                                            ], 
+                                        credits = [
+                                            vulncheck_sdk.models.advisory/credit.advisory.Credit(
+                                                lang = '', 
+                                                type = '', 
+                                                user = '', 
+                                                value = '', )
+                                            ], 
                                         date_public = '', 
                                         descriptions = [
                                             vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
                                                 lang = '', 
                                                 value = '', )
+                                            ], 
+                                        exploits = [
+                                            
                                             ], 
                                         impacts = [
                                             vulncheck_sdk.models.advisory/impact.advisory.Impact(
@@ -200,45 +252,45 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                                     ], 
                                                 url = '', )
                                             ], 
+                                        solutions = [
+                                            
+                                            ], 
+                                        source = [
+                                            56
+                                            ], 
                                         tags = [
                                             ''
                                             ], 
-                                        title = '', )
+                                        taxonomy_mappings = [
+                                            vulncheck_sdk.models.advisory/taxonomy_mapping.advisory.TaxonomyMapping(
+                                                taxonomy_name = '', 
+                                                taxonomy_relations = [
+                                                    vulncheck_sdk.models.advisory/taxonomy_relation.advisory.TaxonomyRelation(
+                                                        relationship_name = '', 
+                                                        relationship_value = '', 
+                                                        taxonomy_id = '', )
+                                                    ], 
+                                                taxonomy_version = '', )
+                                            ], 
+                                        timeline = [
+                                            vulncheck_sdk.models.advisory/timeline.advisory.Timeline(
+                                                lang = '', 
+                                                time = '', 
+                                                value = '', )
+                                            ], 
+                                        title = '', 
+                                        workarounds = [
+                                            
+                                            ], )
                                     ], 
                                 cna = vulncheck_sdk.models.advisory/m_cna.advisory.MCna(
-                                    cpe_applicability = [
-                                        vulncheck_sdk.models.advisory/custom_cpe.advisory.CustomCPE(
-                                            mcpeapplicability = vulncheck_sdk.models.advisory/mcpe_applicability.advisory.MCPEApplicability(
-                                                negate = True, 
-                                                nodes = [
-                                                    vulncheck_sdk.models.advisory/m_nodes.advisory.MNodes(
-                                                        cpe_match = [
-                                                            vulncheck_sdk.models.advisory/mcpe_match.advisory.MCPEMatch(
-                                                                criteria = '', 
-                                                                match_criteria_id = '', 
-                                                                version_end_excluding = '', 
-                                                                version_end_including = '', 
-                                                                version_start_excluding = '', 
-                                                                version_start_including = '', 
-                                                                vulnerable = True, )
-                                                            ], 
-                                                        negate = True, 
-                                                        operator = '', )
-                                                    ], 
-                                                operator = '', ), 
-                                            string_value = '', )
+                                    date_assigned = '', 
+                                    date_public = '', 
+                                    rejected_reasons = [
+                                        
                                         ], 
-                                    credits = [
-                                        vulncheck_sdk.models.advisory/credit.advisory.Credit(
-                                            lang = '', 
-                                            type = '', 
-                                            value = '', )
-                                        ], 
-                                    timeline = [
-                                        vulncheck_sdk.models.advisory/timeline.advisory.Timeline(
-                                            lang = '', 
-                                            time = '', 
-                                            value = '', )
+                                    replaced_by = [
+                                        ''
                                         ], 
                                     title = '', ), ), 
                             cve_metadata = vulncheck_sdk.models.advisory/m_cve_metadata.advisory.MCveMetadata(
@@ -246,8 +298,11 @@ class TestRenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePaginatio
                                 assigner_short_name = '', 
                                 cve_id = '', 
                                 date_published = '', 
+                                date_rejected = '', 
                                 date_reserved = '', 
                                 date_updated = '', 
+                                requester_user_id = '', 
+                                serial = 56, 
                                 state = '', ), 
                             data_type = '', 
                             data_version = '', ), 

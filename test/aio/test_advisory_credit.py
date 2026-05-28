@@ -38,6 +38,7 @@ class TestAdvisoryCredit(unittest.TestCase):
             return AdvisoryCredit(
                 lang = '',
                 type = '',
+                user = '',
                 value = ''
             )
         else:

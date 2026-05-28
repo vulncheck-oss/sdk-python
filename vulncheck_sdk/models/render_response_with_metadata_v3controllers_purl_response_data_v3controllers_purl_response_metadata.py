@@ -29,7 +29,7 @@ class RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlRe
     """
     render.ResponseWithMetadata-v3controllers_PurlResponseData-v3controllers_PurlResponseMetadata
     """ # noqa: E501
-    benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="_benchmark")
+    benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 = approximately 122 milliseconds", alias="_benchmark")
     meta: Optional[V3controllersPurlResponseMetadata] = Field(default=None, alias="_meta")
     data: Optional[V3controllersPurlResponseData] = None
     __properties: ClassVar[List[str]] = ["_benchmark", "_meta", "data"]

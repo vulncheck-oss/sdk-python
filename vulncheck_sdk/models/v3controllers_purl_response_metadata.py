@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class V3controllersPurlResponseMetadata(BaseModel):
     """
-    v3controllers.PurlResponseMetadata
+    Meta is the metadata related to the endpoint response
     """ # noqa: E501
     purl_struct: Optional[PurlPackageURLJSON] = None
     timestamp: Optional[StrictStr] = Field(default=None, description="time of the transaction")

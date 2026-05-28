@@ -6,9 +6,9 @@ render.ResponseWithMetadata-v3controllers_PurlsResponseData-v3controllers_PurlsR
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**benchmark** | **float** |  | [optional] 
+**benchmark** | **float** | Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 &#x3D; approximately 122 milliseconds | [optional] 
 **meta** | [**V3controllersPurlsResponseMetadata**](V3controllersPurlsResponseMetadata.md) |  | [optional] 
-**data** | [**List[PurlBatchVulnFinding]**](PurlBatchVulnFinding.md) |  | [optional] 
+**data** | [**List[PurlBatchVulnFinding]**](PurlBatchVulnFinding.md) | Data is the data returned by the endpoint | [optional] 
 
 ## Example
 

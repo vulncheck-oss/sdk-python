@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class V3controllersPurlResponseData(BaseModel):
     """
-    v3controllers.PurlResponseData
+    Data is the data returned by the endpoint
     """ # noqa: E501
     cves: Optional[List[StrictStr]] = Field(default=None, description="list of associated CVE 's")
     vulnerabilities: Optional[List[ApiOSSPackageVulnerability]] = Field(default=None, description="list of associated vulnerabilities")

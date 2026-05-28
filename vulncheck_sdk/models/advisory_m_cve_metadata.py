@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,10 +31,13 @@ class AdvisoryMCveMetadata(BaseModel):
     assigner_short_name: Optional[StrictStr] = Field(default=None, alias="assignerShortName")
     cve_id: Optional[StrictStr] = Field(default=None, alias="cveId")
     date_published: Optional[StrictStr] = Field(default=None, alias="datePublished")
+    date_rejected: Optional[StrictStr] = Field(default=None, alias="dateRejected")
     date_reserved: Optional[StrictStr] = Field(default=None, alias="dateReserved")
     date_updated: Optional[StrictStr] = Field(default=None, alias="dateUpdated")
+    requester_user_id: Optional[StrictStr] = Field(default=None, alias="requesterUserId")
+    serial: Optional[StrictInt] = None
     state: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["assignerOrgId", "assignerShortName", "cveId", "datePublished", "dateReserved", "dateUpdated", "state"]
+    __properties: ClassVar[List[str]] = ["assignerOrgId", "assignerShortName", "cveId", "datePublished", "dateRejected", "dateReserved", "dateUpdated", "requesterUserId", "serial", "state"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,8 +94,11 @@ class AdvisoryMCveMetadata(BaseModel):
             "assignerShortName": obj.get("assignerShortName"),
             "cveId": obj.get("cveId"),
             "datePublished": obj.get("datePublished"),
+            "dateRejected": obj.get("dateRejected"),
             "dateReserved": obj.get("dateReserved"),
             "dateUpdated": obj.get("dateUpdated"),
+            "requesterUserId": obj.get("requesterUserId"),
+            "serial": obj.get("serial"),
             "state": obj.get("state")
         })
         return _obj

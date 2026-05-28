@@ -1,6 +1,6 @@
 # V3controllersPurlsResponseMetadata
 
-v3controllers.PurlsResponseMetadata
+Meta is the metadata related to the endpoint response
 
 ## Properties
 

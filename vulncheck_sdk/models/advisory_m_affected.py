@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_m_version import AdvisoryMVersion
+from vulncheck_sdk.models.advisory_program_routine import AdvisoryProgramRoutine
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,14 +32,17 @@ class AdvisoryMAffected(BaseModel):
     collection_url: Optional[StrictStr] = Field(default=None, alias="collectionURL")
     cpes: Optional[List[StrictStr]] = None
     default_status: Optional[StrictStr] = Field(default=None, alias="defaultStatus")
+    modules: Optional[List[StrictStr]] = None
     package_name: Optional[StrictStr] = Field(default=None, alias="packageName")
     package_url: Optional[StrictStr] = Field(default=None, alias="packageURL")
     platforms: Optional[List[StrictStr]] = None
     product: Optional[StrictStr] = None
+    program_files: Optional[List[StrictStr]] = Field(default=None, alias="programFiles")
+    program_routines: Optional[List[AdvisoryProgramRoutine]] = Field(default=None, alias="programRoutines")
     repo: Optional[StrictStr] = None
     vendor: Optional[StrictStr] = None
     versions: Optional[List[AdvisoryMVersion]] = None
-    __properties: ClassVar[List[str]] = ["collectionURL", "cpes", "defaultStatus", "packageName", "packageURL", "platforms", "product", "repo", "vendor", "versions"]
+    __properties: ClassVar[List[str]] = ["collectionURL", "cpes", "defaultStatus", "modules", "packageName", "packageURL", "platforms", "product", "programFiles", "programRoutines", "repo", "vendor", "versions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,6 +83,13 @@ class AdvisoryMAffected(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in program_routines (list)
+        _items = []
+        if self.program_routines:
+            for _item_program_routines in self.program_routines:
+                if _item_program_routines:
+                    _items.append(_item_program_routines.to_dict())
+            _dict['programRoutines'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in versions (list)
         _items = []
         if self.versions:
@@ -101,10 +112,13 @@ class AdvisoryMAffected(BaseModel):
             "collectionURL": obj.get("collectionURL"),
             "cpes": obj.get("cpes"),
             "defaultStatus": obj.get("defaultStatus"),
+            "modules": obj.get("modules"),
             "packageName": obj.get("packageName"),
             "packageURL": obj.get("packageURL"),
             "platforms": obj.get("platforms"),
             "product": obj.get("product"),
+            "programFiles": obj.get("programFiles"),
+            "programRoutines": [AdvisoryProgramRoutine.from_dict(_item) for _item in obj["programRoutines"]] if obj.get("programRoutines") is not None else None,
             "repo": obj.get("repo"),
             "vendor": obj.get("vendor"),
             "versions": [AdvisoryMVersion.from_dict(_item) for _item in obj["versions"]] if obj.get("versions") is not None else None

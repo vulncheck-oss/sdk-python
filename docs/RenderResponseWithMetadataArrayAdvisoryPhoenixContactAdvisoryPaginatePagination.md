@@ -6,9 +6,9 @@ render.ResponseWithMetadata-array_advisory_PhoenixContactAdvisory-paginate_Pagin
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**benchmark** | **float** |  | [optional] 
+**benchmark** | **float** | Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 &#x3D; approximately 122 milliseconds | [optional] 
 **meta** | [**PaginatePagination**](PaginatePagination.md) |  | [optional] 
-**data** | [**List[AdvisoryPhoenixContactAdvisory]**](AdvisoryPhoenixContactAdvisory.md) |  | [optional] 
+**data** | [**List[AdvisoryPhoenixContactAdvisory]**](AdvisoryPhoenixContactAdvisory.md) | Data is the data returned by the endpoint | [optional] 
 
 ## Example
 

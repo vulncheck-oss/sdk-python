@@ -27,8 +27,8 @@ class PaginateMatch(BaseModel):
     """
     paginate.Match
     """ # noqa: E501
-    var_field: Optional[StrictStr] = Field(default=None, alias="field")
-    value: Optional[StrictStr] = None
+    var_field: Optional[StrictStr] = Field(default=None, description="Field is the name of the field being filtered on.", alias="field")
+    value: Optional[StrictStr] = Field(default=None, description="Value is the filter value being applied to the field.")
     __properties: ClassVar[List[str]] = ["field", "value"]
 
     model_config = ConfigDict(

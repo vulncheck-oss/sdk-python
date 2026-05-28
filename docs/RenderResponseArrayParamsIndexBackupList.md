@@ -6,8 +6,8 @@ render.Response-array_params_IndexBackupList
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**benchmark** | **float** |  | [optional] 
-**data** | [**List[ParamsIndexBackupList]**](ParamsIndexBackupList.md) |  | [optional] 
+**benchmark** | **float** | Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 &#x3D; approximately 122 milliseconds | [optional] 
+**data** | [**List[ParamsIndexBackupList]**](ParamsIndexBackupList.md) | Data is the data returned by the endpoint | [optional] 
 
 ## Example
 

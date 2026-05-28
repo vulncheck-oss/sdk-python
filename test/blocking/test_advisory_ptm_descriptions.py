@@ -39,6 +39,14 @@ class TestAdvisoryPTMDescriptions(unittest.TestCase):
                 cwe_id = '',
                 description = '',
                 lang = '',
+                references = [
+                    vulncheck_sdk.models.advisory/m_reference.advisory.MReference(
+                        name = '', 
+                        tags = [
+                            ''
+                            ], 
+                        url = '', )
+                    ],
                 type = ''
             )
         else:

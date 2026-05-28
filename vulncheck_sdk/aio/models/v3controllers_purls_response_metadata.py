@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class V3controllersPurlsResponseMetadata(BaseModel):
     """
-    v3controllers.PurlsResponseMetadata
+    Meta is the metadata related to the endpoint response
     """ # noqa: E501
     timestamp: Optional[StrictStr] = Field(default=None, description="time of the transaction")
     total_documents: Optional[StrictInt] = Field(default=None, description="number of results found")

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **cwe_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **lang** | **str** |  | [optional] 
+**references** | [**List[AdvisoryMReference]**](AdvisoryMReference.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 
 ## Example

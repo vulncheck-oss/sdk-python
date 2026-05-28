@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.48"
+__version__ = "0.0.49"
 
 # Define package exports
 __all__ = [
@@ -126,6 +126,7 @@ __all__ = [
     "AdvisoryAtredis",
     "AdvisoryAudiocodes",
     "AdvisoryAusCert",
+    "AdvisoryAustinHackersAdvisory",
     "AdvisoryAutodesk",
     "AdvisoryAvaya",
     "AdvisoryAvigilon",
@@ -202,12 +203,22 @@ __all__ = [
     "AdvisoryCheckPoint",
     "AdvisoryChrome",
     "AdvisoryCiena",
+    "AdvisoryCirclAdvisory",
+    "AdvisoryCirclCna",
+    "AdvisoryCirclContainers",
+    "AdvisoryCirclCveMetadata",
+    "AdvisoryCirclRef",
+    "AdvisoryCirclSource",
+    "AdvisoryCirclXGcve",
+    "AdvisoryCirclXGenerator",
     "AdvisoryCisaCsafAdv",
     "AdvisoryCiscoAdvisory",
     "AdvisoryCiscoCSAF",
     "AdvisoryCiscoKnownGoodValue",
     "AdvisoryCitrixAdvisory",
     "AdvisoryClarotyVulnerability",
+    "AdvisoryCloudAdvisory",
+    "AdvisoryCloudAdvisoryVersionRange",
     "AdvisoryCloudBees",
     "AdvisoryCloudVulnDBAdvisory",
     "AdvisoryCodesysAdvisory",
@@ -256,6 +267,7 @@ __all__ = [
     "AdvisoryDocumentMetadata",
     "AdvisoryDocumentPublisher",
     "AdvisoryDotCMS",
+    "AdvisoryDraegerAdvisory",
     "AdvisoryDragosAdvisory",
     "AdvisoryDraytek",
     "AdvisoryDrupal",
@@ -469,6 +481,8 @@ __all__ = [
     "AdvisoryMitreCVEListV5Ref",
     "AdvisoryMitreGroupCTI",
     "AdvisoryMitsubishiElectricAdvisory",
+    "AdvisoryMogwaiLabsAdvisory",
+    "AdvisoryMokshaAdvisory",
     "AdvisoryMongoDB",
     "AdvisoryMoxaAdvisory",
     "AdvisoryMozillaAdvisory",
@@ -505,6 +519,14 @@ __all__ = [
     "AdvisoryNuclei",
     "AdvisoryNvidiaRevision",
     "AdvisoryOCurl",
+    "AdvisoryOPCFoundationAcknowledgment",
+    "AdvisoryOPCFoundationAdvisory",
+    "AdvisoryOPCFoundationDistribution",
+    "AdvisoryOPCFoundationDocumentMetadata",
+    "AdvisoryOPCFoundationInvolvement",
+    "AdvisoryOPCFoundationRef",
+    "AdvisoryOPCFoundationTLP",
+    "AdvisoryOPCFoundationVulnerability",
     "AdvisoryOSV",
     "AdvisoryOSVObj",
     "AdvisoryOSVPackage",
@@ -556,6 +578,7 @@ __all__ = [
     "AdvisoryProductBranch",
     "AdvisoryProductSpecificDetail",
     "AdvisoryProductsAffected",
+    "AdvisoryProgramRoutine",
     "AdvisoryProgress",
     "AdvisoryProofpoint",
     "AdvisoryPublisher",
@@ -688,6 +711,8 @@ __all__ = [
     "AdvisoryTWCertAdvisory",
     "AdvisoryTailscale",
     "AdvisoryTalosAdvisory",
+    "AdvisoryTaxonomyMapping",
+    "AdvisoryTaxonomyRelation",
     "AdvisoryTeamViewer",
     "AdvisoryTenableResearchAdvisory",
     "AdvisoryTencent",
@@ -728,6 +753,7 @@ __all__ = [
     "AdvisoryVendorProduct",
     "AdvisoryVendorRef",
     "AdvisoryVeritas",
+    "AdvisoryVersionChange",
     "AdvisoryVirtuozzo",
     "AdvisoryVoidSec",
     "AdvisoryVulnCheck",
@@ -874,6 +900,9 @@ __all__ = [
     "BackupBackupResponse",
     "BackupFeedItem",
     "BackupListBackupsResponse",
+    "IndexCveSearchHit",
+    "IndexCveSearchMeta",
+    "IndexIndexCountEntry",
     "ModelsEntitlements",
     "PaginateMatch",
     "PaginatePagination",
@@ -951,6 +980,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryAtredisPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAudiocodesPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAusCertPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryAustinHackersAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAutodeskPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAvayaPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAvigilonPaginatePagination",
@@ -994,12 +1024,14 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryCheckPointPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryChromePaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCienaPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryCirclAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCisaCsafAdvPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCiscoAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCiscoCSAFPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCiscoKnownGoodValuePaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCitrixAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryClarotyVulnerabilityPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryCloudAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCloudBeesPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCloudVulnDBAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCodesysAdvisoryPaginatePagination",
@@ -1023,6 +1055,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryDistroPackagePaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryDjangoPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryDotCMSPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryDraegerAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryDragosAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryDraytekPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryDrupalPaginatePagination",
@@ -1146,6 +1179,8 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryMitelPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMitsubishiElectricAdvisoryPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryMogwaiLabsAdvisoryPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryMokshaAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMongoDBPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMoxaAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryMozillaAdvisoryPaginatePagination",
@@ -1173,6 +1208,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryNotePadPlusPlusPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryNozomiPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryNucleiPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryOPCFoundationAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryOSVPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryOTRSPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryOctopusDeployPaginatePagination",
@@ -1350,6 +1386,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayApiUpdatePaginatePagination",
     "RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination",
     "RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination",
+    "RenderResponseWithMetadataArrayIndexCveSearchHitIndexCveSearchMeta",
     "RenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination",
     "RenderResponseWithMetadataArrayStringV3controllersResponseMetadata",
     "RenderResponseWithMetadataSearchResponsesSearchResponseMetadata",
@@ -1482,6 +1519,7 @@ from vulncheck_sdk.aio.models.advisory_atlassian_vuln import AdvisoryAtlassianVu
 from vulncheck_sdk.aio.models.advisory_atredis import AdvisoryAtredis as AdvisoryAtredis
 from vulncheck_sdk.aio.models.advisory_audiocodes import AdvisoryAudiocodes as AdvisoryAudiocodes
 from vulncheck_sdk.aio.models.advisory_aus_cert import AdvisoryAusCert as AdvisoryAusCert
+from vulncheck_sdk.aio.models.advisory_austin_hackers_advisory import AdvisoryAustinHackersAdvisory as AdvisoryAustinHackersAdvisory
 from vulncheck_sdk.aio.models.advisory_autodesk import AdvisoryAutodesk as AdvisoryAutodesk
 from vulncheck_sdk.aio.models.advisory_avaya import AdvisoryAvaya as AdvisoryAvaya
 from vulncheck_sdk.aio.models.advisory_avigilon import AdvisoryAvigilon as AdvisoryAvigilon
@@ -1558,12 +1596,22 @@ from vulncheck_sdk.aio.models.advisory_chain_guard_sec_fix import AdvisoryChainG
 from vulncheck_sdk.aio.models.advisory_check_point import AdvisoryCheckPoint as AdvisoryCheckPoint
 from vulncheck_sdk.aio.models.advisory_chrome import AdvisoryChrome as AdvisoryChrome
 from vulncheck_sdk.aio.models.advisory_ciena import AdvisoryCiena as AdvisoryCiena
+from vulncheck_sdk.aio.models.advisory_circl_advisory import AdvisoryCirclAdvisory as AdvisoryCirclAdvisory
+from vulncheck_sdk.aio.models.advisory_circl_cna import AdvisoryCirclCna as AdvisoryCirclCna
+from vulncheck_sdk.aio.models.advisory_circl_containers import AdvisoryCirclContainers as AdvisoryCirclContainers
+from vulncheck_sdk.aio.models.advisory_circl_cve_metadata import AdvisoryCirclCveMetadata as AdvisoryCirclCveMetadata
+from vulncheck_sdk.aio.models.advisory_circl_ref import AdvisoryCirclRef as AdvisoryCirclRef
+from vulncheck_sdk.aio.models.advisory_circl_source import AdvisoryCirclSource as AdvisoryCirclSource
+from vulncheck_sdk.aio.models.advisory_circl_x_gcve import AdvisoryCirclXGcve as AdvisoryCirclXGcve
+from vulncheck_sdk.aio.models.advisory_circl_x_generator import AdvisoryCirclXGenerator as AdvisoryCirclXGenerator
 from vulncheck_sdk.aio.models.advisory_cisa_csaf_adv import AdvisoryCisaCsafAdv as AdvisoryCisaCsafAdv
 from vulncheck_sdk.aio.models.advisory_cisco_advisory import AdvisoryCiscoAdvisory as AdvisoryCiscoAdvisory
 from vulncheck_sdk.aio.models.advisory_cisco_csaf import AdvisoryCiscoCSAF as AdvisoryCiscoCSAF
 from vulncheck_sdk.aio.models.advisory_cisco_known_good_value import AdvisoryCiscoKnownGoodValue as AdvisoryCiscoKnownGoodValue
 from vulncheck_sdk.aio.models.advisory_citrix_advisory import AdvisoryCitrixAdvisory as AdvisoryCitrixAdvisory
 from vulncheck_sdk.aio.models.advisory_claroty_vulnerability import AdvisoryClarotyVulnerability as AdvisoryClarotyVulnerability
+from vulncheck_sdk.aio.models.advisory_cloud_advisory import AdvisoryCloudAdvisory as AdvisoryCloudAdvisory
+from vulncheck_sdk.aio.models.advisory_cloud_advisory_version_range import AdvisoryCloudAdvisoryVersionRange as AdvisoryCloudAdvisoryVersionRange
 from vulncheck_sdk.aio.models.advisory_cloud_bees import AdvisoryCloudBees as AdvisoryCloudBees
 from vulncheck_sdk.aio.models.advisory_cloud_vuln_db_advisory import AdvisoryCloudVulnDBAdvisory as AdvisoryCloudVulnDBAdvisory
 from vulncheck_sdk.aio.models.advisory_codesys_advisory import AdvisoryCodesysAdvisory as AdvisoryCodesysAdvisory
@@ -1612,6 +1660,7 @@ from vulncheck_sdk.aio.models.advisory_django import AdvisoryDjango as AdvisoryD
 from vulncheck_sdk.aio.models.advisory_document_metadata import AdvisoryDocumentMetadata as AdvisoryDocumentMetadata
 from vulncheck_sdk.aio.models.advisory_document_publisher import AdvisoryDocumentPublisher as AdvisoryDocumentPublisher
 from vulncheck_sdk.aio.models.advisory_dot_cms import AdvisoryDotCMS as AdvisoryDotCMS
+from vulncheck_sdk.aio.models.advisory_draeger_advisory import AdvisoryDraegerAdvisory as AdvisoryDraegerAdvisory
 from vulncheck_sdk.aio.models.advisory_dragos_advisory import AdvisoryDragosAdvisory as AdvisoryDragosAdvisory
 from vulncheck_sdk.aio.models.advisory_draytek import AdvisoryDraytek as AdvisoryDraytek
 from vulncheck_sdk.aio.models.advisory_drupal import AdvisoryDrupal as AdvisoryDrupal
@@ -1825,6 +1874,8 @@ from vulncheck_sdk.aio.models.advisory_mitre_cve_list_v5 import AdvisoryMitreCVE
 from vulncheck_sdk.aio.models.advisory_mitre_cve_list_v5_ref import AdvisoryMitreCVEListV5Ref as AdvisoryMitreCVEListV5Ref
 from vulncheck_sdk.aio.models.advisory_mitre_group_cti import AdvisoryMitreGroupCTI as AdvisoryMitreGroupCTI
 from vulncheck_sdk.aio.models.advisory_mitsubishi_electric_advisory import AdvisoryMitsubishiElectricAdvisory as AdvisoryMitsubishiElectricAdvisory
+from vulncheck_sdk.aio.models.advisory_mogwai_labs_advisory import AdvisoryMogwaiLabsAdvisory as AdvisoryMogwaiLabsAdvisory
+from vulncheck_sdk.aio.models.advisory_moksha_advisory import AdvisoryMokshaAdvisory as AdvisoryMokshaAdvisory
 from vulncheck_sdk.aio.models.advisory_mongo_db import AdvisoryMongoDB as AdvisoryMongoDB
 from vulncheck_sdk.aio.models.advisory_moxa_advisory import AdvisoryMoxaAdvisory as AdvisoryMoxaAdvisory
 from vulncheck_sdk.aio.models.advisory_mozilla_advisory import AdvisoryMozillaAdvisory as AdvisoryMozillaAdvisory
@@ -1861,6 +1912,14 @@ from vulncheck_sdk.aio.models.advisory_nozomi import AdvisoryNozomi as AdvisoryN
 from vulncheck_sdk.aio.models.advisory_nuclei import AdvisoryNuclei as AdvisoryNuclei
 from vulncheck_sdk.aio.models.advisory_nvidia_revision import AdvisoryNvidiaRevision as AdvisoryNvidiaRevision
 from vulncheck_sdk.aio.models.advisory_o_curl import AdvisoryOCurl as AdvisoryOCurl
+from vulncheck_sdk.aio.models.advisory_opc_foundation_acknowledgment import AdvisoryOPCFoundationAcknowledgment as AdvisoryOPCFoundationAcknowledgment
+from vulncheck_sdk.aio.models.advisory_opc_foundation_advisory import AdvisoryOPCFoundationAdvisory as AdvisoryOPCFoundationAdvisory
+from vulncheck_sdk.aio.models.advisory_opc_foundation_distribution import AdvisoryOPCFoundationDistribution as AdvisoryOPCFoundationDistribution
+from vulncheck_sdk.aio.models.advisory_opc_foundation_document_metadata import AdvisoryOPCFoundationDocumentMetadata as AdvisoryOPCFoundationDocumentMetadata
+from vulncheck_sdk.aio.models.advisory_opc_foundation_involvement import AdvisoryOPCFoundationInvolvement as AdvisoryOPCFoundationInvolvement
+from vulncheck_sdk.aio.models.advisory_opc_foundation_ref import AdvisoryOPCFoundationRef as AdvisoryOPCFoundationRef
+from vulncheck_sdk.aio.models.advisory_opc_foundation_tlp import AdvisoryOPCFoundationTLP as AdvisoryOPCFoundationTLP
+from vulncheck_sdk.aio.models.advisory_opc_foundation_vulnerability import AdvisoryOPCFoundationVulnerability as AdvisoryOPCFoundationVulnerability
 from vulncheck_sdk.aio.models.advisory_osv import AdvisoryOSV as AdvisoryOSV
 from vulncheck_sdk.aio.models.advisory_osv_obj import AdvisoryOSVObj as AdvisoryOSVObj
 from vulncheck_sdk.aio.models.advisory_osv_package import AdvisoryOSVPackage as AdvisoryOSVPackage
@@ -1912,6 +1971,7 @@ from vulncheck_sdk.aio.models.advisory_product import AdvisoryProduct as Advisor
 from vulncheck_sdk.aio.models.advisory_product_branch import AdvisoryProductBranch as AdvisoryProductBranch
 from vulncheck_sdk.aio.models.advisory_product_specific_detail import AdvisoryProductSpecificDetail as AdvisoryProductSpecificDetail
 from vulncheck_sdk.aio.models.advisory_products_affected import AdvisoryProductsAffected as AdvisoryProductsAffected
+from vulncheck_sdk.aio.models.advisory_program_routine import AdvisoryProgramRoutine as AdvisoryProgramRoutine
 from vulncheck_sdk.aio.models.advisory_progress import AdvisoryProgress as AdvisoryProgress
 from vulncheck_sdk.aio.models.advisory_proofpoint import AdvisoryProofpoint as AdvisoryProofpoint
 from vulncheck_sdk.aio.models.advisory_publisher import AdvisoryPublisher as AdvisoryPublisher
@@ -2044,6 +2104,8 @@ from vulncheck_sdk.aio.models.advisory_tp_link import AdvisoryTPLink as Advisory
 from vulncheck_sdk.aio.models.advisory_tw_cert_advisory import AdvisoryTWCertAdvisory as AdvisoryTWCertAdvisory
 from vulncheck_sdk.aio.models.advisory_tailscale import AdvisoryTailscale as AdvisoryTailscale
 from vulncheck_sdk.aio.models.advisory_talos_advisory import AdvisoryTalosAdvisory as AdvisoryTalosAdvisory
+from vulncheck_sdk.aio.models.advisory_taxonomy_mapping import AdvisoryTaxonomyMapping as AdvisoryTaxonomyMapping
+from vulncheck_sdk.aio.models.advisory_taxonomy_relation import AdvisoryTaxonomyRelation as AdvisoryTaxonomyRelation
 from vulncheck_sdk.aio.models.advisory_team_viewer import AdvisoryTeamViewer as AdvisoryTeamViewer
 from vulncheck_sdk.aio.models.advisory_tenable_research_advisory import AdvisoryTenableResearchAdvisory as AdvisoryTenableResearchAdvisory
 from vulncheck_sdk.aio.models.advisory_tencent import AdvisoryTencent as AdvisoryTencent
@@ -2084,6 +2146,7 @@ from vulncheck_sdk.aio.models.advisory_vendor_name_for_threat_actor import Advis
 from vulncheck_sdk.aio.models.advisory_vendor_product import AdvisoryVendorProduct as AdvisoryVendorProduct
 from vulncheck_sdk.aio.models.advisory_vendor_ref import AdvisoryVendorRef as AdvisoryVendorRef
 from vulncheck_sdk.aio.models.advisory_veritas import AdvisoryVeritas as AdvisoryVeritas
+from vulncheck_sdk.aio.models.advisory_version_change import AdvisoryVersionChange as AdvisoryVersionChange
 from vulncheck_sdk.aio.models.advisory_virtuozzo import AdvisoryVirtuozzo as AdvisoryVirtuozzo
 from vulncheck_sdk.aio.models.advisory_void_sec import AdvisoryVoidSec as AdvisoryVoidSec
 from vulncheck_sdk.aio.models.advisory_vuln_check import AdvisoryVulnCheck as AdvisoryVulnCheck
@@ -2230,6 +2293,9 @@ from vulncheck_sdk.aio.models.api_vulnerability_alias import ApiVulnerabilityAli
 from vulncheck_sdk.aio.models.backup_backup_response import BackupBackupResponse as BackupBackupResponse
 from vulncheck_sdk.aio.models.backup_feed_item import BackupFeedItem as BackupFeedItem
 from vulncheck_sdk.aio.models.backup_list_backups_response import BackupListBackupsResponse as BackupListBackupsResponse
+from vulncheck_sdk.aio.models.index_cve_search_hit import IndexCveSearchHit as IndexCveSearchHit
+from vulncheck_sdk.aio.models.index_cve_search_meta import IndexCveSearchMeta as IndexCveSearchMeta
+from vulncheck_sdk.aio.models.index_index_count_entry import IndexIndexCountEntry as IndexIndexCountEntry
 from vulncheck_sdk.aio.models.models_entitlements import ModelsEntitlements as ModelsEntitlements
 from vulncheck_sdk.aio.models.paginate_match import PaginateMatch as PaginateMatch
 from vulncheck_sdk.aio.models.paginate_pagination import PaginatePagination as PaginatePagination
@@ -2307,6 +2373,7 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_atlas
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_atredis_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAtredisPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAtredisPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_audiocodes_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAudiocodesPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAudiocodesPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_aus_cert_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAusCertPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAusCertPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_austin_hackers_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAustinHackersAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAustinHackersAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_autodesk_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAutodeskPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAutodeskPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_avaya_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAvayaPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAvayaPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_avigilon_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAvigilonPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAvigilonPaginatePagination
@@ -2350,12 +2417,14 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_chain
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_check_point_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCheckPointPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCheckPointPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_chrome_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryChromePaginatePagination as RenderResponseWithMetadataArrayAdvisoryChromePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_ciena_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCienaPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCienaPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_circl_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCirclAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCirclAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_cisa_csaf_adv_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCisaCsafAdvPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCisaCsafAdvPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_cisco_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCiscoAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCiscoAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_cisco_csaf_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCiscoCSAFPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCiscoCSAFPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_cisco_known_good_value_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCiscoKnownGoodValuePaginatePagination as RenderResponseWithMetadataArrayAdvisoryCiscoKnownGoodValuePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_citrix_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCitrixAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCitrixAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_claroty_vulnerability_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryClarotyVulnerabilityPaginatePagination as RenderResponseWithMetadataArrayAdvisoryClarotyVulnerabilityPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_cloud_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCloudAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCloudAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_cloud_bees_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCloudBeesPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCloudBeesPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_cloud_vuln_db_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCloudVulnDBAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCloudVulnDBAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_codesys_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCodesysAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCodesysAdvisoryPaginatePagination
@@ -2379,6 +2448,7 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_delta
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_distro_package_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDistroPackagePaginatePagination as RenderResponseWithMetadataArrayAdvisoryDistroPackagePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_django_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDjangoPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDjangoPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_dot_cms_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDotCMSPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDotCMSPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_draeger_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDraegerAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDraegerAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_dragos_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDragosAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDragosAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_draytek_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDraytekPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDraytekPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_drupal_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryDrupalPaginatePagination as RenderResponseWithMetadataArrayAdvisoryDrupalPaginatePagination
@@ -2502,6 +2572,8 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_misp_
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_mitel_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMitelPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMitelPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_mitre_cve_list_v5_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePagination as RenderResponseWithMetadataArrayAdvisoryMitreCVEListV5PaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_mitsubishi_electric_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMitsubishiElectricAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMitsubishiElectricAdvisoryPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_mogwai_labs_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMogwaiLabsAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMogwaiLabsAdvisoryPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_moksha_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMokshaAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMokshaAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_mongo_db_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMongoDBPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMongoDBPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_moxa_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMoxaAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMoxaAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_mozilla_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryMozillaAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryMozillaAdvisoryPaginatePagination
@@ -2529,6 +2601,7 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_nokia
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_note_pad_plus_plus_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNotePadPlusPlusPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNotePadPlusPlusPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_nozomi_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNozomiPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNozomiPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_nuclei_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNucleiPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNucleiPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_opc_foundation_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryOPCFoundationAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryOPCFoundationAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_osv_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryOSVPaginatePagination as RenderResponseWithMetadataArrayAdvisoryOSVPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_otrs_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryOTRSPaginatePagination as RenderResponseWithMetadataArrayAdvisoryOTRSPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_octopus_deploy_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryOctopusDeployPaginatePagination as RenderResponseWithMetadataArrayAdvisoryOctopusDeployPaginatePagination
@@ -2706,6 +2779,7 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_oss_packag
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_update_paginate_pagination import RenderResponseWithMetadataArrayApiUpdatePaginatePagination as RenderResponseWithMetadataArrayApiUpdatePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_vuln_check_canary_paginate_pagination import RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination as RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_vulnerability_alias_paginate_pagination import RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination as RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_index_cve_search_hit_index_cve_search_meta import RenderResponseWithMetadataArrayIndexCveSearchHitIndexCveSearchMeta as RenderResponseWithMetadataArrayIndexCveSearchHitIndexCveSearchMeta
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_purls_purl_response_paginate_pagination import RenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination as RenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_string_v3controllers_response_metadata import RenderResponseWithMetadataArrayStringV3controllersResponseMetadata as RenderResponseWithMetadataArrayStringV3controllersResponseMetadata
 from vulncheck_sdk.aio.models.render_response_with_metadata_search_responses_search_response_metadata import RenderResponseWithMetadataSearchResponsesSearchResponseMetadata as RenderResponseWithMetadataSearchResponsesSearchResponseMetadata

@@ -1,6 +1,6 @@
 # SearchResponseMetadata
 
-search.ResponseMetadata
+Meta is the metadata related to the endpoint response
 
 ## Properties
 

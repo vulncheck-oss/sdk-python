@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**purls_post**](EndpointsApi.md#purls_post) | **POST** /v3/purls | Request vulnerabilities related to a list of PURLs
 [**rules_initial_access_type_get**](EndpointsApi.md#rules_initial_access_type_get) | **GET** /v3/rules/initial-access/{type} | Retrieve set of initial-access detection rules
 [**search_cpe_get**](EndpointsApi.md#search_cpe_get) | **GET** /v3/search/cpe | Return CPEs and associated CPEs by searching CPE fields
+[**search_cve_get**](EndpointsApi.md#search_cve_get) | **GET** /v3/search/cve | Search all indices for a CVE
 [**tags_vulncheck_c2_get**](EndpointsApi.md#tags_vulncheck_c2_get) | **GET** /v3/tags/vulncheck-c2 | Retrieve a list of C2 IP addresses
 
 
@@ -895,6 +896,98 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_cve_get**
+> RenderResponseWithMetadataArrayIndexCveSearchHitIndexCveSearchMeta search_cve_get(cve, page=page, limit=limit, cursor=cursor, start_cursor=start_cursor)
+
+Search all indices for a CVE
+
+Returns all records referencing the specified CVE across all accessible indices. Results are aggregated
+from multiple data sources including advisories, exploits, threat intelligence, and vulnerability databases.
+Metadata is returned in the _meta field.
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.render_response_with_metadata_array_index_cve_search_hit_index_cve_search_meta import RenderResponseWithMetadataArrayIndexCveSearchHitIndexCveSearchMeta
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.vulncheck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "https://api.vulncheck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.EndpointsApi(api_client)
+    cve = 'cve_example' # str | CVE ID to search for (e.g. CVE-2024-1234)
+    page = 56 # int | Page number (default: 1, page mode only) (optional)
+    limit = 56 # int | Maximum number of results per page (default: 500, max: 1000) (optional)
+    cursor = 'cursor_example' # str | Continue cursor paging, or use an empty value to start cursor paging (optional)
+    start_cursor = 'start_cursor_example' # str | Start cursor paging (optional)
+
+    try:
+        # Search all indices for a CVE
+        api_response = api_instance.search_cve_get(cve, page=page, limit=limit, cursor=cursor, start_cursor=start_cursor)
+        print("The response of EndpointsApi->search_cve_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EndpointsApi->search_cve_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cve** | **str**| CVE ID to search for (e.g. CVE-2024-1234) | 
+ **page** | **int**| Page number (default: 1, page mode only) | [optional] 
+ **limit** | **int**| Maximum number of results per page (default: 500, max: 1000) | [optional] 
+ **cursor** | **str**| Continue cursor paging, or use an empty value to start cursor paging | [optional] 
+ **start_cursor** | **str**| Start cursor paging | [optional] 
+
+### Return type
+
+[**RenderResponseWithMetadataArrayIndexCveSearchHitIndexCveSearchMeta**](RenderResponseWithMetadataArrayIndexCveSearchHitIndexCveSearchMeta.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

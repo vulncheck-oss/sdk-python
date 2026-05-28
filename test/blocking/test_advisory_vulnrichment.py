@@ -51,16 +51,31 @@ class TestAdvisoryVulnrichment(unittest.TestCase):
                                             ''
                                             ], 
                                         default_status = '', 
+                                        modules = [
+                                            ''
+                                            ], 
                                         package_name = '', 
                                         package_url = '', 
                                         platforms = [
                                             ''
                                             ], 
                                         product = '', 
+                                        program_files = [
+                                            ''
+                                            ], 
+                                        program_routines = [
+                                            vulncheck_sdk.models.advisory/program_routine.advisory.ProgramRoutine(
+                                                name = '', )
+                                            ], 
                                         repo = '', 
                                         vendor = '', 
                                         versions = [
                                             vulncheck_sdk.models.advisory/m_version.advisory.MVersion(
+                                                changes = [
+                                                    vulncheck_sdk.models.advisory/version_change.advisory.VersionChange(
+                                                        at = '', 
+                                                        status = '', )
+                                                    ], 
                                                 less_than = '', 
                                                 less_than_or_equal = '', 
                                                 status = '', 
@@ -90,6 +105,11 @@ class TestAdvisoryVulnrichment(unittest.TestCase):
                                     short_name = '', ), )
                             ], 
                         cna = vulncheck_sdk.models.advisory/m_cna.advisory.MCna(
+                            configurations = [
+                                vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
+                                    lang = '', 
+                                    value = '', )
+                                ], 
                             cpe_applicability = [
                                 vulncheck_sdk.models.advisory/custom_cpe.advisory.CustomCPE(
                                     mcpeapplicability = vulncheck_sdk.models.advisory/mcpe_applicability.advisory.MCPEApplicability(
@@ -116,12 +136,18 @@ class TestAdvisoryVulnrichment(unittest.TestCase):
                                 vulncheck_sdk.models.advisory/credit.advisory.Credit(
                                     lang = '', 
                                     type = '', 
+                                    user = '', 
                                     value = '', )
                                 ], 
+                            date_assigned = '', 
+                            date_public = '', 
                             descriptions = [
                                 vulncheck_sdk.models.advisory/m_descriptions.advisory.MDescriptions(
                                     lang = '', 
                                     value = '', )
+                                ], 
+                            exploits = [
+                                
                                 ], 
                             impacts = [
                                 vulncheck_sdk.models.advisory/impact.advisory.Impact(
@@ -138,8 +164,31 @@ class TestAdvisoryVulnrichment(unittest.TestCase):
                                         ], 
                                     url = '', )
                                 ], 
+                            rejected_reasons = [
+                                
+                                ], 
+                            replaced_by = [
+                                ''
+                                ], 
+                            solutions = [
+                                
+                                ], 
+                            source = [
+                                56
+                                ], 
                             tags = [
                                 ''
+                                ], 
+                            taxonomy_mappings = [
+                                vulncheck_sdk.models.advisory/taxonomy_mapping.advisory.TaxonomyMapping(
+                                    taxonomy_name = '', 
+                                    taxonomy_relations = [
+                                        vulncheck_sdk.models.advisory/taxonomy_relation.advisory.TaxonomyRelation(
+                                            relationship_name = '', 
+                                            relationship_value = '', 
+                                            taxonomy_id = '', )
+                                        ], 
+                                    taxonomy_version = '', )
                                 ], 
                             timeline = [
                                 vulncheck_sdk.models.advisory/timeline.advisory.Timeline(
@@ -147,14 +196,20 @@ class TestAdvisoryVulnrichment(unittest.TestCase):
                                     time = '', 
                                     value = '', )
                                 ], 
-                            title = '', ), ), 
+                            title = '', 
+                            workarounds = [
+                                
+                                ], ), ), 
                     cve_metadata = vulncheck_sdk.models.advisory/m_cve_metadata.advisory.MCveMetadata(
                         assigner_org_id = '', 
                         assigner_short_name = '', 
                         cve_id = '', 
                         date_published = '', 
+                        date_rejected = '', 
                         date_reserved = '', 
                         date_updated = '', 
+                        requester_user_id = '', 
+                        serial = 56, 
                         state = '', ), 
                     data_type = '', 
                     data_version = '', ),

@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class AdvisoryMProviderMetadata(BaseModel):
     """
-    OK
+    advisory.MProviderMetadata
     """ # noqa: E501
     date_updated: Optional[StrictStr] = Field(default=None, description="FIXME: flip to time", alias="dateUpdated")
     org_id: Optional[StrictStr] = Field(default=None, alias="orgId")

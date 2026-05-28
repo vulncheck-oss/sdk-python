@@ -43,16 +43,31 @@ class TestAdvisoryADPContainer(unittest.TestCase):
                             ''
                             ], 
                         default_status = '', 
+                        modules = [
+                            ''
+                            ], 
                         package_name = '', 
                         package_url = '', 
                         platforms = [
                             ''
                             ], 
                         product = '', 
+                        program_files = [
+                            ''
+                            ], 
+                        program_routines = [
+                            vulncheck_sdk.aio.models.advisory/program_routine.advisory.ProgramRoutine(
+                                name = '', )
+                            ], 
                         repo = '', 
                         vendor = '', 
                         versions = [
                             vulncheck_sdk.aio.models.advisory/m_version.advisory.MVersion(
+                                changes = [
+                                    vulncheck_sdk.aio.models.advisory/version_change.advisory.VersionChange(
+                                        at = '', 
+                                        status = '', )
+                                    ], 
                                 less_than = '', 
                                 less_than_or_equal = '', 
                                 status = '', 
@@ -60,8 +75,47 @@ class TestAdvisoryADPContainer(unittest.TestCase):
                                 version_type = '', )
                             ], )
                     ],
+                configurations = [
+                    vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
+                        lang = '', 
+                        value = '', )
+                    ],
+                cpe_applicability = [
+                    vulncheck_sdk.aio.models.advisory/custom_cpe.advisory.CustomCPE(
+                        mcpeapplicability = vulncheck_sdk.aio.models.advisory/mcpe_applicability.advisory.MCPEApplicability(
+                            negate = True, 
+                            nodes = [
+                                vulncheck_sdk.aio.models.advisory/m_nodes.advisory.MNodes(
+                                    cpe_match = [
+                                        vulncheck_sdk.aio.models.advisory/mcpe_match.advisory.MCPEMatch(
+                                            criteria = '', 
+                                            match_criteria_id = '', 
+                                            version_end_excluding = '', 
+                                            version_end_including = '', 
+                                            version_start_excluding = '', 
+                                            version_start_including = '', 
+                                            vulnerable = True, )
+                                        ], 
+                                    negate = True, 
+                                    operator = '', )
+                                ], 
+                            operator = '', ), 
+                        string_value = '', )
+                    ],
+                credits = [
+                    vulncheck_sdk.aio.models.advisory/credit.advisory.Credit(
+                        lang = '', 
+                        type = '', 
+                        user = '', 
+                        value = '', )
+                    ],
                 date_public = '',
                 descriptions = [
+                    vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
+                        lang = '', 
+                        value = '', )
+                    ],
+                exploits = [
                     vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
                         lang = '', 
                         value = '', )
@@ -152,6 +206,14 @@ class TestAdvisoryADPContainer(unittest.TestCase):
                                 cwe_id = '', 
                                 description = '', 
                                 lang = '', 
+                                references = [
+                                    vulncheck_sdk.aio.models.advisory/m_reference.advisory.MReference(
+                                        name = '', 
+                                        tags = [
+                                            ''
+                                            ], 
+                                        url = '', )
+                                    ], 
                                 type = '', )
                             ], )
                     ],
@@ -167,10 +229,40 @@ class TestAdvisoryADPContainer(unittest.TestCase):
                             ], 
                         url = '', )
                     ],
+                solutions = [
+                    vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
+                        lang = '', 
+                        value = '', )
+                    ],
+                source = [
+                    56
+                    ],
                 tags = [
                     ''
                     ],
-                title = ''
+                taxonomy_mappings = [
+                    vulncheck_sdk.aio.models.advisory/taxonomy_mapping.advisory.TaxonomyMapping(
+                        taxonomy_name = '', 
+                        taxonomy_relations = [
+                            vulncheck_sdk.aio.models.advisory/taxonomy_relation.advisory.TaxonomyRelation(
+                                relationship_name = '', 
+                                relationship_value = '', 
+                                taxonomy_id = '', )
+                            ], 
+                        taxonomy_version = '', )
+                    ],
+                timeline = [
+                    vulncheck_sdk.aio.models.advisory/timeline.advisory.Timeline(
+                        lang = '', 
+                        time = '', 
+                        value = '', )
+                    ],
+                title = '',
+                workarounds = [
+                    vulncheck_sdk.aio.models.advisory/m_descriptions.advisory.MDescriptions(
+                        lang = '', 
+                        value = '', )
+                    ]
             )
         else:
             return AdvisoryADPContainer(

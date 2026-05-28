@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **lang** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
+**user** | **str** |  | [optional] 
 **value** | **str** |  | [optional] 
 
 ## Example

@@ -28,8 +28,8 @@ class RenderResponseArrayParamsIndexList(BaseModel):
     """
     render.Response-array_params_IndexList
     """ # noqa: E501
-    benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="_benchmark")
-    data: Optional[List[ParamsIndexList]] = None
+    benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 = approximately 122 milliseconds", alias="_benchmark")
+    data: Optional[List[ParamsIndexList]] = Field(default=None, description="Data is the data returned by the endpoint")
     __properties: ClassVar[List[str]] = ["_benchmark", "data"]
 
     model_config = ConfigDict(

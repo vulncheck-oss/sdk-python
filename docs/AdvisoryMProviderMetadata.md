@@ -1,6 +1,6 @@
 # AdvisoryMProviderMetadata
 
-OK
+advisory.MProviderMetadata
 
 ## Properties
 

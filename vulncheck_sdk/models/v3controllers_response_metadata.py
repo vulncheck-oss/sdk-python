@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class V3controllersResponseMetadata(BaseModel):
     """
-    v3controllers.ResponseMetadata
+    Meta is the metadata related to the endpoint response
     """ # noqa: E501
     cpe: Optional[StrictStr] = None
     cpe_struct: Optional[ApiCPE] = None

@@ -6,7 +6,7 @@ render.ResponseWithMetadata-v3controllers_PurlResponseData-v3controllers_PurlRes
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**benchmark** | **float** |  | [optional] 
+**benchmark** | **float** | Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 &#x3D; approximately 122 milliseconds | [optional] 
 **meta** | [**V3controllersPurlResponseMetadata**](V3controllersPurlResponseMetadata.md) |  | [optional] 
 **data** | [**V3controllersPurlResponseData**](V3controllersPurlResponseData.md) |  | [optional] 
 

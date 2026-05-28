@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_credit import AdvisoryCredit
 from vulncheck_sdk.models.advisory_custom_cpe import AdvisoryCustomCPE
@@ -29,6 +29,7 @@ from vulncheck_sdk.models.advisory_m_problem_types import AdvisoryMProblemTypes
 from vulncheck_sdk.models.advisory_m_provider_metadata import AdvisoryMProviderMetadata
 from vulncheck_sdk.models.advisory_m_reference import AdvisoryMReference
 from vulncheck_sdk.models.advisory_metric import AdvisoryMetric
+from vulncheck_sdk.models.advisory_taxonomy_mapping import AdvisoryTaxonomyMapping
 from vulncheck_sdk.models.advisory_timeline import AdvisoryTimeline
 from typing import Optional, Set
 from typing_extensions import Self
@@ -38,18 +39,28 @@ class AdvisoryMCna(BaseModel):
     advisory.MCna
     """ # noqa: E501
     affected: Optional[List[AdvisoryMAffected]] = None
+    configurations: Optional[List[AdvisoryMDescriptions]] = None
     cpe_applicability: Optional[List[AdvisoryCustomCPE]] = Field(default=None, alias="cpeApplicability")
     credits: Optional[List[AdvisoryCredit]] = None
+    date_assigned: Optional[StrictStr] = Field(default=None, alias="dateAssigned")
+    date_public: Optional[StrictStr] = Field(default=None, alias="datePublic")
     descriptions: Optional[List[AdvisoryMDescriptions]] = None
+    exploits: Optional[List[AdvisoryMDescriptions]] = None
     impacts: Optional[List[AdvisoryImpact]] = None
     metrics: Optional[List[AdvisoryMetric]] = None
     problem_types: Optional[List[AdvisoryMProblemTypes]] = Field(default=None, alias="problemTypes")
     provider_metadata: Optional[AdvisoryMProviderMetadata] = Field(default=None, alias="providerMetadata")
     references: Optional[List[AdvisoryMReference]] = None
+    rejected_reasons: Optional[List[AdvisoryMDescriptions]] = Field(default=None, description="Fields below appear only on rejected records (cveMetadata.state == \"REJECTED\").", alias="rejectedReasons")
+    replaced_by: Optional[List[StrictStr]] = Field(default=None, alias="replacedBy")
+    solutions: Optional[List[AdvisoryMDescriptions]] = None
+    source: Optional[List[StrictInt]] = None
     tags: Optional[List[StrictStr]] = None
+    taxonomy_mappings: Optional[List[AdvisoryTaxonomyMapping]] = Field(default=None, alias="taxonomyMappings")
     timeline: Optional[List[AdvisoryTimeline]] = None
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affected", "cpeApplicability", "credits", "descriptions", "impacts", "metrics", "problemTypes", "providerMetadata", "references", "tags", "timeline", "title"]
+    workarounds: Optional[List[AdvisoryMDescriptions]] = None
+    __properties: ClassVar[List[str]] = ["affected", "configurations", "cpeApplicability", "credits", "dateAssigned", "datePublic", "descriptions", "exploits", "impacts", "metrics", "problemTypes", "providerMetadata", "references", "rejectedReasons", "replacedBy", "solutions", "source", "tags", "taxonomyMappings", "timeline", "title", "workarounds"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +108,13 @@ class AdvisoryMCna(BaseModel):
                 if _item_affected:
                     _items.append(_item_affected.to_dict())
             _dict['affected'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in configurations (list)
+        _items = []
+        if self.configurations:
+            for _item_configurations in self.configurations:
+                if _item_configurations:
+                    _items.append(_item_configurations.to_dict())
+            _dict['configurations'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cpe_applicability (list)
         _items = []
         if self.cpe_applicability:
@@ -118,6 +136,13 @@ class AdvisoryMCna(BaseModel):
                 if _item_descriptions:
                     _items.append(_item_descriptions.to_dict())
             _dict['descriptions'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in exploits (list)
+        _items = []
+        if self.exploits:
+            for _item_exploits in self.exploits:
+                if _item_exploits:
+                    _items.append(_item_exploits.to_dict())
+            _dict['exploits'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in impacts (list)
         _items = []
         if self.impacts:
@@ -149,6 +174,27 @@ class AdvisoryMCna(BaseModel):
                 if _item_references:
                     _items.append(_item_references.to_dict())
             _dict['references'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in rejected_reasons (list)
+        _items = []
+        if self.rejected_reasons:
+            for _item_rejected_reasons in self.rejected_reasons:
+                if _item_rejected_reasons:
+                    _items.append(_item_rejected_reasons.to_dict())
+            _dict['rejectedReasons'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in solutions (list)
+        _items = []
+        if self.solutions:
+            for _item_solutions in self.solutions:
+                if _item_solutions:
+                    _items.append(_item_solutions.to_dict())
+            _dict['solutions'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in taxonomy_mappings (list)
+        _items = []
+        if self.taxonomy_mappings:
+            for _item_taxonomy_mappings in self.taxonomy_mappings:
+                if _item_taxonomy_mappings:
+                    _items.append(_item_taxonomy_mappings.to_dict())
+            _dict['taxonomyMappings'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in timeline (list)
         _items = []
         if self.timeline:
@@ -156,6 +202,13 @@ class AdvisoryMCna(BaseModel):
                 if _item_timeline:
                     _items.append(_item_timeline.to_dict())
             _dict['timeline'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in workarounds (list)
+        _items = []
+        if self.workarounds:
+            for _item_workarounds in self.workarounds:
+                if _item_workarounds:
+                    _items.append(_item_workarounds.to_dict())
+            _dict['workarounds'] = _items
         return _dict
 
     @classmethod
@@ -169,17 +222,27 @@ class AdvisoryMCna(BaseModel):
 
         _obj = cls.model_validate({
             "affected": [AdvisoryMAffected.from_dict(_item) for _item in obj["affected"]] if obj.get("affected") is not None else None,
+            "configurations": [AdvisoryMDescriptions.from_dict(_item) for _item in obj["configurations"]] if obj.get("configurations") is not None else None,
             "cpeApplicability": [AdvisoryCustomCPE.from_dict(_item) for _item in obj["cpeApplicability"]] if obj.get("cpeApplicability") is not None else None,
             "credits": [AdvisoryCredit.from_dict(_item) for _item in obj["credits"]] if obj.get("credits") is not None else None,
+            "dateAssigned": obj.get("dateAssigned"),
+            "datePublic": obj.get("datePublic"),
             "descriptions": [AdvisoryMDescriptions.from_dict(_item) for _item in obj["descriptions"]] if obj.get("descriptions") is not None else None,
+            "exploits": [AdvisoryMDescriptions.from_dict(_item) for _item in obj["exploits"]] if obj.get("exploits") is not None else None,
             "impacts": [AdvisoryImpact.from_dict(_item) for _item in obj["impacts"]] if obj.get("impacts") is not None else None,
             "metrics": [AdvisoryMetric.from_dict(_item) for _item in obj["metrics"]] if obj.get("metrics") is not None else None,
             "problemTypes": [AdvisoryMProblemTypes.from_dict(_item) for _item in obj["problemTypes"]] if obj.get("problemTypes") is not None else None,
             "providerMetadata": AdvisoryMProviderMetadata.from_dict(obj["providerMetadata"]) if obj.get("providerMetadata") is not None else None,
             "references": [AdvisoryMReference.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
+            "rejectedReasons": [AdvisoryMDescriptions.from_dict(_item) for _item in obj["rejectedReasons"]] if obj.get("rejectedReasons") is not None else None,
+            "replacedBy": obj.get("replacedBy"),
+            "solutions": [AdvisoryMDescriptions.from_dict(_item) for _item in obj["solutions"]] if obj.get("solutions") is not None else None,
+            "source": obj.get("source"),
             "tags": obj.get("tags"),
+            "taxonomyMappings": [AdvisoryTaxonomyMapping.from_dict(_item) for _item in obj["taxonomyMappings"]] if obj.get("taxonomyMappings") is not None else None,
             "timeline": [AdvisoryTimeline.from_dict(_item) for _item in obj["timeline"]] if obj.get("timeline") is not None else None,
-            "title": obj.get("title")
+            "title": obj.get("title"),
+            "workarounds": [AdvisoryMDescriptions.from_dict(_item) for _item in obj["workarounds"]] if obj.get("workarounds") is not None else None
         })
         return _obj
 
