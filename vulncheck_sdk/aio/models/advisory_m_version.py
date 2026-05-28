@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.aio.models.advisory_version_change import AdvisoryVersionChange
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,12 +28,13 @@ class AdvisoryMVersion(BaseModel):
     """
     advisory.MVersion
     """ # noqa: E501
+    changes: Optional[List[AdvisoryVersionChange]] = None
     less_than: Optional[StrictStr] = Field(default=None, alias="lessThan")
     less_than_or_equal: Optional[StrictStr] = Field(default=None, alias="lessThanOrEqual")
     status: Optional[StrictStr] = None
     version: Optional[StrictStr] = None
     version_type: Optional[StrictStr] = Field(default=None, alias="versionType")
-    __properties: ClassVar[List[str]] = ["lessThan", "lessThanOrEqual", "status", "version", "versionType"]
+    __properties: ClassVar[List[str]] = ["changes", "lessThan", "lessThanOrEqual", "status", "version", "versionType"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,6 +75,13 @@ class AdvisoryMVersion(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in changes (list)
+        _items = []
+        if self.changes:
+            for _item_changes in self.changes:
+                if _item_changes:
+                    _items.append(_item_changes.to_dict())
+            _dict['changes'] = _items
         return _dict
 
     @classmethod
@@ -85,6 +94,7 @@ class AdvisoryMVersion(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "changes": [AdvisoryVersionChange.from_dict(_item) for _item in obj["changes"]] if obj.get("changes") is not None else None,
             "lessThan": obj.get("lessThan"),
             "lessThanOrEqual": obj.get("lessThanOrEqual"),
             "status": obj.get("status"),

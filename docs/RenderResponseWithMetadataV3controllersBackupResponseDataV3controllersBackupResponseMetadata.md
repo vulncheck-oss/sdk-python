@@ -6,9 +6,9 @@ render.ResponseWithMetadata-v3controllers_BackupResponseData-v3controllers_Backu
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**benchmark** | **float** |  | [optional] 
+**benchmark** | **float** | Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 &#x3D; approximately 122 milliseconds | [optional] 
 **meta** | [**V3controllersBackupResponseMetadata**](V3controllersBackupResponseMetadata.md) |  | [optional] 
-**data** | [**List[ParamsIndexBackup]**](ParamsIndexBackup.md) |  | [optional] 
+**data** | [**List[ParamsIndexBackup]**](ParamsIndexBackup.md) | Data is the data returned by the endpoint | [optional] 
 
 ## Example
 

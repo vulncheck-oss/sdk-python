@@ -1,13 +1,13 @@
 # V3controllersBackupResponseMetadata
 
-v3controllers.BackupResponseMetadata
+Meta is the metadata related to the endpoint response
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**index** | **str** |  | [optional] 
-**timestamp** | **str** |  | [optional] 
+**index** | **str** | Index name being queried, corresponding to the VulnCheck data feed. | [optional] 
+**timestamp** | **str** | Timestamp when the query was executed in UTC (ISO 8601 format). | [optional] 
 
 ## Example
 

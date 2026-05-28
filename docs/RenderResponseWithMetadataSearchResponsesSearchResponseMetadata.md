@@ -6,9 +6,9 @@ render.ResponseWithMetadata-search_Responses-search_ResponseMetadata
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**benchmark** | **float** |  | [optional] 
+**benchmark** | **float** | Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 &#x3D; approximately 122 milliseconds | [optional] 
 **meta** | [**SearchResponseMetadata**](SearchResponseMetadata.md) |  | [optional] 
-**data** | [**List[SearchResponseDataOut]**](SearchResponseDataOut.md) |  | [optional] 
+**data** | [**List[SearchResponseDataOut]**](SearchResponseDataOut.md) | Data is the data returned by the endpoint | [optional] 
 
 ## Example
 

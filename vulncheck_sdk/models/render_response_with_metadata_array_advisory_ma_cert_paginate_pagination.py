@@ -29,9 +29,9 @@ class RenderResponseWithMetadataArrayAdvisoryMACertPaginatePagination(BaseModel)
     """
     render.ResponseWithMetadata-array_advisory_MACert-paginate_Pagination
     """ # noqa: E501
-    benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="_benchmark")
+    benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 = approximately 122 milliseconds", alias="_benchmark")
     meta: Optional[PaginatePagination] = Field(default=None, alias="_meta")
-    data: Optional[List[AdvisoryMACert]] = None
+    data: Optional[List[AdvisoryMACert]] = Field(default=None, description="Data is the data returned by the endpoint")
     __properties: ClassVar[List[str]] = ["_benchmark", "_meta", "data"]
 
     model_config = ConfigDict(

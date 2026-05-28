@@ -6,6 +6,7 @@ advisory.MVersion
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**changes** | [**List[AdvisoryVersionChange]**](AdvisoryVersionChange.md) |  | [optional] 
 **less_than** | **str** |  | [optional] 
 **less_than_or_equal** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 

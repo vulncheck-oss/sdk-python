@@ -36,6 +36,11 @@ class TestAdvisoryMVersion(unittest.TestCase):
         model = AdvisoryMVersion()
         if include_optional:
             return AdvisoryMVersion(
+                changes = [
+                    vulncheck_sdk.models.advisory/version_change.advisory.VersionChange(
+                        at = '', 
+                        status = '', )
+                    ],
                 less_than = '',
                 less_than_or_equal = '',
                 status = '',

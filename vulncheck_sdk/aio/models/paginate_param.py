@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,9 +27,9 @@ class PaginateParam(BaseModel):
     """
     paginate.Param
     """ # noqa: E501
-    filtering: Optional[StrictStr] = None
-    format: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
+    filtering: Optional[StrictStr] = Field(default=None, description="Filtering indicates the type of filtering this parameter supports. Examples: \"exact\", \"range\", \"wildcard\", \"boolean\"")
+    format: Optional[StrictStr] = Field(default=None, description="Format describes the expected parameter format or pattern. Examples: \"CVE-YYYY-N{4-7}\", \"YYYY-MM-DD\", \"numeric\"")
+    name: Optional[StrictStr] = Field(default=None, description="Name is the query parameter name (e.g., \"cve\", \"date\", \"limit\").")
     __properties: ClassVar[List[str]] = ["filtering", "format", "name"]
 
     model_config = ConfigDict(

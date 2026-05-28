@@ -468,6 +468,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_austin_hackers_get(self) -> None:
+        """Test case for index_austin_hackers_get
+
+        Return vulnerability data stored in index \"austin-hackers\"
+        """
+        pass
+
     def test_index_autodesk_get(self) -> None:
         """Test case for index_autodesk_get
 
@@ -507,6 +514,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_aws_get
 
         Return vulnerability data stored in index \"aws\"
+        """
+        pass
+
+    def test_index_aws_rds_get(self) -> None:
+        """Test case for index_aws_rds_get
+
+        Return vulnerability data stored in index \"aws-rds\"
         """
         pass
 
@@ -759,6 +773,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_ciena_get
 
         Return vulnerability data stored in index \"ciena\"
+        """
+        pass
+
+    def test_index_circl_get(self) -> None:
+        """Test case for index_circl_get
+
+        Return vulnerability data stored in index \"circl\"
         """
         pass
 
@@ -1046,6 +1067,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_dotcms_get
 
         Return vulnerability data stored in index \"dotcms\"
+        """
+        pass
+
+    def test_index_draeger_get(self) -> None:
+        """Test case for index_draeger_get
+
+        Return vulnerability data stored in index \"draeger\"
         """
         pass
 
@@ -2043,6 +2071,20 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_mogwai_labs_get(self) -> None:
+        """Test case for index_mogwai_labs_get
+
+        Return vulnerability data stored in index \"mogwai-labs\"
+        """
+        pass
+
+    def test_index_moksha_get(self) -> None:
+        """Test case for index_moksha_get
+
+        Return vulnerability data stored in index \"moksha\"
+        """
+        pass
+
     def test_index_mongodb_get(self) -> None:
         """Test case for index_mongodb_get
 
@@ -2313,6 +2355,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_opam_get
 
         Return vulnerability data stored in index \"opam\"
+        """
+        pass
+
+    def test_index_opc_foundation_get(self) -> None:
+        """Test case for index_opc_foundation_get
+
+        Return vulnerability data stored in index \"opc-foundation\"
         """
         pass
 

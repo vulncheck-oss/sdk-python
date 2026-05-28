@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.advisory_m_reference import AdvisoryMReference
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,8 +31,9 @@ class AdvisoryPTMDescriptions(BaseModel):
     cwe_id: Optional[StrictStr] = Field(default=None, alias="cweId")
     description: Optional[StrictStr] = None
     lang: Optional[StrictStr] = None
+    references: Optional[List[AdvisoryMReference]] = None
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cweId", "description", "lang", "type"]
+    __properties: ClassVar[List[str]] = ["cweId", "description", "lang", "references", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,6 +74,13 @@ class AdvisoryPTMDescriptions(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in references (list)
+        _items = []
+        if self.references:
+            for _item_references in self.references:
+                if _item_references:
+                    _items.append(_item_references.to_dict())
+            _dict['references'] = _items
         return _dict
 
     @classmethod
@@ -87,6 +96,7 @@ class AdvisoryPTMDescriptions(BaseModel):
             "cweId": obj.get("cweId"),
             "description": obj.get("description"),
             "lang": obj.get("lang"),
+            "references": [AdvisoryMReference.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
             "type": obj.get("type")
         })
         return _obj

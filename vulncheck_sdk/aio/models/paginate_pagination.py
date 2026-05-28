@@ -27,28 +27,28 @@ from typing_extensions import Self
 
 class PaginatePagination(BaseModel):
     """
-    paginate.Pagination
+    Meta is the metadata related to the endpoint response
     """ # noqa: E501
-    cursor: Optional[StrictStr] = Field(default=None, description="Cursor for the current page")
-    first_item: Optional[StrictInt] = Field(default=None, description="First and last Item")
-    index: Optional[StrictStr] = Field(default=None, description="The requested index")
-    last_item: Optional[StrictInt] = None
-    limit: Optional[StrictInt] = Field(default=None, description="Per-Page limit")
-    matches: Optional[List[PaginateMatch]] = None
-    max_pages: Optional[StrictInt] = None
-    next_cursor: Optional[StrictStr] = Field(default=None, description="Cursor for the next page")
-    opensearch_query: Optional[Dict[str, Any]] = None
-    order: Optional[StrictStr] = None
-    page: Optional[StrictInt] = Field(default=None, description="The current Page number")
-    pages: Optional[List[StrictStr]] = None
-    parameters: Optional[List[PaginateParam]] = None
-    show_pages: Optional[StrictBool] = None
-    show_query: Optional[StrictBool] = None
-    sort: Optional[StrictStr] = None
-    timestamp: Optional[StrictStr] = None
-    total_documents: Optional[StrictInt] = Field(default=None, description="The total number of items")
-    total_pages: Optional[StrictInt] = Field(default=None, description="The total number of pages")
-    warnings: Optional[List[StrictStr]] = None
+    cursor: Optional[StrictStr] = Field(default=None, description="Cursor is an opaque string representing the current page position for cursor-based pagination. Contains encoded information about sort values and position markers. Use this value with the 'cursor' query parameter to resume pagination from this point.")
+    first_item: Optional[StrictInt] = Field(default=None, description="FirstItem is the 1-indexed position of the first item on the current page. Example: Page 1 with limit 100 → FirstItem = 1          Page 2 with limit 100 → FirstItem = 101")
+    index: Optional[StrictStr] = Field(default=None, description="Index name being queried, corresponding to the VulnCheck data feed. Examples: \"exploits\", \"vulncheck-nvd2\", \"ipintel-3d\", \"malicious-vscode-exts\"")
+    last_item: Optional[StrictInt] = Field(default=None, description="LastItem is the 1-indexed position of the last item on the current page. Accounts for partial pages. Example: Page with 50 items → LastItem = FirstItem + 49 On the final page, LastItem equals TotalRows.")
+    limit: Optional[StrictInt] = Field(default=None, description="Limit is the maximum number of items returned in this response. Range: 1-100 for standard indices, 1-10 for large indices. Default: 100 (or 10 for indices marked as \"large\" in metadata)")
+    matches: Optional[List[PaginateMatch]] = Field(default=None, description="Matches shows the active filter values applied to the current query. Each match includes the field name and the value being filtered on. Helps users understand which filters are currently active.")
+    max_pages: Optional[StrictInt] = Field(default=None, description="MaxPages is the maximum number of pages allowed for offset-based pagination. Performance limit to prevent expensive deep pagination. Default: 6 pages. When TotalPages > MaxPages, cursor-based pagination should be used instead.")
+    next_cursor: Optional[StrictStr] = Field(default=None, description="NextCursor is an opaque string for fetching the next page in cursor-based pagination. When empty or null, indicates no more pages are available. More efficient than offset pagination for large datasets and real-time data.")
+    opensearch_query: Optional[Dict[str, Any]] = Field(default=None, description="OSQuery contains the raw OpenSearch query JSON used internally. Only included when show_query=true parameter is set. Useful for debugging complex queries and understanding performance.")
+    order: Optional[StrictStr] = Field(default=None, description="Order specifies the sort direction: \"asc\" (ascending) or \"desc\" (descending). Default: \"desc\" for most time-based indices to show newest items first.")
+    page: Optional[StrictInt] = Field(default=None, description="Page is the current page number for offset-based pagination (1-indexed). First page = 1, second page = 2, etc. Used with Limit to calculate database offset. For cursor-based pagination, this field may be omitted or estimated.")
+    pages: Optional[List[StrictStr]] = Field(default=None, description="Pages contains page numbers to display in pagination UI (e.g., [1, 2, \"...\", 45]). Only populated when ShowPages=true. Includes ellipsis (\"...\") for gaps. Limited by MaxPages to prevent overwhelming UI with too many page links.")
+    parameters: Optional[List[PaginateParam]] = Field(default=None, description="Params describes available query parameters for this index. Each parameter includes name, format constraints, and filtering capabilities. Used for building dynamic query UIs and input validation.")
+    show_pages: Optional[StrictBool] = Field(default=None, description="ShowPages controls whether the Pages array should be calculated and included. Set to true for UI pagination controls, false for API-only usage to save processing.")
+    show_query: Optional[StrictBool] = Field(default=None, description="ShowQuery indicates whether the raw OpenSearch query should be included. When true, OSQuery field will be populated with the internal query structure.")
+    sort: Optional[StrictStr] = Field(default=None, description="Sort field used for ordering results. Available fields vary by index. Common values: \"_timestamp\", \"date_added\", \"_id\", \"lastSeen\" Affects cursor generation and ensures pagination consistency.")
+    timestamp: Optional[StrictStr] = Field(default=None, description="Timestamp when the query was executed in UTC (ISO 8601 format). Used for debugging, cache management, and determining data freshness. Example: \"2024-02-23T20:35:43.732591251Z\"")
+    total_documents: Optional[StrictInt] = Field(default=None, description="TotalRows is the total number of documents matching the query across all pages. Used for calculating total_pages and building pagination UI elements. Note: May be capped for performance on very large result sets.")
+    total_pages: Optional[StrictInt] = Field(default=None, description="TotalPages is the total number of pages based on TotalRows and Limit. Calculated as: ceil(TotalRows / Limit). Used for pagination UI and validation. Example: 1000 items with limit 100 = 10 total pages.")
+    warnings: Optional[List[StrictStr]] = Field(default=None, description="Warnings contains any non-fatal issues encountered during query processing. Examples: deprecated parameters, performance concerns, or data quality notes.")
     __properties: ClassVar[List[str]] = ["cursor", "first_item", "index", "last_item", "limit", "matches", "max_pages", "next_cursor", "opensearch_query", "order", "page", "pages", "parameters", "show_pages", "show_query", "sort", "timestamp", "total_documents", "total_pages", "warnings"]
 
     model_config = ConfigDict(

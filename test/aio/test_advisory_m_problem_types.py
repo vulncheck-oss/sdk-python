@@ -41,6 +41,14 @@ class TestAdvisoryMProblemTypes(unittest.TestCase):
                         cwe_id = '', 
                         description = '', 
                         lang = '', 
+                        references = [
+                            vulncheck_sdk.aio.models.advisory/m_reference.advisory.MReference(
+                                name = '', 
+                                tags = [
+                                    ''
+                                    ], 
+                                url = '', )
+                            ], 
                         type = '', )
                     ]
             )

@@ -6,8 +6,8 @@ paginate.Match
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_field** | **str** |  | [optional] 
-**value** | **str** |  | [optional] 
+**var_field** | **str** | Field is the name of the field being filtered on. | [optional] 
+**value** | **str** | Value is the filter value being applied to the field. | [optional] 
 
 ## Example
 

@@ -43,16 +43,31 @@ class TestAdvisoryMetaAdvisories(unittest.TestCase):
                             ''
                             ], 
                         default_status = '', 
+                        modules = [
+                            ''
+                            ], 
                         package_name = '', 
                         package_url = '', 
                         platforms = [
                             ''
                             ], 
                         product = '', 
+                        program_files = [
+                            ''
+                            ], 
+                        program_routines = [
+                            vulncheck_sdk.aio.models.advisory/program_routine.advisory.ProgramRoutine(
+                                name = '', )
+                            ], 
                         repo = '', 
                         vendor = '', 
                         versions = [
                             vulncheck_sdk.aio.models.advisory/m_version.advisory.MVersion(
+                                changes = [
+                                    vulncheck_sdk.aio.models.advisory/version_change.advisory.VersionChange(
+                                        at = '', 
+                                        status = '', )
+                                    ], 
                                 less_than = '', 
                                 less_than_or_equal = '', 
                                 status = '', 

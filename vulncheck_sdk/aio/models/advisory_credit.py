@@ -29,8 +29,9 @@ class AdvisoryCredit(BaseModel):
     """ # noqa: E501
     lang: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
+    user: Optional[StrictStr] = None
     value: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["lang", "type", "value"]
+    __properties: ClassVar[List[str]] = ["lang", "type", "user", "value"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,6 +86,7 @@ class AdvisoryCredit(BaseModel):
         _obj = cls.model_validate({
             "lang": obj.get("lang"),
             "type": obj.get("type"),
+            "user": obj.get("user"),
             "value": obj.get("value")
         })
         return _obj

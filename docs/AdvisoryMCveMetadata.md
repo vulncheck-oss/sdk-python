@@ -10,8 +10,11 @@ Name | Type | Description | Notes
 **assigner_short_name** | **str** |  | [optional] 
 **cve_id** | **str** |  | [optional] 
 **date_published** | **str** |  | [optional] 
+**date_rejected** | **str** |  | [optional] 
 **date_reserved** | **str** |  | [optional] 
 **date_updated** | **str** |  | [optional] 
+**requester_user_id** | **str** |  | [optional] 
+**serial** | **int** |  | [optional] 
 **state** | **str** |  | [optional] 
 
 ## Example

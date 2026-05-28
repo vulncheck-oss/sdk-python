@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class SearchResponseMetadata(BaseModel):
     """
-    search.ResponseMetadata
+    Meta is the metadata related to the endpoint response
     """ # noqa: E501
     timestamp: Optional[StrictStr] = None
     total_documents: Optional[StrictInt] = None

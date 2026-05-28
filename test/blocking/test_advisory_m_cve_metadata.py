@@ -40,8 +40,11 @@ class TestAdvisoryMCveMetadata(unittest.TestCase):
                 assigner_short_name = '',
                 cve_id = '',
                 date_published = '',
+                date_rejected = '',
                 date_reserved = '',
                 date_updated = '',
+                requester_user_id = '',
+                serial = 56,
                 state = ''
             )
         else:

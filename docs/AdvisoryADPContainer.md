@@ -7,15 +7,24 @@ advisory.ADPContainer
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **affected** | [**List[AdvisoryMAffected]**](AdvisoryMAffected.md) |  | [optional] 
-**date_public** | **str** | OK | [optional] 
-**descriptions** | [**List[AdvisoryMDescriptions]**](AdvisoryMDescriptions.md) | OK | [optional] 
-**impacts** | [**List[AdvisoryImpact]**](AdvisoryImpact.md) | OK | [optional] 
-**metrics** | [**List[AdvisoryMetric]**](AdvisoryMetric.md) | OK | [optional] 
-**problem_types** | [**List[AdvisoryMProblemTypes]**](AdvisoryMProblemTypes.md) | OK | [optional] 
+**configurations** | [**List[AdvisoryMDescriptions]**](AdvisoryMDescriptions.md) |  | [optional] 
+**cpe_applicability** | [**List[AdvisoryCustomCPE]**](AdvisoryCustomCPE.md) |  | [optional] 
+**credits** | [**List[AdvisoryCredit]**](AdvisoryCredit.md) |  | [optional] 
+**date_public** | **str** |  | [optional] 
+**descriptions** | [**List[AdvisoryMDescriptions]**](AdvisoryMDescriptions.md) |  | [optional] 
+**exploits** | [**List[AdvisoryMDescriptions]**](AdvisoryMDescriptions.md) |  | [optional] 
+**impacts** | [**List[AdvisoryImpact]**](AdvisoryImpact.md) |  | [optional] 
+**metrics** | [**List[AdvisoryMetric]**](AdvisoryMetric.md) |  | [optional] 
+**problem_types** | [**List[AdvisoryMProblemTypes]**](AdvisoryMProblemTypes.md) |  | [optional] 
 **provider_metadata** | [**AdvisoryMProviderMetadata**](AdvisoryMProviderMetadata.md) |  | [optional] 
 **references** | [**List[AdvisoryMReference]**](AdvisoryMReference.md) |  | [optional] 
-**tags** | **List[str]** | OK | [optional] 
-**title** | **str** | OK | [optional] 
+**solutions** | [**List[AdvisoryMDescriptions]**](AdvisoryMDescriptions.md) |  | [optional] 
+**source** | **List[int]** |  | [optional] 
+**tags** | **List[str]** |  | [optional] 
+**taxonomy_mappings** | [**List[AdvisoryTaxonomyMapping]**](AdvisoryTaxonomyMapping.md) |  | [optional] 
+**timeline** | [**List[AdvisoryTimeline]**](AdvisoryTimeline.md) |  | [optional] 
+**title** | **str** |  | [optional] 
+**workarounds** | [**List[AdvisoryMDescriptions]**](AdvisoryMDescriptions.md) |  | [optional] 
 
 ## Example
 

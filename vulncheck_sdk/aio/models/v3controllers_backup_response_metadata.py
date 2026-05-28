@@ -18,17 +18,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
 class V3controllersBackupResponseMetadata(BaseModel):
     """
-    v3controllers.BackupResponseMetadata
+    Meta is the metadata related to the endpoint response
     """ # noqa: E501
-    index: Optional[StrictStr] = None
-    timestamp: Optional[StrictStr] = None
+    index: Optional[StrictStr] = Field(default=None, description="Index name being queried, corresponding to the VulnCheck data feed.")
+    timestamp: Optional[StrictStr] = Field(default=None, description="Timestamp when the query was executed in UTC (ISO 8601 format).")
     __properties: ClassVar[List[str]] = ["index", "timestamp"]
 
     model_config = ConfigDict(
