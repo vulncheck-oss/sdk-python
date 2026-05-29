@@ -6,13 +6,15 @@ advisory.MaliciousVSCodeExts
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**date_added** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
-**publisher** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
-**updated_at** | **str** | the data in this feed comes from manual curation. so this will likely be omitted. | [optional] 
-**url** | **str** |  | [optional] 
-**version** | **str** |  | [optional] 
+**discoveries** | [**List[AdvisoryMaliciousVSCodeDiscovery]**](AdvisoryMaliciousVSCodeDiscovery.md) | Discoveries list of individual vulnerability reports, sorted chronologically by discovery date | [optional] 
+**first_seen** | **str** | FirstSeen the earliest date the vulnerability was observed or created in our system | [optional] 
+**last_updated** | **str** | LastUpdated the most recent date when any discovery was added for this extension | [optional] 
+**marketplace** | **List[str]** | Marketplace list of names of the marketplaces where the extension versions are available | [optional] 
+**name** | **str** | Name is the name of the extension | [optional] 
+**publisher** | **str** | Publisher name of the publisher of the extension | [optional] 
+**references** | **List[str]** | Reference list of locations where the public releases about the vulnerabilities were pulled | [optional] 
+**types** | **List[str]** | Types VulnCheck vulnerability classifications found for this extension | [optional] 
+**versions** | **List[str]** | Versions list of vulnerable versions | [optional] 
 
 ## Example
 

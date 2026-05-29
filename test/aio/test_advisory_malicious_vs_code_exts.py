@@ -36,13 +36,34 @@ class TestAdvisoryMaliciousVSCodeExts(unittest.TestCase):
         model = AdvisoryMaliciousVSCodeExts()
         if include_optional:
             return AdvisoryMaliciousVSCodeExts(
-                date_added = '',
+                discoveries = [
+                    vulncheck_sdk.aio.models.advisory/malicious_vs_code_discovery.advisory.MaliciousVSCodeDiscovery(
+                        date = '', 
+                        marketplace = [
+                            ''
+                            ], 
+                        reference = '', 
+                        type = '', 
+                        versions = [
+                            ''
+                            ], )
+                    ],
+                first_seen = '',
+                last_updated = '',
+                marketplace = [
+                    ''
+                    ],
                 name = '',
                 publisher = '',
-                type = '',
-                updated_at = '',
-                url = '',
-                version = ''
+                references = [
+                    ''
+                    ],
+                types = [
+                    ''
+                    ],
+                versions = [
+                    ''
+                    ]
             )
         else:
             return AdvisoryMaliciousVSCodeExts(

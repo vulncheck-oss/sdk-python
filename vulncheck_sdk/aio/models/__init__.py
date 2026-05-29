@@ -430,6 +430,7 @@ from vulncheck_sdk.aio.models.advisory_ms_document_title import AdvisoryMSDocume
 from vulncheck_sdk.aio.models.advisory_m_version import AdvisoryMVersion
 from vulncheck_sdk.aio.models.advisory_m_vulnerability import AdvisoryMVulnerability
 from vulncheck_sdk.aio.models.advisory_malicious_package import AdvisoryMaliciousPackage
+from vulncheck_sdk.aio.models.advisory_malicious_vs_code_discovery import AdvisoryMaliciousVSCodeDiscovery
 from vulncheck_sdk.aio.models.advisory_malicious_vs_code_exts import AdvisoryMaliciousVSCodeExts
 from vulncheck_sdk.aio.models.advisory_manage_engine import AdvisoryManageEngine
 from vulncheck_sdk.aio.models.advisory_manage_engine_advisory import AdvisoryManageEngineAdvisory

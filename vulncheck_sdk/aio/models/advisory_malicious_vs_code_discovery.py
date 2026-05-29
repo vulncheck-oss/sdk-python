@@ -20,24 +20,19 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.aio.models.advisory_malicious_vs_code_discovery import AdvisoryMaliciousVSCodeDiscovery
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdvisoryMaliciousVSCodeExts(BaseModel):
+class AdvisoryMaliciousVSCodeDiscovery(BaseModel):
     """
-    advisory.MaliciousVSCodeExts
+    advisory.MaliciousVSCodeDiscovery
     """ # noqa: E501
-    discoveries: Optional[List[AdvisoryMaliciousVSCodeDiscovery]] = Field(default=None, description="Discoveries list of individual vulnerability reports, sorted chronologically by discovery date")
-    first_seen: Optional[StrictStr] = Field(default=None, description="FirstSeen the earliest date the vulnerability was observed or created in our system")
-    last_updated: Optional[StrictStr] = Field(default=None, description="LastUpdated the most recent date when any discovery was added for this extension")
+    date: Optional[StrictStr] = Field(default=None, description="Date the timestamp when the discovery was published (via the \"reference\")", alias="date")
     marketplace: Optional[List[StrictStr]] = Field(default=None, description="Marketplace list of names of the marketplaces where the extension versions are available")
-    name: Optional[StrictStr] = Field(default=None, description="Name is the name of the extension")
-    publisher: Optional[StrictStr] = Field(default=None, description="Publisher name of the publisher of the extension")
-    references: Optional[List[StrictStr]] = Field(default=None, description="Reference list of locations where the public releases about the vulnerabilities were pulled")
-    types: Optional[List[StrictStr]] = Field(default=None, description="Types VulnCheck vulnerability classifications found for this extension")
+    reference: Optional[StrictStr] = Field(default=None, description="Reference location where the initial public release of the vulnerability was pulled")
+    type: Optional[StrictStr] = Field(default=None, description="Type VulnCheck vulnerability classification")
     versions: Optional[List[StrictStr]] = Field(default=None, description="Versions list of vulnerable versions")
-    __properties: ClassVar[List[str]] = ["discoveries", "first_seen", "last_updated", "marketplace", "name", "publisher", "references", "types", "versions"]
+    __properties: ClassVar[List[str]] = ["date", "marketplace", "reference", "type", "versions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -57,7 +52,7 @@ class AdvisoryMaliciousVSCodeExts(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryMaliciousVSCodeExts from a JSON string"""
+        """Create an instance of AdvisoryMaliciousVSCodeDiscovery from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -78,18 +73,11 @@ class AdvisoryMaliciousVSCodeExts(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in discoveries (list)
-        _items = []
-        if self.discoveries:
-            for _item_discoveries in self.discoveries:
-                if _item_discoveries:
-                    _items.append(_item_discoveries.to_dict())
-            _dict['discoveries'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryMaliciousVSCodeExts from a dict"""
+        """Create an instance of AdvisoryMaliciousVSCodeDiscovery from a dict"""
         if obj is None:
             return None
 
@@ -97,14 +85,10 @@ class AdvisoryMaliciousVSCodeExts(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "discoveries": [AdvisoryMaliciousVSCodeDiscovery.from_dict(_item) for _item in obj["discoveries"]] if obj.get("discoveries") is not None else None,
-            "first_seen": obj.get("first_seen"),
-            "last_updated": obj.get("last_updated"),
+            "date": obj.get("date"),
             "marketplace": obj.get("marketplace"),
-            "name": obj.get("name"),
-            "publisher": obj.get("publisher"),
-            "references": obj.get("references"),
-            "types": obj.get("types"),
+            "reference": obj.get("reference"),
+            "type": obj.get("type"),
             "versions": obj.get("versions")
         })
         return _obj
