@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.49"
+__version__ = "0.0.50"
 
 # Define package exports
 __all__ = [
@@ -448,6 +448,7 @@ __all__ = [
     "AdvisoryMVersion",
     "AdvisoryMVulnerability",
     "AdvisoryMaliciousPackage",
+    "AdvisoryMaliciousVSCodeDiscovery",
     "AdvisoryMaliciousVSCodeExts",
     "AdvisoryManageEngine",
     "AdvisoryManageEngineAdvisory",
@@ -1841,6 +1842,7 @@ from vulncheck_sdk.aio.models.advisory_ms_document_title import AdvisoryMSDocume
 from vulncheck_sdk.aio.models.advisory_m_version import AdvisoryMVersion as AdvisoryMVersion
 from vulncheck_sdk.aio.models.advisory_m_vulnerability import AdvisoryMVulnerability as AdvisoryMVulnerability
 from vulncheck_sdk.aio.models.advisory_malicious_package import AdvisoryMaliciousPackage as AdvisoryMaliciousPackage
+from vulncheck_sdk.aio.models.advisory_malicious_vs_code_discovery import AdvisoryMaliciousVSCodeDiscovery as AdvisoryMaliciousVSCodeDiscovery
 from vulncheck_sdk.aio.models.advisory_malicious_vs_code_exts import AdvisoryMaliciousVSCodeExts as AdvisoryMaliciousVSCodeExts
 from vulncheck_sdk.aio.models.advisory_manage_engine import AdvisoryManageEngine as AdvisoryManageEngine
 from vulncheck_sdk.aio.models.advisory_manage_engine_advisory import AdvisoryManageEngineAdvisory as AdvisoryManageEngineAdvisory
