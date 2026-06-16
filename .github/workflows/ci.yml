@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
     steps:
       - uses: actions/checkout@v6
 
@@ -22,11 +22,6 @@ jobs:
 
       - name: Install dependencies
         run: make deps
-
-      - name: Patch Python 3.10 dependencies
-        # This fixes the ModuleNotFoundError: No module named 'exceptiongroup'
-        if: matrix.python-version == '3.10'
-        run: poetry run pip install exceptiongroup tomli
 
       - name: Install testing requirements
         run: poetry add requests==2.32.5
