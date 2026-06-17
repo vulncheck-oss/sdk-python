@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.50"
+__version__ = "0.0.51"
 
 # Define package exports
 __all__ = [
@@ -375,6 +375,10 @@ __all__ = [
     "AdvisoryHuaweiIPS",
     "AdvisoryIAVA",
     "AdvisoryIBM",
+    "AdvisoryIOCBotnetAdvisory",
+    "AdvisoryIOCFile",
+    "AdvisoryIOCRansomwareAdvisory",
+    "AdvisoryIOCThreatActorAdvisory",
     "AdvisoryITW",
     "AdvisoryITWExploit",
     "AdvisoryIVal",
@@ -834,6 +838,7 @@ __all__ = [
     "ApiExploitsTrending",
     "ApiExploitsV3Count",
     "ApiExploitsV3Timeline",
+    "ApiFingerprint",
     "ApiHTTPDetails",
     "ApiImpact",
     "ApiImpactExtended",
@@ -891,6 +896,10 @@ __all__ = [
     "ApiReferencesExtended",
     "ApiRelatedAttackPattern",
     "ApiSSVC",
+    "ApiTargetIntel",
+    "ApiTargetIntelCVESummary",
+    "ApiTargetIntelCVESummaryAsnsInner",
+    "ApiTargetIntelCVESummaryPortsInner",
     "ApiTemporalCVSSV2",
     "ApiTemporalCVSSV3",
     "ApiTemporalMetricV2",
@@ -1125,6 +1134,9 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryHuaweiPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryIAVAPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryIBMPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryIOCBotnetAdvisoryPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryIOCRansomwareAdvisoryPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryIOCThreatActorAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryITWExploitPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryIdemiaPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryIgelPaginatePagination",
@@ -1384,6 +1396,8 @@ __all__ = [
     "RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination",
     "RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination",
     "RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination",
+    "RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination",
+    "RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination",
     "RenderResponseWithMetadataArrayApiUpdatePaginatePagination",
     "RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination",
     "RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination",
@@ -1769,6 +1783,10 @@ from vulncheck_sdk.models.advisory_huawei_euler_os import AdvisoryHuaweiEulerOS 
 from vulncheck_sdk.models.advisory_huawei_ips import AdvisoryHuaweiIPS as AdvisoryHuaweiIPS
 from vulncheck_sdk.models.advisory_iava import AdvisoryIAVA as AdvisoryIAVA
 from vulncheck_sdk.models.advisory_ibm import AdvisoryIBM as AdvisoryIBM
+from vulncheck_sdk.models.advisory_ioc_botnet_advisory import AdvisoryIOCBotnetAdvisory as AdvisoryIOCBotnetAdvisory
+from vulncheck_sdk.models.advisory_ioc_file import AdvisoryIOCFile as AdvisoryIOCFile
+from vulncheck_sdk.models.advisory_ioc_ransomware_advisory import AdvisoryIOCRansomwareAdvisory as AdvisoryIOCRansomwareAdvisory
+from vulncheck_sdk.models.advisory_ioc_threat_actor_advisory import AdvisoryIOCThreatActorAdvisory as AdvisoryIOCThreatActorAdvisory
 from vulncheck_sdk.models.advisory_itw import AdvisoryITW as AdvisoryITW
 from vulncheck_sdk.models.advisory_itw_exploit import AdvisoryITWExploit as AdvisoryITWExploit
 from vulncheck_sdk.models.advisory_i_val import AdvisoryIVal as AdvisoryIVal
@@ -2228,6 +2246,7 @@ from vulncheck_sdk.models.api_exploits_changelog import ApiExploitsChangelog as 
 from vulncheck_sdk.models.api_exploits_trending import ApiExploitsTrending as ApiExploitsTrending
 from vulncheck_sdk.models.api_exploits_v3_count import ApiExploitsV3Count as ApiExploitsV3Count
 from vulncheck_sdk.models.api_exploits_v3_timeline import ApiExploitsV3Timeline as ApiExploitsV3Timeline
+from vulncheck_sdk.models.api_fingerprint import ApiFingerprint as ApiFingerprint
 from vulncheck_sdk.models.api_http_details import ApiHTTPDetails as ApiHTTPDetails
 from vulncheck_sdk.models.api_impact import ApiImpact as ApiImpact
 from vulncheck_sdk.models.api_impact_extended import ApiImpactExtended as ApiImpactExtended
@@ -2285,6 +2304,10 @@ from vulncheck_sdk.models.api_references import ApiReferences as ApiReferences
 from vulncheck_sdk.models.api_references_extended import ApiReferencesExtended as ApiReferencesExtended
 from vulncheck_sdk.models.api_related_attack_pattern import ApiRelatedAttackPattern as ApiRelatedAttackPattern
 from vulncheck_sdk.models.api_ssvc import ApiSSVC as ApiSSVC
+from vulncheck_sdk.models.api_target_intel import ApiTargetIntel as ApiTargetIntel
+from vulncheck_sdk.models.api_target_intel_cve_summary import ApiTargetIntelCVESummary as ApiTargetIntelCVESummary
+from vulncheck_sdk.models.api_target_intel_cve_summary_asns_inner import ApiTargetIntelCVESummaryAsnsInner as ApiTargetIntelCVESummaryAsnsInner
+from vulncheck_sdk.models.api_target_intel_cve_summary_ports_inner import ApiTargetIntelCVESummaryPortsInner as ApiTargetIntelCVESummaryPortsInner
 from vulncheck_sdk.models.api_temporal_cvssv2 import ApiTemporalCVSSV2 as ApiTemporalCVSSV2
 from vulncheck_sdk.models.api_temporal_cvssv3 import ApiTemporalCVSSV3 as ApiTemporalCVSSV3
 from vulncheck_sdk.models.api_temporal_metric_v2 import ApiTemporalMetricV2 as ApiTemporalMetricV2
@@ -2519,6 +2542,9 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_huawei_ip
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_huawei_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryHuaweiPaginatePagination as RenderResponseWithMetadataArrayAdvisoryHuaweiPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_iava_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryIAVAPaginatePagination as RenderResponseWithMetadataArrayAdvisoryIAVAPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ibm_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryIBMPaginatePagination as RenderResponseWithMetadataArrayAdvisoryIBMPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ioc_botnet_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryIOCBotnetAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryIOCBotnetAdvisoryPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ioc_ransomware_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryIOCRansomwareAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryIOCRansomwareAdvisoryPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ioc_threat_actor_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryIOCThreatActorAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryIOCThreatActorAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_itw_exploit_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryITWExploitPaginatePagination as RenderResponseWithMetadataArrayAdvisoryITWExploitPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_idemia_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryIdemiaPaginatePagination as RenderResponseWithMetadataArrayAdvisoryIdemiaPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_igel_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryIgelPaginatePagination as RenderResponseWithMetadataArrayAdvisoryIgelPaginatePagination
@@ -2778,6 +2804,8 @@ from vulncheck_sdk.models.render_response_with_metadata_array_api_nvd20_cpe_matc
 from vulncheck_sdk.models.render_response_with_metadata_array_api_nvd20_cve_extended_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_nvd20_cve_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_oss_package_paginate_pagination import RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination as RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_api_target_intel_cve_summary_paginate_pagination import RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination as RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_api_target_intel_paginate_pagination import RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination as RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_update_paginate_pagination import RenderResponseWithMetadataArrayApiUpdatePaginatePagination as RenderResponseWithMetadataArrayApiUpdatePaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_vuln_check_canary_paginate_pagination import RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination as RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_vulnerability_alias_paginate_pagination import RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination as RenderResponseWithMetadataArrayApiVulnerabilityAliasPaginatePagination
