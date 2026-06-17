@@ -1,14 +1,19 @@
 import asyncio
 import os
+import tempfile
 import urllib.request
-import vulncheck_sdk.aio as vcaio
-from vulncheck_sdk.aio.models.backup_list_backups_response import BackupListBackupsResponse
-from vulncheck_sdk.aio.models.backup_backup_response import BackupBackupResponse
 
-TOKEN = os.environ.get("VULNCHECK_API_TOKEN")
+import vulncheck_sdk.aio as vcaio
+from vulncheck_sdk.aio.models.backup_backup_response import BackupBackupResponse
+from vulncheck_sdk.aio.models.backup_list_backups_response import (
+    BackupListBackupsResponse,
+)
+
+TOKEN = os.environ["VULNCHECK_API_TOKEN"]
 
 configuration = vcaio.Configuration()
 configuration.api_key["Bearer"] = TOKEN
+configuration.retries = 5
 
 
 def download_sync(url, file_path):
@@ -36,12 +41,11 @@ async def main():
 
         print(response.to_json())
 
-        file_path = f"{feed}.zip"
         print(f"Downloading {feed} backup via urllib (offloaded to thread)...")
-
-        await asyncio.to_thread(download_sync, response.url_mrap, file_path)
-
-        print(f"Successfully saved to {file_path}")
+        with tempfile.TemporaryDirectory() as tmpdir:
+            file_path = os.path.join(tmpdir, f"{feed}.zip")
+            await asyncio.to_thread(download_sync, response.url_mrap, file_path)
+            print(f"Successfully saved to {file_path}")
 
 
 if __name__ == "__main__":
