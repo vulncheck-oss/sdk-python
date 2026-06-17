@@ -26,9 +26,9 @@ clean() {
 get_openapi_spec() {
   #use the combined output
   curl --silent --fail \
-   --url https://api.vulncheck.com/openapi/combined \
-   --header "Accept: application/json" \
-   >"$OPENAPI_JSON"
+    --url https://api.vulncheck.com/openapi/combined \
+    --header "Accept: application/json" \
+    >"$OPENAPI_JSON"
 }
 
 bump_patch() {
@@ -66,6 +66,15 @@ update_license() {
   echo "Updated license in pyproject.toml to Apache-2.0"
 }
 
+# Pin minimum Python to 3.11. The generator emits >= 3.9, but 3.9/3.10 require
+# additional transitive packages (async_timeout, exceptiongroup, tomli) that
+# aiohttp pulls only via env markers and break CI's lock resolution.
+pin_python_version() {
+  sed "${SED_FLAGS[@]}" 's/^requires-python = .*/requires-python = ">=3.11"/' ./pyproject.toml
+  sed "${SED_FLAGS[@]}" 's/^PYTHON_REQUIRES = .*/PYTHON_REQUIRES = ">= 3.11"/' ./setup.py
+  echo "Pinned requires-python to >= 3.11"
+}
+
 # Remove unused dependencies
 remove_dependencies() {
 
@@ -74,6 +83,12 @@ remove_dependencies() {
   else
     echo "skipping tox"
   fi
+}
+
+# Add dev dependencies the generator doesn't emit but our tests/CI need.
+# These get clobbered by every regeneration of pyproject.toml, so we re-add them here.
+add_dev_dependencies() {
+  poetry add --group=dev "requests>=2.32.5"
 }
 
 # Fix the setupfiles
@@ -138,7 +153,9 @@ post_generation_process() {
   post_build_cleanup
   generate_readme
   update_license
+  pin_python_version
   remove_dependencies
+  add_dev_dependencies
   fix_setupfiles "$LIBRARY"
 }
 
