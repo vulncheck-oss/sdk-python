@@ -85,6 +85,12 @@ remove_dependencies() {
   fi
 }
 
+# Add dev dependencies the generator doesn't emit but our tests/CI need.
+# These get clobbered by every regeneration of pyproject.toml, so we re-add them here.
+add_dev_dependencies() {
+  poetry add --group=dev "requests>=2.32.5"
+}
+
 # Fix the setupfiles
 fix_setupfiles() {
   local LIBRARY=$1
@@ -149,6 +155,7 @@ post_generation_process() {
   update_license
   pin_python_version
   remove_dependencies
+  add_dev_dependencies
   fix_setupfiles "$LIBRARY"
 }
 
