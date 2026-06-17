@@ -1700,6 +1700,27 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """
         pass
 
+    async def test_index_ioc_botnets_get(self) -> None:
+        """Test case for index_ioc_botnets_get
+
+        Return vulnerability data stored in index \"ioc-botnets\"
+        """
+        pass
+
+    async def test_index_ioc_ransomware_get(self) -> None:
+        """Test case for index_ioc_ransomware_get
+
+        Return vulnerability data stored in index \"ioc-ransomware\"
+        """
+        pass
+
+    async def test_index_ioc_threat_actors_get(self) -> None:
+        """Test case for index_ioc_threat_actors_get
+
+        Return vulnerability data stored in index \"ioc-threat-actors\"
+        """
+        pass
+
     async def test_index_ipintel10d_get(self) -> None:
         """Test case for index_ipintel10d_get
 
@@ -3055,6 +3076,20 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """Test case for index_tailscale_get
 
         Return vulnerability data stored in index \"tailscale\"
+        """
+        pass
+
+    async def test_index_target_intel_cve_summary_get(self) -> None:
+        """Test case for index_target_intel_cve_summary_get
+
+        Return vulnerability data stored in index \"target-intel-cve-summary\"
+        """
+        pass
+
+    async def test_index_target_intel_get(self) -> None:
+        """Test case for index_target_intel_get
+
+        Return vulnerability data stored in index \"target-intel\"
         """
         pass
 
