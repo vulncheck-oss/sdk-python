@@ -20,18 +20,18 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from vulncheck_sdk.models.api_target_intel_cve_summary import ApiTargetIntelCVESummary
+from vulncheck_sdk.models.advisory_anthropic_cvd import AdvisoryAnthropicCVD
 from vulncheck_sdk.models.paginate_pagination import PaginatePagination
 from typing import Optional, Set
 from typing_extensions import Self
 
-class RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination(BaseModel):
+class RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination(BaseModel):
     """
-    render.ResponseWithMetadata-array_api_TargetIntelCVESummary-paginate_Pagination
+    render.ResponseWithMetadata-array_advisory_AnthropicCVD-paginate_Pagination
     """ # noqa: E501
     benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 = approximately 122 milliseconds", alias="_benchmark")
     meta: Optional[PaginatePagination] = Field(default=None, alias="_meta")
-    data: Optional[List[ApiTargetIntelCVESummary]] = Field(default=None, description="Data is the data returned by the endpoint")
+    data: Optional[List[AdvisoryAnthropicCVD]] = Field(default=None, description="Data is the data returned by the endpoint")
     __properties: ClassVar[List[str]] = ["_benchmark", "_meta", "data"]
 
     model_config = ConfigDict(
@@ -52,7 +52,7 @@ class RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination(
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination from a JSON string"""
+        """Create an instance of RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -87,7 +87,7 @@ class RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination(
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination from a dict"""
+        """Create an instance of RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination from a dict"""
         if obj is None:
             return None
 
@@ -97,7 +97,7 @@ class RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination(
         _obj = cls.model_validate({
             "_benchmark": obj.get("_benchmark"),
             "_meta": PaginatePagination.from_dict(obj["_meta"]) if obj.get("_meta") is not None else None,
-            "data": [ApiTargetIntelCVESummary.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
+            "data": [AdvisoryAnthropicCVD.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
         })
         return _obj
 

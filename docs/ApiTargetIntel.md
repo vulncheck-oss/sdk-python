@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **country_code** | **str** |  | [optional] 
 **cpe** | **List[str]** |  | [optional] 
 **cve** | **List[str]** |  | [optional] 
+**cve_confirmed** | [**List[ApiCVEConfirmed]**](ApiCVEConfirmed.md) |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **fingerprints** | [**List[ApiFingerprint]**](ApiFingerprint.md) |  | [optional] 
 **hostname** | **str** |  | [optional] 
@@ -24,6 +25,7 @@ Name | Type | Description | Notes
 **product** | **List[str]** |  | [optional] 
 **protocol** | **str** |  | [optional] 
 **timestamp** | **str** |  | [optional] 
+**transport** | **str** |  | [optional] 
 **vendor** | **List[str]** |  | [optional] 
 **version** | **List[str]** |  | [optional] 
 

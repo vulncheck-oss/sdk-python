@@ -18,18 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ApiTargetIntelCVESummaryPortsInner(BaseModel):
+class ApiC2Frequency(BaseModel):
     """
-    ApiTargetIntelCVESummaryPortsInner
+    api.C2Frequency
     """ # noqa: E501
     count: Optional[StrictInt] = None
-    value: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["count", "value"]
+    src: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["count", "src"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +49,7 @@ class ApiTargetIntelCVESummaryPortsInner(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiTargetIntelCVESummaryPortsInner from a JSON string"""
+        """Create an instance of ApiC2Frequency from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,7 +74,7 @@ class ApiTargetIntelCVESummaryPortsInner(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiTargetIntelCVESummaryPortsInner from a dict"""
+        """Create an instance of ApiC2Frequency from a dict"""
         if obj is None:
             return None
 
@@ -83,7 +83,7 @@ class ApiTargetIntelCVESummaryPortsInner(BaseModel):
 
         _obj = cls.model_validate({
             "count": obj.get("count"),
-            "value": obj.get("value")
+            "src": obj.get("src")
         })
         return _obj
 

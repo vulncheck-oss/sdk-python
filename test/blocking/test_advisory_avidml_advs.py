@@ -36,6 +36,9 @@ class TestAdvisoryAVIDMLAdvs(unittest.TestCase):
         model = AdvisoryAVIDMLAdvs()
         if include_optional:
             return AdvisoryAVIDMLAdvs(
+                cve = [
+                    ''
+                    ],
                 date_added = '',
                 description = '',
                 id = '',

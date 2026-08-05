@@ -181,6 +181,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_anthropic_cvd_get(self) -> None:
+        """Test case for index_anthropic_cvd_get
+
+        Return vulnerability data stored in index \"anthropic-cvd\"
+        """
+        pass
+
     def test_index_apache_activemq_get(self) -> None:
         """Test case for index_apache_activemq_get
 
@@ -3076,13 +3083,6 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_tailscale_get
 
         Return vulnerability data stored in index \"tailscale\"
-        """
-        pass
-
-    def test_index_target_intel_cve_summary_get(self) -> None:
-        """Test case for index_target_intel_cve_summary_get
-
-        Return vulnerability data stored in index \"target-intel-cve-summary\"
         """
         pass
 

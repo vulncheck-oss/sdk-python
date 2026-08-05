@@ -6,6 +6,7 @@ advisory.AVIDMLAdvs
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cve** | **List[str]** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 

@@ -88,6 +88,11 @@ class TestRenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(unitte
                         cve = [
                             ''
                             ], 
+                        cve_confirmed = [
+                            vulncheck_sdk.models.api/cve_confirmed.api.CVEConfirmed(
+                                confirmed = True, 
+                                cve_id = '', )
+                            ], 
                         date_added = '', 
                         fingerprints = [
                             vulncheck_sdk.models.api/fingerprint.api.Fingerprint(
@@ -106,6 +111,7 @@ class TestRenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(unitte
                             ], 
                         protocol = '', 
                         timestamp = '', 
+                        transport = '', 
                         vendor = [
                             ''
                             ], 

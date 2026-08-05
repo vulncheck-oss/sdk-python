@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.api_target_intel_cve_summary_asns_inner import ApiTargetIntelCVESummaryAsnsInner
+from vulncheck_sdk.models.api_c2_frequency import ApiC2Frequency
 
-class TestApiTargetIntelCVESummaryAsnsInner(unittest.TestCase):
-    """ApiTargetIntelCVESummaryAsnsInner unit test stubs"""
+class TestApiC2Frequency(unittest.TestCase):
+    """ApiC2Frequency unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,26 @@ class TestApiTargetIntelCVESummaryAsnsInner(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ApiTargetIntelCVESummaryAsnsInner:
-        """Test ApiTargetIntelCVESummaryAsnsInner
+    def make_instance(self, include_optional) -> ApiC2Frequency:
+        """Test ApiC2Frequency
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ApiTargetIntelCVESummaryAsnsInner`
+        # uncomment below to create an instance of `ApiC2Frequency`
         """
-        model = ApiTargetIntelCVESummaryAsnsInner()
+        model = ApiC2Frequency()
         if include_optional:
-            return ApiTargetIntelCVESummaryAsnsInner(
+            return ApiC2Frequency(
                 count = 56,
-                value = ''
+                src = ''
             )
         else:
-            return ApiTargetIntelCVESummaryAsnsInner(
+            return ApiC2Frequency(
         )
         """
 
-    def testApiTargetIntelCVESummaryAsnsInner(self):
-        """Test ApiTargetIntelCVESummaryAsnsInner"""
+    def testApiC2Frequency(self):
+        """Test ApiC2Frequency"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

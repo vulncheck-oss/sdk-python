@@ -76,6 +76,26 @@ class TestApiInitialAccessArtifact(unittest.TestCase):
                 fofa_raw_queries = [
                     ''
                     ],
+                goexploit = vulncheck_sdk.aio.models.api/initial_access_go_exploit.api.InitialAccessGoExploit(
+                    asset_detection = True, 
+                    cpe = [
+                        ''
+                        ], 
+                    custom_flags = [
+                        vulncheck_sdk.aio.models.api/initial_access_go_exploit_custom_flag.api.InitialAccessGoExploitCustomFlag(
+                            default = '', 
+                            name = '', 
+                            type = '', 
+                            usage = '', )
+                        ], 
+                    default_port = 56, 
+                    exploit_type = '', 
+                    exploitation = True, 
+                    protocol = '', 
+                    supported_c2 = [
+                        ''
+                        ], 
+                    version_scanner = True, ),
                 google_queries = [
                     ''
                     ],
@@ -108,6 +128,9 @@ class TestApiInitialAccessArtifact(unittest.TestCase):
                 target_docker = True,
                 target_encrypted_comms = '',
                 target_service = '',
+                vc_target_intel_query = [
+                    ''
+                    ],
                 vendor = '',
                 version_scanner = True,
                 yara = True,

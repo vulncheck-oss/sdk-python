@@ -30,10 +30,11 @@ class ApiInitialAccess(BaseModel):
     """ # noqa: E501
     artifacts: Optional[List[ApiInitialAccessArtifact]] = Field(default=None, description="Artifacts holds the set of available artifacts for this vulnerability, such as exploit, shodan queries, PCAP traces, and others.")
     cve: Optional[StrictStr] = Field(default=None, description="CVE identifier for the given initial access record.")
+    id: Optional[StrictStr] = Field(default=None, description="ID is the unique identifier for this initial access record.")
     in_kev: Optional[StrictBool] = Field(default=None, description="InKEV is true if this artifact is in CISA's Known Exploited Vulnerabilities (KEV) data set; otherwise, false.", alias="inKEV")
     in_vckev: Optional[StrictBool] = Field(default=None, description="InVCKEV is true if this artifact is in VulnCheck's Known Exploited Vulnerabilities (VCKEV) data set; otherwise, false.", alias="inVCKEV")
     vulnerable_cpes: Optional[List[StrictStr]] = Field(default=None, description="VulnerableCPEs is the list of vulnerable CPE strings associated with this CVE and artifact(s).")
-    __properties: ClassVar[List[str]] = ["artifacts", "cve", "inKEV", "inVCKEV", "vulnerable_cpes"]
+    __properties: ClassVar[List[str]] = ["artifacts", "cve", "id", "inKEV", "inVCKEV", "vulnerable_cpes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +96,7 @@ class ApiInitialAccess(BaseModel):
         _obj = cls.model_validate({
             "artifacts": [ApiInitialAccessArtifact.from_dict(_item) for _item in obj["artifacts"]] if obj.get("artifacts") is not None else None,
             "cve": obj.get("cve"),
+            "id": obj.get("id"),
             "inKEV": obj.get("inKEV"),
             "inVCKEV": obj.get("inVCKEV"),
             "vulnerable_cpes": obj.get("vulnerable_cpes")

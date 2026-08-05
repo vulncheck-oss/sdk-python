@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**index_ami_get**](IndicesApi.md#index_ami_get) | **GET** /v3/index/ami | Return vulnerability data stored in index \&quot;ami\&quot;
 [**index_anchore_nvd_override_get**](IndicesApi.md#index_anchore_nvd_override_get) | **GET** /v3/index/anchore-nvd-override | Return vulnerability data stored in index \&quot;anchore-nvd-override\&quot;
 [**index_android_get**](IndicesApi.md#index_android_get) | **GET** /v3/index/android | Return vulnerability data stored in index \&quot;android\&quot;
+[**index_anthropic_cvd_get**](IndicesApi.md#index_anthropic_cvd_get) | **GET** /v3/index/anthropic-cvd | Return vulnerability data stored in index \&quot;anthropic-cvd\&quot;
 [**index_apache_activemq_get**](IndicesApi.md#index_apache_activemq_get) | **GET** /v3/index/apache-activemq | Return vulnerability data stored in index \&quot;apache-activemq\&quot;
 [**index_apache_archiva_get**](IndicesApi.md#index_apache_archiva_get) | **GET** /v3/index/apache-archiva | Return vulnerability data stored in index \&quot;apache-archiva\&quot;
 [**index_apache_arrow_get**](IndicesApi.md#index_apache_arrow_get) | **GET** /v3/index/apache-arrow | Return vulnerability data stored in index \&quot;apache-arrow\&quot;
@@ -440,7 +441,6 @@ Method | HTTP request | Description
 [**index_synology_get**](IndicesApi.md#index_synology_get) | **GET** /v3/index/synology | Return vulnerability data stored in index \&quot;synology\&quot;
 [**index_syss_get**](IndicesApi.md#index_syss_get) | **GET** /v3/index/syss | Return vulnerability data stored in index \&quot;syss\&quot;
 [**index_tailscale_get**](IndicesApi.md#index_tailscale_get) | **GET** /v3/index/tailscale | Return vulnerability data stored in index \&quot;tailscale\&quot;
-[**index_target_intel_cve_summary_get**](IndicesApi.md#index_target_intel_cve_summary_get) | **GET** /v3/index/target-intel-cve-summary | Return vulnerability data stored in index \&quot;target-intel-cve-summary\&quot;
 [**index_target_intel_get**](IndicesApi.md#index_target_intel_get) | **GET** /v3/index/target-intel | Return vulnerability data stored in index \&quot;target-intel\&quot;
 [**index_teamviewer_get**](IndicesApi.md#index_teamviewer_get) | **GET** /v3/index/teamviewer | Return vulnerability data stored in index \&quot;teamviewer\&quot;
 [**index_tenable_research_advisories_get**](IndicesApi.md#index_tenable_research_advisories_get) | **GET** /v3/index/tenable-research-advisories | Return vulnerability data stored in index \&quot;tenable-research-advisories\&quot;
@@ -3529,6 +3529,144 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RenderResponseWithMetadataArrayAdvisoryAndroidAdvisoryPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryAndroidAdvisoryPaginatePagination.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **index_anthropic_cvd_get**
+> RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination index_anthropic_cvd_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+
+Return vulnerability data stored in index \"anthropic-cvd\"
+
+### Overview
+This endpoint allows you to retrieve a paginated list of all documents from the anthropic-cvd index. \
+By default, a maximum of 100 documents are shown per page.
+
+**Index Description:** Anthropic Red CVD
+
+### Paging Over Large Data (cursor)
+In order to allow users to iterate over large index datasets, this endpoint provides a server-side
+"cursor" mechanism. To use the cursor, first call `GET /index/anthropic-cvd?start_cursor`, the response will
+have a `next_cursor` id that clients will need to pass as a query parameter to the next request like
+`GET /index/anthropic-cvd?cursor=<next_cursor_id>`
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import vulncheck_sdk
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_anthropic_cvd_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination
+from vulncheck_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.vulncheck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vulncheck_sdk.Configuration(
+    host = "https://api.vulncheck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vulncheck_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vulncheck_sdk.IndicesApi(api_client)
+    page = 56 # int | set the page number of the response (optional)
+    limit = 56 # int | limit the number of findings in the response (optional)
+    cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
+    start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
+    order = 'order_example' # str | direction of the sort (optional)
+    sort = 'sort_example' # str | field by which to sort the results (optional)
+    cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
+    alias = 'alias_example' # str | Specify a vulnerability alias to search with. (optional)
+    iava = 'iava_example' # str | Specify an IAVA ID to search with. (optional)
+    jvndb = 'jvndb_example' # str | Specify a JVNDB ID to search with. (optional)
+    ilvn = 'ilvn_example' # str | Specify an ILVN ID to search with. (optional)
+    threat_actor = 'threat_actor_example' # str | Specify a threat actor name to search with. (optional)
+    mitre_id = 'mitre_id_example' # str | Specify a MITRE ID to search with. (optional)
+    misp_id = 'misp_id_example' # str | Specify a MISP ID to search with. (optional)
+    ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
+    botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
+    published = 'published_example' # str | Specify a published date (optional)
+    var_date = 'var_date_example' # str | Specify an exact published date to filter with. (optional)
+    updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
+    updated_at_end_date = 'updated_at_end_date_example' # str | Specify an ending 'updated-at' date to filter with. (optional)
+    last_mod_start_date = 'last_mod_start_date_example' # str | Specify a starting last modified date to filter with. (optional)
+    last_mod_end_date = 'last_mod_end_date_example' # str | Specify an ending last modified date to filter with. (optional)
+    pub_start_date = 'pub_start_date_example' # str | Specify a starting published date to filter with. (optional)
+    pub_end_date = 'pub_end_date_example' # str | Specify an ending published date to filter with. (optional)
+
+    try:
+        # Return vulnerability data stored in index \"anthropic-cvd\"
+        api_response = api_instance.index_anthropic_cvd_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        print("The response of IndicesApi->index_anthropic_cvd_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling IndicesApi->index_anthropic_cvd_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| set the page number of the response | [optional] 
+ **limit** | **int**| limit the number of findings in the response | [optional] 
+ **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
+ **start_cursor** | **str**| request server-side paging | [optional] 
+ **order** | **str**| direction of the sort | [optional] 
+ **sort** | **str**| field by which to sort the results | [optional] 
+ **cve** | **str**| Specify a CVE ID to search with. | [optional] 
+ **alias** | **str**| Specify a vulnerability alias to search with. | [optional] 
+ **iava** | **str**| Specify an IAVA ID to search with. | [optional] 
+ **jvndb** | **str**| Specify a JVNDB ID to search with. | [optional] 
+ **ilvn** | **str**| Specify an ILVN ID to search with. | [optional] 
+ **threat_actor** | **str**| Specify a threat actor name to search with. | [optional] 
+ **mitre_id** | **str**| Specify a MITRE ID to search with. | [optional] 
+ **misp_id** | **str**| Specify a MISP ID to search with. | [optional] 
+ **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
+ **botnet** | **str**| Specify a botnet name to search with. | [optional] 
+ **published** | **str**| Specify a published date | [optional] 
+ **var_date** | **str**| Specify an exact published date to filter with. | [optional] 
+ **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 
+ **updated_at_end_date** | **str**| Specify an ending &#39;updated-at&#39; date to filter with. | [optional] 
+ **last_mod_start_date** | **str**| Specify a starting last modified date to filter with. | [optional] 
+ **last_mod_end_date** | **str**| Specify an ending last modified date to filter with. | [optional] 
+ **pub_start_date** | **str**| Specify a starting published date to filter with. | [optional] 
+ **pub_end_date** | **str**| Specify an ending published date to filter with. | [optional] 
+
+### Return type
+
+[**RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination**](RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination.md)
 
 ### Authorization
 
@@ -60721,146 +60859,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **index_target_intel_cve_summary_get**
-> RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination index_target_intel_cve_summary_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
-
-Return vulnerability data stored in index \"target-intel-cve-summary\"
-
-### Overview
-This endpoint allows you to retrieve a paginated list of all documents from the target-intel-cve-summary index. \
-By default, a maximum of 100 documents are shown per page.
-
-**Index Description:** VulnCheck Target Intelligence CVE Summary
-
-### Paging Over Large Data (cursor)
-In order to allow users to iterate over large index datasets, this endpoint provides a server-side
-"cursor" mechanism. To use the cursor, first call `GET /index/target-intel-cve-summary?start_cursor`, the response will
-have a `next_cursor` id that clients will need to pass as a query parameter to the next request like
-`GET /index/target-intel-cve-summary?cursor=<next_cursor_id>`
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-
-```python
-import vulncheck_sdk
-from vulncheck_sdk.models.render_response_with_metadata_array_api_target_intel_cve_summary_paginate_pagination import RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination
-from vulncheck_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.vulncheck.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = vulncheck_sdk.Configuration(
-    host = "https://api.vulncheck.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with vulncheck_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = vulncheck_sdk.IndicesApi(api_client)
-    page = 56 # int | set the page number of the response (optional)
-    limit = 56 # int | limit the number of findings in the response (optional)
-    cursor = 'cursor_example' # str | continue server-side paging using a cursor id (optional)
-    start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
-    order = 'order_example' # str | direction of the sort (optional)
-    sort = 'sort_example' # str | field by which to sort the results (optional)
-    cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
-    alias = 'alias_example' # str | Specify a vulnerability alias to search with. (optional)
-    iava = 'iava_example' # str | Specify an IAVA ID to search with. (optional)
-    jvndb = 'jvndb_example' # str | Specify a JVNDB ID to search with. (optional)
-    ilvn = 'ilvn_example' # str | Specify an ILVN ID to search with. (optional)
-    threat_actor = 'threat_actor_example' # str | Specify a threat actor name to search with. (optional)
-    mitre_id = 'mitre_id_example' # str | Specify a MITRE ID to search with. (optional)
-    misp_id = 'misp_id_example' # str | Specify a MISP ID to search with. (optional)
-    ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
-    botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
-    published = 'published_example' # str | Specify a published date (optional)
-    var_date = 'var_date_example' # str | Specify an exact published date to filter with. (optional)
-    updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
-    updated_at_end_date = 'updated_at_end_date_example' # str | Specify an ending 'updated-at' date to filter with. (optional)
-    last_mod_start_date = 'last_mod_start_date_example' # str | Specify a starting last modified date to filter with. (optional)
-    last_mod_end_date = 'last_mod_end_date_example' # str | Specify an ending last modified date to filter with. (optional)
-    pub_start_date = 'pub_start_date_example' # str | Specify a starting published date to filter with. (optional)
-    pub_end_date = 'pub_end_date_example' # str | Specify an ending published date to filter with. (optional)
-
-    try:
-        # Return vulnerability data stored in index \"target-intel-cve-summary\"
-        api_response = api_instance.index_target_intel_cve_summary_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
-        print("The response of IndicesApi->index_target_intel_cve_summary_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling IndicesApi->index_target_intel_cve_summary_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int**| set the page number of the response | [optional] 
- **limit** | **int**| limit the number of findings in the response | [optional] 
- **cursor** | **str**| continue server-side paging using a cursor id | [optional] 
- **start_cursor** | **str**| request server-side paging | [optional] 
- **order** | **str**| direction of the sort | [optional] 
- **sort** | **str**| field by which to sort the results | [optional] 
- **cve** | **str**| Specify a CVE ID to search with. | [optional] 
- **alias** | **str**| Specify a vulnerability alias to search with. | [optional] 
- **iava** | **str**| Specify an IAVA ID to search with. | [optional] 
- **jvndb** | **str**| Specify a JVNDB ID to search with. | [optional] 
- **ilvn** | **str**| Specify an ILVN ID to search with. | [optional] 
- **threat_actor** | **str**| Specify a threat actor name to search with. | [optional] 
- **mitre_id** | **str**| Specify a MITRE ID to search with. | [optional] 
- **misp_id** | **str**| Specify a MISP ID to search with. | [optional] 
- **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
- **botnet** | **str**| Specify a botnet name to search with. | [optional] 
- **published** | **str**| Specify a published date | [optional] 
- **var_date** | **str**| Specify an exact published date to filter with. | [optional] 
- **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 
- **updated_at_end_date** | **str**| Specify an ending &#39;updated-at&#39; date to filter with. | [optional] 
- **last_mod_start_date** | **str**| Specify a starting last modified date to filter with. | [optional] 
- **last_mod_end_date** | **str**| Specify an ending last modified date to filter with. | [optional] 
- **pub_start_date** | **str**| Specify a starting published date to filter with. | [optional] 
- **pub_end_date** | **str**| Specify an ending published date to filter with. | [optional] 
-
-### Return type
-
-[**RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination**](RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **index_target_intel_get**
-> RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination index_target_intel_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cidr=cidr, cve=cve, country=country, country_code=country_code, asn=asn, id=id, cpe=cpe, vendor=vendor, product=product, version=version, protocol=protocol, port=port, contains_cve=contains_cve, classifications=classifications, hostname=hostname, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+> RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination index_target_intel_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cidr=cidr, cve=cve, country=country, country_code=country_code, asn=asn, cpe=cpe, vendor=vendor, product=product, version=version, protocol=protocol, transport=transport, port=port, contains_cve=contains_cve, confirmed=confirmed, classifications=classifications, hostname=hostname, domain=domain, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
 Return vulnerability data stored in index \"target-intel\"
 
@@ -60919,16 +60919,18 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     country = 'country_example' # str | Country name ISO-3166?? format (optional)
     country_code = 'country_code_example' # str | Country code in ISO-3166?? format (optional)
     asn = 'asn_example' # str | Autonomous system number (optional)
-    id = 'id_example' # str | Record type (optional)
     cpe = 'cpe_example' # str | CPE string (optional)
     vendor = 'vendor_example' # str | Vendor name (optional)
     product = 'product_example' # str | Product name (optional)
     version = 'version_example' # str | Product version (optional)
     protocol = 'protocol_example' # str | Protocol (optional)
+    transport = 'transport_example' # str | Transport (tcp/udp) (optional)
     port = 'port_example' # str | Port number (optional)
     contains_cve = True # bool | Filter to records that have (true) or do not have (false) an associated CVE (optional)
+    confirmed = True # bool | Filter to records with at least one CVE match that is (true) or is not (false) confirmed (optional)
     classifications = 'classifications_example' # str | Match one or more classification values (optional)
     hostname = 'hostname_example' # str | Match a string in the hostname (optional)
+    domain = 'domain_example' # str | Match one or more domains (comma-delimited) against as_domain (exact), and hostname/TLS certificate fields (suffix) (optional)
     var_date = 'var_date_example' # str | Specify an exact published date to filter with. (optional)
     updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
     updated_at_end_date = 'updated_at_end_date_example' # str | Specify an ending 'updated-at' date to filter with. (optional)
@@ -60939,7 +60941,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Return vulnerability data stored in index \"target-intel\"
-        api_response = api_instance.index_target_intel_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cidr=cidr, cve=cve, country=country, country_code=country_code, asn=asn, id=id, cpe=cpe, vendor=vendor, product=product, version=version, protocol=protocol, port=port, contains_cve=contains_cve, classifications=classifications, hostname=hostname, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        api_response = api_instance.index_target_intel_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cidr=cidr, cve=cve, country=country, country_code=country_code, asn=asn, cpe=cpe, vendor=vendor, product=product, version=version, protocol=protocol, transport=transport, port=port, contains_cve=contains_cve, confirmed=confirmed, classifications=classifications, hostname=hostname, domain=domain, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
         print("The response of IndicesApi->index_target_intel_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -60964,16 +60966,18 @@ Name | Type | Description  | Notes
  **country** | **str**| Country name ISO-3166?? format | [optional] 
  **country_code** | **str**| Country code in ISO-3166?? format | [optional] 
  **asn** | **str**| Autonomous system number | [optional] 
- **id** | **str**| Record type | [optional] 
  **cpe** | **str**| CPE string | [optional] 
  **vendor** | **str**| Vendor name | [optional] 
  **product** | **str**| Product name | [optional] 
  **version** | **str**| Product version | [optional] 
  **protocol** | **str**| Protocol | [optional] 
+ **transport** | **str**| Transport (tcp/udp) | [optional] 
  **port** | **str**| Port number | [optional] 
  **contains_cve** | **bool**| Filter to records that have (true) or do not have (false) an associated CVE | [optional] 
+ **confirmed** | **bool**| Filter to records with at least one CVE match that is (true) or is not (false) confirmed | [optional] 
  **classifications** | **str**| Match one or more classification values | [optional] 
  **hostname** | **str**| Match a string in the hostname | [optional] 
+ **domain** | **str**| Match one or more domains (comma-delimited) against as_domain (exact), and hostname/TLS certificate fields (suffix) | [optional] 
  **var_date** | **str**| Specify an exact published date to filter with. | [optional] 
  **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 
  **updated_at_end_date** | **str**| Specify an ending &#39;updated-at&#39; date to filter with. | [optional] 

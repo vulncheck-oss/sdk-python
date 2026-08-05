@@ -51,6 +51,11 @@ class TestApiTargetIntel(unittest.TestCase):
                 cve = [
                     ''
                     ],
+                cve_confirmed = [
+                    vulncheck_sdk.aio.models.api/cve_confirmed.api.CVEConfirmed(
+                        confirmed = True, 
+                        cve_id = '', )
+                    ],
                 date_added = '',
                 fingerprints = [
                     vulncheck_sdk.aio.models.api/fingerprint.api.Fingerprint(
@@ -70,6 +75,7 @@ class TestApiTargetIntel(unittest.TestCase):
                     ],
                 protocol = '',
                 timestamp = '',
+                transport = '',
                 vendor = [
                     ''
                     ],

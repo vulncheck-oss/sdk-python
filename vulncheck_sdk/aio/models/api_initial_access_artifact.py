@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.aio.models.api_initial_access_go_exploit import ApiInitialAccessGoExploit
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -43,6 +44,7 @@ class ApiInitialAccessArtifact(BaseModel):
     exploit: Optional[StrictBool] = Field(default=None, description="Exploit indicates whether or not an exploit is available in this artifact.")
     fofa_queries: Optional[List[StrictStr]] = Field(default=None, description="FOFAQueries are raw queries for examining potential Internet-exposed devices & applications with FOFA.", alias="fofaQueries")
     fofa_raw_queries: Optional[List[StrictStr]] = Field(default=None, alias="fofaRawQueries")
+    goexploit: Optional[ApiInitialAccessGoExploit] = None
     google_queries: Optional[List[StrictStr]] = Field(default=None, description="google queries", alias="googleQueries")
     google_raw_queries: Optional[List[StrictStr]] = Field(default=None, description="raw google queries", alias="googleRawQueries")
     greynoise_queries: Optional[List[StrictStr]] = Field(default=None, description="GreynoiseQueries are queries for finding the vulnerability via honeypot data.", alias="greynoiseQueries")
@@ -59,13 +61,14 @@ class ApiInitialAccessArtifact(BaseModel):
     target_docker: Optional[StrictBool] = Field(default=None, description="TargetDocker indicates whether or not there is an available docker image with the vulnerability.", alias="targetDocker")
     target_encrypted_comms: Optional[StrictStr] = Field(default=None, description="Encrypted communications?", alias="targetEncryptedComms")
     target_service: Optional[StrictStr] = Field(default=None, description="TargetService indicates the service (HTTP, FTP, etc) that this exploit targets.", alias="targetService")
+    vc_target_intel_query: Optional[List[StrictStr]] = Field(default=None, description="VCTargetIntelQuery are URLs to the VulnCheck target intel index for this artifact's vendor/product.", alias="vcTargetIntelQuery")
     vendor: Optional[StrictStr] = Field(default=None, description="Vendor of the vulnerable product")
     version_scanner: Optional[StrictBool] = Field(default=None, description="VersionScanner indicates whether or not the exploit PoC can determine if target system is vulnerable without sending exploit payload in this artifact.", alias="versionScanner")
     yara: Optional[StrictBool] = Field(default=None, description="YARA indicates whether or not a YARA rule designed to detect the exploit on an endpoint exists in this artifact.")
     zeroday: Optional[StrictBool] = Field(default=None, description="Zeroday indicates whether or not it is a VulnCheck zeroday.")
     zoom_eye_queries: Optional[List[StrictStr]] = Field(default=None, description="ZoomEyeQueries are raw queries for examining potential Internet-exposed devices & applications with ZoomEye.", alias="zoomEyeQueries")
     zoom_eye_raw_queries: Optional[List[StrictStr]] = Field(default=None, alias="zoomEyeRawQueries")
-    __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "baiduQueries", "baiduRawQueries", "censysLegacyQueries", "censysLegacyRawQueries", "censysQueries", "censysRawQueries", "chain", "cloneSSHURL", "dateAdded", "driftnetQueries", "driftnetRawQueries", "exploit", "fofaQueries", "fofaRawQueries", "googleQueries", "googleRawQueries", "greynoiseQueries", "mitreAttackTechniques", "nmapScript", "pcap", "product", "related", "shodanQueries", "shodanRawQueries", "sigmaRule", "snortRule", "suricataRule", "targetDocker", "targetEncryptedComms", "targetService", "vendor", "versionScanner", "yara", "zeroday", "zoomEyeQueries", "zoomEyeRawQueries"]
+    __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "baiduQueries", "baiduRawQueries", "censysLegacyQueries", "censysLegacyRawQueries", "censysQueries", "censysRawQueries", "chain", "cloneSSHURL", "dateAdded", "driftnetQueries", "driftnetRawQueries", "exploit", "fofaQueries", "fofaRawQueries", "goexploit", "googleQueries", "googleRawQueries", "greynoiseQueries", "mitreAttackTechniques", "nmapScript", "pcap", "product", "related", "shodanQueries", "shodanRawQueries", "sigmaRule", "snortRule", "suricataRule", "targetDocker", "targetEncryptedComms", "targetService", "vcTargetIntelQuery", "vendor", "versionScanner", "yara", "zeroday", "zoomEyeQueries", "zoomEyeRawQueries"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,6 +109,9 @@ class ApiInitialAccessArtifact(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of goexploit
+        if self.goexploit:
+            _dict['goexploit'] = self.goexploit.to_dict()
         return _dict
 
     @classmethod
@@ -134,6 +140,7 @@ class ApiInitialAccessArtifact(BaseModel):
             "exploit": obj.get("exploit"),
             "fofaQueries": obj.get("fofaQueries"),
             "fofaRawQueries": obj.get("fofaRawQueries"),
+            "goexploit": ApiInitialAccessGoExploit.from_dict(obj["goexploit"]) if obj.get("goexploit") is not None else None,
             "googleQueries": obj.get("googleQueries"),
             "googleRawQueries": obj.get("googleRawQueries"),
             "greynoiseQueries": obj.get("greynoiseQueries"),
@@ -150,6 +157,7 @@ class ApiInitialAccessArtifact(BaseModel):
             "targetDocker": obj.get("targetDocker"),
             "targetEncryptedComms": obj.get("targetEncryptedComms"),
             "targetService": obj.get("targetService"),
+            "vcTargetIntelQuery": obj.get("vcTargetIntelQuery"),
             "vendor": obj.get("vendor"),
             "versionScanner": obj.get("versionScanner"),
             "yara": obj.get("yara"),

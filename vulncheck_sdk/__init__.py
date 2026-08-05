@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.51"
+__version__ = "0.0.52"
 
 # Define package exports
 __all__ = [
@@ -84,6 +84,7 @@ __all__ = [
     "AdvisoryAndroidPackage",
     "AdvisoryAndroidRange",
     "AdvisoryAndroidReference",
+    "AdvisoryAnthropicCVD",
     "AdvisoryApacheActiveMQ",
     "AdvisoryApacheArchiva",
     "AdvisoryApacheArrow",
@@ -176,6 +177,8 @@ __all__ = [
     "AdvisoryCSAFRelationship",
     "AdvisoryCSAFScore",
     "AdvisoryCSAFVulnerability",
+    "AdvisoryCVDSeverityCompare",
+    "AdvisoryCVDSnapshot",
     "AdvisoryCVEDetail",
     "AdvisoryCVEDetailsLink",
     "AdvisoryCVEIdentityMappings",
@@ -810,10 +813,12 @@ __all__ = [
     "AdvisoryZyxel",
     "ApiBaseMetricV2",
     "ApiBaseMetricV3",
+    "ApiC2Frequency",
     "ApiCPE",
     "ApiCPEMatch",
     "ApiCPEName",
     "ApiCVE",
+    "ApiCVEConfirmed",
     "ApiCVEDataMeta",
     "ApiCVEDataMetaExtended",
     "ApiCVEExtended",
@@ -844,6 +849,8 @@ __all__ = [
     "ApiImpactExtended",
     "ApiInitialAccess",
     "ApiInitialAccessArtifact",
+    "ApiInitialAccessGoExploit",
+    "ApiInitialAccessGoExploitCustomFlag",
     "ApiMitreAttackTech",
     "ApiMitreAttackToCVE",
     "ApiMitreD3fendTechnique",
@@ -897,9 +904,6 @@ __all__ = [
     "ApiRelatedAttackPattern",
     "ApiSSVC",
     "ApiTargetIntel",
-    "ApiTargetIntelCVESummary",
-    "ApiTargetIntelCVESummaryAsnsInner",
-    "ApiTargetIntelCVESummaryPortsInner",
     "ApiTemporalCVSSV2",
     "ApiTemporalCVSSV3",
     "ApiTemporalMetricV2",
@@ -950,6 +954,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryAmazonCVEPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAnchoreNVDOverridePaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAndroidAdvisoryPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryApacheActiveMQPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryApacheArchivaPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryApacheArrowPaginatePagination",
@@ -1396,7 +1401,6 @@ __all__ = [
     "RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination",
     "RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination",
     "RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination",
-    "RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination",
     "RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination",
     "RenderResponseWithMetadataArrayApiUpdatePaginatePagination",
     "RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination",
@@ -1492,6 +1496,7 @@ from vulncheck_sdk.models.advisory_android_event import AdvisoryAndroidEvent as 
 from vulncheck_sdk.models.advisory_android_package import AdvisoryAndroidPackage as AdvisoryAndroidPackage
 from vulncheck_sdk.models.advisory_android_range import AdvisoryAndroidRange as AdvisoryAndroidRange
 from vulncheck_sdk.models.advisory_android_reference import AdvisoryAndroidReference as AdvisoryAndroidReference
+from vulncheck_sdk.models.advisory_anthropic_cvd import AdvisoryAnthropicCVD as AdvisoryAnthropicCVD
 from vulncheck_sdk.models.advisory_apache_active_mq import AdvisoryApacheActiveMQ as AdvisoryApacheActiveMQ
 from vulncheck_sdk.models.advisory_apache_archiva import AdvisoryApacheArchiva as AdvisoryApacheArchiva
 from vulncheck_sdk.models.advisory_apache_arrow import AdvisoryApacheArrow as AdvisoryApacheArrow
@@ -1584,6 +1589,8 @@ from vulncheck_sdk.models.advisory_csaf_reference import AdvisoryCSAFReference a
 from vulncheck_sdk.models.advisory_csaf_relationship import AdvisoryCSAFRelationship as AdvisoryCSAFRelationship
 from vulncheck_sdk.models.advisory_csaf_score import AdvisoryCSAFScore as AdvisoryCSAFScore
 from vulncheck_sdk.models.advisory_csaf_vulnerability import AdvisoryCSAFVulnerability as AdvisoryCSAFVulnerability
+from vulncheck_sdk.models.advisory_cvd_severity_compare import AdvisoryCVDSeverityCompare as AdvisoryCVDSeverityCompare
+from vulncheck_sdk.models.advisory_cvd_snapshot import AdvisoryCVDSnapshot as AdvisoryCVDSnapshot
 from vulncheck_sdk.models.advisory_cve_detail import AdvisoryCVEDetail as AdvisoryCVEDetail
 from vulncheck_sdk.models.advisory_cve_details_link import AdvisoryCVEDetailsLink as AdvisoryCVEDetailsLink
 from vulncheck_sdk.models.advisory_cve_identity_mappings import AdvisoryCVEIdentityMappings as AdvisoryCVEIdentityMappings
@@ -2218,10 +2225,12 @@ from vulncheck_sdk.models.advisory_zuso import AdvisoryZuso as AdvisoryZuso
 from vulncheck_sdk.models.advisory_zyxel import AdvisoryZyxel as AdvisoryZyxel
 from vulncheck_sdk.models.api_base_metric_v2 import ApiBaseMetricV2 as ApiBaseMetricV2
 from vulncheck_sdk.models.api_base_metric_v3 import ApiBaseMetricV3 as ApiBaseMetricV3
+from vulncheck_sdk.models.api_c2_frequency import ApiC2Frequency as ApiC2Frequency
 from vulncheck_sdk.models.api_cpe import ApiCPE as ApiCPE
 from vulncheck_sdk.models.api_cpe_match import ApiCPEMatch as ApiCPEMatch
 from vulncheck_sdk.models.api_cpe_name import ApiCPEName as ApiCPEName
 from vulncheck_sdk.models.api_cve import ApiCVE as ApiCVE
+from vulncheck_sdk.models.api_cve_confirmed import ApiCVEConfirmed as ApiCVEConfirmed
 from vulncheck_sdk.models.api_cve_data_meta import ApiCVEDataMeta as ApiCVEDataMeta
 from vulncheck_sdk.models.api_cve_data_meta_extended import ApiCVEDataMetaExtended as ApiCVEDataMetaExtended
 from vulncheck_sdk.models.api_cve_extended import ApiCVEExtended as ApiCVEExtended
@@ -2252,6 +2261,8 @@ from vulncheck_sdk.models.api_impact import ApiImpact as ApiImpact
 from vulncheck_sdk.models.api_impact_extended import ApiImpactExtended as ApiImpactExtended
 from vulncheck_sdk.models.api_initial_access import ApiInitialAccess as ApiInitialAccess
 from vulncheck_sdk.models.api_initial_access_artifact import ApiInitialAccessArtifact as ApiInitialAccessArtifact
+from vulncheck_sdk.models.api_initial_access_go_exploit import ApiInitialAccessGoExploit as ApiInitialAccessGoExploit
+from vulncheck_sdk.models.api_initial_access_go_exploit_custom_flag import ApiInitialAccessGoExploitCustomFlag as ApiInitialAccessGoExploitCustomFlag
 from vulncheck_sdk.models.api_mitre_attack_tech import ApiMitreAttackTech as ApiMitreAttackTech
 from vulncheck_sdk.models.api_mitre_attack_to_cve import ApiMitreAttackToCVE as ApiMitreAttackToCVE
 from vulncheck_sdk.models.api_mitre_d3fend_technique import ApiMitreD3fendTechnique as ApiMitreD3fendTechnique
@@ -2305,9 +2316,6 @@ from vulncheck_sdk.models.api_references_extended import ApiReferencesExtended a
 from vulncheck_sdk.models.api_related_attack_pattern import ApiRelatedAttackPattern as ApiRelatedAttackPattern
 from vulncheck_sdk.models.api_ssvc import ApiSSVC as ApiSSVC
 from vulncheck_sdk.models.api_target_intel import ApiTargetIntel as ApiTargetIntel
-from vulncheck_sdk.models.api_target_intel_cve_summary import ApiTargetIntelCVESummary as ApiTargetIntelCVESummary
-from vulncheck_sdk.models.api_target_intel_cve_summary_asns_inner import ApiTargetIntelCVESummaryAsnsInner as ApiTargetIntelCVESummaryAsnsInner
-from vulncheck_sdk.models.api_target_intel_cve_summary_ports_inner import ApiTargetIntelCVESummaryPortsInner as ApiTargetIntelCVESummaryPortsInner
 from vulncheck_sdk.models.api_temporal_cvssv2 import ApiTemporalCVSSV2 as ApiTemporalCVSSV2
 from vulncheck_sdk.models.api_temporal_cvssv3 import ApiTemporalCVSSV3 as ApiTemporalCVSSV3
 from vulncheck_sdk.models.api_temporal_metric_v2 import ApiTemporalMetricV2 as ApiTemporalMetricV2
@@ -2358,6 +2366,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_alpine_li
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_amazon_cve_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAmazonCVEPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAmazonCVEPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_anchore_nvd_override_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAnchoreNVDOverridePaginatePagination as RenderResponseWithMetadataArrayAdvisoryAnchoreNVDOverridePaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_android_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAndroidAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAndroidAdvisoryPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_anthropic_cvd_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_apache_active_mq_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryApacheActiveMQPaginatePagination as RenderResponseWithMetadataArrayAdvisoryApacheActiveMQPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_apache_archiva_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryApacheArchivaPaginatePagination as RenderResponseWithMetadataArrayAdvisoryApacheArchivaPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_apache_arrow_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryApacheArrowPaginatePagination as RenderResponseWithMetadataArrayAdvisoryApacheArrowPaginatePagination
@@ -2804,7 +2813,6 @@ from vulncheck_sdk.models.render_response_with_metadata_array_api_nvd20_cpe_matc
 from vulncheck_sdk.models.render_response_with_metadata_array_api_nvd20_cve_extended_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_nvd20_cve_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_oss_package_paginate_pagination import RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination as RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination
-from vulncheck_sdk.models.render_response_with_metadata_array_api_target_intel_cve_summary_paginate_pagination import RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination as RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_target_intel_paginate_pagination import RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination as RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_update_paginate_pagination import RenderResponseWithMetadataArrayApiUpdatePaginatePagination as RenderResponseWithMetadataArrayApiUpdatePaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_vuln_check_canary_paginate_pagination import RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination as RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination
