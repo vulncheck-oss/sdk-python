@@ -27,6 +27,7 @@ class AdvisoryAVIDMLAdvs(BaseModel):
     """
     advisory.AVIDMLAdvs
     """ # noqa: E501
+    cve: Optional[List[StrictStr]] = None
     date_added: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
@@ -34,7 +35,7 @@ class AdvisoryAVIDMLAdvs(BaseModel):
     title: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["date_added", "description", "id", "references", "title", "updated_at", "url"]
+    __properties: ClassVar[List[str]] = ["cve", "date_added", "description", "id", "references", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,6 +88,7 @@ class AdvisoryAVIDMLAdvs(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "cve": obj.get("cve"),
             "date_added": obj.get("date_added"),
             "description": obj.get("description"),
             "id": obj.get("id"),

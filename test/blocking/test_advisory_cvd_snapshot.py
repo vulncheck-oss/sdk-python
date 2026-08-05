@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.aio.models.api_target_intel_cve_summary_ports_inner import ApiTargetIntelCVESummaryPortsInner
+from vulncheck_sdk.models.advisory_cvd_snapshot import AdvisoryCVDSnapshot
 
-class TestApiTargetIntelCVESummaryPortsInner(unittest.TestCase):
-    """ApiTargetIntelCVESummaryPortsInner unit test stubs"""
+class TestAdvisoryCVDSnapshot(unittest.TestCase):
+    """AdvisoryCVDSnapshot unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,28 @@ class TestApiTargetIntelCVESummaryPortsInner(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ApiTargetIntelCVESummaryPortsInner:
-        """Test ApiTargetIntelCVESummaryPortsInner
+    def make_instance(self, include_optional) -> AdvisoryCVDSnapshot:
+        """Test AdvisoryCVDSnapshot
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ApiTargetIntelCVESummaryPortsInner`
+        # uncomment below to create an instance of `AdvisoryCVDSnapshot`
         """
-        model = ApiTargetIntelCVESummaryPortsInner()
+        model = AdvisoryCVDSnapshot()
         if include_optional:
-            return ApiTargetIntelCVESummaryPortsInner(
-                count = 56,
-                value = 56
+            return AdvisoryCVDSnapshot(
+                as_of = '',
+                fetched_at = '',
+                manifest_sha3 = '',
+                revision = 56
             )
         else:
-            return ApiTargetIntelCVESummaryPortsInner(
+            return AdvisoryCVDSnapshot(
         )
         """
 
-    def testApiTargetIntelCVESummaryPortsInner(self):
-        """Test ApiTargetIntelCVESummaryPortsInner"""
+    def testAdvisoryCVDSnapshot(self):
+        """Test AdvisoryCVDSnapshot"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

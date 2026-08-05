@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.api_cve_confirmed import ApiCVEConfirmed
 from vulncheck_sdk.models.api_fingerprint import ApiFingerprint
 from typing import Optional, Set
 from typing_extensions import Self
@@ -37,6 +38,7 @@ class ApiTargetIntel(BaseModel):
     country_code: Optional[StrictStr] = None
     cpe: Optional[List[StrictStr]] = None
     cve: Optional[List[StrictStr]] = None
+    cve_confirmed: Optional[List[ApiCVEConfirmed]] = None
     date_added: Optional[StrictStr] = None
     fingerprints: Optional[List[ApiFingerprint]] = None
     hostname: Optional[StrictStr] = None
@@ -46,9 +48,10 @@ class ApiTargetIntel(BaseModel):
     product: Optional[List[StrictStr]] = None
     protocol: Optional[StrictStr] = None
     timestamp: Optional[StrictStr] = None
+    transport: Optional[StrictStr] = None
     vendor: Optional[List[StrictStr]] = None
     version: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["as_domain", "as_name", "asn", "classifications", "contains_cve", "country", "country_code", "cpe", "cve", "date_added", "fingerprints", "hostname", "ip", "metadata", "port", "product", "protocol", "timestamp", "vendor", "version"]
+    __properties: ClassVar[List[str]] = ["as_domain", "as_name", "asn", "classifications", "contains_cve", "country", "country_code", "cpe", "cve", "cve_confirmed", "date_added", "fingerprints", "hostname", "ip", "metadata", "port", "product", "protocol", "timestamp", "transport", "vendor", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +92,13 @@ class ApiTargetIntel(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in cve_confirmed (list)
+        _items = []
+        if self.cve_confirmed:
+            for _item_cve_confirmed in self.cve_confirmed:
+                if _item_cve_confirmed:
+                    _items.append(_item_cve_confirmed.to_dict())
+            _dict['cve_confirmed'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in fingerprints (list)
         _items = []
         if self.fingerprints:
@@ -117,6 +127,7 @@ class ApiTargetIntel(BaseModel):
             "country_code": obj.get("country_code"),
             "cpe": obj.get("cpe"),
             "cve": obj.get("cve"),
+            "cve_confirmed": [ApiCVEConfirmed.from_dict(_item) for _item in obj["cve_confirmed"]] if obj.get("cve_confirmed") is not None else None,
             "date_added": obj.get("date_added"),
             "fingerprints": [ApiFingerprint.from_dict(_item) for _item in obj["fingerprints"]] if obj.get("fingerprints") is not None else None,
             "hostname": obj.get("hostname"),
@@ -126,6 +137,7 @@ class ApiTargetIntel(BaseModel):
             "product": obj.get("product"),
             "protocol": obj.get("protocol"),
             "timestamp": obj.get("timestamp"),
+            "transport": obj.get("transport"),
             "vendor": obj.get("vendor"),
             "version": obj.get("version")
         })

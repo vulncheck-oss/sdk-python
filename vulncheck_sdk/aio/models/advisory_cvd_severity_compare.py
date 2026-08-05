@@ -18,18 +18,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ApiTargetIntelCVESummaryAsnsInner(BaseModel):
+class AdvisoryCVDSeverityCompare(BaseModel):
     """
-    ApiTargetIntelCVESummaryAsnsInner
+    advisory.CVDSeverityCompare
     """ # noqa: E501
-    count: Optional[StrictInt] = None
-    value: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["count", "value"]
+    claude: Optional[StrictStr] = None
+    maintainer: Optional[StrictStr] = None
+    security_research_firm: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["claude", "maintainer", "security_research_firm"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +50,7 @@ class ApiTargetIntelCVESummaryAsnsInner(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiTargetIntelCVESummaryAsnsInner from a JSON string"""
+        """Create an instance of AdvisoryCVDSeverityCompare from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,7 +75,7 @@ class ApiTargetIntelCVESummaryAsnsInner(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiTargetIntelCVESummaryAsnsInner from a dict"""
+        """Create an instance of AdvisoryCVDSeverityCompare from a dict"""
         if obj is None:
             return None
 
@@ -82,8 +83,9 @@ class ApiTargetIntelCVESummaryAsnsInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "count": obj.get("count"),
-            "value": obj.get("value")
+            "claude": obj.get("claude"),
+            "maintainer": obj.get("maintainer"),
+            "security_research_firm": obj.get("security_research_firm")
         })
         return _obj
 

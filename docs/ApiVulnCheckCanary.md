@@ -6,12 +6,16 @@ api.VulnCheckCanary
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**c2_frequency_3d** | [**List[ApiC2Frequency]**](ApiC2Frequency.md) |  | [optional] 
+**c2_location** | **List[str]** |  | [optional] 
 **category** | **str** |  | [optional] 
 **client_fingerprints** | [**ApiClientFingerprints**](ApiClientFingerprints.md) |  | [optional] 
 **cve** | **str** |  | [optional] 
 **dst_country** | **str** |  | [optional] 
 **http** | [**ApiHTTPDetails**](ApiHTTPDetails.md) |  | [optional] 
 **payload** | **str** |  | [optional] 
+**payload_tlsh** | **str** |  | [optional] 
+**payload_tooling** | **List[str]** |  | [optional] 
 **severity** | **int** |  | [optional] 
 **signature** | **str** |  | [optional] 
 **signature_id** | **int** |  | [optional] 
@@ -20,7 +24,11 @@ Name | Type | Description | Notes
 **src_asn** | **str** |  | [optional] 
 **src_country** | **str** |  | [optional] 
 **src_ip** | **str** |  | [optional] 
+**src_ip_freq_3d** | **int** |  | [optional] 
+**src_ip_freq_3d_canary** | **int** |  | [optional] 
+**src_ip_type_findings** | **List[str]** |  | [optional] 
 **src_port** | **int** |  | [optional] 
+**tech_vertical** | **List[str]** |  | [optional] 
 **timestamp** | **str** |  | [optional] 
 
 ## Example

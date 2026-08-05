@@ -27,12 +27,12 @@ class ApiHTTPDetails(BaseModel):
     """
     api.HTTPDetails
     """ # noqa: E501
+    http_method: Optional[StrictStr] = None
     http_request_body: Optional[StrictStr] = None
     http_user_agent: Optional[StrictStr] = None
-    method: Optional[StrictStr] = None
     protocol: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["http_request_body", "http_user_agent", "method", "protocol", "url"]
+    __properties: ClassVar[List[str]] = ["http_method", "http_request_body", "http_user_agent", "protocol", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,9 +85,9 @@ class ApiHTTPDetails(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "http_method": obj.get("http_method"),
             "http_request_body": obj.get("http_request_body"),
             "http_user_agent": obj.get("http_user_agent"),
-            "method": obj.get("method"),
             "protocol": obj.get("protocol"),
             "url": obj.get("url")
         })

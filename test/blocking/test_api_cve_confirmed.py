@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.api_target_intel_cve_summary_ports_inner import ApiTargetIntelCVESummaryPortsInner
+from vulncheck_sdk.models.api_cve_confirmed import ApiCVEConfirmed
 
-class TestApiTargetIntelCVESummaryPortsInner(unittest.TestCase):
-    """ApiTargetIntelCVESummaryPortsInner unit test stubs"""
+class TestApiCVEConfirmed(unittest.TestCase):
+    """ApiCVEConfirmed unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,26 @@ class TestApiTargetIntelCVESummaryPortsInner(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ApiTargetIntelCVESummaryPortsInner:
-        """Test ApiTargetIntelCVESummaryPortsInner
+    def make_instance(self, include_optional) -> ApiCVEConfirmed:
+        """Test ApiCVEConfirmed
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ApiTargetIntelCVESummaryPortsInner`
+        # uncomment below to create an instance of `ApiCVEConfirmed`
         """
-        model = ApiTargetIntelCVESummaryPortsInner()
+        model = ApiCVEConfirmed()
         if include_optional:
-            return ApiTargetIntelCVESummaryPortsInner(
-                count = 56,
-                value = 56
+            return ApiCVEConfirmed(
+                confirmed = True,
+                cve_id = ''
             )
         else:
-            return ApiTargetIntelCVESummaryPortsInner(
+            return ApiCVEConfirmed(
         )
         """
 
-    def testApiTargetIntelCVESummaryPortsInner(self):
-        """Test ApiTargetIntelCVESummaryPortsInner"""
+    def testApiCVEConfirmed(self):
+        """Test ApiCVEConfirmed"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

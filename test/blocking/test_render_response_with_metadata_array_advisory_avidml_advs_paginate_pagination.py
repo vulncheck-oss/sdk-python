@@ -73,6 +73,9 @@ class TestRenderResponseWithMetadataArrayAdvisoryAVIDMLAdvsPaginatePagination(un
                         ], ),
                 data = [
                     vulncheck_sdk.models.advisory/avidml_advs.advisory.AVIDMLAdvs(
+                        cve = [
+                            ''
+                            ], 
                         date_added = '', 
                         description = '', 
                         id = '', 

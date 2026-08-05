@@ -73,6 +73,14 @@ class TestRenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination(un
                         ], ),
                 data = [
                     vulncheck_sdk.models.api/vuln_check_canary.api.VulnCheckCanary(
+                        c2_frequency_3d = [
+                            vulncheck_sdk.models.api/c2_frequency.api.C2Frequency(
+                                count = 56, 
+                                src = '', )
+                            ], 
+                        c2_location = [
+                            ''
+                            ], 
                         category = '', 
                         client_fingerprints = vulncheck_sdk.models.api/client_fingerprints.api.ClientFingerprints(
                             hassh = '', 
@@ -81,12 +89,16 @@ class TestRenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination(un
                         cve = '', 
                         dst_country = '', 
                         http = vulncheck_sdk.models.api/http_details.api.HTTPDetails(
+                            http_method = '', 
                             http_request_body = '', 
                             http_user_agent = '', 
-                            method = '', 
                             protocol = '', 
                             url = '', ), 
                         payload = '', 
+                        payload_tlsh = '', 
+                        payload_tooling = [
+                            ''
+                            ], 
                         severity = 56, 
                         signature = '', 
                         signature_id = 56, 
@@ -95,7 +107,15 @@ class TestRenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination(un
                         src_asn = '', 
                         src_country = '', 
                         src_ip = '', 
+                        src_ip_freq_3d = 56, 
+                        src_ip_freq_3d_canary = 56, 
+                        src_ip_type_findings = [
+                            ''
+                            ], 
                         src_port = 56, 
+                        tech_vertical = [
+                            ''
+                            ], 
                         timestamp = '', )
                     ]
             )

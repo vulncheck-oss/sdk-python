@@ -18,18 +18,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from vulncheck_sdk.aio.models.advisory_anthropic_cvd import AdvisoryAnthropicCVD
+from vulncheck_sdk.aio.models.paginate_pagination import PaginatePagination
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ApiTargetIntelCVESummaryPortsInner(BaseModel):
+class RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination(BaseModel):
     """
-    ApiTargetIntelCVESummaryPortsInner
+    render.ResponseWithMetadata-array_advisory_AnthropicCVD-paginate_Pagination
     """ # noqa: E501
-    count: Optional[StrictInt] = None
-    value: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["count", "value"]
+    benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 = approximately 122 milliseconds", alias="_benchmark")
+    meta: Optional[PaginatePagination] = Field(default=None, alias="_meta")
+    data: Optional[List[AdvisoryAnthropicCVD]] = Field(default=None, description="Data is the data returned by the endpoint")
+    __properties: ClassVar[List[str]] = ["_benchmark", "_meta", "data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +52,7 @@ class ApiTargetIntelCVESummaryPortsInner(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiTargetIntelCVESummaryPortsInner from a JSON string"""
+        """Create an instance of RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,11 +73,21 @@ class ApiTargetIntelCVESummaryPortsInner(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of meta
+        if self.meta:
+            _dict['_meta'] = self.meta.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
+        if self.data:
+            for _item_data in self.data:
+                if _item_data:
+                    _items.append(_item_data.to_dict())
+            _dict['data'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiTargetIntelCVESummaryPortsInner from a dict"""
+        """Create an instance of RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination from a dict"""
         if obj is None:
             return None
 
@@ -82,8 +95,9 @@ class ApiTargetIntelCVESummaryPortsInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "count": obj.get("count"),
-            "value": obj.get("value")
+            "_benchmark": obj.get("_benchmark"),
+            "_meta": PaginatePagination.from_dict(obj["_meta"]) if obj.get("_meta") is not None else None,
+            "data": [AdvisoryAnthropicCVD.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
         })
         return _obj
 
