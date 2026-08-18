@@ -214,9 +214,7 @@ class TestAdvisoryCirclAdvisory(unittest.TestCase):
                                 solutions = [
                                     
                                     ], 
-                                source = [
-                                    56
-                                    ], 
+                                source = vulncheck_sdk.models.source.source(), 
                                 tags = [
                                     ''
                                     ], 
@@ -251,6 +249,8 @@ class TestAdvisoryCirclAdvisory(unittest.TestCase):
                             replaced_by = [
                                 ''
                                 ], 
+                            source = vulncheck_sdk.models.advisory/circl_source.advisory.CirclSource(
+                                discovery = '', ), 
                             title = '', 
                             x_gcve = [
                                 vulncheck_sdk.models.advisory/circl_x_gcve.advisory.CirclXGcve(

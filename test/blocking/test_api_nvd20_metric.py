@@ -186,6 +186,55 @@ class TestApiNVD20Metric(unittest.TestCase):
                             vulnerability_response_effort = '', ), 
                         source = '', 
                         type = '', )
+                    ],
+                ssvc_v203 = [
+                    vulncheck_sdk.models.api/nvd20_ssvc_metric_v203.api.NVD20SsvcMetricV203(
+                        source = '', 
+                        ssvc_data = vulncheck_sdk.models.api/nvd20_ssvc_data_v203.api.NVD20SsvcDataV203(
+                            __schema = '', 
+                            computed = '', 
+                            decision_tree = vulncheck_sdk.models.api/nvd20_ssvc_decision_tree.api.NVD20SsvcDecisionTree(
+                                decision_points = [
+                                    vulncheck_sdk.models.api/nvd20_ssvc_decision_point.api.NVD20SsvcDecisionPoint(
+                                        children = [
+                                            vulncheck_sdk.models.api/nvd20_ssvc_decision_point_child.api.NVD20SsvcDecisionPointChild(
+                                                key = '', 
+                                                label = '', )
+                                            ], 
+                                        decision_type = '', 
+                                        key = '', 
+                                        label = '', 
+                                        options = [
+                                            vulncheck_sdk.models.api/nvd20_ssvc_decision_point_option.api.NVD20SsvcDecisionPointOption(
+                                                color = '', 
+                                                description = '', 
+                                                key = '', 
+                                                label = '', )
+                                            ], )
+                                    ], 
+                                decisions_table = [
+                                    [
+                                        56
+                                        ]
+                                    ], 
+                                lang = '', 
+                                roles = [
+                                    ''
+                                    ], 
+                                title = '', 
+                                version = '', ), 
+                            decision_tree_url = '', 
+                            generator = '', 
+                            id = '', 
+                            options = [
+                                vulncheck_sdk.models.api/nvd20_ssvc_option.api.NVD20SsvcOption(
+                                    automatable = '', 
+                                    exploitation = '', 
+                                    technical_impact = '', )
+                                ], 
+                            role = '', 
+                            timestamp = '', 
+                            version = '', ), )
                     ]
             )
         else:

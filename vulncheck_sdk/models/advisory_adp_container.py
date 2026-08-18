@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_credit import AdvisoryCredit
 from vulncheck_sdk.models.advisory_custom_cpe import AdvisoryCustomCPE
@@ -51,7 +51,7 @@ class AdvisoryADPContainer(BaseModel):
     provider_metadata: Optional[AdvisoryMProviderMetadata] = Field(default=None, alias="providerMetadata")
     references: Optional[List[AdvisoryMReference]] = None
     solutions: Optional[List[AdvisoryMDescriptions]] = None
-    source: Optional[List[StrictInt]] = None
+    source: Optional[Dict[str, Any]] = None
     tags: Optional[List[StrictStr]] = None
     taxonomy_mappings: Optional[List[AdvisoryTaxonomyMapping]] = Field(default=None, alias="taxonomyMappings")
     timeline: Optional[List[AdvisoryTimeline]] = None

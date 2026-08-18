@@ -23,6 +23,8 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_nvd20_configuration import AdvisoryNVD20Configuration
 from vulncheck_sdk.models.api_categorization_extended import ApiCategorizationExtended
 from vulncheck_sdk.models.api_mitre_attack_tech import ApiMitreAttackTech
+from vulncheck_sdk.models.api_nvd20_affected import ApiNVD20Affected
+from vulncheck_sdk.models.api_nvd20_cve_tag import ApiNVD20CVETag
 from vulncheck_sdk.models.api_nvd20_description import ApiNVD20Description
 from vulncheck_sdk.models.api_nvd20_metric_extended import ApiNVD20MetricExtended
 from vulncheck_sdk.models.api_nvd20_reference_extended import ApiNVD20ReferenceExtended
@@ -39,12 +41,14 @@ class ApiNVD20CVEExtended(BaseModel):
     alias: Optional[StrictStr] = Field(default=None, alias="ALIAS")
     status: Optional[StrictStr] = Field(default=None, alias="STATUS")
     timestamp: Optional[StrictStr] = Field(default=None, description="the deep tag instructs deep.Equal to ignore this field (used during OpenSearch loading)", alias="_timestamp")
+    affected: Optional[List[ApiNVD20Affected]] = None
     categorization: Optional[ApiCategorizationExtended] = None
     cisa_action_due: Optional[StrictStr] = Field(default=None, alias="cisaActionDue")
     cisa_exploit_add: Optional[StrictStr] = Field(default=None, alias="cisaExploitAdd")
     cisa_required_action: Optional[StrictStr] = Field(default=None, alias="cisaRequiredAction")
     cisa_vulnerability_name: Optional[StrictStr] = Field(default=None, alias="cisaVulnerabilityName")
     configurations: Optional[List[AdvisoryNVD20Configuration]] = None
+    cve_tags: Optional[List[ApiNVD20CVETag]] = Field(default=None, alias="cveTags")
     date_added: Optional[StrictStr] = None
     descriptions: Optional[List[ApiNVD20Description]] = None
     document_generation_date: Optional[StrictStr] = Field(default=None, alias="documentGenerationDate")
@@ -66,7 +70,7 @@ class ApiNVD20CVEExtended(BaseModel):
     vulncheck_kev_exploit_add: Optional[StrictStr] = Field(default=None, alias="vulncheckKEVExploitAdd")
     vulnerable_cpes: Optional[List[StrictStr]] = Field(default=None, alias="vulnerableCPEs")
     weaknesses: Optional[List[ApiNVD20WeaknessExtended]] = None
-    __properties: ClassVar[List[str]] = ["ALIAS", "STATUS", "_timestamp", "categorization", "cisaActionDue", "cisaExploitAdd", "cisaRequiredAction", "cisaVulnerabilityName", "configurations", "date_added", "descriptions", "documentGenerationDate", "evaluatorComment", "evaluatorImpact", "evaluatorSolution", "id", "lastModified", "metrics", "mitreAttackTechniques", "published", "references", "relatedAttackPatterns", "sourceIdentifier", "vcConfigurations", "vcVulnerableCPEs", "vendorComments", "vulnStatus", "vulncheckKEVExploitAdd", "vulnerableCPEs", "weaknesses"]
+    __properties: ClassVar[List[str]] = ["ALIAS", "STATUS", "_timestamp", "affected", "categorization", "cisaActionDue", "cisaExploitAdd", "cisaRequiredAction", "cisaVulnerabilityName", "configurations", "cveTags", "date_added", "descriptions", "documentGenerationDate", "evaluatorComment", "evaluatorImpact", "evaluatorSolution", "id", "lastModified", "metrics", "mitreAttackTechniques", "published", "references", "relatedAttackPatterns", "sourceIdentifier", "vcConfigurations", "vcVulnerableCPEs", "vendorComments", "vulnStatus", "vulncheckKEVExploitAdd", "vulnerableCPEs", "weaknesses"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,6 +111,13 @@ class ApiNVD20CVEExtended(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in affected (list)
+        _items = []
+        if self.affected:
+            for _item_affected in self.affected:
+                if _item_affected:
+                    _items.append(_item_affected.to_dict())
+            _dict['affected'] = _items
         # override the default output from pydantic by calling `to_dict()` of categorization
         if self.categorization:
             _dict['categorization'] = self.categorization.to_dict()
@@ -117,6 +128,13 @@ class ApiNVD20CVEExtended(BaseModel):
                 if _item_configurations:
                     _items.append(_item_configurations.to_dict())
             _dict['configurations'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in cve_tags (list)
+        _items = []
+        if self.cve_tags:
+            for _item_cve_tags in self.cve_tags:
+                if _item_cve_tags:
+                    _items.append(_item_cve_tags.to_dict())
+            _dict['cveTags'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in descriptions (list)
         _items = []
         if self.descriptions:
@@ -184,12 +202,14 @@ class ApiNVD20CVEExtended(BaseModel):
             "ALIAS": obj.get("ALIAS"),
             "STATUS": obj.get("STATUS"),
             "_timestamp": obj.get("_timestamp"),
+            "affected": [ApiNVD20Affected.from_dict(_item) for _item in obj["affected"]] if obj.get("affected") is not None else None,
             "categorization": ApiCategorizationExtended.from_dict(obj["categorization"]) if obj.get("categorization") is not None else None,
             "cisaActionDue": obj.get("cisaActionDue"),
             "cisaExploitAdd": obj.get("cisaExploitAdd"),
             "cisaRequiredAction": obj.get("cisaRequiredAction"),
             "cisaVulnerabilityName": obj.get("cisaVulnerabilityName"),
             "configurations": [AdvisoryNVD20Configuration.from_dict(_item) for _item in obj["configurations"]] if obj.get("configurations") is not None else None,
+            "cveTags": [ApiNVD20CVETag.from_dict(_item) for _item in obj["cveTags"]] if obj.get("cveTags") is not None else None,
             "date_added": obj.get("date_added"),
             "descriptions": [ApiNVD20Description.from_dict(_item) for _item in obj["descriptions"]] if obj.get("descriptions") is not None else None,
             "documentGenerationDate": obj.get("documentGenerationDate"),

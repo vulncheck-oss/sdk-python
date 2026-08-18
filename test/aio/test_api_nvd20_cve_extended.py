@@ -39,6 +39,49 @@ class TestApiNVD20CVEExtended(unittest.TestCase):
                 alias = '',
                 status = '',
                 timestamp = '',
+                affected = [
+                    vulncheck_sdk.aio.models.api/nvd20_affected.api.NVD20Affected(
+                        affected_data = [
+                            vulncheck_sdk.aio.models.api/nvd20_affected_product.api.NVD20AffectedProduct(
+                                collection_url = '', 
+                                cpes = [
+                                    ''
+                                    ], 
+                                default_status = '', 
+                                modules = [
+                                    ''
+                                    ], 
+                                package_name = '', 
+                                package_url = '', 
+                                platforms = [
+                                    ''
+                                    ], 
+                                product = '', 
+                                program_files = [
+                                    ''
+                                    ], 
+                                program_routines = [
+                                    vulncheck_sdk.aio.models.api/nvd20_affected_program_routine.api.NVD20AffectedProgramRoutine(
+                                        name = '', )
+                                    ], 
+                                repo = '', 
+                                vendor = '', 
+                                versions = [
+                                    vulncheck_sdk.aio.models.api/nvd20_affected_version.api.NVD20AffectedVersion(
+                                        changes = [
+                                            vulncheck_sdk.aio.models.api/nvd20_affected_version_change.api.NVD20AffectedVersionChange(
+                                                at = '', 
+                                                status = '', )
+                                            ], 
+                                        less_than = '', 
+                                        less_than_or_equal = '', 
+                                        status = '', 
+                                        version = '', 
+                                        version_type = '', )
+                                    ], )
+                            ], 
+                        source = '', )
+                    ],
                 categorization = vulncheck_sdk.aio.models.api/categorization_extended.api.CategorizationExtended(
                     tags = [
                         ''
@@ -66,6 +109,13 @@ class TestApiNVD20CVEExtended(unittest.TestCase):
                                 operator = '', )
                             ], 
                         operator = '', )
+                    ],
+                cve_tags = [
+                    vulncheck_sdk.aio.models.api/nvd20_cve_tag.api.NVD20CVETag(
+                        source_identifier = '', 
+                        tags = [
+                            ''
+                            ], )
                     ],
                 date_added = '',
                 descriptions = [

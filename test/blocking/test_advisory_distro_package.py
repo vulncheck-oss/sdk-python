@@ -53,6 +53,7 @@ class TestAdvisoryDistroPackage(unittest.TestCase):
                         release = '', 
                         version = '', )
                     ],
+                source_name = '',
                 versions = [
                     vulncheck_sdk.models.advisory/distro_version.advisory.DistroVersion(
                         arch = '', 

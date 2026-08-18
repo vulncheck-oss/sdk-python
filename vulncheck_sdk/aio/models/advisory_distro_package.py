@@ -34,8 +34,9 @@ class AdvisoryDistroPackage(BaseModel):
     license: Optional[List[StrictStr]] = None
     name: Optional[StrictStr] = None
     sec_fixes: Optional[List[AdvisorySecFix]] = Field(default=None, alias="secFixes")
+    source_name: Optional[StrictStr] = Field(default=None, description="SourceName is the source (SRPM) package this binary was built from, when it differs from Name. Distros whose advisories key fixes by source name (e.g. CBL-Mariner/Azure Linux OVAL: source \"python-jinja2\" → binary \"python3-jinja2\") need it to attach a source-keyed fix to the binary purl a customer actually queries. Empty when unknown or equal to Name.")
     versions: Optional[List[AdvisoryDistroVersion]] = None
-    __properties: ClassVar[List[str]] = ["binary", "cve", "license", "name", "secFixes", "versions"]
+    __properties: ClassVar[List[str]] = ["binary", "cve", "license", "name", "secFixes", "source_name", "versions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,6 +108,7 @@ class AdvisoryDistroPackage(BaseModel):
             "license": obj.get("license"),
             "name": obj.get("name"),
             "secFixes": [AdvisorySecFix.from_dict(_item) for _item in obj["secFixes"]] if obj.get("secFixes") is not None else None,
+            "source_name": obj.get("source_name"),
             "versions": [AdvisoryDistroVersion.from_dict(_item) for _item in obj["versions"]] if obj.get("versions") is not None else None
         })
         return _obj

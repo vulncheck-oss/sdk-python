@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **rejected_reasons** | [**List[AdvisoryMDescriptions]**](AdvisoryMDescriptions.md) | Fields below appear only on rejected records (cveMetadata.state &#x3D;&#x3D; \&quot;REJECTED\&quot;). | [optional] 
 **replaced_by** | **List[str]** |  | [optional] 
 **solutions** | [**List[AdvisoryMDescriptions]**](AdvisoryMDescriptions.md) |  | [optional] 
-**source** | **List[int]** |  | [optional] 
+**source** | **object** |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
 **taxonomy_mappings** | [**List[AdvisoryTaxonomyMapping]**](AdvisoryTaxonomyMapping.md) |  | [optional] 
 **timeline** | [**List[AdvisoryTimeline]**](AdvisoryTimeline.md) |  | [optional] 

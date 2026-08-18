@@ -7,6 +7,7 @@ api.Fingerprint
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cpe** | **str** |  | [optional] 
+**cves** | [**List[ApiCVEConfirmed]**](ApiCVEConfirmed.md) | CVEs attributed to this specific fingerprint&#39;s CPE. | [optional] 
 **product** | **str** |  | [optional] 
 **vendor** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
