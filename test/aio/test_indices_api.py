@@ -2239,6 +2239,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """
         pass
 
+    async def test_index_nist_nvd2_cvehist_get(self) -> None:
+        """Test case for index_nist_nvd2_cvehist_get
+
+        Return vulnerability data stored in index \"nist-nvd2-cvehist\"
+        """
+        pass
+
     async def test_index_nist_nvd2_get(self) -> None:
         """Test case for index_nist_nvd2_get
 

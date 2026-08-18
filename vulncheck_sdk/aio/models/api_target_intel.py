@@ -18,10 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.api_cve_confirmed import ApiCVEConfirmed
 from vulncheck_sdk.aio.models.api_fingerprint import ApiFingerprint
+from vulncheck_sdk.aio.models.api_target_intel_summary import ApiTargetIntelSummary
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,12 +34,12 @@ class ApiTargetIntel(BaseModel):
     as_name: Optional[StrictStr] = None
     asn: Optional[StrictStr] = None
     classifications: Optional[List[StrictStr]] = None
-    contains_cve: Optional[StrictBool] = None
+    contains_cve: Optional[StrictBool] = Field(default=None, description="Deprecated: use Summary.ContainsCVE instead.")
     country: Optional[StrictStr] = None
     country_code: Optional[StrictStr] = None
     cpe: Optional[List[StrictStr]] = None
-    cve: Optional[List[StrictStr]] = None
-    cve_confirmed: Optional[List[ApiCVEConfirmed]] = None
+    cve: Optional[List[StrictStr]] = Field(default=None, description="Deprecated: use Fingerprints[].CVEs for per-fingerprint attribution, or Summary for the aggregate count.")
+    cve_confirmed: Optional[List[ApiCVEConfirmed]] = Field(default=None, description="Deprecated: use Fingerprints[].CVEs for per-fingerprint attribution, or Summary for the aggregate confirmed count.")
     date_added: Optional[StrictStr] = None
     fingerprints: Optional[List[ApiFingerprint]] = None
     hostname: Optional[StrictStr] = None
@@ -47,11 +48,12 @@ class ApiTargetIntel(BaseModel):
     port: Optional[StrictInt] = None
     product: Optional[List[StrictStr]] = None
     protocol: Optional[StrictStr] = None
+    summary: Optional[ApiTargetIntelSummary] = None
     timestamp: Optional[StrictStr] = None
     transport: Optional[StrictStr] = None
     vendor: Optional[List[StrictStr]] = None
     version: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["as_domain", "as_name", "asn", "classifications", "contains_cve", "country", "country_code", "cpe", "cve", "cve_confirmed", "date_added", "fingerprints", "hostname", "ip", "metadata", "port", "product", "protocol", "timestamp", "transport", "vendor", "version"]
+    __properties: ClassVar[List[str]] = ["as_domain", "as_name", "asn", "classifications", "contains_cve", "country", "country_code", "cpe", "cve", "cve_confirmed", "date_added", "fingerprints", "hostname", "ip", "metadata", "port", "product", "protocol", "summary", "timestamp", "transport", "vendor", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,6 +108,9 @@ class ApiTargetIntel(BaseModel):
                 if _item_fingerprints:
                     _items.append(_item_fingerprints.to_dict())
             _dict['fingerprints'] = _items
+        # override the default output from pydantic by calling `to_dict()` of summary
+        if self.summary:
+            _dict['summary'] = self.summary.to_dict()
         return _dict
 
     @classmethod
@@ -136,6 +141,7 @@ class ApiTargetIntel(BaseModel):
             "port": obj.get("port"),
             "product": obj.get("product"),
             "protocol": obj.get("protocol"),
+            "summary": ApiTargetIntelSummary.from_dict(obj["summary"]) if obj.get("summary") is not None else None,
             "timestamp": obj.get("timestamp"),
             "transport": obj.get("transport"),
             "vendor": obj.get("vendor"),

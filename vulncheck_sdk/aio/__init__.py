@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.52"
+__version__ = "0.0.53"
 
 # Define package exports
 __all__ = [
@@ -857,20 +857,35 @@ __all__ = [
     "ApiMitreDetectionTech",
     "ApiMitreMitigation2D3fendMapping",
     "ApiMitreMitigationTech",
+    "ApiNVD20Affected",
+    "ApiNVD20AffectedProduct",
+    "ApiNVD20AffectedProgramRoutine",
+    "ApiNVD20AffectedVersion",
+    "ApiNVD20AffectedVersionChange",
     "ApiNVD20CPEMatch",
     "ApiNVD20CPEName",
     "ApiNVD20CVE",
     "ApiNVD20CVEExtended",
+    "ApiNVD20CVETag",
+    "ApiNVD20Change",
     "ApiNVD20CvssDataV2",
     "ApiNVD20CvssDataV3",
     "ApiNVD20CvssMetricV2",
     "ApiNVD20CvssMetricV3",
     "ApiNVD20CvssMetricV40",
     "ApiNVD20Description",
+    "ApiNVD20DetailsExtended",
     "ApiNVD20Metric",
     "ApiNVD20MetricExtended",
     "ApiNVD20Reference",
     "ApiNVD20ReferenceExtended",
+    "ApiNVD20SsvcDataV203",
+    "ApiNVD20SsvcDecisionPoint",
+    "ApiNVD20SsvcDecisionPointChild",
+    "ApiNVD20SsvcDecisionPointOption",
+    "ApiNVD20SsvcDecisionTree",
+    "ApiNVD20SsvcMetricV203",
+    "ApiNVD20SsvcOption",
     "ApiNVD20TemporalAssociatedBaseMetric",
     "ApiNVD20TemporalCVSSV2",
     "ApiNVD20TemporalCVSSV3",
@@ -904,6 +919,7 @@ __all__ = [
     "ApiRelatedAttackPattern",
     "ApiSSVC",
     "ApiTargetIntel",
+    "ApiTargetIntelSummary",
     "ApiTemporalCVSSV2",
     "ApiTemporalCVSSV3",
     "ApiTemporalMetricV2",
@@ -1400,6 +1416,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayApiNVD20CPEMatchPaginatePagination",
     "RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination",
     "RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination",
+    "RenderResponseWithMetadataArrayApiNVD20ChangePaginatePagination",
     "RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination",
     "RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination",
     "RenderResponseWithMetadataArrayApiUpdatePaginatePagination",
@@ -2269,20 +2286,35 @@ from vulncheck_sdk.aio.models.api_mitre_d3fend_technique import ApiMitreD3fendTe
 from vulncheck_sdk.aio.models.api_mitre_detection_tech import ApiMitreDetectionTech as ApiMitreDetectionTech
 from vulncheck_sdk.aio.models.api_mitre_mitigation2_d3fend_mapping import ApiMitreMitigation2D3fendMapping as ApiMitreMitigation2D3fendMapping
 from vulncheck_sdk.aio.models.api_mitre_mitigation_tech import ApiMitreMitigationTech as ApiMitreMitigationTech
+from vulncheck_sdk.aio.models.api_nvd20_affected import ApiNVD20Affected as ApiNVD20Affected
+from vulncheck_sdk.aio.models.api_nvd20_affected_product import ApiNVD20AffectedProduct as ApiNVD20AffectedProduct
+from vulncheck_sdk.aio.models.api_nvd20_affected_program_routine import ApiNVD20AffectedProgramRoutine as ApiNVD20AffectedProgramRoutine
+from vulncheck_sdk.aio.models.api_nvd20_affected_version import ApiNVD20AffectedVersion as ApiNVD20AffectedVersion
+from vulncheck_sdk.aio.models.api_nvd20_affected_version_change import ApiNVD20AffectedVersionChange as ApiNVD20AffectedVersionChange
 from vulncheck_sdk.aio.models.api_nvd20_cpe_match import ApiNVD20CPEMatch as ApiNVD20CPEMatch
 from vulncheck_sdk.aio.models.api_nvd20_cpe_name import ApiNVD20CPEName as ApiNVD20CPEName
 from vulncheck_sdk.aio.models.api_nvd20_cve import ApiNVD20CVE as ApiNVD20CVE
 from vulncheck_sdk.aio.models.api_nvd20_cve_extended import ApiNVD20CVEExtended as ApiNVD20CVEExtended
+from vulncheck_sdk.aio.models.api_nvd20_cve_tag import ApiNVD20CVETag as ApiNVD20CVETag
+from vulncheck_sdk.aio.models.api_nvd20_change import ApiNVD20Change as ApiNVD20Change
 from vulncheck_sdk.aio.models.api_nvd20_cvss_data_v2 import ApiNVD20CvssDataV2 as ApiNVD20CvssDataV2
 from vulncheck_sdk.aio.models.api_nvd20_cvss_data_v3 import ApiNVD20CvssDataV3 as ApiNVD20CvssDataV3
 from vulncheck_sdk.aio.models.api_nvd20_cvss_metric_v2 import ApiNVD20CvssMetricV2 as ApiNVD20CvssMetricV2
 from vulncheck_sdk.aio.models.api_nvd20_cvss_metric_v3 import ApiNVD20CvssMetricV3 as ApiNVD20CvssMetricV3
 from vulncheck_sdk.aio.models.api_nvd20_cvss_metric_v40 import ApiNVD20CvssMetricV40 as ApiNVD20CvssMetricV40
 from vulncheck_sdk.aio.models.api_nvd20_description import ApiNVD20Description as ApiNVD20Description
+from vulncheck_sdk.aio.models.api_nvd20_details_extended import ApiNVD20DetailsExtended as ApiNVD20DetailsExtended
 from vulncheck_sdk.aio.models.api_nvd20_metric import ApiNVD20Metric as ApiNVD20Metric
 from vulncheck_sdk.aio.models.api_nvd20_metric_extended import ApiNVD20MetricExtended as ApiNVD20MetricExtended
 from vulncheck_sdk.aio.models.api_nvd20_reference import ApiNVD20Reference as ApiNVD20Reference
 from vulncheck_sdk.aio.models.api_nvd20_reference_extended import ApiNVD20ReferenceExtended as ApiNVD20ReferenceExtended
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_data_v203 import ApiNVD20SsvcDataV203 as ApiNVD20SsvcDataV203
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_decision_point import ApiNVD20SsvcDecisionPoint as ApiNVD20SsvcDecisionPoint
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_decision_point_child import ApiNVD20SsvcDecisionPointChild as ApiNVD20SsvcDecisionPointChild
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_decision_point_option import ApiNVD20SsvcDecisionPointOption as ApiNVD20SsvcDecisionPointOption
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_decision_tree import ApiNVD20SsvcDecisionTree as ApiNVD20SsvcDecisionTree
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_metric_v203 import ApiNVD20SsvcMetricV203 as ApiNVD20SsvcMetricV203
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_option import ApiNVD20SsvcOption as ApiNVD20SsvcOption
 from vulncheck_sdk.aio.models.api_nvd20_temporal_associated_base_metric import ApiNVD20TemporalAssociatedBaseMetric as ApiNVD20TemporalAssociatedBaseMetric
 from vulncheck_sdk.aio.models.api_nvd20_temporal_cvssv2 import ApiNVD20TemporalCVSSV2 as ApiNVD20TemporalCVSSV2
 from vulncheck_sdk.aio.models.api_nvd20_temporal_cvssv3 import ApiNVD20TemporalCVSSV3 as ApiNVD20TemporalCVSSV3
@@ -2316,6 +2348,7 @@ from vulncheck_sdk.aio.models.api_references_extended import ApiReferencesExtend
 from vulncheck_sdk.aio.models.api_related_attack_pattern import ApiRelatedAttackPattern as ApiRelatedAttackPattern
 from vulncheck_sdk.aio.models.api_ssvc import ApiSSVC as ApiSSVC
 from vulncheck_sdk.aio.models.api_target_intel import ApiTargetIntel as ApiTargetIntel
+from vulncheck_sdk.aio.models.api_target_intel_summary import ApiTargetIntelSummary as ApiTargetIntelSummary
 from vulncheck_sdk.aio.models.api_temporal_cvssv2 import ApiTemporalCVSSV2 as ApiTemporalCVSSV2
 from vulncheck_sdk.aio.models.api_temporal_cvssv3 import ApiTemporalCVSSV3 as ApiTemporalCVSSV3
 from vulncheck_sdk.aio.models.api_temporal_metric_v2 import ApiTemporalMetricV2 as ApiTemporalMetricV2
@@ -2812,6 +2845,7 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_mitre_atta
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_nvd20_cpe_match_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CPEMatchPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CPEMatchPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_nvd20_cve_extended_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_nvd20_cve_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_nvd20_change_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20ChangePaginatePagination as RenderResponseWithMetadataArrayApiNVD20ChangePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_oss_package_paginate_pagination import RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination as RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_target_intel_paginate_pagination import RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination as RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_update_paginate_pagination import RenderResponseWithMetadataArrayApiUpdatePaginatePagination as RenderResponseWithMetadataArrayApiUpdatePaginatePagination

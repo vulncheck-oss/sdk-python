@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **reported_exploited_by_vulncheck_canaries** | **bool** |  | [optional] 
 **required_action** | **str** |  | [optional] 
 **short_description** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
 **vendor_project** | **str** |  | [optional] 
 **vulncheck_reported_exploitation** | [**List[AdvisoryReportedExploit]**](AdvisoryReportedExploit.md) |  | [optional] 
 **vulncheck_xdb** | [**List[AdvisoryXDB]**](AdvisoryXDB.md) |  | [optional] 

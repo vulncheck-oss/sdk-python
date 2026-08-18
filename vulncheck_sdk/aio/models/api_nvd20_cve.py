@@ -21,6 +21,8 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.advisory_nvd20_configuration import AdvisoryNVD20Configuration
+from vulncheck_sdk.aio.models.api_nvd20_affected import ApiNVD20Affected
+from vulncheck_sdk.aio.models.api_nvd20_cve_tag import ApiNVD20CVETag
 from vulncheck_sdk.aio.models.api_nvd20_description import ApiNVD20Description
 from vulncheck_sdk.aio.models.api_nvd20_metric import ApiNVD20Metric
 from vulncheck_sdk.aio.models.api_nvd20_reference import ApiNVD20Reference
@@ -33,11 +35,13 @@ class ApiNVD20CVE(BaseModel):
     """
     api.NVD20CVE
     """ # noqa: E501
+    affected: Optional[List[ApiNVD20Affected]] = None
     cisa_action_due: Optional[StrictStr] = Field(default=None, alias="cisaActionDue")
     cisa_exploit_add: Optional[StrictStr] = Field(default=None, alias="cisaExploitAdd")
     cisa_required_action: Optional[StrictStr] = Field(default=None, alias="cisaRequiredAction")
     cisa_vulnerability_name: Optional[StrictStr] = Field(default=None, alias="cisaVulnerabilityName")
     configurations: Optional[List[AdvisoryNVD20Configuration]] = None
+    cve_tags: Optional[List[ApiNVD20CVETag]] = Field(default=None, alias="cveTags")
     descriptions: Optional[List[ApiNVD20Description]] = None
     evaluator_comment: Optional[StrictStr] = Field(default=None, alias="evaluatorComment")
     evaluator_impact: Optional[StrictStr] = Field(default=None, alias="evaluatorImpact")
@@ -53,7 +57,7 @@ class ApiNVD20CVE(BaseModel):
     vendor_comments: Optional[List[ApiNVD20VendorComment]] = Field(default=None, alias="vendorComments")
     vuln_status: Optional[StrictStr] = Field(default=None, alias="vulnStatus")
     weaknesses: Optional[List[ApiNVD20Weakness]] = None
-    __properties: ClassVar[List[str]] = ["cisaActionDue", "cisaExploitAdd", "cisaRequiredAction", "cisaVulnerabilityName", "configurations", "descriptions", "evaluatorComment", "evaluatorImpact", "evaluatorSolution", "id", "lastModified", "metrics", "published", "references", "sourceIdentifier", "vcConfigurations", "vcVulnerableCPEs", "vendorComments", "vulnStatus", "weaknesses"]
+    __properties: ClassVar[List[str]] = ["affected", "cisaActionDue", "cisaExploitAdd", "cisaRequiredAction", "cisaVulnerabilityName", "configurations", "cveTags", "descriptions", "evaluatorComment", "evaluatorImpact", "evaluatorSolution", "id", "lastModified", "metrics", "published", "references", "sourceIdentifier", "vcConfigurations", "vcVulnerableCPEs", "vendorComments", "vulnStatus", "weaknesses"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +98,13 @@ class ApiNVD20CVE(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in affected (list)
+        _items = []
+        if self.affected:
+            for _item_affected in self.affected:
+                if _item_affected:
+                    _items.append(_item_affected.to_dict())
+            _dict['affected'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in configurations (list)
         _items = []
         if self.configurations:
@@ -101,6 +112,13 @@ class ApiNVD20CVE(BaseModel):
                 if _item_configurations:
                     _items.append(_item_configurations.to_dict())
             _dict['configurations'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in cve_tags (list)
+        _items = []
+        if self.cve_tags:
+            for _item_cve_tags in self.cve_tags:
+                if _item_cve_tags:
+                    _items.append(_item_cve_tags.to_dict())
+            _dict['cveTags'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in descriptions (list)
         _items = []
         if self.descriptions:
@@ -151,11 +169,13 @@ class ApiNVD20CVE(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "affected": [ApiNVD20Affected.from_dict(_item) for _item in obj["affected"]] if obj.get("affected") is not None else None,
             "cisaActionDue": obj.get("cisaActionDue"),
             "cisaExploitAdd": obj.get("cisaExploitAdd"),
             "cisaRequiredAction": obj.get("cisaRequiredAction"),
             "cisaVulnerabilityName": obj.get("cisaVulnerabilityName"),
             "configurations": [AdvisoryNVD20Configuration.from_dict(_item) for _item in obj["configurations"]] if obj.get("configurations") is not None else None,
+            "cveTags": [ApiNVD20CVETag.from_dict(_item) for _item in obj["cveTags"]] if obj.get("cveTags") is not None else None,
             "descriptions": [ApiNVD20Description.from_dict(_item) for _item in obj["descriptions"]] if obj.get("descriptions") is not None else None,
             "evaluatorComment": obj.get("evaluatorComment"),
             "evaluatorImpact": obj.get("evaluatorImpact"),

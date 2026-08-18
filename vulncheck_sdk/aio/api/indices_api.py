@@ -489,6 +489,7 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_mitre_atta
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_nvd20_cpe_match_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CPEMatchPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_nvd20_cve_extended_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_nvd20_cve_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_nvd20_change_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20ChangePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_oss_package_paginate_pagination import RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_target_intel_paginate_pagination import RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_update_paginate_pagination import RenderResponseWithMetadataArrayApiUpdatePaginatePagination
@@ -210347,6 +210348,669 @@ class IndicesApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/v3/index/nist-nvd2-cpematch',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    async def index_nist_nvd2_cvehist_get(
+        self,
+        page: Annotated[Optional[StrictInt], Field(description="set the page number of the response")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="limit the number of findings in the response")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="continue server-side paging using a cursor id")] = None,
+        start_cursor: Annotated[Optional[StrictStr], Field(description="request server-side paging")] = None,
+        order: Annotated[Optional[StrictStr], Field(description="direction of the sort")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="field by which to sort the results")] = None,
+        cve: Annotated[Optional[StrictStr], Field(description="Specify a CVE ID to search with.")] = None,
+        alias: Annotated[Optional[StrictStr], Field(description="Specify a vulnerability alias to search with.")] = None,
+        iava: Annotated[Optional[StrictStr], Field(description="Specify an IAVA ID to search with.")] = None,
+        jvndb: Annotated[Optional[StrictStr], Field(description="Specify a JVNDB ID to search with.")] = None,
+        ilvn: Annotated[Optional[StrictStr], Field(description="Specify an ILVN ID to search with.")] = None,
+        threat_actor: Annotated[Optional[StrictStr], Field(description="Specify a threat actor name to search with.")] = None,
+        mitre_id: Annotated[Optional[StrictStr], Field(description="Specify a MITRE ID to search with.")] = None,
+        misp_id: Annotated[Optional[StrictStr], Field(description="Specify a MISP ID to search with.")] = None,
+        ransomware: Annotated[Optional[StrictStr], Field(description="Specify a ransomeware family name to search with.")] = None,
+        botnet: Annotated[Optional[StrictStr], Field(description="Specify a botnet name to search with.")] = None,
+        published: Annotated[Optional[StrictStr], Field(description="Specify a published date")] = None,
+        date: Annotated[Optional[StrictStr], Field(description="Specify an exact published date to filter with.")] = None,
+        updated_at_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting 'updated-at' date to filter with.")] = None,
+        updated_at_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending 'updated-at' date to filter with.")] = None,
+        last_mod_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting last modified date to filter with.")] = None,
+        last_mod_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending last modified date to filter with.")] = None,
+        pub_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting published date to filter with.")] = None,
+        pub_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending published date to filter with.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RenderResponseWithMetadataArrayApiNVD20ChangePaginatePagination:
+        """Return vulnerability data stored in index \"nist-nvd2-cvehist\"
+
+        ### Overview This endpoint allows you to retrieve a paginated list of all documents from the nist-nvd2-cvehist index. \\ By default, a maximum of 100 documents are shown per page.  **Index Description:** Change History of NIST NVD 2.0 CVE Data  ### Paging Over Large Data (cursor) In order to allow users to iterate over large index datasets, this endpoint provides a server-side \"cursor\" mechanism. To use the cursor, first call `GET /index/nist-nvd2-cvehist?start_cursor`, the response will have a `next_cursor` id that clients will need to pass as a query parameter to the next request like `GET /index/nist-nvd2-cvehist?cursor=<next_cursor_id>` 
+
+        :param page: set the page number of the response
+        :type page: int
+        :param limit: limit the number of findings in the response
+        :type limit: int
+        :param cursor: continue server-side paging using a cursor id
+        :type cursor: str
+        :param start_cursor: request server-side paging
+        :type start_cursor: str
+        :param order: direction of the sort
+        :type order: str
+        :param sort: field by which to sort the results
+        :type sort: str
+        :param cve: Specify a CVE ID to search with.
+        :type cve: str
+        :param alias: Specify a vulnerability alias to search with.
+        :type alias: str
+        :param iava: Specify an IAVA ID to search with.
+        :type iava: str
+        :param jvndb: Specify a JVNDB ID to search with.
+        :type jvndb: str
+        :param ilvn: Specify an ILVN ID to search with.
+        :type ilvn: str
+        :param threat_actor: Specify a threat actor name to search with.
+        :type threat_actor: str
+        :param mitre_id: Specify a MITRE ID to search with.
+        :type mitre_id: str
+        :param misp_id: Specify a MISP ID to search with.
+        :type misp_id: str
+        :param ransomware: Specify a ransomeware family name to search with.
+        :type ransomware: str
+        :param botnet: Specify a botnet name to search with.
+        :type botnet: str
+        :param published: Specify a published date
+        :type published: str
+        :param date: Specify an exact published date to filter with.
+        :type date: str
+        :param updated_at_start_date: Specify a starting 'updated-at' date to filter with.
+        :type updated_at_start_date: str
+        :param updated_at_end_date: Specify an ending 'updated-at' date to filter with.
+        :type updated_at_end_date: str
+        :param last_mod_start_date: Specify a starting last modified date to filter with.
+        :type last_mod_start_date: str
+        :param last_mod_end_date: Specify an ending last modified date to filter with.
+        :type last_mod_end_date: str
+        :param pub_start_date: Specify a starting published date to filter with.
+        :type pub_start_date: str
+        :param pub_end_date: Specify an ending published date to filter with.
+        :type pub_end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._index_nist_nvd2_cvehist_get_serialize(
+            page=page,
+            limit=limit,
+            cursor=cursor,
+            start_cursor=start_cursor,
+            order=order,
+            sort=sort,
+            cve=cve,
+            alias=alias,
+            iava=iava,
+            jvndb=jvndb,
+            ilvn=ilvn,
+            threat_actor=threat_actor,
+            mitre_id=mitre_id,
+            misp_id=misp_id,
+            ransomware=ransomware,
+            botnet=botnet,
+            published=published,
+            date=date,
+            updated_at_start_date=updated_at_start_date,
+            updated_at_end_date=updated_at_end_date,
+            last_mod_start_date=last_mod_start_date,
+            last_mod_end_date=last_mod_end_date,
+            pub_start_date=pub_start_date,
+            pub_end_date=pub_end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RenderResponseWithMetadataArrayApiNVD20ChangePaginatePagination",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    async def index_nist_nvd2_cvehist_get_with_http_info(
+        self,
+        page: Annotated[Optional[StrictInt], Field(description="set the page number of the response")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="limit the number of findings in the response")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="continue server-side paging using a cursor id")] = None,
+        start_cursor: Annotated[Optional[StrictStr], Field(description="request server-side paging")] = None,
+        order: Annotated[Optional[StrictStr], Field(description="direction of the sort")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="field by which to sort the results")] = None,
+        cve: Annotated[Optional[StrictStr], Field(description="Specify a CVE ID to search with.")] = None,
+        alias: Annotated[Optional[StrictStr], Field(description="Specify a vulnerability alias to search with.")] = None,
+        iava: Annotated[Optional[StrictStr], Field(description="Specify an IAVA ID to search with.")] = None,
+        jvndb: Annotated[Optional[StrictStr], Field(description="Specify a JVNDB ID to search with.")] = None,
+        ilvn: Annotated[Optional[StrictStr], Field(description="Specify an ILVN ID to search with.")] = None,
+        threat_actor: Annotated[Optional[StrictStr], Field(description="Specify a threat actor name to search with.")] = None,
+        mitre_id: Annotated[Optional[StrictStr], Field(description="Specify a MITRE ID to search with.")] = None,
+        misp_id: Annotated[Optional[StrictStr], Field(description="Specify a MISP ID to search with.")] = None,
+        ransomware: Annotated[Optional[StrictStr], Field(description="Specify a ransomeware family name to search with.")] = None,
+        botnet: Annotated[Optional[StrictStr], Field(description="Specify a botnet name to search with.")] = None,
+        published: Annotated[Optional[StrictStr], Field(description="Specify a published date")] = None,
+        date: Annotated[Optional[StrictStr], Field(description="Specify an exact published date to filter with.")] = None,
+        updated_at_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting 'updated-at' date to filter with.")] = None,
+        updated_at_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending 'updated-at' date to filter with.")] = None,
+        last_mod_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting last modified date to filter with.")] = None,
+        last_mod_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending last modified date to filter with.")] = None,
+        pub_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting published date to filter with.")] = None,
+        pub_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending published date to filter with.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> ApiResponse[RenderResponseWithMetadataArrayApiNVD20ChangePaginatePagination]:
+        """Return vulnerability data stored in index \"nist-nvd2-cvehist\"
+
+        ### Overview This endpoint allows you to retrieve a paginated list of all documents from the nist-nvd2-cvehist index. \\ By default, a maximum of 100 documents are shown per page.  **Index Description:** Change History of NIST NVD 2.0 CVE Data  ### Paging Over Large Data (cursor) In order to allow users to iterate over large index datasets, this endpoint provides a server-side \"cursor\" mechanism. To use the cursor, first call `GET /index/nist-nvd2-cvehist?start_cursor`, the response will have a `next_cursor` id that clients will need to pass as a query parameter to the next request like `GET /index/nist-nvd2-cvehist?cursor=<next_cursor_id>` 
+
+        :param page: set the page number of the response
+        :type page: int
+        :param limit: limit the number of findings in the response
+        :type limit: int
+        :param cursor: continue server-side paging using a cursor id
+        :type cursor: str
+        :param start_cursor: request server-side paging
+        :type start_cursor: str
+        :param order: direction of the sort
+        :type order: str
+        :param sort: field by which to sort the results
+        :type sort: str
+        :param cve: Specify a CVE ID to search with.
+        :type cve: str
+        :param alias: Specify a vulnerability alias to search with.
+        :type alias: str
+        :param iava: Specify an IAVA ID to search with.
+        :type iava: str
+        :param jvndb: Specify a JVNDB ID to search with.
+        :type jvndb: str
+        :param ilvn: Specify an ILVN ID to search with.
+        :type ilvn: str
+        :param threat_actor: Specify a threat actor name to search with.
+        :type threat_actor: str
+        :param mitre_id: Specify a MITRE ID to search with.
+        :type mitre_id: str
+        :param misp_id: Specify a MISP ID to search with.
+        :type misp_id: str
+        :param ransomware: Specify a ransomeware family name to search with.
+        :type ransomware: str
+        :param botnet: Specify a botnet name to search with.
+        :type botnet: str
+        :param published: Specify a published date
+        :type published: str
+        :param date: Specify an exact published date to filter with.
+        :type date: str
+        :param updated_at_start_date: Specify a starting 'updated-at' date to filter with.
+        :type updated_at_start_date: str
+        :param updated_at_end_date: Specify an ending 'updated-at' date to filter with.
+        :type updated_at_end_date: str
+        :param last_mod_start_date: Specify a starting last modified date to filter with.
+        :type last_mod_start_date: str
+        :param last_mod_end_date: Specify an ending last modified date to filter with.
+        :type last_mod_end_date: str
+        :param pub_start_date: Specify a starting published date to filter with.
+        :type pub_start_date: str
+        :param pub_end_date: Specify an ending published date to filter with.
+        :type pub_end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._index_nist_nvd2_cvehist_get_serialize(
+            page=page,
+            limit=limit,
+            cursor=cursor,
+            start_cursor=start_cursor,
+            order=order,
+            sort=sort,
+            cve=cve,
+            alias=alias,
+            iava=iava,
+            jvndb=jvndb,
+            ilvn=ilvn,
+            threat_actor=threat_actor,
+            mitre_id=mitre_id,
+            misp_id=misp_id,
+            ransomware=ransomware,
+            botnet=botnet,
+            published=published,
+            date=date,
+            updated_at_start_date=updated_at_start_date,
+            updated_at_end_date=updated_at_end_date,
+            last_mod_start_date=last_mod_start_date,
+            last_mod_end_date=last_mod_end_date,
+            pub_start_date=pub_start_date,
+            pub_end_date=pub_end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RenderResponseWithMetadataArrayApiNVD20ChangePaginatePagination",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    async def index_nist_nvd2_cvehist_get_without_preload_content(
+        self,
+        page: Annotated[Optional[StrictInt], Field(description="set the page number of the response")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="limit the number of findings in the response")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="continue server-side paging using a cursor id")] = None,
+        start_cursor: Annotated[Optional[StrictStr], Field(description="request server-side paging")] = None,
+        order: Annotated[Optional[StrictStr], Field(description="direction of the sort")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="field by which to sort the results")] = None,
+        cve: Annotated[Optional[StrictStr], Field(description="Specify a CVE ID to search with.")] = None,
+        alias: Annotated[Optional[StrictStr], Field(description="Specify a vulnerability alias to search with.")] = None,
+        iava: Annotated[Optional[StrictStr], Field(description="Specify an IAVA ID to search with.")] = None,
+        jvndb: Annotated[Optional[StrictStr], Field(description="Specify a JVNDB ID to search with.")] = None,
+        ilvn: Annotated[Optional[StrictStr], Field(description="Specify an ILVN ID to search with.")] = None,
+        threat_actor: Annotated[Optional[StrictStr], Field(description="Specify a threat actor name to search with.")] = None,
+        mitre_id: Annotated[Optional[StrictStr], Field(description="Specify a MITRE ID to search with.")] = None,
+        misp_id: Annotated[Optional[StrictStr], Field(description="Specify a MISP ID to search with.")] = None,
+        ransomware: Annotated[Optional[StrictStr], Field(description="Specify a ransomeware family name to search with.")] = None,
+        botnet: Annotated[Optional[StrictStr], Field(description="Specify a botnet name to search with.")] = None,
+        published: Annotated[Optional[StrictStr], Field(description="Specify a published date")] = None,
+        date: Annotated[Optional[StrictStr], Field(description="Specify an exact published date to filter with.")] = None,
+        updated_at_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting 'updated-at' date to filter with.")] = None,
+        updated_at_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending 'updated-at' date to filter with.")] = None,
+        last_mod_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting last modified date to filter with.")] = None,
+        last_mod_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending last modified date to filter with.")] = None,
+        pub_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting published date to filter with.")] = None,
+        pub_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending published date to filter with.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
+    ) -> RESTResponseType:
+        """Return vulnerability data stored in index \"nist-nvd2-cvehist\"
+
+        ### Overview This endpoint allows you to retrieve a paginated list of all documents from the nist-nvd2-cvehist index. \\ By default, a maximum of 100 documents are shown per page.  **Index Description:** Change History of NIST NVD 2.0 CVE Data  ### Paging Over Large Data (cursor) In order to allow users to iterate over large index datasets, this endpoint provides a server-side \"cursor\" mechanism. To use the cursor, first call `GET /index/nist-nvd2-cvehist?start_cursor`, the response will have a `next_cursor` id that clients will need to pass as a query parameter to the next request like `GET /index/nist-nvd2-cvehist?cursor=<next_cursor_id>` 
+
+        :param page: set the page number of the response
+        :type page: int
+        :param limit: limit the number of findings in the response
+        :type limit: int
+        :param cursor: continue server-side paging using a cursor id
+        :type cursor: str
+        :param start_cursor: request server-side paging
+        :type start_cursor: str
+        :param order: direction of the sort
+        :type order: str
+        :param sort: field by which to sort the results
+        :type sort: str
+        :param cve: Specify a CVE ID to search with.
+        :type cve: str
+        :param alias: Specify a vulnerability alias to search with.
+        :type alias: str
+        :param iava: Specify an IAVA ID to search with.
+        :type iava: str
+        :param jvndb: Specify a JVNDB ID to search with.
+        :type jvndb: str
+        :param ilvn: Specify an ILVN ID to search with.
+        :type ilvn: str
+        :param threat_actor: Specify a threat actor name to search with.
+        :type threat_actor: str
+        :param mitre_id: Specify a MITRE ID to search with.
+        :type mitre_id: str
+        :param misp_id: Specify a MISP ID to search with.
+        :type misp_id: str
+        :param ransomware: Specify a ransomeware family name to search with.
+        :type ransomware: str
+        :param botnet: Specify a botnet name to search with.
+        :type botnet: str
+        :param published: Specify a published date
+        :type published: str
+        :param date: Specify an exact published date to filter with.
+        :type date: str
+        :param updated_at_start_date: Specify a starting 'updated-at' date to filter with.
+        :type updated_at_start_date: str
+        :param updated_at_end_date: Specify an ending 'updated-at' date to filter with.
+        :type updated_at_end_date: str
+        :param last_mod_start_date: Specify a starting last modified date to filter with.
+        :type last_mod_start_date: str
+        :param last_mod_end_date: Specify an ending last modified date to filter with.
+        :type last_mod_end_date: str
+        :param pub_start_date: Specify a starting published date to filter with.
+        :type pub_start_date: str
+        :param pub_end_date: Specify an ending published date to filter with.
+        :type pub_end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._index_nist_nvd2_cvehist_get_serialize(
+            page=page,
+            limit=limit,
+            cursor=cursor,
+            start_cursor=start_cursor,
+            order=order,
+            sort=sort,
+            cve=cve,
+            alias=alias,
+            iava=iava,
+            jvndb=jvndb,
+            ilvn=ilvn,
+            threat_actor=threat_actor,
+            mitre_id=mitre_id,
+            misp_id=misp_id,
+            ransomware=ransomware,
+            botnet=botnet,
+            published=published,
+            date=date,
+            updated_at_start_date=updated_at_start_date,
+            updated_at_end_date=updated_at_end_date,
+            last_mod_start_date=last_mod_start_date,
+            last_mod_end_date=last_mod_end_date,
+            pub_start_date=pub_start_date,
+            pub_end_date=pub_end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RenderResponseWithMetadataArrayApiNVD20ChangePaginatePagination",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _index_nist_nvd2_cvehist_get_serialize(
+        self,
+        page,
+        limit,
+        cursor,
+        start_cursor,
+        order,
+        sort,
+        cve,
+        alias,
+        iava,
+        jvndb,
+        ilvn,
+        threat_actor,
+        mitre_id,
+        misp_id,
+        ransomware,
+        botnet,
+        published,
+        date,
+        updated_at_start_date,
+        updated_at_end_date,
+        last_mod_start_date,
+        last_mod_end_date,
+        pub_start_date,
+        pub_end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _hosts = [
+            'https://api.vulncheck.com'
+        ]
+        _host = _hosts[_host_index]
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if cursor is not None:
+            
+            _query_params.append(('cursor', cursor))
+            
+        if start_cursor is not None:
+            
+            _query_params.append(('start_cursor', start_cursor))
+            
+        if order is not None:
+            
+            _query_params.append(('order', order))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
+        if cve is not None:
+            
+            _query_params.append(('cve', cve))
+            
+        if alias is not None:
+            
+            _query_params.append(('alias', alias))
+            
+        if iava is not None:
+            
+            _query_params.append(('iava', iava))
+            
+        if jvndb is not None:
+            
+            _query_params.append(('jvndb', jvndb))
+            
+        if ilvn is not None:
+            
+            _query_params.append(('ilvn', ilvn))
+            
+        if threat_actor is not None:
+            
+            _query_params.append(('threat_actor', threat_actor))
+            
+        if mitre_id is not None:
+            
+            _query_params.append(('mitre_id', mitre_id))
+            
+        if misp_id is not None:
+            
+            _query_params.append(('misp_id', misp_id))
+            
+        if ransomware is not None:
+            
+            _query_params.append(('ransomware', ransomware))
+            
+        if botnet is not None:
+            
+            _query_params.append(('botnet', botnet))
+            
+        if published is not None:
+            
+            _query_params.append(('published', published))
+            
+        if date is not None:
+            
+            _query_params.append(('date', date))
+            
+        if updated_at_start_date is not None:
+            
+            _query_params.append(('updatedAtStartDate', updated_at_start_date))
+            
+        if updated_at_end_date is not None:
+            
+            _query_params.append(('updatedAtEndDate', updated_at_end_date))
+            
+        if last_mod_start_date is not None:
+            
+            _query_params.append(('lastModStartDate', last_mod_start_date))
+            
+        if last_mod_end_date is not None:
+            
+            _query_params.append(('lastModEndDate', last_mod_end_date))
+            
+        if pub_start_date is not None:
+            
+            _query_params.append(('pubStartDate', pub_start_date))
+            
+        if pub_end_date is not None:
+            
+            _query_params.append(('pubEndDate', pub_end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'Bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/index/nist-nvd2-cvehist',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.aio.models.api_cve_confirmed import ApiCVEConfirmed
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,10 +29,11 @@ class ApiFingerprint(BaseModel):
     api.Fingerprint
     """ # noqa: E501
     cpe: Optional[StrictStr] = None
+    cves: Optional[List[ApiCVEConfirmed]] = Field(default=None, description="CVEs attributed to this specific fingerprint's CPE.")
     product: Optional[StrictStr] = None
     vendor: Optional[StrictStr] = None
     version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cpe", "product", "vendor", "version"]
+    __properties: ClassVar[List[str]] = ["cpe", "cves", "product", "vendor", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,6 +74,13 @@ class ApiFingerprint(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in cves (list)
+        _items = []
+        if self.cves:
+            for _item_cves in self.cves:
+                if _item_cves:
+                    _items.append(_item_cves.to_dict())
+            _dict['cves'] = _items
         return _dict
 
     @classmethod
@@ -85,6 +94,7 @@ class ApiFingerprint(BaseModel):
 
         _obj = cls.model_validate({
             "cpe": obj.get("cpe"),
+            "cves": [ApiCVEConfirmed.from_dict(_item) for _item in obj["cves"]] if obj.get("cves") is not None else None,
             "product": obj.get("product"),
             "vendor": obj.get("vendor"),
             "version": obj.get("version")

@@ -73,6 +73,49 @@ class TestRenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination(unittest.
                         ], ),
                 data = [
                     vulncheck_sdk.models.api/nvd20_cve.api.NVD20CVE(
+                        affected = [
+                            vulncheck_sdk.models.api/nvd20_affected.api.NVD20Affected(
+                                affected_data = [
+                                    vulncheck_sdk.models.api/nvd20_affected_product.api.NVD20AffectedProduct(
+                                        collection_url = '', 
+                                        cpes = [
+                                            ''
+                                            ], 
+                                        default_status = '', 
+                                        modules = [
+                                            ''
+                                            ], 
+                                        package_name = '', 
+                                        package_url = '', 
+                                        platforms = [
+                                            ''
+                                            ], 
+                                        product = '', 
+                                        program_files = [
+                                            ''
+                                            ], 
+                                        program_routines = [
+                                            vulncheck_sdk.models.api/nvd20_affected_program_routine.api.NVD20AffectedProgramRoutine(
+                                                name = '', )
+                                            ], 
+                                        repo = '', 
+                                        vendor = '', 
+                                        versions = [
+                                            vulncheck_sdk.models.api/nvd20_affected_version.api.NVD20AffectedVersion(
+                                                changes = [
+                                                    vulncheck_sdk.models.api/nvd20_affected_version_change.api.NVD20AffectedVersionChange(
+                                                        at = '', 
+                                                        status = '', )
+                                                    ], 
+                                                less_than = '', 
+                                                less_than_or_equal = '', 
+                                                status = '', 
+                                                version = '', 
+                                                version_type = '', )
+                                            ], )
+                                    ], 
+                                source = '', )
+                            ], 
                         cisa_action_due = '', 
                         cisa_exploit_add = '', 
                         cisa_required_action = '', 
@@ -96,6 +139,13 @@ class TestRenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination(unittest.
                                         operator = '', )
                                     ], 
                                 operator = '', )
+                            ], 
+                        cve_tags = [
+                            vulncheck_sdk.models.api/nvd20_cve_tag.api.NVD20CVETag(
+                                source_identifier = '', 
+                                tags = [
+                                    ''
+                                    ], )
                             ], 
                         descriptions = [
                             vulncheck_sdk.models.api/nvd20_description.api.NVD20Description(
@@ -159,14 +209,60 @@ class TestRenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination(unittest.
                                 vulncheck_sdk.models.api/nvd20_cvss_metric_v40.api.NVD20CvssMetricV40(
                                     source = '', 
                                     type = '', )
+                                ], 
+                            ssvc_v203 = [
+                                vulncheck_sdk.models.api/nvd20_ssvc_metric_v203.api.NVD20SsvcMetricV203(
+                                    source = '', 
+                                    ssvc_data = vulncheck_sdk.models.api/nvd20_ssvc_data_v203.api.NVD20SsvcDataV203(
+                                        __schema = '', 
+                                        computed = '', 
+                                        decision_tree = vulncheck_sdk.models.api/nvd20_ssvc_decision_tree.api.NVD20SsvcDecisionTree(
+                                            decision_points = [
+                                                vulncheck_sdk.models.api/nvd20_ssvc_decision_point.api.NVD20SsvcDecisionPoint(
+                                                    children = [
+                                                        vulncheck_sdk.models.api/nvd20_ssvc_decision_point_child.api.NVD20SsvcDecisionPointChild(
+                                                            key = '', 
+                                                            label = '', )
+                                                        ], 
+                                                    decision_type = '', 
+                                                    key = '', 
+                                                    label = '', 
+                                                    options = [
+                                                        vulncheck_sdk.models.api/nvd20_ssvc_decision_point_option.api.NVD20SsvcDecisionPointOption(
+                                                            color = '', 
+                                                            description = '', 
+                                                            key = '', 
+                                                            label = '', )
+                                                        ], )
+                                                ], 
+                                            decisions_table = [
+                                                [
+                                                    56
+                                                    ]
+                                                ], 
+                                            lang = '', 
+                                            roles = [
+                                                ''
+                                                ], 
+                                            title = '', 
+                                            version = '', ), 
+                                        decision_tree_url = '', 
+                                        generator = '', 
+                                        id = '', 
+                                        options = [
+                                            vulncheck_sdk.models.api/nvd20_ssvc_option.api.NVD20SsvcOption(
+                                                automatable = '', 
+                                                exploitation = '', 
+                                                technical_impact = '', )
+                                            ], 
+                                        role = '', 
+                                        timestamp = '', 
+                                        version = '', ), )
                                 ], ), 
                         published = '', 
                         references = [
                             vulncheck_sdk.models.api/nvd20_reference.api.NVD20Reference(
                                 source = '', 
-                                tags = [
-                                    ''
-                                    ], 
                                 url = '', )
                             ], 
                         source_identifier = '', 

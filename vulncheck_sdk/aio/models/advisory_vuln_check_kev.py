@@ -40,11 +40,12 @@ class AdvisoryVulnCheckKEV(BaseModel):
     reported_exploited_by_vulncheck_canaries: Optional[StrictBool] = None
     required_action: Optional[StrictStr] = None
     short_description: Optional[StrictStr] = Field(default=None, alias="shortDescription")
+    updated_at: Optional[StrictStr] = None
     vendor_project: Optional[StrictStr] = Field(default=None, alias="vendorProject")
     vulncheck_reported_exploitation: Optional[List[AdvisoryReportedExploit]] = None
     vulncheck_xdb: Optional[List[AdvisoryXDB]] = None
     vulnerability_name: Optional[StrictStr] = Field(default=None, alias="vulnerabilityName")
-    __properties: ClassVar[List[str]] = ["_timestamp", "cisa_date_added", "cve", "cwes", "date_added", "dueDate", "knownRansomwareCampaignUse", "product", "reported_exploited_by_vulncheck_canaries", "required_action", "shortDescription", "vendorProject", "vulncheck_reported_exploitation", "vulncheck_xdb", "vulnerabilityName"]
+    __properties: ClassVar[List[str]] = ["_timestamp", "cisa_date_added", "cve", "cwes", "date_added", "dueDate", "knownRansomwareCampaignUse", "product", "reported_exploited_by_vulncheck_canaries", "required_action", "shortDescription", "updated_at", "vendorProject", "vulncheck_reported_exploitation", "vulncheck_xdb", "vulnerabilityName"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -122,6 +123,7 @@ class AdvisoryVulnCheckKEV(BaseModel):
             "reported_exploited_by_vulncheck_canaries": obj.get("reported_exploited_by_vulncheck_canaries"),
             "required_action": obj.get("required_action"),
             "shortDescription": obj.get("shortDescription"),
+            "updated_at": obj.get("updated_at"),
             "vendorProject": obj.get("vendorProject"),
             "vulncheck_reported_exploitation": [AdvisoryReportedExploit.from_dict(_item) for _item in obj["vulncheck_reported_exploitation"]] if obj.get("vulncheck_reported_exploitation") is not None else None,
             "vulncheck_xdb": [AdvisoryXDB.from_dict(_item) for _item in obj["vulncheck_xdb"]] if obj.get("vulncheck_xdb") is not None else None,
