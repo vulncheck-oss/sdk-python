@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.api_cve_confirmed import ApiCVEConfirmed
 from typing import Optional, Set
@@ -30,10 +30,11 @@ class ApiFingerprint(BaseModel):
     """ # noqa: E501
     cpe: Optional[StrictStr] = None
     cves: Optional[List[ApiCVEConfirmed]] = Field(default=None, description="CVEs attributed to this specific fingerprint's CPE.")
+    deprecated: Optional[StrictBool] = Field(default=None, description="Deprecated marks a fingerprint superseded by a newer alias from the same host.")
     product: Optional[StrictStr] = None
     vendor: Optional[StrictStr] = None
     version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cpe", "cves", "product", "vendor", "version"]
+    __properties: ClassVar[List[str]] = ["cpe", "cves", "deprecated", "product", "vendor", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +96,7 @@ class ApiFingerprint(BaseModel):
         _obj = cls.model_validate({
             "cpe": obj.get("cpe"),
             "cves": [ApiCVEConfirmed.from_dict(_item) for _item in obj["cves"]] if obj.get("cves") is not None else None,
+            "deprecated": obj.get("deprecated"),
             "product": obj.get("product"),
             "vendor": obj.get("vendor"),
             "version": obj.get("version")

@@ -42,6 +42,7 @@ class TestAdvisoryVulnCheckPackage(unittest.TestCase):
                 md5 = '',
                 name = '',
                 purl = '',
+                release = '',
                 version = ''
             )
         else:

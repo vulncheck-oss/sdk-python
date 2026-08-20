@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **md5** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **purl** | **str** |  | [optional] 
+**release** | **str** | Release is the rpm release field (the \&quot;-release\&quot; tail of an EVR), when the upstream advisory carries it separately from the version. Distro feeds that backport fixes (SUSE, the RHEL family) pin the fix at the release level with the upstream version unchanged, so a release-aware EVR compare needs this as its own field rather than folded into Version. Empty when the source only provides a bare version. | [optional] 
 **version** | **str** |  | [optional] 
 
 ## Example

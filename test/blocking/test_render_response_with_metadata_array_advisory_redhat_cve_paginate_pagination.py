@@ -116,6 +116,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryRedhatCVEPaginatePagination(uni
                                 md5 = '', 
                                 name = '', 
                                 purl = '', 
+                                release = '', 
                                 version = '', )
                             ], 
                         public_date = '', 

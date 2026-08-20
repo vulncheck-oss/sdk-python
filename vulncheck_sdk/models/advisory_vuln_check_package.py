@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,8 +33,9 @@ class AdvisoryVulnCheckPackage(BaseModel):
     md5: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     purl: Optional[StrictStr] = None
+    release: Optional[StrictStr] = Field(default=None, description="Release is the rpm release field (the \"-release\" tail of an EVR), when the upstream advisory carries it separately from the version. Distro feeds that backport fixes (SUSE, the RHEL family) pin the fix at the release level with the upstream version unchanged, so a release-aware EVR compare needs this as its own field rather than folded into Version. Empty when the source only provides a bare version.")
     version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["arch", "distro", "filename", "md5", "name", "purl", "version"]
+    __properties: ClassVar[List[str]] = ["arch", "distro", "filename", "md5", "name", "purl", "release", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,7 @@ class AdvisoryVulnCheckPackage(BaseModel):
             "md5": obj.get("md5"),
             "name": obj.get("name"),
             "purl": obj.get("purl"),
+            "release": obj.get("release"),
             "version": obj.get("version")
         })
         return _obj
