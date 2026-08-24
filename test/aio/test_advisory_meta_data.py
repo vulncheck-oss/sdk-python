@@ -61,6 +61,7 @@ class TestAdvisoryMetaData(unittest.TestCase):
                         md5 = '', 
                         name = '', 
                         purl = '', 
+                        release = '', 
                         version = '', )
                     ],
                 references = [

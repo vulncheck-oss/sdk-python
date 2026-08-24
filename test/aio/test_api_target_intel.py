@@ -65,6 +65,7 @@ class TestApiTargetIntel(unittest.TestCase):
                                 confirmed = True, 
                                 cve_id = '', )
                             ], 
+                        deprecated = True, 
                         product = '', 
                         vendor = '', 
                         version = '', )

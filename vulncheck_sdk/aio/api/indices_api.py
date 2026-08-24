@@ -113245,6 +113245,10 @@ class IndicesApi:
         ransomware: Annotated[Optional[StrictStr], Field(description="Specify a ransomeware family name to search with.")] = None,
         botnet: Annotated[Optional[StrictStr], Field(description="Specify a botnet name to search with.")] = None,
         published: Annotated[Optional[StrictStr], Field(description="Specify a published date")] = None,
+        max_exploit_maturity: Annotated[Optional[StrictStr], Field(description="Specify the highest exploit maturity reached by any exploit for the record.")] = None,
+        validation_level: Annotated[Optional[StrictStr], Field(description="Specify one or more exploit validation levels (comma-delimited) to search with. A record matches when any of its exploits carries the level.")] = None,
+        in_kev: Annotated[Optional[StrictBool], Field(description="Filter to records that are (true) or are not (false) in the CISA KEV catalog.")] = None,
+        in_vckev: Annotated[Optional[StrictBool], Field(description="Filter to records that are (true) or are not (false) in the VulnCheck KEV catalog.")] = None,
         date: Annotated[Optional[StrictStr], Field(description="Specify an exact published date to filter with.")] = None,
         updated_at_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting 'updated-at' date to filter with.")] = None,
         updated_at_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending 'updated-at' date to filter with.")] = None,
@@ -113303,6 +113307,14 @@ class IndicesApi:
         :type botnet: str
         :param published: Specify a published date
         :type published: str
+        :param max_exploit_maturity: Specify the highest exploit maturity reached by any exploit for the record.
+        :type max_exploit_maturity: str
+        :param validation_level: Specify one or more exploit validation levels (comma-delimited) to search with. A record matches when any of its exploits carries the level.
+        :type validation_level: str
+        :param in_kev: Filter to records that are (true) or are not (false) in the CISA KEV catalog.
+        :type in_kev: bool
+        :param in_vckev: Filter to records that are (true) or are not (false) in the VulnCheck KEV catalog.
+        :type in_vckev: bool
         :param date: Specify an exact published date to filter with.
         :type date: str
         :param updated_at_start_date: Specify a starting 'updated-at' date to filter with.
@@ -113357,6 +113369,10 @@ class IndicesApi:
             ransomware=ransomware,
             botnet=botnet,
             published=published,
+            max_exploit_maturity=max_exploit_maturity,
+            validation_level=validation_level,
+            in_kev=in_kev,
+            in_vckev=in_vckev,
             date=date,
             updated_at_start_date=updated_at_start_date,
             updated_at_end_date=updated_at_end_date,
@@ -113406,6 +113422,10 @@ class IndicesApi:
         ransomware: Annotated[Optional[StrictStr], Field(description="Specify a ransomeware family name to search with.")] = None,
         botnet: Annotated[Optional[StrictStr], Field(description="Specify a botnet name to search with.")] = None,
         published: Annotated[Optional[StrictStr], Field(description="Specify a published date")] = None,
+        max_exploit_maturity: Annotated[Optional[StrictStr], Field(description="Specify the highest exploit maturity reached by any exploit for the record.")] = None,
+        validation_level: Annotated[Optional[StrictStr], Field(description="Specify one or more exploit validation levels (comma-delimited) to search with. A record matches when any of its exploits carries the level.")] = None,
+        in_kev: Annotated[Optional[StrictBool], Field(description="Filter to records that are (true) or are not (false) in the CISA KEV catalog.")] = None,
+        in_vckev: Annotated[Optional[StrictBool], Field(description="Filter to records that are (true) or are not (false) in the VulnCheck KEV catalog.")] = None,
         date: Annotated[Optional[StrictStr], Field(description="Specify an exact published date to filter with.")] = None,
         updated_at_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting 'updated-at' date to filter with.")] = None,
         updated_at_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending 'updated-at' date to filter with.")] = None,
@@ -113464,6 +113484,14 @@ class IndicesApi:
         :type botnet: str
         :param published: Specify a published date
         :type published: str
+        :param max_exploit_maturity: Specify the highest exploit maturity reached by any exploit for the record.
+        :type max_exploit_maturity: str
+        :param validation_level: Specify one or more exploit validation levels (comma-delimited) to search with. A record matches when any of its exploits carries the level.
+        :type validation_level: str
+        :param in_kev: Filter to records that are (true) or are not (false) in the CISA KEV catalog.
+        :type in_kev: bool
+        :param in_vckev: Filter to records that are (true) or are not (false) in the VulnCheck KEV catalog.
+        :type in_vckev: bool
         :param date: Specify an exact published date to filter with.
         :type date: str
         :param updated_at_start_date: Specify a starting 'updated-at' date to filter with.
@@ -113518,6 +113546,10 @@ class IndicesApi:
             ransomware=ransomware,
             botnet=botnet,
             published=published,
+            max_exploit_maturity=max_exploit_maturity,
+            validation_level=validation_level,
+            in_kev=in_kev,
+            in_vckev=in_vckev,
             date=date,
             updated_at_start_date=updated_at_start_date,
             updated_at_end_date=updated_at_end_date,
@@ -113567,6 +113599,10 @@ class IndicesApi:
         ransomware: Annotated[Optional[StrictStr], Field(description="Specify a ransomeware family name to search with.")] = None,
         botnet: Annotated[Optional[StrictStr], Field(description="Specify a botnet name to search with.")] = None,
         published: Annotated[Optional[StrictStr], Field(description="Specify a published date")] = None,
+        max_exploit_maturity: Annotated[Optional[StrictStr], Field(description="Specify the highest exploit maturity reached by any exploit for the record.")] = None,
+        validation_level: Annotated[Optional[StrictStr], Field(description="Specify one or more exploit validation levels (comma-delimited) to search with. A record matches when any of its exploits carries the level.")] = None,
+        in_kev: Annotated[Optional[StrictBool], Field(description="Filter to records that are (true) or are not (false) in the CISA KEV catalog.")] = None,
+        in_vckev: Annotated[Optional[StrictBool], Field(description="Filter to records that are (true) or are not (false) in the VulnCheck KEV catalog.")] = None,
         date: Annotated[Optional[StrictStr], Field(description="Specify an exact published date to filter with.")] = None,
         updated_at_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting 'updated-at' date to filter with.")] = None,
         updated_at_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending 'updated-at' date to filter with.")] = None,
@@ -113625,6 +113661,14 @@ class IndicesApi:
         :type botnet: str
         :param published: Specify a published date
         :type published: str
+        :param max_exploit_maturity: Specify the highest exploit maturity reached by any exploit for the record.
+        :type max_exploit_maturity: str
+        :param validation_level: Specify one or more exploit validation levels (comma-delimited) to search with. A record matches when any of its exploits carries the level.
+        :type validation_level: str
+        :param in_kev: Filter to records that are (true) or are not (false) in the CISA KEV catalog.
+        :type in_kev: bool
+        :param in_vckev: Filter to records that are (true) or are not (false) in the VulnCheck KEV catalog.
+        :type in_vckev: bool
         :param date: Specify an exact published date to filter with.
         :type date: str
         :param updated_at_start_date: Specify a starting 'updated-at' date to filter with.
@@ -113679,6 +113723,10 @@ class IndicesApi:
             ransomware=ransomware,
             botnet=botnet,
             published=published,
+            max_exploit_maturity=max_exploit_maturity,
+            validation_level=validation_level,
+            in_kev=in_kev,
+            in_vckev=in_vckev,
             date=date,
             updated_at_start_date=updated_at_start_date,
             updated_at_end_date=updated_at_end_date,
@@ -113723,6 +113771,10 @@ class IndicesApi:
         ransomware,
         botnet,
         published,
+        max_exploit_maturity,
+        validation_level,
+        in_kev,
+        in_vckev,
         date,
         updated_at_start_date,
         updated_at_end_date,
@@ -113822,6 +113874,22 @@ class IndicesApi:
         if published is not None:
             
             _query_params.append(('published', published))
+            
+        if max_exploit_maturity is not None:
+            
+            _query_params.append(('max_exploit_maturity', max_exploit_maturity))
+            
+        if validation_level is not None:
+            
+            _query_params.append(('validation_level', validation_level))
+            
+        if in_kev is not None:
+            
+            _query_params.append(('in_kev', in_kev))
+            
+        if in_vckev is not None:
+            
+            _query_params.append(('in_vckev', in_vckev))
             
         if date is not None:
             

@@ -101,6 +101,7 @@ class TestRenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(unitte
                                         confirmed = True, 
                                         cve_id = '', )
                                     ], 
+                                deprecated = True, 
                                 product = '', 
                                 vendor = '', 
                                 version = '', )

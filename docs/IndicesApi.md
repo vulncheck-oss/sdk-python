@@ -23975,7 +23975,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_exploits_get**
-> RenderResponseWithMetadataArrayApiExploitV3ResultPaginatePagination index_exploits_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+> RenderResponseWithMetadataArrayApiExploitV3ResultPaginatePagination index_exploits_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, max_exploit_maturity=max_exploit_maturity, validation_level=validation_level, in_kev=in_kev, in_vckev=in_vckev, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
 Return vulnerability data stored in index \"exploits\"
 
@@ -24040,6 +24040,10 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
     botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
     published = 'published_example' # str | Specify a published date (optional)
+    max_exploit_maturity = 'max_exploit_maturity_example' # str | Specify the highest exploit maturity reached by any exploit for the record. (optional)
+    validation_level = 'validation_level_example' # str | Specify one or more exploit validation levels (comma-delimited) to search with. A record matches when any of its exploits carries the level. (optional)
+    in_kev = True # bool | Filter to records that are (true) or are not (false) in the CISA KEV catalog. (optional)
+    in_vckev = True # bool | Filter to records that are (true) or are not (false) in the VulnCheck KEV catalog. (optional)
     var_date = 'var_date_example' # str | Specify an exact published date to filter with. (optional)
     updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
     updated_at_end_date = 'updated_at_end_date_example' # str | Specify an ending 'updated-at' date to filter with. (optional)
@@ -24050,7 +24054,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Return vulnerability data stored in index \"exploits\"
-        api_response = api_instance.index_exploits_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        api_response = api_instance.index_exploits_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, max_exploit_maturity=max_exploit_maturity, validation_level=validation_level, in_kev=in_kev, in_vckev=in_vckev, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
         print("The response of IndicesApi->index_exploits_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -24081,6 +24085,10 @@ Name | Type | Description  | Notes
  **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
  **botnet** | **str**| Specify a botnet name to search with. | [optional] 
  **published** | **str**| Specify a published date | [optional] 
+ **max_exploit_maturity** | **str**| Specify the highest exploit maturity reached by any exploit for the record. | [optional] 
+ **validation_level** | **str**| Specify one or more exploit validation levels (comma-delimited) to search with. A record matches when any of its exploits carries the level. | [optional] 
+ **in_kev** | **bool**| Filter to records that are (true) or are not (false) in the CISA KEV catalog. | [optional] 
+ **in_vckev** | **bool**| Filter to records that are (true) or are not (false) in the VulnCheck KEV catalog. | [optional] 
  **var_date** | **str**| Specify an exact published date to filter with. | [optional] 
  **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 
  **updated_at_end_date** | **str**| Specify an ending &#39;updated-at&#39; date to filter with. | [optional] 

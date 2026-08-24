@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cpe** | **str** |  | [optional] 
 **cves** | [**List[ApiCVEConfirmed]**](ApiCVEConfirmed.md) | CVEs attributed to this specific fingerprint&#39;s CPE. | [optional] 
+**deprecated** | **bool** | Deprecated marks a fingerprint superseded by a newer alias from the same host. | [optional] 
 **product** | **str** |  | [optional] 
 **vendor** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
