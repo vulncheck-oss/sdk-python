@@ -108,9 +108,7 @@ class TestRenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(unitte
                             ], 
                         hostname = '', 
                         ip = '', 
-                        metadata = [
-                            56
-                            ], 
+                        metadata = vulncheck_sdk.models.metadata.metadata(), 
                         port = 56, 
                         product = [
                             ''

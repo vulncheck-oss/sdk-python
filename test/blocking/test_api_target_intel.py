@@ -72,9 +72,7 @@ class TestApiTargetIntel(unittest.TestCase):
                     ],
                 hostname = '',
                 ip = '',
-                metadata = [
-                    56
-                    ],
+                metadata = None,
                 port = 56,
                 product = [
                     ''

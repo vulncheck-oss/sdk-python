@@ -44,7 +44,7 @@ class ApiTargetIntel(BaseModel):
     fingerprints: Optional[List[ApiFingerprint]] = None
     hostname: Optional[StrictStr] = None
     ip: Optional[StrictStr] = None
-    metadata: Optional[List[StrictInt]] = None
+    metadata: Optional[Dict[str, Any]] = None
     port: Optional[StrictInt] = None
     product: Optional[List[StrictStr]] = None
     protocol: Optional[StrictStr] = None

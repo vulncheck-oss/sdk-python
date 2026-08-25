@@ -89377,6 +89377,7 @@ class IndicesApi:
         ransomware: Annotated[Optional[StrictStr], Field(description="Specify a ransomeware family name to search with.")] = None,
         botnet: Annotated[Optional[StrictStr], Field(description="Specify a botnet name to search with.")] = None,
         published: Annotated[Optional[StrictStr], Field(description="Specify a published date")] = None,
+        xref_id: Annotated[Optional[StrictStr], Field(description="Specify a cross-reference ID (GHSA, JVNDB, EUVD, …) to reverse-look-up its CVE.")] = None,
         date: Annotated[Optional[StrictStr], Field(description="Specify an exact published date to filter with.")] = None,
         updated_at_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting 'updated-at' date to filter with.")] = None,
         updated_at_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending 'updated-at' date to filter with.")] = None,
@@ -89435,6 +89436,8 @@ class IndicesApi:
         :type botnet: str
         :param published: Specify a published date
         :type published: str
+        :param xref_id: Specify a cross-reference ID (GHSA, JVNDB, EUVD, …) to reverse-look-up its CVE.
+        :type xref_id: str
         :param date: Specify an exact published date to filter with.
         :type date: str
         :param updated_at_start_date: Specify a starting 'updated-at' date to filter with.
@@ -89489,6 +89492,7 @@ class IndicesApi:
             ransomware=ransomware,
             botnet=botnet,
             published=published,
+            xref_id=xref_id,
             date=date,
             updated_at_start_date=updated_at_start_date,
             updated_at_end_date=updated_at_end_date,
@@ -89538,6 +89542,7 @@ class IndicesApi:
         ransomware: Annotated[Optional[StrictStr], Field(description="Specify a ransomeware family name to search with.")] = None,
         botnet: Annotated[Optional[StrictStr], Field(description="Specify a botnet name to search with.")] = None,
         published: Annotated[Optional[StrictStr], Field(description="Specify a published date")] = None,
+        xref_id: Annotated[Optional[StrictStr], Field(description="Specify a cross-reference ID (GHSA, JVNDB, EUVD, …) to reverse-look-up its CVE.")] = None,
         date: Annotated[Optional[StrictStr], Field(description="Specify an exact published date to filter with.")] = None,
         updated_at_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting 'updated-at' date to filter with.")] = None,
         updated_at_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending 'updated-at' date to filter with.")] = None,
@@ -89596,6 +89601,8 @@ class IndicesApi:
         :type botnet: str
         :param published: Specify a published date
         :type published: str
+        :param xref_id: Specify a cross-reference ID (GHSA, JVNDB, EUVD, …) to reverse-look-up its CVE.
+        :type xref_id: str
         :param date: Specify an exact published date to filter with.
         :type date: str
         :param updated_at_start_date: Specify a starting 'updated-at' date to filter with.
@@ -89650,6 +89657,7 @@ class IndicesApi:
             ransomware=ransomware,
             botnet=botnet,
             published=published,
+            xref_id=xref_id,
             date=date,
             updated_at_start_date=updated_at_start_date,
             updated_at_end_date=updated_at_end_date,
@@ -89699,6 +89707,7 @@ class IndicesApi:
         ransomware: Annotated[Optional[StrictStr], Field(description="Specify a ransomeware family name to search with.")] = None,
         botnet: Annotated[Optional[StrictStr], Field(description="Specify a botnet name to search with.")] = None,
         published: Annotated[Optional[StrictStr], Field(description="Specify a published date")] = None,
+        xref_id: Annotated[Optional[StrictStr], Field(description="Specify a cross-reference ID (GHSA, JVNDB, EUVD, …) to reverse-look-up its CVE.")] = None,
         date: Annotated[Optional[StrictStr], Field(description="Specify an exact published date to filter with.")] = None,
         updated_at_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting 'updated-at' date to filter with.")] = None,
         updated_at_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending 'updated-at' date to filter with.")] = None,
@@ -89757,6 +89766,8 @@ class IndicesApi:
         :type botnet: str
         :param published: Specify a published date
         :type published: str
+        :param xref_id: Specify a cross-reference ID (GHSA, JVNDB, EUVD, …) to reverse-look-up its CVE.
+        :type xref_id: str
         :param date: Specify an exact published date to filter with.
         :type date: str
         :param updated_at_start_date: Specify a starting 'updated-at' date to filter with.
@@ -89811,6 +89822,7 @@ class IndicesApi:
             ransomware=ransomware,
             botnet=botnet,
             published=published,
+            xref_id=xref_id,
             date=date,
             updated_at_start_date=updated_at_start_date,
             updated_at_end_date=updated_at_end_date,
@@ -89855,6 +89867,7 @@ class IndicesApi:
         ransomware,
         botnet,
         published,
+        xref_id,
         date,
         updated_at_start_date,
         updated_at_end_date,
@@ -89954,6 +89967,10 @@ class IndicesApi:
         if published is not None:
             
             _query_params.append(('published', published))
+            
+        if xref_id is not None:
+            
+            _query_params.append(('xref_id', xref_id))
             
         if date is not None:
             

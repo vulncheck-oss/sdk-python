@@ -19007,7 +19007,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_cves_identity_mappings_get**
-> RenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination index_cves_identity_mappings_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+> RenderResponseWithMetadataArrayAdvisoryCVEIdentityMappingsPaginatePagination index_cves_identity_mappings_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, xref_id=xref_id, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
 Return vulnerability data stored in index \"cves_identity_mappings\"
 
@@ -19072,6 +19072,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
     botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
     published = 'published_example' # str | Specify a published date (optional)
+    xref_id = 'xref_id_example' # str | Specify a cross-reference ID (GHSA, JVNDB, EUVD, …) to reverse-look-up its CVE. (optional)
     var_date = 'var_date_example' # str | Specify an exact published date to filter with. (optional)
     updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
     updated_at_end_date = 'updated_at_end_date_example' # str | Specify an ending 'updated-at' date to filter with. (optional)
@@ -19082,7 +19083,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Return vulnerability data stored in index \"cves_identity_mappings\"
-        api_response = api_instance.index_cves_identity_mappings_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        api_response = api_instance.index_cves_identity_mappings_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, xref_id=xref_id, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
         print("The response of IndicesApi->index_cves_identity_mappings_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -19113,6 +19114,7 @@ Name | Type | Description  | Notes
  **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
  **botnet** | **str**| Specify a botnet name to search with. | [optional] 
  **published** | **str**| Specify a published date | [optional] 
+ **xref_id** | **str**| Specify a cross-reference ID (GHSA, JVNDB, EUVD, …) to reverse-look-up its CVE. | [optional] 
  **var_date** | **str**| Specify an exact published date to filter with. | [optional] 
  **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 
  **updated_at_end_date** | **str**| Specify an ending &#39;updated-at&#39; date to filter with. | [optional] 
