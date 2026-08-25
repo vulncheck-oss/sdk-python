@@ -20,17 +20,17 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from vulncheck_sdk.models.search_response_data_out import SearchResponseDataOut
-from vulncheck_sdk.models.search_response_metadata import SearchResponseMetadata
+from vulncheck_sdk.aio.models.paginate_pagination import PaginatePagination
+from vulncheck_sdk.aio.models.search_response_data_out import SearchResponseDataOut
 from typing import Optional, Set
 from typing_extensions import Self
 
-class RenderResponseWithMetadataSearchResponsesSearchResponseMetadata(BaseModel):
+class RenderResponseWithMetadataSearchResponsesPaginatePagination(BaseModel):
     """
-    render.ResponseWithMetadata-search_Responses-search_ResponseMetadata
+    render.ResponseWithMetadata-search_Responses-paginate_Pagination
     """ # noqa: E501
     benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 = approximately 122 milliseconds", alias="_benchmark")
-    meta: Optional[SearchResponseMetadata] = Field(default=None, alias="_meta")
+    meta: Optional[PaginatePagination] = Field(default=None, alias="_meta")
     data: Optional[List[SearchResponseDataOut]] = Field(default=None, description="Data is the data returned by the endpoint")
     __properties: ClassVar[List[str]] = ["_benchmark", "_meta", "data"]
 
@@ -52,7 +52,7 @@ class RenderResponseWithMetadataSearchResponsesSearchResponseMetadata(BaseModel)
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of RenderResponseWithMetadataSearchResponsesSearchResponseMetadata from a JSON string"""
+        """Create an instance of RenderResponseWithMetadataSearchResponsesPaginatePagination from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -87,7 +87,7 @@ class RenderResponseWithMetadataSearchResponsesSearchResponseMetadata(BaseModel)
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of RenderResponseWithMetadataSearchResponsesSearchResponseMetadata from a dict"""
+        """Create an instance of RenderResponseWithMetadataSearchResponsesPaginatePagination from a dict"""
         if obj is None:
             return None
 
@@ -96,7 +96,7 @@ class RenderResponseWithMetadataSearchResponsesSearchResponseMetadata(BaseModel)
 
         _obj = cls.model_validate({
             "_benchmark": obj.get("_benchmark"),
-            "_meta": SearchResponseMetadata.from_dict(obj["_meta"]) if obj.get("_meta") is not None else None,
+            "_meta": PaginatePagination.from_dict(obj["_meta"]) if obj.get("_meta") is not None else None,
             "data": [SearchResponseDataOut.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
         })
         return _obj

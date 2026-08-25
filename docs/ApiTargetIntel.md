@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **fingerprints** | [**List[ApiFingerprint]**](ApiFingerprint.md) |  | [optional] 
 **hostname** | **str** |  | [optional] 
 **ip** | **str** |  | [optional] 
-**metadata** | **List[int]** |  | [optional] 
+**metadata** | **object** |  | [optional] 
 **port** | **int** |  | [optional] 
 **product** | **List[str]** |  | [optional] 
 **protocol** | **str** |  | [optional] 

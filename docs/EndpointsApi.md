@@ -812,7 +812,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_cpe_get**
-> RenderResponseWithMetadataSearchResponsesSearchResponseMetadata search_cpe_get(part=part, vendor=vendor, product=product, version=version, is_vulnerable=is_vulnerable)
+> RenderResponseWithMetadataSearchResponsesPaginatePagination search_cpe_get(part=part, vendor=vendor, product=product, version=version, is_vulnerable=is_vulnerable)
 
 Return CPEs and associated CPEs by searching CPE fields
 
@@ -824,7 +824,7 @@ Based on the specified CPE (Common Platform Enumeration) fields, this endpoint w
 
 ```python
 import vulncheck_sdk
-from vulncheck_sdk.models.render_response_with_metadata_search_responses_search_response_metadata import RenderResponseWithMetadataSearchResponsesSearchResponseMetadata
+from vulncheck_sdk.models.render_response_with_metadata_search_responses_paginate_pagination import RenderResponseWithMetadataSearchResponsesPaginatePagination
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
@@ -879,7 +879,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RenderResponseWithMetadataSearchResponsesSearchResponseMetadata**](RenderResponseWithMetadataSearchResponsesSearchResponseMetadata.md)
+[**RenderResponseWithMetadataSearchResponsesPaginatePagination**](RenderResponseWithMetadataSearchResponsesPaginatePagination.md)
 
 ### Authorization
 
