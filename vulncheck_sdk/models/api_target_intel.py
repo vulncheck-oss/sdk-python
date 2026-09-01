@@ -25,6 +25,7 @@ from vulncheck_sdk.models.api_fingerprint import ApiFingerprint
 from vulncheck_sdk.models.api_target_intel_summary import ApiTargetIntelSummary
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiTargetIntel(BaseModel):
     """
@@ -56,7 +57,8 @@ class ApiTargetIntel(BaseModel):
     __properties: ClassVar[List[str]] = ["as_domain", "as_name", "asn", "classifications", "contains_cve", "country", "country_code", "cpe", "cve", "cve_confirmed", "date_added", "fingerprints", "hostname", "ip", "metadata", "port", "product", "protocol", "summary", "timestamp", "transport", "vendor", "version"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -68,8 +70,7 @@ class ApiTargetIntel(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -98,15 +99,13 @@ class ApiTargetIntel(BaseModel):
         _items = []
         if self.cve_confirmed:
             for _item_cve_confirmed in self.cve_confirmed:
-                if _item_cve_confirmed:
-                    _items.append(_item_cve_confirmed.to_dict())
+                _items.append(_item_cve_confirmed.to_dict() if _item_cve_confirmed is not None else None)
             _dict['cve_confirmed'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in fingerprints (list)
         _items = []
         if self.fingerprints:
             for _item_fingerprints in self.fingerprints:
-                if _item_fingerprints:
-                    _items.append(_item_fingerprints.to_dict())
+                _items.append(_item_fingerprints.to_dict() if _item_fingerprints is not None else None)
             _dict['fingerprints'] = _items
         # override the default output from pydantic by calling `to_dict()` of summary
         if self.summary:

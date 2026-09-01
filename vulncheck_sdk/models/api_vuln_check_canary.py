@@ -25,6 +25,7 @@ from vulncheck_sdk.models.api_client_fingerprints import ApiClientFingerprints
 from vulncheck_sdk.models.api_http_details import ApiHTTPDetails
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiVulnCheckCanary(BaseModel):
     """
@@ -57,7 +58,8 @@ class ApiVulnCheckCanary(BaseModel):
     __properties: ClassVar[List[str]] = ["c2_frequency_3d", "c2_location", "category", "client_fingerprints", "cve", "dst_country", "http", "payload", "payload_tlsh", "payload_tooling", "severity", "signature", "signature_id", "src_as_domain", "src_as_name", "src_asn", "src_country", "src_ip", "src_ip_freq_3d", "src_ip_freq_3d_canary", "src_ip_type_findings", "src_port", "tech_vertical", "timestamp"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -69,8 +71,7 @@ class ApiVulnCheckCanary(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -99,8 +100,7 @@ class ApiVulnCheckCanary(BaseModel):
         _items = []
         if self.c2_frequency_3d:
             for _item_c2_frequency_3d in self.c2_frequency_3d:
-                if _item_c2_frequency_3d:
-                    _items.append(_item_c2_frequency_3d.to_dict())
+                _items.append(_item_c2_frequency_3d.to_dict() if _item_c2_frequency_3d is not None else None)
             _dict['c2_frequency_3d'] = _items
         # override the default output from pydantic by calling `to_dict()` of client_fingerprints
         if self.client_fingerprints:

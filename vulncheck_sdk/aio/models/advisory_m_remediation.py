@@ -24,6 +24,7 @@ from vulncheck_sdk.aio.models.advisory_affected_file import AdvisoryAffectedFile
 from vulncheck_sdk.aio.models.advisory_i_val import AdvisoryIVal
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryMRemediation(BaseModel):
     """
@@ -43,7 +44,8 @@ class AdvisoryMRemediation(BaseModel):
     __properties: ClassVar[List[str]] = ["AffectedFiles", "Date", "DateSpecified", "Description", "FixedBuild", "ProductID", "RestartRequired", "SubType", "Type", "Url", "supercedence"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -55,8 +57,7 @@ class AdvisoryMRemediation(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -85,8 +86,7 @@ class AdvisoryMRemediation(BaseModel):
         _items = []
         if self.affected_files:
             for _item_affected_files in self.affected_files:
-                if _item_affected_files:
-                    _items.append(_item_affected_files.to_dict())
+                _items.append(_item_affected_files.to_dict() if _item_affected_files is not None else None)
             _dict['AffectedFiles'] = _items
         # override the default output from pydantic by calling `to_dict()` of description
         if self.description:

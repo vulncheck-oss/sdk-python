@@ -24,6 +24,7 @@ from vulncheck_sdk.aio.models.advisory_mitre_attack_ref import AdvisoryMitreAtta
 from vulncheck_sdk.aio.models.advisory_nist_control import AdvisoryNISTControl
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryMitreAttackTechWithRefs(BaseModel):
     """
@@ -40,7 +41,8 @@ class AdvisoryMitreAttackTechWithRefs(BaseModel):
     __properties: ClassVar[List[str]] = ["domain", "id", "name", "nist_controls", "references", "subtechnique", "tactics", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -52,8 +54,7 @@ class AdvisoryMitreAttackTechWithRefs(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -82,15 +83,13 @@ class AdvisoryMitreAttackTechWithRefs(BaseModel):
         _items = []
         if self.nist_controls:
             for _item_nist_controls in self.nist_controls:
-                if _item_nist_controls:
-                    _items.append(_item_nist_controls.to_dict())
+                _items.append(_item_nist_controls.to_dict() if _item_nist_controls is not None else None)
             _dict['nist_controls'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in references (list)
         _items = []
         if self.references:
             for _item_references in self.references:
-                if _item_references:
-                    _items.append(_item_references.to_dict())
+                _items.append(_item_references.to_dict() if _item_references is not None else None)
             _dict['references'] = _items
         return _dict
 

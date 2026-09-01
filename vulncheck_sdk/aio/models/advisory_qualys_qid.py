@@ -25,6 +25,7 @@ from vulncheck_sdk.aio.models.advisory_patch import AdvisoryPatch
 from vulncheck_sdk.aio.models.advisory_vendor_ref import AdvisoryVendorRef
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryQualysQID(BaseModel):
     """
@@ -48,7 +49,8 @@ class AdvisoryQualysQID(BaseModel):
     __properties: ClassVar[List[str]] = ["consequence", "cve", "cvss_v2", "cvss_v3", "date_added", "date_insert", "description", "patches", "published", "qid", "severity", "solution", "title", "url", "vendor_refs"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -60,8 +62,7 @@ class AdvisoryQualysQID(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -90,29 +91,25 @@ class AdvisoryQualysQID(BaseModel):
         _items = []
         if self.cvss_v2:
             for _item_cvss_v2 in self.cvss_v2:
-                if _item_cvss_v2:
-                    _items.append(_item_cvss_v2.to_dict())
+                _items.append(_item_cvss_v2.to_dict() if _item_cvss_v2 is not None else None)
             _dict['cvss_v2'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cvss_v3 (list)
         _items = []
         if self.cvss_v3:
             for _item_cvss_v3 in self.cvss_v3:
-                if _item_cvss_v3:
-                    _items.append(_item_cvss_v3.to_dict())
+                _items.append(_item_cvss_v3.to_dict() if _item_cvss_v3 is not None else None)
             _dict['cvss_v3'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in patches (list)
         _items = []
         if self.patches:
             for _item_patches in self.patches:
-                if _item_patches:
-                    _items.append(_item_patches.to_dict())
+                _items.append(_item_patches.to_dict() if _item_patches is not None else None)
             _dict['patches'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in vendor_refs (list)
         _items = []
         if self.vendor_refs:
             for _item_vendor_refs in self.vendor_refs:
-                if _item_vendor_refs:
-                    _items.append(_item_vendor_refs.to_dict())
+                _items.append(_item_vendor_refs.to_dict() if _item_vendor_refs is not None else None)
             _dict['vendor_refs'] = _items
         return _dict
 

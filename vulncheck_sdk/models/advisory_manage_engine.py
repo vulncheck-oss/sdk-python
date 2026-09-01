@@ -25,6 +25,7 @@ from vulncheck_sdk.models.advisory_me_product import AdvisoryMEProduct
 from vulncheck_sdk.models.advisory_product_specific_detail import AdvisoryProductSpecificDetail
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryManageEngine(BaseModel):
     """
@@ -47,7 +48,8 @@ class AdvisoryManageEngine(BaseModel):
     __properties: ClassVar[List[str]] = ["ADVISORY", "Added_Time", "CVE_Details_Link", "CVE_ID", "CVSS_Severity_Rating", "Fixed", "For_product_search", "ID", "Product", "Product_list", "Product_specific_details", "Summary", "Version", "index_field"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -59,8 +61,7 @@ class AdvisoryManageEngine(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -95,15 +96,13 @@ class AdvisoryManageEngine(BaseModel):
         _items = []
         if self.product_list:
             for _item_product_list in self.product_list:
-                if _item_product_list:
-                    _items.append(_item_product_list.to_dict())
+                _items.append(_item_product_list.to_dict() if _item_product_list is not None else None)
             _dict['Product_list'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in product_specific_details (list)
         _items = []
         if self.product_specific_details:
             for _item_product_specific_details in self.product_specific_details:
-                if _item_product_specific_details:
-                    _items.append(_item_product_specific_details.to_dict())
+                _items.append(_item_product_specific_details.to_dict() if _item_product_specific_details is not None else None)
             _dict['Product_specific_details'] = _items
         return _dict
 

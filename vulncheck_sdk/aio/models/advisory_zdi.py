@@ -24,6 +24,7 @@ from vulncheck_sdk.aio.models.advisory_zdi_product import AdvisoryZDIProduct
 from vulncheck_sdk.aio.models.advisory_zdi_response import AdvisoryZDIResponse
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryZDI(BaseModel):
     """
@@ -46,7 +47,8 @@ class AdvisoryZDI(BaseModel):
     __properties: ClassVar[List[str]] = ["cves", "cvss_score", "cvss_vector", "cvss_version", "discoverers", "filter_ids_dv", "last_updated_at", "products", "public_advisory", "published_date", "responses", "title", "zdi_can", "zdi_public"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -58,8 +60,7 @@ class AdvisoryZDI(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -88,15 +89,13 @@ class AdvisoryZDI(BaseModel):
         _items = []
         if self.products:
             for _item_products in self.products:
-                if _item_products:
-                    _items.append(_item_products.to_dict())
+                _items.append(_item_products.to_dict() if _item_products is not None else None)
             _dict['products'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in responses (list)
         _items = []
         if self.responses:
             for _item_responses in self.responses:
-                if _item_responses:
-                    _items.append(_item_responses.to_dict())
+                _items.append(_item_responses.to_dict() if _item_responses is not None else None)
             _dict['responses'] = _items
         return _dict
 

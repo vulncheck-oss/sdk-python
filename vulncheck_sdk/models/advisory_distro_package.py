@@ -24,6 +24,7 @@ from vulncheck_sdk.models.advisory_distro_version import AdvisoryDistroVersion
 from vulncheck_sdk.models.advisory_sec_fix import AdvisorySecFix
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryDistroPackage(BaseModel):
     """
@@ -39,7 +40,8 @@ class AdvisoryDistroPackage(BaseModel):
     __properties: ClassVar[List[str]] = ["binary", "cve", "license", "name", "secFixes", "source_name", "versions"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -51,8 +53,7 @@ class AdvisoryDistroPackage(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -81,15 +82,13 @@ class AdvisoryDistroPackage(BaseModel):
         _items = []
         if self.sec_fixes:
             for _item_sec_fixes in self.sec_fixes:
-                if _item_sec_fixes:
-                    _items.append(_item_sec_fixes.to_dict())
+                _items.append(_item_sec_fixes.to_dict() if _item_sec_fixes is not None else None)
             _dict['secFixes'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in versions (list)
         _items = []
         if self.versions:
             for _item_versions in self.versions:
-                if _item_versions:
-                    _items.append(_item_versions.to_dict())
+                _items.append(_item_versions.to_dict() if _item_versions is not None else None)
             _dict['versions'] = _items
         return _dict
 

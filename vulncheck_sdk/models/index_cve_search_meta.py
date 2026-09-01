@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.index_index_count_entry import IndexIndexCountEntry
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class IndexCveSearchMeta(BaseModel):
     """
@@ -42,7 +43,8 @@ class IndexCveSearchMeta(BaseModel):
     __properties: ClassVar[List[str]] = ["current_count", "cve", "indices_with_hits", "limit", "next_cursor", "page", "queried_index_count", "timestamp", "top_index_counts", "total_count", "total_pages"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -54,8 +56,7 @@ class IndexCveSearchMeta(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -84,8 +85,7 @@ class IndexCveSearchMeta(BaseModel):
         _items = []
         if self.top_index_counts:
             for _item_top_index_counts in self.top_index_counts:
-                if _item_top_index_counts:
-                    _items.append(_item_top_index_counts.to_dict())
+                _items.append(_item_top_index_counts.to_dict() if _item_top_index_counts is not None else None)
             _dict['top_index_counts'] = _items
         return _dict
 

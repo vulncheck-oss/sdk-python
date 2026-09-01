@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.api_oss_package_hash_info import ApiOSSPackageHashInfo
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiOSSPackageDownloadInfo(BaseModel):
     """
@@ -35,7 +36,8 @@ class ApiOSSPackageDownloadInfo(BaseModel):
     __properties: ClassVar[List[str]] = ["hashes", "reference", "type", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -47,8 +49,7 @@ class ApiOSSPackageDownloadInfo(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -77,8 +78,7 @@ class ApiOSSPackageDownloadInfo(BaseModel):
         _items = []
         if self.hashes:
             for _item_hashes in self.hashes:
-                if _item_hashes:
-                    _items.append(_item_hashes.to_dict())
+                _items.append(_item_hashes.to_dict() if _item_hashes is not None else None)
             _dict['hashes'] = _items
         return _dict
 

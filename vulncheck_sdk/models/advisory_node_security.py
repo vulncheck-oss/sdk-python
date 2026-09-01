@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from vulncheck_sdk.models.advisory_node_author import AdvisoryNodeAuthor
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryNodeSecurity(BaseModel):
     """
@@ -50,7 +51,8 @@ class AdvisoryNodeSecurity(BaseModel):
     __properties: ClassVar[List[str]] = ["affected_environments", "author", "coordinating_vendor", "created_at", "cve", "cvss_score", "cvss_vector", "date_added", "id", "module_name", "overview", "patched_versions", "publish_date", "recommendation", "references", "title", "updated_at", "url", "vulnerable_versions"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -62,8 +64,7 @@ class AdvisoryNodeSecurity(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

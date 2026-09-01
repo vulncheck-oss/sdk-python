@@ -415,7 +415,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **openapi_get**
-> Dict[str, object] openapi_get()
+> Dict[str, Optional[object]] openapi_get()
 
 Return OpenAPI specification
 
@@ -469,7 +469,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Dict[str, object]**
+**Dict[str, Optional[object]]**
 
 ### Authorization
 

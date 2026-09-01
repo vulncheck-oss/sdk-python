@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.api_cpe_match import ApiCPEMatch
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiNodes(BaseModel):
     """
@@ -34,7 +35,8 @@ class ApiNodes(BaseModel):
     __properties: ClassVar[List[str]] = ["children", "cpe_match", "operator"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -46,8 +48,7 @@ class ApiNodes(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -76,15 +77,13 @@ class ApiNodes(BaseModel):
         _items = []
         if self.children:
             for _item_children in self.children:
-                if _item_children:
-                    _items.append(_item_children.to_dict())
+                _items.append(_item_children.to_dict() if _item_children is not None else None)
             _dict['children'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cpe_match (list)
         _items = []
         if self.cpe_match:
             for _item_cpe_match in self.cpe_match:
-                if _item_cpe_match:
-                    _items.append(_item_cpe_match.to_dict())
+                _items.append(_item_cpe_match.to_dict() if _item_cpe_match is not None else None)
             _dict['cpe_match'] = _items
         return _dict
 

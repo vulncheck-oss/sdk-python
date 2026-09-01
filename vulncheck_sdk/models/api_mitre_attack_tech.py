@@ -25,6 +25,7 @@ from vulncheck_sdk.models.api_mitre_mitigation2_d3fend_mapping import ApiMitreMi
 from vulncheck_sdk.models.api_mitre_mitigation_tech import ApiMitreMitigationTech
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiMitreAttackTech(BaseModel):
     """
@@ -42,7 +43,8 @@ class ApiMitreAttackTech(BaseModel):
     __properties: ClassVar[List[str]] = ["d3fendmapping", "detections", "domain", "id", "mitigations", "name", "subtechnique", "tactics", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -54,8 +56,7 @@ class ApiMitreAttackTech(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -84,22 +85,19 @@ class ApiMitreAttackTech(BaseModel):
         _items = []
         if self.d3fendmapping:
             for _item_d3fendmapping in self.d3fendmapping:
-                if _item_d3fendmapping:
-                    _items.append(_item_d3fendmapping.to_dict())
+                _items.append(_item_d3fendmapping.to_dict() if _item_d3fendmapping is not None else None)
             _dict['d3fendmapping'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in detections (list)
         _items = []
         if self.detections:
             for _item_detections in self.detections:
-                if _item_detections:
-                    _items.append(_item_detections.to_dict())
+                _items.append(_item_detections.to_dict() if _item_detections is not None else None)
             _dict['detections'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in mitigations (list)
         _items = []
         if self.mitigations:
             for _item_mitigations in self.mitigations:
-                if _item_mitigations:
-                    _items.append(_item_mitigations.to_dict())
+                _items.append(_item_mitigations.to_dict() if _item_mitigations is not None else None)
             _dict['mitigations'] = _items
         return _dict
 

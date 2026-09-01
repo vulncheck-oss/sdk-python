@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_correction import AdvisoryCorrection
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryAdvisory(BaseModel):
     """
@@ -42,7 +43,8 @@ class AdvisoryAdvisory(BaseModel):
     __properties: ClassVar[List[str]] = ["affects", "announced", "category", "corrections", "credits", "cve", "date_added", "module", "name", "topic", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -54,8 +56,7 @@ class AdvisoryAdvisory(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -84,8 +85,7 @@ class AdvisoryAdvisory(BaseModel):
         _items = []
         if self.corrections:
             for _item_corrections in self.corrections:
-                if _item_corrections:
-                    _items.append(_item_corrections.to_dict())
+                _items.append(_item_corrections.to_dict() if _item_corrections is not None else None)
             _dict['corrections'] = _items
         return _dict
 

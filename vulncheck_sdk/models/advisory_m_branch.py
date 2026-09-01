@@ -24,6 +24,7 @@ from vulncheck_sdk.models.advisory_m_full_product_name import AdvisoryMFullProdu
 from vulncheck_sdk.models.advisory_m_item import AdvisoryMItem
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryMBranch(BaseModel):
     """
@@ -37,7 +38,8 @@ class AdvisoryMBranch(BaseModel):
     __properties: ClassVar[List[str]] = ["Branch", "FullProductName", "Items", "name", "type"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -49,8 +51,7 @@ class AdvisoryMBranch(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -79,22 +80,19 @@ class AdvisoryMBranch(BaseModel):
         _items = []
         if self.branch:
             for _item_branch in self.branch:
-                if _item_branch:
-                    _items.append(_item_branch.to_dict())
+                _items.append(_item_branch.to_dict() if _item_branch is not None else None)
             _dict['Branch'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in full_product_name (list)
         _items = []
         if self.full_product_name:
             for _item_full_product_name in self.full_product_name:
-                if _item_full_product_name:
-                    _items.append(_item_full_product_name.to_dict())
+                _items.append(_item_full_product_name.to_dict() if _item_full_product_name is not None else None)
             _dict['FullProductName'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in items (list)
         _items = []
         if self.items:
             for _item_items in self.items:
-                if _item_items:
-                    _items.append(_item_items.to_dict())
+                _items.append(_item_items.to_dict() if _item_items is not None else None)
             _dict['Items'] = _items
         return _dict
 

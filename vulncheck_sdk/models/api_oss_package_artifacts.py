@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.api_oss_package_download_info import ApiOSSPackageDownloadInfo
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiOSSPackageArtifacts(BaseModel):
     """
@@ -33,7 +34,8 @@ class ApiOSSPackageArtifacts(BaseModel):
     __properties: ClassVar[List[str]] = ["binary", "source"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -45,8 +47,7 @@ class ApiOSSPackageArtifacts(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -75,15 +76,13 @@ class ApiOSSPackageArtifacts(BaseModel):
         _items = []
         if self.binary:
             for _item_binary in self.binary:
-                if _item_binary:
-                    _items.append(_item_binary.to_dict())
+                _items.append(_item_binary.to_dict() if _item_binary is not None else None)
             _dict['binary'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in source (list)
         _items = []
         if self.source:
             for _item_source in self.source:
-                if _item_source:
-                    _items.append(_item_source.to_dict())
+                _items.append(_item_source.to_dict() if _item_source is not None else None)
             _dict['source'] = _items
         return _dict
 

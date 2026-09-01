@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_mc_afee_score import AdvisoryMcAfeeScore
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryMcAfee(BaseModel):
     """
@@ -38,7 +39,8 @@ class AdvisoryMcAfee(BaseModel):
     __properties: ClassVar[List[str]] = ["cve", "date_added", "mcafee_score", "summary", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -50,8 +52,7 @@ class AdvisoryMcAfee(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -80,8 +81,7 @@ class AdvisoryMcAfee(BaseModel):
         _items = []
         if self.mcafee_score:
             for _item_mcafee_score in self.mcafee_score:
-                if _item_mcafee_score:
-                    _items.append(_item_mcafee_score.to_dict())
+                _items.append(_item_mcafee_score.to_dict() if _item_mcafee_score is not None else None)
             _dict['mcafee_score'] = _items
         return _dict
 

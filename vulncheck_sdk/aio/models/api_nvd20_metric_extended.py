@@ -30,6 +30,7 @@ from vulncheck_sdk.aio.models.api_nvd20_threat_cvssv40 import ApiNVD20ThreatCVSS
 from vulncheck_sdk.aio.models.api_ssvc import ApiSSVC
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiNVD20MetricExtended(BaseModel):
     """
@@ -52,7 +53,8 @@ class ApiNVD20MetricExtended(BaseModel):
     __properties: ClassVar[List[str]] = ["cvssMetricV2", "cvssMetricV30", "cvssMetricV31", "cvssMetricV40", "epss", "ssvc", "temporalCVSSV2", "temporalCVSSV2Secondary", "temporalCVSSV30", "temporalCVSSV30Secondary", "temporalCVSSV31", "temporalCVSSV31Secondary", "threatCVSSV40", "threatCVSSV40Secondary"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -64,8 +66,7 @@ class ApiNVD20MetricExtended(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -94,29 +95,25 @@ class ApiNVD20MetricExtended(BaseModel):
         _items = []
         if self.cvss_metric_v2:
             for _item_cvss_metric_v2 in self.cvss_metric_v2:
-                if _item_cvss_metric_v2:
-                    _items.append(_item_cvss_metric_v2.to_dict())
+                _items.append(_item_cvss_metric_v2.to_dict() if _item_cvss_metric_v2 is not None else None)
             _dict['cvssMetricV2'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cvss_metric_v30 (list)
         _items = []
         if self.cvss_metric_v30:
             for _item_cvss_metric_v30 in self.cvss_metric_v30:
-                if _item_cvss_metric_v30:
-                    _items.append(_item_cvss_metric_v30.to_dict())
+                _items.append(_item_cvss_metric_v30.to_dict() if _item_cvss_metric_v30 is not None else None)
             _dict['cvssMetricV30'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cvss_metric_v31 (list)
         _items = []
         if self.cvss_metric_v31:
             for _item_cvss_metric_v31 in self.cvss_metric_v31:
-                if _item_cvss_metric_v31:
-                    _items.append(_item_cvss_metric_v31.to_dict())
+                _items.append(_item_cvss_metric_v31.to_dict() if _item_cvss_metric_v31 is not None else None)
             _dict['cvssMetricV31'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cvss_metric_v40 (list)
         _items = []
         if self.cvss_metric_v40:
             for _item_cvss_metric_v40 in self.cvss_metric_v40:
-                if _item_cvss_metric_v40:
-                    _items.append(_item_cvss_metric_v40.to_dict())
+                _items.append(_item_cvss_metric_v40.to_dict() if _item_cvss_metric_v40 is not None else None)
             _dict['cvssMetricV40'] = _items
         # override the default output from pydantic by calling `to_dict()` of epss
         if self.epss:
@@ -125,8 +122,7 @@ class ApiNVD20MetricExtended(BaseModel):
         _items = []
         if self.ssvc:
             for _item_ssvc in self.ssvc:
-                if _item_ssvc:
-                    _items.append(_item_ssvc.to_dict())
+                _items.append(_item_ssvc.to_dict() if _item_ssvc is not None else None)
             _dict['ssvc'] = _items
         # override the default output from pydantic by calling `to_dict()` of temporal_cvssv2
         if self.temporal_cvssv2:
@@ -135,8 +131,7 @@ class ApiNVD20MetricExtended(BaseModel):
         _items = []
         if self.temporal_cvssv2_secondary:
             for _item_temporal_cvssv2_secondary in self.temporal_cvssv2_secondary:
-                if _item_temporal_cvssv2_secondary:
-                    _items.append(_item_temporal_cvssv2_secondary.to_dict())
+                _items.append(_item_temporal_cvssv2_secondary.to_dict() if _item_temporal_cvssv2_secondary is not None else None)
             _dict['temporalCVSSV2Secondary'] = _items
         # override the default output from pydantic by calling `to_dict()` of temporal_cvssv30
         if self.temporal_cvssv30:
@@ -145,8 +140,7 @@ class ApiNVD20MetricExtended(BaseModel):
         _items = []
         if self.temporal_cvssv30_secondary:
             for _item_temporal_cvssv30_secondary in self.temporal_cvssv30_secondary:
-                if _item_temporal_cvssv30_secondary:
-                    _items.append(_item_temporal_cvssv30_secondary.to_dict())
+                _items.append(_item_temporal_cvssv30_secondary.to_dict() if _item_temporal_cvssv30_secondary is not None else None)
             _dict['temporalCVSSV30Secondary'] = _items
         # override the default output from pydantic by calling `to_dict()` of temporal_cvssv31
         if self.temporal_cvssv31:
@@ -155,8 +149,7 @@ class ApiNVD20MetricExtended(BaseModel):
         _items = []
         if self.temporal_cvssv31_secondary:
             for _item_temporal_cvssv31_secondary in self.temporal_cvssv31_secondary:
-                if _item_temporal_cvssv31_secondary:
-                    _items.append(_item_temporal_cvssv31_secondary.to_dict())
+                _items.append(_item_temporal_cvssv31_secondary.to_dict() if _item_temporal_cvssv31_secondary is not None else None)
             _dict['temporalCVSSV31Secondary'] = _items
         # override the default output from pydantic by calling `to_dict()` of threat_cvssv40
         if self.threat_cvssv40:
@@ -165,8 +158,7 @@ class ApiNVD20MetricExtended(BaseModel):
         _items = []
         if self.threat_cvssv40_secondary:
             for _item_threat_cvssv40_secondary in self.threat_cvssv40_secondary:
-                if _item_threat_cvssv40_secondary:
-                    _items.append(_item_threat_cvssv40_secondary.to_dict())
+                _items.append(_item_threat_cvssv40_secondary.to_dict() if _item_threat_cvssv40_secondary is not None else None)
             _dict['threatCVSSV40Secondary'] = _items
         return _dict
 

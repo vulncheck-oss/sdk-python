@@ -26,6 +26,7 @@ from vulncheck_sdk.aio.models.advisory_bdu_environment import AdvisoryBDUEnviron
 from vulncheck_sdk.aio.models.advisory_bdu_vulnerable_software import AdvisoryBDUVulnerableSoftware
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryBDUAdvisory(BaseModel):
     """
@@ -56,7 +57,8 @@ class AdvisoryBDUAdvisory(BaseModel):
     __properties: ClassVar[List[str]] = ["bdu_id", "cve", "cvss", "cvss3", "cwe", "date_added", "description_ru", "environment", "exploit_status_en", "exploit_status_ru", "fix_status_en", "fix_status_ru", "identify_date", "name_ru", "severity_ru", "solution_ru", "sources", "text_ru", "url", "vul_status_en", "vul_status_ru", "vulnerable_software"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -68,8 +70,7 @@ class AdvisoryBDUAdvisory(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.advisory_mozilla_component import AdvisoryMozillaComponent
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryMozillaAdvisory(BaseModel):
     """
@@ -43,7 +44,8 @@ class AdvisoryMozillaAdvisory(BaseModel):
     __properties: ClassVar[List[str]] = ["affected_components", "bugzilla", "cve", "date_added", "description", "fixed_in", "impact", "products", "reporter", "risk", "title", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -55,8 +57,7 @@ class AdvisoryMozillaAdvisory(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -85,8 +86,7 @@ class AdvisoryMozillaAdvisory(BaseModel):
         _items = []
         if self.affected_components:
             for _item_affected_components in self.affected_components:
-                if _item_affected_components:
-                    _items.append(_item_affected_components.to_dict())
+                _items.append(_item_affected_components.to_dict() if _item_affected_components is not None else None)
             _dict['affected_components'] = _items
         return _dict
 

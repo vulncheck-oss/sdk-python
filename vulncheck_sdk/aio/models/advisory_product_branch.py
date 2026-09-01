@@ -24,6 +24,7 @@ from vulncheck_sdk.aio.models.advisory_csaf_relationship import AdvisoryCSAFRela
 from vulncheck_sdk.aio.models.advisory_product import AdvisoryProduct
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryProductBranch(BaseModel):
     """
@@ -37,7 +38,8 @@ class AdvisoryProductBranch(BaseModel):
     __properties: ClassVar[List[str]] = ["branches", "category", "name", "product", "relationships"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -49,8 +51,7 @@ class AdvisoryProductBranch(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -79,8 +80,7 @@ class AdvisoryProductBranch(BaseModel):
         _items = []
         if self.branches:
             for _item_branches in self.branches:
-                if _item_branches:
-                    _items.append(_item_branches.to_dict())
+                _items.append(_item_branches.to_dict() if _item_branches is not None else None)
             _dict['branches'] = _items
         # override the default output from pydantic by calling `to_dict()` of product
         if self.product:
@@ -89,8 +89,7 @@ class AdvisoryProductBranch(BaseModel):
         _items = []
         if self.relationships:
             for _item_relationships in self.relationships:
-                if _item_relationships:
-                    _items.append(_item_relationships.to_dict())
+                _items.append(_item_relationships.to_dict() if _item_relationships is not None else None)
             _dict['relationships'] = _items
         return _dict
 

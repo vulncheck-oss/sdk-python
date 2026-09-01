@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.api_initial_access_go_exploit import ApiInitialAccessGoExploit
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiInitialAccessArtifact(BaseModel):
     """
@@ -71,7 +72,8 @@ class ApiInitialAccessArtifact(BaseModel):
     __properties: ClassVar[List[str]] = ["artifactName", "artifactsURL", "baiduQueries", "baiduRawQueries", "censysLegacyQueries", "censysLegacyRawQueries", "censysQueries", "censysRawQueries", "chain", "cloneSSHURL", "dateAdded", "driftnetQueries", "driftnetRawQueries", "exploit", "fofaQueries", "fofaRawQueries", "goexploit", "googleQueries", "googleRawQueries", "greynoiseQueries", "mitreAttackTechniques", "nmapScript", "pcap", "product", "related", "shodanQueries", "shodanRawQueries", "sigmaRule", "snortRule", "suricataRule", "targetDocker", "targetEncryptedComms", "targetService", "vcTargetIntelQuery", "vendor", "versionScanner", "yara", "zeroday", "zoomEyeQueries", "zoomEyeRawQueries"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -83,8 +85,7 @@ class ApiInitialAccessArtifact(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

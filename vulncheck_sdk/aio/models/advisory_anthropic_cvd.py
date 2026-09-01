@@ -26,6 +26,7 @@ from vulncheck_sdk.aio.models.advisory_cvd_snapshot import AdvisoryCVDSnapshot
 from vulncheck_sdk.aio.models.advisory_timeline import AdvisoryTimeline
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryAnthropicCVD(BaseModel):
     """
@@ -50,7 +51,8 @@ class AdvisoryAnthropicCVD(BaseModel):
     __properties: ClassVar[List[str]] = ["attribution", "bug_class", "cve", "date_added", "date_committed", "entry", "ghsa", "hash", "project", "raw_preimage", "severities", "snapshot", "status", "timeline", "updated_at", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -62,8 +64,7 @@ class AdvisoryAnthropicCVD(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -101,8 +102,7 @@ class AdvisoryAnthropicCVD(BaseModel):
         _items = []
         if self.timeline:
             for _item_timeline in self.timeline:
-                if _item_timeline:
-                    _items.append(_item_timeline.to_dict())
+                _items.append(_item_timeline.to_dict() if _item_timeline is not None else None)
             _dict['timeline'] = _items
         return _dict
 

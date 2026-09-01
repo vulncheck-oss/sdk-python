@@ -24,6 +24,7 @@ from vulncheck_sdk.models.advisory_m_identification import AdvisoryMIdentificati
 from vulncheck_sdk.models.advisory_r_revision import AdvisoryRRevision
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryMDocumentTracking(BaseModel):
     """
@@ -38,7 +39,8 @@ class AdvisoryMDocumentTracking(BaseModel):
     __properties: ClassVar[List[str]] = ["CurrentReleaseDate", "InitialReleaseDate", "identification", "revisionhistory", "status", "version"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -50,8 +52,7 @@ class AdvisoryMDocumentTracking(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -83,8 +84,7 @@ class AdvisoryMDocumentTracking(BaseModel):
         _items = []
         if self.revisionhistory:
             for _item_revisionhistory in self.revisionhistory:
-                if _item_revisionhistory:
-                    _items.append(_item_revisionhistory.to_dict())
+                _items.append(_item_revisionhistory.to_dict() if _item_revisionhistory is not None else None)
             _dict['revisionhistory'] = _items
         return _dict
 
