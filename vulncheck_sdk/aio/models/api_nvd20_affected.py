@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.api_nvd20_affected_product import ApiNVD20AffectedProduct
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiNVD20Affected(BaseModel):
     """
@@ -33,7 +34,8 @@ class ApiNVD20Affected(BaseModel):
     __properties: ClassVar[List[str]] = ["affectedData", "source"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -45,8 +47,7 @@ class ApiNVD20Affected(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -75,8 +76,7 @@ class ApiNVD20Affected(BaseModel):
         _items = []
         if self.affected_data:
             for _item_affected_data in self.affected_data:
-                if _item_affected_data:
-                    _items.append(_item_affected_data.to_dict())
+                _items.append(_item_affected_data.to_dict() if _item_affected_data is not None else None)
             _dict['affectedData'] = _items
         return _dict
 

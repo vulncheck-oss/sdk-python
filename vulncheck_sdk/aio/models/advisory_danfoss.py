@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.advisory_dan_foss_cve_details import AdvisoryDanFossCVEDetails
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryDanfoss(BaseModel):
     """
@@ -43,7 +44,8 @@ class AdvisoryDanfoss(BaseModel):
     __properties: ClassVar[List[str]] = ["affected_products", "cve", "cve_details", "date_added", "description", "id", "mitigation", "references", "summary", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -55,8 +57,7 @@ class AdvisoryDanfoss(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -85,8 +86,7 @@ class AdvisoryDanfoss(BaseModel):
         _items = []
         if self.cve_details:
             for _item_cve_details in self.cve_details:
-                if _item_cve_details:
-                    _items.append(_item_cve_details.to_dict())
+                _items.append(_item_cve_details.to_dict() if _item_cve_details is not None else None)
             _dict['cve_details'] = _items
         return _dict
 

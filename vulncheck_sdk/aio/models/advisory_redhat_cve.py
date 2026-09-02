@@ -25,6 +25,7 @@ from vulncheck_sdk.aio.models.advisory_package_stat import AdvisoryPackageStat
 from vulncheck_sdk.aio.models.advisory_vuln_check_package import AdvisoryVulnCheckPackage
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryRedhatCVE(BaseModel):
     """
@@ -51,7 +52,8 @@ class AdvisoryRedhatCVE(BaseModel):
     __properties: ClassVar[List[str]] = ["advisories", "advisory_csaf_vex_url", "affected_packages", "affected_release", "bugzilla", "bugzilla_description", "cve", "cve_csaf_vex_url", "cvss3_score", "cvss3_scoring_vector", "cvss_score", "cvss_scoring_vector", "cwe", "package_state", "packages", "public_date", "resource_url", "severity"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -63,8 +65,7 @@ class AdvisoryRedhatCVE(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -93,22 +94,19 @@ class AdvisoryRedhatCVE(BaseModel):
         _items = []
         if self.affected_release:
             for _item_affected_release in self.affected_release:
-                if _item_affected_release:
-                    _items.append(_item_affected_release.to_dict())
+                _items.append(_item_affected_release.to_dict() if _item_affected_release is not None else None)
             _dict['affected_release'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in package_state (list)
         _items = []
         if self.package_state:
             for _item_package_state in self.package_state:
-                if _item_package_state:
-                    _items.append(_item_package_state.to_dict())
+                _items.append(_item_package_state.to_dict() if _item_package_state is not None else None)
             _dict['package_state'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in packages (list)
         _items = []
         if self.packages:
             for _item_packages in self.packages:
-                if _item_packages:
-                    _items.append(_item_packages.to_dict())
+                _items.append(_item_packages.to_dict() if _item_packages is not None else None)
             _dict['packages'] = _items
         return _dict
 

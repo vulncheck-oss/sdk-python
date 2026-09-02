@@ -27,6 +27,7 @@ from vulncheck_sdk.models.advisory_publisher import AdvisoryPublisher
 from vulncheck_sdk.models.advisory_tracking import AdvisoryTracking
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryOPCFoundationDocumentMetadata(BaseModel):
     """
@@ -44,7 +45,8 @@ class AdvisoryOPCFoundationDocumentMetadata(BaseModel):
     __properties: ClassVar[List[str]] = ["category", "csaf_version", "distribution", "lang", "notes", "publisher", "references", "title", "tracking"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -56,8 +58,7 @@ class AdvisoryOPCFoundationDocumentMetadata(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -89,8 +90,7 @@ class AdvisoryOPCFoundationDocumentMetadata(BaseModel):
         _items = []
         if self.notes:
             for _item_notes in self.notes:
-                if _item_notes:
-                    _items.append(_item_notes.to_dict())
+                _items.append(_item_notes.to_dict() if _item_notes is not None else None)
             _dict['notes'] = _items
         # override the default output from pydantic by calling `to_dict()` of publisher
         if self.publisher:
@@ -99,8 +99,7 @@ class AdvisoryOPCFoundationDocumentMetadata(BaseModel):
         _items = []
         if self.references:
             for _item_references in self.references:
-                if _item_references:
-                    _items.append(_item_references.to_dict())
+                _items.append(_item_references.to_dict() if _item_references is not None else None)
             _dict['references'] = _items
         # override the default output from pydantic by calling `to_dict()` of tracking
         if self.tracking:

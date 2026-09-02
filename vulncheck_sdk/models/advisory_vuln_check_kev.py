@@ -24,6 +24,7 @@ from vulncheck_sdk.models.advisory_reported_exploit import AdvisoryReportedExplo
 from vulncheck_sdk.models.advisory_xdb import AdvisoryXDB
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryVulnCheckKEV(BaseModel):
     """
@@ -48,7 +49,8 @@ class AdvisoryVulnCheckKEV(BaseModel):
     __properties: ClassVar[List[str]] = ["_timestamp", "cisa_date_added", "cve", "cwes", "date_added", "dueDate", "knownRansomwareCampaignUse", "product", "reported_exploited_by_vulncheck_canaries", "required_action", "shortDescription", "updated_at", "vendorProject", "vulncheck_reported_exploitation", "vulncheck_xdb", "vulnerabilityName"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -60,8 +62,7 @@ class AdvisoryVulnCheckKEV(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -90,15 +91,13 @@ class AdvisoryVulnCheckKEV(BaseModel):
         _items = []
         if self.vulncheck_reported_exploitation:
             for _item_vulncheck_reported_exploitation in self.vulncheck_reported_exploitation:
-                if _item_vulncheck_reported_exploitation:
-                    _items.append(_item_vulncheck_reported_exploitation.to_dict())
+                _items.append(_item_vulncheck_reported_exploitation.to_dict() if _item_vulncheck_reported_exploitation is not None else None)
             _dict['vulncheck_reported_exploitation'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in vulncheck_xdb (list)
         _items = []
         if self.vulncheck_xdb:
             for _item_vulncheck_xdb in self.vulncheck_xdb:
-                if _item_vulncheck_xdb:
-                    _items.append(_item_vulncheck_xdb.to_dict())
+                _items.append(_item_vulncheck_xdb.to_dict() if _item_vulncheck_xdb is not None else None)
             _dict['vulncheck_xdb'] = _items
         return _dict
 

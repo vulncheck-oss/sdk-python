@@ -26,6 +26,7 @@ from vulncheck_sdk.models.api_nvd20_cvss_metric_v40 import ApiNVD20CvssMetricV40
 from vulncheck_sdk.models.api_nvd20_ssvc_metric_v203 import ApiNVD20SsvcMetricV203
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiNVD20Metric(BaseModel):
     """
@@ -39,7 +40,8 @@ class ApiNVD20Metric(BaseModel):
     __properties: ClassVar[List[str]] = ["cvssMetricV2", "cvssMetricV30", "cvssMetricV31", "cvssMetricV40", "ssvcV203"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -51,8 +53,7 @@ class ApiNVD20Metric(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -81,36 +82,31 @@ class ApiNVD20Metric(BaseModel):
         _items = []
         if self.cvss_metric_v2:
             for _item_cvss_metric_v2 in self.cvss_metric_v2:
-                if _item_cvss_metric_v2:
-                    _items.append(_item_cvss_metric_v2.to_dict())
+                _items.append(_item_cvss_metric_v2.to_dict() if _item_cvss_metric_v2 is not None else None)
             _dict['cvssMetricV2'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cvss_metric_v30 (list)
         _items = []
         if self.cvss_metric_v30:
             for _item_cvss_metric_v30 in self.cvss_metric_v30:
-                if _item_cvss_metric_v30:
-                    _items.append(_item_cvss_metric_v30.to_dict())
+                _items.append(_item_cvss_metric_v30.to_dict() if _item_cvss_metric_v30 is not None else None)
             _dict['cvssMetricV30'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cvss_metric_v31 (list)
         _items = []
         if self.cvss_metric_v31:
             for _item_cvss_metric_v31 in self.cvss_metric_v31:
-                if _item_cvss_metric_v31:
-                    _items.append(_item_cvss_metric_v31.to_dict())
+                _items.append(_item_cvss_metric_v31.to_dict() if _item_cvss_metric_v31 is not None else None)
             _dict['cvssMetricV31'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cvss_metric_v40 (list)
         _items = []
         if self.cvss_metric_v40:
             for _item_cvss_metric_v40 in self.cvss_metric_v40:
-                if _item_cvss_metric_v40:
-                    _items.append(_item_cvss_metric_v40.to_dict())
+                _items.append(_item_cvss_metric_v40.to_dict() if _item_cvss_metric_v40 is not None else None)
             _dict['cvssMetricV40'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in ssvc_v203 (list)
         _items = []
         if self.ssvc_v203:
             for _item_ssvc_v203 in self.ssvc_v203:
-                if _item_ssvc_v203:
-                    _items.append(_item_ssvc_v203.to_dict())
+                _items.append(_item_ssvc_v203.to_dict() if _item_ssvc_v203 is not None else None)
             _dict['ssvcV203'] = _items
         return _dict
 

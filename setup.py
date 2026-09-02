@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     VulnCheck API
 
@@ -22,14 +20,14 @@ from setuptools import setup, find_packages  # noqa: H301
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 NAME = "vulncheck-sdk"
-VERSION = "0.0.55"
+VERSION = "0.1.0"
 PYTHON_REQUIRES = ">= 3.11"
 REQUIRES = [
     "aiohttp_retry >= 2.8.3",
-    "aiohttp >= 3.8.4",
-    "urllib3 >= 2.1.0, < 3.0.0",
+    "aiohttp >= 3.14.1",
+    "urllib3 >= 2.7.0, < 3.0.0",
     "python-dateutil >= 2.8.2",
-    "pydantic >= 2",
+    "pydantic >= 2.11",
     "typing-extensions >= 4.7.1",
 ]
 

@@ -24,6 +24,7 @@ from vulncheck_sdk.aio.models.advisory_misp_meta import AdvisoryMispMeta
 from vulncheck_sdk.aio.models.advisory_misp_related_item import AdvisoryMispRelatedItem
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryMISPValueNoID(BaseModel):
     """
@@ -36,7 +37,8 @@ class AdvisoryMISPValueNoID(BaseModel):
     __properties: ClassVar[List[str]] = ["description", "meta", "related", "value"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -48,8 +50,7 @@ class AdvisoryMISPValueNoID(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -81,8 +82,7 @@ class AdvisoryMISPValueNoID(BaseModel):
         _items = []
         if self.related:
             for _item_related in self.related:
-                if _item_related:
-                    _items.append(_item_related.to_dict())
+                _items.append(_item_related.to_dict() if _item_related is not None else None)
             _dict['related'] = _items
         return _dict
 

@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_q_compliance import AdvisoryQCompliance
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryQQID(BaseModel):
     """
@@ -40,7 +41,8 @@ class AdvisoryQQID(BaseModel):
     __properties: ClassVar[List[str]] = ["compliance", "cve", "cvss3_score", "cvss_score", "date_added", "qid", "title", "updated_at", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -52,8 +54,7 @@ class AdvisoryQQID(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -82,8 +83,7 @@ class AdvisoryQQID(BaseModel):
         _items = []
         if self.compliance:
             for _item_compliance in self.compliance:
-                if _item_compliance:
-                    _items.append(_item_compliance.to_dict())
+                _items.append(_item_compliance.to_dict() if _item_compliance is not None else None)
             _dict['compliance'] = _items
         return _dict
 

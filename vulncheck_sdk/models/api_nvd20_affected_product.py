@@ -24,6 +24,7 @@ from vulncheck_sdk.models.api_nvd20_affected_program_routine import ApiNVD20Affe
 from vulncheck_sdk.models.api_nvd20_affected_version import ApiNVD20AffectedVersion
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiNVD20AffectedProduct(BaseModel):
     """
@@ -45,7 +46,8 @@ class ApiNVD20AffectedProduct(BaseModel):
     __properties: ClassVar[List[str]] = ["collectionURL", "cpes", "defaultStatus", "modules", "packageName", "packageURL", "platforms", "product", "programFiles", "programRoutines", "repo", "vendor", "versions"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -57,8 +59,7 @@ class ApiNVD20AffectedProduct(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -87,15 +88,13 @@ class ApiNVD20AffectedProduct(BaseModel):
         _items = []
         if self.program_routines:
             for _item_program_routines in self.program_routines:
-                if _item_program_routines:
-                    _items.append(_item_program_routines.to_dict())
+                _items.append(_item_program_routines.to_dict() if _item_program_routines is not None else None)
             _dict['programRoutines'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in versions (list)
         _items = []
         if self.versions:
             for _item_versions in self.versions:
-                if _item_versions:
-                    _items.append(_item_versions.to_dict())
+                _items.append(_item_versions.to_dict() if _item_versions is not None else None)
             _dict['versions'] = _items
         return _dict
 

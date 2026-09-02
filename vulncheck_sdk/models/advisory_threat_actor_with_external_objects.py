@@ -32,6 +32,7 @@ from vulncheck_sdk.models.advisory_vendor_name_for_threat_actor import AdvisoryV
 from vulncheck_sdk.models.advisory_vendor_product import AdvisoryVendorProduct
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryThreatActorWithExternalObjects(BaseModel):
     """
@@ -56,7 +57,8 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
     __properties: ClassVar[List[str]] = ["associated_capecs", "associated_cwes", "associated_mitre_attack_techniques", "country", "cve_references", "date_added", "malpedia_url", "misp_id", "misp_threat_actor", "mitre_attack_group", "mitre_group_cti", "mitre_id", "threat_actor_name", "tools", "vendor_names_for_threat_actors", "vendors_and_products_targeted"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -68,8 +70,7 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -98,29 +99,25 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
         _items = []
         if self.associated_capecs:
             for _item_associated_capecs in self.associated_capecs:
-                if _item_associated_capecs:
-                    _items.append(_item_associated_capecs.to_dict())
+                _items.append(_item_associated_capecs.to_dict() if _item_associated_capecs is not None else None)
             _dict['associated_capecs'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in associated_cwes (list)
         _items = []
         if self.associated_cwes:
             for _item_associated_cwes in self.associated_cwes:
-                if _item_associated_cwes:
-                    _items.append(_item_associated_cwes.to_dict())
+                _items.append(_item_associated_cwes.to_dict() if _item_associated_cwes is not None else None)
             _dict['associated_cwes'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in associated_mitre_attack_techniques (list)
         _items = []
         if self.associated_mitre_attack_techniques:
             for _item_associated_mitre_attack_techniques in self.associated_mitre_attack_techniques:
-                if _item_associated_mitre_attack_techniques:
-                    _items.append(_item_associated_mitre_attack_techniques.to_dict())
+                _items.append(_item_associated_mitre_attack_techniques.to_dict() if _item_associated_mitre_attack_techniques is not None else None)
             _dict['associated_mitre_attack_techniques'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cve_references (list)
         _items = []
         if self.cve_references:
             for _item_cve_references in self.cve_references:
-                if _item_cve_references:
-                    _items.append(_item_cve_references.to_dict())
+                _items.append(_item_cve_references.to_dict() if _item_cve_references is not None else None)
             _dict['cve_references'] = _items
         # override the default output from pydantic by calling `to_dict()` of misp_threat_actor
         if self.misp_threat_actor:
@@ -135,22 +132,19 @@ class AdvisoryThreatActorWithExternalObjects(BaseModel):
         _items = []
         if self.tools:
             for _item_tools in self.tools:
-                if _item_tools:
-                    _items.append(_item_tools.to_dict())
+                _items.append(_item_tools.to_dict() if _item_tools is not None else None)
             _dict['tools'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in vendor_names_for_threat_actors (list)
         _items = []
         if self.vendor_names_for_threat_actors:
             for _item_vendor_names_for_threat_actors in self.vendor_names_for_threat_actors:
-                if _item_vendor_names_for_threat_actors:
-                    _items.append(_item_vendor_names_for_threat_actors.to_dict())
+                _items.append(_item_vendor_names_for_threat_actors.to_dict() if _item_vendor_names_for_threat_actors is not None else None)
             _dict['vendor_names_for_threat_actors'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in vendors_and_products_targeted (list)
         _items = []
         if self.vendors_and_products_targeted:
             for _item_vendors_and_products_targeted in self.vendors_and_products_targeted:
-                if _item_vendors_and_products_targeted:
-                    _items.append(_item_vendors_and_products_targeted.to_dict())
+                _items.append(_item_vendors_and_products_targeted.to_dict() if _item_vendors_and_products_targeted is not None else None)
             _dict['vendors_and_products_targeted'] = _items
         return _dict
 

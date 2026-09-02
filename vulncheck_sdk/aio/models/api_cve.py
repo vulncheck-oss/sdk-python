@@ -26,6 +26,7 @@ from vulncheck_sdk.aio.models.api_problem_type import ApiProblemType
 from vulncheck_sdk.aio.models.api_references import ApiReferences
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiCVE(BaseModel):
     """
@@ -41,7 +42,8 @@ class ApiCVE(BaseModel):
     __properties: ClassVar[List[str]] = ["CVE_data_meta", "data_format", "data_type", "data_version", "description", "problemtype", "references"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -53,8 +55,7 @@ class ApiCVE(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

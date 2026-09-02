@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     VulnCheck API
 
@@ -11,6 +9,7 @@
 
     Do not edit the class manually.
 """  # noqa: E501
+
 
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
@@ -1387,7 +1386,7 @@ class EndpointsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
-    ) -> Dict[str, object]:
+    ) -> Dict[str, Optional[object]]:
         """Return OpenAPI specification
 
         Return the VulnCheck API (v3) OpenAPI specification
@@ -1422,7 +1421,7 @@ class EndpointsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "Dict[str, Optional[object]]",
             '500': "str",
         }
         response_data = await self.api_client.call_api(
@@ -1451,7 +1450,7 @@ class EndpointsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
-    ) -> ApiResponse[Dict[str, object]]:
+    ) -> ApiResponse[Dict[str, Optional[object]]]:
         """Return OpenAPI specification
 
         Return the VulnCheck API (v3) OpenAPI specification
@@ -1486,7 +1485,7 @@ class EndpointsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "Dict[str, Optional[object]]",
             '500': "str",
         }
         response_data = await self.api_client.call_api(
@@ -1550,7 +1549,7 @@ class EndpointsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "Dict[str, Optional[object]]",
             '500': "str",
         }
         response_data = await self.api_client.call_api(

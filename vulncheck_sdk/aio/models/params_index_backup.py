@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ParamsIndexBackup(BaseModel):
     """
@@ -43,7 +44,8 @@ class ParamsIndexBackup(BaseModel):
     __properties: ClassVar[List[str]] = ["date_added", "filename", "sha256", "url", "url_ap-southeast-2", "url_eu-west-2", "url_expires", "url_il-central-1", "url_me-central-1", "url_mrap", "url_ttl_minutes", "url_us-east-1", "url_us-west-2"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -55,8 +57,7 @@ class ParamsIndexBackup(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

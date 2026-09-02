@@ -23,6 +23,7 @@ Bring the VulnCheck API to your Python applications.
     - [Indices](#indices)
     - [Pagination](#pagination)
     - [PURL](#purl)
+  - [Proxy Support](#proxy-support)
   - [Contributing](#contributing)
   - [Security](#security)
   - [Sponsorship](#sponsorship)
@@ -786,6 +787,35 @@ if __name__ == "__main__":
 
 
 </details>
+
+## Proxy Support
+
+The SDK supports the standard proxy environment variables.
+
+- `HTTPS_PROXY` / `https_proxy` - the proxy to use, matched against the API's `https` scheme
+- `ALL_PROXY` / `all_proxy` - used when no scheme-specific variable is set
+- `NO_PROXY` / `no_proxy` - comma-separated hosts to bypass: an exact host, a
+  `.suffix`, a CIDR range, or `*` for everything
+
+If you have a proxy configured for other tooling and don't want VulnCheck
+traffic going through it, exempt the API host:
+
+```python
+configuration = vulncheck_sdk.Configuration(no_proxy="api.vulncheck.com")
+```
+
+A proxy can also be set explicitly:
+
+```python
+configuration = vulncheck_sdk.Configuration(proxy="http://proxy:3128")
+```
+
+Or disabled entirely:
+
+```python
+configuration = vulncheck_sdk.Configuration()
+configuration.proxy = None  # note: Configuration(proxy=None) will not work
+```
 
 ## Contributing
 

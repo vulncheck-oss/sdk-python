@@ -30,6 +30,7 @@ from vulncheck_sdk.aio.models.api_temporal_metric_v2 import ApiTemporalMetricV2
 from vulncheck_sdk.aio.models.api_temporal_metric_v3 import ApiTemporalMetricV3
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiImpactExtended(BaseModel):
     """
@@ -48,7 +49,8 @@ class ApiImpactExtended(BaseModel):
     __properties: ClassVar[List[str]] = ["baseMetricV2", "baseMetricV3", "correctedBaseMetricV3", "epss", "metricV40", "ssvc", "temporalMetricV2", "temporalMetricV3", "temporalV3Corrected", "threatMetricV40"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -60,8 +62,7 @@ class ApiImpactExtended(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -105,8 +106,7 @@ class ApiImpactExtended(BaseModel):
         _items = []
         if self.ssvc:
             for _item_ssvc in self.ssvc:
-                if _item_ssvc:
-                    _items.append(_item_ssvc.to_dict())
+                _items.append(_item_ssvc.to_dict() if _item_ssvc is not None else None)
             _dict['ssvc'] = _items
         # override the default output from pydantic by calling `to_dict()` of temporal_metric_v2
         if self.temporal_metric_v2:
