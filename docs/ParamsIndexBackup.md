@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **sha256** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **url_ap_southeast_2** | **str** |  | [optional] 
+**url_cloudfront** | **str** |  | [optional] 
 **url_eu_west_2** | **str** |  | [optional] 
 **url_expires** | **str** |  | [optional] 
 **url_il_central_1** | **str** |  | [optional] 

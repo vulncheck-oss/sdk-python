@@ -33,13 +33,14 @@ class AdvisoryVulnCheck(BaseModel):
     cve: Optional[List[StrictStr]] = None
     cvss: Optional[StrictStr] = None
     cvss_v3_vector: Optional[StrictStr] = None
+    cvss_v4_vector: Optional[StrictStr] = None
     date_added: Optional[StrictStr] = None
     references: Optional[List[StrictStr]] = None
     severity: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affecting", "credit", "cve", "cvss", "cvss_v3_vector", "date_added", "references", "severity", "title", "type", "url"]
+    __properties: ClassVar[List[str]] = ["affecting", "credit", "cve", "cvss", "cvss_v3_vector", "cvss_v4_vector", "date_added", "references", "severity", "title", "type", "url"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -97,6 +98,7 @@ class AdvisoryVulnCheck(BaseModel):
             "cve": obj.get("cve"),
             "cvss": obj.get("cvss"),
             "cvss_v3_vector": obj.get("cvss_v3_vector"),
+            "cvss_v4_vector": obj.get("cvss_v4_vector"),
             "date_added": obj.get("date_added"),
             "references": obj.get("references"),
             "severity": obj.get("severity"),

@@ -47,6 +47,7 @@ class TestAdvisoryVulnCheck(unittest.TestCase):
                     ],
                 cvss = '',
                 cvss_v3_vector = '',
+                cvss_v4_vector = '',
                 date_added = '',
                 references = [
                     ''

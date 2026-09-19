@@ -18,19 +18,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ApiMitreD3fendTechnique(BaseModel):
+class PurlUnprocessedPurl(BaseModel):
     """
-    api.MitreD3fendTechnique
+    purl.UnprocessedPurl
     """ # noqa: E501
-    id: Optional[StrictStr] = None
-    url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "url"]
+    purl: Optional[StrictStr] = Field(default=None, description="The purl exactly as submitted.")
+    reason: Optional[StrictStr] = Field(default=None, description="Why this purl was not looked up. One of: \"unsupported_type\" (a valid purl for an ecosystem VulnCheck does not index), \"unparseable\" (not a valid purl), \"unsupported_distro\" (a distro-scoped purl whose distro qualifier is missing or unrecognised, e.g. pkg:deb/debian/curl with no distro=). Treat this as an open set: further values may be added.")
+    __properties: ClassVar[List[str]] = ["purl", "reason"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -50,7 +50,7 @@ class ApiMitreD3fendTechnique(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiMitreD3fendTechnique from a JSON string"""
+        """Create an instance of PurlUnprocessedPurl from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +75,7 @@ class ApiMitreD3fendTechnique(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiMitreD3fendTechnique from a dict"""
+        """Create an instance of PurlUnprocessedPurl from a dict"""
         if obj is None:
             return None
 
@@ -83,8 +83,8 @@ class ApiMitreD3fendTechnique(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "url": obj.get("url")
+            "purl": obj.get("purl"),
+            "reason": obj.get("reason")
         })
         return _obj
 

@@ -2330,13 +2330,6 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """
         pass
 
-    async def test_index_nvd_cpe_dictionary_get(self) -> None:
-        """Test case for index_nvd_cpe_dictionary_get
-
-        Return vulnerability data stored in index \"nvd-cpe-dictionary\"
-        """
-        pass
-
     async def test_index_nvidia_get(self) -> None:
         """Test case for index_nvidia_get
 
@@ -2698,6 +2691,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """Test case for index_redhat_get
 
         Return vulnerability data stored in index \"redhat\"
+        """
+        pass
+
+    async def test_index_redhat_purls_get(self) -> None:
+        """Test case for index_redhat_purls_get
+
+        Return vulnerability data stored in index \"redhat-purls\"
         """
         pass
 
@@ -3314,6 +3314,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """Test case for index_voidsec_get
 
         Return vulnerability data stored in index \"voidsec\"
+        """
+        pass
+
+    async def test_index_vulncheck_c2_get(self) -> None:
+        """Test case for index_vulncheck_c2_get
+
+        Return vulnerability data stored in index \"vulncheck-c2\"
         """
         pass
 

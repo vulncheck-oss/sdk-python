@@ -31,13 +31,15 @@ class BackupBackupResponse(BaseModel):
     available: Optional[StrictBool] = None
     feed: Optional[StrictStr] = None
     sha256: Optional[StrictStr] = None
+    url: Optional[StrictStr] = None
     url_ap_southeast_2: Optional[StrictStr] = Field(default=None, alias="url_ap-southeast-2")
+    url_cloudfront: Optional[StrictStr] = None
     url_eu_west_2: Optional[StrictStr] = Field(default=None, alias="url_eu-west-2")
     url_expires: Optional[StrictStr] = None
     url_mrap: Optional[StrictStr] = None
     url_ttl_minutes: Optional[StrictInt] = None
     url_us_east_1: Optional[StrictStr] = Field(default=None, alias="url_us-east-1")
-    __properties: ClassVar[List[str]] = ["available", "feed", "sha256", "url_ap-southeast-2", "url_eu-west-2", "url_expires", "url_mrap", "url_ttl_minutes", "url_us-east-1"]
+    __properties: ClassVar[List[str]] = ["available", "feed", "sha256", "url", "url_ap-southeast-2", "url_cloudfront", "url_eu-west-2", "url_expires", "url_mrap", "url_ttl_minutes", "url_us-east-1"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -93,7 +95,9 @@ class BackupBackupResponse(BaseModel):
             "available": obj.get("available"),
             "feed": obj.get("feed"),
             "sha256": obj.get("sha256"),
+            "url": obj.get("url"),
             "url_ap-southeast-2": obj.get("url_ap-southeast-2"),
+            "url_cloudfront": obj.get("url_cloudfront"),
             "url_eu-west-2": obj.get("url_eu-west-2"),
             "url_expires": obj.get("url_expires"),
             "url_mrap": obj.get("url_mrap"),
