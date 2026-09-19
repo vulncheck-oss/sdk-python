@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_cvssv40 import AdvisoryCVSSV40
 from vulncheck_sdk.models.api_base_metric_v2 import ApiBaseMetricV2
 from vulncheck_sdk.models.api_base_metric_v3 import ApiBaseMetricV3
+from vulncheck_sdk.models.api_ssvc import ApiSSVC
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -34,7 +35,8 @@ class ApiImpact(BaseModel):
     base_metric_v2: Optional[ApiBaseMetricV2] = Field(default=None, alias="baseMetricV2")
     base_metric_v3: Optional[ApiBaseMetricV3] = Field(default=None, alias="baseMetricV3")
     metric_v40: Optional[AdvisoryCVSSV40] = Field(default=None, alias="metricV40")
-    __properties: ClassVar[List[str]] = ["baseMetricV2", "baseMetricV3", "metricV40"]
+    ssvc: Optional[List[ApiSSVC]] = None
+    __properties: ClassVar[List[str]] = ["baseMetricV2", "baseMetricV3", "metricV40", "ssvc"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,6 +86,12 @@ class ApiImpact(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of metric_v40
         if self.metric_v40:
             _dict['metricV40'] = self.metric_v40.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in ssvc (list)
+        _items = []
+        if self.ssvc:
+            for _item_ssvc in self.ssvc:
+                _items.append(_item_ssvc.to_dict() if _item_ssvc is not None else None)
+            _dict['ssvc'] = _items
         return _dict
 
     @classmethod
@@ -98,7 +106,8 @@ class ApiImpact(BaseModel):
         _obj = cls.model_validate({
             "baseMetricV2": ApiBaseMetricV2.from_dict(obj["baseMetricV2"]) if obj.get("baseMetricV2") is not None else None,
             "baseMetricV3": ApiBaseMetricV3.from_dict(obj["baseMetricV3"]) if obj.get("baseMetricV3") is not None else None,
-            "metricV40": AdvisoryCVSSV40.from_dict(obj["metricV40"]) if obj.get("metricV40") is not None else None
+            "metricV40": AdvisoryCVSSV40.from_dict(obj["metricV40"]) if obj.get("metricV40") is not None else None,
+            "ssvc": [ApiSSVC.from_dict(_item) for _item in obj["ssvc"]] if obj.get("ssvc") is not None else None
         })
         return _obj
 

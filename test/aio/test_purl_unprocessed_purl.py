@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.advisory_nvdcpe_dictionary import AdvisoryNVDCPEDictionary
+from vulncheck_sdk.aio.models.purl_unprocessed_purl import PurlUnprocessedPurl
 
-class TestAdvisoryNVDCPEDictionary(unittest.TestCase):
-    """AdvisoryNVDCPEDictionary unit test stubs"""
+class TestPurlUnprocessedPurl(unittest.TestCase):
+    """PurlUnprocessedPurl unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,25 +26,26 @@ class TestAdvisoryNVDCPEDictionary(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdvisoryNVDCPEDictionary:
-        """Test AdvisoryNVDCPEDictionary
+    def make_instance(self, include_optional) -> PurlUnprocessedPurl:
+        """Test PurlUnprocessedPurl
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AdvisoryNVDCPEDictionary`
+        # uncomment below to create an instance of `PurlUnprocessedPurl`
         """
-        model = AdvisoryNVDCPEDictionary()
+        model = PurlUnprocessedPurl()
         if include_optional:
-            return AdvisoryNVDCPEDictionary(
-                backup_only = ''
+            return PurlUnprocessedPurl(
+                purl = '',
+                reason = ''
             )
         else:
-            return AdvisoryNVDCPEDictionary(
+            return PurlUnprocessedPurl(
         )
         """
 
-    def testAdvisoryNVDCPEDictionary(self):
-        """Test AdvisoryNVDCPEDictionary"""
+    def testPurlUnprocessedPurl(self):
+        """Test PurlUnprocessedPurl"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

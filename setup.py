@@ -20,7 +20,7 @@ from setuptools import setup, find_packages  # noqa: H301
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 NAME = "vulncheck-sdk"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 PYTHON_REQUIRES = ">= 3.11"
 REQUIRES = [
     "aiohttp_retry >= 2.8.3",

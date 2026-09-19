@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # Define package exports
 __all__ = [
@@ -487,6 +487,7 @@ __all__ = [
     "AdvisoryMitreAttackTechnique",
     "AdvisoryMitreCVEListV5",
     "AdvisoryMitreCVEListV5Ref",
+    "AdvisoryMitreD3fendTechnique",
     "AdvisoryMitreGroupCTI",
     "AdvisoryMitsubishiElectricAdvisory",
     "AdvisoryMogwaiLabsAdvisory",
@@ -506,7 +507,6 @@ __all__ = [
     "AdvisoryNVD20Configuration",
     "AdvisoryNVD20Node",
     "AdvisoryNVD20Source",
-    "AdvisoryNVDCPEDictionary",
     "AdvisoryNZAdvisory",
     "AdvisoryNaver",
     "AdvisoryNessus",
@@ -813,6 +813,7 @@ __all__ = [
     "AdvisoryZyxel",
     "ApiBaseMetricV2",
     "ApiBaseMetricV3",
+    "ApiC2Community",
     "ApiC2Frequency",
     "ApiCPE",
     "ApiCPEMatch",
@@ -853,7 +854,6 @@ __all__ = [
     "ApiInitialAccessGoExploitCustomFlag",
     "ApiMitreAttackTech",
     "ApiMitreAttackToCVE",
-    "ApiMitreD3fendTechnique",
     "ApiMitreDetectionTech",
     "ApiMitreMitigation2D3fendMapping",
     "ApiMitreMitigationTech",
@@ -943,6 +943,7 @@ __all__ = [
     "PurlBatchVulnFinding",
     "PurlPackageURLJSON",
     "PurlQualifierJSON",
+    "PurlUnprocessedPurl",
     "PurlsPurlResponse",
     "PurlsVulnerability",
     "RenderResponseArrayParamsIndexBackupList",
@@ -1225,7 +1226,6 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryNIPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryNTPPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryNVD20SourcePaginatePagination",
-    "RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryNZAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryNaverPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryNessusPaginatePagination",
@@ -1404,6 +1404,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryZscalerPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryZusoPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryZyxelPaginatePagination",
+    "RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination",
     "RenderResponseWithMetadataArrayApiCWEPaginatePagination",
     "RenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination",
     "RenderResponseWithMetadataArrayApiCveItemsPaginatePagination",
@@ -1915,6 +1916,7 @@ from vulncheck_sdk.models.advisory_mitre_attack_tech_with_refs import AdvisoryMi
 from vulncheck_sdk.models.advisory_mitre_attack_technique import AdvisoryMitreAttackTechnique as AdvisoryMitreAttackTechnique
 from vulncheck_sdk.models.advisory_mitre_cve_list_v5 import AdvisoryMitreCVEListV5 as AdvisoryMitreCVEListV5
 from vulncheck_sdk.models.advisory_mitre_cve_list_v5_ref import AdvisoryMitreCVEListV5Ref as AdvisoryMitreCVEListV5Ref
+from vulncheck_sdk.models.advisory_mitre_d3fend_technique import AdvisoryMitreD3fendTechnique as AdvisoryMitreD3fendTechnique
 from vulncheck_sdk.models.advisory_mitre_group_cti import AdvisoryMitreGroupCTI as AdvisoryMitreGroupCTI
 from vulncheck_sdk.models.advisory_mitsubishi_electric_advisory import AdvisoryMitsubishiElectricAdvisory as AdvisoryMitsubishiElectricAdvisory
 from vulncheck_sdk.models.advisory_mogwai_labs_advisory import AdvisoryMogwaiLabsAdvisory as AdvisoryMogwaiLabsAdvisory
@@ -1934,7 +1936,6 @@ from vulncheck_sdk.models.advisory_nvd20_cvecpe_match import AdvisoryNVD20CVECPE
 from vulncheck_sdk.models.advisory_nvd20_configuration import AdvisoryNVD20Configuration as AdvisoryNVD20Configuration
 from vulncheck_sdk.models.advisory_nvd20_node import AdvisoryNVD20Node as AdvisoryNVD20Node
 from vulncheck_sdk.models.advisory_nvd20_source import AdvisoryNVD20Source as AdvisoryNVD20Source
-from vulncheck_sdk.models.advisory_nvdcpe_dictionary import AdvisoryNVDCPEDictionary as AdvisoryNVDCPEDictionary
 from vulncheck_sdk.models.advisory_nz_advisory import AdvisoryNZAdvisory as AdvisoryNZAdvisory
 from vulncheck_sdk.models.advisory_naver import AdvisoryNaver as AdvisoryNaver
 from vulncheck_sdk.models.advisory_nessus import AdvisoryNessus as AdvisoryNessus
@@ -2241,6 +2242,7 @@ from vulncheck_sdk.models.advisory_zuso import AdvisoryZuso as AdvisoryZuso
 from vulncheck_sdk.models.advisory_zyxel import AdvisoryZyxel as AdvisoryZyxel
 from vulncheck_sdk.models.api_base_metric_v2 import ApiBaseMetricV2 as ApiBaseMetricV2
 from vulncheck_sdk.models.api_base_metric_v3 import ApiBaseMetricV3 as ApiBaseMetricV3
+from vulncheck_sdk.models.api_c2_community import ApiC2Community as ApiC2Community
 from vulncheck_sdk.models.api_c2_frequency import ApiC2Frequency as ApiC2Frequency
 from vulncheck_sdk.models.api_cpe import ApiCPE as ApiCPE
 from vulncheck_sdk.models.api_cpe_match import ApiCPEMatch as ApiCPEMatch
@@ -2281,7 +2283,6 @@ from vulncheck_sdk.models.api_initial_access_go_exploit import ApiInitialAccessG
 from vulncheck_sdk.models.api_initial_access_go_exploit_custom_flag import ApiInitialAccessGoExploitCustomFlag as ApiInitialAccessGoExploitCustomFlag
 from vulncheck_sdk.models.api_mitre_attack_tech import ApiMitreAttackTech as ApiMitreAttackTech
 from vulncheck_sdk.models.api_mitre_attack_to_cve import ApiMitreAttackToCVE as ApiMitreAttackToCVE
-from vulncheck_sdk.models.api_mitre_d3fend_technique import ApiMitreD3fendTechnique as ApiMitreD3fendTechnique
 from vulncheck_sdk.models.api_mitre_detection_tech import ApiMitreDetectionTech as ApiMitreDetectionTech
 from vulncheck_sdk.models.api_mitre_mitigation2_d3fend_mapping import ApiMitreMitigation2D3fendMapping as ApiMitreMitigation2D3fendMapping
 from vulncheck_sdk.models.api_mitre_mitigation_tech import ApiMitreMitigationTech as ApiMitreMitigationTech
@@ -2371,6 +2372,7 @@ from vulncheck_sdk.models.params_index_list import ParamsIndexList as ParamsInde
 from vulncheck_sdk.models.purl_batch_vuln_finding import PurlBatchVulnFinding as PurlBatchVulnFinding
 from vulncheck_sdk.models.purl_package_urljson import PurlPackageURLJSON as PurlPackageURLJSON
 from vulncheck_sdk.models.purl_qualifier_json import PurlQualifierJSON as PurlQualifierJSON
+from vulncheck_sdk.models.purl_unprocessed_purl import PurlUnprocessedPurl as PurlUnprocessedPurl
 from vulncheck_sdk.models.purls_purl_response import PurlsPurlResponse as PurlsPurlResponse
 from vulncheck_sdk.models.purls_vulnerability import PurlsVulnerability as PurlsVulnerability
 from vulncheck_sdk.models.render_response_array_params_index_backup_list import RenderResponseArrayParamsIndexBackupList as RenderResponseArrayParamsIndexBackupList
@@ -2653,7 +2655,6 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_nhs_pagin
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ni_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNIPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNIPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_ntp_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNTPPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNTPPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_nvd20_source_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNVD20SourcePaginatePagination as RenderResponseWithMetadataArrayAdvisoryNVD20SourcePaginatePagination
-from vulncheck_sdk.models.render_response_with_metadata_array_advisory_nvdcpe_dictionary_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_nz_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNZAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNZAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_naver_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNaverPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNaverPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_nessus_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNessusPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNessusPaginatePagination
@@ -2832,6 +2833,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_zoom_pagi
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_zscaler_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryZscalerPaginatePagination as RenderResponseWithMetadataArrayAdvisoryZscalerPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_zuso_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryZusoPaginatePagination as RenderResponseWithMetadataArrayAdvisoryZusoPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_zyxel_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryZyxelPaginatePagination as RenderResponseWithMetadataArrayAdvisoryZyxelPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_api_c2_community_paginate_pagination import RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination as RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_cwe_paginate_pagination import RenderResponseWithMetadataArrayApiCWEPaginatePagination as RenderResponseWithMetadataArrayApiCWEPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_cve_items_extended_paginate_pagination import RenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination as RenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_api_cve_items_paginate_pagination import RenderResponseWithMetadataArrayApiCveItemsPaginatePagination as RenderResponseWithMetadataArrayApiCveItemsPaginatePagination

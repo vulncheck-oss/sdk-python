@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.aio.models.advisory_nvdcpe_dictionary import AdvisoryNVDCPEDictionary
+from vulncheck_sdk.aio.models.advisory_mitre_d3fend_technique import AdvisoryMitreD3fendTechnique
 
-class TestAdvisoryNVDCPEDictionary(unittest.TestCase):
-    """AdvisoryNVDCPEDictionary unit test stubs"""
+class TestAdvisoryMitreD3fendTechnique(unittest.TestCase):
+    """AdvisoryMitreD3fendTechnique unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,25 +26,26 @@ class TestAdvisoryNVDCPEDictionary(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdvisoryNVDCPEDictionary:
-        """Test AdvisoryNVDCPEDictionary
+    def make_instance(self, include_optional) -> AdvisoryMitreD3fendTechnique:
+        """Test AdvisoryMitreD3fendTechnique
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AdvisoryNVDCPEDictionary`
+        # uncomment below to create an instance of `AdvisoryMitreD3fendTechnique`
         """
-        model = AdvisoryNVDCPEDictionary()
+        model = AdvisoryMitreD3fendTechnique()
         if include_optional:
-            return AdvisoryNVDCPEDictionary(
-                backup_only = ''
+            return AdvisoryMitreD3fendTechnique(
+                id = '',
+                url = ''
             )
         else:
-            return AdvisoryNVDCPEDictionary(
+            return AdvisoryMitreD3fendTechnique(
         )
         """
 
-    def testAdvisoryNVDCPEDictionary(self):
-        """Test AdvisoryNVDCPEDictionary"""
+    def testAdvisoryMitreD3fendTechnique(self):
+        """Test AdvisoryMitreD3fendTechnique"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

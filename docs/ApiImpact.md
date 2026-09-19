@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **base_metric_v2** | [**ApiBaseMetricV2**](ApiBaseMetricV2.md) |  | [optional] 
 **base_metric_v3** | [**ApiBaseMetricV3**](ApiBaseMetricV3.md) |  | [optional] 
 **metric_v40** | [**AdvisoryCVSSV40**](AdvisoryCVSSV40.md) |  | [optional] 
+**ssvc** | [**List[ApiSSVC]**](ApiSSVC.md) |  | [optional] 
 
 ## Example
 

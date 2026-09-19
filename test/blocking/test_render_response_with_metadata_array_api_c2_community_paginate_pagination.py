@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.render_response_with_metadata_array_advisory_nvdcpe_dictionary_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_api_c2_community_paginate_pagination import RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination
 
-class TestRenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination(unittest.TestCase):
-    """RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination unit test stubs"""
+class TestRenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(unittest.TestCase):
+    """RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestRenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePaginat
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination:
-        """Test RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination
+    def make_instance(self, include_optional) -> RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination:
+        """Test RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination`
+        # uncomment below to create an instance of `RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination`
         """
-        model = RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination()
+        model = RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination()
         if include_optional:
-            return RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination(
+            return RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(
                 benchmark = 1.337,
                 meta = vulncheck_sdk.models.paginate/pagination.paginate.Pagination(
                     cursor = '', 
@@ -72,17 +72,32 @@ class TestRenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePaginat
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.models.advisory/nvdcpe_dictionary.advisory.NVDCPEDictionary(
-                        backup_only = '', )
+                    vulncheck_sdk.models.api/c2_community.api.C2Community(
+                        as_name = '', 
+                        asn = '', 
+                        classifications = [
+                            ''
+                            ], 
+                        country = '', 
+                        country_code = '', 
+                        first_seen = '', 
+                        hostname = '', 
+                        ip = '', 
+                        last_seen = '', 
+                        port = 56, 
+                        source = [
+                            ''
+                            ], 
+                        updated_at = '', )
                     ]
             )
         else:
-            return RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination(
+            return RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(
         )
         """
 
-    def testRenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination(self):
-        """Test RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination"""
+    def testRenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(self):
+        """Test RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
