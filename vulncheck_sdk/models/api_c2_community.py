@@ -18,19 +18,29 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ApiMitreD3fendTechnique(BaseModel):
+class ApiC2Community(BaseModel):
     """
-    api.MitreD3fendTechnique
+    api.C2Community
     """ # noqa: E501
-    id: Optional[StrictStr] = None
-    url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "url"]
+    as_name: Optional[StrictStr] = None
+    asn: Optional[StrictStr] = None
+    classifications: Optional[List[StrictStr]] = None
+    country: Optional[StrictStr] = None
+    country_code: Optional[StrictStr] = None
+    first_seen: Optional[StrictStr] = None
+    hostname: Optional[StrictStr] = None
+    ip: Optional[StrictStr] = None
+    last_seen: Optional[StrictStr] = None
+    port: Optional[StrictInt] = None
+    source: Optional[List[StrictStr]] = None
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["as_name", "asn", "classifications", "country", "country_code", "first_seen", "hostname", "ip", "last_seen", "port", "source", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -50,7 +60,7 @@ class ApiMitreD3fendTechnique(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiMitreD3fendTechnique from a JSON string"""
+        """Create an instance of ApiC2Community from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +85,7 @@ class ApiMitreD3fendTechnique(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiMitreD3fendTechnique from a dict"""
+        """Create an instance of ApiC2Community from a dict"""
         if obj is None:
             return None
 
@@ -83,8 +93,18 @@ class ApiMitreD3fendTechnique(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "url": obj.get("url")
+            "as_name": obj.get("as_name"),
+            "asn": obj.get("asn"),
+            "classifications": obj.get("classifications"),
+            "country": obj.get("country"),
+            "country_code": obj.get("country_code"),
+            "first_seen": obj.get("first_seen"),
+            "hostname": obj.get("hostname"),
+            "ip": obj.get("ip"),
+            "last_seen": obj.get("last_seen"),
+            "port": obj.get("port"),
+            "source": obj.get("source"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

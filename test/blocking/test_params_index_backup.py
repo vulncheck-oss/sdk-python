@@ -41,6 +41,7 @@ class TestParamsIndexBackup(unittest.TestCase):
                 sha256 = '',
                 url = '',
                 url_ap_southeast_2 = '',
+                url_cloudfront = '',
                 url_eu_west_2 = '',
                 url_expires = '',
                 url_il_central_1 = '',

@@ -18,18 +18,22 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from vulncheck_sdk.models.api_c2_community import ApiC2Community
+from vulncheck_sdk.models.paginate_pagination import PaginatePagination
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class AdvisoryNVDCPEDictionary(BaseModel):
+class RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(BaseModel):
     """
-    advisory.NVDCPEDictionary
+    render.ResponseWithMetadata-array_api_C2Community-paginate_Pagination
     """ # noqa: E501
-    backup_only: Optional[StrictStr] = Field(default=None, alias="backupOnly")
-    __properties: ClassVar[List[str]] = ["backupOnly"]
+    benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 = approximately 122 milliseconds", alias="_benchmark")
+    meta: Optional[PaginatePagination] = Field(default=None, alias="_meta")
+    data: Optional[List[ApiC2Community]] = Field(default=None, description="Data is the data returned by the endpoint")
+    __properties: ClassVar[List[str]] = ["_benchmark", "_meta", "data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -49,7 +53,7 @@ class AdvisoryNVDCPEDictionary(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdvisoryNVDCPEDictionary from a JSON string"""
+        """Create an instance of RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,11 +74,20 @@ class AdvisoryNVDCPEDictionary(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of meta
+        if self.meta:
+            _dict['_meta'] = self.meta.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
+        if self.data:
+            for _item_data in self.data:
+                _items.append(_item_data.to_dict() if _item_data is not None else None)
+            _dict['data'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdvisoryNVDCPEDictionary from a dict"""
+        """Create an instance of RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination from a dict"""
         if obj is None:
             return None
 
@@ -82,7 +95,9 @@ class AdvisoryNVDCPEDictionary(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "backupOnly": obj.get("backupOnly")
+            "_benchmark": obj.get("_benchmark"),
+            "_meta": PaginatePagination.from_dict(obj["_meta"]) if obj.get("_meta") is not None else None,
+            "data": [ApiC2Community.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
         })
         return _obj
 

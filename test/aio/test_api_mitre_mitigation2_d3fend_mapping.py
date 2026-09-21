@@ -37,7 +37,7 @@ class TestApiMitreMitigation2D3fendMapping(unittest.TestCase):
         if include_optional:
             return ApiMitreMitigation2D3fendMapping(
                 d3fendtechniques = [
-                    vulncheck_sdk.aio.models.api/mitre_d3fend_technique.api.MitreD3fendTechnique(
+                    vulncheck_sdk.aio.models.advisory/mitre_d3fend_technique.advisory.MitreD3fendTechnique(
                         id = '', 
                         url = '', )
                     ],

@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.models.api_mitre_d3fend_technique import ApiMitreD3fendTechnique
+from vulncheck_sdk.models.advisory_mitre_d3fend_technique import AdvisoryMitreD3fendTechnique
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,7 +29,7 @@ class ApiMitreMitigation2D3fendMapping(BaseModel):
     """
     api.MitreMitigation2D3fendMapping
     """ # noqa: E501
-    d3fendtechniques: Optional[List[ApiMitreD3fendTechnique]] = None
+    d3fendtechniques: Optional[List[AdvisoryMitreD3fendTechnique]] = None
     id: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["d3fendtechniques", "id"]
 
@@ -90,7 +90,7 @@ class ApiMitreMitigation2D3fendMapping(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "d3fendtechniques": [ApiMitreD3fendTechnique.from_dict(_item) for _item in obj["d3fendtechniques"]] if obj.get("d3fendtechniques") is not None else None,
+            "d3fendtechniques": [AdvisoryMitreD3fendTechnique.from_dict(_item) for _item in obj["d3fendtechniques"]] if obj.get("d3fendtechniques") is not None else None,
             "id": obj.get("id")
         })
         return _obj

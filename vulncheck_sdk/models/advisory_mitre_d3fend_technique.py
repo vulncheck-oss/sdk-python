@@ -24,25 +24,13 @@ from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ApiNormalizedExploitV3Entry(BaseModel):
+class AdvisoryMitreD3fendTechnique(BaseModel):
     """
-    api.NormalizedExploitV3Entry
+    advisory.MitreD3fendTechnique
     """ # noqa: E501
-    clone_ssh_url: Optional[StrictStr] = None
-    clone_ssh_url_cached: Optional[StrictStr] = None
-    commit_hash: Optional[StrictStr] = None
-    date_added: Optional[StrictStr] = None
-    date_cached: Optional[StrictStr] = None
-    exploit_availability: Optional[StrictStr] = None
-    exploit_maturity: Optional[StrictStr] = None
-    exploit_type: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    reference_url: Optional[StrictStr] = None
-    refsource: Optional[StrictStr] = None
-    repo_id: Optional[StrictStr] = None
+    id: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    validation_level: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["clone_ssh_url", "clone_ssh_url_cached", "commit_hash", "date_added", "date_cached", "exploit_availability", "exploit_maturity", "exploit_type", "name", "reference_url", "refsource", "repo_id", "url", "validation_level"]
+    __properties: ClassVar[List[str]] = ["id", "url"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -62,7 +50,7 @@ class ApiNormalizedExploitV3Entry(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiNormalizedExploitV3Entry from a JSON string"""
+        """Create an instance of AdvisoryMitreD3fendTechnique from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -87,7 +75,7 @@ class ApiNormalizedExploitV3Entry(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiNormalizedExploitV3Entry from a dict"""
+        """Create an instance of AdvisoryMitreD3fendTechnique from a dict"""
         if obj is None:
             return None
 
@@ -95,20 +83,8 @@ class ApiNormalizedExploitV3Entry(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "clone_ssh_url": obj.get("clone_ssh_url"),
-            "clone_ssh_url_cached": obj.get("clone_ssh_url_cached"),
-            "commit_hash": obj.get("commit_hash"),
-            "date_added": obj.get("date_added"),
-            "date_cached": obj.get("date_cached"),
-            "exploit_availability": obj.get("exploit_availability"),
-            "exploit_maturity": obj.get("exploit_maturity"),
-            "exploit_type": obj.get("exploit_type"),
-            "name": obj.get("name"),
-            "reference_url": obj.get("reference_url"),
-            "refsource": obj.get("refsource"),
-            "repo_id": obj.get("repo_id"),
-            "url": obj.get("url"),
-            "validation_level": obj.get("validation_level")
+            "id": obj.get("id"),
+            "url": obj.get("url")
         })
         return _obj
 

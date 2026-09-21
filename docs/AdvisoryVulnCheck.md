@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **cve** | **List[str]** |  | [optional] 
 **cvss** | **str** |  | [optional] 
 **cvss_v3_vector** | **str** |  | [optional] 
+**cvss_v4_vector** | **str** |  | [optional] 
 **date_added** | **str** |  | [optional] 
 **references** | **List[str]** |  | [optional] 
 **severity** | **str** |  | [optional] 

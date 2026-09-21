@@ -6,7 +6,7 @@ api.MitreMitigation2D3fendMapping
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**d3fendtechniques** | [**List[ApiMitreD3fendTechnique]**](ApiMitreD3fendTechnique.md) |  | [optional] 
+**d3fendtechniques** | [**List[AdvisoryMitreD3fendTechnique]**](AdvisoryMitreD3fendTechnique.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 
 ## Example

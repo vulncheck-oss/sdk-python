@@ -1,6 +1,6 @@
 [project]
 name = "vulncheck_sdk"
-version = "0.1.0"
+version = "0.1.1"
 description = "VulnCheck API"
 authors = [
   {name = "VulnCheck API Support",email = "support@vulncheck.com"},
