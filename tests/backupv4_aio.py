@@ -44,7 +44,7 @@ async def main():
         print(f"Downloading {feed} backup via urllib (offloaded to thread)...")
         with tempfile.TemporaryDirectory() as tmpdir:
             file_path = os.path.join(tmpdir, f"{feed}.zip")
-            await asyncio.to_thread(download_sync, response.url_mrap, file_path)
+            await asyncio.to_thread(download_sync, response.url, file_path)
             print(f"Successfully saved to {file_path}")
 
 
