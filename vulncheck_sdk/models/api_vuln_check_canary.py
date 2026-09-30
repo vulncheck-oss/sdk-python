@@ -31,6 +31,8 @@ class ApiVulnCheckCanary(BaseModel):
     """
     api.VulnCheckCanary
     """ # noqa: E501
+    attacker_infrastructure: Optional[List[StrictStr]] = None
+    attacker_infrastructure_frequency_3d: Optional[List[ApiC2Frequency]] = None
     c2_frequency_3d: Optional[List[ApiC2Frequency]] = None
     c2_location: Optional[List[StrictStr]] = None
     category: Optional[StrictStr] = None
@@ -55,7 +57,7 @@ class ApiVulnCheckCanary(BaseModel):
     src_port: Optional[StrictInt] = None
     tech_vertical: Optional[List[StrictStr]] = None
     timestamp: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["c2_frequency_3d", "c2_location", "category", "client_fingerprints", "cve", "dst_country", "http", "payload", "payload_tlsh", "payload_tooling", "severity", "signature", "signature_id", "src_as_domain", "src_as_name", "src_asn", "src_country", "src_ip", "src_ip_freq_3d", "src_ip_freq_3d_canary", "src_ip_type_findings", "src_port", "tech_vertical", "timestamp"]
+    __properties: ClassVar[List[str]] = ["attacker_infrastructure", "attacker_infrastructure_frequency_3d", "c2_frequency_3d", "c2_location", "category", "client_fingerprints", "cve", "dst_country", "http", "payload", "payload_tlsh", "payload_tooling", "severity", "signature", "signature_id", "src_as_domain", "src_as_name", "src_asn", "src_country", "src_ip", "src_ip_freq_3d", "src_ip_freq_3d_canary", "src_ip_type_findings", "src_port", "tech_vertical", "timestamp"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -96,6 +98,12 @@ class ApiVulnCheckCanary(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in attacker_infrastructure_frequency_3d (list)
+        _items = []
+        if self.attacker_infrastructure_frequency_3d:
+            for _item_attacker_infrastructure_frequency_3d in self.attacker_infrastructure_frequency_3d:
+                _items.append(_item_attacker_infrastructure_frequency_3d.to_dict() if _item_attacker_infrastructure_frequency_3d is not None else None)
+            _dict['attacker_infrastructure_frequency_3d'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in c2_frequency_3d (list)
         _items = []
         if self.c2_frequency_3d:
@@ -120,6 +128,8 @@ class ApiVulnCheckCanary(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "attacker_infrastructure": obj.get("attacker_infrastructure"),
+            "attacker_infrastructure_frequency_3d": [ApiC2Frequency.from_dict(_item) for _item in obj["attacker_infrastructure_frequency_3d"]] if obj.get("attacker_infrastructure_frequency_3d") is not None else None,
             "c2_frequency_3d": [ApiC2Frequency.from_dict(_item) for _item in obj["c2_frequency_3d"]] if obj.get("c2_frequency_3d") is not None else None,
             "c2_location": obj.get("c2_location"),
             "category": obj.get("category"),

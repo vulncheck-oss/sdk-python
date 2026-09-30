@@ -474,7 +474,7 @@ Method | HTTP request | Description
 [**index_vlc_get**](IndicesApi.md#index_vlc_get) | **GET** /v3/index/vlc | Return vulnerability data stored in index \&quot;vlc\&quot;
 [**index_vmware_get**](IndicesApi.md#index_vmware_get) | **GET** /v3/index/vmware | Return vulnerability data stored in index \&quot;vmware\&quot;
 [**index_voidsec_get**](IndicesApi.md#index_voidsec_get) | **GET** /v3/index/voidsec | Return vulnerability data stored in index \&quot;voidsec\&quot;
-[**index_vulncheck_c2_get**](IndicesApi.md#index_vulncheck_c2_get) | **GET** /v3/index/vulncheck-c2 | Return vulnerability data stored in index \&quot;vulncheck-c2\&quot;
+[**index_vulncheck_attacker_infrastructure_get**](IndicesApi.md#index_vulncheck_attacker_infrastructure_get) | **GET** /v3/index/vulncheck-attacker-infrastructure | Return vulnerability data stored in index \&quot;vulncheck-attacker-infrastructure\&quot;
 [**index_vulncheck_canaries10d_get**](IndicesApi.md#index_vulncheck_canaries10d_get) | **GET** /v3/index/vulncheck-canaries-10d | Return vulnerability data stored in index \&quot;vulncheck-canaries-10d\&quot;
 [**index_vulncheck_canaries30d_get**](IndicesApi.md#index_vulncheck_canaries30d_get) | **GET** /v3/index/vulncheck-canaries-30d | Return vulnerability data stored in index \&quot;vulncheck-canaries-30d\&quot;
 [**index_vulncheck_canaries3d_get**](IndicesApi.md#index_vulncheck_canaries3d_get) | **GET** /v3/index/vulncheck-canaries-3d | Return vulnerability data stored in index \&quot;vulncheck-canaries-3d\&quot;
@@ -65437,22 +65437,22 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **index_vulncheck_c2_get**
-> RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination index_vulncheck_c2_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, ip=ip, hostname=hostname, port=port, asn=asn, country=country, country_code=country_code, classifications=classifications, source=source, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+# **index_vulncheck_attacker_infrastructure_get**
+> RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination index_vulncheck_attacker_infrastructure_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, ip=ip, hostname=hostname, port=port, asn=asn, country=country, country_code=country_code, classifications=classifications, source=source, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
-Return vulnerability data stored in index \"vulncheck-c2\"
+Return vulnerability data stored in index \"vulncheck-attacker-infrastructure\"
 
 ### Overview
-This endpoint allows you to retrieve a paginated list of all documents from the vulncheck-c2 index. \
+This endpoint allows you to retrieve a paginated list of all documents from the vulncheck-attacker-infrastructure index. \
 By default, a maximum of 100 documents are shown per page.
 
-**Index Description:** VulnCheck Community C2 Intelligence
+**Index Description:** VulnCheck Attacker Infrastructure Intelligence
 
 ### Paging Over Large Data (cursor)
 In order to allow users to iterate over large index datasets, this endpoint provides a server-side
-"cursor" mechanism. To use the cursor, first call `GET /index/vulncheck-c2?start_cursor`, the response will
+"cursor" mechanism. To use the cursor, first call `GET /index/vulncheck-attacker-infrastructure?start_cursor`, the response will
 have a `next_cursor` id that clients will need to pass as a query parameter to the next request like
-`GET /index/vulncheck-c2?cursor=<next_cursor_id>`
+`GET /index/vulncheck-attacker-infrastructure?cursor=<next_cursor_id>`
 
 
 ### Example
@@ -65461,7 +65461,7 @@ have a `next_cursor` id that clients will need to pass as a query parameter to t
 
 ```python
 import vulncheck_sdk
-from vulncheck_sdk.models.render_response_with_metadata_array_api_c2_community_paginate_pagination import RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_api_attacker_infrastructure_paginate_pagination import RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination
 from vulncheck_sdk.rest import ApiException
 from pprint import pprint
 
@@ -65509,12 +65509,12 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     pub_end_date = 'pub_end_date_example' # str | Specify an ending published date to filter with. (optional)
 
     try:
-        # Return vulnerability data stored in index \"vulncheck-c2\"
-        api_response = api_instance.index_vulncheck_c2_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, ip=ip, hostname=hostname, port=port, asn=asn, country=country, country_code=country_code, classifications=classifications, source=source, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
-        print("The response of IndicesApi->index_vulncheck_c2_get:\n")
+        # Return vulnerability data stored in index \"vulncheck-attacker-infrastructure\"
+        api_response = api_instance.index_vulncheck_attacker_infrastructure_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, ip=ip, hostname=hostname, port=port, asn=asn, country=country, country_code=country_code, classifications=classifications, source=source, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        print("The response of IndicesApi->index_vulncheck_attacker_infrastructure_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling IndicesApi->index_vulncheck_c2_get: %s\n" % e)
+        print("Exception when calling IndicesApi->index_vulncheck_attacker_infrastructure_get: %s\n" % e)
 ```
 
 
@@ -65548,7 +65548,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination**](RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination.md)
+[**RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination**](RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination.md)
 
 ### Authorization
 

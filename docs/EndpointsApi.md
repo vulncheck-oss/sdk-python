@@ -726,6 +726,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | Bad Request |  -  |
 **404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 

@@ -36,6 +36,14 @@ class TestApiVulnCheckCanary(unittest.TestCase):
         model = ApiVulnCheckCanary()
         if include_optional:
             return ApiVulnCheckCanary(
+                attacker_infrastructure = [
+                    ''
+                    ],
+                attacker_infrastructure_frequency_3d = [
+                    vulncheck_sdk.aio.models.api/c2_frequency.api.C2Frequency(
+                        count = 56, 
+                        src = '', )
+                    ],
                 c2_frequency_3d = [
                     vulncheck_sdk.aio.models.api/c2_frequency.api.C2Frequency(
                         count = 56, 

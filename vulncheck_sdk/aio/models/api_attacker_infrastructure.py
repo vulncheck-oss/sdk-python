@@ -18,22 +18,29 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional, Union
-from vulncheck_sdk.aio.models.api_c2_community import ApiC2Community
-from vulncheck_sdk.aio.models.paginate_pagination import PaginatePagination
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(BaseModel):
+class ApiAttackerInfrastructure(BaseModel):
     """
-    render.ResponseWithMetadata-array_api_C2Community-paginate_Pagination
+    api.AttackerInfrastructure
     """ # noqa: E501
-    benchmark: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Benchmark is the server-side processing time for the request in seconds. Example: 0.122322 = approximately 122 milliseconds", alias="_benchmark")
-    meta: Optional[PaginatePagination] = Field(default=None, alias="_meta")
-    data: Optional[List[ApiC2Community]] = Field(default=None, description="Data is the data returned by the endpoint")
-    __properties: ClassVar[List[str]] = ["_benchmark", "_meta", "data"]
+    as_name: Optional[StrictStr] = None
+    asn: Optional[StrictStr] = None
+    classifications: Optional[List[StrictStr]] = None
+    country: Optional[StrictStr] = None
+    country_code: Optional[StrictStr] = None
+    first_seen: Optional[StrictStr] = None
+    hostname: Optional[StrictStr] = None
+    ip: Optional[StrictStr] = None
+    last_seen: Optional[StrictStr] = None
+    port: Optional[StrictInt] = None
+    source: Optional[List[StrictStr]] = None
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["as_name", "asn", "classifications", "country", "country_code", "first_seen", "hostname", "ip", "last_seen", "port", "source", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -53,7 +60,7 @@ class RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(BaseModel)
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination from a JSON string"""
+        """Create an instance of ApiAttackerInfrastructure from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,20 +81,11 @@ class RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(BaseModel)
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of meta
-        if self.meta:
-            _dict['_meta'] = self.meta.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
-        _items = []
-        if self.data:
-            for _item_data in self.data:
-                _items.append(_item_data.to_dict() if _item_data is not None else None)
-            _dict['data'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination from a dict"""
+        """Create an instance of ApiAttackerInfrastructure from a dict"""
         if obj is None:
             return None
 
@@ -95,9 +93,18 @@ class RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(BaseModel)
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "_benchmark": obj.get("_benchmark"),
-            "_meta": PaginatePagination.from_dict(obj["_meta"]) if obj.get("_meta") is not None else None,
-            "data": [ApiC2Community.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
+            "as_name": obj.get("as_name"),
+            "asn": obj.get("asn"),
+            "classifications": obj.get("classifications"),
+            "country": obj.get("country"),
+            "country_code": obj.get("country_code"),
+            "first_seen": obj.get("first_seen"),
+            "hostname": obj.get("hostname"),
+            "ip": obj.get("ip"),
+            "last_seen": obj.get("last_seen"),
+            "port": obj.get("port"),
+            "source": obj.get("source"),
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

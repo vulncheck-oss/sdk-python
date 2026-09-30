@@ -3317,10 +3317,10 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
-    def test_index_vulncheck_c2_get(self) -> None:
-        """Test case for index_vulncheck_c2_get
+    def test_index_vulncheck_attacker_infrastructure_get(self) -> None:
+        """Test case for index_vulncheck_attacker_infrastructure_get
 
-        Return vulnerability data stored in index \"vulncheck-c2\"
+        Return vulnerability data stored in index \"vulncheck-attacker-infrastructure\"
         """
         pass
 

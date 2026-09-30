@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.models.api_c2_community import ApiC2Community
+from vulncheck_sdk.models.api_attacker_infrastructure import ApiAttackerInfrastructure
 
-class TestApiC2Community(unittest.TestCase):
-    """ApiC2Community unit test stubs"""
+class TestApiAttackerInfrastructure(unittest.TestCase):
+    """ApiAttackerInfrastructure unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestApiC2Community(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ApiC2Community:
-        """Test ApiC2Community
+    def make_instance(self, include_optional) -> ApiAttackerInfrastructure:
+        """Test ApiAttackerInfrastructure
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ApiC2Community`
+        # uncomment below to create an instance of `ApiAttackerInfrastructure`
         """
-        model = ApiC2Community()
+        model = ApiAttackerInfrastructure()
         if include_optional:
-            return ApiC2Community(
+            return ApiAttackerInfrastructure(
                 as_name = '',
                 asn = '',
                 classifications = [
@@ -54,12 +54,12 @@ class TestApiC2Community(unittest.TestCase):
                 updated_at = ''
             )
         else:
-            return ApiC2Community(
+            return ApiAttackerInfrastructure(
         )
         """
 
-    def testApiC2Community(self):
-        """Test ApiC2Community"""
+    def testApiAttackerInfrastructure(self):
+        """Test ApiAttackerInfrastructure"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

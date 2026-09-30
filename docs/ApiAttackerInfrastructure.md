@@ -1,6 +1,6 @@
-# ApiC2Community
+# ApiAttackerInfrastructure
 
-api.C2Community
+api.AttackerInfrastructure
 
 ## Properties
 
@@ -22,19 +22,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from vulncheck_sdk.models.api_c2_community import ApiC2Community
+from vulncheck_sdk.models.api_attacker_infrastructure import ApiAttackerInfrastructure
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of ApiC2Community from a JSON string
-api_c2_community_instance = ApiC2Community.from_json(json)
+# create an instance of ApiAttackerInfrastructure from a JSON string
+api_attacker_infrastructure_instance = ApiAttackerInfrastructure.from_json(json)
 # print the JSON string representation of the object
-print(ApiC2Community.to_json())
+print(ApiAttackerInfrastructure.to_json())
 
 # convert the object into a dict
-api_c2_community_dict = api_c2_community_instance.to_dict()
-# create an instance of ApiC2Community from a dict
-api_c2_community_from_dict = ApiC2Community.from_dict(api_c2_community_dict)
+api_attacker_infrastructure_dict = api_attacker_infrastructure_instance.to_dict()
+# create an instance of ApiAttackerInfrastructure from a dict
+api_attacker_infrastructure_from_dict = ApiAttackerInfrastructure.from_dict(api_attacker_infrastructure_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

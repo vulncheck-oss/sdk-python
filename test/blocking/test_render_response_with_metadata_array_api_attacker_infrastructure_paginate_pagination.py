@@ -15,10 +15,10 @@
 
 import unittest
 
-from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_c2_community_paginate_pagination import RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_api_attacker_infrastructure_paginate_pagination import RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination
 
-class TestRenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(unittest.TestCase):
-    """RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination unit test stubs"""
+class TestRenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination(unittest.TestCase):
+    """RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,38 +26,38 @@ class TestRenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(unitte
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination:
-        """Test RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination
+    def make_instance(self, include_optional) -> RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination:
+        """Test RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination`
+        # uncomment below to create an instance of `RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination`
         """
-        model = RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination()
+        model = RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination()
         if include_optional:
-            return RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(
+            return RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination(
                 benchmark = 1.337,
-                meta = vulncheck_sdk.aio.models.paginate/pagination.paginate.Pagination(
+                meta = vulncheck_sdk.models.paginate/pagination.paginate.Pagination(
                     cursor = '', 
                     first_item = 56, 
                     index = '', 
                     last_item = 56, 
                     limit = 56, 
                     matches = [
-                        vulncheck_sdk.aio.models.paginate/match.paginate.Match(
+                        vulncheck_sdk.models.paginate/match.paginate.Match(
                             field = '', 
                             value = '', )
                         ], 
                     max_pages = 56, 
                     next_cursor = '', 
-                    opensearch_query = vulncheck_sdk.aio.models.opensearch_query.opensearch_query(), 
+                    opensearch_query = vulncheck_sdk.models.opensearch_query.opensearch_query(), 
                     order = '', 
                     page = 56, 
                     pages = [
                         ''
                         ], 
                     parameters = [
-                        vulncheck_sdk.aio.models.paginate/param.paginate.Param(
+                        vulncheck_sdk.models.paginate/param.paginate.Param(
                             filtering = '', 
                             format = '', 
                             name = '', )
@@ -72,7 +72,7 @@ class TestRenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(unitte
                         ''
                         ], ),
                 data = [
-                    vulncheck_sdk.aio.models.api/c2_community.api.C2Community(
+                    vulncheck_sdk.models.api/attacker_infrastructure.api.AttackerInfrastructure(
                         as_name = '', 
                         asn = '', 
                         classifications = [
@@ -92,12 +92,12 @@ class TestRenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(unitte
                     ]
             )
         else:
-            return RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(
+            return RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination(
         )
         """
 
-    def testRenderResponseWithMetadataArrayApiC2CommunityPaginatePagination(self):
-        """Test RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination"""
+    def testRenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination(self):
+        """Test RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

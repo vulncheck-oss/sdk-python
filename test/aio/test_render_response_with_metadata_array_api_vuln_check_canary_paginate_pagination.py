@@ -73,6 +73,14 @@ class TestRenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination(un
                         ], ),
                 data = [
                     vulncheck_sdk.aio.models.api/vuln_check_canary.api.VulnCheckCanary(
+                        attacker_infrastructure = [
+                            ''
+                            ], 
+                        attacker_infrastructure_frequency_3d = [
+                            vulncheck_sdk.aio.models.api/c2_frequency.api.C2Frequency(
+                                count = 56, 
+                                src = '', )
+                            ], 
                         c2_frequency_3d = [
                             vulncheck_sdk.aio.models.api/c2_frequency.api.C2Frequency(
                                 count = 56, 
