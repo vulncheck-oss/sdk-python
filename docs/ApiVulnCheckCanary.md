@@ -6,6 +6,8 @@ api.VulnCheckCanary
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**attacker_infrastructure** | **List[str]** |  | [optional] 
+**attacker_infrastructure_frequency_3d** | [**List[ApiC2Frequency]**](ApiC2Frequency.md) |  | [optional] 
 **c2_frequency_3d** | [**List[ApiC2Frequency]**](ApiC2Frequency.md) |  | [optional] 
 **c2_location** | **List[str]** |  | [optional] 
 **category** | **str** |  | [optional] 

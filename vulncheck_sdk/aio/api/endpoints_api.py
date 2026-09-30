@@ -2222,6 +2222,7 @@ class EndpointsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata",
+            '400': "str",
             '404': "str",
             '500': "str",
         }
@@ -2291,6 +2292,7 @@ class EndpointsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata",
+            '400': "str",
             '404': "str",
             '500': "str",
         }
@@ -2360,6 +2362,7 @@ class EndpointsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata",
+            '400': "str",
             '404': "str",
             '500': "str",
         }

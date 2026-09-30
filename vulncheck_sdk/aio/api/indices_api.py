@@ -475,7 +475,7 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_zoom_
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_zscaler_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryZscalerPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_zuso_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryZusoPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_zyxel_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryZyxelPaginatePagination
-from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_c2_community_paginate_pagination import RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_attacker_infrastructure_paginate_pagination import RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_cwe_paginate_pagination import RenderResponseWithMetadataArrayApiCWEPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_cve_items_extended_paginate_pagination import RenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_cve_items_paginate_pagination import RenderResponseWithMetadataArrayApiCveItemsPaginatePagination
@@ -312652,7 +312652,7 @@ class IndicesApi:
 
 
     @validate_call
-    async def index_vulncheck_c2_get(
+    async def index_vulncheck_attacker_infrastructure_get(
         self,
         page: Annotated[Optional[StrictInt], Field(description="set the page number of the response")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="limit the number of findings in the response")] = None,
@@ -312687,10 +312687,10 @@ class IndicesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
-    ) -> RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination:
-        """Return vulnerability data stored in index \"vulncheck-c2\"
+    ) -> RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination:
+        """Return vulnerability data stored in index \"vulncheck-attacker-infrastructure\"
 
-        ### Overview This endpoint allows you to retrieve a paginated list of all documents from the vulncheck-c2 index. \\ By default, a maximum of 100 documents are shown per page.  **Index Description:** VulnCheck Community C2 Intelligence  ### Paging Over Large Data (cursor) In order to allow users to iterate over large index datasets, this endpoint provides a server-side \"cursor\" mechanism. To use the cursor, first call `GET /index/vulncheck-c2?start_cursor`, the response will have a `next_cursor` id that clients will need to pass as a query parameter to the next request like `GET /index/vulncheck-c2?cursor=<next_cursor_id>` 
+        ### Overview This endpoint allows you to retrieve a paginated list of all documents from the vulncheck-attacker-infrastructure index. \\ By default, a maximum of 100 documents are shown per page.  **Index Description:** VulnCheck Attacker Infrastructure Intelligence  ### Paging Over Large Data (cursor) In order to allow users to iterate over large index datasets, this endpoint provides a server-side \"cursor\" mechanism. To use the cursor, first call `GET /index/vulncheck-attacker-infrastructure?start_cursor`, the response will have a `next_cursor` id that clients will need to pass as a query parameter to the next request like `GET /index/vulncheck-attacker-infrastructure?cursor=<next_cursor_id>` 
 
         :param page: set the page number of the response
         :type page: int
@@ -312756,7 +312756,7 @@ class IndicesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._index_vulncheck_c2_get_serialize(
+        _param = self._index_vulncheck_attacker_infrastructure_get_serialize(
             page=page,
             limit=limit,
             cursor=cursor,
@@ -312785,7 +312785,7 @@ class IndicesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination",
+            '200': "RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination",
             '404': "str",
             '500': "str",
         }
@@ -312801,7 +312801,7 @@ class IndicesApi:
 
 
     @validate_call
-    async def index_vulncheck_c2_get_with_http_info(
+    async def index_vulncheck_attacker_infrastructure_get_with_http_info(
         self,
         page: Annotated[Optional[StrictInt], Field(description="set the page number of the response")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="limit the number of findings in the response")] = None,
@@ -312836,10 +312836,10 @@ class IndicesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
-    ) -> ApiResponse[RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination]:
-        """Return vulnerability data stored in index \"vulncheck-c2\"
+    ) -> ApiResponse[RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination]:
+        """Return vulnerability data stored in index \"vulncheck-attacker-infrastructure\"
 
-        ### Overview This endpoint allows you to retrieve a paginated list of all documents from the vulncheck-c2 index. \\ By default, a maximum of 100 documents are shown per page.  **Index Description:** VulnCheck Community C2 Intelligence  ### Paging Over Large Data (cursor) In order to allow users to iterate over large index datasets, this endpoint provides a server-side \"cursor\" mechanism. To use the cursor, first call `GET /index/vulncheck-c2?start_cursor`, the response will have a `next_cursor` id that clients will need to pass as a query parameter to the next request like `GET /index/vulncheck-c2?cursor=<next_cursor_id>` 
+        ### Overview This endpoint allows you to retrieve a paginated list of all documents from the vulncheck-attacker-infrastructure index. \\ By default, a maximum of 100 documents are shown per page.  **Index Description:** VulnCheck Attacker Infrastructure Intelligence  ### Paging Over Large Data (cursor) In order to allow users to iterate over large index datasets, this endpoint provides a server-side \"cursor\" mechanism. To use the cursor, first call `GET /index/vulncheck-attacker-infrastructure?start_cursor`, the response will have a `next_cursor` id that clients will need to pass as a query parameter to the next request like `GET /index/vulncheck-attacker-infrastructure?cursor=<next_cursor_id>` 
 
         :param page: set the page number of the response
         :type page: int
@@ -312905,7 +312905,7 @@ class IndicesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._index_vulncheck_c2_get_serialize(
+        _param = self._index_vulncheck_attacker_infrastructure_get_serialize(
             page=page,
             limit=limit,
             cursor=cursor,
@@ -312934,7 +312934,7 @@ class IndicesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination",
+            '200': "RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination",
             '404': "str",
             '500': "str",
         }
@@ -312950,7 +312950,7 @@ class IndicesApi:
 
 
     @validate_call
-    async def index_vulncheck_c2_get_without_preload_content(
+    async def index_vulncheck_attacker_infrastructure_get_without_preload_content(
         self,
         page: Annotated[Optional[StrictInt], Field(description="set the page number of the response")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="limit the number of findings in the response")] = None,
@@ -312986,9 +312986,9 @@ class IndicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Return vulnerability data stored in index \"vulncheck-c2\"
+        """Return vulnerability data stored in index \"vulncheck-attacker-infrastructure\"
 
-        ### Overview This endpoint allows you to retrieve a paginated list of all documents from the vulncheck-c2 index. \\ By default, a maximum of 100 documents are shown per page.  **Index Description:** VulnCheck Community C2 Intelligence  ### Paging Over Large Data (cursor) In order to allow users to iterate over large index datasets, this endpoint provides a server-side \"cursor\" mechanism. To use the cursor, first call `GET /index/vulncheck-c2?start_cursor`, the response will have a `next_cursor` id that clients will need to pass as a query parameter to the next request like `GET /index/vulncheck-c2?cursor=<next_cursor_id>` 
+        ### Overview This endpoint allows you to retrieve a paginated list of all documents from the vulncheck-attacker-infrastructure index. \\ By default, a maximum of 100 documents are shown per page.  **Index Description:** VulnCheck Attacker Infrastructure Intelligence  ### Paging Over Large Data (cursor) In order to allow users to iterate over large index datasets, this endpoint provides a server-side \"cursor\" mechanism. To use the cursor, first call `GET /index/vulncheck-attacker-infrastructure?start_cursor`, the response will have a `next_cursor` id that clients will need to pass as a query parameter to the next request like `GET /index/vulncheck-attacker-infrastructure?cursor=<next_cursor_id>` 
 
         :param page: set the page number of the response
         :type page: int
@@ -313054,7 +313054,7 @@ class IndicesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._index_vulncheck_c2_get_serialize(
+        _param = self._index_vulncheck_attacker_infrastructure_get_serialize(
             page=page,
             limit=limit,
             cursor=cursor,
@@ -313083,7 +313083,7 @@ class IndicesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination",
+            '200': "RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination",
             '404': "str",
             '500': "str",
         }
@@ -313094,7 +313094,7 @@ class IndicesApi:
         return response_data.response
 
 
-    def _index_vulncheck_c2_get_serialize(
+    def _index_vulncheck_attacker_infrastructure_get_serialize(
         self,
         page,
         limit,
@@ -313247,7 +313247,7 @@ class IndicesApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v3/index/vulncheck-c2',
+            resource_path='/v3/index/vulncheck-attacker-infrastructure',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

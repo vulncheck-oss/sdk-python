@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 # Define package exports
 __all__ = [
@@ -811,9 +811,9 @@ __all__ = [
     "AdvisoryZuluVersion",
     "AdvisoryZuso",
     "AdvisoryZyxel",
+    "ApiAttackerInfrastructure",
     "ApiBaseMetricV2",
     "ApiBaseMetricV3",
-    "ApiC2Community",
     "ApiC2Frequency",
     "ApiCPE",
     "ApiCPEMatch",
@@ -1404,7 +1404,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryZscalerPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryZusoPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryZyxelPaginatePagination",
-    "RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination",
+    "RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination",
     "RenderResponseWithMetadataArrayApiCWEPaginatePagination",
     "RenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination",
     "RenderResponseWithMetadataArrayApiCveItemsPaginatePagination",
@@ -2240,9 +2240,9 @@ from vulncheck_sdk.aio.models.advisory_zscaler import AdvisoryZscaler as Advisor
 from vulncheck_sdk.aio.models.advisory_zulu_version import AdvisoryZuluVersion as AdvisoryZuluVersion
 from vulncheck_sdk.aio.models.advisory_zuso import AdvisoryZuso as AdvisoryZuso
 from vulncheck_sdk.aio.models.advisory_zyxel import AdvisoryZyxel as AdvisoryZyxel
+from vulncheck_sdk.aio.models.api_attacker_infrastructure import ApiAttackerInfrastructure as ApiAttackerInfrastructure
 from vulncheck_sdk.aio.models.api_base_metric_v2 import ApiBaseMetricV2 as ApiBaseMetricV2
 from vulncheck_sdk.aio.models.api_base_metric_v3 import ApiBaseMetricV3 as ApiBaseMetricV3
-from vulncheck_sdk.aio.models.api_c2_community import ApiC2Community as ApiC2Community
 from vulncheck_sdk.aio.models.api_c2_frequency import ApiC2Frequency as ApiC2Frequency
 from vulncheck_sdk.aio.models.api_cpe import ApiCPE as ApiCPE
 from vulncheck_sdk.aio.models.api_cpe_match import ApiCPEMatch as ApiCPEMatch
@@ -2833,7 +2833,7 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_zoom_
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_zscaler_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryZscalerPaginatePagination as RenderResponseWithMetadataArrayAdvisoryZscalerPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_zuso_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryZusoPaginatePagination as RenderResponseWithMetadataArrayAdvisoryZusoPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_zyxel_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryZyxelPaginatePagination as RenderResponseWithMetadataArrayAdvisoryZyxelPaginatePagination
-from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_c2_community_paginate_pagination import RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination as RenderResponseWithMetadataArrayApiC2CommunityPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_attacker_infrastructure_paginate_pagination import RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination as RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_cwe_paginate_pagination import RenderResponseWithMetadataArrayApiCWEPaginatePagination as RenderResponseWithMetadataArrayApiCWEPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_cve_items_extended_paginate_pagination import RenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination as RenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_cve_items_paginate_pagination import RenderResponseWithMetadataArrayApiCveItemsPaginatePagination as RenderResponseWithMetadataArrayApiCveItemsPaginatePagination
