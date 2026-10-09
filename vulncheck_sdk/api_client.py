@@ -22,6 +22,7 @@ import os
 import re
 import tempfile
 import uuid
+import urllib3
 
 from urllib.parse import quote
 from typing import Tuple, Optional, List, Dict, Union
@@ -92,7 +93,8 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/0.1.2/python'
+        self.user_agent = 'OpenAPI-Generator/0.1.3/python'
+        self.default_headers["Accept-Encoding"] = urllib3.util.make_headers(accept_encoding=True)["accept-encoding"]
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):

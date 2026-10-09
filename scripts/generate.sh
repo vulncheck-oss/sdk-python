@@ -143,6 +143,32 @@ fix_setupfiles() {
   rm -rf vulncheck_sdk/aio/pyproject.toml
 }
 
+# Ask the API for compressed responses in the sync (urllib3) client.
+# urllib3 never sends Accept-Encoding on its own, so every response arrived
+# uncompressed: 10-60x more bytes for large JSON pages. urllib3 already decodes
+# compressed bodies when they are read, so only the request header is missing.
+# make_headers() only advertises br/zstd when their decoders are installed.
+# The async client needs nothing: aiohttp sends Accept-Encoding by default.
+enable_response_compression() {
+  local API_CLIENT="vulncheck_sdk/api_client.py"
+
+  if ! grep -q "self.user_agent = 'OpenAPI-Generator/" "$API_CLIENT"; then
+    echo "Error: User-Agent anchor not found in $API_CLIENT; cannot add Accept-Encoding."
+    return 1
+  fi
+
+  # awk rather than sed: identical behaviour on GNU (CI) and BSD (macOS)
+  awk '
+    { print }
+    /^import uuid$/ { print "import urllib3" }
+    /self\.user_agent = .OpenAPI-Generator\// {
+      print "        self.default_headers[\"Accept-Encoding\"] = urllib3.util.make_headers(accept_encoding=True)[\"accept-encoding\"]"
+    }
+  ' "$API_CLIENT" >"$API_CLIENT.tmp" && mv "$API_CLIENT.tmp" "$API_CLIENT"
+
+  echo "Enabled compressed responses in $API_CLIENT"
+}
+
 generate_readme() {
   echo "Hydrating README.template"
   cog -d -o README.md ./README.template
@@ -151,6 +177,7 @@ generate_readme() {
 post_generation_process() {
   local LIBRARY=$1
   post_build_cleanup
+  enable_response_compression
   generate_readme
   update_license
   pin_python_version
