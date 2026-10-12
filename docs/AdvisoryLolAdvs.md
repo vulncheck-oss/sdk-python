@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **date_added** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
-**lol_json** | **Dict[str, object]** |  | [optional] 
+**lol_json** | **Dict[str, Optional[object]]** |  | [optional] 
 **mitre_id** | **str** |  | [optional] 
 **references** | **List[str]** |  | [optional] 
 **updated_at** | **str** |  | [optional] 

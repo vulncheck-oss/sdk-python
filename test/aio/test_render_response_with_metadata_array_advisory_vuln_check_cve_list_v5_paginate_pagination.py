@@ -255,9 +255,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryVulnCheckCVEListV5PaginatePagin
                                         solutions = [
                                             
                                             ], 
-                                        source = [
-                                            56
-                                            ], 
+                                        source = vulncheck_sdk.aio.models.source.source(), 
                                         tags = [
                                             ''
                                             ], 
@@ -292,6 +290,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryVulnCheckCVEListV5PaginatePagin
                                     replaced_by = [
                                         ''
                                         ], 
+                                    source = vulncheck_sdk.aio.models.source.source(), 
                                     title = '', ), ), 
                             cve_metadata = vulncheck_sdk.aio.models.advisory/m_cve_metadata.advisory.MCveMetadata(
                                 assigner_org_id = '', 

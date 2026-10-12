@@ -37,6 +37,12 @@ class TestApiFingerprint(unittest.TestCase):
         if include_optional:
             return ApiFingerprint(
                 cpe = '',
+                cves = [
+                    vulncheck_sdk.models.api/cve_confirmed.api.CVEConfirmed(
+                        confirmed = True, 
+                        cve_id = '', )
+                    ],
+                deprecated = True,
                 product = '',
                 vendor = '',
                 version = ''

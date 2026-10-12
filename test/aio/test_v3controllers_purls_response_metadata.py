@@ -37,7 +37,13 @@ class TestV3controllersPurlsResponseMetadata(unittest.TestCase):
         if include_optional:
             return V3controllersPurlsResponseMetadata(
                 timestamp = '',
-                total_documents = 56
+                total_documents = 56,
+                total_submitted = 56,
+                unprocessed = [
+                    vulncheck_sdk.aio.models.purl/unprocessed_purl.purl.UnprocessedPurl(
+                        purl = '', 
+                        reason = '', )
+                    ]
             )
         else:
             return V3controllersPurlsResponseMetadata(

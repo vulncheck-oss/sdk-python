@@ -25,6 +25,7 @@ from vulncheck_sdk.aio.models.advisory_android_range import AdvisoryAndroidRange
 from vulncheck_sdk.aio.models.advisory_eco_system import AdvisoryEcoSystem
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryAndroidAffected(BaseModel):
     """
@@ -37,7 +38,8 @@ class AdvisoryAndroidAffected(BaseModel):
     __properties: ClassVar[List[str]] = ["ecosystem_specific", "package", "ranges", "versions"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -49,8 +51,7 @@ class AdvisoryAndroidAffected(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -85,8 +86,7 @@ class AdvisoryAndroidAffected(BaseModel):
         _items = []
         if self.ranges:
             for _item_ranges in self.ranges:
-                if _item_ranges:
-                    _items.append(_item_ranges.to_dict())
+                _items.append(_item_ranges.to_dict() if _item_ranges is not None else None)
             _dict['ranges'] = _items
         return _dict
 

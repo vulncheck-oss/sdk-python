@@ -24,6 +24,7 @@ from vulncheck_sdk.models.paginate_match import PaginateMatch
 from vulncheck_sdk.models.paginate_param import PaginateParam
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class PaginatePagination(BaseModel):
     """
@@ -52,7 +53,8 @@ class PaginatePagination(BaseModel):
     __properties: ClassVar[List[str]] = ["cursor", "first_item", "index", "last_item", "limit", "matches", "max_pages", "next_cursor", "opensearch_query", "order", "page", "pages", "parameters", "show_pages", "show_query", "sort", "timestamp", "total_documents", "total_pages", "warnings"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -64,8 +66,7 @@ class PaginatePagination(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -94,15 +95,13 @@ class PaginatePagination(BaseModel):
         _items = []
         if self.matches:
             for _item_matches in self.matches:
-                if _item_matches:
-                    _items.append(_item_matches.to_dict())
+                _items.append(_item_matches.to_dict() if _item_matches is not None else None)
             _dict['matches'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in parameters (list)
         _items = []
         if self.parameters:
             for _item_parameters in self.parameters:
-                if _item_parameters:
-                    _items.append(_item_parameters.to_dict())
+                _items.append(_item_parameters.to_dict() if _item_parameters is not None else None)
             _dict['parameters'] = _items
         return _dict
 

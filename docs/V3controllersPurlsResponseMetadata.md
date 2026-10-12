@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **timestamp** | **str** | time of the transaction | [optional] 
 **total_documents** | **int** | number of results found | [optional] 
+**total_submitted** | **int** | number of purls in the request | [optional] 
+**unprocessed** | [**List[PurlUnprocessedPurl]**](PurlUnprocessedPurl.md) | Unprocessed lists purls we could not look up. Not inferable from the counts above: purls with no vulnerabilities are omitted from data too. | [optional] 
 
 ## Example
 

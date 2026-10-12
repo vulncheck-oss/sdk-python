@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_mitre_attack_technique import AdvisoryMitreAttackTechnique
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryMITREAttackGroupNoID(BaseModel):
     """
@@ -35,7 +36,8 @@ class AdvisoryMITREAttackGroupNoID(BaseModel):
     __properties: ClassVar[List[str]] = ["aliases", "description", "name", "techniques"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -47,8 +49,7 @@ class AdvisoryMITREAttackGroupNoID(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -77,8 +78,7 @@ class AdvisoryMITREAttackGroupNoID(BaseModel):
         _items = []
         if self.techniques:
             for _item_techniques in self.techniques:
-                if _item_techniques:
-                    _items.append(_item_techniques.to_dict())
+                _items.append(_item_techniques.to_dict() if _item_techniques is not None else None)
             _dict['techniques'] = _items
         return _dict
 

@@ -24,6 +24,7 @@ from vulncheck_sdk.aio.models.advisory_distro_version import AdvisoryDistroVersi
 from vulncheck_sdk.aio.models.advisory_sec_fix import AdvisorySecFix
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryDistroPackage(BaseModel):
     """
@@ -34,11 +35,13 @@ class AdvisoryDistroPackage(BaseModel):
     license: Optional[List[StrictStr]] = None
     name: Optional[StrictStr] = None
     sec_fixes: Optional[List[AdvisorySecFix]] = Field(default=None, alias="secFixes")
+    source_name: Optional[StrictStr] = Field(default=None, description="SourceName is the source (SRPM) package this binary was built from, when it differs from Name. Distros whose advisories key fixes by source name (e.g. CBL-Mariner/Azure Linux OVAL: source \"python-jinja2\" → binary \"python3-jinja2\") need it to attach a source-keyed fix to the binary purl a customer actually queries. Empty when unknown or equal to Name.")
     versions: Optional[List[AdvisoryDistroVersion]] = None
-    __properties: ClassVar[List[str]] = ["binary", "cve", "license", "name", "secFixes", "versions"]
+    __properties: ClassVar[List[str]] = ["binary", "cve", "license", "name", "secFixes", "source_name", "versions"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -50,8 +53,7 @@ class AdvisoryDistroPackage(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -80,15 +82,13 @@ class AdvisoryDistroPackage(BaseModel):
         _items = []
         if self.sec_fixes:
             for _item_sec_fixes in self.sec_fixes:
-                if _item_sec_fixes:
-                    _items.append(_item_sec_fixes.to_dict())
+                _items.append(_item_sec_fixes.to_dict() if _item_sec_fixes is not None else None)
             _dict['secFixes'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in versions (list)
         _items = []
         if self.versions:
             for _item_versions in self.versions:
-                if _item_versions:
-                    _items.append(_item_versions.to_dict())
+                _items.append(_item_versions.to_dict() if _item_versions is not None else None)
             _dict['versions'] = _items
         return _dict
 
@@ -107,6 +107,7 @@ class AdvisoryDistroPackage(BaseModel):
             "license": obj.get("license"),
             "name": obj.get("name"),
             "secFixes": [AdvisorySecFix.from_dict(_item) for _item in obj["secFixes"]] if obj.get("secFixes") is not None else None,
+            "source_name": obj.get("source_name"),
             "versions": [AdvisoryDistroVersion.from_dict(_item) for _item in obj["versions"]] if obj.get("versions") is not None else None
         })
         return _obj

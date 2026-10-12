@@ -36,6 +36,7 @@ from vulncheck_sdk.aio.models.advisory_taxonomy_mapping import AdvisoryTaxonomyM
 from vulncheck_sdk.aio.models.advisory_timeline import AdvisoryTimeline
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryCirclCna(BaseModel):
     """
@@ -68,7 +69,8 @@ class AdvisoryCirclCna(BaseModel):
     __properties: ClassVar[List[str]] = ["affected", "configurations", "cpeApplicability", "credits", "dateAssigned", "datePublic", "descriptions", "exploits", "impacts", "metrics", "problemTypes", "providerMetadata", "references", "rejectedReasons", "replacedBy", "solutions", "source", "tags", "taxonomyMappings", "timeline", "title", "workarounds", "x_gcve", "x_generator"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -80,8 +82,7 @@ class AdvisoryCirclCna(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -110,64 +111,55 @@ class AdvisoryCirclCna(BaseModel):
         _items = []
         if self.affected:
             for _item_affected in self.affected:
-                if _item_affected:
-                    _items.append(_item_affected.to_dict())
+                _items.append(_item_affected.to_dict() if _item_affected is not None else None)
             _dict['affected'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in configurations (list)
         _items = []
         if self.configurations:
             for _item_configurations in self.configurations:
-                if _item_configurations:
-                    _items.append(_item_configurations.to_dict())
+                _items.append(_item_configurations.to_dict() if _item_configurations is not None else None)
             _dict['configurations'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cpe_applicability (list)
         _items = []
         if self.cpe_applicability:
             for _item_cpe_applicability in self.cpe_applicability:
-                if _item_cpe_applicability:
-                    _items.append(_item_cpe_applicability.to_dict())
+                _items.append(_item_cpe_applicability.to_dict() if _item_cpe_applicability is not None else None)
             _dict['cpeApplicability'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in credits (list)
         _items = []
         if self.credits:
             for _item_credits in self.credits:
-                if _item_credits:
-                    _items.append(_item_credits.to_dict())
+                _items.append(_item_credits.to_dict() if _item_credits is not None else None)
             _dict['credits'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in descriptions (list)
         _items = []
         if self.descriptions:
             for _item_descriptions in self.descriptions:
-                if _item_descriptions:
-                    _items.append(_item_descriptions.to_dict())
+                _items.append(_item_descriptions.to_dict() if _item_descriptions is not None else None)
             _dict['descriptions'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in exploits (list)
         _items = []
         if self.exploits:
             for _item_exploits in self.exploits:
-                if _item_exploits:
-                    _items.append(_item_exploits.to_dict())
+                _items.append(_item_exploits.to_dict() if _item_exploits is not None else None)
             _dict['exploits'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in impacts (list)
         _items = []
         if self.impacts:
             for _item_impacts in self.impacts:
-                if _item_impacts:
-                    _items.append(_item_impacts.to_dict())
+                _items.append(_item_impacts.to_dict() if _item_impacts is not None else None)
             _dict['impacts'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in metrics (list)
         _items = []
         if self.metrics:
             for _item_metrics in self.metrics:
-                if _item_metrics:
-                    _items.append(_item_metrics.to_dict())
+                _items.append(_item_metrics.to_dict() if _item_metrics is not None else None)
             _dict['metrics'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in problem_types (list)
         _items = []
         if self.problem_types:
             for _item_problem_types in self.problem_types:
-                if _item_problem_types:
-                    _items.append(_item_problem_types.to_dict())
+                _items.append(_item_problem_types.to_dict() if _item_problem_types is not None else None)
             _dict['problemTypes'] = _items
         # override the default output from pydantic by calling `to_dict()` of provider_metadata
         if self.provider_metadata:
@@ -176,22 +168,19 @@ class AdvisoryCirclCna(BaseModel):
         _items = []
         if self.references:
             for _item_references in self.references:
-                if _item_references:
-                    _items.append(_item_references.to_dict())
+                _items.append(_item_references.to_dict() if _item_references is not None else None)
             _dict['references'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in rejected_reasons (list)
         _items = []
         if self.rejected_reasons:
             for _item_rejected_reasons in self.rejected_reasons:
-                if _item_rejected_reasons:
-                    _items.append(_item_rejected_reasons.to_dict())
+                _items.append(_item_rejected_reasons.to_dict() if _item_rejected_reasons is not None else None)
             _dict['rejectedReasons'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in solutions (list)
         _items = []
         if self.solutions:
             for _item_solutions in self.solutions:
-                if _item_solutions:
-                    _items.append(_item_solutions.to_dict())
+                _items.append(_item_solutions.to_dict() if _item_solutions is not None else None)
             _dict['solutions'] = _items
         # override the default output from pydantic by calling `to_dict()` of source
         if self.source:
@@ -200,29 +189,25 @@ class AdvisoryCirclCna(BaseModel):
         _items = []
         if self.taxonomy_mappings:
             for _item_taxonomy_mappings in self.taxonomy_mappings:
-                if _item_taxonomy_mappings:
-                    _items.append(_item_taxonomy_mappings.to_dict())
+                _items.append(_item_taxonomy_mappings.to_dict() if _item_taxonomy_mappings is not None else None)
             _dict['taxonomyMappings'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in timeline (list)
         _items = []
         if self.timeline:
             for _item_timeline in self.timeline:
-                if _item_timeline:
-                    _items.append(_item_timeline.to_dict())
+                _items.append(_item_timeline.to_dict() if _item_timeline is not None else None)
             _dict['timeline'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in workarounds (list)
         _items = []
         if self.workarounds:
             for _item_workarounds in self.workarounds:
-                if _item_workarounds:
-                    _items.append(_item_workarounds.to_dict())
+                _items.append(_item_workarounds.to_dict() if _item_workarounds is not None else None)
             _dict['workarounds'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in x_gcve (list)
         _items = []
         if self.x_gcve:
             for _item_x_gcve in self.x_gcve:
-                if _item_x_gcve:
-                    _items.append(_item_x_gcve.to_dict())
+                _items.append(_item_x_gcve.to_dict() if _item_x_gcve is not None else None)
             _dict['x_gcve'] = _items
         # override the default output from pydantic by calling `to_dict()` of x_generator
         if self.x_generator:

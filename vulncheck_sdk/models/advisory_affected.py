@@ -18,20 +18,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_osv_package import AdvisoryOSVPackage
 from vulncheck_sdk.models.advisory_range import AdvisoryRange
 from vulncheck_sdk.models.advisory_severity import AdvisorySeverity
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryAffected(BaseModel):
     """
     advisory.Affected
     """ # noqa: E501
-    database_specific: Optional[Any] = None
-    ecosystem_specific: Optional[Any] = None
+    database_specific: Optional[Any] = Field(default=None, description="The meaning of the values within the object is entirely defined by the database")
+    ecosystem_specific: Optional[Any] = Field(default=None, description="The meaning of the values within the object is entirely defined by the ecosystem")
     package: Optional[AdvisoryOSVPackage] = None
     ranges: Optional[List[AdvisoryRange]] = None
     severity: Optional[List[AdvisorySeverity]] = None
@@ -39,7 +40,8 @@ class AdvisoryAffected(BaseModel):
     __properties: ClassVar[List[str]] = ["database_specific", "ecosystem_specific", "package", "ranges", "severity", "versions"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -51,8 +53,7 @@ class AdvisoryAffected(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -84,15 +85,13 @@ class AdvisoryAffected(BaseModel):
         _items = []
         if self.ranges:
             for _item_ranges in self.ranges:
-                if _item_ranges:
-                    _items.append(_item_ranges.to_dict())
+                _items.append(_item_ranges.to_dict() if _item_ranges is not None else None)
             _dict['ranges'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in severity (list)
         _items = []
         if self.severity:
             for _item_severity in self.severity:
-                if _item_severity:
-                    _items.append(_item_severity.to_dict())
+                _items.append(_item_severity.to_dict() if _item_severity is not None else None)
             _dict['severity'] = _items
         # set to None if database_specific (nullable) is None
         # and model_fields_set contains the field

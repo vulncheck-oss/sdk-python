@@ -25,6 +25,7 @@ from vulncheck_sdk.aio.models.advisory_adobe_cve import AdvisoryAdobeCVE
 from vulncheck_sdk.aio.models.advisory_adobe_solution import AdvisoryAdobeSolution
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryAdobeAdvisory(BaseModel):
     """
@@ -41,7 +42,8 @@ class AdvisoryAdobeAdvisory(BaseModel):
     __properties: ClassVar[List[str]] = ["adobe_cves", "affected", "bulletinId", "cve", "date_added", "link", "solutions", "updated_at"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -53,8 +55,7 @@ class AdvisoryAdobeAdvisory(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -83,22 +84,19 @@ class AdvisoryAdobeAdvisory(BaseModel):
         _items = []
         if self.adobe_cves:
             for _item_adobe_cves in self.adobe_cves:
-                if _item_adobe_cves:
-                    _items.append(_item_adobe_cves.to_dict())
+                _items.append(_item_adobe_cves.to_dict() if _item_adobe_cves is not None else None)
             _dict['adobe_cves'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in affected (list)
         _items = []
         if self.affected:
             for _item_affected in self.affected:
-                if _item_affected:
-                    _items.append(_item_affected.to_dict())
+                _items.append(_item_affected.to_dict() if _item_affected is not None else None)
             _dict['affected'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in solutions (list)
         _items = []
         if self.solutions:
             for _item_solutions in self.solutions:
-                if _item_solutions:
-                    _items.append(_item_solutions.to_dict())
+                _items.append(_item_solutions.to_dict() if _item_solutions is not None else None)
             _dict['solutions'] = _items
         return _dict
 

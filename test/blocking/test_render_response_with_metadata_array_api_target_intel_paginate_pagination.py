@@ -88,24 +88,39 @@ class TestRenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(unitte
                         cve = [
                             ''
                             ], 
+                        cve_confirmed = [
+                            vulncheck_sdk.models.api/cve_confirmed.api.CVEConfirmed(
+                                confirmed = True, 
+                                cve_id = '', )
+                            ], 
                         date_added = '', 
                         fingerprints = [
                             vulncheck_sdk.models.api/fingerprint.api.Fingerprint(
+                                cves = [
+                                    vulncheck_sdk.models.api/cve_confirmed.api.CVEConfirmed(
+                                        confirmed = True, 
+                                        cve_id = '', )
+                                    ], 
+                                deprecated = True, 
                                 product = '', 
                                 vendor = '', 
                                 version = '', )
                             ], 
                         hostname = '', 
                         ip = '', 
-                        metadata = [
-                            56
-                            ], 
+                        metadata = vulncheck_sdk.models.metadata.metadata(), 
                         port = 56, 
                         product = [
                             ''
                             ], 
                         protocol = '', 
+                        summary = vulncheck_sdk.models.api/target_intel_summary.api.TargetIntelSummary(
+                            confirmed_count = 56, 
+                            contains_cve = True, 
+                            cve_count = 56, 
+                            fingerprint_count = 56, ), 
                         timestamp = '', 
+                        transport = '', 
                         vendor = [
                             ''
                             ], 

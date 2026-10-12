@@ -20,21 +20,29 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.models.api_c2_frequency import ApiC2Frequency
 from vulncheck_sdk.models.api_client_fingerprints import ApiClientFingerprints
 from vulncheck_sdk.models.api_http_details import ApiHTTPDetails
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiVulnCheckCanary(BaseModel):
     """
     api.VulnCheckCanary
     """ # noqa: E501
+    attacker_infrastructure: Optional[List[StrictStr]] = None
+    attacker_infrastructure_frequency_3d: Optional[List[ApiC2Frequency]] = None
+    c2_frequency_3d: Optional[List[ApiC2Frequency]] = None
+    c2_location: Optional[List[StrictStr]] = None
     category: Optional[StrictStr] = None
     client_fingerprints: Optional[ApiClientFingerprints] = None
     cve: Optional[StrictStr] = None
     dst_country: Optional[StrictStr] = None
     http: Optional[ApiHTTPDetails] = None
     payload: Optional[StrictStr] = None
+    payload_tlsh: Optional[StrictStr] = None
+    payload_tooling: Optional[List[StrictStr]] = None
     severity: Optional[StrictInt] = None
     signature: Optional[StrictStr] = None
     signature_id: Optional[StrictInt] = None
@@ -43,12 +51,17 @@ class ApiVulnCheckCanary(BaseModel):
     src_asn: Optional[StrictStr] = None
     src_country: Optional[StrictStr] = None
     src_ip: Optional[StrictStr] = None
+    src_ip_freq_3d: Optional[StrictInt] = None
+    src_ip_freq_3d_canary: Optional[StrictInt] = None
+    src_ip_type_findings: Optional[List[StrictStr]] = None
     src_port: Optional[StrictInt] = None
+    tech_vertical: Optional[List[StrictStr]] = None
     timestamp: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["category", "client_fingerprints", "cve", "dst_country", "http", "payload", "severity", "signature", "signature_id", "src_as_domain", "src_as_name", "src_asn", "src_country", "src_ip", "src_port", "timestamp"]
+    __properties: ClassVar[List[str]] = ["attacker_infrastructure", "attacker_infrastructure_frequency_3d", "c2_frequency_3d", "c2_location", "category", "client_fingerprints", "cve", "dst_country", "http", "payload", "payload_tlsh", "payload_tooling", "severity", "signature", "signature_id", "src_as_domain", "src_as_name", "src_asn", "src_country", "src_ip", "src_ip_freq_3d", "src_ip_freq_3d_canary", "src_ip_type_findings", "src_port", "tech_vertical", "timestamp"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -60,8 +73,7 @@ class ApiVulnCheckCanary(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -86,6 +98,18 @@ class ApiVulnCheckCanary(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in attacker_infrastructure_frequency_3d (list)
+        _items = []
+        if self.attacker_infrastructure_frequency_3d:
+            for _item_attacker_infrastructure_frequency_3d in self.attacker_infrastructure_frequency_3d:
+                _items.append(_item_attacker_infrastructure_frequency_3d.to_dict() if _item_attacker_infrastructure_frequency_3d is not None else None)
+            _dict['attacker_infrastructure_frequency_3d'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in c2_frequency_3d (list)
+        _items = []
+        if self.c2_frequency_3d:
+            for _item_c2_frequency_3d in self.c2_frequency_3d:
+                _items.append(_item_c2_frequency_3d.to_dict() if _item_c2_frequency_3d is not None else None)
+            _dict['c2_frequency_3d'] = _items
         # override the default output from pydantic by calling `to_dict()` of client_fingerprints
         if self.client_fingerprints:
             _dict['client_fingerprints'] = self.client_fingerprints.to_dict()
@@ -104,12 +128,18 @@ class ApiVulnCheckCanary(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "attacker_infrastructure": obj.get("attacker_infrastructure"),
+            "attacker_infrastructure_frequency_3d": [ApiC2Frequency.from_dict(_item) for _item in obj["attacker_infrastructure_frequency_3d"]] if obj.get("attacker_infrastructure_frequency_3d") is not None else None,
+            "c2_frequency_3d": [ApiC2Frequency.from_dict(_item) for _item in obj["c2_frequency_3d"]] if obj.get("c2_frequency_3d") is not None else None,
+            "c2_location": obj.get("c2_location"),
             "category": obj.get("category"),
             "client_fingerprints": ApiClientFingerprints.from_dict(obj["client_fingerprints"]) if obj.get("client_fingerprints") is not None else None,
             "cve": obj.get("cve"),
             "dst_country": obj.get("dst_country"),
             "http": ApiHTTPDetails.from_dict(obj["http"]) if obj.get("http") is not None else None,
             "payload": obj.get("payload"),
+            "payload_tlsh": obj.get("payload_tlsh"),
+            "payload_tooling": obj.get("payload_tooling"),
             "severity": obj.get("severity"),
             "signature": obj.get("signature"),
             "signature_id": obj.get("signature_id"),
@@ -118,7 +148,11 @@ class ApiVulnCheckCanary(BaseModel):
             "src_asn": obj.get("src_asn"),
             "src_country": obj.get("src_country"),
             "src_ip": obj.get("src_ip"),
+            "src_ip_freq_3d": obj.get("src_ip_freq_3d"),
+            "src_ip_freq_3d_canary": obj.get("src_ip_freq_3d_canary"),
+            "src_ip_type_findings": obj.get("src_ip_type_findings"),
             "src_port": obj.get("src_port"),
+            "tech_vertical": obj.get("tech_vertical"),
             "timestamp": obj.get("timestamp")
         })
         return _obj

@@ -22,20 +22,22 @@ from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiHTTPDetails(BaseModel):
     """
     api.HTTPDetails
     """ # noqa: E501
+    http_method: Optional[StrictStr] = None
     http_request_body: Optional[StrictStr] = None
     http_user_agent: Optional[StrictStr] = None
-    method: Optional[StrictStr] = None
     protocol: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["http_request_body", "http_user_agent", "method", "protocol", "url"]
+    __properties: ClassVar[List[str]] = ["http_method", "http_request_body", "http_user_agent", "protocol", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -47,8 +49,7 @@ class ApiHTTPDetails(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -85,9 +86,9 @@ class ApiHTTPDetails(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "http_method": obj.get("http_method"),
             "http_request_body": obj.get("http_request_body"),
             "http_user_agent": obj.get("http_user_agent"),
-            "method": obj.get("method"),
             "protocol": obj.get("protocol"),
             "url": obj.get("url")
         })

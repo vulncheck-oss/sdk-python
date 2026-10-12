@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.advisory_ubuntu_package_release_status import AdvisoryUbuntuPackageReleaseStatus
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryAffectedUbuntuPackage(BaseModel):
     """
@@ -36,7 +37,8 @@ class AdvisoryAffectedUbuntuPackage(BaseModel):
     __properties: ClassVar[List[str]] = ["break_commit_url", "fix_commit_url", "package_name", "package_release_status", "upstream_fix_url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -48,8 +50,7 @@ class AdvisoryAffectedUbuntuPackage(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -78,8 +79,7 @@ class AdvisoryAffectedUbuntuPackage(BaseModel):
         _items = []
         if self.package_release_status:
             for _item_package_release_status in self.package_release_status:
-                if _item_package_release_status:
-                    _items.append(_item_package_release_status.to_dict())
+                _items.append(_item_package_release_status.to_dict() if _item_package_release_status is not None else None)
             _dict['package_release_status'] = _items
         return _dict
 

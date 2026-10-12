@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryVulnCheck(BaseModel):
     """
@@ -32,16 +33,18 @@ class AdvisoryVulnCheck(BaseModel):
     cve: Optional[List[StrictStr]] = None
     cvss: Optional[StrictStr] = None
     cvss_v3_vector: Optional[StrictStr] = None
+    cvss_v4_vector: Optional[StrictStr] = None
     date_added: Optional[StrictStr] = None
     references: Optional[List[StrictStr]] = None
     severity: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
     url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["affecting", "credit", "cve", "cvss", "cvss_v3_vector", "date_added", "references", "severity", "title", "type", "url"]
+    __properties: ClassVar[List[str]] = ["affecting", "credit", "cve", "cvss", "cvss_v3_vector", "cvss_v4_vector", "date_added", "references", "severity", "title", "type", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -53,8 +56,7 @@ class AdvisoryVulnCheck(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -96,6 +98,7 @@ class AdvisoryVulnCheck(BaseModel):
             "cve": obj.get("cve"),
             "cvss": obj.get("cvss"),
             "cvss_v3_vector": obj.get("cvss_v3_vector"),
+            "cvss_v4_vector": obj.get("cvss_v4_vector"),
             "date_added": obj.get("date_added"),
             "references": obj.get("references"),
             "severity": obj.get("severity"),

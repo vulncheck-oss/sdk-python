@@ -23,8 +23,10 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.api_nvd20_cvss_metric_v2 import ApiNVD20CvssMetricV2
 from vulncheck_sdk.models.api_nvd20_cvss_metric_v3 import ApiNVD20CvssMetricV3
 from vulncheck_sdk.models.api_nvd20_cvss_metric_v40 import ApiNVD20CvssMetricV40
+from vulncheck_sdk.models.api_nvd20_ssvc_metric_v203 import ApiNVD20SsvcMetricV203
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiNVD20Metric(BaseModel):
     """
@@ -34,10 +36,12 @@ class ApiNVD20Metric(BaseModel):
     cvss_metric_v30: Optional[List[ApiNVD20CvssMetricV3]] = Field(default=None, alias="cvssMetricV30")
     cvss_metric_v31: Optional[List[ApiNVD20CvssMetricV3]] = Field(default=None, alias="cvssMetricV31")
     cvss_metric_v40: Optional[List[ApiNVD20CvssMetricV40]] = Field(default=None, alias="cvssMetricV40")
-    __properties: ClassVar[List[str]] = ["cvssMetricV2", "cvssMetricV30", "cvssMetricV31", "cvssMetricV40"]
+    ssvc_v203: Optional[List[ApiNVD20SsvcMetricV203]] = Field(default=None, alias="ssvcV203")
+    __properties: ClassVar[List[str]] = ["cvssMetricV2", "cvssMetricV30", "cvssMetricV31", "cvssMetricV40", "ssvcV203"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -49,8 +53,7 @@ class ApiNVD20Metric(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -79,30 +82,32 @@ class ApiNVD20Metric(BaseModel):
         _items = []
         if self.cvss_metric_v2:
             for _item_cvss_metric_v2 in self.cvss_metric_v2:
-                if _item_cvss_metric_v2:
-                    _items.append(_item_cvss_metric_v2.to_dict())
+                _items.append(_item_cvss_metric_v2.to_dict() if _item_cvss_metric_v2 is not None else None)
             _dict['cvssMetricV2'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cvss_metric_v30 (list)
         _items = []
         if self.cvss_metric_v30:
             for _item_cvss_metric_v30 in self.cvss_metric_v30:
-                if _item_cvss_metric_v30:
-                    _items.append(_item_cvss_metric_v30.to_dict())
+                _items.append(_item_cvss_metric_v30.to_dict() if _item_cvss_metric_v30 is not None else None)
             _dict['cvssMetricV30'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cvss_metric_v31 (list)
         _items = []
         if self.cvss_metric_v31:
             for _item_cvss_metric_v31 in self.cvss_metric_v31:
-                if _item_cvss_metric_v31:
-                    _items.append(_item_cvss_metric_v31.to_dict())
+                _items.append(_item_cvss_metric_v31.to_dict() if _item_cvss_metric_v31 is not None else None)
             _dict['cvssMetricV31'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cvss_metric_v40 (list)
         _items = []
         if self.cvss_metric_v40:
             for _item_cvss_metric_v40 in self.cvss_metric_v40:
-                if _item_cvss_metric_v40:
-                    _items.append(_item_cvss_metric_v40.to_dict())
+                _items.append(_item_cvss_metric_v40.to_dict() if _item_cvss_metric_v40 is not None else None)
             _dict['cvssMetricV40'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in ssvc_v203 (list)
+        _items = []
+        if self.ssvc_v203:
+            for _item_ssvc_v203 in self.ssvc_v203:
+                _items.append(_item_ssvc_v203.to_dict() if _item_ssvc_v203 is not None else None)
+            _dict['ssvcV203'] = _items
         return _dict
 
     @classmethod
@@ -118,7 +123,8 @@ class ApiNVD20Metric(BaseModel):
             "cvssMetricV2": [ApiNVD20CvssMetricV2.from_dict(_item) for _item in obj["cvssMetricV2"]] if obj.get("cvssMetricV2") is not None else None,
             "cvssMetricV30": [ApiNVD20CvssMetricV3.from_dict(_item) for _item in obj["cvssMetricV30"]] if obj.get("cvssMetricV30") is not None else None,
             "cvssMetricV31": [ApiNVD20CvssMetricV3.from_dict(_item) for _item in obj["cvssMetricV31"]] if obj.get("cvssMetricV31") is not None else None,
-            "cvssMetricV40": [ApiNVD20CvssMetricV40.from_dict(_item) for _item in obj["cvssMetricV40"]] if obj.get("cvssMetricV40") is not None else None
+            "cvssMetricV40": [ApiNVD20CvssMetricV40.from_dict(_item) for _item in obj["cvssMetricV40"]] if obj.get("cvssMetricV40") is not None else None,
+            "ssvcV203": [ApiNVD20SsvcMetricV203.from_dict(_item) for _item in obj["ssvcV203"]] if obj.get("ssvcV203") is not None else None
         })
         return _obj
 

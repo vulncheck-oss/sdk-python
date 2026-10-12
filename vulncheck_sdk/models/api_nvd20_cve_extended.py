@@ -23,6 +23,8 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_nvd20_configuration import AdvisoryNVD20Configuration
 from vulncheck_sdk.models.api_categorization_extended import ApiCategorizationExtended
 from vulncheck_sdk.models.api_mitre_attack_tech import ApiMitreAttackTech
+from vulncheck_sdk.models.api_nvd20_affected import ApiNVD20Affected
+from vulncheck_sdk.models.api_nvd20_cve_tag import ApiNVD20CVETag
 from vulncheck_sdk.models.api_nvd20_description import ApiNVD20Description
 from vulncheck_sdk.models.api_nvd20_metric_extended import ApiNVD20MetricExtended
 from vulncheck_sdk.models.api_nvd20_reference_extended import ApiNVD20ReferenceExtended
@@ -31,6 +33,7 @@ from vulncheck_sdk.models.api_nvd20_weakness_extended import ApiNVD20WeaknessExt
 from vulncheck_sdk.models.api_related_attack_pattern import ApiRelatedAttackPattern
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiNVD20CVEExtended(BaseModel):
     """
@@ -39,12 +42,14 @@ class ApiNVD20CVEExtended(BaseModel):
     alias: Optional[StrictStr] = Field(default=None, alias="ALIAS")
     status: Optional[StrictStr] = Field(default=None, alias="STATUS")
     timestamp: Optional[StrictStr] = Field(default=None, description="the deep tag instructs deep.Equal to ignore this field (used during OpenSearch loading)", alias="_timestamp")
+    affected: Optional[List[ApiNVD20Affected]] = None
     categorization: Optional[ApiCategorizationExtended] = None
     cisa_action_due: Optional[StrictStr] = Field(default=None, alias="cisaActionDue")
     cisa_exploit_add: Optional[StrictStr] = Field(default=None, alias="cisaExploitAdd")
     cisa_required_action: Optional[StrictStr] = Field(default=None, alias="cisaRequiredAction")
     cisa_vulnerability_name: Optional[StrictStr] = Field(default=None, alias="cisaVulnerabilityName")
     configurations: Optional[List[AdvisoryNVD20Configuration]] = None
+    cve_tags: Optional[List[ApiNVD20CVETag]] = Field(default=None, alias="cveTags")
     date_added: Optional[StrictStr] = None
     descriptions: Optional[List[ApiNVD20Description]] = None
     document_generation_date: Optional[StrictStr] = Field(default=None, alias="documentGenerationDate")
@@ -66,10 +71,11 @@ class ApiNVD20CVEExtended(BaseModel):
     vulncheck_kev_exploit_add: Optional[StrictStr] = Field(default=None, alias="vulncheckKEVExploitAdd")
     vulnerable_cpes: Optional[List[StrictStr]] = Field(default=None, alias="vulnerableCPEs")
     weaknesses: Optional[List[ApiNVD20WeaknessExtended]] = None
-    __properties: ClassVar[List[str]] = ["ALIAS", "STATUS", "_timestamp", "categorization", "cisaActionDue", "cisaExploitAdd", "cisaRequiredAction", "cisaVulnerabilityName", "configurations", "date_added", "descriptions", "documentGenerationDate", "evaluatorComment", "evaluatorImpact", "evaluatorSolution", "id", "lastModified", "metrics", "mitreAttackTechniques", "published", "references", "relatedAttackPatterns", "sourceIdentifier", "vcConfigurations", "vcVulnerableCPEs", "vendorComments", "vulnStatus", "vulncheckKEVExploitAdd", "vulnerableCPEs", "weaknesses"]
+    __properties: ClassVar[List[str]] = ["ALIAS", "STATUS", "_timestamp", "affected", "categorization", "cisaActionDue", "cisaExploitAdd", "cisaRequiredAction", "cisaVulnerabilityName", "configurations", "cveTags", "date_added", "descriptions", "documentGenerationDate", "evaluatorComment", "evaluatorImpact", "evaluatorSolution", "id", "lastModified", "metrics", "mitreAttackTechniques", "published", "references", "relatedAttackPatterns", "sourceIdentifier", "vcConfigurations", "vcVulnerableCPEs", "vendorComments", "vulnStatus", "vulncheckKEVExploitAdd", "vulnerableCPEs", "weaknesses"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -81,8 +87,7 @@ class ApiNVD20CVEExtended(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -107,6 +112,12 @@ class ApiNVD20CVEExtended(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in affected (list)
+        _items = []
+        if self.affected:
+            for _item_affected in self.affected:
+                _items.append(_item_affected.to_dict() if _item_affected is not None else None)
+            _dict['affected'] = _items
         # override the default output from pydantic by calling `to_dict()` of categorization
         if self.categorization:
             _dict['categorization'] = self.categorization.to_dict()
@@ -114,15 +125,19 @@ class ApiNVD20CVEExtended(BaseModel):
         _items = []
         if self.configurations:
             for _item_configurations in self.configurations:
-                if _item_configurations:
-                    _items.append(_item_configurations.to_dict())
+                _items.append(_item_configurations.to_dict() if _item_configurations is not None else None)
             _dict['configurations'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in cve_tags (list)
+        _items = []
+        if self.cve_tags:
+            for _item_cve_tags in self.cve_tags:
+                _items.append(_item_cve_tags.to_dict() if _item_cve_tags is not None else None)
+            _dict['cveTags'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in descriptions (list)
         _items = []
         if self.descriptions:
             for _item_descriptions in self.descriptions:
-                if _item_descriptions:
-                    _items.append(_item_descriptions.to_dict())
+                _items.append(_item_descriptions.to_dict() if _item_descriptions is not None else None)
             _dict['descriptions'] = _items
         # override the default output from pydantic by calling `to_dict()` of metrics
         if self.metrics:
@@ -131,43 +146,37 @@ class ApiNVD20CVEExtended(BaseModel):
         _items = []
         if self.mitre_attack_techniques:
             for _item_mitre_attack_techniques in self.mitre_attack_techniques:
-                if _item_mitre_attack_techniques:
-                    _items.append(_item_mitre_attack_techniques.to_dict())
+                _items.append(_item_mitre_attack_techniques.to_dict() if _item_mitre_attack_techniques is not None else None)
             _dict['mitreAttackTechniques'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in references (list)
         _items = []
         if self.references:
             for _item_references in self.references:
-                if _item_references:
-                    _items.append(_item_references.to_dict())
+                _items.append(_item_references.to_dict() if _item_references is not None else None)
             _dict['references'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in related_attack_patterns (list)
         _items = []
         if self.related_attack_patterns:
             for _item_related_attack_patterns in self.related_attack_patterns:
-                if _item_related_attack_patterns:
-                    _items.append(_item_related_attack_patterns.to_dict())
+                _items.append(_item_related_attack_patterns.to_dict() if _item_related_attack_patterns is not None else None)
             _dict['relatedAttackPatterns'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in vc_configurations (list)
         _items = []
         if self.vc_configurations:
             for _item_vc_configurations in self.vc_configurations:
-                if _item_vc_configurations:
-                    _items.append(_item_vc_configurations.to_dict())
+                _items.append(_item_vc_configurations.to_dict() if _item_vc_configurations is not None else None)
             _dict['vcConfigurations'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in vendor_comments (list)
         _items = []
         if self.vendor_comments:
             for _item_vendor_comments in self.vendor_comments:
-                if _item_vendor_comments:
-                    _items.append(_item_vendor_comments.to_dict())
+                _items.append(_item_vendor_comments.to_dict() if _item_vendor_comments is not None else None)
             _dict['vendorComments'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in weaknesses (list)
         _items = []
         if self.weaknesses:
             for _item_weaknesses in self.weaknesses:
-                if _item_weaknesses:
-                    _items.append(_item_weaknesses.to_dict())
+                _items.append(_item_weaknesses.to_dict() if _item_weaknesses is not None else None)
             _dict['weaknesses'] = _items
         return _dict
 
@@ -184,12 +193,14 @@ class ApiNVD20CVEExtended(BaseModel):
             "ALIAS": obj.get("ALIAS"),
             "STATUS": obj.get("STATUS"),
             "_timestamp": obj.get("_timestamp"),
+            "affected": [ApiNVD20Affected.from_dict(_item) for _item in obj["affected"]] if obj.get("affected") is not None else None,
             "categorization": ApiCategorizationExtended.from_dict(obj["categorization"]) if obj.get("categorization") is not None else None,
             "cisaActionDue": obj.get("cisaActionDue"),
             "cisaExploitAdd": obj.get("cisaExploitAdd"),
             "cisaRequiredAction": obj.get("cisaRequiredAction"),
             "cisaVulnerabilityName": obj.get("cisaVulnerabilityName"),
             "configurations": [AdvisoryNVD20Configuration.from_dict(_item) for _item in obj["configurations"]] if obj.get("configurations") is not None else None,
+            "cveTags": [ApiNVD20CVETag.from_dict(_item) for _item in obj["cveTags"]] if obj.get("cveTags") is not None else None,
             "date_added": obj.get("date_added"),
             "descriptions": [ApiNVD20Description.from_dict(_item) for _item in obj["descriptions"]] if obj.get("descriptions") is not None else None,
             "documentGenerationDate": obj.get("documentGenerationDate"),

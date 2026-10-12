@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.advisory_comm_vault_impacted_product_details import AdvisoryCommVaultImpactedProductDetails
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryCommVaultImpactedProduct(BaseModel):
     """
@@ -33,7 +34,8 @@ class AdvisoryCommVaultImpactedProduct(BaseModel):
     __properties: ClassVar[List[str]] = ["description", "impacted_product_details"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -45,8 +47,7 @@ class AdvisoryCommVaultImpactedProduct(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -75,8 +76,7 @@ class AdvisoryCommVaultImpactedProduct(BaseModel):
         _items = []
         if self.impacted_product_details:
             for _item_impacted_product_details in self.impacted_product_details:
-                if _item_impacted_product_details:
-                    _items.append(_item_impacted_product_details.to_dict())
+                _items.append(_item_impacted_product_details.to_dict() if _item_impacted_product_details is not None else None)
             _dict['impacted_product_details'] = _items
         return _dict
 

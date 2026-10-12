@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.api_initial_access_artifact import ApiInitialAccessArtifact
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiInitialAccess(BaseModel):
     """
@@ -30,13 +31,15 @@ class ApiInitialAccess(BaseModel):
     """ # noqa: E501
     artifacts: Optional[List[ApiInitialAccessArtifact]] = Field(default=None, description="Artifacts holds the set of available artifacts for this vulnerability, such as exploit, shodan queries, PCAP traces, and others.")
     cve: Optional[StrictStr] = Field(default=None, description="CVE identifier for the given initial access record.")
+    id: Optional[StrictStr] = Field(default=None, description="ID is the unique identifier for this initial access record.")
     in_kev: Optional[StrictBool] = Field(default=None, description="InKEV is true if this artifact is in CISA's Known Exploited Vulnerabilities (KEV) data set; otherwise, false.", alias="inKEV")
     in_vckev: Optional[StrictBool] = Field(default=None, description="InVCKEV is true if this artifact is in VulnCheck's Known Exploited Vulnerabilities (VCKEV) data set; otherwise, false.", alias="inVCKEV")
     vulnerable_cpes: Optional[List[StrictStr]] = Field(default=None, description="VulnerableCPEs is the list of vulnerable CPE strings associated with this CVE and artifact(s).")
-    __properties: ClassVar[List[str]] = ["artifacts", "cve", "inKEV", "inVCKEV", "vulnerable_cpes"]
+    __properties: ClassVar[List[str]] = ["artifacts", "cve", "id", "inKEV", "inVCKEV", "vulnerable_cpes"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -48,8 +51,7 @@ class ApiInitialAccess(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -78,8 +80,7 @@ class ApiInitialAccess(BaseModel):
         _items = []
         if self.artifacts:
             for _item_artifacts in self.artifacts:
-                if _item_artifacts:
-                    _items.append(_item_artifacts.to_dict())
+                _items.append(_item_artifacts.to_dict() if _item_artifacts is not None else None)
             _dict['artifacts'] = _items
         return _dict
 
@@ -95,6 +96,7 @@ class ApiInitialAccess(BaseModel):
         _obj = cls.model_validate({
             "artifacts": [ApiInitialAccessArtifact.from_dict(_item) for _item in obj["artifacts"]] if obj.get("artifacts") is not None else None,
             "cve": obj.get("cve"),
+            "id": obj.get("id"),
             "inKEV": obj.get("inKEV"),
             "inVCKEV": obj.get("inVCKEV"),
             "vulnerable_cpes": obj.get("vulnerable_cpes")

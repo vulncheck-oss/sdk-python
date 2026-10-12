@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     VulnCheck API
 
@@ -11,6 +9,7 @@
 
     Do not edit the class manually.
 """  # noqa: E501
+
 
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
@@ -25,7 +24,7 @@ from vulncheck_sdk.models.render_response_array_params_index_backup_list import 
 from vulncheck_sdk.models.render_response_array_params_index_list import RenderResponseArrayParamsIndexList
 from vulncheck_sdk.models.render_response_with_metadata_array_index_cve_search_hit_index_cve_search_meta import RenderResponseWithMetadataArrayIndexCveSearchHitIndexCveSearchMeta
 from vulncheck_sdk.models.render_response_with_metadata_array_string_v3controllers_response_metadata import RenderResponseWithMetadataArrayStringV3controllersResponseMetadata
-from vulncheck_sdk.models.render_response_with_metadata_search_responses_search_response_metadata import RenderResponseWithMetadataSearchResponsesSearchResponseMetadata
+from vulncheck_sdk.models.render_response_with_metadata_search_responses_paginate_pagination import RenderResponseWithMetadataSearchResponsesPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_v3controllers_backup_response_data_v3controllers_backup_response_metadata import RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata
 from vulncheck_sdk.models.render_response_with_metadata_v3controllers_purl_response_data_v3controllers_purl_response_metadata import RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata
 from vulncheck_sdk.models.render_response_with_metadata_v3controllers_purls_response_data_v3controllers_purls_response_metadata import RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata
@@ -1387,7 +1386,7 @@ class EndpointsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
-    ) -> Dict[str, object]:
+    ) -> Dict[str, Optional[object]]:
         """Return OpenAPI specification
 
         Return the VulnCheck API (v3) OpenAPI specification
@@ -1422,7 +1421,7 @@ class EndpointsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "Dict[str, Optional[object]]",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1451,7 +1450,7 @@ class EndpointsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
-    ) -> ApiResponse[Dict[str, object]]:
+    ) -> ApiResponse[Dict[str, Optional[object]]]:
         """Return OpenAPI specification
 
         Return the VulnCheck API (v3) OpenAPI specification
@@ -1486,7 +1485,7 @@ class EndpointsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "Dict[str, Optional[object]]",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1550,7 +1549,7 @@ class EndpointsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Dict[str, object]",
+            '200': "Dict[str, Optional[object]]",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -2223,6 +2222,7 @@ class EndpointsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata",
+            '400': "str",
             '404': "str",
             '500': "str",
         }
@@ -2292,6 +2292,7 @@ class EndpointsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata",
+            '400': "str",
             '404': "str",
             '500': "str",
         }
@@ -2361,6 +2362,7 @@ class EndpointsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata",
+            '400': "str",
             '404': "str",
             '500': "str",
         }
@@ -2742,7 +2744,7 @@ class EndpointsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
-    ) -> RenderResponseWithMetadataSearchResponsesSearchResponseMetadata:
+    ) -> RenderResponseWithMetadataSearchResponsesPaginatePagination:
         """Return CPEs and associated CPEs by searching CPE fields
 
         Based on the specified CPE (Common Platform Enumeration) fields, this endpoint will return a list of matching CPEs and the related CVE vulnerabilities.
@@ -2792,7 +2794,7 @@ class EndpointsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RenderResponseWithMetadataSearchResponsesSearchResponseMetadata",
+            '200': "RenderResponseWithMetadataSearchResponsesPaginatePagination",
             '404': "str",
             '500': "str",
         }
@@ -2827,7 +2829,7 @@ class EndpointsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
-    ) -> ApiResponse[RenderResponseWithMetadataSearchResponsesSearchResponseMetadata]:
+    ) -> ApiResponse[RenderResponseWithMetadataSearchResponsesPaginatePagination]:
         """Return CPEs and associated CPEs by searching CPE fields
 
         Based on the specified CPE (Common Platform Enumeration) fields, this endpoint will return a list of matching CPEs and the related CVE vulnerabilities.
@@ -2877,7 +2879,7 @@ class EndpointsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RenderResponseWithMetadataSearchResponsesSearchResponseMetadata",
+            '200': "RenderResponseWithMetadataSearchResponsesPaginatePagination",
             '404': "str",
             '500': "str",
         }
@@ -2962,7 +2964,7 @@ class EndpointsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RenderResponseWithMetadataSearchResponsesSearchResponseMetadata",
+            '200': "RenderResponseWithMetadataSearchResponsesPaginatePagination",
             '404': "str",
             '500': "str",
         }

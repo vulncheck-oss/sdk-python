@@ -79,6 +79,7 @@ class TestAdvisoryRedhatCVE(unittest.TestCase):
                         md5 = '', 
                         name = '', 
                         purl = '', 
+                        release = '', 
                         version = '', )
                     ],
                 public_date = '',

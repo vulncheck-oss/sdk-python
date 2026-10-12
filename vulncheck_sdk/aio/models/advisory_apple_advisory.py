@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.advisory_apple_component import AdvisoryAppleComponent
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryAppleAdvisory(BaseModel):
     """
@@ -37,7 +38,8 @@ class AdvisoryAppleAdvisory(BaseModel):
     __properties: ClassVar[List[str]] = ["components", "cve", "date_added", "name", "updated_at", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -49,8 +51,7 @@ class AdvisoryAppleAdvisory(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -79,8 +80,7 @@ class AdvisoryAppleAdvisory(BaseModel):
         _items = []
         if self.components:
             for _item_components in self.components:
-                if _item_components:
-                    _items.append(_item_components.to_dict())
+                _items.append(_item_components.to_dict() if _item_components is not None else None)
             _dict['components'] = _items
         return _dict
 

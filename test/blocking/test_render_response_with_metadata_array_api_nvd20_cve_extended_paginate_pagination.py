@@ -76,6 +76,49 @@ class TestRenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination(u
                         alias = '', 
                         status = '', 
                         _timestamp = '', 
+                        affected = [
+                            vulncheck_sdk.models.api/nvd20_affected.api.NVD20Affected(
+                                affected_data = [
+                                    vulncheck_sdk.models.api/nvd20_affected_product.api.NVD20AffectedProduct(
+                                        collection_url = '', 
+                                        cpes = [
+                                            ''
+                                            ], 
+                                        default_status = '', 
+                                        modules = [
+                                            ''
+                                            ], 
+                                        package_name = '', 
+                                        package_url = '', 
+                                        platforms = [
+                                            ''
+                                            ], 
+                                        product = '', 
+                                        program_files = [
+                                            ''
+                                            ], 
+                                        program_routines = [
+                                            vulncheck_sdk.models.api/nvd20_affected_program_routine.api.NVD20AffectedProgramRoutine(
+                                                name = '', )
+                                            ], 
+                                        repo = '', 
+                                        vendor = '', 
+                                        versions = [
+                                            vulncheck_sdk.models.api/nvd20_affected_version.api.NVD20AffectedVersion(
+                                                changes = [
+                                                    vulncheck_sdk.models.api/nvd20_affected_version_change.api.NVD20AffectedVersionChange(
+                                                        at = '', 
+                                                        status = '', )
+                                                    ], 
+                                                less_than = '', 
+                                                less_than_or_equal = '', 
+                                                status = '', 
+                                                version = '', 
+                                                version_type = '', )
+                                            ], )
+                                    ], 
+                                source = '', )
+                            ], 
                         categorization = vulncheck_sdk.models.api/categorization_extended.api.CategorizationExtended(
                             tags = [
                                 ''
@@ -103,6 +146,10 @@ class TestRenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination(u
                                         operator = '', )
                                     ], 
                                 operator = '', )
+                            ], 
+                        cve_tags = [
+                            vulncheck_sdk.models.api/nvd20_cve_tag.api.NVD20CVETag(
+                                source_identifier = '', )
                             ], 
                         date_added = '', 
                         descriptions = [
@@ -243,7 +290,7 @@ class TestRenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination(u
                                 d3fendmapping = [
                                     vulncheck_sdk.models.api/mitre_mitigation2_d3fend_mapping.api.MitreMitigation2D3fendMapping(
                                         d3fendtechniques = [
-                                            vulncheck_sdk.models.api/mitre_d3fend_technique.api.MitreD3fendTechnique(
+                                            vulncheck_sdk.models.advisory/mitre_d3fend_technique.advisory.MitreD3fendTechnique(
                                                 id = '', 
                                                 url = '', )
                                             ], 

@@ -212,9 +212,7 @@ class TestAdvisoryMContainers(unittest.TestCase):
                         solutions = [
                             
                             ], 
-                        source = [
-                            56
-                            ], 
+                        source = vulncheck_sdk.aio.models.source.source(), 
                         tags = [
                             ''
                             ], 
@@ -422,9 +420,7 @@ class TestAdvisoryMContainers(unittest.TestCase):
                     solutions = [
                         
                         ], 
-                    source = [
-                        56
-                        ], 
+                    source = vulncheck_sdk.aio.models.source.source(), 
                     tags = [
                         ''
                         ], 

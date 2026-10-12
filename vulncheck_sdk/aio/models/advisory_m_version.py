@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.advisory_version_change import AdvisoryVersionChange
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryMVersion(BaseModel):
     """
@@ -37,7 +38,8 @@ class AdvisoryMVersion(BaseModel):
     __properties: ClassVar[List[str]] = ["changes", "lessThan", "lessThanOrEqual", "status", "version", "versionType"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -49,8 +51,7 @@ class AdvisoryMVersion(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -79,8 +80,7 @@ class AdvisoryMVersion(BaseModel):
         _items = []
         if self.changes:
             for _item_changes in self.changes:
-                if _item_changes:
-                    _items.append(_item_changes.to_dict())
+                _items.append(_item_changes.to_dict() if _item_changes is not None else None)
             _dict['changes'] = _items
         return _dict
 

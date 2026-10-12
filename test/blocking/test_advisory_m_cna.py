@@ -243,9 +243,7 @@ class TestAdvisoryMCna(unittest.TestCase):
                         lang = '', 
                         value = '', )
                     ],
-                source = [
-                    56
-                    ],
+                source = None,
                 tags = [
                     ''
                     ],

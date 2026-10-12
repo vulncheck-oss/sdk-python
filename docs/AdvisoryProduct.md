@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
 **product_id** | **str** |  | [optional] 
-**product_identification_helper** | **Dict[str, object]** | advisory.IdentificationHelper | [optional] 
+**product_identification_helper** | **Dict[str, Optional[object]]** | advisory.IdentificationHelper | [optional] 
 
 ## Example
 

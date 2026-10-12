@@ -26,6 +26,7 @@ from vulncheck_sdk.models.advisory_nvidia_revision import AdvisoryNvidiaRevision
 from vulncheck_sdk.models.advisory_software_update import AdvisorySoftwareUpdate
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisorySecurityBulletin(BaseModel):
     """
@@ -47,7 +48,8 @@ class AdvisorySecurityBulletin(BaseModel):
     __properties: ClassVar[List[str]] = ["acknowledgement", "bulletinId", "cve", "cvedetails", "date_added", "hardwareUpdates", "lastUpdated", "link", "revisions", "severity", "softwareUpdates", "title", "updated_at"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -59,8 +61,7 @@ class AdvisorySecurityBulletin(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -89,29 +90,25 @@ class AdvisorySecurityBulletin(BaseModel):
         _items = []
         if self.cvedetails:
             for _item_cvedetails in self.cvedetails:
-                if _item_cvedetails:
-                    _items.append(_item_cvedetails.to_dict())
+                _items.append(_item_cvedetails.to_dict() if _item_cvedetails is not None else None)
             _dict['cvedetails'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in hardware_updates (list)
         _items = []
         if self.hardware_updates:
             for _item_hardware_updates in self.hardware_updates:
-                if _item_hardware_updates:
-                    _items.append(_item_hardware_updates.to_dict())
+                _items.append(_item_hardware_updates.to_dict() if _item_hardware_updates is not None else None)
             _dict['hardwareUpdates'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in revisions (list)
         _items = []
         if self.revisions:
             for _item_revisions in self.revisions:
-                if _item_revisions:
-                    _items.append(_item_revisions.to_dict())
+                _items.append(_item_revisions.to_dict() if _item_revisions is not None else None)
             _dict['revisions'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in software_updates (list)
         _items = []
         if self.software_updates:
             for _item_software_updates in self.software_updates:
-                if _item_software_updates:
-                    _items.append(_item_software_updates.to_dict())
+                _items.append(_item_software_updates.to_dict() if _item_software_updates is not None else None)
             _dict['softwareUpdates'] = _items
         return _dict
 

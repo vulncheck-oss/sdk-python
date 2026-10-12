@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_cve_mapping import AdvisoryCVEMapping
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryCVEIdentityMappings(BaseModel):
     """
@@ -33,7 +34,8 @@ class AdvisoryCVEIdentityMappings(BaseModel):
     __properties: ClassVar[List[str]] = ["cve", "mappings"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -45,8 +47,7 @@ class AdvisoryCVEIdentityMappings(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -75,8 +76,7 @@ class AdvisoryCVEIdentityMappings(BaseModel):
         _items = []
         if self.mappings:
             for _item_mappings in self.mappings:
-                if _item_mappings:
-                    _items.append(_item_mappings.to_dict())
+                _items.append(_item_mappings.to_dict() if _item_mappings is not None else None)
             _dict['mappings'] = _items
         return _dict
 

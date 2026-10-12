@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.51"
+__version__ = "0.1.2"
 
 # Define package exports
 __all__ = [
@@ -84,6 +84,7 @@ __all__ = [
     "AdvisoryAndroidPackage",
     "AdvisoryAndroidRange",
     "AdvisoryAndroidReference",
+    "AdvisoryAnthropicCVD",
     "AdvisoryApacheActiveMQ",
     "AdvisoryApacheArchiva",
     "AdvisoryApacheArrow",
@@ -176,6 +177,8 @@ __all__ = [
     "AdvisoryCSAFRelationship",
     "AdvisoryCSAFScore",
     "AdvisoryCSAFVulnerability",
+    "AdvisoryCVDSeverityCompare",
+    "AdvisoryCVDSnapshot",
     "AdvisoryCVEDetail",
     "AdvisoryCVEDetailsLink",
     "AdvisoryCVEIdentityMappings",
@@ -484,6 +487,7 @@ __all__ = [
     "AdvisoryMitreAttackTechnique",
     "AdvisoryMitreCVEListV5",
     "AdvisoryMitreCVEListV5Ref",
+    "AdvisoryMitreD3fendTechnique",
     "AdvisoryMitreGroupCTI",
     "AdvisoryMitsubishiElectricAdvisory",
     "AdvisoryMogwaiLabsAdvisory",
@@ -503,7 +507,6 @@ __all__ = [
     "AdvisoryNVD20Configuration",
     "AdvisoryNVD20Node",
     "AdvisoryNVD20Source",
-    "AdvisoryNVDCPEDictionary",
     "AdvisoryNZAdvisory",
     "AdvisoryNaver",
     "AdvisoryNessus",
@@ -808,12 +811,15 @@ __all__ = [
     "AdvisoryZuluVersion",
     "AdvisoryZuso",
     "AdvisoryZyxel",
+    "ApiAttackerInfrastructure",
     "ApiBaseMetricV2",
     "ApiBaseMetricV3",
+    "ApiC2Frequency",
     "ApiCPE",
     "ApiCPEMatch",
     "ApiCPEName",
     "ApiCVE",
+    "ApiCVEConfirmed",
     "ApiCVEDataMeta",
     "ApiCVEDataMetaExtended",
     "ApiCVEExtended",
@@ -844,26 +850,42 @@ __all__ = [
     "ApiImpactExtended",
     "ApiInitialAccess",
     "ApiInitialAccessArtifact",
+    "ApiInitialAccessGoExploit",
+    "ApiInitialAccessGoExploitCustomFlag",
     "ApiMitreAttackTech",
     "ApiMitreAttackToCVE",
-    "ApiMitreD3fendTechnique",
     "ApiMitreDetectionTech",
     "ApiMitreMitigation2D3fendMapping",
     "ApiMitreMitigationTech",
+    "ApiNVD20Affected",
+    "ApiNVD20AffectedProduct",
+    "ApiNVD20AffectedProgramRoutine",
+    "ApiNVD20AffectedVersion",
+    "ApiNVD20AffectedVersionChange",
     "ApiNVD20CPEMatch",
     "ApiNVD20CPEName",
     "ApiNVD20CVE",
     "ApiNVD20CVEExtended",
+    "ApiNVD20CVETag",
+    "ApiNVD20Change",
     "ApiNVD20CvssDataV2",
     "ApiNVD20CvssDataV3",
     "ApiNVD20CvssMetricV2",
     "ApiNVD20CvssMetricV3",
     "ApiNVD20CvssMetricV40",
     "ApiNVD20Description",
+    "ApiNVD20DetailsExtended",
     "ApiNVD20Metric",
     "ApiNVD20MetricExtended",
     "ApiNVD20Reference",
     "ApiNVD20ReferenceExtended",
+    "ApiNVD20SsvcDataV203",
+    "ApiNVD20SsvcDecisionPoint",
+    "ApiNVD20SsvcDecisionPointChild",
+    "ApiNVD20SsvcDecisionPointOption",
+    "ApiNVD20SsvcDecisionTree",
+    "ApiNVD20SsvcMetricV203",
+    "ApiNVD20SsvcOption",
     "ApiNVD20TemporalAssociatedBaseMetric",
     "ApiNVD20TemporalCVSSV2",
     "ApiNVD20TemporalCVSSV3",
@@ -897,9 +919,7 @@ __all__ = [
     "ApiRelatedAttackPattern",
     "ApiSSVC",
     "ApiTargetIntel",
-    "ApiTargetIntelCVESummary",
-    "ApiTargetIntelCVESummaryAsnsInner",
-    "ApiTargetIntelCVESummaryPortsInner",
+    "ApiTargetIntelSummary",
     "ApiTemporalCVSSV2",
     "ApiTemporalCVSSV3",
     "ApiTemporalMetricV2",
@@ -923,6 +943,7 @@ __all__ = [
     "PurlBatchVulnFinding",
     "PurlPackageURLJSON",
     "PurlQualifierJSON",
+    "PurlUnprocessedPurl",
     "PurlsPurlResponse",
     "PurlsVulnerability",
     "RenderResponseArrayParamsIndexBackupList",
@@ -950,6 +971,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryAmazonCVEPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAnchoreNVDOverridePaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryAndroidAdvisoryPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryApacheActiveMQPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryApacheArchivaPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryApacheArrowPaginatePagination",
@@ -1204,7 +1226,6 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryNIPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryNTPPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryNVD20SourcePaginatePagination",
-    "RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryNZAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryNaverPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryNessusPaginatePagination",
@@ -1383,6 +1404,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryZscalerPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryZusoPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryZyxelPaginatePagination",
+    "RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination",
     "RenderResponseWithMetadataArrayApiCWEPaginatePagination",
     "RenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination",
     "RenderResponseWithMetadataArrayApiCveItemsPaginatePagination",
@@ -1395,8 +1417,8 @@ __all__ = [
     "RenderResponseWithMetadataArrayApiNVD20CPEMatchPaginatePagination",
     "RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination",
     "RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination",
+    "RenderResponseWithMetadataArrayApiNVD20ChangePaginatePagination",
     "RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination",
-    "RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination",
     "RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination",
     "RenderResponseWithMetadataArrayApiUpdatePaginatePagination",
     "RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination",
@@ -1404,13 +1426,12 @@ __all__ = [
     "RenderResponseWithMetadataArrayIndexCveSearchHitIndexCveSearchMeta",
     "RenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination",
     "RenderResponseWithMetadataArrayStringV3controllersResponseMetadata",
-    "RenderResponseWithMetadataSearchResponsesSearchResponseMetadata",
+    "RenderResponseWithMetadataSearchResponsesPaginatePagination",
     "RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata",
     "RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata",
     "RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata",
     "SearchErrorResponse",
     "SearchResponseDataOut",
-    "SearchResponseMetadata",
     "SearchV4AdvisoryMeta",
     "SearchV4AdvisoryReturnValue",
     "SearchV4FeedItem",
@@ -1492,6 +1513,7 @@ from vulncheck_sdk.aio.models.advisory_android_event import AdvisoryAndroidEvent
 from vulncheck_sdk.aio.models.advisory_android_package import AdvisoryAndroidPackage as AdvisoryAndroidPackage
 from vulncheck_sdk.aio.models.advisory_android_range import AdvisoryAndroidRange as AdvisoryAndroidRange
 from vulncheck_sdk.aio.models.advisory_android_reference import AdvisoryAndroidReference as AdvisoryAndroidReference
+from vulncheck_sdk.aio.models.advisory_anthropic_cvd import AdvisoryAnthropicCVD as AdvisoryAnthropicCVD
 from vulncheck_sdk.aio.models.advisory_apache_active_mq import AdvisoryApacheActiveMQ as AdvisoryApacheActiveMQ
 from vulncheck_sdk.aio.models.advisory_apache_archiva import AdvisoryApacheArchiva as AdvisoryApacheArchiva
 from vulncheck_sdk.aio.models.advisory_apache_arrow import AdvisoryApacheArrow as AdvisoryApacheArrow
@@ -1584,6 +1606,8 @@ from vulncheck_sdk.aio.models.advisory_csaf_reference import AdvisoryCSAFReferen
 from vulncheck_sdk.aio.models.advisory_csaf_relationship import AdvisoryCSAFRelationship as AdvisoryCSAFRelationship
 from vulncheck_sdk.aio.models.advisory_csaf_score import AdvisoryCSAFScore as AdvisoryCSAFScore
 from vulncheck_sdk.aio.models.advisory_csaf_vulnerability import AdvisoryCSAFVulnerability as AdvisoryCSAFVulnerability
+from vulncheck_sdk.aio.models.advisory_cvd_severity_compare import AdvisoryCVDSeverityCompare as AdvisoryCVDSeverityCompare
+from vulncheck_sdk.aio.models.advisory_cvd_snapshot import AdvisoryCVDSnapshot as AdvisoryCVDSnapshot
 from vulncheck_sdk.aio.models.advisory_cve_detail import AdvisoryCVEDetail as AdvisoryCVEDetail
 from vulncheck_sdk.aio.models.advisory_cve_details_link import AdvisoryCVEDetailsLink as AdvisoryCVEDetailsLink
 from vulncheck_sdk.aio.models.advisory_cve_identity_mappings import AdvisoryCVEIdentityMappings as AdvisoryCVEIdentityMappings
@@ -1892,6 +1916,7 @@ from vulncheck_sdk.aio.models.advisory_mitre_attack_tech_with_refs import Adviso
 from vulncheck_sdk.aio.models.advisory_mitre_attack_technique import AdvisoryMitreAttackTechnique as AdvisoryMitreAttackTechnique
 from vulncheck_sdk.aio.models.advisory_mitre_cve_list_v5 import AdvisoryMitreCVEListV5 as AdvisoryMitreCVEListV5
 from vulncheck_sdk.aio.models.advisory_mitre_cve_list_v5_ref import AdvisoryMitreCVEListV5Ref as AdvisoryMitreCVEListV5Ref
+from vulncheck_sdk.aio.models.advisory_mitre_d3fend_technique import AdvisoryMitreD3fendTechnique as AdvisoryMitreD3fendTechnique
 from vulncheck_sdk.aio.models.advisory_mitre_group_cti import AdvisoryMitreGroupCTI as AdvisoryMitreGroupCTI
 from vulncheck_sdk.aio.models.advisory_mitsubishi_electric_advisory import AdvisoryMitsubishiElectricAdvisory as AdvisoryMitsubishiElectricAdvisory
 from vulncheck_sdk.aio.models.advisory_mogwai_labs_advisory import AdvisoryMogwaiLabsAdvisory as AdvisoryMogwaiLabsAdvisory
@@ -1911,7 +1936,6 @@ from vulncheck_sdk.aio.models.advisory_nvd20_cvecpe_match import AdvisoryNVD20CV
 from vulncheck_sdk.aio.models.advisory_nvd20_configuration import AdvisoryNVD20Configuration as AdvisoryNVD20Configuration
 from vulncheck_sdk.aio.models.advisory_nvd20_node import AdvisoryNVD20Node as AdvisoryNVD20Node
 from vulncheck_sdk.aio.models.advisory_nvd20_source import AdvisoryNVD20Source as AdvisoryNVD20Source
-from vulncheck_sdk.aio.models.advisory_nvdcpe_dictionary import AdvisoryNVDCPEDictionary as AdvisoryNVDCPEDictionary
 from vulncheck_sdk.aio.models.advisory_nz_advisory import AdvisoryNZAdvisory as AdvisoryNZAdvisory
 from vulncheck_sdk.aio.models.advisory_naver import AdvisoryNaver as AdvisoryNaver
 from vulncheck_sdk.aio.models.advisory_nessus import AdvisoryNessus as AdvisoryNessus
@@ -2216,12 +2240,15 @@ from vulncheck_sdk.aio.models.advisory_zscaler import AdvisoryZscaler as Advisor
 from vulncheck_sdk.aio.models.advisory_zulu_version import AdvisoryZuluVersion as AdvisoryZuluVersion
 from vulncheck_sdk.aio.models.advisory_zuso import AdvisoryZuso as AdvisoryZuso
 from vulncheck_sdk.aio.models.advisory_zyxel import AdvisoryZyxel as AdvisoryZyxel
+from vulncheck_sdk.aio.models.api_attacker_infrastructure import ApiAttackerInfrastructure as ApiAttackerInfrastructure
 from vulncheck_sdk.aio.models.api_base_metric_v2 import ApiBaseMetricV2 as ApiBaseMetricV2
 from vulncheck_sdk.aio.models.api_base_metric_v3 import ApiBaseMetricV3 as ApiBaseMetricV3
+from vulncheck_sdk.aio.models.api_c2_frequency import ApiC2Frequency as ApiC2Frequency
 from vulncheck_sdk.aio.models.api_cpe import ApiCPE as ApiCPE
 from vulncheck_sdk.aio.models.api_cpe_match import ApiCPEMatch as ApiCPEMatch
 from vulncheck_sdk.aio.models.api_cpe_name import ApiCPEName as ApiCPEName
 from vulncheck_sdk.aio.models.api_cve import ApiCVE as ApiCVE
+from vulncheck_sdk.aio.models.api_cve_confirmed import ApiCVEConfirmed as ApiCVEConfirmed
 from vulncheck_sdk.aio.models.api_cve_data_meta import ApiCVEDataMeta as ApiCVEDataMeta
 from vulncheck_sdk.aio.models.api_cve_data_meta_extended import ApiCVEDataMetaExtended as ApiCVEDataMetaExtended
 from vulncheck_sdk.aio.models.api_cve_extended import ApiCVEExtended as ApiCVEExtended
@@ -2252,26 +2279,42 @@ from vulncheck_sdk.aio.models.api_impact import ApiImpact as ApiImpact
 from vulncheck_sdk.aio.models.api_impact_extended import ApiImpactExtended as ApiImpactExtended
 from vulncheck_sdk.aio.models.api_initial_access import ApiInitialAccess as ApiInitialAccess
 from vulncheck_sdk.aio.models.api_initial_access_artifact import ApiInitialAccessArtifact as ApiInitialAccessArtifact
+from vulncheck_sdk.aio.models.api_initial_access_go_exploit import ApiInitialAccessGoExploit as ApiInitialAccessGoExploit
+from vulncheck_sdk.aio.models.api_initial_access_go_exploit_custom_flag import ApiInitialAccessGoExploitCustomFlag as ApiInitialAccessGoExploitCustomFlag
 from vulncheck_sdk.aio.models.api_mitre_attack_tech import ApiMitreAttackTech as ApiMitreAttackTech
 from vulncheck_sdk.aio.models.api_mitre_attack_to_cve import ApiMitreAttackToCVE as ApiMitreAttackToCVE
-from vulncheck_sdk.aio.models.api_mitre_d3fend_technique import ApiMitreD3fendTechnique as ApiMitreD3fendTechnique
 from vulncheck_sdk.aio.models.api_mitre_detection_tech import ApiMitreDetectionTech as ApiMitreDetectionTech
 from vulncheck_sdk.aio.models.api_mitre_mitigation2_d3fend_mapping import ApiMitreMitigation2D3fendMapping as ApiMitreMitigation2D3fendMapping
 from vulncheck_sdk.aio.models.api_mitre_mitigation_tech import ApiMitreMitigationTech as ApiMitreMitigationTech
+from vulncheck_sdk.aio.models.api_nvd20_affected import ApiNVD20Affected as ApiNVD20Affected
+from vulncheck_sdk.aio.models.api_nvd20_affected_product import ApiNVD20AffectedProduct as ApiNVD20AffectedProduct
+from vulncheck_sdk.aio.models.api_nvd20_affected_program_routine import ApiNVD20AffectedProgramRoutine as ApiNVD20AffectedProgramRoutine
+from vulncheck_sdk.aio.models.api_nvd20_affected_version import ApiNVD20AffectedVersion as ApiNVD20AffectedVersion
+from vulncheck_sdk.aio.models.api_nvd20_affected_version_change import ApiNVD20AffectedVersionChange as ApiNVD20AffectedVersionChange
 from vulncheck_sdk.aio.models.api_nvd20_cpe_match import ApiNVD20CPEMatch as ApiNVD20CPEMatch
 from vulncheck_sdk.aio.models.api_nvd20_cpe_name import ApiNVD20CPEName as ApiNVD20CPEName
 from vulncheck_sdk.aio.models.api_nvd20_cve import ApiNVD20CVE as ApiNVD20CVE
 from vulncheck_sdk.aio.models.api_nvd20_cve_extended import ApiNVD20CVEExtended as ApiNVD20CVEExtended
+from vulncheck_sdk.aio.models.api_nvd20_cve_tag import ApiNVD20CVETag as ApiNVD20CVETag
+from vulncheck_sdk.aio.models.api_nvd20_change import ApiNVD20Change as ApiNVD20Change
 from vulncheck_sdk.aio.models.api_nvd20_cvss_data_v2 import ApiNVD20CvssDataV2 as ApiNVD20CvssDataV2
 from vulncheck_sdk.aio.models.api_nvd20_cvss_data_v3 import ApiNVD20CvssDataV3 as ApiNVD20CvssDataV3
 from vulncheck_sdk.aio.models.api_nvd20_cvss_metric_v2 import ApiNVD20CvssMetricV2 as ApiNVD20CvssMetricV2
 from vulncheck_sdk.aio.models.api_nvd20_cvss_metric_v3 import ApiNVD20CvssMetricV3 as ApiNVD20CvssMetricV3
 from vulncheck_sdk.aio.models.api_nvd20_cvss_metric_v40 import ApiNVD20CvssMetricV40 as ApiNVD20CvssMetricV40
 from vulncheck_sdk.aio.models.api_nvd20_description import ApiNVD20Description as ApiNVD20Description
+from vulncheck_sdk.aio.models.api_nvd20_details_extended import ApiNVD20DetailsExtended as ApiNVD20DetailsExtended
 from vulncheck_sdk.aio.models.api_nvd20_metric import ApiNVD20Metric as ApiNVD20Metric
 from vulncheck_sdk.aio.models.api_nvd20_metric_extended import ApiNVD20MetricExtended as ApiNVD20MetricExtended
 from vulncheck_sdk.aio.models.api_nvd20_reference import ApiNVD20Reference as ApiNVD20Reference
 from vulncheck_sdk.aio.models.api_nvd20_reference_extended import ApiNVD20ReferenceExtended as ApiNVD20ReferenceExtended
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_data_v203 import ApiNVD20SsvcDataV203 as ApiNVD20SsvcDataV203
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_decision_point import ApiNVD20SsvcDecisionPoint as ApiNVD20SsvcDecisionPoint
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_decision_point_child import ApiNVD20SsvcDecisionPointChild as ApiNVD20SsvcDecisionPointChild
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_decision_point_option import ApiNVD20SsvcDecisionPointOption as ApiNVD20SsvcDecisionPointOption
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_decision_tree import ApiNVD20SsvcDecisionTree as ApiNVD20SsvcDecisionTree
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_metric_v203 import ApiNVD20SsvcMetricV203 as ApiNVD20SsvcMetricV203
+from vulncheck_sdk.aio.models.api_nvd20_ssvc_option import ApiNVD20SsvcOption as ApiNVD20SsvcOption
 from vulncheck_sdk.aio.models.api_nvd20_temporal_associated_base_metric import ApiNVD20TemporalAssociatedBaseMetric as ApiNVD20TemporalAssociatedBaseMetric
 from vulncheck_sdk.aio.models.api_nvd20_temporal_cvssv2 import ApiNVD20TemporalCVSSV2 as ApiNVD20TemporalCVSSV2
 from vulncheck_sdk.aio.models.api_nvd20_temporal_cvssv3 import ApiNVD20TemporalCVSSV3 as ApiNVD20TemporalCVSSV3
@@ -2305,9 +2348,7 @@ from vulncheck_sdk.aio.models.api_references_extended import ApiReferencesExtend
 from vulncheck_sdk.aio.models.api_related_attack_pattern import ApiRelatedAttackPattern as ApiRelatedAttackPattern
 from vulncheck_sdk.aio.models.api_ssvc import ApiSSVC as ApiSSVC
 from vulncheck_sdk.aio.models.api_target_intel import ApiTargetIntel as ApiTargetIntel
-from vulncheck_sdk.aio.models.api_target_intel_cve_summary import ApiTargetIntelCVESummary as ApiTargetIntelCVESummary
-from vulncheck_sdk.aio.models.api_target_intel_cve_summary_asns_inner import ApiTargetIntelCVESummaryAsnsInner as ApiTargetIntelCVESummaryAsnsInner
-from vulncheck_sdk.aio.models.api_target_intel_cve_summary_ports_inner import ApiTargetIntelCVESummaryPortsInner as ApiTargetIntelCVESummaryPortsInner
+from vulncheck_sdk.aio.models.api_target_intel_summary import ApiTargetIntelSummary as ApiTargetIntelSummary
 from vulncheck_sdk.aio.models.api_temporal_cvssv2 import ApiTemporalCVSSV2 as ApiTemporalCVSSV2
 from vulncheck_sdk.aio.models.api_temporal_cvssv3 import ApiTemporalCVSSV3 as ApiTemporalCVSSV3
 from vulncheck_sdk.aio.models.api_temporal_metric_v2 import ApiTemporalMetricV2 as ApiTemporalMetricV2
@@ -2331,6 +2372,7 @@ from vulncheck_sdk.aio.models.params_index_list import ParamsIndexList as Params
 from vulncheck_sdk.aio.models.purl_batch_vuln_finding import PurlBatchVulnFinding as PurlBatchVulnFinding
 from vulncheck_sdk.aio.models.purl_package_urljson import PurlPackageURLJSON as PurlPackageURLJSON
 from vulncheck_sdk.aio.models.purl_qualifier_json import PurlQualifierJSON as PurlQualifierJSON
+from vulncheck_sdk.aio.models.purl_unprocessed_purl import PurlUnprocessedPurl as PurlUnprocessedPurl
 from vulncheck_sdk.aio.models.purls_purl_response import PurlsPurlResponse as PurlsPurlResponse
 from vulncheck_sdk.aio.models.purls_vulnerability import PurlsVulnerability as PurlsVulnerability
 from vulncheck_sdk.aio.models.render_response_array_params_index_backup_list import RenderResponseArrayParamsIndexBackupList as RenderResponseArrayParamsIndexBackupList
@@ -2358,6 +2400,7 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_alpin
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_amazon_cve_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAmazonCVEPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAmazonCVEPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_anchore_nvd_override_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAnchoreNVDOverridePaginatePagination as RenderResponseWithMetadataArrayAdvisoryAnchoreNVDOverridePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_android_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAndroidAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAndroidAdvisoryPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_anthropic_cvd_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination as RenderResponseWithMetadataArrayAdvisoryAnthropicCVDPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_apache_active_mq_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryApacheActiveMQPaginatePagination as RenderResponseWithMetadataArrayAdvisoryApacheActiveMQPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_apache_archiva_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryApacheArchivaPaginatePagination as RenderResponseWithMetadataArrayAdvisoryApacheArchivaPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_apache_arrow_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryApacheArrowPaginatePagination as RenderResponseWithMetadataArrayAdvisoryApacheArrowPaginatePagination
@@ -2612,7 +2655,6 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_nhs_p
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_ni_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNIPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNIPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_ntp_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNTPPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNTPPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_nvd20_source_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNVD20SourcePaginatePagination as RenderResponseWithMetadataArrayAdvisoryNVD20SourcePaginatePagination
-from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_nvdcpe_dictionary_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNVDCPEDictionaryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_nz_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNZAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNZAdvisoryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_naver_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNaverPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNaverPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_nessus_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryNessusPaginatePagination as RenderResponseWithMetadataArrayAdvisoryNessusPaginatePagination
@@ -2791,6 +2833,7 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_zoom_
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_zscaler_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryZscalerPaginatePagination as RenderResponseWithMetadataArrayAdvisoryZscalerPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_zuso_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryZusoPaginatePagination as RenderResponseWithMetadataArrayAdvisoryZusoPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_zyxel_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryZyxelPaginatePagination as RenderResponseWithMetadataArrayAdvisoryZyxelPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_attacker_infrastructure_paginate_pagination import RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination as RenderResponseWithMetadataArrayApiAttackerInfrastructurePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_cwe_paginate_pagination import RenderResponseWithMetadataArrayApiCWEPaginatePagination as RenderResponseWithMetadataArrayApiCWEPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_cve_items_extended_paginate_pagination import RenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination as RenderResponseWithMetadataArrayApiCveItemsExtendedPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_cve_items_paginate_pagination import RenderResponseWithMetadataArrayApiCveItemsPaginatePagination as RenderResponseWithMetadataArrayApiCveItemsPaginatePagination
@@ -2803,8 +2846,8 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_mitre_atta
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_nvd20_cpe_match_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CPEMatchPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CPEMatchPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_nvd20_cve_extended_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_nvd20_cve_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination as RenderResponseWithMetadataArrayApiNVD20CVEPaginatePagination
+from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_nvd20_change_paginate_pagination import RenderResponseWithMetadataArrayApiNVD20ChangePaginatePagination as RenderResponseWithMetadataArrayApiNVD20ChangePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_oss_package_paginate_pagination import RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination as RenderResponseWithMetadataArrayApiOSSPackagePaginatePagination
-from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_target_intel_cve_summary_paginate_pagination import RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination as RenderResponseWithMetadataArrayApiTargetIntelCVESummaryPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_target_intel_paginate_pagination import RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination as RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_update_paginate_pagination import RenderResponseWithMetadataArrayApiUpdatePaginatePagination as RenderResponseWithMetadataArrayApiUpdatePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_vuln_check_canary_paginate_pagination import RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination as RenderResponseWithMetadataArrayApiVulnCheckCanaryPaginatePagination
@@ -2812,13 +2855,12 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_array_api_vulnerabil
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_index_cve_search_hit_index_cve_search_meta import RenderResponseWithMetadataArrayIndexCveSearchHitIndexCveSearchMeta as RenderResponseWithMetadataArrayIndexCveSearchHitIndexCveSearchMeta
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_purls_purl_response_paginate_pagination import RenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination as RenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_string_v3controllers_response_metadata import RenderResponseWithMetadataArrayStringV3controllersResponseMetadata as RenderResponseWithMetadataArrayStringV3controllersResponseMetadata
-from vulncheck_sdk.aio.models.render_response_with_metadata_search_responses_search_response_metadata import RenderResponseWithMetadataSearchResponsesSearchResponseMetadata as RenderResponseWithMetadataSearchResponsesSearchResponseMetadata
+from vulncheck_sdk.aio.models.render_response_with_metadata_search_responses_paginate_pagination import RenderResponseWithMetadataSearchResponsesPaginatePagination as RenderResponseWithMetadataSearchResponsesPaginatePagination
 from vulncheck_sdk.aio.models.render_response_with_metadata_v3controllers_backup_response_data_v3controllers_backup_response_metadata import RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata as RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata
 from vulncheck_sdk.aio.models.render_response_with_metadata_v3controllers_purl_response_data_v3controllers_purl_response_metadata import RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata as RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata
 from vulncheck_sdk.aio.models.render_response_with_metadata_v3controllers_purls_response_data_v3controllers_purls_response_metadata import RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata as RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata
 from vulncheck_sdk.aio.models.search_error_response import SearchErrorResponse as SearchErrorResponse
 from vulncheck_sdk.aio.models.search_response_data_out import SearchResponseDataOut as SearchResponseDataOut
-from vulncheck_sdk.aio.models.search_response_metadata import SearchResponseMetadata as SearchResponseMetadata
 from vulncheck_sdk.aio.models.search_v4_advisory_meta import SearchV4AdvisoryMeta as SearchV4AdvisoryMeta
 from vulncheck_sdk.aio.models.search_v4_advisory_return_value import SearchV4AdvisoryReturnValue as SearchV4AdvisoryReturnValue
 from vulncheck_sdk.aio.models.search_v4_feed_item import SearchV4FeedItem as SearchV4FeedItem

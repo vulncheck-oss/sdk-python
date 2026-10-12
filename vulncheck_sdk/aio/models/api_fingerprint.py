@@ -18,23 +18,28 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.aio.models.api_cve_confirmed import ApiCVEConfirmed
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiFingerprint(BaseModel):
     """
     api.Fingerprint
     """ # noqa: E501
     cpe: Optional[StrictStr] = None
+    cves: Optional[List[ApiCVEConfirmed]] = Field(default=None, description="CVEs attributed to this specific fingerprint's CPE.")
+    deprecated: Optional[StrictBool] = Field(default=None, description="Deprecated marks a fingerprint superseded by a newer alias from the same host.")
     product: Optional[StrictStr] = None
     vendor: Optional[StrictStr] = None
     version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cpe", "product", "vendor", "version"]
+    __properties: ClassVar[List[str]] = ["cpe", "cves", "deprecated", "product", "vendor", "version"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -46,8 +51,7 @@ class ApiFingerprint(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -72,6 +76,12 @@ class ApiFingerprint(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in cves (list)
+        _items = []
+        if self.cves:
+            for _item_cves in self.cves:
+                _items.append(_item_cves.to_dict() if _item_cves is not None else None)
+            _dict['cves'] = _items
         return _dict
 
     @classmethod
@@ -85,6 +95,8 @@ class ApiFingerprint(BaseModel):
 
         _obj = cls.model_validate({
             "cpe": obj.get("cpe"),
+            "cves": [ApiCVEConfirmed.from_dict(_item) for _item in obj["cves"]] if obj.get("cves") is not None else None,
+            "deprecated": obj.get("deprecated"),
             "product": obj.get("product"),
             "vendor": obj.get("vendor"),
             "version": obj.get("version")

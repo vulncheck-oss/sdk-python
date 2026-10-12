@@ -181,6 +181,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_anthropic_cvd_get(self) -> None:
+        """Test case for index_anthropic_cvd_get
+
+        Return vulnerability data stored in index \"anthropic-cvd\"
+        """
+        pass
+
     def test_index_apache_activemq_get(self) -> None:
         """Test case for index_apache_activemq_get
 
@@ -2232,6 +2239,13 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
+    def test_index_nist_nvd2_cvehist_get(self) -> None:
+        """Test case for index_nist_nvd2_cvehist_get
+
+        Return vulnerability data stored in index \"nist-nvd2-cvehist\"
+        """
+        pass
+
     def test_index_nist_nvd2_get(self) -> None:
         """Test case for index_nist_nvd2_get
 
@@ -2313,13 +2327,6 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_nuget_get
 
         Return vulnerability data stored in index \"nuget\"
-        """
-        pass
-
-    def test_index_nvd_cpe_dictionary_get(self) -> None:
-        """Test case for index_nvd_cpe_dictionary_get
-
-        Return vulnerability data stored in index \"nvd-cpe-dictionary\"
         """
         pass
 
@@ -2684,6 +2691,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_redhat_get
 
         Return vulnerability data stored in index \"redhat\"
+        """
+        pass
+
+    def test_index_redhat_purls_get(self) -> None:
+        """Test case for index_redhat_purls_get
+
+        Return vulnerability data stored in index \"redhat-purls\"
         """
         pass
 
@@ -3079,13 +3093,6 @@ class TestIndicesApi(unittest.TestCase):
         """
         pass
 
-    def test_index_target_intel_cve_summary_get(self) -> None:
-        """Test case for index_target_intel_cve_summary_get
-
-        Return vulnerability data stored in index \"target-intel-cve-summary\"
-        """
-        pass
-
     def test_index_target_intel_get(self) -> None:
         """Test case for index_target_intel_get
 
@@ -3307,6 +3314,13 @@ class TestIndicesApi(unittest.TestCase):
         """Test case for index_voidsec_get
 
         Return vulnerability data stored in index \"voidsec\"
+        """
+        pass
+
+    def test_index_vulncheck_attacker_infrastructure_get(self) -> None:
+        """Test case for index_vulncheck_attacker_infrastructure_get
+
+        Return vulnerability data stored in index \"vulncheck-attacker-infrastructure\"
         """
         pass
 

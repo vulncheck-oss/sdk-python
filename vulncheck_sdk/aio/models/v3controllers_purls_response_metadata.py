@@ -20,8 +20,10 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from vulncheck_sdk.aio.models.purl_unprocessed_purl import PurlUnprocessedPurl
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V3controllersPurlsResponseMetadata(BaseModel):
     """
@@ -29,10 +31,13 @@ class V3controllersPurlsResponseMetadata(BaseModel):
     """ # noqa: E501
     timestamp: Optional[StrictStr] = Field(default=None, description="time of the transaction")
     total_documents: Optional[StrictInt] = Field(default=None, description="number of results found")
-    __properties: ClassVar[List[str]] = ["timestamp", "total_documents"]
+    total_submitted: Optional[StrictInt] = Field(default=None, description="number of purls in the request")
+    unprocessed: Optional[List[PurlUnprocessedPurl]] = Field(default=None, description="Unprocessed lists purls we could not look up. Not inferable from the counts above: purls with no vulnerabilities are omitted from data too.")
+    __properties: ClassVar[List[str]] = ["timestamp", "total_documents", "total_submitted", "unprocessed"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -44,8 +49,7 @@ class V3controllersPurlsResponseMetadata(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -70,6 +74,12 @@ class V3controllersPurlsResponseMetadata(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in unprocessed (list)
+        _items = []
+        if self.unprocessed:
+            for _item_unprocessed in self.unprocessed:
+                _items.append(_item_unprocessed.to_dict() if _item_unprocessed is not None else None)
+            _dict['unprocessed'] = _items
         return _dict
 
     @classmethod
@@ -83,7 +93,9 @@ class V3controllersPurlsResponseMetadata(BaseModel):
 
         _obj = cls.model_validate({
             "timestamp": obj.get("timestamp"),
-            "total_documents": obj.get("total_documents")
+            "total_documents": obj.get("total_documents"),
+            "total_submitted": obj.get("total_submitted"),
+            "unprocessed": [PurlUnprocessedPurl.from_dict(_item) for _item in obj["unprocessed"]] if obj.get("unprocessed") is not None else None
         })
         return _obj
 

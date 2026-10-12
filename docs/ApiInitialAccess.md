@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **artifacts** | [**List[ApiInitialAccessArtifact]**](ApiInitialAccessArtifact.md) | Artifacts holds the set of available artifacts for this vulnerability, such as exploit, shodan queries, PCAP traces, and others. | [optional] 
 **cve** | **str** | CVE identifier for the given initial access record. | [optional] 
+**id** | **str** | ID is the unique identifier for this initial access record. | [optional] 
 **in_kev** | **bool** | InKEV is true if this artifact is in CISA&#39;s Known Exploited Vulnerabilities (KEV) data set; otherwise, false. | [optional] 
 **in_vckev** | **bool** | InVCKEV is true if this artifact is in VulnCheck&#39;s Known Exploited Vulnerabilities (VCKEV) data set; otherwise, false. | [optional] 
 **vulnerable_cpes** | **List[str]** | VulnerableCPEs is the list of vulnerable CPE strings associated with this CVE and artifact(s). | [optional] 

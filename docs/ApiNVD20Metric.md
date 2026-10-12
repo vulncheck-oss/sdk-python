@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **cvss_metric_v30** | [**List[ApiNVD20CvssMetricV3]**](ApiNVD20CvssMetricV3.md) |  | [optional] 
 **cvss_metric_v31** | [**List[ApiNVD20CvssMetricV3]**](ApiNVD20CvssMetricV3.md) |  | [optional] 
 **cvss_metric_v40** | [**List[ApiNVD20CvssMetricV40]**](ApiNVD20CvssMetricV40.md) |  | [optional] 
+**ssvc_v203** | [**List[ApiNVD20SsvcMetricV203]**](ApiNVD20SsvcMetricV203.md) |  | [optional] 
 
 ## Example
 

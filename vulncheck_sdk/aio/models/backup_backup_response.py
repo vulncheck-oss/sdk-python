@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class BackupBackupResponse(BaseModel):
     """
@@ -30,16 +31,19 @@ class BackupBackupResponse(BaseModel):
     available: Optional[StrictBool] = None
     feed: Optional[StrictStr] = None
     sha256: Optional[StrictStr] = None
+    url: Optional[StrictStr] = None
     url_ap_southeast_2: Optional[StrictStr] = Field(default=None, alias="url_ap-southeast-2")
+    url_cloudfront: Optional[StrictStr] = None
     url_eu_west_2: Optional[StrictStr] = Field(default=None, alias="url_eu-west-2")
     url_expires: Optional[StrictStr] = None
     url_mrap: Optional[StrictStr] = None
     url_ttl_minutes: Optional[StrictInt] = None
     url_us_east_1: Optional[StrictStr] = Field(default=None, alias="url_us-east-1")
-    __properties: ClassVar[List[str]] = ["available", "feed", "sha256", "url_ap-southeast-2", "url_eu-west-2", "url_expires", "url_mrap", "url_ttl_minutes", "url_us-east-1"]
+    __properties: ClassVar[List[str]] = ["available", "feed", "sha256", "url", "url_ap-southeast-2", "url_cloudfront", "url_eu-west-2", "url_expires", "url_mrap", "url_ttl_minutes", "url_us-east-1"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -51,8 +55,7 @@ class BackupBackupResponse(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -92,7 +95,9 @@ class BackupBackupResponse(BaseModel):
             "available": obj.get("available"),
             "feed": obj.get("feed"),
             "sha256": obj.get("sha256"),
+            "url": obj.get("url"),
             "url_ap-southeast-2": obj.get("url_ap-southeast-2"),
+            "url_cloudfront": obj.get("url_cloudfront"),
             "url_eu-west-2": obj.get("url_eu-west-2"),
             "url_expires": obj.get("url_expires"),
             "url_mrap": obj.get("url_mrap"),

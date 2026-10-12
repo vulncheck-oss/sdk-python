@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.advisory_grey_noise_tags import AdvisoryGreyNoiseTags
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryGreyNoiseDetection(BaseModel):
     """
@@ -45,7 +46,8 @@ class AdvisoryGreyNoiseDetection(BaseModel):
     __properties: ClassVar[List[str]] = ["category", "cve", "date_added", "description", "id", "intention", "label", "name", "recommend_block", "references", "related_tags", "slug", "updated_at", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -57,8 +59,7 @@ class AdvisoryGreyNoiseDetection(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -87,8 +88,7 @@ class AdvisoryGreyNoiseDetection(BaseModel):
         _items = []
         if self.related_tags:
             for _item_related_tags in self.related_tags:
-                if _item_related_tags:
-                    _items.append(_item_related_tags.to_dict())
+                _items.append(_item_related_tags.to_dict() if _item_related_tags is not None else None)
             _dict['related_tags'] = _items
         return _dict
 

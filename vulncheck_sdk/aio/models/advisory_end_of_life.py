@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.advisory_cycle import AdvisoryCycle
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryEndOfLife(BaseModel):
     """
@@ -36,7 +37,8 @@ class AdvisoryEndOfLife(BaseModel):
     __properties: ClassVar[List[str]] = ["cve", "cycles", "date_added", "name", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -48,8 +50,7 @@ class AdvisoryEndOfLife(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -78,8 +79,7 @@ class AdvisoryEndOfLife(BaseModel):
         _items = []
         if self.cycles:
             for _item_cycles in self.cycles:
-                if _item_cycles:
-                    _items.append(_item_cycles.to_dict())
+                _items.append(_item_cycles.to_dict() if _item_cycles is not None else None)
             _dict['cycles'] = _items
         return _dict
 

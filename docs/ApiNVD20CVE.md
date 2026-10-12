@@ -6,11 +6,13 @@ api.NVD20CVE
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**affected** | [**List[ApiNVD20Affected]**](ApiNVD20Affected.md) |  | [optional] 
 **cisa_action_due** | **str** |  | [optional] 
 **cisa_exploit_add** | **str** |  | [optional] 
 **cisa_required_action** | **str** |  | [optional] 
 **cisa_vulnerability_name** | **str** |  | [optional] 
 **configurations** | [**List[AdvisoryNVD20Configuration]**](AdvisoryNVD20Configuration.md) |  | [optional] 
+**cve_tags** | [**List[ApiNVD20CVETag]**](ApiNVD20CVETag.md) |  | [optional] 
 **descriptions** | [**List[ApiNVD20Description]**](ApiNVD20Description.md) |  | [optional] 
 **evaluator_comment** | **str** |  | [optional] 
 **evaluator_impact** | **str** |  | [optional] 

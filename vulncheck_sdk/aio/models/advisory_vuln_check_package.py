@@ -18,10 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryVulnCheckPackage(BaseModel):
     """
@@ -33,11 +34,13 @@ class AdvisoryVulnCheckPackage(BaseModel):
     md5: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     purl: Optional[StrictStr] = None
+    release: Optional[StrictStr] = Field(default=None, description="Release is the rpm release field (the \"-release\" tail of an EVR), when the upstream advisory carries it separately from the version. Distro feeds that backport fixes (SUSE, the RHEL family) pin the fix at the release level with the upstream version unchanged, so a release-aware EVR compare needs this as its own field rather than folded into Version. Empty when the source only provides a bare version.")
     version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["arch", "distro", "filename", "md5", "name", "purl", "version"]
+    __properties: ClassVar[List[str]] = ["arch", "distro", "filename", "md5", "name", "purl", "release", "version"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -49,8 +52,7 @@ class AdvisoryVulnCheckPackage(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -93,6 +95,7 @@ class AdvisoryVulnCheckPackage(BaseModel):
             "md5": obj.get("md5"),
             "name": obj.get("name"),
             "purl": obj.get("purl"),
+            "release": obj.get("release"),
             "version": obj.get("version")
         })
         return _obj

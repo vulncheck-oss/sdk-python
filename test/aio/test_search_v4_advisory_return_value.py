@@ -223,9 +223,7 @@ class TestSearchV4AdvisoryReturnValue(unittest.TestCase):
                                     solutions = [
                                         
                                         ], 
-                                    source = [
-                                        56
-                                        ], 
+                                    source = vulncheck_sdk.aio.models.source.source(), 
                                     tags = [
                                         ''
                                         ], 
@@ -260,6 +258,7 @@ class TestSearchV4AdvisoryReturnValue(unittest.TestCase):
                                 replaced_by = [
                                     ''
                                     ], 
+                                source = vulncheck_sdk.aio.models.source.source(), 
                                 title = '', ), ), 
                         cve_metadata = vulncheck_sdk.aio.models.advisory/m_cve_metadata.advisory.MCveMetadata(
                             assigner_org_id = '', 

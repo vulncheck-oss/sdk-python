@@ -39,7 +39,13 @@ class TestRenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersP
                 benchmark = 1.337,
                 meta = vulncheck_sdk.models.v3controllers/purls_response_metadata.v3controllers.PurlsResponseMetadata(
                     timestamp = '', 
-                    total_documents = 56, ),
+                    total_documents = 56, 
+                    total_submitted = 56, 
+                    unprocessed = [
+                        vulncheck_sdk.models.purl/unprocessed_purl.purl.UnprocessedPurl(
+                            purl = '', 
+                            reason = '', )
+                        ], ),
                 data = [
                     vulncheck_sdk.models.purl/batch_vuln_finding.purl.BatchVulnFinding(
                         cves = [

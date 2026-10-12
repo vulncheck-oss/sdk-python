@@ -51,6 +51,7 @@ class TestAdvisoryVulnCheckKEV(unittest.TestCase):
                 reported_exploited_by_vulncheck_canaries = True,
                 required_action = '',
                 short_description = '',
+                updated_at = '',
                 vendor_project = '',
                 vulncheck_reported_exploitation = [
                     vulncheck_sdk.models.advisory/reported_exploit.advisory.ReportedExploit(

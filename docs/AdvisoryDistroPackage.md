@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **license** | **List[str]** |  | [optional] 
 **name** | **str** |  | [optional] 
 **sec_fixes** | [**List[AdvisorySecFix]**](AdvisorySecFix.md) |  | [optional] 
+**source_name** | **str** | SourceName is the source (SRPM) package this binary was built from, when it differs from Name. Distros whose advisories key fixes by source name (e.g. CBL-Mariner/Azure Linux OVAL: source \&quot;python-jinja2\&quot; → binary \&quot;python3-jinja2\&quot;) need it to attach a source-keyed fix to the binary purl a customer actually queries. Empty when unknown or equal to Name. | [optional] 
 **versions** | [**List[AdvisoryDistroVersion]**](AdvisoryDistroVersion.md) |  | [optional] 
 
 ## Example

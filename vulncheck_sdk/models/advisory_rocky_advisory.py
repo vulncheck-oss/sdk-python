@@ -25,6 +25,7 @@ from vulncheck_sdk.models.advisory_rocky_fix import AdvisoryRockyFix
 from vulncheck_sdk.models.advisory_rocky_version import AdvisoryRockyVersion
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryRockyAdvisory(BaseModel):
     """
@@ -49,7 +50,8 @@ class AdvisoryRockyAdvisory(BaseModel):
     __properties: ClassVar[List[str]] = ["affectedProducts", "buildReferences", "cves", "description", "fixes", "name", "publishedAt", "rebootSuggested", "references", "rpms", "severity", "shortCode", "solution", "synopsis", "topic", "type"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -61,8 +63,7 @@ class AdvisoryRockyAdvisory(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -91,22 +92,19 @@ class AdvisoryRockyAdvisory(BaseModel):
         _items = []
         if self.cves:
             for _item_cves in self.cves:
-                if _item_cves:
-                    _items.append(_item_cves.to_dict())
+                _items.append(_item_cves.to_dict() if _item_cves is not None else None)
             _dict['cves'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in fixes (list)
         _items = []
         if self.fixes:
             for _item_fixes in self.fixes:
-                if _item_fixes:
-                    _items.append(_item_fixes.to_dict())
+                _items.append(_item_fixes.to_dict() if _item_fixes is not None else None)
             _dict['fixes'] = _items
         # override the default output from pydantic by calling `to_dict()` of each value in rpms (dict)
         _field_dict = {}
         if self.rpms:
             for _key_rpms in self.rpms:
-                if self.rpms[_key_rpms]:
-                    _field_dict[_key_rpms] = self.rpms[_key_rpms].to_dict()
+                _field_dict[_key_rpms] = self.rpms[_key_rpms].to_dict() if self.rpms[_key_rpms] is not None else None
             _dict['rpms'] = _field_dict
         return _dict
 

@@ -20,20 +20,22 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from vulncheck_sdk.models.api_mitre_d3fend_technique import ApiMitreD3fendTechnique
+from vulncheck_sdk.models.advisory_mitre_d3fend_technique import AdvisoryMitreD3fendTechnique
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class ApiMitreMitigation2D3fendMapping(BaseModel):
     """
     api.MitreMitigation2D3fendMapping
     """ # noqa: E501
-    d3fendtechniques: Optional[List[ApiMitreD3fendTechnique]] = None
+    d3fendtechniques: Optional[List[AdvisoryMitreD3fendTechnique]] = None
     id: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["d3fendtechniques", "id"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -45,8 +47,7 @@ class ApiMitreMitigation2D3fendMapping(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -75,8 +76,7 @@ class ApiMitreMitigation2D3fendMapping(BaseModel):
         _items = []
         if self.d3fendtechniques:
             for _item_d3fendtechniques in self.d3fendtechniques:
-                if _item_d3fendtechniques:
-                    _items.append(_item_d3fendtechniques.to_dict())
+                _items.append(_item_d3fendtechniques.to_dict() if _item_d3fendtechniques is not None else None)
             _dict['d3fendtechniques'] = _items
         return _dict
 
@@ -90,7 +90,7 @@ class ApiMitreMitigation2D3fendMapping(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "d3fendtechniques": [ApiMitreD3fendTechnique.from_dict(_item) for _item in obj["d3fendtechniques"]] if obj.get("d3fendtechniques") is not None else None,
+            "d3fendtechniques": [AdvisoryMitreD3fendTechnique.from_dict(_item) for _item in obj["d3fendtechniques"]] if obj.get("d3fendtechniques") is not None else None,
             "id": obj.get("id")
         })
         return _obj

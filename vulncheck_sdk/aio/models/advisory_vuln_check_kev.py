@@ -24,6 +24,7 @@ from vulncheck_sdk.aio.models.advisory_reported_exploit import AdvisoryReportedE
 from vulncheck_sdk.aio.models.advisory_xdb import AdvisoryXDB
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryVulnCheckKEV(BaseModel):
     """
@@ -40,14 +41,16 @@ class AdvisoryVulnCheckKEV(BaseModel):
     reported_exploited_by_vulncheck_canaries: Optional[StrictBool] = None
     required_action: Optional[StrictStr] = None
     short_description: Optional[StrictStr] = Field(default=None, alias="shortDescription")
+    updated_at: Optional[StrictStr] = None
     vendor_project: Optional[StrictStr] = Field(default=None, alias="vendorProject")
     vulncheck_reported_exploitation: Optional[List[AdvisoryReportedExploit]] = None
     vulncheck_xdb: Optional[List[AdvisoryXDB]] = None
     vulnerability_name: Optional[StrictStr] = Field(default=None, alias="vulnerabilityName")
-    __properties: ClassVar[List[str]] = ["_timestamp", "cisa_date_added", "cve", "cwes", "date_added", "dueDate", "knownRansomwareCampaignUse", "product", "reported_exploited_by_vulncheck_canaries", "required_action", "shortDescription", "vendorProject", "vulncheck_reported_exploitation", "vulncheck_xdb", "vulnerabilityName"]
+    __properties: ClassVar[List[str]] = ["_timestamp", "cisa_date_added", "cve", "cwes", "date_added", "dueDate", "knownRansomwareCampaignUse", "product", "reported_exploited_by_vulncheck_canaries", "required_action", "shortDescription", "updated_at", "vendorProject", "vulncheck_reported_exploitation", "vulncheck_xdb", "vulnerabilityName"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -59,8 +62,7 @@ class AdvisoryVulnCheckKEV(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -89,15 +91,13 @@ class AdvisoryVulnCheckKEV(BaseModel):
         _items = []
         if self.vulncheck_reported_exploitation:
             for _item_vulncheck_reported_exploitation in self.vulncheck_reported_exploitation:
-                if _item_vulncheck_reported_exploitation:
-                    _items.append(_item_vulncheck_reported_exploitation.to_dict())
+                _items.append(_item_vulncheck_reported_exploitation.to_dict() if _item_vulncheck_reported_exploitation is not None else None)
             _dict['vulncheck_reported_exploitation'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in vulncheck_xdb (list)
         _items = []
         if self.vulncheck_xdb:
             for _item_vulncheck_xdb in self.vulncheck_xdb:
-                if _item_vulncheck_xdb:
-                    _items.append(_item_vulncheck_xdb.to_dict())
+                _items.append(_item_vulncheck_xdb.to_dict() if _item_vulncheck_xdb is not None else None)
             _dict['vulncheck_xdb'] = _items
         return _dict
 
@@ -122,6 +122,7 @@ class AdvisoryVulnCheckKEV(BaseModel):
             "reported_exploited_by_vulncheck_canaries": obj.get("reported_exploited_by_vulncheck_canaries"),
             "required_action": obj.get("required_action"),
             "shortDescription": obj.get("shortDescription"),
+            "updated_at": obj.get("updated_at"),
             "vendorProject": obj.get("vendorProject"),
             "vulncheck_reported_exploitation": [AdvisoryReportedExploit.from_dict(_item) for _item in obj["vulncheck_reported_exploitation"]] if obj.get("vulncheck_reported_exploitation") is not None else None,
             "vulncheck_xdb": [AdvisoryXDB.from_dict(_item) for _item in obj["vulncheck_xdb"]] if obj.get("vulncheck_xdb") is not None else None,

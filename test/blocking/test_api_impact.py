@@ -107,7 +107,14 @@ class TestApiImpact(unittest.TestCase):
                     vuln_availability_impact = '', 
                     vuln_confidentiality_impact = '', 
                     vuln_integrity_impact = '', 
-                    vulnerability_response_effort = '', )
+                    vulnerability_response_effort = '', ),
+                ssvc = [
+                    vulncheck_sdk.models.api/ssvc.api.SSVC(
+                        automatable = '', 
+                        exploitation = '', 
+                        source = '', 
+                        technical_impact = '', )
+                    ]
             )
         else:
             return ApiImpact(

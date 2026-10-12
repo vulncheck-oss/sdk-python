@@ -36,9 +36,9 @@ class TestApiHTTPDetails(unittest.TestCase):
         model = ApiHTTPDetails()
         if include_optional:
             return ApiHTTPDetails(
+                http_method = '',
                 http_request_body = '',
                 http_user_agent = '',
-                method = '',
                 protocol = '',
                 url = ''
             )

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **author** | **str** |  | [optional] 
 **var_date** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**detection** | **Dict[str, object]** |  | [optional] 
+**detection** | **Dict[str, Optional[object]]** |  | [optional] 
 **false_positives** | **List[str]** |  | [optional] 
 **fields** | **List[str]** |  | [optional] 
 **id** | **str** |  | [optional] 

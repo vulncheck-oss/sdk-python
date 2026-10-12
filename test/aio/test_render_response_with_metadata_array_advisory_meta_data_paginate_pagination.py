@@ -98,6 +98,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMetaDataPaginatePagination(unit
                                 md5 = '', 
                                 name = '', 
                                 purl = '', 
+                                release = '', 
                                 version = '', )
                             ], 
                         references = [

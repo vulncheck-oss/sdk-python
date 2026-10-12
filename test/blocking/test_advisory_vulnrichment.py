@@ -173,9 +173,7 @@ class TestAdvisoryVulnrichment(unittest.TestCase):
                             solutions = [
                                 
                                 ], 
-                            source = [
-                                56
-                                ], 
+                            source = vulncheck_sdk.models.source.source(), 
                             tags = [
                                 ''
                                 ], 

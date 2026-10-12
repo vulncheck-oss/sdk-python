@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **provider_metadata** | [**AdvisoryMProviderMetadata**](AdvisoryMProviderMetadata.md) |  | [optional] 
 **references** | [**List[AdvisoryMReference]**](AdvisoryMReference.md) |  | [optional] 
 **solutions** | [**List[AdvisoryMDescriptions]**](AdvisoryMDescriptions.md) |  | [optional] 
-**source** | **List[int]** |  | [optional] 
+**source** | **object** |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
 **taxonomy_mappings** | [**List[AdvisoryTaxonomyMapping]**](AdvisoryTaxonomyMapping.md) |  | [optional] 
 **timeline** | [**List[AdvisoryTimeline]**](AdvisoryTimeline.md) |  | [optional] 

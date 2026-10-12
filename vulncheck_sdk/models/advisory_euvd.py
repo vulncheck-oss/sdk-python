@@ -24,6 +24,7 @@ from vulncheck_sdk.models.advisory_enisa_id_product import AdvisoryEnisaIDProduc
 from vulncheck_sdk.models.advisory_enisa_id_vendor import AdvisoryEnisaIDVendor
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdvisoryEUVD(BaseModel):
     """
@@ -49,7 +50,8 @@ class AdvisoryEUVD(BaseModel):
     __properties: ClassVar[List[str]] = ["aliases", "assigner", "base_score", "base_score_vector", "base_score_version", "cve", "date_added", "date_updated", "description", "enisa_id_product", "enisa_id_vendor", "epss", "exploited", "exploited_since", "id", "references", "url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -61,8 +63,7 @@ class AdvisoryEUVD(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -91,15 +92,13 @@ class AdvisoryEUVD(BaseModel):
         _items = []
         if self.enisa_id_product:
             for _item_enisa_id_product in self.enisa_id_product:
-                if _item_enisa_id_product:
-                    _items.append(_item_enisa_id_product.to_dict())
+                _items.append(_item_enisa_id_product.to_dict() if _item_enisa_id_product is not None else None)
             _dict['enisa_id_product'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in enisa_id_vendor (list)
         _items = []
         if self.enisa_id_vendor:
             for _item_enisa_id_vendor in self.enisa_id_vendor:
-                if _item_enisa_id_vendor:
-                    _items.append(_item_enisa_id_vendor.to_dict())
+                _items.append(_item_enisa_id_vendor.to_dict() if _item_enisa_id_vendor is not None else None)
             _dict['enisa_id_vendor'] = _items
         return _dict
 

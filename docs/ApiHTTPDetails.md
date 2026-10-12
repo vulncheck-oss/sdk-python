@@ -6,9 +6,9 @@ api.HTTPDetails
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**http_method** | **str** |  | [optional] 
 **http_request_body** | **str** |  | [optional] 
 **http_user_agent** | **str** |  | [optional] 
-**method** | **str** |  | [optional] 
 **protocol** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
