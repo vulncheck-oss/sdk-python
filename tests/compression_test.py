@@ -89,6 +89,17 @@ def test_sync_client_requests_and_decodes_compressed_responses(server):
     assert "gzip" in server.requests[0]
 
 
+def test_sync_client_keeps_caller_accept_encoding(server):
+    configuration = vulncheck_sdk.Configuration(host=server.url)
+    with vulncheck_sdk.ApiClient(configuration, header_name="Accept-Encoding", header_value="identity") as api_client:
+        assert api_client.default_headers["Accept-Encoding"] == "identity"
+
+        response = api_client.call_api(*api_client.param_serialize(method="GET", resource_path="/v3/index/example"))
+
+        assert response.read() == BODY
+    assert server.requests[0] == "identity"
+
+
 def test_async_client_requests_and_decodes_compressed_responses(server):
     async def fetch():
         configuration = vcaio.Configuration(host=server.url)

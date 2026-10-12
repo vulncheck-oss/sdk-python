@@ -148,6 +148,8 @@ fix_setupfiles() {
 # uncompressed: 10-60x more bytes for large JSON pages. urllib3 already decodes
 # compressed bodies when they are read, so only the request header is missing.
 # make_headers() only advertises br/zstd when their decoders are installed.
+# setdefault keeps an Accept-Encoding the caller passed as header_name, which the
+# generated constructor applies before this line runs.
 # The async client needs nothing: aiohttp sends Accept-Encoding by default.
 enable_response_compression() {
   local API_CLIENT="vulncheck_sdk/api_client.py"
@@ -162,11 +164,11 @@ enable_response_compression() {
     { print }
     /^import uuid$/ { print "import urllib3" }
     /self\.user_agent = .OpenAPI-Generator\// {
-      print "        self.default_headers[\"Accept-Encoding\"] = urllib3.util.make_headers(accept_encoding=True)[\"accept-encoding\"]"
+      print "        self.default_headers.setdefault(\"Accept-Encoding\", urllib3.util.make_headers(accept_encoding=True)[\"accept-encoding\"])"
     }
   ' "$API_CLIENT" >"$API_CLIENT.tmp" && mv "$API_CLIENT.tmp" "$API_CLIENT"
 
-  if ! grep -q '^import urllib3$' "$API_CLIENT" || ! grep -q 'default_headers\["Accept-Encoding"\]' "$API_CLIENT"; then
+  if ! grep -q '^import urllib3$' "$API_CLIENT" || ! grep -q 'default_headers\.setdefault("Accept-Encoding"' "$API_CLIENT"; then
     echo "Error: failed to add Accept-Encoding to $API_CLIENT."
     return 1
   fi
