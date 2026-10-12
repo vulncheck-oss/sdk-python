@@ -166,6 +166,11 @@ enable_response_compression() {
     }
   ' "$API_CLIENT" >"$API_CLIENT.tmp" && mv "$API_CLIENT.tmp" "$API_CLIENT"
 
+  if ! grep -q '^import urllib3$' "$API_CLIENT" || ! grep -q 'default_headers\["Accept-Encoding"\]' "$API_CLIENT"; then
+    echo "Error: failed to add Accept-Encoding to $API_CLIENT."
+    return 1
+  fi
+
   echo "Enabled compressed responses in $API_CLIENT"
 }
 
