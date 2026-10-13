@@ -5,4 +5,5 @@ from vulncheck_sdk.api.advisory_api import AdvisoryApi
 from vulncheck_sdk.api.backup_api import BackupApi
 from vulncheck_sdk.api.endpoints_api import EndpointsApi
 from vulncheck_sdk.api.indices_api import IndicesApi
+from vulncheck_sdk.api.nvd_api import NvdApi
 
