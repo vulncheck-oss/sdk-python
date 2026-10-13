@@ -109,9 +109,6 @@ async def _check_all_indices(indices: IndicesApi) -> None:
         assert status == 200
 
 
-# --- Orchestrator ---
-
-
 # --- NvdApi Tests ---
 
 
