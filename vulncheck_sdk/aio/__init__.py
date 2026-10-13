@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 
 # Define package exports
 __all__ = [
@@ -23,6 +23,7 @@ __all__ = [
     "BackupApi",
     "EndpointsApi",
     "IndicesApi",
+    "NvdApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -934,6 +935,18 @@ __all__ = [
     "IndexCveSearchMeta",
     "IndexIndexCountEntry",
     "ModelsEntitlements",
+    "NvdcpematchNvdCpeName",
+    "NvdcpematchNvdMatchString",
+    "NvdcpematchNvdMatchStringEnvelopeEntry",
+    "NvdcpesNvdCpe",
+    "NvdcpesNvdCpeDeprecation",
+    "NvdcpesNvdCpeEnvelopeEntry",
+    "NvdcpesNvdCpeReference",
+    "NvdcpesNvdCpeTitle",
+    "NvdcvesNvdCveEnvelopeEntry",
+    "NvdcvesNvdCveExtended",
+    "NvdsourceNvdAcceptanceLevel",
+    "NvdsourceNvdSource",
     "PaginateMatch",
     "PaginatePagination",
     "PaginateParam",
@@ -946,6 +959,7 @@ __all__ = [
     "PurlUnprocessedPurl",
     "PurlsPurlResponse",
     "PurlsVulnerability",
+    "RenderNvdErrorBody",
     "RenderResponseArrayParamsIndexBackupList",
     "RenderResponseArrayParamsIndexList",
     "RenderResponseWithMetadataArrayAdvisoryA10PaginatePagination",
@@ -1430,6 +1444,14 @@ __all__ = [
     "RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata",
     "RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata",
     "RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata",
+    "RestNvdChange",
+    "RestNvdChangeDetail",
+    "RestNvdChangeEnvelopeEntry",
+    "RestNvdCpeMatchResponse",
+    "RestNvdCpesResponse",
+    "RestNvdCveHistoryResponse",
+    "RestNvdCvesResponse",
+    "RestNvdSourceResponse",
     "SearchErrorResponse",
     "SearchResponseDataOut",
     "SearchV4AdvisoryMeta",
@@ -1448,6 +1470,7 @@ from vulncheck_sdk.aio.api.advisory_api import AdvisoryApi as AdvisoryApi
 from vulncheck_sdk.aio.api.backup_api import BackupApi as BackupApi
 from vulncheck_sdk.aio.api.endpoints_api import EndpointsApi as EndpointsApi
 from vulncheck_sdk.aio.api.indices_api import IndicesApi as IndicesApi
+from vulncheck_sdk.aio.api.nvd_api import NvdApi as NvdApi
 
 # import ApiClient
 from vulncheck_sdk.aio.api_response import ApiResponse as ApiResponse
@@ -2363,6 +2386,18 @@ from vulncheck_sdk.aio.models.index_cve_search_hit import IndexCveSearchHit as I
 from vulncheck_sdk.aio.models.index_cve_search_meta import IndexCveSearchMeta as IndexCveSearchMeta
 from vulncheck_sdk.aio.models.index_index_count_entry import IndexIndexCountEntry as IndexIndexCountEntry
 from vulncheck_sdk.aio.models.models_entitlements import ModelsEntitlements as ModelsEntitlements
+from vulncheck_sdk.aio.models.nvdcpematch_nvd_cpe_name import NvdcpematchNvdCpeName as NvdcpematchNvdCpeName
+from vulncheck_sdk.aio.models.nvdcpematch_nvd_match_string import NvdcpematchNvdMatchString as NvdcpematchNvdMatchString
+from vulncheck_sdk.aio.models.nvdcpematch_nvd_match_string_envelope_entry import NvdcpematchNvdMatchStringEnvelopeEntry as NvdcpematchNvdMatchStringEnvelopeEntry
+from vulncheck_sdk.aio.models.nvdcpes_nvd_cpe import NvdcpesNvdCpe as NvdcpesNvdCpe
+from vulncheck_sdk.aio.models.nvdcpes_nvd_cpe_deprecation import NvdcpesNvdCpeDeprecation as NvdcpesNvdCpeDeprecation
+from vulncheck_sdk.aio.models.nvdcpes_nvd_cpe_envelope_entry import NvdcpesNvdCpeEnvelopeEntry as NvdcpesNvdCpeEnvelopeEntry
+from vulncheck_sdk.aio.models.nvdcpes_nvd_cpe_reference import NvdcpesNvdCpeReference as NvdcpesNvdCpeReference
+from vulncheck_sdk.aio.models.nvdcpes_nvd_cpe_title import NvdcpesNvdCpeTitle as NvdcpesNvdCpeTitle
+from vulncheck_sdk.aio.models.nvdcves_nvd_cve_envelope_entry import NvdcvesNvdCveEnvelopeEntry as NvdcvesNvdCveEnvelopeEntry
+from vulncheck_sdk.aio.models.nvdcves_nvd_cve_extended import NvdcvesNvdCveExtended as NvdcvesNvdCveExtended
+from vulncheck_sdk.aio.models.nvdsource_nvd_acceptance_level import NvdsourceNvdAcceptanceLevel as NvdsourceNvdAcceptanceLevel
+from vulncheck_sdk.aio.models.nvdsource_nvd_source import NvdsourceNvdSource as NvdsourceNvdSource
 from vulncheck_sdk.aio.models.paginate_match import PaginateMatch as PaginateMatch
 from vulncheck_sdk.aio.models.paginate_pagination import PaginatePagination as PaginatePagination
 from vulncheck_sdk.aio.models.paginate_param import PaginateParam as PaginateParam
@@ -2375,6 +2410,7 @@ from vulncheck_sdk.aio.models.purl_qualifier_json import PurlQualifierJSON as Pu
 from vulncheck_sdk.aio.models.purl_unprocessed_purl import PurlUnprocessedPurl as PurlUnprocessedPurl
 from vulncheck_sdk.aio.models.purls_purl_response import PurlsPurlResponse as PurlsPurlResponse
 from vulncheck_sdk.aio.models.purls_vulnerability import PurlsVulnerability as PurlsVulnerability
+from vulncheck_sdk.aio.models.render_nvd_error_body import RenderNvdErrorBody as RenderNvdErrorBody
 from vulncheck_sdk.aio.models.render_response_array_params_index_backup_list import RenderResponseArrayParamsIndexBackupList as RenderResponseArrayParamsIndexBackupList
 from vulncheck_sdk.aio.models.render_response_array_params_index_list import RenderResponseArrayParamsIndexList as RenderResponseArrayParamsIndexList
 from vulncheck_sdk.aio.models.render_response_with_metadata_array_advisory_a10_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryA10PaginatePagination as RenderResponseWithMetadataArrayAdvisoryA10PaginatePagination
@@ -2859,6 +2895,14 @@ from vulncheck_sdk.aio.models.render_response_with_metadata_search_responses_pag
 from vulncheck_sdk.aio.models.render_response_with_metadata_v3controllers_backup_response_data_v3controllers_backup_response_metadata import RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata as RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata
 from vulncheck_sdk.aio.models.render_response_with_metadata_v3controllers_purl_response_data_v3controllers_purl_response_metadata import RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata as RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata
 from vulncheck_sdk.aio.models.render_response_with_metadata_v3controllers_purls_response_data_v3controllers_purls_response_metadata import RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata as RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata
+from vulncheck_sdk.aio.models.rest_nvd_change import RestNvdChange as RestNvdChange
+from vulncheck_sdk.aio.models.rest_nvd_change_detail import RestNvdChangeDetail as RestNvdChangeDetail
+from vulncheck_sdk.aio.models.rest_nvd_change_envelope_entry import RestNvdChangeEnvelopeEntry as RestNvdChangeEnvelopeEntry
+from vulncheck_sdk.aio.models.rest_nvd_cpe_match_response import RestNvdCpeMatchResponse as RestNvdCpeMatchResponse
+from vulncheck_sdk.aio.models.rest_nvd_cpes_response import RestNvdCpesResponse as RestNvdCpesResponse
+from vulncheck_sdk.aio.models.rest_nvd_cve_history_response import RestNvdCveHistoryResponse as RestNvdCveHistoryResponse
+from vulncheck_sdk.aio.models.rest_nvd_cves_response import RestNvdCvesResponse as RestNvdCvesResponse
+from vulncheck_sdk.aio.models.rest_nvd_source_response import RestNvdSourceResponse as RestNvdSourceResponse
 from vulncheck_sdk.aio.models.search_error_response import SearchErrorResponse as SearchErrorResponse
 from vulncheck_sdk.aio.models.search_response_data_out import SearchResponseDataOut as SearchResponseDataOut
 from vulncheck_sdk.aio.models.search_v4_advisory_meta import SearchV4AdvisoryMeta as SearchV4AdvisoryMeta
