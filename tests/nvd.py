@@ -17,6 +17,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     # Walk every CVE modified in a date range. Sending an empty cursor opts in
     # to cursor paging; each response then carries the cursor for the next page
     cursor = ""
+    count = 0
     while cursor is not None:
         api_response = nvd_client.nvd_cves_get(
             last_mod_start_date="2026-09-01T00:00:00.000",
@@ -24,5 +25,6 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
             results_per_page=500,
             cursor=cursor,
         )
-        print(len(api_response.vulnerabilities), "of", api_response.total_results)
+        count += len(api_response.vulnerabilities)
+        print(f"Total Items: {count}/{api_response.total_results}")
         cursor = api_response.next_cursor
