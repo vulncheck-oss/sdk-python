@@ -1686,6 +1686,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """
         pass
 
+    async def test_index_initial_access_community_get(self) -> None:
+        """Test case for index_initial_access_community_get
+
+        Return vulnerability data stored in index \"initial-access-community\"
+        """
+        pass
+
     async def test_index_initial_access_get(self) -> None:
         """Test case for index_initial_access_get
 
