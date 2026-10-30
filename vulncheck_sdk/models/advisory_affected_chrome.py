@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +28,10 @@ class AdvisoryAffectedChrome(BaseModel):
     """
     advisory.AffectedChrome
     """ # noqa: E501
-    fixed_version: Optional[StrictStr] = None
+    fixed_version: Optional[StrictStr] = Field(default=None, description="FixedVersion is the first fixed build. The vulnerable range ends below it.")
+    fixed_versions: Optional[List[StrictStr]] = Field(default=None, description="FixedVersions lists every fixed build Google names for the channel, starting with FixedVersion. A paired release (\"155.0.8059.84/.85 for Windows and Mac\") lists both builds; a single release lists one.")
     product: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["fixed_version", "product"]
+    __properties: ClassVar[List[str]] = ["fixed_version", "fixed_versions", "product"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,6 +85,7 @@ class AdvisoryAffectedChrome(BaseModel):
 
         _obj = cls.model_validate({
             "fixed_version": obj.get("fixed_version"),
+            "fixed_versions": obj.get("fixed_versions"),
             "product": obj.get("product")
         })
         return _obj

@@ -36,6 +36,7 @@ class TestAdvisoryNote(unittest.TestCase):
         model = AdvisoryNote()
         if include_optional:
             return AdvisoryNote(
+                value = '',
                 ordinal = '',
                 text = '',
                 title = '',

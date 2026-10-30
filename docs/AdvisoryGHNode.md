@@ -6,6 +6,7 @@ advisory.GHNode
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**first_patched_version** | **str** | FirstPatchedVersion is GitHub&#39;s stated fix for this range. nil means it was not collected; \&quot;\&quot; means GitHub says there is no fix. | [optional] 
 **package** | [**AdvisoryGHPackage**](AdvisoryGHPackage.md) |  | [optional] 
 **severity** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 

@@ -58,7 +58,7 @@ class AdvisoryApi:
     ) -> SearchV4ListFeedReturnValue:
         """List advisory feeds
 
-        Return a list of available advisory feed names
+        Return the advisory feed names your subscription includes
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -125,7 +125,7 @@ class AdvisoryApi:
     ) -> ApiResponse[SearchV4ListFeedReturnValue]:
         """List advisory feeds
 
-        Return a list of available advisory feed names
+        Return the advisory feed names your subscription includes
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -192,7 +192,7 @@ class AdvisoryApi:
     ) -> RESTResponseType:
         """List advisory feeds
 
-        Return a list of available advisory feed names
+        Return the advisory feed names your subscription includes
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -337,7 +337,7 @@ class AdvisoryApi:
     ) -> SearchV4AdvisoryReturnValue:
         """Query advisories
 
-        Query the VulnCheck v4 advisory index
+        Query the VulnCheck v4 advisory index. Only feeds your subscription includes are searched, and naming one it doesn't include returns 402.
 
         :param name: Filter by advisory feed name (e.g. 'vulncheck')
         :type name: str
@@ -476,7 +476,7 @@ class AdvisoryApi:
     ) -> ApiResponse[SearchV4AdvisoryReturnValue]:
         """Query advisories
 
-        Query the VulnCheck v4 advisory index
+        Query the VulnCheck v4 advisory index. Only feeds your subscription includes are searched, and naming one it doesn't include returns 402.
 
         :param name: Filter by advisory feed name (e.g. 'vulncheck')
         :type name: str
@@ -615,7 +615,7 @@ class AdvisoryApi:
     ) -> RESTResponseType:
         """Query advisories
 
-        Query the VulnCheck v4 advisory index
+        Query the VulnCheck v4 advisory index. Only feeds your subscription includes are searched, and naming one it doesn't include returns 402.
 
         :param name: Filter by advisory feed name (e.g. 'vulncheck')
         :type name: str

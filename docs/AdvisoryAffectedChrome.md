@@ -6,7 +6,8 @@ advisory.AffectedChrome
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fixed_version** | **str** |  | [optional] 
+**fixed_version** | **str** | FixedVersion is the first fixed build. The vulnerable range ends below it. | [optional] 
+**fixed_versions** | **List[str]** | FixedVersions lists every fixed build Google names for the channel, starting with FixedVersion. A paired release (\&quot;155.0.8059.84/.85 for Windows and Mac\&quot;) lists both builds; a single release lists one. | [optional] 
 **product** | **str** |  | [optional] 
 
 ## Example

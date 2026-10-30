@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **references** | [**List[ApiNVD20Reference]**](ApiNVD20Reference.md) |  | [optional] 
 **source_identifier** | **str** |  | [optional] 
 **vc_configurations** | [**List[AdvisoryNVD20Configuration]**](AdvisoryNVD20Configuration.md) |  | [optional] 
+**vc_configurations_with_platforms** | [**List[AdvisoryNVD20Configuration]**](AdvisoryNVD20Configuration.md) | VCConfigurationsWithPlatforms is VCConfigurations with NVD-style platform (\&quot;running on\&quot;) nodes: a configuration whose product needs a platform is AND{the vulnerable node, a node of vulnerable:false platform CPEs}. Only set when at least one configuration has a platform. | [optional] 
 **vc_vulnerable_cpes** | **List[str]** |  | [optional] 
 **vendor_comments** | [**List[ApiNVD20VendorComment]**](ApiNVD20VendorComment.md) |  | [optional] 
 **vuln_status** | **str** |  | [optional] 

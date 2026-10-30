@@ -148,6 +148,7 @@ class TestAdvisoryMicrosoftCVRF(unittest.TestCase):
                                 ], 
                             notes = [
                                 vulncheck_sdk.models.advisory/note.advisory.Note(
+                                    value = '', 
                                     ordinal = '', 
                                     text = '', 
                                     title = '', 
