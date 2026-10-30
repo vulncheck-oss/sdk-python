@@ -235,6 +235,9 @@ class TestNvdcvesNvdCveEnvelopeEntry(unittest.TestCase):
                             negate = True, 
                             operator = '', )
                         ], 
+                    vc_configurations_with_platforms = [
+                        
+                        ], 
                     vc_vulnerable_cpes = [
                         ''
                         ], 

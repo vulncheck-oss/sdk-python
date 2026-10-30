@@ -49,8 +49,9 @@ class PaginatePagination(BaseModel):
     timestamp: Optional[StrictStr] = Field(default=None, description="Timestamp when the query was executed in UTC (ISO 8601 format). Used for debugging, cache management, and determining data freshness. Example: \"2024-02-23T20:35:43.732591251Z\"")
     total_documents: Optional[StrictInt] = Field(default=None, description="TotalRows is the total number of documents matching the query across all pages. Used for calculating total_pages and building pagination UI elements. Note: May be capped for performance on very large result sets.")
     total_pages: Optional[StrictInt] = Field(default=None, description="TotalPages is the total number of pages based on TotalRows and Limit. Calculated as: ceil(TotalRows / Limit). Used for pagination UI and validation. Example: 1000 items with limit 100 = 10 total pages.")
+    truncated: Optional[StrictBool] = Field(default=None, description="Truncated is true when a cursor page holds fewer records than Limit because it reached the response size cap. More records follow: keep requesting with NextCursor.")
     warnings: Optional[List[StrictStr]] = Field(default=None, description="Warnings contains any non-fatal issues encountered during query processing. Examples: deprecated parameters, performance concerns, or data quality notes.")
-    __properties: ClassVar[List[str]] = ["cursor", "first_item", "index", "last_item", "limit", "matches", "max_pages", "next_cursor", "opensearch_query", "order", "page", "pages", "parameters", "show_pages", "show_query", "sort", "timestamp", "total_documents", "total_pages", "warnings"]
+    __properties: ClassVar[List[str]] = ["cursor", "first_item", "index", "last_item", "limit", "matches", "max_pages", "next_cursor", "opensearch_query", "order", "page", "pages", "parameters", "show_pages", "show_query", "sort", "timestamp", "total_documents", "total_pages", "truncated", "warnings"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -134,6 +135,7 @@ class PaginatePagination(BaseModel):
             "timestamp": obj.get("timestamp"),
             "total_documents": obj.get("total_documents"),
             "total_pages": obj.get("total_pages"),
+            "truncated": obj.get("truncated"),
             "warnings": obj.get("warnings")
         })
         return _obj

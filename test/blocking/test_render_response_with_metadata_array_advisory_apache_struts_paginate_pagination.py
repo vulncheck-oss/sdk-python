@@ -68,6 +68,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryApacheStrutsPaginatePagination(
                     timestamp = '', 
                     total_documents = 56, 
                     total_pages = 56, 
+                    truncated = True, 
                     warnings = [
                         ''
                         ], ),

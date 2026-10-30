@@ -68,6 +68,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMicrosoftCVRFPaginatePagination
                     timestamp = '', 
                     total_documents = 56, 
                     total_pages = 56, 
+                    truncated = True, 
                     warnings = [
                         ''
                         ], ),
@@ -184,6 +185,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryMicrosoftCVRFPaginatePagination
                                         ], 
                                     notes = [
                                         vulncheck_sdk.models.advisory/note.advisory.Note(
+                                            value = '', 
                                             ordinal = '', 
                                             text = '', 
                                             title = '', 

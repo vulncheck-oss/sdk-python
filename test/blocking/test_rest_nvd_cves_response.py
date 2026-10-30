@@ -244,6 +244,9 @@ class TestRestNvdCvesResponse(unittest.TestCase):
                                     negate = True, 
                                     operator = '', )
                                 ], 
+                            vc_configurations_with_platforms = [
+                                
+                                ], 
                             vc_vulnerable_cpes = [
                                 ''
                                 ], 
@@ -474,6 +477,9 @@ class TestRestNvdCvesResponse(unittest.TestCase):
                                 vulncheck_sdk.models.advisory/nvd20_configuration.advisory.NVD20Configuration(
                                     negate = True, 
                                     operator = '', )
+                                ], 
+                            vc_configurations_with_platforms = [
+                                
                                 ], 
                             vc_vulnerable_cpes = [
                                 ''
