@@ -1231,7 +1231,7 @@ class NvdApi:
     ) -> RestNvdCvesResponse:
         """Search CVEs (NVD API 2.0 compatible)
 
-        NVD API 2.0 compatible CVE search, mirroring NVD's GET /rest/json/cves/2.0. Each record also carries VulnCheck's vcConfigurations.  Not yet supported, and rejected with a 400 naming the parameter: keywordSearch, keywordExactMatch, cvssV2Metrics, cvssV2Severity, cvssV3Metrics, cvssV3Severity, cvssV4Metrics, cvssV4Severity, cweId, hasCertAlerts, hasCertNotes, hasOval, kevStartDate, kevEndDate.
+        NVD API 2.0 compatible CVE search, mirroring NVD's GET /rest/json/cves/2.0. Each record also carries VulnCheck's vcConfigurations, and vcConfigurationsWithPlatforms when a configuration applies only on a platform (NVD-style: an AND of the vulnerable node and a node of vulnerable:false platform CPEs).  Not yet supported, and rejected with a 400 naming the parameter: keywordSearch, keywordExactMatch, cvssV2Metrics, cvssV2Severity, cvssV3Metrics, cvssV3Severity, cvssV4Metrics, cvssV4Severity, cweId, hasCertAlerts, hasCertNotes, hasOval, kevStartDate, kevEndDate.
 
         :param cve_id: A single CVE ID, e.g. CVE-2021-44228
         :type cve_id: str
@@ -1385,7 +1385,7 @@ class NvdApi:
     ) -> ApiResponse[RestNvdCvesResponse]:
         """Search CVEs (NVD API 2.0 compatible)
 
-        NVD API 2.0 compatible CVE search, mirroring NVD's GET /rest/json/cves/2.0. Each record also carries VulnCheck's vcConfigurations.  Not yet supported, and rejected with a 400 naming the parameter: keywordSearch, keywordExactMatch, cvssV2Metrics, cvssV2Severity, cvssV3Metrics, cvssV3Severity, cvssV4Metrics, cvssV4Severity, cweId, hasCertAlerts, hasCertNotes, hasOval, kevStartDate, kevEndDate.
+        NVD API 2.0 compatible CVE search, mirroring NVD's GET /rest/json/cves/2.0. Each record also carries VulnCheck's vcConfigurations, and vcConfigurationsWithPlatforms when a configuration applies only on a platform (NVD-style: an AND of the vulnerable node and a node of vulnerable:false platform CPEs).  Not yet supported, and rejected with a 400 naming the parameter: keywordSearch, keywordExactMatch, cvssV2Metrics, cvssV2Severity, cvssV3Metrics, cvssV3Severity, cvssV4Metrics, cvssV4Severity, cweId, hasCertAlerts, hasCertNotes, hasOval, kevStartDate, kevEndDate.
 
         :param cve_id: A single CVE ID, e.g. CVE-2021-44228
         :type cve_id: str
@@ -1539,7 +1539,7 @@ class NvdApi:
     ) -> RESTResponseType:
         """Search CVEs (NVD API 2.0 compatible)
 
-        NVD API 2.0 compatible CVE search, mirroring NVD's GET /rest/json/cves/2.0. Each record also carries VulnCheck's vcConfigurations.  Not yet supported, and rejected with a 400 naming the parameter: keywordSearch, keywordExactMatch, cvssV2Metrics, cvssV2Severity, cvssV3Metrics, cvssV3Severity, cvssV4Metrics, cvssV4Severity, cweId, hasCertAlerts, hasCertNotes, hasOval, kevStartDate, kevEndDate.
+        NVD API 2.0 compatible CVE search, mirroring NVD's GET /rest/json/cves/2.0. Each record also carries VulnCheck's vcConfigurations, and vcConfigurationsWithPlatforms when a configuration applies only on a platform (NVD-style: an AND of the vulnerable node and a node of vulnerable:false platform CPEs).  Not yet supported, and rejected with a 400 naming the parameter: keywordSearch, keywordExactMatch, cvssV2Metrics, cvssV2Severity, cvssV3Metrics, cvssV3Severity, cvssV4Metrics, cvssV4Severity, cweId, hasCertAlerts, hasCertNotes, hasOval, kevStartDate, kevEndDate.
 
         :param cve_id: A single CVE ID, e.g. CVE-2021-44228
         :type cve_id: str

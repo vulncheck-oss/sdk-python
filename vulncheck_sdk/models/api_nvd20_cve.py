@@ -54,11 +54,12 @@ class ApiNVD20CVE(BaseModel):
     references: Optional[List[ApiNVD20Reference]] = None
     source_identifier: Optional[StrictStr] = Field(default=None, alias="sourceIdentifier")
     vc_configurations: Optional[List[AdvisoryNVD20Configuration]] = Field(default=None, alias="vcConfigurations")
+    vc_configurations_with_platforms: Optional[List[AdvisoryNVD20Configuration]] = Field(default=None, description="VCConfigurationsWithPlatforms is VCConfigurations with NVD-style platform (\"running on\") nodes: a configuration whose product needs a platform is AND{the vulnerable node, a node of vulnerable:false platform CPEs}. Only set when at least one configuration has a platform.", alias="vcConfigurationsWithPlatforms")
     vc_vulnerable_cpes: Optional[List[StrictStr]] = Field(default=None, alias="vcVulnerableCPEs")
     vendor_comments: Optional[List[ApiNVD20VendorComment]] = Field(default=None, alias="vendorComments")
     vuln_status: Optional[StrictStr] = Field(default=None, alias="vulnStatus")
     weaknesses: Optional[List[ApiNVD20Weakness]] = None
-    __properties: ClassVar[List[str]] = ["affected", "cisaActionDue", "cisaExploitAdd", "cisaRequiredAction", "cisaVulnerabilityName", "configurations", "cveTags", "descriptions", "evaluatorComment", "evaluatorImpact", "evaluatorSolution", "id", "lastModified", "metrics", "published", "references", "sourceIdentifier", "vcConfigurations", "vcVulnerableCPEs", "vendorComments", "vulnStatus", "weaknesses"]
+    __properties: ClassVar[List[str]] = ["affected", "cisaActionDue", "cisaExploitAdd", "cisaRequiredAction", "cisaVulnerabilityName", "configurations", "cveTags", "descriptions", "evaluatorComment", "evaluatorImpact", "evaluatorSolution", "id", "lastModified", "metrics", "published", "references", "sourceIdentifier", "vcConfigurations", "vcConfigurationsWithPlatforms", "vcVulnerableCPEs", "vendorComments", "vulnStatus", "weaknesses"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -138,6 +139,12 @@ class ApiNVD20CVE(BaseModel):
             for _item_vc_configurations in self.vc_configurations:
                 _items.append(_item_vc_configurations.to_dict() if _item_vc_configurations is not None else None)
             _dict['vcConfigurations'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in vc_configurations_with_platforms (list)
+        _items = []
+        if self.vc_configurations_with_platforms:
+            for _item_vc_configurations_with_platforms in self.vc_configurations_with_platforms:
+                _items.append(_item_vc_configurations_with_platforms.to_dict() if _item_vc_configurations_with_platforms is not None else None)
+            _dict['vcConfigurationsWithPlatforms'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in vendor_comments (list)
         _items = []
         if self.vendor_comments:
@@ -180,6 +187,7 @@ class ApiNVD20CVE(BaseModel):
             "references": [ApiNVD20Reference.from_dict(_item) for _item in obj["references"]] if obj.get("references") is not None else None,
             "sourceIdentifier": obj.get("sourceIdentifier"),
             "vcConfigurations": [AdvisoryNVD20Configuration.from_dict(_item) for _item in obj["vcConfigurations"]] if obj.get("vcConfigurations") is not None else None,
+            "vcConfigurationsWithPlatforms": [AdvisoryNVD20Configuration.from_dict(_item) for _item in obj["vcConfigurationsWithPlatforms"]] if obj.get("vcConfigurationsWithPlatforms") is not None else None,
             "vcVulnerableCPEs": obj.get("vcVulnerableCPEs"),
             "vendorComments": [ApiNVD20VendorComment.from_dict(_item) for _item in obj["vendorComments"]] if obj.get("vendorComments") is not None else None,
             "vulnStatus": obj.get("vulnStatus"),

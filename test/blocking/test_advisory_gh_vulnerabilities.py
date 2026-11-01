@@ -38,6 +38,7 @@ class TestAdvisoryGHVulnerabilities(unittest.TestCase):
             return AdvisoryGHVulnerabilities(
                 nodes = [
                     vulncheck_sdk.models.advisory/gh_node.advisory.GHNode(
+                        first_patched_version = '', 
                         package = vulncheck_sdk.models.advisory/gh_package.advisory.GHPackage(
                             ecosystem = '', 
                             name = '', ), 

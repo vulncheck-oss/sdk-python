@@ -68,6 +68,7 @@ class TestRenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination(u
                     timestamp = '', 
                     total_documents = 56, 
                     total_pages = 56, 
+                    truncated = True, 
                     warnings = [
                         ''
                         ], ),
@@ -343,6 +344,9 @@ class TestRenderResponseWithMetadataArrayApiNVD20CVEExtendedPaginatePagination(u
                             vulncheck_sdk.aio.models.advisory/nvd20_configuration.advisory.NVD20Configuration(
                                 negate = True, 
                                 operator = '', )
+                            ], 
+                        vc_configurations_with_platforms = [
+                            
                             ], 
                         vc_vulnerable_cpes = [
                             ''

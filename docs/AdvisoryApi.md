@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 List advisory feeds
 
-Return a list of available advisory feed names
+Return the advisory feed names your subscription includes
 
 ### Example
 
@@ -92,7 +92,7 @@ This endpoint does not need any parameter.
 
 Query advisories
 
-Query the VulnCheck v4 advisory index
+Query the VulnCheck v4 advisory index. Only feeds your subscription includes are searched, and naming one it doesn't include returns 402.
 
 ### Example
 

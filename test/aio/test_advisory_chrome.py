@@ -39,6 +39,9 @@ class TestAdvisoryChrome(unittest.TestCase):
                 affected = [
                     vulncheck_sdk.aio.models.advisory/affected_chrome.advisory.AffectedChrome(
                         fixed_version = '', 
+                        fixed_versions = [
+                            ''
+                            ], 
                         product = '', )
                     ],
                 cve = [

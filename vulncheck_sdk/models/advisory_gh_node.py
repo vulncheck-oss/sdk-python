@@ -29,11 +29,12 @@ class AdvisoryGHNode(BaseModel):
     """
     advisory.GHNode
     """ # noqa: E501
+    first_patched_version: Optional[StrictStr] = Field(default=None, description="FirstPatchedVersion is GitHub's stated fix for this range. nil means it was not collected; \"\" means GitHub says there is no fix.", alias="firstPatchedVersion")
     package: Optional[AdvisoryGHPackage] = None
     severity: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
     vulnerable_version_range: Optional[StrictStr] = Field(default=None, alias="vulnerableVersionRange")
-    __properties: ClassVar[List[str]] = ["package", "severity", "updatedAt", "vulnerableVersionRange"]
+    __properties: ClassVar[List[str]] = ["firstPatchedVersion", "package", "severity", "updatedAt", "vulnerableVersionRange"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,6 +90,7 @@ class AdvisoryGHNode(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "firstPatchedVersion": obj.get("firstPatchedVersion"),
             "package": AdvisoryGHPackage.from_dict(obj["package"]) if obj.get("package") is not None else None,
             "severity": obj.get("severity"),
             "updatedAt": obj.get("updatedAt"),

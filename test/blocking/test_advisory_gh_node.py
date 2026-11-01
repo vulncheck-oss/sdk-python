@@ -36,6 +36,7 @@ class TestAdvisoryGHNode(unittest.TestCase):
         model = AdvisoryGHNode()
         if include_optional:
             return AdvisoryGHNode(
+                first_patched_version = '',
                 package = vulncheck_sdk.models.advisory/gh_package.advisory.GHPackage(
                     ecosystem = '', 
                     name = '', ),

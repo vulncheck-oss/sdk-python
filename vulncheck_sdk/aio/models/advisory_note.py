@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,11 +28,12 @@ class AdvisoryNote(BaseModel):
     """
     advisory.Note
     """ # noqa: E501
+    value: Optional[StrictStr] = Field(default=None, description="Value is the note's text in MSRC's JSON CVRF, which names it Value; Text only ever held it in the XML form.", alias="Value")
     ordinal: Optional[StrictStr] = None
     text: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     type: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["ordinal", "text", "title", "type"]
+    __properties: ClassVar[List[str]] = ["Value", "ordinal", "text", "title", "type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -85,6 +86,7 @@ class AdvisoryNote(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "Value": obj.get("Value"),
             "ordinal": obj.get("ordinal"),
             "text": obj.get("text"),
             "title": obj.get("title"),
