@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **timestamp** | **str** | Timestamp when the query was executed in UTC (ISO 8601 format). Used for debugging, cache management, and determining data freshness. Example: \&quot;2024-02-23T20:35:43.732591251Z\&quot; | [optional] 
 **total_documents** | **int** | TotalRows is the total number of documents matching the query across all pages. Used for calculating total_pages and building pagination UI elements. Note: May be capped for performance on very large result sets. | [optional] 
 **total_pages** | **int** | TotalPages is the total number of pages based on TotalRows and Limit. Calculated as: ceil(TotalRows / Limit). Used for pagination UI and validation. Example: 1000 items with limit 100 &#x3D; 10 total pages. | [optional] 
+**truncated** | **bool** | Truncated is true when a cursor page holds fewer records than Limit because it reached the response size cap. More records follow: keep requesting with NextCursor. | [optional] 
 **warnings** | **List[str]** | Warnings contains any non-fatal issues encountered during query processing. Examples: deprecated parameters, performance concerns, or data quality notes. | [optional] 
 
 ## Example

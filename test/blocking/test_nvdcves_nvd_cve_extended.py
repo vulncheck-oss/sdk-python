@@ -252,6 +252,26 @@ class TestNvdcvesNvdCveExtended(unittest.TestCase):
                             ], 
                         operator = '', )
                     ],
+                vc_configurations_with_platforms = [
+                    vulncheck_sdk.models.advisory/nvd20_configuration.advisory.NVD20Configuration(
+                        negate = True, 
+                        nodes = [
+                            vulncheck_sdk.models.advisory/nvd20_node.advisory.NVD20Node(
+                                cpe_match = [
+                                    vulncheck_sdk.models.advisory/nvd20_cvecpe_match.advisory.NVD20CVECPEMatch(
+                                        criteria = '', 
+                                        match_criteria_id = '', 
+                                        version_end_excluding = '', 
+                                        version_end_including = '', 
+                                        version_start_excluding = '', 
+                                        version_start_including = '', 
+                                        vulnerable = True, )
+                                    ], 
+                                negate = True, 
+                                operator = '', )
+                            ], 
+                        operator = '', )
+                    ],
                 vc_vulnerable_cpes = [
                     ''
                     ],

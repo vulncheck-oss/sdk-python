@@ -93,7 +93,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/0.1.4/python'
+        self.user_agent = 'OpenAPI-Generator/0.1.5/python'
         self.default_headers.setdefault("Accept-Encoding", urllib3.util.make_headers(accept_encoding=True)["accept-encoding"])
         self.client_side_validation = configuration.client_side_validation
 
