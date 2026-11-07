@@ -36,13 +36,10 @@ class ParamsIndexBackup(BaseModel):
     url_cloudfront: Optional[StrictStr] = None
     url_eu_west_2: Optional[StrictStr] = Field(default=None, alias="url_eu-west-2")
     url_expires: Optional[StrictStr] = None
-    url_il_central_1: Optional[StrictStr] = Field(default=None, alias="url_il-central-1")
-    url_me_central_1: Optional[StrictStr] = Field(default=None, alias="url_me-central-1")
-    url_mrap: Optional[StrictStr] = None
     url_ttl_minutes: Optional[StrictInt] = None
     url_us_east_1: Optional[StrictStr] = Field(default=None, alias="url_us-east-1")
     url_us_west_2: Optional[StrictStr] = Field(default=None, alias="url_us-west-2")
-    __properties: ClassVar[List[str]] = ["date_added", "filename", "sha256", "url", "url_ap-southeast-2", "url_cloudfront", "url_eu-west-2", "url_expires", "url_il-central-1", "url_me-central-1", "url_mrap", "url_ttl_minutes", "url_us-east-1", "url_us-west-2"]
+    __properties: ClassVar[List[str]] = ["date_added", "filename", "sha256", "url", "url_ap-southeast-2", "url_cloudfront", "url_eu-west-2", "url_expires", "url_ttl_minutes", "url_us-east-1", "url_us-west-2"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -103,9 +100,6 @@ class ParamsIndexBackup(BaseModel):
             "url_cloudfront": obj.get("url_cloudfront"),
             "url_eu-west-2": obj.get("url_eu-west-2"),
             "url_expires": obj.get("url_expires"),
-            "url_il-central-1": obj.get("url_il-central-1"),
-            "url_me-central-1": obj.get("url_me-central-1"),
-            "url_mrap": obj.get("url_mrap"),
             "url_ttl_minutes": obj.get("url_ttl_minutes"),
             "url_us-east-1": obj.get("url_us-east-1"),
             "url_us-west-2": obj.get("url_us-west-2")
