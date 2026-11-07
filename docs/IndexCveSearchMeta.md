@@ -10,13 +10,14 @@ Name | Type | Description | Notes
 **cve** | **str** | CVE is the CVE identifier that was searched for. | [optional] 
 **indices_with_hits** | **int** | IndicesWithHits is the number of indices that contained at least one match. | [optional] 
 **limit** | **int** | Limit is the maximum number of results requested per page. | [optional] 
-**next_cursor** | **str** | NextCursor is the cursor for fetching the next page of results. Empty if there are no more results (current_count &lt; limit). | [optional] 
+**next_cursor** | **str** | NextCursor is the cursor for fetching the next page of results. Empty if there are no more results. | [optional] 
 **page** | **int** | Page is the current page number (only set in page-based pagination mode). | [optional] 
 **queried_index_count** | **int** | QueriedIndexCount is the number of indices that were searched. | [optional] 
 **timestamp** | **str** | Timestamp is the UTC time when the search was executed. | [optional] 
 **top_index_counts** | [**List[IndexIndexCountEntry]**](IndexIndexCountEntry.md) | TopIndexCounts contains the top indices by document count (up to 10). | [optional] 
 **total_count** | **int** | TotalCount is the total number of matching documents across all queried indices. | [optional] 
 **total_pages** | **int** | TotalPages is the total number of pages (only set in page-based pagination mode). | [optional] 
+**truncated** | **bool** | Truncated is true when this cursor page holds fewer records than Limit so that it doesn&#39;t end between records that sort equally. More records follow: keep requesting with NextCursor. | [optional] 
 
 ## Example
 
