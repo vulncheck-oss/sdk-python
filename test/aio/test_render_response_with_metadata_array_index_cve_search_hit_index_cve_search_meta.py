@@ -52,7 +52,8 @@ class TestRenderResponseWithMetadataArrayIndexCveSearchHitIndexCveSearchMeta(uni
                             index = '', )
                         ], 
                     total_count = 56, 
-                    total_pages = 56, ),
+                    total_pages = 56, 
+                    truncated = True, ),
                 data = [
                     vulncheck_sdk.aio.models.index/cve_search_hit.index.CveSearchHit(
                         id = '', 

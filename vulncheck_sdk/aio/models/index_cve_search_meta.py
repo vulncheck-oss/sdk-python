@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.aio.models.index_index_count_entry import IndexIndexCountEntry
 from typing import Optional, Set
@@ -33,14 +33,15 @@ class IndexCveSearchMeta(BaseModel):
     cve: Optional[StrictStr] = Field(default=None, description="CVE is the CVE identifier that was searched for.")
     indices_with_hits: Optional[StrictInt] = Field(default=None, description="IndicesWithHits is the number of indices that contained at least one match.")
     limit: Optional[StrictInt] = Field(default=None, description="Limit is the maximum number of results requested per page.")
-    next_cursor: Optional[StrictStr] = Field(default=None, description="NextCursor is the cursor for fetching the next page of results. Empty if there are no more results (current_count < limit).")
+    next_cursor: Optional[StrictStr] = Field(default=None, description="NextCursor is the cursor for fetching the next page of results. Empty if there are no more results.")
     page: Optional[StrictInt] = Field(default=None, description="Page is the current page number (only set in page-based pagination mode).")
     queried_index_count: Optional[StrictInt] = Field(default=None, description="QueriedIndexCount is the number of indices that were searched.")
     timestamp: Optional[StrictStr] = Field(default=None, description="Timestamp is the UTC time when the search was executed.")
     top_index_counts: Optional[List[IndexIndexCountEntry]] = Field(default=None, description="TopIndexCounts contains the top indices by document count (up to 10).")
     total_count: Optional[StrictInt] = Field(default=None, description="TotalCount is the total number of matching documents across all queried indices.")
     total_pages: Optional[StrictInt] = Field(default=None, description="TotalPages is the total number of pages (only set in page-based pagination mode).")
-    __properties: ClassVar[List[str]] = ["current_count", "cve", "indices_with_hits", "limit", "next_cursor", "page", "queried_index_count", "timestamp", "top_index_counts", "total_count", "total_pages"]
+    truncated: Optional[StrictBool] = Field(default=None, description="Truncated is true when this cursor page holds fewer records than Limit so that it doesn't end between records that sort equally. More records follow: keep requesting with NextCursor.")
+    __properties: ClassVar[List[str]] = ["current_count", "cve", "indices_with_hits", "limit", "next_cursor", "page", "queried_index_count", "timestamp", "top_index_counts", "total_count", "total_pages", "truncated"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -109,7 +110,8 @@ class IndexCveSearchMeta(BaseModel):
             "timestamp": obj.get("timestamp"),
             "top_index_counts": [IndexIndexCountEntry.from_dict(_item) for _item in obj["top_index_counts"]] if obj.get("top_index_counts") is not None else None,
             "total_count": obj.get("total_count"),
-            "total_pages": obj.get("total_pages")
+            "total_pages": obj.get("total_pages"),
+            "truncated": obj.get("truncated")
         })
         return _obj
 

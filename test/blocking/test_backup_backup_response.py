@@ -44,7 +44,6 @@ class TestBackupBackupResponse(unittest.TestCase):
                 url_cloudfront = '',
                 url_eu_west_2 = '',
                 url_expires = '',
-                url_mrap = '',
                 url_ttl_minutes = 56,
                 url_us_east_1 = ''
             )

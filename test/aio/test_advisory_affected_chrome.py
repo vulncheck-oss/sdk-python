@@ -37,6 +37,9 @@ class TestAdvisoryAffectedChrome(unittest.TestCase):
         if include_optional:
             return AdvisoryAffectedChrome(
                 fixed_version = '',
+                fixed_versions = [
+                    ''
+                    ],
                 product = ''
             )
         else:

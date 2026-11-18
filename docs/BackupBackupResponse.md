@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **url_cloudfront** | **str** |  | [optional] 
 **url_eu_west_2** | **str** |  | [optional] 
 **url_expires** | **str** |  | [optional] 
-**url_mrap** | **str** |  | [optional] 
 **url_ttl_minutes** | **int** |  | [optional] 
 **url_us_east_1** | **str** |  | [optional] 
 

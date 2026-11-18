@@ -21,6 +21,7 @@ Bring the VulnCheck API to your Python applications.
     - [CPE](#cpe)
     - [Index](#index)
     - [Indices](#indices)
+    - [NVD API 2.0 compatibility](#nvd-api-20-compatibility)
     - [Pagination](#pagination)
     - [PURL](#purl)
   - [Proxy Support](#proxy-support)
@@ -193,6 +194,30 @@ with open("./tests/indicies.py", 'r') as f:
 <!-- [[[cog
 import cog, glob
 with open("./tests/indicies_aio.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+</details>
+
+### NVD API 2.0 compatibility
+
+Query the NVD API 2.0 compatible endpoints under `/rest/json`. They take NVD's parameters and return NVD's response shapes, served from VulnCheck's data, and work with any VulnCheck API token, including community. `NvdApi` covers CVEs, CVE change history, CPEs, CPE match criteria and sources.
+
+Look up `CVE-2021-44228`, then page through a date range using `cursor`
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/nvd.py", 'r') as f:
+    cog.outl(f"```python\n{f.read().strip()}\n```\n")
+]]] -->
+<!-- [[[end]]] -->
+
+<details><summary><b>Click to View Async Implementation</b></summary>
+
+<!-- [[[cog
+import cog, glob
+with open("./tests/nvd_aio.py", 'r') as f:
     cog.outl(f"```python\n{f.read().strip()}\n```\n")
 ]]] -->
 <!-- [[[end]]] -->

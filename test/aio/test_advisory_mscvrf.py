@@ -146,6 +146,7 @@ class TestAdvisoryMSCVRF(unittest.TestCase):
                             ], 
                         notes = [
                             vulncheck_sdk.aio.models.advisory/note.advisory.Note(
+                                value = '', 
                                 ordinal = '', 
                                 text = '', 
                                 title = '', 

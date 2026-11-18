@@ -71,6 +71,7 @@ class TestAdvisoryGHAdvisoryJSONLean(unittest.TestCase):
                 vulnerabilities = vulncheck_sdk.aio.models.advisory/gh_vulnerabilities.advisory.GHVulnerabilities(
                     nodes = [
                         vulncheck_sdk.aio.models.advisory/gh_node.advisory.GHNode(
+                            first_patched_version = '', 
                             package = vulncheck_sdk.aio.models.advisory/gh_package.advisory.GHPackage(
                                 ecosystem = '', 
                                 name = '', ), 

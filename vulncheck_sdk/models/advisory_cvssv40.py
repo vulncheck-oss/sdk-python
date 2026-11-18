@@ -26,7 +26,7 @@ from pydantic_core import to_jsonable_python
 
 class AdvisoryCVSSV40(BaseModel):
     """
-    this isn't called baseMetric, because it can contain other metrics -- typically supplemental metrics
+    advisory.CVSSV40
     """ # noqa: E501
     automatable: Optional[StrictStr] = Field(default=None, alias="Automatable")
     recovery: Optional[StrictStr] = Field(default=None, alias="Recovery")

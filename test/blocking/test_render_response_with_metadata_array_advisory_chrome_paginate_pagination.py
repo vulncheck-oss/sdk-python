@@ -68,6 +68,7 @@ class TestRenderResponseWithMetadataArrayAdvisoryChromePaginatePagination(unitte
                     timestamp = '', 
                     total_documents = 56, 
                     total_pages = 56, 
+                    truncated = True, 
                     warnings = [
                         ''
                         ], ),
@@ -76,6 +77,9 @@ class TestRenderResponseWithMetadataArrayAdvisoryChromePaginatePagination(unitte
                         affected = [
                             vulncheck_sdk.models.advisory/affected_chrome.advisory.AffectedChrome(
                                 fixed_version = '', 
+                                fixed_versions = [
+                                    ''
+                                    ], 
                                 product = '', )
                             ], 
                         cve = [

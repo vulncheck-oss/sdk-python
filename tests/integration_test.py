@@ -2,6 +2,7 @@ import os
 import vulncheck_sdk
 from vulncheck_sdk.api.endpoints_api import EndpointsApi
 from vulncheck_sdk.api.indices_api import IndicesApi
+from vulncheck_sdk.api.nvd_api import NvdApi
 from vulncheck_sdk.api_response import ApiResponse
 from vulncheck_sdk.exceptions import ApiException, UnauthorizedException
 
@@ -102,6 +103,49 @@ def test_all_indicies():
 
 
 """
+NvdApi Tests
+"""
+
+NVD_CVE_ID = "CVE-2021-44228"
+
+
+def test_nvd_cves_get():
+    response = _get_nvd_instance(API_TOKEN).nvd_cves_get(cve_id=NVD_CVE_ID)
+    assert response.total_results == 1
+    assert response.vulnerabilities[0].cve.id == NVD_CVE_ID
+
+
+def test_nvd_cves_get_cursor():
+    nvd = _get_nvd_instance(API_TOKEN)
+    first = nvd.nvd_cves_get(cve_tag="disputed", results_per_page=5, cursor="")
+    assert first.next_cursor
+    second = nvd.nvd_cves_get(cve_tag="disputed", results_per_page=5, cursor=first.next_cursor)
+    assert second.vulnerabilities[0].cve.id != first.vulnerabilities[0].cve.id
+
+
+def test_nvd_cve_history_get():
+    response = _get_nvd_instance(API_TOKEN).nvd_cve_history_get(cve_id=NVD_CVE_ID)
+    assert response.cve_changes
+
+
+def test_nvd_cpes_get():
+    response = _get_nvd_instance(API_TOKEN).nvd_cpes_get(
+        cpe_match_string="cpe:2.3:a:apache:log4j", results_per_page=5
+    )
+    assert response.products
+
+
+def test_nvd_cpe_match_get():
+    response = _get_nvd_instance(API_TOKEN).nvd_cpe_match_get(cve_id=NVD_CVE_ID, results_per_page=5)
+    assert response.match_strings
+
+
+def test_nvd_source_get():
+    response = _get_nvd_instance(API_TOKEN).nvd_source_get(results_per_page=5)
+    assert response.sources
+
+
+"""
 Helpers
 """
 
@@ -138,3 +182,11 @@ def _get_indices_instance(token: str = "") -> IndicesApi:
         config.api_key["Bearer"] = token
     client = vulncheck_sdk.ApiClient(config)
     return vulncheck_sdk.IndicesApi(client)
+
+
+def _get_nvd_instance(token: str = "") -> NvdApi:
+    config = vulncheck_sdk.Configuration()
+    if token != "":
+        config.api_key["Bearer"] = token
+    client = vulncheck_sdk.ApiClient(config)
+    return vulncheck_sdk.NvdApi(client)

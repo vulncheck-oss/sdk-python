@@ -545,6 +545,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """
         pass
 
+    async def test_index_azure_linux_purls_get(self) -> None:
+        """Test case for index_azure_linux_purls_get
+
+        Return vulnerability data stored in index \"azure-linux-purls\"
+        """
+        pass
+
     async def test_index_bandr_get(self) -> None:
         """Test case for index_bandr_get
 
@@ -612,6 +619,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """Test case for index_binarly_get
 
         Return vulnerability data stored in index \"binarly\"
+        """
+        pass
+
+    async def test_index_bitbucket_exploits_get(self) -> None:
+        """Test case for index_bitbucket_exploits_get
+
+        Return vulnerability data stored in index \"bitbucket-exploits\"
         """
         pass
 
@@ -892,6 +906,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """Test case for index_cocoapods_get
 
         Return vulnerability data stored in index \"cocoapods\"
+        """
+        pass
+
+    async def test_index_codeberg_exploits_get(self) -> None:
+        """Test case for index_codeberg_exploits_get
+
+        Return vulnerability data stored in index \"codeberg-exploits\"
         """
         pass
 
@@ -1683,6 +1704,13 @@ class TestIndicesApi(unittest.IsolatedAsyncioTestCase):
         """Test case for index_incibe_get
 
         Return vulnerability data stored in index \"incibe\"
+        """
+        pass
+
+    async def test_index_initial_access_community_get(self) -> None:
+        """Test case for index_initial_access_community_get
+
+        Return vulnerability data stored in index \"initial-access-community\"
         """
         pass
 

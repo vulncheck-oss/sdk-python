@@ -3,6 +3,7 @@ import asyncio
 import vulncheck_sdk.aio as vcaio
 from vulncheck_sdk.aio.api.endpoints_api import EndpointsApi
 from vulncheck_sdk.aio.api.indices_api import IndicesApi
+from vulncheck_sdk.aio.api.nvd_api import NvdApi
 from vulncheck_sdk.aio.exceptions import ApiException, UnauthorizedException
 
 API_TOKEN = os.environ.get("VULNCHECK_API_TOKEN", "")
@@ -108,6 +109,28 @@ async def _check_all_indices(indices: IndicesApi) -> None:
         assert status == 200
 
 
+# --- NvdApi Tests ---
+
+
+async def _check_nvd(api: NvdApi) -> None:
+    print("Testing NvdApi")
+    cve_id = "CVE-2021-44228"
+
+    cves = await api.nvd_cves_get(cve_id=cve_id)
+    assert cves.total_results == 1
+    assert cves.vulnerabilities[0].cve.id == cve_id
+
+    first = await api.nvd_cves_get(cve_tag="disputed", results_per_page=5, cursor="")
+    assert first.next_cursor
+    second = await api.nvd_cves_get(cve_tag="disputed", results_per_page=5, cursor=first.next_cursor)
+    assert second.vulnerabilities[0].cve.id != first.vulnerabilities[0].cve.id
+
+    assert (await api.nvd_cve_history_get(cve_id=cve_id)).cve_changes
+    assert (await api.nvd_cpes_get(cpe_match_string="cpe:2.3:a:apache:log4j", results_per_page=5)).products
+    assert (await api.nvd_cpe_match_get(cve_id=cve_id, results_per_page=5)).match_strings
+    assert (await api.nvd_source_get(results_per_page=5)).sources
+
+
 # --- Orchestrator ---
 
 
@@ -137,6 +160,7 @@ async def main() -> None:
         )
 
         await _check_all_indices(indices_api)
+        await _check_nvd(vcaio.NvdApi(client))
 
     # --- CRITICAL FIX FOR "UNCLOSED CONNECTOR" ---
     # aiohttp requires a small window of time to allow the

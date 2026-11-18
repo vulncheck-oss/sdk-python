@@ -6,6 +6,7 @@ advisory.Note
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**value** | **str** | Value is the note&#39;s text in MSRC&#39;s JSON CVRF, which names it Value; Text only ever held it in the XML form. | [optional] 
 **ordinal** | **str** |  | [optional] 
 **text** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 

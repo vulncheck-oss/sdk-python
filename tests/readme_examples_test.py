@@ -25,6 +25,8 @@ PROGRAMS = [
     "./tests/index_aio.py",
     "./tests/indicies.py",
     "./tests/indicies_aio.py",
+    "./tests/nvd.py",
+    "./tests/nvd_aio.py",
     "./tests/pagination.py",
     "./tests/pagination_aio.py",
     "./tests/purl.py",

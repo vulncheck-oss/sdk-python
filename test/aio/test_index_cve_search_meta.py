@@ -50,7 +50,8 @@ class TestIndexCveSearchMeta(unittest.TestCase):
                         index = '', )
                     ],
                 total_count = 56,
-                total_pages = 56
+                total_pages = 56,
+                truncated = True
             )
         else:
             return IndexCveSearchMeta(

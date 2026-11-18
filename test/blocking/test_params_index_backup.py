@@ -44,9 +44,6 @@ class TestParamsIndexBackup(unittest.TestCase):
                 url_cloudfront = '',
                 url_eu_west_2 = '',
                 url_expires = '',
-                url_il_central_1 = '',
-                url_me_central_1 = '',
-                url_mrap = '',
                 url_ttl_minutes = 56,
                 url_us_east_1 = '',
                 url_us_west_2 = ''

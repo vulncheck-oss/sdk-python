@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.2"
+__version__ = "0.1.6"
 
 # Define package exports
 __all__ = [
@@ -23,6 +23,7 @@ __all__ = [
     "BackupApi",
     "EndpointsApi",
     "IndicesApi",
+    "NvdApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -153,6 +154,7 @@ __all__ = [
     "AdvisoryBeldenAdvisory",
     "AdvisoryBeyondTrust",
     "AdvisoryBinarly",
+    "AdvisoryBitBucketExploit",
     "AdvisoryBitDefender",
     "AdvisoryBlackBerry",
     "AdvisoryBoschAdvisory",
@@ -224,6 +226,7 @@ __all__ = [
     "AdvisoryCloudAdvisoryVersionRange",
     "AdvisoryCloudBees",
     "AdvisoryCloudVulnDBAdvisory",
+    "AdvisoryCodebergExploit",
     "AdvisoryCodesysAdvisory",
     "AdvisoryCommVault",
     "AdvisoryCommVaultCVEDetails",
@@ -934,6 +937,18 @@ __all__ = [
     "IndexCveSearchMeta",
     "IndexIndexCountEntry",
     "ModelsEntitlements",
+    "NvdcpematchNvdCpeName",
+    "NvdcpematchNvdMatchString",
+    "NvdcpematchNvdMatchStringEnvelopeEntry",
+    "NvdcpesNvdCpe",
+    "NvdcpesNvdCpeDeprecation",
+    "NvdcpesNvdCpeEnvelopeEntry",
+    "NvdcpesNvdCpeReference",
+    "NvdcpesNvdCpeTitle",
+    "NvdcvesNvdCveEnvelopeEntry",
+    "NvdcvesNvdCveExtended",
+    "NvdsourceNvdAcceptanceLevel",
+    "NvdsourceNvdSource",
     "PaginateMatch",
     "PaginatePagination",
     "PaginateParam",
@@ -946,6 +961,7 @@ __all__ = [
     "PurlUnprocessedPurl",
     "PurlsPurlResponse",
     "PurlsVulnerability",
+    "RenderNvdErrorBody",
     "RenderResponseArrayParamsIndexBackupList",
     "RenderResponseArrayParamsIndexList",
     "RenderResponseWithMetadataArrayAdvisoryA10PaginatePagination",
@@ -1029,6 +1045,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryBeldenAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryBeyondTrustPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryBinarlyPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryBitBucketExploitPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryBitDefenderPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryBlackBerryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryBoschAdvisoryPaginatePagination",
@@ -1066,6 +1083,7 @@ __all__ = [
     "RenderResponseWithMetadataArrayAdvisoryCloudAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCloudBeesPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCloudVulnDBAdvisoryPaginatePagination",
+    "RenderResponseWithMetadataArrayAdvisoryCodebergExploitPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCodesysAdvisoryPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCommVaultPaginatePagination",
     "RenderResponseWithMetadataArrayAdvisoryCompassSecurityPaginatePagination",
@@ -1430,6 +1448,14 @@ __all__ = [
     "RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata",
     "RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata",
     "RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata",
+    "RestNvdChange",
+    "RestNvdChangeDetail",
+    "RestNvdChangeEnvelopeEntry",
+    "RestNvdCpeMatchResponse",
+    "RestNvdCpesResponse",
+    "RestNvdCveHistoryResponse",
+    "RestNvdCvesResponse",
+    "RestNvdSourceResponse",
     "SearchErrorResponse",
     "SearchResponseDataOut",
     "SearchV4AdvisoryMeta",
@@ -1448,6 +1474,7 @@ from vulncheck_sdk.api.advisory_api import AdvisoryApi as AdvisoryApi
 from vulncheck_sdk.api.backup_api import BackupApi as BackupApi
 from vulncheck_sdk.api.endpoints_api import EndpointsApi as EndpointsApi
 from vulncheck_sdk.api.indices_api import IndicesApi as IndicesApi
+from vulncheck_sdk.api.nvd_api import NvdApi as NvdApi
 
 # import ApiClient
 from vulncheck_sdk.api_response import ApiResponse as ApiResponse
@@ -1582,6 +1609,7 @@ from vulncheck_sdk.models.advisory_becton_dickinson_advisory import AdvisoryBect
 from vulncheck_sdk.models.advisory_belden_advisory import AdvisoryBeldenAdvisory as AdvisoryBeldenAdvisory
 from vulncheck_sdk.models.advisory_beyond_trust import AdvisoryBeyondTrust as AdvisoryBeyondTrust
 from vulncheck_sdk.models.advisory_binarly import AdvisoryBinarly as AdvisoryBinarly
+from vulncheck_sdk.models.advisory_bit_bucket_exploit import AdvisoryBitBucketExploit as AdvisoryBitBucketExploit
 from vulncheck_sdk.models.advisory_bit_defender import AdvisoryBitDefender as AdvisoryBitDefender
 from vulncheck_sdk.models.advisory_black_berry import AdvisoryBlackBerry as AdvisoryBlackBerry
 from vulncheck_sdk.models.advisory_bosch_advisory import AdvisoryBoschAdvisory as AdvisoryBoschAdvisory
@@ -1653,6 +1681,7 @@ from vulncheck_sdk.models.advisory_cloud_advisory import AdvisoryCloudAdvisory a
 from vulncheck_sdk.models.advisory_cloud_advisory_version_range import AdvisoryCloudAdvisoryVersionRange as AdvisoryCloudAdvisoryVersionRange
 from vulncheck_sdk.models.advisory_cloud_bees import AdvisoryCloudBees as AdvisoryCloudBees
 from vulncheck_sdk.models.advisory_cloud_vuln_db_advisory import AdvisoryCloudVulnDBAdvisory as AdvisoryCloudVulnDBAdvisory
+from vulncheck_sdk.models.advisory_codeberg_exploit import AdvisoryCodebergExploit as AdvisoryCodebergExploit
 from vulncheck_sdk.models.advisory_codesys_advisory import AdvisoryCodesysAdvisory as AdvisoryCodesysAdvisory
 from vulncheck_sdk.models.advisory_comm_vault import AdvisoryCommVault as AdvisoryCommVault
 from vulncheck_sdk.models.advisory_comm_vault_cve_details import AdvisoryCommVaultCVEDetails as AdvisoryCommVaultCVEDetails
@@ -2363,6 +2392,18 @@ from vulncheck_sdk.models.index_cve_search_hit import IndexCveSearchHit as Index
 from vulncheck_sdk.models.index_cve_search_meta import IndexCveSearchMeta as IndexCveSearchMeta
 from vulncheck_sdk.models.index_index_count_entry import IndexIndexCountEntry as IndexIndexCountEntry
 from vulncheck_sdk.models.models_entitlements import ModelsEntitlements as ModelsEntitlements
+from vulncheck_sdk.models.nvdcpematch_nvd_cpe_name import NvdcpematchNvdCpeName as NvdcpematchNvdCpeName
+from vulncheck_sdk.models.nvdcpematch_nvd_match_string import NvdcpematchNvdMatchString as NvdcpematchNvdMatchString
+from vulncheck_sdk.models.nvdcpematch_nvd_match_string_envelope_entry import NvdcpematchNvdMatchStringEnvelopeEntry as NvdcpematchNvdMatchStringEnvelopeEntry
+from vulncheck_sdk.models.nvdcpes_nvd_cpe import NvdcpesNvdCpe as NvdcpesNvdCpe
+from vulncheck_sdk.models.nvdcpes_nvd_cpe_deprecation import NvdcpesNvdCpeDeprecation as NvdcpesNvdCpeDeprecation
+from vulncheck_sdk.models.nvdcpes_nvd_cpe_envelope_entry import NvdcpesNvdCpeEnvelopeEntry as NvdcpesNvdCpeEnvelopeEntry
+from vulncheck_sdk.models.nvdcpes_nvd_cpe_reference import NvdcpesNvdCpeReference as NvdcpesNvdCpeReference
+from vulncheck_sdk.models.nvdcpes_nvd_cpe_title import NvdcpesNvdCpeTitle as NvdcpesNvdCpeTitle
+from vulncheck_sdk.models.nvdcves_nvd_cve_envelope_entry import NvdcvesNvdCveEnvelopeEntry as NvdcvesNvdCveEnvelopeEntry
+from vulncheck_sdk.models.nvdcves_nvd_cve_extended import NvdcvesNvdCveExtended as NvdcvesNvdCveExtended
+from vulncheck_sdk.models.nvdsource_nvd_acceptance_level import NvdsourceNvdAcceptanceLevel as NvdsourceNvdAcceptanceLevel
+from vulncheck_sdk.models.nvdsource_nvd_source import NvdsourceNvdSource as NvdsourceNvdSource
 from vulncheck_sdk.models.paginate_match import PaginateMatch as PaginateMatch
 from vulncheck_sdk.models.paginate_pagination import PaginatePagination as PaginatePagination
 from vulncheck_sdk.models.paginate_param import PaginateParam as PaginateParam
@@ -2375,6 +2416,7 @@ from vulncheck_sdk.models.purl_qualifier_json import PurlQualifierJSON as PurlQu
 from vulncheck_sdk.models.purl_unprocessed_purl import PurlUnprocessedPurl as PurlUnprocessedPurl
 from vulncheck_sdk.models.purls_purl_response import PurlsPurlResponse as PurlsPurlResponse
 from vulncheck_sdk.models.purls_vulnerability import PurlsVulnerability as PurlsVulnerability
+from vulncheck_sdk.models.render_nvd_error_body import RenderNvdErrorBody as RenderNvdErrorBody
 from vulncheck_sdk.models.render_response_array_params_index_backup_list import RenderResponseArrayParamsIndexBackupList as RenderResponseArrayParamsIndexBackupList
 from vulncheck_sdk.models.render_response_array_params_index_list import RenderResponseArrayParamsIndexList as RenderResponseArrayParamsIndexList
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_a10_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryA10PaginatePagination as RenderResponseWithMetadataArrayAdvisoryA10PaginatePagination
@@ -2458,6 +2500,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_becton_di
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_belden_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryBeldenAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryBeldenAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_beyond_trust_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryBeyondTrustPaginatePagination as RenderResponseWithMetadataArrayAdvisoryBeyondTrustPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_binarly_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryBinarlyPaginatePagination as RenderResponseWithMetadataArrayAdvisoryBinarlyPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_bit_bucket_exploit_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryBitBucketExploitPaginatePagination as RenderResponseWithMetadataArrayAdvisoryBitBucketExploitPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_bit_defender_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryBitDefenderPaginatePagination as RenderResponseWithMetadataArrayAdvisoryBitDefenderPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_black_berry_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryBlackBerryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryBlackBerryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_bosch_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryBoschAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryBoschAdvisoryPaginatePagination
@@ -2495,6 +2538,7 @@ from vulncheck_sdk.models.render_response_with_metadata_array_advisory_claroty_v
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_cloud_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCloudAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCloudAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_cloud_bees_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCloudBeesPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCloudBeesPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_cloud_vuln_db_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCloudVulnDBAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCloudVulnDBAdvisoryPaginatePagination
+from vulncheck_sdk.models.render_response_with_metadata_array_advisory_codeberg_exploit_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCodebergExploitPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCodebergExploitPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_codesys_advisory_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCodesysAdvisoryPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCodesysAdvisoryPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_comm_vault_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCommVaultPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCommVaultPaginatePagination
 from vulncheck_sdk.models.render_response_with_metadata_array_advisory_compass_security_paginate_pagination import RenderResponseWithMetadataArrayAdvisoryCompassSecurityPaginatePagination as RenderResponseWithMetadataArrayAdvisoryCompassSecurityPaginatePagination
@@ -2859,6 +2903,14 @@ from vulncheck_sdk.models.render_response_with_metadata_search_responses_paginat
 from vulncheck_sdk.models.render_response_with_metadata_v3controllers_backup_response_data_v3controllers_backup_response_metadata import RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata as RenderResponseWithMetadataV3controllersBackupResponseDataV3controllersBackupResponseMetadata
 from vulncheck_sdk.models.render_response_with_metadata_v3controllers_purl_response_data_v3controllers_purl_response_metadata import RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata as RenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPurlResponseMetadata
 from vulncheck_sdk.models.render_response_with_metadata_v3controllers_purls_response_data_v3controllers_purls_response_metadata import RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata as RenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersPurlsResponseMetadata
+from vulncheck_sdk.models.rest_nvd_change import RestNvdChange as RestNvdChange
+from vulncheck_sdk.models.rest_nvd_change_detail import RestNvdChangeDetail as RestNvdChangeDetail
+from vulncheck_sdk.models.rest_nvd_change_envelope_entry import RestNvdChangeEnvelopeEntry as RestNvdChangeEnvelopeEntry
+from vulncheck_sdk.models.rest_nvd_cpe_match_response import RestNvdCpeMatchResponse as RestNvdCpeMatchResponse
+from vulncheck_sdk.models.rest_nvd_cpes_response import RestNvdCpesResponse as RestNvdCpesResponse
+from vulncheck_sdk.models.rest_nvd_cve_history_response import RestNvdCveHistoryResponse as RestNvdCveHistoryResponse
+from vulncheck_sdk.models.rest_nvd_cves_response import RestNvdCvesResponse as RestNvdCvesResponse
+from vulncheck_sdk.models.rest_nvd_source_response import RestNvdSourceResponse as RestNvdSourceResponse
 from vulncheck_sdk.models.search_error_response import SearchErrorResponse as SearchErrorResponse
 from vulncheck_sdk.models.search_response_data_out import SearchResponseDataOut as SearchResponseDataOut
 from vulncheck_sdk.models.search_v4_advisory_meta import SearchV4AdvisoryMeta as SearchV4AdvisoryMeta
