@@ -52,6 +52,12 @@ class TestApiVulnCheckCanary(unittest.TestCase):
                 c2_location = [
                     ''
                     ],
+                canary_cves = [
+                    ''
+                    ],
+                canary_id = '',
+                canary_product = '',
+                canary_vendor = '',
                 category = '',
                 client_fingerprints = vulncheck_sdk.aio.models.api/client_fingerprints.api.ClientFingerprints(
                     hassh = '', 
@@ -59,6 +65,7 @@ class TestApiVulnCheckCanary(unittest.TestCase):
                     ja4 = '', ),
                 cve = '',
                 dst_country = '',
+                event_id = '',
                 http = vulncheck_sdk.aio.models.api/http_details.api.HTTPDetails(
                     http_method = '', 
                     http_request_body = '', 

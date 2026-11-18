@@ -91,7 +91,9 @@ class TestRenderResponseWithMetadataArrayPurlsPurlResponsePaginatePagination(uni
                             vulncheck_sdk.models.purls/vulnerability.purls.Vulnerability(
                                 arch = '', 
                                 detection = '', 
-                                fixed_version = '', )
+                                fixed_version = '', 
+                                remediation = '', 
+                                subscription = '', )
                             ], )
                     ]
             )

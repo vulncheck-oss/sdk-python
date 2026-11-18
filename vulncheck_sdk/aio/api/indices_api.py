@@ -184612,6 +184612,7 @@ class IndicesApi:
         ransomware: Annotated[Optional[StrictStr], Field(description="Specify a ransomeware family name to search with.")] = None,
         botnet: Annotated[Optional[StrictStr], Field(description="Specify a botnet name to search with.")] = None,
         published: Annotated[Optional[StrictStr], Field(description="Specify a published date")] = None,
+        id: Annotated[Optional[StrictStr], Field(description="Specify a record ID to search with.")] = None,
         date: Annotated[Optional[StrictStr], Field(description="Specify an exact published date to filter with.")] = None,
         updated_at_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting 'updated-at' date to filter with.")] = None,
         updated_at_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending 'updated-at' date to filter with.")] = None,
@@ -184670,6 +184671,8 @@ class IndicesApi:
         :type botnet: str
         :param published: Specify a published date
         :type published: str
+        :param id: Specify a record ID to search with.
+        :type id: str
         :param date: Specify an exact published date to filter with.
         :type date: str
         :param updated_at_start_date: Specify a starting 'updated-at' date to filter with.
@@ -184724,6 +184727,7 @@ class IndicesApi:
             ransomware=ransomware,
             botnet=botnet,
             published=published,
+            id=id,
             date=date,
             updated_at_start_date=updated_at_start_date,
             updated_at_end_date=updated_at_end_date,
@@ -184773,6 +184777,7 @@ class IndicesApi:
         ransomware: Annotated[Optional[StrictStr], Field(description="Specify a ransomeware family name to search with.")] = None,
         botnet: Annotated[Optional[StrictStr], Field(description="Specify a botnet name to search with.")] = None,
         published: Annotated[Optional[StrictStr], Field(description="Specify a published date")] = None,
+        id: Annotated[Optional[StrictStr], Field(description="Specify a record ID to search with.")] = None,
         date: Annotated[Optional[StrictStr], Field(description="Specify an exact published date to filter with.")] = None,
         updated_at_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting 'updated-at' date to filter with.")] = None,
         updated_at_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending 'updated-at' date to filter with.")] = None,
@@ -184831,6 +184836,8 @@ class IndicesApi:
         :type botnet: str
         :param published: Specify a published date
         :type published: str
+        :param id: Specify a record ID to search with.
+        :type id: str
         :param date: Specify an exact published date to filter with.
         :type date: str
         :param updated_at_start_date: Specify a starting 'updated-at' date to filter with.
@@ -184885,6 +184892,7 @@ class IndicesApi:
             ransomware=ransomware,
             botnet=botnet,
             published=published,
+            id=id,
             date=date,
             updated_at_start_date=updated_at_start_date,
             updated_at_end_date=updated_at_end_date,
@@ -184934,6 +184942,7 @@ class IndicesApi:
         ransomware: Annotated[Optional[StrictStr], Field(description="Specify a ransomeware family name to search with.")] = None,
         botnet: Annotated[Optional[StrictStr], Field(description="Specify a botnet name to search with.")] = None,
         published: Annotated[Optional[StrictStr], Field(description="Specify a published date")] = None,
+        id: Annotated[Optional[StrictStr], Field(description="Specify a record ID to search with.")] = None,
         date: Annotated[Optional[StrictStr], Field(description="Specify an exact published date to filter with.")] = None,
         updated_at_start_date: Annotated[Optional[StrictStr], Field(description="Specify a starting 'updated-at' date to filter with.")] = None,
         updated_at_end_date: Annotated[Optional[StrictStr], Field(description="Specify an ending 'updated-at' date to filter with.")] = None,
@@ -184992,6 +185001,8 @@ class IndicesApi:
         :type botnet: str
         :param published: Specify a published date
         :type published: str
+        :param id: Specify a record ID to search with.
+        :type id: str
         :param date: Specify an exact published date to filter with.
         :type date: str
         :param updated_at_start_date: Specify a starting 'updated-at' date to filter with.
@@ -185046,6 +185057,7 @@ class IndicesApi:
             ransomware=ransomware,
             botnet=botnet,
             published=published,
+            id=id,
             date=date,
             updated_at_start_date=updated_at_start_date,
             updated_at_end_date=updated_at_end_date,
@@ -185090,6 +185102,7 @@ class IndicesApi:
         ransomware,
         botnet,
         published,
+        id,
         date,
         updated_at_start_date,
         updated_at_end_date,
@@ -185189,6 +185202,10 @@ class IndicesApi:
         if published is not None:
             
             _query_params.append(('published', published))
+            
+        if id is not None:
+            
+            _query_params.append(('id', id))
             
         if date is not None:
             
@@ -293997,6 +294014,7 @@ class IndicesApi:
         order: Annotated[Optional[StrictStr], Field(description="direction of the sort")] = None,
         sort: Annotated[Optional[StrictStr], Field(description="field by which to sort the results")] = None,
         cidr: Annotated[Optional[StrictStr], Field(description="Specify an IPv4 or IPv6 CIDR")] = None,
+        ip: Annotated[Optional[StrictStr], Field(description="Specify one or more IPv4 or IPv6 addresses (comma-delimited)")] = None,
         cve: Annotated[Optional[StrictStr], Field(description="Specify a CVE ID to search with.")] = None,
         country: Annotated[Optional[StrictStr], Field(description="Country name ISO-3166?? format")] = None,
         country_code: Annotated[Optional[StrictStr], Field(description="Country code in ISO-3166?? format")] = None,
@@ -294051,6 +294069,8 @@ class IndicesApi:
         :type sort: str
         :param cidr: Specify an IPv4 or IPv6 CIDR
         :type cidr: str
+        :param ip: Specify one or more IPv4 or IPv6 addresses (comma-delimited)
+        :type ip: str
         :param cve: Specify a CVE ID to search with.
         :type cve: str
         :param country: Country name ISO-3166?? format
@@ -294127,6 +294147,7 @@ class IndicesApi:
             order=order,
             sort=sort,
             cidr=cidr,
+            ip=ip,
             cve=cve,
             country=country,
             country_code=country_code,
@@ -294182,6 +294203,7 @@ class IndicesApi:
         order: Annotated[Optional[StrictStr], Field(description="direction of the sort")] = None,
         sort: Annotated[Optional[StrictStr], Field(description="field by which to sort the results")] = None,
         cidr: Annotated[Optional[StrictStr], Field(description="Specify an IPv4 or IPv6 CIDR")] = None,
+        ip: Annotated[Optional[StrictStr], Field(description="Specify one or more IPv4 or IPv6 addresses (comma-delimited)")] = None,
         cve: Annotated[Optional[StrictStr], Field(description="Specify a CVE ID to search with.")] = None,
         country: Annotated[Optional[StrictStr], Field(description="Country name ISO-3166?? format")] = None,
         country_code: Annotated[Optional[StrictStr], Field(description="Country code in ISO-3166?? format")] = None,
@@ -294236,6 +294258,8 @@ class IndicesApi:
         :type sort: str
         :param cidr: Specify an IPv4 or IPv6 CIDR
         :type cidr: str
+        :param ip: Specify one or more IPv4 or IPv6 addresses (comma-delimited)
+        :type ip: str
         :param cve: Specify a CVE ID to search with.
         :type cve: str
         :param country: Country name ISO-3166?? format
@@ -294312,6 +294336,7 @@ class IndicesApi:
             order=order,
             sort=sort,
             cidr=cidr,
+            ip=ip,
             cve=cve,
             country=country,
             country_code=country_code,
@@ -294367,6 +294392,7 @@ class IndicesApi:
         order: Annotated[Optional[StrictStr], Field(description="direction of the sort")] = None,
         sort: Annotated[Optional[StrictStr], Field(description="field by which to sort the results")] = None,
         cidr: Annotated[Optional[StrictStr], Field(description="Specify an IPv4 or IPv6 CIDR")] = None,
+        ip: Annotated[Optional[StrictStr], Field(description="Specify one or more IPv4 or IPv6 addresses (comma-delimited)")] = None,
         cve: Annotated[Optional[StrictStr], Field(description="Specify a CVE ID to search with.")] = None,
         country: Annotated[Optional[StrictStr], Field(description="Country name ISO-3166?? format")] = None,
         country_code: Annotated[Optional[StrictStr], Field(description="Country code in ISO-3166?? format")] = None,
@@ -294421,6 +294447,8 @@ class IndicesApi:
         :type sort: str
         :param cidr: Specify an IPv4 or IPv6 CIDR
         :type cidr: str
+        :param ip: Specify one or more IPv4 or IPv6 addresses (comma-delimited)
+        :type ip: str
         :param cve: Specify a CVE ID to search with.
         :type cve: str
         :param country: Country name ISO-3166?? format
@@ -294497,6 +294525,7 @@ class IndicesApi:
             order=order,
             sort=sort,
             cidr=cidr,
+            ip=ip,
             cve=cve,
             country=country,
             country_code=country_code,
@@ -294547,6 +294576,7 @@ class IndicesApi:
         order,
         sort,
         cidr,
+        ip,
         cve,
         country,
         country_code,
@@ -294622,6 +294652,10 @@ class IndicesApi:
         if cidr is not None:
             
             _query_params.append(('cidr', cidr))
+            
+        if ip is not None:
+            
+            _query_params.append(('ip', ip))
             
         if cve is not None:
             
@@ -315314,7 +315348,7 @@ class IndicesApi:
         start_cursor: Annotated[Optional[StrictStr], Field(description="request server-side paging")] = None,
         order: Annotated[Optional[StrictStr], Field(description="direction of the sort")] = None,
         sort: Annotated[Optional[StrictStr], Field(description="field by which to sort the results")] = None,
-        ip: Annotated[Optional[StrictStr], Field(description="C2 IP address")] = None,
+        ip: Annotated[Optional[StrictStr], Field(description="Specify one or more IPv4 or IPv6 addresses (comma-delimited)")] = None,
         hostname: Annotated[Optional[StrictStr], Field(description="Match a string in the hostname")] = None,
         port: Annotated[Optional[StrictStr], Field(description="Port number")] = None,
         asn: Annotated[Optional[StrictStr], Field(description="Autonomous system number")] = None,
@@ -315358,7 +315392,7 @@ class IndicesApi:
         :type order: str
         :param sort: field by which to sort the results
         :type sort: str
-        :param ip: C2 IP address
+        :param ip: Specify one or more IPv4 or IPv6 addresses (comma-delimited)
         :type ip: str
         :param hostname: Match a string in the hostname
         :type hostname: str
@@ -315463,7 +315497,7 @@ class IndicesApi:
         start_cursor: Annotated[Optional[StrictStr], Field(description="request server-side paging")] = None,
         order: Annotated[Optional[StrictStr], Field(description="direction of the sort")] = None,
         sort: Annotated[Optional[StrictStr], Field(description="field by which to sort the results")] = None,
-        ip: Annotated[Optional[StrictStr], Field(description="C2 IP address")] = None,
+        ip: Annotated[Optional[StrictStr], Field(description="Specify one or more IPv4 or IPv6 addresses (comma-delimited)")] = None,
         hostname: Annotated[Optional[StrictStr], Field(description="Match a string in the hostname")] = None,
         port: Annotated[Optional[StrictStr], Field(description="Port number")] = None,
         asn: Annotated[Optional[StrictStr], Field(description="Autonomous system number")] = None,
@@ -315507,7 +315541,7 @@ class IndicesApi:
         :type order: str
         :param sort: field by which to sort the results
         :type sort: str
-        :param ip: C2 IP address
+        :param ip: Specify one or more IPv4 or IPv6 addresses (comma-delimited)
         :type ip: str
         :param hostname: Match a string in the hostname
         :type hostname: str
@@ -315612,7 +315646,7 @@ class IndicesApi:
         start_cursor: Annotated[Optional[StrictStr], Field(description="request server-side paging")] = None,
         order: Annotated[Optional[StrictStr], Field(description="direction of the sort")] = None,
         sort: Annotated[Optional[StrictStr], Field(description="field by which to sort the results")] = None,
-        ip: Annotated[Optional[StrictStr], Field(description="C2 IP address")] = None,
+        ip: Annotated[Optional[StrictStr], Field(description="Specify one or more IPv4 or IPv6 addresses (comma-delimited)")] = None,
         hostname: Annotated[Optional[StrictStr], Field(description="Match a string in the hostname")] = None,
         port: Annotated[Optional[StrictStr], Field(description="Port number")] = None,
         asn: Annotated[Optional[StrictStr], Field(description="Autonomous system number")] = None,
@@ -315656,7 +315690,7 @@ class IndicesApi:
         :type order: str
         :param sort: field by which to sort the results
         :type sort: str
-        :param ip: C2 IP address
+        :param ip: Specify one or more IPv4 or IPv6 addresses (comma-delimited)
         :type ip: str
         :param hostname: Match a string in the hostname
         :type hostname: str

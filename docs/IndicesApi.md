@@ -38796,7 +38796,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_malicious_packages_get**
-> RenderResponseWithMetadataArrayAdvisoryMaliciousPackagePaginatePagination index_malicious_packages_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+> RenderResponseWithMetadataArrayAdvisoryMaliciousPackagePaginatePagination index_malicious_packages_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, id=id, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
 Return vulnerability data stored in index \"malicious-packages\"
 
@@ -38861,6 +38861,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     ransomware = 'ransomware_example' # str | Specify a ransomeware family name to search with. (optional)
     botnet = 'botnet_example' # str | Specify a botnet name to search with. (optional)
     published = 'published_example' # str | Specify a published date (optional)
+    id = 'id_example' # str | Specify a record ID to search with. (optional)
     var_date = 'var_date_example' # str | Specify an exact published date to filter with. (optional)
     updated_at_start_date = 'updated_at_start_date_example' # str | Specify a starting 'updated-at' date to filter with. (optional)
     updated_at_end_date = 'updated_at_end_date_example' # str | Specify an ending 'updated-at' date to filter with. (optional)
@@ -38871,7 +38872,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Return vulnerability data stored in index \"malicious-packages\"
-        api_response = api_instance.index_malicious_packages_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        api_response = api_instance.index_malicious_packages_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cve=cve, alias=alias, iava=iava, jvndb=jvndb, ilvn=ilvn, threat_actor=threat_actor, mitre_id=mitre_id, misp_id=misp_id, ransomware=ransomware, botnet=botnet, published=published, id=id, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
         print("The response of IndicesApi->index_malicious_packages_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -38902,6 +38903,7 @@ Name | Type | Description  | Notes
  **ransomware** | **str**| Specify a ransomeware family name to search with. | [optional] 
  **botnet** | **str**| Specify a botnet name to search with. | [optional] 
  **published** | **str**| Specify a published date | [optional] 
+ **id** | **str**| Specify a record ID to search with. | [optional] 
  **var_date** | **str**| Specify an exact published date to filter with. | [optional] 
  **updated_at_start_date** | **str**| Specify a starting &#39;updated-at&#39; date to filter with. | [optional] 
  **updated_at_end_date** | **str**| Specify an ending &#39;updated-at&#39; date to filter with. | [optional] 
@@ -61566,7 +61568,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_target_intel_get**
-> RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination index_target_intel_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cidr=cidr, cve=cve, country=country, country_code=country_code, asn=asn, cpe=cpe, vendor=vendor, product=product, version=version, protocol=protocol, transport=transport, port=port, contains_cve=contains_cve, confirmed=confirmed, classifications=classifications, hostname=hostname, domain=domain, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+> RenderResponseWithMetadataArrayApiTargetIntelPaginatePagination index_target_intel_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cidr=cidr, ip=ip, cve=cve, country=country, country_code=country_code, asn=asn, cpe=cpe, vendor=vendor, product=product, version=version, protocol=protocol, transport=transport, port=port, contains_cve=contains_cve, confirmed=confirmed, classifications=classifications, hostname=hostname, domain=domain, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
 
 Return vulnerability data stored in index \"target-intel\"
 
@@ -61621,6 +61623,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     order = 'order_example' # str | direction of the sort (optional)
     sort = 'sort_example' # str | field by which to sort the results (optional)
     cidr = 'cidr_example' # str | Specify an IPv4 or IPv6 CIDR (optional)
+    ip = 'ip_example' # str | Specify one or more IPv4 or IPv6 addresses (comma-delimited) (optional)
     cve = 'cve_example' # str | Specify a CVE ID to search with. (optional)
     country = 'country_example' # str | Country name ISO-3166?? format (optional)
     country_code = 'country_code_example' # str | Country code in ISO-3166?? format (optional)
@@ -61647,7 +61650,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Return vulnerability data stored in index \"target-intel\"
-        api_response = api_instance.index_target_intel_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cidr=cidr, cve=cve, country=country, country_code=country_code, asn=asn, cpe=cpe, vendor=vendor, product=product, version=version, protocol=protocol, transport=transport, port=port, contains_cve=contains_cve, confirmed=confirmed, classifications=classifications, hostname=hostname, domain=domain, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
+        api_response = api_instance.index_target_intel_get(page=page, limit=limit, cursor=cursor, start_cursor=start_cursor, order=order, sort=sort, cidr=cidr, ip=ip, cve=cve, country=country, country_code=country_code, asn=asn, cpe=cpe, vendor=vendor, product=product, version=version, protocol=protocol, transport=transport, port=port, contains_cve=contains_cve, confirmed=confirmed, classifications=classifications, hostname=hostname, domain=domain, var_date=var_date, updated_at_start_date=updated_at_start_date, updated_at_end_date=updated_at_end_date, last_mod_start_date=last_mod_start_date, last_mod_end_date=last_mod_end_date, pub_start_date=pub_start_date, pub_end_date=pub_end_date)
         print("The response of IndicesApi->index_target_intel_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -61668,6 +61671,7 @@ Name | Type | Description  | Notes
  **order** | **str**| direction of the sort | [optional] 
  **sort** | **str**| field by which to sort the results | [optional] 
  **cidr** | **str**| Specify an IPv4 or IPv6 CIDR | [optional] 
+ **ip** | **str**| Specify one or more IPv4 or IPv6 addresses (comma-delimited) | [optional] 
  **cve** | **str**| Specify a CVE ID to search with. | [optional] 
  **country** | **str**| Country name ISO-3166?? format | [optional] 
  **country_code** | **str**| Country code in ISO-3166?? format | [optional] 
@@ -66048,7 +66052,7 @@ with vulncheck_sdk.ApiClient(configuration) as api_client:
     start_cursor = 'start_cursor_example' # str | request server-side paging (optional)
     order = 'order_example' # str | direction of the sort (optional)
     sort = 'sort_example' # str | field by which to sort the results (optional)
-    ip = 'ip_example' # str | C2 IP address (optional)
+    ip = 'ip_example' # str | Specify one or more IPv4 or IPv6 addresses (comma-delimited) (optional)
     hostname = 'hostname_example' # str | Match a string in the hostname (optional)
     port = 'port_example' # str | Port number (optional)
     asn = 'asn_example' # str | Autonomous system number (optional)
@@ -66086,7 +66090,7 @@ Name | Type | Description  | Notes
  **start_cursor** | **str**| request server-side paging | [optional] 
  **order** | **str**| direction of the sort | [optional] 
  **sort** | **str**| field by which to sort the results | [optional] 
- **ip** | **str**| C2 IP address | [optional] 
+ **ip** | **str**| Specify one or more IPv4 or IPv6 addresses (comma-delimited) | [optional] 
  **hostname** | **str**| Match a string in the hostname | [optional] 
  **port** | **str**| Port number | [optional] 
  **asn** | **str**| Autonomous system number | [optional] 
