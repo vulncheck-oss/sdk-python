@@ -61,7 +61,9 @@ class TestPurlBatchVulnFinding(unittest.TestCase):
                 vulnerabilities = [
                     vulncheck_sdk.aio.models.api/oss_package_vulnerability.api.OSSPackageVulnerability(
                         detection = '', 
-                        fixed_version = '', )
+                        fixed_version = '', 
+                        remediation = '', 
+                        subscription = '', )
                     ]
             )
         else:

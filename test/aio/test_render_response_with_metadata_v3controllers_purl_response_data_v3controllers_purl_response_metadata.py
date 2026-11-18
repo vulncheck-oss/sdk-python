@@ -58,7 +58,9 @@ class TestRenderResponseWithMetadataV3controllersPurlResponseDataV3controllersPu
                     vulnerabilities = [
                         vulncheck_sdk.aio.models.api/oss_package_vulnerability.api.OSSPackageVulnerability(
                             detection = '', 
-                            fixed_version = '', )
+                            fixed_version = '', 
+                            remediation = '', 
+                            subscription = '', )
                         ], )
             )
         else:

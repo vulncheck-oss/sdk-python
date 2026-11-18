@@ -78,6 +78,7 @@ class TestApiTargetIntel(unittest.TestCase):
                     ''
                     ],
                 protocol = '',
+                scan_id = '',
                 summary = vulncheck_sdk.models.api/target_intel_summary.api.TargetIntelSummary(
                     confirmed_count = 56, 
                     contains_cve = True, 

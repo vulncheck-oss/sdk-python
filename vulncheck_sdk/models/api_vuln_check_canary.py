@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from vulncheck_sdk.models.api_c2_frequency import ApiC2Frequency
 from vulncheck_sdk.models.api_client_fingerprints import ApiClientFingerprints
@@ -35,10 +35,15 @@ class ApiVulnCheckCanary(BaseModel):
     attacker_infrastructure_frequency_3d: Optional[List[ApiC2Frequency]] = None
     c2_frequency_3d: Optional[List[ApiC2Frequency]] = None
     c2_location: Optional[List[StrictStr]] = None
+    canary_cves: Optional[List[StrictStr]] = None
+    canary_id: Optional[StrictStr] = Field(default=None, description="CanaryID is a correlation ID (UUID) bound to the canary that observed the event.")
+    canary_product: Optional[StrictStr] = None
+    canary_vendor: Optional[StrictStr] = None
     category: Optional[StrictStr] = None
     client_fingerprints: Optional[ApiClientFingerprints] = None
     cve: Optional[StrictStr] = None
     dst_country: Optional[StrictStr] = None
+    event_id: Optional[StrictStr] = Field(default=None, description="EventID is a unique correlation ID (UUID) bound to a single event.")
     http: Optional[ApiHTTPDetails] = None
     payload: Optional[StrictStr] = None
     payload_tlsh: Optional[StrictStr] = None
@@ -57,7 +62,7 @@ class ApiVulnCheckCanary(BaseModel):
     src_port: Optional[StrictInt] = None
     tech_vertical: Optional[List[StrictStr]] = None
     timestamp: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["attacker_infrastructure", "attacker_infrastructure_frequency_3d", "c2_frequency_3d", "c2_location", "category", "client_fingerprints", "cve", "dst_country", "http", "payload", "payload_tlsh", "payload_tooling", "severity", "signature", "signature_id", "src_as_domain", "src_as_name", "src_asn", "src_country", "src_ip", "src_ip_freq_3d", "src_ip_freq_3d_canary", "src_ip_type_findings", "src_port", "tech_vertical", "timestamp"]
+    __properties: ClassVar[List[str]] = ["attacker_infrastructure", "attacker_infrastructure_frequency_3d", "c2_frequency_3d", "c2_location", "canary_cves", "canary_id", "canary_product", "canary_vendor", "category", "client_fingerprints", "cve", "dst_country", "event_id", "http", "payload", "payload_tlsh", "payload_tooling", "severity", "signature", "signature_id", "src_as_domain", "src_as_name", "src_asn", "src_country", "src_ip", "src_ip_freq_3d", "src_ip_freq_3d_canary", "src_ip_type_findings", "src_port", "tech_vertical", "timestamp"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -132,10 +137,15 @@ class ApiVulnCheckCanary(BaseModel):
             "attacker_infrastructure_frequency_3d": [ApiC2Frequency.from_dict(_item) for _item in obj["attacker_infrastructure_frequency_3d"]] if obj.get("attacker_infrastructure_frequency_3d") is not None else None,
             "c2_frequency_3d": [ApiC2Frequency.from_dict(_item) for _item in obj["c2_frequency_3d"]] if obj.get("c2_frequency_3d") is not None else None,
             "c2_location": obj.get("c2_location"),
+            "canary_cves": obj.get("canary_cves"),
+            "canary_id": obj.get("canary_id"),
+            "canary_product": obj.get("canary_product"),
+            "canary_vendor": obj.get("canary_vendor"),
             "category": obj.get("category"),
             "client_fingerprints": ApiClientFingerprints.from_dict(obj["client_fingerprints"]) if obj.get("client_fingerprints") is not None else None,
             "cve": obj.get("cve"),
             "dst_country": obj.get("dst_country"),
+            "event_id": obj.get("event_id"),
             "http": ApiHTTPDetails.from_dict(obj["http"]) if obj.get("http") is not None else None,
             "payload": obj.get("payload"),
             "payload_tlsh": obj.get("payload_tlsh"),

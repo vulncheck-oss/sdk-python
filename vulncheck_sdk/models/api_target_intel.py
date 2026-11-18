@@ -49,12 +49,13 @@ class ApiTargetIntel(BaseModel):
     port: Optional[StrictInt] = None
     product: Optional[List[StrictStr]] = None
     protocol: Optional[StrictStr] = None
+    scan_id: Optional[StrictStr] = Field(default=None, description="ScanID is the rescan request that produced this record; empty for catalog scans.")
     summary: Optional[ApiTargetIntelSummary] = None
     timestamp: Optional[StrictStr] = None
     transport: Optional[StrictStr] = None
     vendor: Optional[List[StrictStr]] = None
     version: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["as_domain", "as_name", "asn", "classifications", "contains_cve", "country", "country_code", "cpe", "cve", "cve_confirmed", "date_added", "fingerprints", "hostname", "ip", "metadata", "port", "product", "protocol", "summary", "timestamp", "transport", "vendor", "version"]
+    __properties: ClassVar[List[str]] = ["as_domain", "as_name", "asn", "classifications", "contains_cve", "country", "country_code", "cpe", "cve", "cve_confirmed", "date_added", "fingerprints", "hostname", "ip", "metadata", "port", "product", "protocol", "scan_id", "summary", "timestamp", "transport", "vendor", "version"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -140,6 +141,7 @@ class ApiTargetIntel(BaseModel):
             "port": obj.get("port"),
             "product": obj.get("product"),
             "protocol": obj.get("protocol"),
+            "scan_id": obj.get("scan_id"),
             "summary": ApiTargetIntelSummary.from_dict(obj["summary"]) if obj.get("summary") is not None else None,
             "timestamp": obj.get("timestamp"),
             "transport": obj.get("transport"),

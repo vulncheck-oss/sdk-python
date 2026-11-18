@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **port** | **int** |  | [optional] 
 **product** | **List[str]** |  | [optional] 
 **protocol** | **str** |  | [optional] 
+**scan_id** | **str** | ScanID is the rescan request that produced this record; empty for catalog scans. | [optional] 
 **summary** | [**ApiTargetIntelSummary**](ApiTargetIntelSummary.md) |  | [optional] 
 **timestamp** | **str** |  | [optional] 
 **transport** | **str** |  | [optional] 

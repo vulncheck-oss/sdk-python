@@ -73,7 +73,9 @@ class TestRenderResponseWithMetadataV3controllersPurlsResponseDataV3controllersP
                         vulnerabilities = [
                             vulncheck_sdk.aio.models.api/oss_package_vulnerability.api.OSSPackageVulnerability(
                                 detection = '', 
-                                fixed_version = '', )
+                                fixed_version = '', 
+                                remediation = '', 
+                                subscription = '', )
                             ], )
                     ]
             )

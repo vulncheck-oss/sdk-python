@@ -115,6 +115,7 @@ class TestRenderResponseWithMetadataArrayApiTargetIntelPaginatePagination(unitte
                             ''
                             ], 
                         protocol = '', 
+                        scan_id = '', 
                         summary = vulncheck_sdk.aio.models.api/target_intel_summary.api.TargetIntelSummary(
                             confirmed_count = 56, 
                             contains_cve = True, 
